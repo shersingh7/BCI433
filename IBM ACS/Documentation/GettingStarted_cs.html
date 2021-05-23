@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Začínáme</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Začínáme</h2>
+<h2>Obsah tohoto dokumentu byl naposledy aktualizován: 8. ledna 2018.</h2>
+
+
+<h3><a id="0.5"></a>0.5 Stručná úvodní příručka</h3>
+<p>
+<a href="./QuickStartGuide_en.html">Stručná úvodní příručka</a> obsahuje pokyny k implementaci produktu,
+která bude vyhovovat většině uživatelů na platformě Windows, Mac či Linux.  Chcete-li tento produkt nainstalovat
+pro jediného uživatele či pro více uživatelů, podívejte se do příručky <a href="./QuickStartGuide_en.html">Stručná úvodní příručka</a> ve složce Documentation.
+<p>
+Další podrobnosti o produktu, jiné volby implementace a přizpůsobení produktu jsou obsaženy ve zbývající
+části tohoto dokumentu.  
+
+<h3>Obsah:</h3>
+<a href="#0.5">0.5 Stručná úvodní příručka</a><br>
+<a href="#1.0">1.0 Úvod</a><br>
+<a href="#2.0">2.0 Funkce</a><br>
+<a href="#3.0">3.0 Předpoklady</a><br>
+<a href="#4.0">4.0 Obsah produktu</a><br>
+<a href="#5.0">5.0 Instalace</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Aktualizace existující instalace</a><br>
+<a href="#6.0">6.0 Oprávnění týkající se souborů</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Oprávnění týkající se souborů (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Oprávnění týkající se souborů (Windows)</a><br>
+<a href="#7.0">7.0 Spouštění produktu</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Spouštění produktu</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Spouštění produktu (s použitím skriptu)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Spouštění produktu (s použitím příkazového řádku)</a><br>
+<a href="#8.0">8.0 Konfigurace</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Umístění konfigurace</a><br>
+<a href="#9.0">9.0 Pokročilá témata</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Další volby příkazového řádku</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Přidružení souborů</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Přidružení souborů (pro Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Změna ikony (zástupce Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Nastavení ikony na ploše (pro Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Přidružení souborů (pro Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Přidružení souborů (pro Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Tvorba přidružení souborů (pro Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Změna ikony (pro Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Změna umístění konfigurace</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Ostatní možnosti implementace</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Automatický import nastavení konfigurace</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Nativní implementace systému IBM i</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Vlastní balíky</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Migrace z produktu IBM i Access for Windows</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Migrace konfigurací systému</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 Migrace emulace 5250</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Migrace uložených souborů požadavků na přenos dat</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Správa klíčů</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Přenos dat</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Podpora přenosu dat pro tabulky Excel a Calc</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Podpora přenosu dat pro oříznutí znaků a numerické přetečení</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Název listu přenosu dat</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Ustanovení připojení konzoly k systému IBM i</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Další písma</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Použití pověření ze souboru netrc</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Integrovaný systém souborů (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 Integrovaný systém souborů, QFileSvr.400 a zabezpečení</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 Oprávnění integrovaného systému souborů</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 Omezení integrovaného systému souborů</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 Integrovaný systém souborů a nezávislé oblasti ASP</a><br>
+&nbsp; &nbsp; <a href="#9.13">9.13 Terminál SSH (Secure Shell)</a><br>
+&nbsp; &nbsp; <a href="#9.13.1">9.13.1 Předpoklady terminálu SSH</a><br>
+
+
+
+<a href="#10.0">10.0 Servisní diagnostika</a><br>
+<a href="#11.0">11.0 Často kladené otázky (FAQ)</a><br>
+<a href="#12.0">12.0 Historie aktualizací</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Úvod</h3>
+<p>
+Produkt IBM i Access Client Solutions je nejnovějším členem řady produktů
+IBM i Access.  Poskytuje rozhraní založené na jazyce Java nezávislé na platformě,
+které běží na většině operačních systémů podporujících jazyk Java včetně
+systémů Linux, Mac a Windows. Produkt IBM i Access Client Solutions konsoliduje
+nejběžněji používané úlohy pro správu systému IBM i do jednoho zjednodušeného
+umístění.
+<p>
+Produkt IBM i Access Client Solutions používá stejné hostitelské servery IBM i
+jako ostatní produkty řady produktů IBM i Access a vyžaduje stejnou licenci
+na řadu produktů IBM i Access (XW1) pro použití funkcí emulace 5250 a přenosu dat.
+<p>
+Také jsou k dispozici dva volitelné balíky, které zahrnují middleware pro používání
+a vývoj klientských aplikací pro systémy Windows a Linux:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows Application Package<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux Application Package<br>
+<p>
+Zákazníci používající produkty IBM i 7.1 nebo novější, kteří mají aktuální nárok,
+mohou produkt IBM i Access Client Solutions získat pomocí některé z těchto dvou metod:
+<ul>
+<li> Stáhnout základní balík <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a>. 
+<li> Stáhnout základní balík a volitelné balíky aplikací pro systémy Windows a Linux z Webu <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> pod položkami 5761-SS1 nebo 5770-SS1.
+</ul>
+
+<p>
+Volitelné balíky aplikací pro systémy Windows a Linux jsou dostupné
+pouze z webu ESS (Entitled Software Support). 
+<p>
+Zákazníci mohou získat média objednáním produktu 5761-SS1 nebo 5770-SS1 funkce aktualizace 6288.
+Fyzické médium obsahuje spustitelnou verzi produktu, která umožňuje spuštění
+produktu přímo z disku CD.
+Fyzické médium také zahrnuje archiv zip produktu,
+který lze zkopírovat a extrahovat do vámi vybraného umístění.
+Fyzické médium produktu IBM i Access Client Solutions neobsahuje volitelné
+balíky pro aplikace operačních systémů Windows a Linux. 
+<p>
+Další informace získáte na webové stránce:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Nejnovější informace o řadě produktů IBM i Access najdete na adrese:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Funkce</h3>
+<p>
+Funkce produktu IBM i Access Client Solutions zahrnují:
+<ul>
+<li>Plně vybavený emulátor obrazovky 5250 vycházející z produktu IBM Rational
+Host-on-Demand. Kromě všech funkcí obrazovky 5250, na které jste zvyklí při používání produktu IBM i
+Access for Windows, existují i další funkce.
+<ul>
+<li>podpora karet, která umožňuje více relací sdílet v jedné oblasti zobrazení
+<li>podpora kolečka myši, která umožňuje intuitivní posouvání mezi stránkami
+<li>přepínání mezi jazyky lze provádět bez restartování pracovní stanice
+<li>souběžné relace obrazovky s různými kódovými stránkami hostitele umožňují oddělit
+jazyky do různých relací emulátoru
+</ul>
+<li>Emulace tiskárny
+<li>Správce relací 5250 modelovaný po produktu IBM Personal Communications Session
+Manager, kterého lze použít ke správě všech relací emulátoru 5250.
+
+<li>Přenos dat poskytující schopnost převádět data z/do databáze IBM i do/z různých
+typů souborů na vaší pracovní stanici, například tabulky otevřeného formátu (*.ods),
+sešitu Excel (*.xlsx) a dalších formátů souborů.
+
+<li>Funkce Tiskový výstup poskytuje rozhraní umožňující zobrazit soubory ve výstupních frontách
+systému IBM i, navíc umožňuje tyto soubory stáhnout do klientského systému.
+
+<li>Virtuální ovládací panel s grafickým rozhraním pro operační panel IBM i.
+
+<li>Emulaci 5250 pro konzoly LAN, HMC a FSM.
+
+<li>Konsolidaci pro konfigurace rozhraní správy hardwaru včetně ASMI, IVM a HMC.
+
+<li>Schopnost spouštění produktu IBM Navigator for i pomocí výchozího prohlížeče.
+
+<li> Databázové funkce, například spuštění skriptů SQL a SQL Performance Center.
+</ul>
+<p>
+Volitelný balík aplikací pro Windows zahrnuje:
+<ul>
+<li>konektivita k databázi Db2 for i pomocí ODBC, .Net a OLE DB
+<li>sada nástrojů Programming Toolkit pro přístup k systémovým objektům IBM i
+<li>podpora připojení TLS/SSL
+<li>ovladač tiskárny AFP
+</ul>
+<p>
+Volitelný balík aplikací pro Linux zahrnuje:
+<ul>
+<li>ovladač ODBC pro přístup k databázi Db2 for i, podporující plně 64bitové datové typy.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Předpoklady</h3>
+<h3><a id="3.1"></a>3.1 Předpoklady (pracovní stanice)</h3>
+<p>
+Produkt IBM i Access Client Solutions poběží na většině operačních systémů, které podporují
+Java 8.0 nebo vyšší, což zahrnuje různé verze systémů Linux, Mac a Windows.
+<p>
+Doporučení:<br>
+Udržování prostředí Java na aktuální verzi vám zajistí, že budete mít nejnovější opravy a opravy zabezpečení. 
+<p>
+Jedním ze způsobů kontroly verze jazyka Java nainstalovaného na vašem počítači
+je pomocí příkazového řádku (příkazový řádek, shell, terminál atd.), do kterého
+se zadá příkaz:
+    java -version<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+Následující výstup označuje, že je nainstalována verze 8.0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+65 v tomto příkladu odkazuje na úroveň aktualizace.
+
+<p>
+Zde jsou uvedené některé webové servery poskytovatelů jazyka Java.  Ujistěte se,
+že provádíte spuštění s aktuální verzí jazyka Java pro vaši platformu.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 Předpoklady (připojení k IBM i)</h3>
+<p>
+IBM i Access Client Solutions se připojí k systému IBM i verze 5.4
+a vyšší.
+Následující funkce vyžadují systém IBM i verze 6.1 nebo vyšší:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Konzola 5250<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Virtuální ovládací panel<br>
+<p>
+Budete-li používat připojení SSL, zaveďte a použijte odpovídající opravy PTF
+pro vydání systému IBM i:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Budete-li používat Navigator for i, zaveďte a použijte odpovídající opravy PTF
+pro vydání systému IBM i:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - Skupinová oprava PTF SF99368 úrovně 37 nebo vyšší<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - Skupinová oprava PTF SF99713 úrovně 12 nebo vyšší<br>
+	
+<p>
+Pokud budete používat konzolu 5250 nebo virtuální ovládací panel,
+zaveďte a použijte odpovídající opravy PTF pro vydání vašeho systému:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Obsah produktu</h3>
+<p>
+V archivu zip produktu jsou následující soubory a složky:
+<pre>
+
+acsbundle.jar       - spustitelný soubor jar produktu
+AcsConfig.properties- soubor obsahující nastavení konfigurace (také existuje
+                      v souboru acsbundle.jar)
+
+Mac_Application     - adresář obsahující instalační skript pro systém Mac
+
+Linux_Application   - adresář obsahující instalační skripty pro systém Linux
+
+Windows_Application - adresář obsahující instalační skripty pro systém Windows
+
+Start_Programs      - adresář obsahující binární soubory specifické pro platformu,
+                      které lze použít ke spuštění produktu
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - adresář obsahující dokumentaci
+  Stručná úvodní příručka - informace, jak začít s produktem pracovat
+  GettingStarted  - podrobné informace o produktu
+  License             - adresář obsahující podmínky a kritéria použití
+  Notices             - adresář obsahující poznámky a informace
+  properties          - adresář obsahující informace o verzi produktu
+  Sample_Scripts      - adresář obsahující ukázkové skripty, které lze použít ke
+                      spuštění produktu, pokud binární soubory v Start_Programs
+                      nefungují.
+    Linux_Mac_Other - adresář skriptů Perl pro spuštění produktu na jakékoli platformě,
+                      na které je k dispozici Perl
+    Windows         - adresář obsahující JScript ke spuštění na systému Windows
+
+Icons               - adresář obsahující soubory, které lze použít jako ikony
+
+Fonts               - adresář, do kterého lze přidávat další neproporcionální písma 
+                      pro emulaci 5250
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Instalace</h3>
+<p>
+Balení produktu IBM i Access Client Solutions poskytuje několik možností instalace,
+od velmi jednoduché instalace pro jednoho uživatele, až po pokročilejší víceuživatelské instalace.
+<p>
+Instalační skripty byly poskytovány ve složkách Mac_Application, Linux_Application, a Windows_Application
+(informace nalezete v části <a href="#4.0">Obsah produktu 4.0</a>), který lze použít pro řadu možností instalace.
+
+<p>
+Pro jednouživatelskou instalaci na systému Mac, Linux a Windows, nebo víceuživatelskou instalaci na PC se systémem Windows, se podívejte do <a href="./QuickStartGuide_en.html">Stručné úvodní příručky</a>.
+Stručná úvodní příručka vysvětluje, jak použít poskytnuté instalační skripty pro provedení těchto typů jednoduché instalace.
+<p>
+Jste-li administrátor, který plánuje nasazení pro několik uživatelů, budete si chtít přečíst
+článek <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Snadné úpravy a implementace</a>.
+Článek vysvětluje, jak může administrátor předem přizpůsobit instalaci pro více uživatelů,
+před implementací pomocí volby /AdminConfig podporované instalačními skripty.
+<p>
+Administrátoři, kteří by chtěli automatizovat instalaci v bezobslužném režimu,
+použijí k předkonfiguraci instalace parametr /AdminConfig.  Poté během vlastní instalace použijí parametr /Q. Například:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+Kromě výše uvedených možností také můžete pouze rozbalit archiv zip do libovolného umístění. Může se jednat o jakékoli umístění,
+na kterém má pracovní stanice oprávnění ke čtení pro přístup k souborům.  To zahrnuje
+místní jednotku pevného disku, vzdálenou (sdílenou) síťovou jednotku
+nebo přenosná média, jako např. disk CD nebo jednotka paměti USB flash.  Rozbalení archivu zip dokončí instalaci.
+
+<p>
+Technická poznámka:<br>
+Některé obslužné programy pro archivy nezachovávají všechny uložené atributy souborů.  Například
+na platformách Mac a Linux je příkaz unzip obvykle lepší volbou
+než příkaz jar.  Další informace najdete v sekci <a href="#6.0">6.0 Oprávnění k souborům</a>.
+
+<h3><a id="5.1"></a>5.1 Aktualizace existující instalace</h3>
+<p>
+Vylepšení a opravy budou k dispozici v pravidelných intervalech.  Tyto aktualizace jsou poskytovány
+jako úplné instalace produktu.  Když jsou aktualizace k dispozici, musíte aktualizovat
+existující instalaci.
+<p>
+Chcete-li aktualizovat stávající instalaci, která byla nainstalována pomocí instalačních skriptů,
+extrahujte obsah novější verze produktu.  Vyvolejte instalační skript z této nové verze stejným způsobem,
+jako během počáteční instalace.  Tato akce bude aktualizovat soubory produktu bez změny existující uživatelské konfigurace.
+<p>
+Administrátoři udržující verzi produktu v centrálním umístění, ke které přistupuje více uživatelů,
+mohou extrahovat obsah novější verze přes existující verzi.
+Pokud jste provedli vlastní změny v souboru AcsConfig.properties, před extrakcí obsahu nové verze
+produktu přes existující verzi si budete chtít soubor AcsConfig.properties uložit.  Po extrakci obsahu
+nové verze produktu a obnovení souboru AcsConfig.properties mohou uživatelé aktualizovat svoji instalaci
+spuštěním instalačního skriptu stejným způsobem, jako v počáteční instalaci.
+<p>
+Pokud jste zvolili instalaci produktu bez použití instalačních skriptů extrakcí obsahu archivu zip
+do vybraného umístění, a nyní chcete produkt aktualizovat, je třeba extrahovat obsah novější verze
+produktu přes existující verzi.
+Mějte na paměti, že pokud jste provedli vlastní změny, je třeba uložit a obnovit obsah souboru AcsConfig.properties.
+
+<hr><h3><a id="6.0"></a>6.0 Oprávnění k souborům</h3>
+<p>
+<a href="#7.0">Část 7.0 Spuštění produktu</a> popisuje několik různých způsobů spouštění produktu
+IBM i Access Client Solutions.  Pokud budete ke spuštění produktu používat jeden
+z poskytnutých binárních souborů nebo skriptů, musíte se ujistit, že mají jeho
+oprávnění souboru povolené oprávnění k provedení.  Oprávnění k souborům přiřazená
+při rozbalování souboru archivu zip jsou určena několika faktory včetně operačního
+systému, obslužného programu archivu použitého k rozbalení archivu zip, oprávnění
+uživatele atd.
+<p>
+Pokud máte problémy s použitím jednoho z poskytnutých binárních souborů nebo skriptů,
+zkontrolujte oprávnění souboru.  Následující části popisují některé metody pro kontrolu
+oprávnění souboru.
+
+
+<h3><a id="6.1"></a>6.1 Oprávnění k souborům (Linux, Mac, AIX)</h3>
+<p>
+V systémech typu unix můžete oprávnění k souborům kontrolovat zadáním následujícího
+příkazu do shellu nebo okna terminálu:<br>
+<pre>    ls -l &lt;soubor&gt;   			</pre>
+<p>
+Chcete-li změnit oprávnění k souboru, můžete použít příkaz:<br>
+<pre>    chmod &lt;oprávnění&gt; &lt;soubor&gt;	</pre><br>
+Například<br>
+přidat oprávnění pro čtení a zápis pro všechny:
+<pre>
+    chmod a+rx &lt;soubor&gt;
+</pre>
+udělit vlastníkovi souboru oprávnění pro čtení/zápis/spuštění a všem ostatním jen pro čtení/spuštění:
+<pre>
+    chmod 755 &lt;soubor&gt;
+</pre>
+<p>
+Další nápověda pro příkazy ls a chmod je snadno přístupná na Internetu.
+
+
+
+<h3><a id="6.2"></a>6.2 Oprávnění k souborům (Windows)</h3>
+<p>
+V systému Windows při zobrazení souboru pomocí průzkumníka Windows klepněte pravým tlačítkem
+na soubor a vyberte volbu Vlastnosti.  Karta Zabezpečení
+by měla obsahovat oprávnění k souboru.  Ujistěte se, že máte oprávnění ke čtení a spuštění.
+<p>
+V dřívějších verzích systému Windows můžete také k zobrazení a změně oprávnění
+souboru použít příkaz icacls.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Spuštění produktu</h3>
+<p>
+Produkt IBM i Access Client Solutions lze spustit různými způsoby.
+Pokud jste pro instalaci produktu použili instalační skripty, najdete nejsnazší způsob spuštění
+produktu ve <a href="./QuickStartGuide_en.html">Stručné úvodní příručce</a>.
+<p>
+Pokud nebyl produkt nainstalován pomocí instalačních skriptů, zbytek této sekce popisuje
+ostatní způsoby spuštění produktu.
+Jelikož však existují různé způsoby a umístění instalace prostředí Java, mohou některé
+metody vyžadovat další konfiguraci.  Pokud jedna z níže uvedených metod nefunguje,
+zkuste jinou metodu. V některých případech je poskytnuto další vedení.  Užitečná může
+být také část <a href="#11.0">11.0 Nejčastější dotazy (FAQ)</a>.
+<p>
+Při použití binárního souboru nebo skriptu, jak je popsáno níže, se musí binární
+soubor nebo skript nacházet v adresářové obsažené v archivu zip.  Podle potřeby
+můžete také zkopírovat/přesunout binární soubor(y) a/nebo skript pro platformy
+do stejného adresáře, ve kterém existuje soubor acsbundle.jar.
+
+
+<h3><a id="7.1"></a>7.1 Spuštění produktu</h3>
+<p>
+Chcete-li spustit produkt z prohlížeče souborů (například Průzkumník Windows,
+Mac OS X Finder atd.) pomocí binárního souboru specifického pro danou platformu,
+vyhledejte podadresář v tabulce Spuštění_Programy, který identifikuje váš operační systém
+a hardwarovou architekturu.
+<p>
+Vyhledejte binární soubor, který váš operační systém rozpoznává. Pak na něj
+poklepejte a spusťte produkt.
+Produkt můžete pomocí tohoto binárního souboru také spustit z příkazového řádku,
+terminálu nebo shellu.
+<p>
+Pokud obdržíte tuto chybu:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Chyba při načítání modulu Java."<br>
+Produkt IBM i Access Client Solutions nenalezl v rozpoznaném umístění
+instalaci Java.  Můžete zkusit jednu z následujících metod v sekcích:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Spouštění produktu - Další možnosti</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Spouštění produktu (s použitím skriptu)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Spouštění produktu (s použitím příkazového řádku)</a><br>
+<p>
+Technická poznámka pro Mac:<br>
+Budete-li vyzváni k instalaci produktu "Java 6 SE runtime", nemusíte
+produkt Java 6 instalovat.  Nainstalujte produkt Java 8 a pokuste se spustit produkt znovu.
+Pokud používáte ke spuštění produktu soubor acslaunch_mac a nadále jste vyzývání
+k instalaci produktu "Java 6 SE runtime", přejděte do obslužných programů a spusťte relaci
+terminálu. Spusťte následující příkazy, a pak zkuste spustit produkt znovu:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Spuštění produktu - další možnosti</h3>
+<p>
+Při zkoušení použít binární soubor určený pro vaši platformu můžete také zkusit jednu
+z následujících metod.  Tyto metody vám umožňují identifikovat, které prostředí JRE (Java Runtime Environment)
+by mělo být použito ke spuštění produktu.  V části <a href="#7.1.2">7.1.2 Vyhledání domovské cesty prostředí Java</a>
+zjistíte, jak vyhledat domovskou cestu prostředí Java na vaší stanici.  Tyto další metody jsou podporovány pouze na platformách Linux a Windows:
+   1.
+<ul>
+<li>Nastavte proměnnou prostředí JAVA_HOME na domovskou cestu prostředí Java (NEBO)
+<li>Použijte volbu -vm v binárním příkazu a uveďte cestu k domovské stránce jazyka
+      Java.  Uvedením  volby -h v binárním příkazu získejte další nápovědu  (NEBO)
+<li>Zkopírujte adresářovou strukturu prostředí JRE (Java Runtime Environment) do stejného
+      adresáře jako binární soubor, který se pokoušíte použít.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Vyhledání domovské cesty prostředí Java</h3>
+<p>
+Můžete-li produkt spustit pomocí jedné z metod v části:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Spouštění produktu (pomocí skriptu)</a>  (NEBO)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Spouštění produktu (s použitím příkazového řádku)</a><br>
+můžete určit domovskou cestu prostředí Java na vaší pracovní stanici z hlavního grafického
+rozhraní produktu IBM i Access Client Solutions.  V pruhu nabídky vyberte<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Nápověda-&gt;O programu<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Cesta java.home se zobrazuje na tomto panelu.<br>
+<p>
+Vlastnost java.home obsahuje umístění cesty k domovské stránce jazyka Java pro
+vaši pracovní stanici.  Jedná se o cestu, kterou musíte uvést při nastavování
+proměnné prostředí JAVA_HOME nebo při použití volby -vm v příkazu.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Vyhledání domovské cesty prostředí Java (Windows)</h3>
+<p>
+Na platformě Windows vyhledejte soubor java.exe.  Binární soubor prostředí Java je
+obvykle umístěn v podadresáři bin nebo jre/bin pod domovskou cestou prostředí Java.
+Domovskou cestu prostředí Java lze použít při nastavování proměnné prostředí JAVA_HOME
+nebo při použití volby -vm v příkazu.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Vyhledání domovské cesty prostředí Java (Linux)</h3>
+<p>
+V systému Linux můžete použít příkaz "which":<br>
+<pre>
+    which java
+</pre>
+Takto získáte cestu k příkazu java nebo k jeho symbolickému odkazu.
+<p>
+Analyzujte všechny symbolické odkazy, dokud se konečně nedostanete ke skutečnému
+binárnímu souboru pro příkaz jazyka Java.  Symbolické odkazy můžete interpretovat pomocí příkaz ls
+s volbou -l:<br>
+<pre>
+    ls -l &lt;soubor&gt;
+</pre>
+Binární soubor prostředí Java je
+obvykle umístěn v podadresáři bin nebo jre/bin pod domovskou cestou prostředí Java.  Domovskou cestu prostředí Java lze použít při nastavování proměnné prostředí JAVA_HOME
+nebo při použití volby -vm v příkazu.
+
+
+
+<h3><a id="7.2"></a>7.2 Spuštění produktu (pomocí skriptu)</h3>
+<p>
+Od verze v1r1m5 byl adresář Start_Scripts přejmenován na Sample_Scripts a umístěn do adresáře Documentation.
+<p>
+Preferovaný způsob spuštění produktu je pomocí binárního souboru specifického pro platformu,
+který je dostupný v adresáři Start_Programs.  Skripty v adresáři Sample_Scripts by měly být použity
+pouze v případě, když binární spouštěcí program specifický pro platformu nefunguje.
+<p>
+Chcete-li produkt spustit z prohlížeče systému souborů (např. z Průzkumníka Windows,
+Mac OS X Finder atd.) pomocí některého z dodaných skriptů, v podadresáři
+Sample_Scripts vyhledejte skript, který je kompatibilní s operačním systémem.
+<p>
+Většina operačních systémů nezaložených na systému Windows má standardně
+k dispozici Perl.  Adresář Sample_Scripts/Linux_Mac_Other obsahuje skript Perl
+(se třemi různými příponami souborů), který lze použít ke spuštění produktu
+na jakékoli platformě, na které je k dispozici Perl.  Vyberte soubor, který má
+příponu souboru, kterou váš operační systém rozezná jako skript Perl.
+<p>
+Operační systémy založené na systému Windows mají standardně k dispozici
+JScript.  Adresář Sample_Script/Windows obsahuje JScript, který lze použít ke spuštění
+produktu na operačních systémech Windows.
+<p>
+Pomocí metody specifické pro platformu procházejte systém souborů (např. Windows
+Explorer, Mac OS X Finder atd.), vyhledejte skript, který váš operační systém
+rozeznává.  Pak na něj poklepejte a spusťte produkt.
+Produkt můžete pomocí tohoto skriptu také spustit z příkazového řádku, terminálu
+nebo shellu.
+
+
+
+<h3><a id="7.3"></a>7.3 Spuštění produktu (z příkazového řádku)</h3>
+<p>
+Produkt můžete také spustit z příkazového řádku z libovolného místa, kde můžete zadat příkaz
+(Příkazový řádek, Terminál, Shell atd.)<br>
+<pre>
+    java -Xmx1024m -jar &lt;cesta&gt;/acsbundle.jar
+</pre>
+kde &lt;cesta&gt; je umístění spustitelného souboru jar produktu<br>
+<br>
+Například:<br>
+<pre>
+    java -Xmx1024m -jar V:/some_location/acsbundle.jar
+</pre>
+nebo
+<pre>
+    &lt;java_path&gt;java -jar V:/some_location/acsbundle.jar
+</pre>
+kde &lt;java_path&gt; je umístění příkazu java pro prostředí JDK 6.0 nebo vyšší.
+<p>
+Určení úplné cesty k příkazu java najdete v části <a href="#7.1.2">7.1.2 Vyhledání domovské složky java</a>.
+<p>
+Z příkazového řádku můžete také použít jakýkoli program nebo skript. Například:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Technická poznámka:<br>
+Na většině platforem prostor haldy prostředí JVM standardně používá maximální
+velikost, která je příliš malá pro využití více funkcí v produktu IBM i Access
+Client Solutions.  Minimální doporučenou velikostí je jeden gigabajt maximální
+velikosti haldy (-Xmx1024m).  Uvedení velikostí menších než jeden gigabajt nebo
+použití výchozí velikosti haldy může mít za následek výjimku OutOfMemoryException.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Konfigurace</h3>
+<p>
+Přidejte konfiguraci systému pro každý systém IBM i, který chcete použít
+nebo spravovat.  Chcete-li přidat konfiguraci systému, vyberte z úloh Správa volbu
+Konfigurace systému. Pak klepněte na volbu Nové.  Na kartě Obecné zadejte název
+systému.  Chcete-li začít, je název systému nezbytný k provedení obecných úloh.
+<p>
+Když skončíte, uložte informace, které jste zadali pro tento systém, klepnutím
+na tlačítko OK, nebo vyberte volbu Uložit/Nový, pokud máte další systémy, které
+chcete přidat do konfigurace.
+<p>
+Pomocí karet Obecné, připojení nebo Konzola můžete kdykoli přidat nové systémy do své
+konfigurace, nebo můžete aktualizovat existující konfigurace.
+<p>
+Pro úlohy konzoly je požadována další konfigurace.  Konfigurace konzoly jsou
+automaticky přidružené k názvu systému, který jste zadali na kartě Obecné.
+Chcete-li
+zadat konfiguraci konzoly pro systém, vyberte z úloh Správa volbu
+Konfigurace systému.  Vyberte volbu Nová nebo Upravit.  Pak vyberte kartu Konzola.
+Úloha Konzola 5250 vyžaduje nakonfigurovanou konzolu sítě LAN nebo nakonfigurovanou
+konzolu HMC. Nemáte-li nakonfigurovanou konzolu LAN nebo HMC, prohlédněte oddíl <a href="#9.9">9.9 Ustanovení
+připojení konzoly k IBM i</a>.
+<p>
+Úloha Rozhraní správy hardwaru vyžaduje nakonfigurované rozhraní správy hardwaru.  Můžete
+zadat až dvě konfigurace rozhraní správy hardwaru.
+<p>
+Když skončíte, vyberte na panelu Konfigurace systému volbu Zavřít.
+<p>
+Pomocí rozevíracího rámečku Systém na hlavním panelu produktu IBM i Access Client
+Solutions vyberte systém.  Všechny úlohy konzoly automaticky přidružují vybraný systém
+(zadaný na kartě Obecné) ke konfiguraci konzoly (zadané na kartě Konzola).
+<p>
+Nyní můžete vybrat úlohu pro vybraný systém.  Pokud vyberete úlohu konzoly, která nemá
+na konfigurační kartě Konzola zadané odpovídající informace, zobrazí se chybová zpráva.
+
+
+
+<h3><a id="8.1"></a>8.1 Umístění konfigurace</h3>
+<p>
+Standardně bude mít každý uživatel svoje vlastní umístění
+pro konfiguraci. Kořenový adresář konfigurace je určen způsobem závislým na platformě.  Konfigurační
+adresáře budou vytvořeny během počátečního spuštění.  Chcete-li zjistit, kde je konfigurační adresář:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Spusťte produkt (viz část <a href="#7.0">7.0 Spuštění produktu)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Upravit-&gt;Předvolby<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Vyberte kartu Lokální nastavení<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Kořen konfigurace<br>
+<p>
+Umístění konfigurace nelze změnit, když je produkt spuštěn.  Chcete-li změnit umístění konfigurace,
+prohlédněte si oddíl <a href="#9.3">9.3 Změna umístění konfigurace</a>
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Pokročilá témata</h3>
+<h3><a id="9.1"></a>9.1 Další volby příkazového řádku</h3>
+<p>
+Mnoho z funkcí dostupných z hlavního grafického rozhraní je také dostupných
+z příkazového řádku.  Tyto funkce lze vyvolávat zadáním příslušných parametrů pro jakékoli
+volby příkazového řádku, které jsou uvedeny v:<br>
+    části <a href="#7.3">7.3 Spuštění produktu (z příkazového řádku)</a>
+<p>
+Například:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+V následujících částech budou zobrazeny pouze přídavné parametry:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;název_souboru&gt;]
+    &lt;název_souboru&gt; je název souboru, který se má vytvořit
+</pre>
+<p>
+Tato funkce uloží aktuální konfiguraci do uvedeného souboru.
+Výsledný soubor lze použít jako vstup pro volbu příkazového řádku Restore
+na stejné nebo jiné pracovní stanici (bez ohledu na operační systém).
+<p>
+Umístění ukládané konfigurace je určeno vlastností:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...která se nachází v souboru AcsConfig.properties.
+<p>
+Tato funkce je ekvivalentem volby Soubor-&gt;Konfigurace exportu z hlavního grafického
+rozhraní.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Restore</h3>
+<pre>
+/PLUGIN=restore /file=&lt;název_souboru&gt;
+    &lt;název_souboru&gt; je umístění souboru vytvořeného zálohováním
+</pre>
+Tato funkce obnoví uloženou konfiguraci z uvedeného souboru. Jakákoli konfigurace,
+která se nenachází v uvedeném souboru, bude ztracena.
+<p>
+Umístění obnovené konfigurace je určeno vlastností:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...která se nachází v souboru AcsConfig.properties.
+<p>
+Tato funkce je ekvivalentem volby Soubor-&gt;Konfigurace importu z hlavního grafického
+rozhraní.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;system&gt;
+</pre>
+Stáhne certifikační autoritu z uvedeného systému IBM i a obnoví ji v lokálním
+úložišti údajů o důvěryhodnosti uživatele. Funkce je požadována pro ověření
+serveru pomocí zabezpečení SSL.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST     - seznam nakonfigurovaných systémů s jejich volbami připojení
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;system&gt; [/ipaddr=&lt;frequency&gt;] [/userid=&lt;userid&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;path&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - název systému
+    /ipaddr     - je-li požadováno připojení,  tato hodnota určuje, zda
+                  dojdek vyhledání adresy IP. Platné frekvence
+                  jsou:
+                      ALWAYS - vyhledat adresu IP pro každé připojení
+                      HOURLY, DAILY, WEEKLY - vyhledat adresu IP po uplynutí
+                          určeného času od posledního vyhledání
+                      IP address - je-li uvedena adresa IP, frekvence vyhledávání
+                          předpokládá hodnotu NEVER
+    /userid     - ID uživatele
+                  lze také nastavit na následující hodnoty:
+                      *SHARE        - jednou vyzve k zadání přihlašovacích pověření,
+                                      která budou sdílena systémy používajícícmi tuto volbu
+                      *PROMPTALWAYS - vyzve alespoň jednou při každém připojení
+                      *KERBEROS     - použít název činitele ověřování Kerberos, bez výzvy
+    /ssl        - přepnutí na 0 vypne režim SSL, na 1 jej zapne
+    /5250path   - cesta k profilům emulace 5250
+                  /5250path lze nastavit pomocí volby Soubor-&gt;Změnit adresář... ze
+                  Správce relací 5250
+    /del odstraní existující konfiguraci
+    /r   nahradí existující konfiguraci
+</pre>
+Tato funkce umožňuje nastavení různých voleb konfigurace z příkazového řádku.
+Volby lze také nastavit z hlavního grafického rozhraní pomocí volby Konfigurace systému.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;options&gt;]
+</pre>
+Vyžádá od všech spuštěných procesů v rámci produktu výpis paměti svých podprocesů.  Tyto
+informace použije služba IBM pro poskytnutí podpory při problémech.
+<p>
+Ke generovaným protokolům lze přistoupit z hlavního grafického rozhraní pomocí voleb:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Upravit-&gt;Předvolby<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Karta Místní nastavení<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Adresář Dumps<br>
+<p>
+Pokud nejsou určeny žádné volby, je tato funkce ekvivalentem následující
+funkce z hlavního grafického rozhraní:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Nástroje-&gt;Generovat protokoly služeb
+<p>
+Platné volby jsou:
+<pre>
+    /heapdump - provede výše uvedené plus výpis paměti haldy JVM
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Zabalí existující protokoly a výpisy paměti podprocesů do souboru zip, který lze
+odeslat společnosti IBM pro službu.
+<p>
+K výslednému souboru zip lze přistoupit z hlavního grafického rozhraní pomocí voleb:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Upravit-Předvolby<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Karta Místní nastavení<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Adresář Service<br>
+
+Tato funkce je ekvivalentem volby Nástroje-&gt;Zabalit protokoly služeb z hlavního grafického
+rozhraní.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;úroveň&gt;
+                &lt;úroveň&gt; je jedna z těchto podporovaných úrovní protokolování:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Tento modul plug-in umožňuje uživatelům přepínat úroveň z příkazového řádku.
+<p>
+Úroveň protokolování lze také nastavit z hlavního grafického rozhraní pomocí voleb:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Upravit-&gt;Předvolby<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Karta Obecné<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Úroveň protokolování<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;id_uživatele&gt;] [/PASSWORD=&lt;heslo&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - název systému
+    /USERID   - ID uživatele
+    /PASSWORD - heslo přidružené k ID uživatele
+    /AUTH     - pokusí se o připojení k systému s uvedenými přihlašovacími pověřeními
+                a uloží je do mezipaměti pouze při úspěchu
+    /C        - vymaže mezipaměť
+    /GUI      - určuje, zda se použije grafické uživatelské rozhraní
+</pre>
+Tento příkaz uloží ID uživatele a heslo do mezipaměti, což lze použít k zabránění
+výzvám k zadání hesla.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Zobrazí stejný grafický panel jako volba hlavního grafického rozhraní Upravit-&gt;Předvolby.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;options&gt;]
+
+Platné volby jsou:
+    /killdaemon     - ukončí podprocesy démonu
+                      Stejné jako volba Nástroje-&gt;Resetovat pro údržbu
+    /clearpwcaches  - vymaže všechna hesla v mezipaměti
+    /clearjarcache  - vymaže mezipaměť souborů jar produktu
+    /clearlogs      - vymaže adresář protokolů určený volbou Upravit-&gt;Předvolby
+                      Karta Místní nastavení z hlavního grafického rozhraní
+    /cleardumps     - vymaže adresář pro výpisy určený volbou Upravit-&gt;Předvolby
+                      Karta Místní nastavení z hlavního grafického rozhraní
+    /clearsvcdir    - vymaže adresář služeb určený volbou Upravit-&gt;Předvolby
+                      Karta Místní nastavení z hlavního grafického rozhraní
+    /clearsettings  - vymaže všechna nastavení pro aktuálního uživatele
+</pre>
+Pokud nejsou uvedeny žádné volby, nebudou provedeny žádné akce.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;systém&gt; [&lt;/volby&gt;]
+    Volby zahrnují:
+        /SSL=&lt;1|0&gt;        Zapnutí nebo vypnutí SSL
+        /ACCEPTALLCERTS=&lt;1|0&gt; Zda se mají či nemají automaticky přidat všechny SSL
+                          certifikáty do důvěryhodné sady (při použití SSL).
+        /SERVERAUTH=&lt;1|0&gt; Zapnutí nebo vypnutí ověření serveru SSL (předvolba je
+                          je vypnuto). Tato volba nemá význam, pokud se netestuje SSL.
+        /GUI=&lt;1|0&gt;        Zapnutí/vypnutí okna grafického rozhraní (předvolba
+                          je vypnuto, pokud se spouští z příkazového řádku)
+        /PORTS=&lt;port1,port2&gt; Čárkami oddělený seznam portů, které se mají testovat.
+                Mohou to být čísla nebo názvy služeb (např. /PORTS=as-signon,as-sts).
+                Není-li uvedeno, testuje se standardní sada portů.
+                Uvedení volby .CONSOLE zkontroluje seznam portů specifických pro konzolu.
+
+        /TIMEOUT=&lt;seconds&gt;   Uveďte hodnotu časového limitu v sekundách.
+</pre>
+Tento modul plug-in kontroluje připojení k systému IBM i tak, že otevře připojení
+na odpovídající port.  Pokud se ověřuje připojení SSL, zkouší se navázání
+komunikace přes SSL.
+Pokud je spuštěno z hlavního grafického rozhraní nebo s volbou volby /GUI=1,
+zobrazí modul plug-in dialogové okno.  Pokud je spuštěno z příkazového řádku
+bez volby /GUI=1, je výstup odeslán na konzolu.
+<p>
+Standardně jsou kontrolovány následující služby:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central, as-rmtcmd, as-database, as-dtaq, as-file, as-netprt, drda,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+Tuto funkci lze spustit z hlavního grafického rozhraní volbami:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Konfigurace systému<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Vybrat systém a poté volbu Upravit<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Karta Obecné<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Ověřit připojení<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Tento modul plug-in spustí grafické rozhraní správce relací 5250.
+<p>
+Tato funkce je stejná jako volba Správce relací z hlavního grafického rozhraní.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;systém&gt; [/&lt;volby&gt;]
+
+Tento modul plug-in spustí emulátor 5250 pro uvedený systém.
+Tato funkce je stejná jako volba Emulátor 5250 z hlavního grafického rozhraní.
+
+Platné volby jsou:
+    /id=&lt;A-Z&gt;                    - krátké id relace
+    /name=&lt;název&gt;                - název relace
+    /wsid=&lt;identifier&gt;           - id pracovní stanice
+    /wide=&lt;1|0|true|false&gt;       - použít širokou obrazovku (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - použít celou obrazovku
+    /nosave=&lt;1|0|true|false&gt;     - při ukončení neukládat nastavení
+    /prompt=&lt;1|0|true|false&gt;     - vynutit zobrazení konfiguračního dialogu
+    /port=&lt;port&gt;                 - číslo portu
+    /ssl=&lt;1|0|true|false&gt;        - připojit pomocí zabezpečených soketů
+    /sso=&lt;1|0|true|false&gt;        - vynechat přihlašovací obrazovku
+    /kerberos                          - použít Kerberos
+    /width=&lt;width&gt;               - počáteční šířka okna emulátoru
+    /height=&lt;height&gt;             - počáteční výška okna emulátoru
+    /xpos=&lt;xpos&gt;                 - počáteční souřadnice x levého horního
+                                   rohu okna emulátoru
+    /ypos=&lt;ypos&gt;                 - počáteční souřadnice y levého horního
+                                   rohu okna emulátoru
+    /watermark                         - zobrazit název systému na obrazovce jako vodoznak
+    /watermark=&lt;text&gt;            - zobrazit uvedený text na obrazovce jako vodoznak
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Tento modul plug-in spustí hlavní grafické rozhraní pro Přenos dat.
+
+Tato funkce je stejná jako volba Přenos data z hlavního grafického rozhraní.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - ID uživatele použité při připojení k cílovému systému
+    &lt;filename&gt;- soubor s příponou .dtfx vytvořený z předchozího stahování
+                pomocí funkce přenosu souborů.
+</pre>
+Modul plug-in umožňuje uživateli spustit dříve uložené stažení přenosu dat.
+<p>
+Přenos dat je také dostupný z hlavního grafického rozhraní výběrem volby Přenos dat.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - ID uživatele použité při připojení k cílovému systému
+    &lt;filename&gt;- soubor s příponou .dttx vytvořený z předchozího odesílání
+                pomocí funkce přenosu souborů.
+</pre>
+Modul plug-in umožňuje uživateli spustit dříve uložené odeslání přenosu dat.
+<p>
+Přenos dat je také dostupný z hlavního grafického rozhraní výběrem volby Přenos dat.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;system&gt;
+                          [/userid=&lt;userid&gt;]
+                          {/hostfile=&lt;library/filename&gt; | /sql="statement"}
+                          {/clientfile=&lt;path&gt;&lt;filename&gt;.&lt;extension&gt; | /display}
+
+    /userid   - ID uživatele použité při připojení k cílovému systému
+    /hostfile   - Zdrojová knihovna a soubor ke stažení ze systému IBM i
+                  např.: /hostfile=QIWS/QCUSTCDT
+    /sql        - Uveďte příkaz SQL
+                  např.: /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - Umístění cílového souboru ke stažení.
+                  Formát tohoto souboru bude určen uvedenou příponou
+                  (například .csv, .ods, .xlsx, .xlsx)
+                  Pokud není uvedena přípona souboru, nebo pokud uvádí
+                  nepodporovaný typ souboru, jsou data formátována jako soubor .csv
+    /display    - zapsat výstup na terminál
+</pre>
+Modul plug-in umožňuje uživateli spustit jednoduché stažení celého souboru
+z příkazového řádku.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;system&gt;
+</pre>
+Tento modul plug-in spustí konzolu 5250 pro uvedený systém.
+<p>
+Tato funkce je stejná jako volba Konzola 5250 z hlavního grafického rozhraní.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;system&gt;
+</pre>
+Tento modul plug-in spustí virtuální ovládací panel pro uvedený systém.
+<p>
+Tato funkce je stejná jako volba Virtuální ovládací panel z hlavního grafického
+rozhraní.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;system&gt;
+</pre>
+Tento modul plug-in spustí prohlížeč pro produkt IBM Navigator for i pomocí
+uvedeného systému a portu 2001.
+<p>
+Tato funkce je stejná jako volba Navigator for i z hlavního grafického rozhraní.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;system&gt;
+</pre>
+Tento modul plug-in zobrazí grafické rozhraní tiskového výstupu pro zobrazení a
+stažení souborů pro souběžný tisk ze systému IBM i.
+<p>
+Tato funkce je stejná jako volba Tiskový výstup z hlavního grafického rozhraní.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Tento modul plug-in zobrazí Nástroj správy klíčů.
+<p>
+Funkce je ekvivalentem volby Nástroje-&gt;Správa klíčů v hlavním grafickém rozhraní.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;system&gt;
+                  {/CMD="&lt;CL command&gt;" | file=&lt;file_name&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;příkaz CL&gt;"   - příkaz, který se má spustit. Použitím uvozovek se vyvarujete
+                           přerušení příkazu, pokud obsahuje mezery.
+    /file=&lt;file_name&gt;    - uveďte vstupní soubor s více příkazy. Příkazy
+                           by měly být každý na samostatném řádku bez uvozovek.
+    /noprompt=&lt;1|0&gt;      - při uvedení vstupního souboru ignorovat výsledky a
+                           jakékoli výzvy, aby zpracování mohlo pokračovat.
+</pre>
+Tento modul plug-in odešle příkaz(y) CL na uvedený systém.
+<p>
+Tato funkce je k dispozici pouze z příkazového řádku.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;system,system,system,...&gt;
+</pre>
+Tento modul plug-in změní heslo na uvedených systémech.  Vyzve uživatele k zadání
+ID uživatele, starému a novému heslu.
+<p>
+Tuto funkci lze také použít z hlavního grafického rozhraní výběrem
+karty Hesla z nabídky Upravit-&gt;Předvolby.
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;option&gt; /SYSTEM=&lt;systém&gt;
+
+&lt;systém&gt; může být nastaven na jeden název systému nebo na *ALL, což značí všechny systémy.
+
+Platné volby jsou:
+    /IMPORT - Zkopírovat jednu (nebo všechny) konfigurace systému ze starší konfigurace Windows
+              do produktu IBM i Access Client Solutions.
+    /EXPORT - Zkopírovat jednu konfiguraci systému (nebo všechny) do starší konfigurace
+              systému Windows z produktu IBM i Access Client Solutions.
+    /DELETE - Odstranit jednu konfiguraci systému (nebo všechny) ze starší konfigurace
+              systému Windows.
+</pre>
+Tento modul plug-in poskytuje schopnost zkopírovat konfigurací systému zpět a dále mezi
+produktem IBM i Access Client Solutions a starší konfigurací systému Windows podporovanou
+produktem IBM i Access for Windows.
+<p>
+Tuto funkci lze také použít z hlavního grafického
+rozhraní výběrem volby Soubor-&gt;Kopírovat připojení.
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Poznámka: Modul plug-in je dostupný pouze pro uživatele typu root či pro uživatele s oprávněním administrátora.
+<pre>
+/PLUGIN=restrict /&lt;options&gt;
+
+ Platné volby jsou:
+     /restrict=&lt;func1,func2,func3&gt;   Omezuje použití dané funkce na této
+                                     pracovní stanici.
+     /unrestrict=&lt;func1,func2,func3&gt; Povoluje danou funkci na této
+                                     pracovní stanici.
+     /list                           Vypisuje, zda jsou funkce na této pracovní stanici povoleny nebo omezeny.
+     /export=&lt;file&gt;                  Omezení exportu do uvedeného souboru
+                                     s příponou .acsr
+     /import=&lt;file&gt;.acsr             Omezení importu ze souboru
+                                     s příponou .acsr
+     /exportreg=&lt;file&gt;               Export souboru registru Windows (soubor .reg).
+
+</pre>
+<p>Tento modul plug-in poskytuje komukoli s oprávněním administrátora nebo uživatele root
+schopnost omezit určité funkce ze všech uživatelů na aktuální pracovní stanici.
+<pre>
+   Funkce             Popis
+    cfg             Konfigurace systému
+    sm              Správce relací 5250
+    5250            Emulátor 5250
+    vcp             Virtuální ovládací panel
+    console         Konzola 5250
+    consoleprobe    Vyhledání konfigurací konzoly v místní síti
+    hmcprobe        Vyhledání logických oblastí v konzole HMC
+    hmi1            Rozhraní správy hardwaru 1
+    hmi2            Rozhraní správy hardwaru 2
+    keyman          Správa certifikátu SSL/TLS
+    dtgui           Grafické rozhraní přenosu dat
+    upload          Dávkové odesílání pomocí přenosu dat
+    download        Dávkové stahování pomocí přenosu dat
+    cldownload      Dávkové stahování pomocí přenosu dat
+    l1c             IBM Navigator for i (konzola úrovně 1)
+    rmtcmd          Vzdálený příkaz (dostupný z příkazového řádku)
+    splf            Tiskový výstup (soubory pro souběžný tisk)
+    ifs             Integrovaný systém souborů
+    db2             Schémata
+    rss             Spustit skripty SQL
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+    checkupdates    Kontrola dostupných aktualizací
+    ssh             Secure Shell
+</pre>
+<p>Funkce lze také vyloučit pomocí klíčových slov skupiny:
+<pre>
+   Skupina           Funkce
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+Možnost omezit funkce je administrátorovi nebo uživateli s oprávněním uživatele root
+také k dispozici z grafického rozhraní.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Upravit-&gt;Předvolby<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Karta Omezení<br>
+
+<p>
+Jednoduchý způsob omezení funkcí na více pracovních stanicích najdete v části <a href="#9.5">9.5 Vlastní balíky</a>.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Vypisuje funkce momentálně omezené na této pracovní stanici.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;filetype&gt; &lt;filetype&gt; ...] [/c]
+
+    &lt;filetype&gt;   - platné typy souborů:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - vymazat přidružení souborů pro uvedené typy souborů
+</pre>
+Na platformě Windows nastavuje přidružení souboru pro soubory typu .dttx, .dtfx,
+.hod, .bchx, .ws a .bch.  Na platformě jiné než Windows se zobrazí chybová zpráva.
+<p>
+Funkce je ekvivalentem volby Nástroje-&gt;Přidružení souborů v hlavním grafickém rozhraní.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - ID uživatele použité při připojení k cílovému systému
+    &lt;filename&gt;- soubor s příponou .dtfx nebo .dttx vytvořený z předchozího
+                odeslání nebo stažení pomocí přenosu souborů.
+                S tímto klíčovým slovem nebo bez něj lze uvést více souborů.
+</pre>
+Modul plug-in umožňuje uživateli spustit dříve uložený požadavek na přenos dat.
+<p>
+Přenos dat je také dostupný z hlavního grafického rozhraní výběrem volby Přenos dat.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;soubor&gt; ... /output=&lt;adresář&gt;] [/verbose] [/gui]
+
+    /Input    - Soubory k migraci. Soubory musí být soubory 5250 s
+                příponou .ws, .bch, .kmp, .pmp, or .bar.
+    /output   - umístění, kam budou uloženy migrované soubory.
+    /verbose  - zobrazení výsledků migrovaných souborů.
+    /gui      - spuštění uživatelského rozhraní pro migraci souborů 5250.
+</pre>
+Modul plug-in umožňuje uživateli migrovat soubory z produktu IBM i Access for Windows
+Personal Communications do emulátoru IBM i Access Client Solutions.
+Některé převedené soubory budou mít novou příponu souboru.  Viz oddíl
+ <a href="#9.6.2">9.6.2 Migrace emulace 5250</a>. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - Otevřít uvedený soubor
+    /SQL=&lt;filename&gt;  - Otevřít uvedený soubor
+    /AUTORUN=&lt;1,0&gt;   - Automaticky spustit skript
+</pre>
+Modul plug-in umožňuje uživateli spouštět příkazy SQL a CL.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [Options]
+
+Platné volby jsou:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Akce k provedení:
+                      Volbu LIST lze použít s argumentem LISTNAME a zobrazí
+                      SQL Performance Center s uvedeným seznamem.
+                      Volba ANALYZE analyzuje danou datovou sadu výkonu.
+                      Volba STATEMENTS zobrazí příkazy buď pro vyčleněnou mezipaměť SQL nebo
+                      danou datovou sadu výkonu.
+                      Volba COMPARE porovná dané datové sady výkonu.
+    /NAME=&lt;název&gt;   - Název datové sady výkonu
+    /TABLE=&lt;název&gt;  - Název tabulky obsahující data o výkonu
+    /SCHEMA=&lt;název&gt; - Název schématu tabulky obsahující data o výkonu
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - Počáteční seznam zobrazený v modulu SQL Performance Center.
+</pre>
+Modul plug-in SQL Performance Center poskytuje sadu nástrojů, které vám v databázových aplikacích pomohou optimalizovat SQL:
+<ul>
+<li>Analyzovat - Poskytuje souhrnný pohled na shromážděná data o výkonu, která slouží jako výchozí bod pro hloubkovou analýzu s přechody na podrobnější úrovně.
+<li>Porovnat - Zobrazí souhrnné porovnání dvou nebo více kolekcí dat výkonu, pak umožní zvolit dva pro hlubší porovnání příkazů.
+<li>Zobrazit příkazy - Práce s příkazy SQL ve vyčleněné mezipaměti SQL nebo v kolekci dat o výkonu.
+<li>Visual Explain - Generování grafického znázornění plánu provádění příkazů, na kterých je vidět, jak vaše příkazy SQL pracují.
+<li>Vyčleněná mezipaměť SQL - Správa nastavení systémové vyčleněné mezipaměti SQL.
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+Integrovaný Systém souborů poskytuje rozhraní pro procházení integrovaného systému souborů v systému IBM i,
+a pro práci s objekty v integrovaném systému souborů následujícími způsoby:
+<ul>
+<li>Kopírovat objekty mezi klientským systémem a systémem IBM i.
+<li>Kopírovat objekty v integrovaném systému souborů na systému IBM i nebo do integrovaného systému souborů na jiný systém IBM i.
+<li>Odesílat objekty do jiného systému IBM i (nebo do více).
+<li>Vytvářet nové složky (adresáře, knihovny a složky).
+<li>Odstraňovat objekty.
+<li>Přejmenovat objekty.
+<li>Zobrazit vlastnosti objektů.
+</ul>
+Požadavky a omezení při použití tohoto modulu plug-in naleznete v oddíle <a href="#9.12">9.12 IFS (Integrated File System)</a>.
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+Modul plug-in poskytuje rozhraní pro správu databází Db2 for i na systému IBM i.
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+Modul plug-in poskytuje rozhraní pro kontrolu dostupných aktualizací.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;systém&gt;
+</pre>
+Terminál SSH spustí již nainstalovaného klienta SSH (emulace terminálu) na vašem PC
+do integrovaného systému souborů IBM i.
+
+
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Přidružení souborů</h3>
+<p>
+Některé konfigurační soubory generované produktem IBM i Access Client Solutions
+jsou podporovány z příkazového řádku, pokud jsou poskytovány jako první a jediný parametr.
+Když jsou tyto soubory se specifickou příponou uvedeny jako první parametr,
+přidruží produkt IBM i Access Client Solutions soubor k funkci, která se má vyvolat,
+a poskytne pro tuto funkci soubor jako vstup.
+<p>
+Následující přípony mají podporu přidružení souboru:
+<pre>
+    .dttx   - požadavek na odeslání pomocí přenosu souborů
+    .dtfx   - požadavek na stažení pomocí přenosu souborů
+    .hod    - profil relace emulátoru 5250
+    .bchx   - profil více relací emulátoru
+    .ws     - profil relace emulátoru 5250 (Personal Communications)
+    .bch    - profil více relací emulátoru (Personal Communications)
+</pre>
+Příklady příkazového řádku:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - spustí uloženou operaci stažení
+    acslaunch_xxx dt_upload_file.dttx   - spustí uloženou operaci odeslání
+    acslaunch_xxx system_lp13ut20.hod   - spustí relaci 5250 se systémem
+</pre>
+...kde acslaunch_xxx je syntaxe příkazového řádku použitá pro spuštění produktu. Viz
+oddíl <a href="#7.3">7.3 Spuštění produktu (z příkazového řádku)</a>.
+<p>
+Tato podporované přidružení souboru příkazového řádku umožňují uživateli
+ručně nastavit přidružení souboru specifická pro operační systém.  Poněvadž
+jsou přidružení souboru závislá na platformě, závisí požadované kroky
+na operačním systému.
+</p>
+Důvodem, proč můžete zvažovat nastavení přidružení souboru pro operační systém je,
+že máte možnost poklepáním na soubor (jednoho z výše uvedených podporovaných typů
+souborů) spustit označenou funkci.
+<p>
+Následující části poskytují některé příklady nastavení přidružení souboru
+pro některé operační systémy.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Přidružení souborů (Windows)</h3>
+<ol>
+<li>Z pruhu nabídky hlavního grafického rozhraní vyberte volbu Nástroje-&gt;Přidružení souborů...
+<li>Vyberte typy souborů, pro které chcete vytvořit přidružení.
+<li>Klepněte na tlačítko OK.
+</ol>
+<p>
+Při poklepání na soubory tohoto typu bude nyní vždy spuštěna odpovídající
+funkce produktu IBM i Access Client Solutions.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Změna ikony (zástupce Windows)</h3>
+<ol>
+<li>Vyhledejte zástupce dříve vytvořeného pro binární soubor vhodný pro vaši hardwarovou
+architekturu (acslaunch_win32.exe nebo acslaunch-_win64.exe).
+<li>Klepněte pravým tlačítkem myši a vyberte volbu Vlastnosti.
+<li>Vyberte kartu Zástupce.
+<li>Klepněte na tlačítko Změnit ikonu...
+<li>Vyberte ikonu, která se má použít pro tohoto zástupce.
+<li>Klepněte na tlačítko OK.
+<li>Klepněte na tlačítko OK.
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Nastavení ikony na ploše (Linux)</h3>
+<p>
+Postupujte podle <a href="./QuickStartGuide_en.html">Stručné úvodní příručky</a> pro Linux.  Tím
+nainstalujete aplikaci do adresáře /opt/ibm/iaccessclientsolutions.  Také se vytvoří:
+/usr/share/applications/IBM i Accesss Client Solutions.desktop
+<p>
+Chcete-li vytvořit ikonu pro produkt na pracovní ploše, zkopírujte výše uvedený
+soubor .desktop do složky Desktop.  Možná budete muset upravit oprávnění souboru
+na pracovní ploše, aby bylo možné jej spouštět.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Přidružení souborů (Linux)</h3>
+<p>
+Postup nutný k nastavení přidružení souborů bude záviset na použité distribuci systému
+Linux a prostředí pracovní plochy.  Obecně budou požadované kroky
+podobné níže uvedeným krokům použitým pro systém Windows.
+<ol>
+<li>Vyhledejte soubor, který chcete přidružit, který má podporovanou příponu
+   (např. .hod, .bchx, .dtfx nebo .dttx).
+<li>Klepněte pravým tlačítkem myši na soubor. Vyhledejte volby nebo vlastnosti,
+   které vám umožňují přidružit program k souboru.
+<li>Přidružte soubor a/nebo jeho příponu k odpovídajícímu binárnímu souboru nebo
+  skriptu, kterým se spouští produkt IBM i Access Client Solutions.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Přidružení souborů (Mac)</h3>
+<p>
+Chcete-li použít přidružení souborů v systému Mac, typ souboru musí být přidružen
+k aplikaci.  Postupujte podle <a href="./QuickStartGuide_en.html">stručné úvodní příručky</a> pro Mac,
+abyste produkt IBM i Access Client Solutions měli jako nainstalovanou aplikaci.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Vytvoření přidružení souborů (pro Mac)</h3>
+<ol>
+<li>Pomocí aplikace Finder vyhledejte soubor s podporovanou příponou
+(e.g. .hod, .bchx, .dtfx, nebo .dttx), který chcete přidružit.
+<li>Vyberte soubor, a pak volby Soubor-&gt;Získat informace.
+<li>Pod položkou "Otevřít pomocí:" vyberte volbu Ostatní.
+<li>Přejděte do umístění aplikace IBM i Access Client Solutions.
+<li>Vyberte aplikaci.
+<li>Zaškrtněte políčko Otevírat vždy v programu.  Zvolte
+   volbu Přidat.
+<li>V položce "Otevřít pomocí:" vyberte volbu Změnit vše.  V ostatních dialogových oknech vyberte volbu Pokračovat.
+</ol>
+<p>
+Při poklepání na soubory tohoto typu bude nyní vždy spuštěna odpovídající
+funkce produktu IBM i Access Client Solutions.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Změna ikony (pro Mac)</h3>
+<p>
+Pomocí aplikace Preview vyhledejte složku Icons v adresáři produktu
+a pomocí aplikace Finder nahraďte ikonu pod volbou Získat informace.
+<ol>
+<li>Z aplikace Preview vyberte volbu Soubor-&gt;Otevřít.
+<li>Vyhledejte v produktu adresář Icons.
+<li>Vyberte soubor, který obsahuje ikonu, a použijte volbu Otevřít.
+<li>Vyberte volbu Upravit-&gt;Vybrat vše.
+<li>Vyberte volbu Upravit-&gt;Kopírovat.
+<li>Z aplikace Finder vyhledejte soubor .hod, .bchx, .dtfx, nebo .dttx, jehož ikonu chcete změnit.<br>
+   Pokud se soubor již nachází na pracovní ploše, klepnutím jej vyberte.  Jinak vyberte volbu
+Přejít-&gt;Přejít do složky, zadejte cestu k souboru a pak použijte tlačítko Přejít.<br>
+   Klepnutím na soubor jej vyberte.
+<li>Soubor-&gt;Získat informace.
+<li>Klepněte na ikonu v horní části okna Získat informace.
+<li>Upravit-&gt;Vložit.
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Změna umístění konfigurace</h3>
+<p>
+Standardně bude mít každý uživatel svoje vlastní umístění
+pro konfiguraci. Umístění konfigurace lze změnit nastavením vlastnosti:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Tato vlastnost existuje v souboru AcsConfig.properties.
+<p>
+Při dodání produktu existuje soubor AcsConfig.properties ve dvou umístěních. Je obsažen v souboru acsbundle.jar.  Pro větší pohodlí je také poskytnut v archivním
+souboru zip produktu a bude po rozbalení archivu zip umístěn ve stejném adresáři
+jako soubor acsbundle.jar.
+<p>
+Během spuštění bude produkt používat pouze první soubor AcsConfig.properties,
+který najde.  Nejprve kontroluje adresář, ve kterém existuje soubor acsbundle.jar.
+Pokud není soubor AcsConfig.properties nalezen ve stejném adresáři jako soubor
+acsbundle.jar, použije soubor AcsConfig.properties v souboru acsbundle.jar.
+<p>
+Můžete zvolit aktualizaci souboru AcsConfig.properties v souboru acsbundle.jar
+pomocí vlastní konfigurační cesty.  Pokud tak učiníte, ujistěte se, že adresář,
+ve kterém existuje soubor acsbundle.jar, neobsahuje soubor AcsConfig.properties
+nebo se použije místo něj.
+Tím se poskytuje flexibilita schopnosti distribuovat
+umístění konfigurace se souborem acsbundle.jar při současném poskytnutí flexibility
+pro jeho přepis.
+<p>
+Jsou poskytnuta speciální klíčová slova, která lze použít při definování
+cesty konfigurace.  Při použití klíčových slov v uvedené cestě budou klíčová slova
+nahrazena textem nebo cestou, které definují.  V cestě konfigurace může být použito
+pouze jedno klíčové slovo.  Speciální klíčová slova a jejich významy:<br>
+<pre>
+	{USER} - ID aktuálního uživatele. Toto klíčové slovo může být kdekoli v cestě
+</pre>
+<p>
+Následující klíčová slova lze pouze na začátku uvedené cesty:
+<pre>
+	{PRODUCTDIR} - cesta ke stejnému adresáři jako acsbundle.jar
+	{TEMPDIR}    - cesta k dočasnému adresáři specifickému pro platformu
+	{ROOT}       - cesta ke kořeni systému souborů
+	{HOME}       - cesta k domovskému adresáři uživatele
+	{DEFAULT}    - výchozí cesta, kterou by produkt normálně použil
+</pre>
+<p>
+Technická poznámka:<br>
+Nedoporučujeme sdílení konfigurace mezi více uživateli.
+Je-li například X sdílená síťová jednotka, následující nastavení může způsobit
+nepředvídatelné výsledky:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+Pokud více uživatelů sdílí tuto konfigurační cestu, vzniká několik problémů:<br>
+<ol>
+<li>Pokud více uživatelů používá stejnou konfiguraci, dojde k nepředvídatelným výsledkům.
+<li>Tento příklad předpokládá, že každý uživatel má mapovanou jednotku X do stejného umístění.
+<li>Použití síťové jednotky v konfiguraci by nefungovalo z klienta Linux nebo Mac.  Použití poskytnutých klíčových slov, jako v níže uvedených příkazech, bude
+   fungovat pouze na systémech Windows, Linux a Mac.
+</ol>
+<p>
+Při sdílení cesty konfigurace mezi více uživateli by mělo být použito klíčové slovo {USER},
+abyste se vyvarovali kolizím s jinými uživateli.  Bude nahrazeno ID uživatele aktuálního
+uživatele.
+<p>
+Když nastavujete cestu konfigurace, použijte jako oddělovač adresáře
+místo zpětného lomítka ('\') dopředné lomítko ('/').  To bude fungovat na všech operačních systémech včetně Windows.
+<p>
+Zde jsou uvedeny některé doporučené ukázkové konfigurace:
+<p>
+Příklad 1 - lokální konfigurace pro aktuálního uživatele (výchozí):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Není-li nastaveno AcsBaseDirectory, konfigurace bude pro uživatele standardně nastavena
+na cestu, která je závislá na platformě.
+Jedná se o předvolbu pro produkt IBM i Access Client Solutions.
+<p>
+Příklad 2 - vzdálená (nebo lokální) konfigurace jedinečná pro každého uživatele:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+Konfigurace bude vzdáleně nebo lokálně závislá na umístění kořenové složky {ROOT}.
+<p>
+Příklad 3 - vzdálená (nebo lokální) konfigurace jedinečná pro každého uživatele:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+Konfigurace bude vzdáleně nebo lokálně závislá na umístění složky {PRODUCTDIR}.
+<p>
+Příklad 4 - lokální konfiguraci na přenosném médiu (jednotka USB):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Jelikož cesta k přenosnému médiu se bude lišit v závislosti na použitém systému,
+nastavení umožňuje relativní konfiguraci vůči souborům produktu.  V tomto případě bylo klíčové slovo {USER} úmyslně neurčeno,
+aby konfigurace na jednotce USB byla použita uživatelem jednotky USB, bez ohledu
+na ID uživatele.
+
+
+<h3><a id="9.4"></a>9.4 Ostatní možnosti nasazení</h3>
+<p>
+Zde jsou některé další volby implementace, které můžete zvážit:
+<ul>
+   <li>Implementovat produkt do jediného umístění, kde k němu bude moci přistupovat
+několik uživatelů.
+   <li>Máte-li webový server, mohli byste zvážit použití funkce Web Start.
+	 Viz http://java.com/en/download/faq/java_webstart.xml
+   <li>Automatický import nastavení konfigurace.
+     Viz část <a href="#9.4.1">9.4.1</a>
+   <li>Nativní implementace do systému IBM i. Viz oddíl <a href="#9.4.2">9.4.2</a>
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Automatický import nastavení konfigurace</h3>
+<p>
+Následující vlastnosti lze použít v souboru AcsConfig.properties k automatickému nastavení konfigurace
+pro nové uživatele nebo k aktualizaci konfigurace pro stávající uživatele:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Potřebné kroky:
+<ol>
+<li>Vytvořte konfiguraci, kterou chcete rozšířit pro jednoho nebo více uživatelů.
+<li>Exportujte konfiguraci do souboru pomocí volby Soubor-&gt;Exportovat konfiguraci z hlavního
+grafického rozhraní nebo použijte volbu příkazového řádku popsanou v části <a href="#9.1.1">9.1.1 Záloha</a>.
+<li>Přesuňte konfigurační soubor do požadovaného umístění.  Existuje několik dostupných
+   voleb popsaných později.
+<li>Nastavte vlastnost com.ibm.iaccess.autoimport v souboru AcsConfig.properties na
+cestu ke konfiguračnímu souboru.
+<li>Nastavte vlastnost com.ibm.iaccess.autoimport.version na celočíselnou hodnotu, která
+představuje verzi konfiguračního souboru.
+</ol>
+<p>
+Zde je popis funkčnosti:<br>
+Uložená konfigurace, na kterou se odkazuje vlastnost com.ibm.iaccess.autoimport
+bude automaticky importována, když celočíselná hodnota vlastnosti com.ibm.iaccess.autoimport.version
+se neshoduje s poslední importovanou hodnotou.  Kromě poskytnutí způsobu nastavení počáteční konfigurace a
+poskytnutí aktualizací pro existující konfiguraci tato funkce také
+poskytuje způsob vrácení konfigurace o úroveň zpět.  Konfigurace bude
+aktualizována, kdykoliv dochází k neshodě mezi hodnotou typu integer
+vlastnosti verze s poslední importovanou verzí.  Avšak zatímco může
+importovaná konfigurace změnit konfiguraci pro existující systém
+v konfiguraci uživatele, nebude systém nikdy odstraněn z konfigurace uživatele.
+<p>
+Cesta pro vlastnost com.ibm.iaccess.autoimport může být uvedena jako absolutní
+cesta, adresa URL nebo pomocí klíčových slov definovaných v části <a href="#9.3">9.3</a>.  Například:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+Další flexibilita je poskytnuta umožněním rozdělení konfiguračního souboru
+v souboru acsbundle.jar nebo ve stejném adresáři jako soubor acsbundle.jar.
+V každém případě nastavte vlastnost com.ibm.iaccess.autoimport se stejným
+názvem souboru bez předchozí cesty:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+Pro vlastnost com.ibm.iaccess.autoimport.version je povolena speciální hodnota *:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Ta konfiguraci naimportuje vždy, bez ohledu na jakoukoli předchozí verzi.
+
+<h3><a id="9.4.2"></a>9.4.2 Nativní implementace do systému IBM i</h3>
+<p>
+Některé moduly plug-in příkazového řádku, které nevyžadují grafické rozhraní, lze používat nativně v systému IBM i.
+Například můžete používat Přenos dat pro extrahování dat z databáze do souboru tabulky přímo na systému IBM i
+bez stahování dat do PC.
+<p>
+Chcete-li to provést, můžete extrahovat archiv zip produktu do libovolného místa v integrovaném Systému souborů (IFS) systému IBM i.
+Pokud jste například extrahovali archiv zip do:
+<pre> /home/AccessClientSolutions </pre>
+A pokud jste dříve uložili požadavek Přenosu dat na stažení, který existuje v:
+<pre> /some_path/qcustcdt.dtfx </pre>
+V systému IBM i můžete spustit příkaz:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Vlastní balíky</h3>
+<p>
+Produkt IBM i Access Client Solutions poskytuje administrátorům systémů schopnost
+omezit použití specifických funkcí nastavením následující vlastnosti v souboru
+AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;funkce, funkce,...&gt;
+</pre>
+Klíčová slova pro funkce, která lze uvádět:<br>
+<pre>
+
+   Funkce             Popis
+    cfg             Konfigurace systému
+    sm              Správce relací 5250
+    5250            Emulátor 5250
+    vcp             Virtuální ovládací panel
+    console         Konzola 5250
+    consoleprobe    Vyhledání konfigurací konzoly v místní síti
+    hmcprobe        Vyhledání logických oblastí v konzole HMC
+    hmi1            Rozhraní správy hardwaru 1
+    hmi2            Rozhraní správy hardwaru 2
+    keyman          Správa certifikátu SSL/TLS
+    dtgui           Grafické rozhraní přenosu dat
+    upload          Dávkové odesílání pomocí přenosu dat
+    download        Dávkové stahování pomocí přenosu dat
+    cldownload      Dávkové stahování pomocí přenosu dat
+    l1c             IBM Navigator for i (konzola úrovně 1)
+    rmtcmd          Vzdálený příkaz (dostupný z příkazového řádku)
+    splf            Tiskový výstup (soubory pro souběžný tisk)
+    ifs             Integrovaný systém souborů
+    db2             Schémata
+    rss             Spustit skripty SQL
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+    checkupdates    Kontrola dostupných aktualizací
+    ssh             Secure Shell
+</pre>
+<p>Funkce lze také vyloučit pomocí klíčových slov skupiny:
+<pre>
+
+   Skupina           Funkce
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+Administrátor systému může zvolit omezení přístupu ke specifickým funkcím
+aktualizací souboru AcsConfig.properties.  Omezení přístupu odebere funkci
+z hlavního grafického rozhraní a zakáže její použití z příkazového řádku.
+<p>
+Jedním z příkladů omezení funkcí může přidání následujícího řádku do souboru
+AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Pokud chce administrátor systému aktualizovat soubor AcsConfig.properties v souboru
+acsbundle.jar před jeho implementací uživatelům, je příklad následující:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+Další informace o tom, jak produkt IBM i Access Client Solutions určuje,
+který soubor AcsConfig.properties se má použít, naleznete v části <a href="#9.3">9.3 Změna umístění konfigurace</a>.
+
+
+<h3><a id="9.6"></a>9.6 Migrace z produktu IBM i Access for Windows</h3>
+<p>
+Konfigurační soubory produktu IBM i Access Client Solutions nejsou kompatibilní
+s odpovídajícími funkcemi produktu IBM i Access for Windows.  Produkt IBM i Access
+Client Solutions poskytuje cestu migrace pro několik klíčových položek, jak bylo
+uvedeno v přechozích částech.
+
+<h3><a id="9.6.1"></a>9.6.1 Migrace konfigurací systému</h3>
+<p>
+Funkce kopírování dostupné z nabídky hlavního grafického rozhraní pod volbami
+Soubor-&gt;Kopírovat připojení poskytuje rozhraní pro kopírování konfigurací systému
+mezi produktem IBM i Access Client Solutions a konfigurací ve Windows podporovanou produktem
+IBM i Access for Windows.  Další informace naleznete
+v nápovědě pro hlavní panel volby Zkopírovat připojení.
+
+Konfigurace systému lze také migrovat pomocí příkazového řádku.  Další informace naleznete
+v části <a href="#9.1.25">9.1.25 MIGRATE</a>.
+
+<h3><a id="9.6.2"></a>9.6.2 Migrace emulace 5250</h3>
+<p>
+Soubory emulace 5250 používané emulátorem IBM i Access for Windows Personal Communications
+lze převést pomocí správce relací 5250 v produktu IBM i Access
+Client Solutions. Tyto typy souborů lze převést z produktu Personal Communications:<br>
+<pre>
+   .ws   - profil emulátoru
+   .bch  - dávkový soubor emulátoru
+   .kmp  - soubor přizpůsobení klávesnice
+   .pmp  - soubory pomocné klávesnice
+   .bar  - soubory pruhu nabídky
+</pre>
+Soubory budou převedeny na:<br>
+<pre>
+   .hod  - profil emulátoru
+   .bchx - dávkový soubor emulátoru
+   .kmp  - soubor přizpůsobení klávesnice
+   .pmp  - soubory pomocné klávesnice
+   .bar  - soubory pruhu nabídky
+</pre>
+Typy souborů .kmp, .pmp a .bar jsou využívány oběma produkty.  Formáty však nejsou
+kompatibilní. Převedené soubory budou vytvořeny v cestě
+specifické pro produkt IBM i Access Client Solutions.
+<p>
+Převod těchto souborů lze zahájit z nabídky správce relací produktu IBM i Access
+Client Solutions:
+<ul>
+<li> výběrem volby Soubor-&gt;Import a poté vyhledáním souborů produktu Personal Communications.
+<li> přetažením souboru do okna produktu IBM i Access Client Solutions Session
+Manager.
+</ul>
+...nebo z příkazového řádku pomocí modulu plug-in 5250.  Viz část <a href="#9.1.30">9.1.30 PM5250</a>.
+
+<p>
+K dispozici je také obslužný program pro převod maker.  V okně správce relací:<br>
+<pre>
+    Nástroje-&gt;Převést makro...
+</pre>
+Technická poznámka:<br>
+Obslužný program pro převod maker nemusí být schopny převést makro PC5250,
+jedná-li se o vlastní makro obsahující více než jen zaznamenaný klávesový úhoz.  
+
+<h3><a id="9.6.3"></a>9.6.3 Migrace uložených souborů přenosu dat</h3>
+<p>
+Přenos dat v produktu IBM i Access Client Solutions poskytuje průvodce pro
+převod uložených souborů požadavků přenosu dat vygenerovaných produktem
+IBM i Access for Windows.
+<p>
+Z produktu IBM i Access for Windows lze převádět tyto typy souborů:<br>
+<pre>
+   .dtf - přenos ze systému IBM i
+   .dtt - přenos do systému IBM i
+</pre>
+Soubory budou převedeny na:
+<pre>
+   .dtfx - přenos ze systému IBM i
+   .dttx - přenos do systému IBM i
+</pre>
+Průvodce migrací přenosu dat nemigruje soubory .fdf. Nový typ souboru
+požadovaný produktem IBM i Access Client Solutions je typu .fdfx
+a lze jej generovat během stahování nebo pomoci Průvodce vytvořením souboru.
+<p>
+Průvodce migrací přenosu dat je dostupný z hlavní nabídky přenosu dat výběrem
+volby Akce-&gt;Migrace přenosu dat.
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+Pro potřebu aplikací 5250, které využívají EHLLAPI při přístupu k emulátoru Personal
+Communications dodávanému s produktem IBM i Access for Windows, si přečtěte následující
+článek KB, najdete tam informace o použití EHLLAPI s produktem IBM i Access Client Solutions:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions má podporu pro Kerberos.  Chcete-li pro připojení
+k systému používat Kerberos:<br>
+<ol>
+<li>z hlavního grafického rozhraní vyvolejte konfiguraci systému
+<li>vyberte volbu Nový nebo Upravit existující konfiguraci systému
+<li>na kartě připojení označte volbu<br>
+   "Pro ověřování používat Kerberos, bez výzvy"
+</ol>
+Nastavení prostředí Kerberos je mimo rozsah tohoto dokumentu.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Správa klíčů</h3>
+<p>
+Správa certifikátů pro připojení SSL je dostupná v hlavním grafickém rozhraní
+výběrem nabídky Nástroje-&gt;Správa klíčů.  Některé
+úlohy nad databází klíčů vyžadují přístupovou frázi integrity úložiště klíčů.
+
+<h3><a id="9.8"></a>9.8 Přenos dat</h3>
+<h3><a id="9.8.1"></a>9.8.1 Podpora přenosu dat pro tabulky Excel a Calc</h3>
+<p>
+Kromě podpory stahování souborů podporuje přenos dat také stahování souborů do aktivního listu
+sešitu Microsoft Excel nebo do tabulky OpenOffice Calc.  Chcete-li provést stažení do aktivního tabulkového
+kalkulátoru, hlavní panel grafického rozhraní Přenosu dat poskytuje volbu
+výběru výstupního zařízení.  Při výchozím nastavení je Výstupní zařízení Soubor.  Pokud
+vaše platforma podporuje interakci s tabulkami Excel a/nebo Calc, ze stahovacího rámečku
+Výstupní zařízení lze zvolit dodatečné volby aktivní tabulky Excel a aktivní tabulky
+Calc.
+<p>
+Omezení:
+<ul>
+<li>V systému Windows je vyžadován produkt OpenOffice, minimálně ve verzi 3.4.1.
+<li>V systémech Linux a MAc je vyžadován produkt OpenOffice, minimálně ve verzi 4.2.1,
+který musí být nainstalován do výchozího umístění.
+<li>Aplikace IBM i Access Client Solutions spuštěná na systému Linux nebo Mac podporuje interakci pouze s produktem OpenOffice.<br>
+Aplikace IBM i Access Client Solutions spuštěná na systému Windows podporuje interakci s aplikacemi Microsoft Excel nebo OpenOffice Calc.
+<li>Bitová platforma aplikace OpenOffice musí odpovídat bitové platformě aplikace IBM i Access Client Solutions.<br>
+Vysvětlení: OpenOffice je dostupný jak ve 32bitové, tak ve 64bitové verzi.  Na 64bitovém počítači lze spustit obě verze.
+Při interakci s tabulkou OpenOffice musí být bitová platforma aplikací OpenOffice a IBM i Access Client
+Solutions stejná, jinak nebude v tabulce fungovat funkce Přenos dat.
+Bitová platforma aplikace IBM i Access Client Solutions je určena prostředím JVM (Java Virtual Machine), na kterém
+je spuštěna.  Pokud je neshoda mezi bitovými platformami aplikace OpenOffice
+a prostředí JVM, na kterém běží aplikace IBM i Access Client Solutions,
+a jako Výstupní zařízení je zvolena aktivní tabulka, zobrazí se chyba "Aktivní
+tabulka nebyla nalezena".  Pokud používáte
+64bitový počítač, produkt IBM i Access Client Solutions lze podle vaší platformy
+spustit pomocí 64bitového nebo 32bitového binárního spouštěcího programu.  Aby podpora
+aktivních tabulek fungovala, spusťte produkt IBM i Access Client Solutions
+pomocí binárního spouštěcího programu specifického pro platformu, která odpovídá bitové
+platformě aplikace OpenOffice.
+<br>Protože systém Mac podporuje pouze 64bitové prostředí JVM, musíte nainstalovat 64bitovou
+verzi produktu OpenOffice, abyste v systému Mac mohli používat podporu aktivních tabulek.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Podpora přenosu dat pro ořezávání znaků a a numerické přetečení</h3>
+<p>
+Pokud během zpracování požadavku na odeslání v Přenosu dat znaková nebo číselná hodnota
+překročí definovanou velikost pole, požadavek na odeslání bude ukončen.
+<p>
+Chcete-li povolit oříznutí znakových polí na konci, nastavte v souboru AcsConfig.properties následující vlastnost:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Chcete-li povolit nastavení numerických polí na maximální kladnou nebo zápornou hodnotu,
+když poskytnuté numerické pole překračuje definovanou hranici, nastavte v souboru AcsConfig.properties následující vlastnost:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Když jsou tyto vlastnosti nastaveny na hodnotu true, požadavek na odeslání bude pokračovat
+jakékoli indikace, že došlo k oříznutí nebo přetečení.  Znaková pole budou oříznuta
+na konci.  Numerická pole budou při přetečení nastavena na jejich maximální hodnotu
+a na jejich minimální hodnotu při podtečení.
+<p> 
+Alternativně lze výše uvedené vlastnosti nastavit z příkazového řádku, stejně jako jiné
+vlastnosti prostředí Java:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Název listu přenosu dat</h3>
+<p>
+Během stahování je název listu generován na základě názvu zdrojové knihovny a souboru v systému IBM i
+s přidáním ">Sheet#", kde # je nahrazeno odpovídajícím číslem listu.  Například:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+Chcete-li v názvu listu přepsat část knihovny a souboru, můžete uvést následující vlastnost:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=your_string<br>
+Pak se bude generovat:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;your_string>Sheet1
+
+<h3><a id="9.9"></a>9.9 Ustanovení připojení konzoly k systému IBM i</h3>
+<p>
+Chcete-li provádět administrativní funkce na systému IBM i, je vyžadována
+konzola 5250.
+Produkt IBM i Access Client Solutions podporuje jak konfiguraci konzoly LAN,
+tak konfiguraci konzoly HMC.
+<p>
+Pokud znáte název hostitele služby, nebo adresu IP služby systému IBM i, nebo název
+hostitele, případně adresu IP konzoly HMC, můžete nakonfigurovat informace
+konzoly v rámci produktu IBM i Access Client Solutions takto:<br>
+<ol>
+<li>Spusťte na vašem počítači produkt IBM i Access Client Solutions.
+<li>Na hlavním panelu klepněte na položku Konfigurace systémů.
+<li>Klepnutím na tlačítko Nový můžete zadat novou konfiguraci, nebo klepnutím na tlačítko Upravit můžete
+upravit existující konfiguraci.
+<li>Vyberte kartu Konzola.
+<li>Zadejte odpovídající informace pro typ konzoly.
+</ol>
+<p>
+V případě systému IBM i, ve kterém konfigurace konzoly ještě neexistuje (např. nový
+systém právě doručený do podniku), bude adresa IP pro připojení konzoly přiřazena
+během IPL (Initial Program Load) automaticky v rozsahu 169.254.62.0 - 169.254.62.63. V těchto případech vám následující postup pomůže ustanovit připojení konzoly pomocí
+produktu IBM i Access Client Solutions:<br>
+<ol>
+<li>Zakažte v počítači bezdrátové připojení.  Následující kroky vyžadují
+drátový port Ethernetu.
+<li>Pomocí kabelu Ethernet spojte váš počítač s portem T1 systému IBM i.
+<li>Spusťte na vašem počítači produkt IBM i Access Client Solutions.
+<li>Na hlavním panelu klepněte na položku Konfigurace systémů.
+<li>V okně Konfigurace systémů klepněte na tlačítko Vyhledat konzolu....
+<li>Z panelu Lokátor IBM i klepněte na tlačítko Hledat.
+<li>Pokud posloupnost IPL na systému IBM i postoupila dostatečně daleko k přiřazení
+   automatické adresy IP, adresa IP by se měla zobrazit na panelu Vyhledávání.
+<li>Klepnutím na zobrazenou adresu IP ji vyberte, pak se klepnutím na tlačítko Konzola
+připojte ke konzole 5250.
+<li>Zobrazí se panel požadující zadání pověření pro přístup k servisním nástrojům.
+<li>Po zadání platných pověření bude zobrazena konzola 5250.
+<li>Konzolu lze použít k provedení počátečních úloh instalace a nastavení.
+</ol>
+<p>
+Když jste připraveni k přidání systému IBM i ke zbytku síťové infrastruktury,
+v Informačním centru IBM naleznete další informace o konfiguraci Adaptéru LAN
+servisních nástrojů:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Viz část "Konfigurace serveru servisních nástrojů pro DST"
+
+<p>
+V případě systémů IBM i, které již mají konfiguraci konzoly LAN a jsou ve vaší
+síťové infrastruktuře, lze k vyhledání konfigurací existujících konzol použít
+následující postup:<br>
+<ol>
+<li>Spusťte na vašem počítači produkt IBM i Access Client Solutions.
+<li>Na hlavním panelu klepněte na položku Konfigurace systémů.
+<li>V okně Konfigurace systémů klepněte na tlačítko Vyhledat konzolu....
+<li>V panelu Lokátor IBM i aktualizujte pole Podobná na hodnotu adresy IP v rozsahu,
+   který chcete prohledat.
+<li>Klepnutím na tlačítko Hledat vyhledejte konzoly LAN v určeném rozsahu.
+<li>Klepnutím na zobrazenou adresu IP ji vyberte, pak se klepnutím na tlačítko Konzola
+připojte ke konzole 5250.
+<li>Zobrazí se panel požadující zadání pověření pro přístup k servisním nástrojům.
+<li>Po zadání platných pověření bude zobrazena konzola 5250.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Další písma</h3>
+<p>
+Do adresáře písem lze přidávat další písma pro emulaci 5250.
+<p>
+Chcete-li zadat alternativní a/nebo další lokality pro další písma, nastavte vlastnost
+com.ibm.iaccess.Fonts, která se nachází v souboru AcsConfig.properties.
+<p>
+Výchozí adresář písem lze přepsat nastavením vlastnosti com.ibm.iaccess.Fonts na:<br>
+<ol> 
+<li>&lt;cestu_k_adresáři&gt; obsahujícím písma
+<li>&lt;cestu&gt;/&lt;název_souboru&gt; konkrétního souboru písma (například .ttf)
+<li>adresu URL souboru písma
+<li>středníky oddělený seznam libovolných výše uvedených položek
+</ol>
+<p>
+Poznámka:<br>
+&lt;cesta&gt; může být absolutní cesta, nebo relativní cesta vůči umístění
+souboru acsbundle.jar. Emulace 5250 rozpoznává pouze neproporcionální písma.
+<p>
+Příklad 1 (výchozí):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+Příklad 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Použití pověření ze souboru netrc</h3>
+<p>
+Chcete-li povolit použití souboru .netrc (Linux a Mac) nebo _netrc (Windows),
+přejděte do hlavního grafického rozhraní produktu IBM i Access Client Solutions a v pruhu nabídky vyberte volbu<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Upravit-&gt;Předvolby<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Karta Obecné<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Zaškrtněte políčko: <b>Číst přihlašovací informace ze souboru netrc</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Klepněte na tlačítko Použít<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Restartujte produkt IBM i Access Client Solutions<br>          
+<p>
+Standardní formát souboru netrc je:<br>
+<pre>
+     machine &lt;systém&gt; login &lt;id_uživatele&gt; password &lt;heslo&gt;
+</pre>
+<p>
+Soubor netrc musí být uložen v domovském adresáři uživatele a název systému a id_uživatele
+se musí shodovat s <b>Konfigurací systému</b>.  Z produktu IBM i Access Client
+Solutions:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Vyberte volbu Konfigurace systémů<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Vyberte systém a použijte volbu Upravit<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Karta Připojení<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Vyberte volbu <b>Použít pro každý systém výchozí jméno uživatele pro jednu výzvu </b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Vyplňte id_uživatele pro: <b>Výchozí jméno uživatele</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Klepněte na tlačítko OK<br>          
+
+<p>
+Jestliže název systému a <b>Výchozí jméno uživatele</b> odpovídají obsahu souboru netrc,
+připojení k systému se provede pomocí hesla v souboru netrc bez výzvy uživateli.
+
+<h3><a id="9.12"></a>9.12 Integrovaný systém souborů (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 a zabezpečení</h3>
+<p>
+Podpora integrovaného systému souborů používá systém souborů QFileSvr.400 ke kopírování
+nebo odesílání objektů z jedné logické oblasti systému IBM i do jiné. To znamená,
+že profil uživatele a heslo se v obou logických oblastech musí shodovat a oblasti musí
+mít stejnou systémovou hodnotu úrovně hesla (QPWDLVL).
+Pokud se používá ověření Kerberos, obě oblasti musí mít nakonfigurovanou síťovou ověřovací službu
+a mapování EIM (Enterprise Identity Mapping). Další podrobnosti nalezete v tématu "Zabezpečení a oprávnění
+objektů v systému souborů QFileSvr.400" v Centru znalostí systému IBM i.
+<p>
+Připojení k jiným oblastem IBM i zprostředkovaná systémem souborů QFileSvr.400 nejsou zabezpečená.
+Je-li při kopírování nebo odesílání objektů z jedné logické oblasti IBM i do jiné vyžadováno
+zabezpečené připojení, konfigurace oblasti musí být nastavena pro použití SSL, konfigurace systému
+musí mít pro danou oblast vybranou volbu "Použít připojení SSL" a v souboru AcsConfig.properties
+musí být nastavena následující vlastnost :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+Alternativně je možné vlastnost nastavit z příkazového řádku, stejně jako jiné vlastnosti prostředí Java:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 Oprávnění IFS</h3>
+<p> 
+Podpora integrovaného systému souborů vyžaduje oprávnění pro použití následujících příkazů CL:<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+Pokud uživatel nemůže tyto příkazy CL použít, akce Kopírovat, Vložit, Odeslat, Odstranit, a Nová složka selžou.
+
+<h3><a id="9.12.3"></a>9.12.3 Omezení integrovaného systému souborů</h3>
+<p>
+Podpora integrovaného systému souborů neumožňuje akce pro objekty, které mají cesty začínající
+na /QFileSvr.400, /QNTC nebo /QOPT.  Pokud aktuální cesta k adresáři nebo cesta libovolného vybraného
+objektu začíná na /QFileSvr.400, /QNTC nebo /QOPT, všechny položky v nabídce Akce budou zakázány
+a kontextová nabídka se nezobrazí.
+
+<h3><a id="9.12.4"></a>9.12.4 Integrovaný systém souborů a nezávislé oblasti ASP</h3>
+<p>
+Podpora integrovaného systému souborů nepovoluje akce Kopírovat, Vložit nebo Odeslat,
+pokud se zdrojový objekt nebo cílová cesta nachází v nezávislé oblasti ASP.
+
+<h3><a id="9.13"></a>9.13 Terminál SSH (Secure Shell)</h3>
+<p>
+Na platformách, kde Secure Shell existuje standardně nebo byl nainstalován, se funkce Terminál SSH objeví v hlavním grafickém rozhraní produktu IBM i Access Client Solutions.  Terminál SSH spustí emulaci terminálu do integrovaného
+systému souborů IBM i.
+<p>
+Většina systémů Mac, Linux a jiných systémů založených na operačním systému UNIX
+již má Secure Shell standardně. Na těchto platformách se předpokládá, že klient OpenSSH
+existuje a je umístěn v adresáři /usr/bin/ssh.  Uživatelé systému Windows budou muset
+nainstalovat jeden z programů Secure Shell, které jsou k dispozici pro systém Windows.
+<p>
+Programy Secure Shell podporované produktem IBM i Access Client Solutions:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin vyžaduje instalovaný balík openssh
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash je k dispozici jako část subsystému Linux operačního systému Windows
+
+<p>
+Je-li nainstalováno více aplikací SSH, můžete použít vlastnost com.ibm.iaccess.PreferredSSHClient
+a nastavit upřednostňovaného klienta SSH.
+<p>Příklady systému Linux:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Příklady systému Mac:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Příklady systému Windows:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+V případech, kdy klient SSH není nainstalován do standardního umístění, můžete použít vlastnost com.ibm.iaccess.PreferredSSHClient, do které zadáte úplnou cestu k nainstalovanému klientovi SSH.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+Když je zadána úplná cesta, je možné, že budete muset nastavit com.ibm.iaccess.SSHClientOpt, abyste uvedli
+všechny nezbytné argumenty. Chcete-li například zakázat varování, pokud nepoužíváte přesměrování pomocí X11:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 Předpoklady terminálu SSH</h3>
+Nainstalujte produkt 5733-SC1 IBM Portable Utilities for i na systém IBM i.
+<br>Spusťte Secure Shell Daemon pomocí příkazu:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Pokud se zobrazí chyba připojení v rámci spuštěného klienta SSH (například "odmítnuto připojení"), nebo když se okno objeví, ale okamžitě zmizí, budete pravděpodobně muset spustit démona SSH s výše uvedeným příkazem.
+
+
+<hr><h3><a id="10.0"></a>10.0 Servisní diagnostika</h3>
+<p>
+Setkáte-li se s problémem, který vyžaduje servis IBM, servisní zástupce IBM vás může vyzvat,
+abyste provedli jednu nebo obě z následujících akcí:
+<p>
+Z hlavního grafického rozhraní produktu IBM i Access Client Solutions:<br>
+<ul>
+ <li>Vyberte volbu Nástroje-&gt;Generovat servisní protokoly<br>
+     Tato akce provede stejnou funkci, jako volba příkazového řádku v sekci
+     <a href="#9.1.5">9.1.5 Dump</a>.  Funkce by měla být obvykle provedena okamžitě po selhání.  V závislosti na problému vás může váš zástupce služby IBM nasměrovat
+     k provedení této volby vícekrát.
+ <li>Vyberte volbu Nástroje-&gt;Zabalit servisní protokoly<br>
+     Tato akce provede stejnou funkci, jako volba příkazového řádku v sekci
+     <a href="#9.1.6">9.1.6 Medic</a>.  Funkce shromažďuje podrobnosti o prostředí pracovní
+     stanice a balí protokoly služby do archivu zip, který lze odeslat IBM.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Často kladené otázky (FAQ)</h3>
+<p>
+<pre>
+OT1    Když se pokusím spustit produkt IBM i Access Client Solutions, vyskytne se následující
+      chyba:
+             nelze načíst třídu: java.lang.UnsupportedClassVersionError
+OD1-1  Musíte použít prostředí JDK 6.0 nebo vyšší. Viz část <a href="#3.0">3.0 Předpoklady</a>
+
+OT2    Když se pokusím produkt spustit pomocí jednoho z dodaných binárních souborů nebo
+      skriptů z relace shellu nebo terminálu, objeví se následující chyba:
+         Oprávnění bylo odepřeno
+OD2-1  Zkontrolujte oprávnění k souboru, abyste se ujistili, že máte oprávnění
+      ke spuštění. Viz oddíl <a href="#6.0">6.0 Oprávnění souborů</a>.
+
+OT3    Když poklepu na jeden z poskytnutých souborů pro spuštění produktu,
+       nic se nestane.
+OD3-1  Prostředí Java nemusí být nainstalováno. Viz část <a href="#3.0">3.0 Předpoklady</a>
+OD3-2  Soubor, který používáte ke spuštění produktu, nemusí mít oprávnění
+      ke spuštění. Viz oddíl <a href="#6.0">6.0 Oprávnění souborů</a>.
+OD3-3  Mohou být problémy ve vašem prostředí. Chcete-li zjistit, k jakým chybám
+      dochází, zkuste spustit dodaný soubor z příkazového řádku.
+      Viz
+oddíl <a href="#7.3">7.3 Spuštění produktu (z příkazového řádku)</a>.
+
+OT4    Chci ke spuštění produktu použít jeden z binárních souborů,
+       ale obdržím tuto chybu:  "Chyba při zavádění modulu Java".
+OD4-1  Binární soubor nebyl schopen vyhledat domovský adresář instalace jazyka Java.
+      Ověřte, zda je nainstalováno prostředí Java. Viz část <a href="#3.0">3.0 Předpoklady</a>.
+OD4-2  Část <a href="#7.1.1">7.1.1 Spuštění produktu - další možnosti</a>
+      obsahuje další metody spuštění produktu pomocí binárního souboru.
+
+OT5    Po nastavení proměnné prostředí JAVA_HOME funguje binární soubor,
+       který použiji ke spuštění produktu, z příkazového řádku, ale
+       nefunguje při poklepání na soubor.
+OD5-1  Proměnná prostředí JAVA_HOME nemusí být viditelná ze správce souborů,
+      kterého používáte při poklepání na soubor. Nastavení proměnných prostředí
+      je různé v různých operačních systémech, a stejně tak i jejich viditelnost.
+      Zkuste nastavit proměnnou prostředí JAVA_HOME jako systémovou proměnnou
+      prostředí pro váš operační systém. Operační systém se může odkazovat na
+      systémové proměnné prostředí jako na globální proměnné prostředí.
+      Po nastavení proměnné prostředí JAVA_HOME zavřete a znovu otevřete správce
+       souborů a zkuste znovu poklepat na binární soubor.
+
+OT3    Když poklepu na jeden z poskytnutých souborů pro spuštění produktu,
+       zobrazí textový editor soubor.
+OD6-1  Ujistěte se, že používáte skript mající příponu souboru, kterou váš
+       operační systém rozpoznává.
+OD6-2  Zkuste jeden z jiných skriptů.
+OD6-3  Změňte program otevírající soubor.
+OD6-4  Zkontroluje oprávnění souboru a ujistěte se, že máte oprávnění
+      ke spuštění. Viz oddíl <a href="#6.0">6.0 Oprávnění souborů</a>.
+
+OT7    Když poklepu na jeden z poskytnutých souborů pro spuštění produktu,
+       jsem vyzván k výběru programu, který by měl být použit k otevření souboru.
+OD7-1  Ujistěte se, že používáte skript mající příponu souboru, kterou váš
+       operační systém rozpoznává.
+OD7-2  Nastavte program, kterým se otevře soubor, na nějaký kompatibilní s binárním
+      souborem nebo skriptem, který používáte. Například na Terminál (Mac).
+OD7-3  Zkontrolujte oprávnění souboru a ujistěte se, že máte oprávnění
+      ke spuštění. Viz oddíl <a href="#6.0">6.0 Oprávnění souborů</a>.
+
+OT8    Když spustím produkt IBM i Access Client Solutions na systému Mac
+       z programu Finder, rozevře se relace terminálu a nezmizí ani po ukončení
+       produktu IBM i Access Client Solutions.
+A8-1  Chcete-li eliminovat otevírání relace terminálu, použijte instalační skripty
+      pro Mac uvedené ve stručné úvodní příručce.
+
+OT9    Jaký je nejlepší způsob spuštění produktu?
+OD9-1  Produkt můžete spustit jakoukoli ze tří uvedených metod v části
+      <a href="#7.0">7.0 Spuštění produktu</a>, buď pomocí binárních souborů, skriptů,
+      nebo příkazového řádku. Vhodná je jakákoli metoda fungující ve vašem prostředí.
+
+Q10   Proč jsou ke spuštění produktu používány binární soubory (Start_Programs) i skripty
+      (Sample_Scripts)?
+OD10-1 Skripty nejsou specifické pro operační systém a poskytují obecnější
+      způsob spuštění produktu, když specifické binární soubory pro platformu nefungují.
+OD10-2 Některé operační systémy vyžadují při definování přidružení souboru
+       binární soubory.
+      Ve většině případů by měly být ke spuštění produktu používány binární soubory.
+OD10-3 Některá prostředí mohou používat brány firewall omezující přístup k částem
+      produktu IBM i Access Client Solutions. Používání jednoho binárního souboru ke spuštění
+      produktu zjednoduší administrátorům systému autorizaci přístupu.
+
+OT11  Po instalaci prostředí JDK 6.0 (nebo vyšší), stále dostávám tuto
+      chyba:
+      nelze načíst třídu: java.lang.UnsupportedClassVersionError
+OD11-1 Výchozí verze prostředí Java použitého na pracovní stanici je před
+      JDK 6.0. Budete muset použít volbu, která výslovně uvede cestu
+      Java Home pro JDK 6. Viz oddíl <a href="#7.1.2">7.1.2 Nalezení cesty Java
+      Home</a>. Cestu Java Home použijte pro jednu z metod popsaných v jedné
+      z následujících částí:
+      <a href="#7.1.1">7.1.1 Spuštění produktu - Další možnosti</a><br>
+      <a href="#7.3">7.3 Spouštění produktu (s použitím příkazového řádku)</a><br>
+
+OT12   Nejsem schopen importovat upravené soubory mapování klávesnice
+       (.kmp) z relací emulátoru 5250 systému Windows.
+OD12-1 V počáteční verzi produktu IBM i Access Client Solutions, která je
+      dostupná od července 2012, nebyl podporován import souborů .kmp z profilů (.ws)
+      relací emulátoru 5250 ve Windows. Od verze, která je k dispozici
+      od října 2012, je import souborů .kmp z profilů relací 5250
+      (.ws) podporován.
+
+OT13   Přizpůsobení klávesnice pro emulátor 5250 se hodně liší od emulátoru
+      ve Windows. Máte nějaká doporučení?
+OD13-1 Mapování klávesnice je rozděleno do kategorií. Z relace emulátoru:
+      Klepněte na volby Upravit &gt; Předvolby &gt; Klávesnice nebo na tlačítko Přemapovat
+         panel nástrojů.
+      Klepněte na kartu Přiřazení kláves.
+      Vyberte kategorii. Výchozí mapování kláves se objeví pod
+         kategoriemi "Funkce hostitele" a "Příkazy nabídky".
+      Vyberte funkci, kterou chcete přiřadit.
+      Klepněte na volbu Přiřadit klávesu.
+      Stiskněte na klávesnici klávesu (nebo kombinaci kláves), kterou chcete přiřadit
+       k této funkci.
+OD13-2 Nápověda k vlastnímu mapování kláves:
+      Klepněte na volby Upravit &gt; Předvolby &gt; Klávesnice nebo na tlačítko Přemapovat
+      na panelu nástrojů. Vyberte tlačítko Nápověda.
+
+OT14   Když se pokouším spustit produkt na systému Mac OS X 10.8 Mountain Lion,
+       získám rozevírací zprávu označující, že není aplikace podepsána.
+OD14-1 Toto je standardně vynucené zásadou zabezpečení počínaje od Mac OS X
+      10.8 Mountain Lion. Na následující webové stránce se podívejte, jak povolit
+      spuštění aplikace:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+OT15   Jsem uživatelem produktu IBM i Access for Windows, mohu migrovat
+       své konfigurace systému do produktu IBM i Access Client Solutions?
+OD15-1 Viz část <a href="#9.6.1">9.6.1 Migrace konfigurací systému</a>.
+
+OT16   Jsem uživatelem produktu IBM i Access for Windows, mohu migrovat
+       své profily emulace do produktu IBM i Access Client Solutions?
+OD16-1 Viz oddíl <a href="#9.6.2">9.6.2 Migrace emulace 5250</a>
+
+OT17   Jsem uživatelem produktu IBM i Access for Windows, mohu migrovat
+       své soubory požadavků na přenos dat do produktu IBM i Access Client Solutions?
+OD17-1 Viz oddíl <a href="#9.6.3">9.6.3 Migrace uložených souborů požadavků na přenos dat</a>.
+
+OT18   Pracuje EHLLAPI s produktem IBM i Access Client Solutions?
+OD18-1 Viz oddíl <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+OT19   Pracuje Kerberos s produktem IBM i Access Client Solutions?
+OD19-1 Viz oddíl <a href="#9.6.5">9.6.5 Kerberos</a>
+
+OT20   Jsem administrátorem systému a chci pro uživatele skrýt určité funkce.
+OD20-1 Viz oddíl <a href="#9.5">9.5 Vlastní balíky</a>
+
+OT21   Když na panelu vyberu ikonu nápovědy, nezobrazí se žádný text.
+OD21-1 Text nápovědy se normálně zobrazuje v prohlížeči. V některých případech
+      počítač nemusí mít prohlížeč nebo nemusí být správně nakonfigurován.
+OD21-2 Chcete-li text nápovědy zobrazit bez použití prohlížeče pracovní plochy,
+       nastavte v souboru AcsConfig.properties následující vlastnost:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+       Vlastnost lze také nastavit následujícím způsobem z příkazového řádku, stejně
+       jako jiné vlastnosti prostředí jazyka Java:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+OT22   Při použití přenosu dat vyberu výstupní zařízení buď "Aktivní sešit Excel",
+      nebo "Aktivní tabulka Calc", a dostanu tuto chybu:
+         "Aktivní tabulka nebyla nalezena"
+OD22-1 Není žádná aktivní tabulka. Otevřete buď novou, nebo existující tabulku,
+      a zkuste požadavek zopakovat.
+OD22-2 Mohlo dojít k neshodě bitových platforem použitého tabulkového kalkulátoru
+       a prostředí JVM, na kterém je spuštěn produkt IBM i Access Client Solutions.
+      Viz oddíl <a href="#9.8">9.8 Podpora přenosu dat v tabulkách Excel a Calc</a>
+
+OT23   Při používání Přenosu dat na platformě Mac nevidím ve volbě Výstupní
+       zařízení žádné volby pro interakci s aktivní tabulkou.
+OD23-1 Přenos dat nemůže interaktivně spolupracovat s aktivními tabulkami systému MAC
+      kvůli neshodě bitových platforem aplikace OpenOffice a prostředí JVM
+      v kterém běží produkt IBM i Access Client Solutions. Další podrobnosti viz oddíl
+      <a href="#9.8">9.8 Podpora přenosu dat pro tabulky Excel a Calc</a>.
+
+OT24   Při použití Přenosu dat zvolím Výstupní zařízení "Aktivní tabulka
+       Calc" a v rámečku Název se nic nezobrazí.
+OD24-1 Toto chování je normální pro nové tabulky Calc, které nebyly nikdy uloženy.
+      Přenos dat bude stále schopen tabulku aktualizovat staženými daty.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Historie aktualizací</h3>
+<p>
+Viz následující webová stránka:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

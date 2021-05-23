@@ -1,0 +1,229 @@
+#!/bin/bash
+# Description:
+# This script will install IBM i Access Client Solutions in the Applications folder on Mac OS X 
+#
+# Usage: ./install_acs
+#
+
+args=$@
+args_length=$#
+arg1=$1
+prefix_arg1=${arg1:0:9}
+suffix_arg1=${arg1:9}
+printhelp="no"
+default_noparms="no"
+reset_start_over="no"
+quiet_mode="no"
+exclude_functions="no"
+install_type_shared="no"
+install_type_preset="no"
+declare source
+declare target
+declare source_AcsConfig
+declare target_AcsConfig
+
+
+function copyProductFiles {
+  echo "Copying product files" >> $HOME/IBM/install_acs_log.txt
+  unzip -oq acs_mac_app.zip -d /Applications
+  cp -Rpf "$source/Documentation" "$target"
+  cp -Rpf "$source/Fonts" "$target"
+  cp -Rpf "$source/Icons" "$target"
+  # Do not copy the install scripts
+  #cp -Rpf "$source/Mac_Application" "$target"
+  #cp -Rpf "$source/Linux_Application" "$target"
+  #cp -Rpf "$source/Windows_Application" "$target"
+  cp -Rpf "$source/Start_Programs" "$target"
+  cp -Rpf "$source/acsbundle.jar" "$target"
+
+  if [ -e "$source/acs_bak.zip" ]; then
+    cp -Rpf "$source/acs_bak.zip" "$target"
+  fi
+
+  if [ "yes" == $1 ]; then
+    # The p in the following command sometimes causes the following message:
+    # "cp: chflags: /Application/IBM i Access Client Solutions.app/AcsConfig.properties: Operation not permitted"
+    # The message only seems to occur when copying an unmodified AcsConfig.properties file from a remote source location.
+    # However, all testing indicates the file does get copied along with the timestamp from the source location.
+    # If we remove the p, then the timestamp is not taken from the source file and gets changed to be current time.
+    # The message can be safely ignored.
+    cp -Rpf "$source_AcsConfig" "$target"
+    echo "Copied AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  else
+    echo "Did not copy AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  fi
+}
+
+
+function customize_local_install {
+  echo "Customizing local installation" >> $HOME/IBM/install_acs_log.txt
+  copyProductFiles yes
+  exclude_functions=`osascript user_dialog.scpt`
+
+  # keep track of length returned so we can see if we stripped sub_string
+  exclude_length_before=${#exclude_functions}
+
+  # remove the answer we got for whether we should restrict the printer filter
+  sub_string='splf_restrict,'
+  exclude_functions=${exclude_functions%$sub_string*}
+  exclude_length=${#exclude_functions}
+
+  exclude_length=${#exclude_functions}
+  if [ $exclude_length -eq 0 ]; then
+    echo "Wrote AcsConfig.properties with no functions excluded" >> $HOME/IBM/install_acs_log.txt
+  else
+    echo " " >> "$target_AcsConfig"
+    echo "# ——— $str_date ——— " >> "$target_AcsConfig"
+    echo "com.ibm.iaccess.ExcludeComps=$exclude_functions" >> "$target_AcsConfig"
+    echo "Wrote AcsConfig.properties and excluded: $exclude_functions" >> $HOME/IBM/install_acs_log.txt
+  fi
+
+
+  # See if we are suppose to set the RestrictFilter property
+  if [ $exclude_length_before -ne $exclude_length ]; then
+    echo " " >> "$target_AcsConfig"
+    echo "# ——— $str_date ——— " >> "$target_AcsConfig"
+    echo "com.ibm.iaccess.splf.FilterRestricted=true" >> "$target_AcsConfig"
+    echo "Wrote AcsConfig.properties com.ibm.iaccess.splf.FilterRestricted=true" >> $HOME/IBM/install_acs_log.txt
+
+  fi
+
+}
+
+
+# Begin Main
+#
+# Verify parameters
+if [ $args_length -gt 1 ]; then
+  return_value=`osascript help_text.scpt`
+  exit
+fi
+if [ $args_length -eq 1 ]; then
+  if [[ ($prefix_arg1 != /Exclude=) && ($prefix_arg1 != /exclude=) && ($arg1 != /Reset) && ($arg1 != /reset) && ($arg1 != /Q) && ($arg1 != /q) ]]; then
+    return_value=`osascript help_text.scpt`
+    exit
+  fi 
+fi
+
+#Create the IBM directory for the install log
+if [ ! -d $HOME/IBM ]; then
+  mkdir $HOME/IBM
+fi
+
+
+str_date=`date`
+echo "BEGIN =============== $str_date =============== BEGIN" >> $HOME/IBM/install_acs_log.txt
+
+if [ $args_length -eq 0 ]; then
+   default_noparms="yes"
+   echo "No args specified" >> $HOME/IBM/install_acs_log.txt
+else
+   echo "Command-line args: $args" >> $HOME/IBM/install_acs_log.txt
+   if [[ ($prefix_arg1 == /Exclude=) || ($prefix_arg1 == /exclude=) ]]; then
+     check=${#suffix_arg1}
+     if [ $check -gt 0 ]; then
+       exclude_functions=$suffix_arg1
+     else
+       default_noparms="yes"
+     fi
+   elif [[ ($arg1 == /Reset) || ($arg1 == /reset) ]]; then
+     reset_start_over="yes"
+   elif [[ ($arg1 == /Q) || ($arg1 == /q) ]]; then
+     quiet_mode="yes"
+     default_noparms="yes"
+   else
+     dummy=do_nothing
+   fi
+fi
+
+
+
+#The following two directories are needed for using acslaunch_mac when JDK6 is not installed
+#However, we are not allowed to create them starting with OS X 10.11 El Capitan.  If users
+#want to use acslaunch_mac on El Capitan, they will need to install JDK6.
+dir1=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+dir2=/System/Library/Java/Support/Deploy.bundle
+swversion=`sw_vers | grep "ProductVersion" | awk -F . '{print $2}'`
+if [ $swversion -lt 11 ]; then
+  if [ ! -d $dir1 ]; then
+    sudo mkdir -p $dir1
+  fi
+  if [ ! -d $dir2 ]; then
+    sudo mkdir -p $dir2
+  fi
+fi
+
+# cd to the directory where this script exists
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "script: ${0}" >> $HOME/IBM/install_acs_log.txt
+
+source=`pwd`/..
+target="/Applications/IBM i Access Client Solutions.app"
+echo "source: $source" >> $HOME/IBM/install_acs_log.txt
+echo "InstallPath: $target" >> $HOME/IBM/install_acs_log.txt
+
+source_AcsConfig="$source/AcsConfig.properties"
+target_AcsConfig="$target/AcsConfig.properties"
+
+
+# check for install_type_shared or install_type_preset
+if [ -e "$source_AcsConfig" ]; then
+  count=`grep -c "com.ibm.iaccess.InstallType=shared" "$source_AcsConfig"`
+  if [ $count -gt 0 ]; then
+    echo "com.ibm.iaccess.InstallType=shared was found" >> $HOME/IBM/install_acs_log.txt
+    install_type_share="yes"
+    echo "install_type_share is treated like install_type_preset on Mac" >> $HOME/IBM/install_acs_log.txt
+    install_type_preset="yes"
+  fi
+  count=`grep -c "com.ibm.iaccess.InstallType=preset" "$source_AcsConfig"`
+  if [ $count -gt 0 ]; then
+    echo "com.ibm.iaccess.InstallType=preset was found" >> $HOME/IBM/install_acs_log.txt
+    install_type_preset="yes"
+  fi
+fi
+
+
+if [ "yes" == $install_type_preset ]; then
+  echo "Install: preset functions by AdminConfig" >> $HOME/IBM/install_acs_log.txt
+  if [ "no" == $default_noparms ]; then
+    echo "$args ignored because Admin preset product functions" >> $HOME/IBM/install_acs_log.txt
+  fi
+  copyProductFiles yes
+  echo "Install: Copied product files and configuration set by admin" >> $HOME/IBM/install_acs_log.txt
+elif [ "yes" == $default_noparms ]; then
+  if [ -e "$target_AcsConfig" ]; then
+    # This is assumed to be the upgrade path
+    echo "Upgrading existing installation" >> $HOME/IBM/install_acs_log.txt
+    copyProductFiles no
+    echo "Install: Did not write AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  else
+    # AcsConfig.properties does not exist at target.  We assume never been installed.
+    customize_local_install
+  fi
+elif [ "no" != $exclude_functions ]; then
+  # Excluded functions were specified
+  if [ -e "$target_AcsConfig" ]; then
+    # Do not overlay AcsConfig.properties
+    copyProductFiles no
+  else
+    copyProductFiles yes
+  fi
+  echo " " >> "$target_AcsConfig"
+  echo "# ——— $str_date ———" >> "$target_AcsConfig"
+  echo "com.ibm.iaccess.ExcludeComps=$exclude_functions" >> "$target_AcsConfig"
+  echo "Excluded functions: $exclude_functions" >> $HOME/IBM/install_acs_log.txt 
+elif [ "yes" == $reset_start_over ]; then
+  echo "User requested a configuration reset" >> $HOME/IBM/install_acs_log.txt 
+  customize_local_install
+fi
+
+
+echo " "
+echo " Installation completed."
+echo " You may exit this terminal window."
+echo " "
+echo "END ================= `date` ================= END" >> $HOME/IBM/install_acs_log.txt
+if [ "no" == $quiet_mode ]; then
+  return_value=`osascript completion_text.scpt`
+fi
+

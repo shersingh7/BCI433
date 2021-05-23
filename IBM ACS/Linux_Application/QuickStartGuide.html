@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QuickStartGuide</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - QuickStartGuide</h2>
+<h2>The content of this document was last updated on: March 27, 2018</h2>
+
+<h3>Contents:</h3>
+<a href="#1.0">1.0 Introduction</a><br>
+<a href="#2.0">2.0 Installation for Windows</a><br>
+<a href="#3.0">3.0 Installation for Mac</a><br>
+<a href="#4.0">4.0 Installation for Linux</a><br>
+<a href="#5.0">5.0 Installing Updates</a><br>
+<a href="#6.0">6.0 More Information</a><br>
+<a href="#7.0">7.0 Uninstall</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Introduction</h3>
+<p>
+This guide provides instructions on how to deploy this product on a local
+disk drive for a single user. 
+<p>
+There are a variety of other ways this product can also be deployed including:<br>
+<ul>
+<li>a shared location that can be accessed by multiple users.<br>
+See <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a>
+<li>unpacking the zip archive to any location of your choice including portable media (eg CD, DVD, USB flash drive)
+or any path on the local disk drive.  See the <a href="../Documentation/GettingStarted_en.html#5.0">Installation</a> section of the <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> document
+located in the Documentation folder
+<li>See <a href="../Documentation/GettingStarted_en.html#9.4">Other Deployment Options</a>
+in <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> for
+options like <a href="../Documentation/GettingStarted_en.html#9.4.1">Automatically import configuration settings</a> for propagating the
+same configuration to multiple users
+and <a href="../Documentation/GettingStarted_en.html#9.4.2">Native IBM i Deployments</a> for using 
+command-line plugins directly on the IBM i.
+</ul> 
+
+<p>
+To deploy this product on the local disk drive for a single user, see the remaining sections of this document.
+
+<hr><h3><a id="2.0"></a>2.0 Installation for Windows</h3>
+
+<p>
+Locate the product zip archive or product CD.
+
+<p>
+If you are using the product zip archive, extract the the contents of the zip archive.
+<br>Suggestion: This can be done by using Windows Explorer to select the zip archive, then right-clicking on it, and then selecting "Extract All...".
+
+<p>
+Using Windows Explorer, locate the product's Windows_Application folder.
+
+<p>
+To install the 32 bit version for the current user, double-click on install_acs_32.
+<p>
+To install the 64 bit version for the current user, double-click on install_acs_64.
+<p>
+To install the 32 bit version for all users on a multi-user PC, double-click on install_acs_32_allusers.
+<p>
+To install the 64 bit version for all users on a multi-user PC, double-click on install_acs_64_allusers.
+
+<p>
+If this is a new installation, there will be several prompts that will help you customize
+the initial installation.  If a license agreement appears, accept it.
+<p>
+If this is an upgrade, the previous settings will be preserved.
+<p>
+When the install has finished, a completion message will be displayed.
+
+<p>
+A successful single-user install will copy the application to:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Note: The initial version of these scripts copied the product files to a path relative to MyDocuments.
+The current version copies the product files to a path based on the environment variables
+%HOMEDRIVE% and %HOMEPATH%.  When using these scripts to update the product, updates will occur
+to the first location found.
+<p>
+A successful multi-user install will copy the application to:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Starting the product on Windows</h3>
+<p>
+Double-click the "Access Client Solutions" icon on the desktop.
+
+
+<hr><h3><a id="3.0"></a>3.0 Installation for Mac</h3>
+<p>
+Locate the product zip archive or CD using Finder.
+<p>
+If you are using the product zip archive, extract the the contents of the zip archive.
+<br>Suggestion: If you just downloaded the product,
+look in Downloads.  If the contents of the zip archive have not been extracted,
+then you may extract the contents of the zip archive by double-clicking it.  
+<p>
+Locate the Mac_Application folder.   Double click install_acs
+
+<p>
+If this is a new installation, there will be several prompts that will help you customize
+the initial installation.  If a license agreement appears, accept it.
+<p>
+If this is an upgrade, the previous settings will be preserved.
+<p>
+When the install has finished, a completion message will be displayed.
+<p>
+A successful install will copy the application to the Applications folder.
+
+<p>
+If you started the install from Finder, a terminal window was opened to perform the installation. When
+the installation is complete, you can close the terminal window.
+<p>
+Tech Note:<br>
+Depending on your security settings and the version of OS X you are using,
+you may get a pop-up window indicating install_acs is not authorized to run.
+If that happens, you will need to authorize install_acs to run by using one of
+following methods:<br>
+<ul>
+<li>If you are presented with an option to "Open" install_acs, then select it.
+<li>Right-click on install_acs and select "Open".<br>
+   When presented with a pop-up window, select "Open".
+<li>If neither of the above options work, then go to:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+    If there is an option to Open "IBM i Access Client Solutions", select it.
+    Otherwise, you will need to adjust the settings on the General tab to allow other
+    applications to run.  After "IBM i Access Client Solutions" starts the first
+    time, you may change your security settings back.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Starting the product on Mac</h3>
+<p>
+Use Finder to go to Applications.
+<p>
+Locate "IBM i Access Client Solutions" and double click it to start the product.
+<p>
+Tech Note:<br>
+Depending on your security settings and the version of OS X you are using,
+you may get a pop-up window indicating the application is not authorized to run.
+If that happens, you will need to authorize the application to run by using one
+of the following methods:<br>
+<ul>
+<li>If you are presented with an option to "Open" it, select it.
+<li>Right-click on the "IBM i Access Client Solutions" icon and select "Open".<br>
+   When presented with a pop-up window, select "Open".
+<li>If neither of the above options work, then go to:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+    If there is an option to Open "IBM i Access Client Solutions", select it.
+    Otherwise, you will need to adjust the settings on the General tab to allow other
+    applications to run.  After "IBM i Access Client Solutions" starts the first
+    time, you may change your security settings back.  
+</ul>
+Tech Notes:<br>
+<ul>
+<li>If you are prompted to install "Java 6 SE runtime", you do not need to install
+Java 6.  Install Java 8 and then try to start the product again.
+<li>When installing Java on Mac, select a JDK instead of a JRE.  The JRE for Mac installs Java for only the browser.
+It does not install Java for other applications.  Installing the JDK will make Java available to other
+applications such as IBM i Access Client Solutions.
+</ul>
+
+<hr><h3><a id="4.0"></a>4.0 Installation for Linux</h3>
+<p>
+Locate the product zip archive or product CD.
+<p>
+If you are using the product zip archive, extract the the contents of the zip archive.
+<br>Suggestion: From a terminal window, use the unzip command.
+<p>
+Locate the Linux_Application folder.
+<p>
+Since you will need to have root authority to use the install script, use
+sudo to run the install script from a terminal window.  For example:
+<p>
+If you are on a 32 bit architecture, use the following command:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+If you are on a 64 bit architecture, use the following command:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+If this is a new installation, there will be several prompts that will help you customize
+the initial installation.  If a license agreement appears, accept it.
+<p>
+If this is an upgrade, the previous settings will be preserved.
+<p>
+When the install has finished, a completion message will be displayed.
+
+<p>
+A successful install will copy the application to:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Starting the product on Linux</h3>
+<p>
+Search for "IBM i Access Client Solutions" in the applications folder or by using the Super key and then typing
+"IBM i Access Client Solutions". 
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Installing Updates</h3>
+<p>
+When a new version becomes available, you can follow the installation
+instructions in this document to apply the updates.  If you are prompted to
+overlay existing files, answer with "Yes to all".
+<p>
+If you are using the install_acs scripts for Windows, Mac or Linux, the
+AcsConfig.properties file will not be updated so any custom configuration
+changes you have made to that file will not be lost.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 More Information</h3>
+<p>
+For additional information about customizing the product or if you experience
+problems while installing or starting the product, see the <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> document
+located in the Documentation folder.
+
+<hr><h3><a id="7.0"></a>7.0 Uninstall</h3>
+<p>
+To remove the application files that were copied to the above locations by the install script, use the platform-specific
+uninstall script found in the same folder as the install script:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

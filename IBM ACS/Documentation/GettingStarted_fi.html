@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aloitusopas</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions -ohjelmisto - Aloitusopas</h2>
+<h2>Tämän asiakirjan sisältö on päivitetty viimeksi 8. tammikuuta 2018.</h2>
+
+
+<h3><a id="0.5"></a>0.5 Pika-aloitusopas</h3>
+<p>
+<a href="./QuickStartGuide_en.html">Pika-aloitusopas</a> sisältää ohjeet ohjeet tuotteen käyttöön
+Windows-, Mac- tai Linux-ympäristössä.  Jos haluat asentaa tämän tuotteen yhden käyttäjän tai usean käyttäjän tietokoneelle,
+lisätietoja on Documentation-kansiossa olevassa <a href="./QuickStartGuide_en.html">Pika-aloitusoppaassa</a>.
+<p>
+Lisätietoja tuotteesta, muista käyttöönottovaihtoehdoista ja tuotteen mukautuksesta
+on tässä asiakirjassa.  
+
+<h3>Sisältö:</h3>
+<a href="#0.5">0.5 Pika-aloitusopas</a><br>
+<a href="#1.0">1.0 Johdanto</a><br>
+<a href="#2.0">2.0 Tuoteominaisuudet</a><br>
+<a href="#3.0">3.0 Asennusvaatimukset</a><br>
+<a href="#4.0">4.0 Tuotteen sisältö</a><br>
+<a href="#5.0">5.0 Asennus</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Aiemmin asennetun tuotteen päivitys</a><br>
+<a href="#6.0">6.0 Tiedoston käyttöoikeudet</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Tiedoston käyttöoikeudet (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Tiedoston käyttöoikeudet (Windows)</a><br>
+<a href="#7.0">7.0 Tuotteen käytön aloitus</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Tuotteen käytön aloitus</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Tuotteen käytön aloitus (komentosarjan avulla)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a><br>
+<a href="#8.0">8.0 Kokoonpanon määritys</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Kokoonpanon sijainti</a><br>
+<a href="#9.0">9.0 Lisäaiheet</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Lisää komentoriviparametreja</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Tiedostoliitännät</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Tiedostoliitännät (Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Kuvakkeen vaihtaminen (Windows-pikakuvake)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Työpöytäkuvakkeen määritys (Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Tiedostoliitännät (Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Tiedostoliitännät (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Tiedostoliitäntöjen luonti (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Kuvakkeen vaihtaminen (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Kokoonpanon sijainnin muutto</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Muita käyttöönottovaihtoehtoja</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Kokoonpanoasetusten tuonti automaattisesti</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Käyttöönotto IBM i -järjestelmässä</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Mukautetut paketit</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Siirto IBM i Access for Windows -ohjelmasta</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Järjestelmän kokoonpanojen siirto</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 5250-emuloinnin siirto</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Tallennettujen tiedonsiirtopyyntötiedostojen siirto</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Avainten hallinta</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Tiedonsiirto</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Tiedonsiirron tuki Excel- ja Calc-taulukoille</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Tiedonsiirron tuki merkkien katkaisulle ja numeeriselle ylivuodolle</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Tiedonsiirron taulukon nimi</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Ohjauspääteyhteyden muodostaminen IBM i -järjestelmään</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Lisäfontit</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Netrc-tiedoston valtuustietojen käyttö</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Sisäinen tiedostojärjestelmä (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 ja suojaus</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 Sisäisen tiedostojärjestelmän valtuudet</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 Sisäisen tiedostojärjestelmän rajoitukset</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 Sisäinen tiedostojärjestelmä ja riippumattomat levymuistivarannot</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 Secure Shell (SSH) -pääte</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 SSH -päätteen asennusvaatimukset</a><br>
+
+
+
+<a href="#10.0">10.0 Huollon vianmääritys</a><br>
+<a href="#11.0">11.0 Yleisimmät kysymykset</a><br>
+<a href="#12.0">12.0 Päivityshistoria</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Johdanto</h3>
+<p>
+IBM i Access Client Solutions on IBM i Access -tuoteperheen uusin
+jäsen.  Tuotteessa on Java-pohjainen käyttöympäristöstä riippumaton liittymä, joka
+toimii useimmissa Java-ohjelmointikieltä tukevissa käyttöjärjestelmissä, jollaisia ovat esimerkiksi Linux, Mac ja Windows. IBM i
+Access Client Solutions -ohjelmiston avulla voidaan toteuttaa keskitetysti ja vaivattomasti useimmin käytettäviä
+IBM i -järjestelmän hallintatehtäviä.
+<p>
+IBM i Access Client Solutions -ohjelmisto käyttää samoja IBM i -pääkonepalvelimia kuin muutkin IBM i
+Access -tuoteperheen tuotteet. Ohjelmistossa on oltava sama IBM i Access Family -lisenssi (XW1), jotta
+sen avulla voidaan käyttää 5250-emulointia ja tiedonsiirtotoimintoja.
+<p>
+Saatavana on myös kaksi valinnaista pakettia, jotka sisältävät yhteysohjelmiston
+työasemasovellusten kehittämiseen Windows- ja Linux-ympäristöön:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions -ohjelmisto - Windows-sovelluspaketti<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions -ohjelmisto - Linux-sovelluspaketti<br>
+<p>
+IBM i -järjestelmän versiota 7.1 tai uudempaa versiota käyttävät asiakkaat, joilla on voimassa olevat oikeudet, voivat hankkia IBM i Access Client Solutions -ohjelmiston jommallakummalla seuraavista tavoista:
+<ul>
+<li> Lataa <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a> -peruspaketti. 
+<li> Lataa peruspaketti ja valinnaiset Windows- ja Linux-sovelluspaketit <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> -sivustosta kohdasta 5761-SS1 tai 5770-SS1.
+</ul>
+
+<p>
+Valinnaiset Windows- ja Linux-sovelluspaketit ovat saatavissa vain
+Entitled Software Support (ESS) -Web-sivustosta. 
+<p>
+Asiakkaat voivat hankkia tallennusvälineen tilaamalla nimikkeen 5761-SS1 tai 5770-SS1 päivitysominaisuuden 6288.
+Fyysinen tallennusväline sisältää tuotteen ajettavan version, jolla voit ajaa
+tuotteen suoraan CD-levyltä.
+Tallennusväline sisältää myös tuotteen zip-arkistotiedoston, joka
+voidaan kopioida ja purkaa haluamaasi paikkaan.
+Fyysinen IBM i Access Client Solutions -tallennusväline ei sisällä valinnaisia
+Windows- ja Linux-sovelluspaketteja. 
+<p>
+Lisätietoja on seuraavissa sivustoissa:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Ajantasaisimmat tiedot IBM i Access -tuoteperheen tuotteista ovat osoitteessa:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Tuoteominaisuudet</h3>
+<p>
+IBM i Access Client Solutions -ohjelmiston tuoteominaisuudet:
+<ul>
+<li>IBM Rational Host-on-Demand -ohjelmistoon perustuva täysien ominaisuuksien 5250-pääte-emulointi. Kaikkien
+IBM i Access for Windows -ohjelmistosta tuttujen 5250-pääte-emulointitoimintojen lisäksi on lisätoimintoja, kuten
+<ul>
+<li>välilehtien tuki, jonka avulla useat istunnot voivat käyttää yhtä yhteistä katselualuetta
+<li>rullahiiren tuki, joka mahdollistaa kätevän vierityksen sivulta toiselle
+<li>vaihto kielestä toiseen on mahdollista ilman työaseman uudelleenkäynnistystä
+<li>samanaikaiset eri pääkoneen koodisivuja käyttävät pääteistunnot mahdollistavat eri kielien käytön eri emulointi-istunnoissa.
+</ul>
+<li>Kirjoitinemulointi
+<li>IBM Personal Communications Session Manager -ohjelmiston mukaan mallinnettu 5250-istuntojen ohjausosa,
+jonka avulla voidaan hallita kaikkia 5250-emulointi-istuntoja.
+
+<li>Tiedonsiirto, jonka avulla voidaan siirtää tietoja IBM i -tietokannan
+sekä työasemassa olevien useanlajisten tiedostojen, kuten OpenDocument-taulukoiden (*.ods)
+ja Excel-taulukoiden (*.xlsx) ja muunmuotoisten tiedostojen välillä.
+
+<li>Tulostustyöt on käyttöliittymä, jonka avulla voit tarkastella IBM i -tulostusjonojen tiedostoja ja ladata niitä työasemajärjestelmään.
+
+<li>Näennäisohjaustaulu, jossa on IBM i -ohjaustaulun graafinen käyttöliittymä.
+
+<li>Lähiverkon ja laitteistohallinnan ohjauspäätteen sekä FSM-
+ohjauspäätteen 5250-emulointi.
+
+<li>Mahdollisuus yhdistää laitteistohallintaliittymien kokoonpanoja, kuten ASMI-,
+IVM- ja HM-kokoonpanoja.
+
+<li>Mahdollisuus aloittaa IBM Navigator for i -ohjelman käyttö käyttäjän oman oletusselaimen avulla.
+
+<li> Tietokannan ominaisuudet, kuten SQL-komentotiedoston ajo ja SQL Performance Center.
+</ul>
+<p>
+Valinnainen Windows-sovelluspaketti sisältää seuraavat osat:
+<ul>
+<li>Db2 for i -yhteys ODBC-, .Net- ja OLE DB -palvelun kautta
+<li>Programming Toolkit -työkalut IBM i -järjestelmäobjektien käsittelyä varten
+<li>TLS/SSL-yhteyksien tuki
+<li>AFP-kirjoitinajuri
+</ul>
+<p>
+Valinnainen Linux-sovelluspaketti sisältää seuraavat osat:
+<ul>
+<li>ODBC-ajuri, jolla voidaan käyttää
+Db2 for i -järjestelmää ja joka tukee täysin 64-bittisiä ODBC-tietotyyppejä.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Asennusvaatimukset</h3>
+<h3><a id="3.1"></a>3.1 Asennusvaatimukset (työasema)</h3>
+<p>
+IBM i Access Client Solutions -ohjelmisto toimii useimmissa käyttöjärjestelmissä, jotka tukevat
+Java-ohjelman versiota 8.0 tai uudempaa versiota. Tällaisia ovat esimerkiksi useat Linux-, Mac- ja Windows-käyttöjärjestelmän versiot.
+<p>
+Suositus:<br>
+Kun päivität Javan aina uusimpaan versioon, sinulla on kaikki uusimmat tilapäiskorjaukset ja suojauskorjaukset käytettävissä. 
+<p>
+Voit tarkistaa järjestelmään asennetun Java-ohjelman version avaamalla kehotteen (esimerkiksi komentorivin, komentoliittymän tai päätteem),
+johon voit antaa komennon, ja kirjoittamalla siihen seuraavan komennon:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+Seuraavassa tulosteessa näkyy, että versio 8.0 on asennettu:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+Esimerkissä oleva 65 tarkoittaa päivitystasoa.
+
+<p>
+Seuraavassa on joidenkin Java-ohjelman toimittajien web-sivustojen osoitteita.  Varmista, että järjestelmässä on
+ajantasaisin Java-ohjelman versio.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 Asennusvaatimukset (yhteys IBM i -järjestelmään)</h3>
+<p>
+IBM i Access Client Solutions -ohjelmisto muodostaa yhteyden IBM i -järjestelmän versioon 5.4 ja uudempiin.
+Seuraavat ominaisuudet edellyttävät IBM i -ohjelmiston versiota 6.1 tai sitä uudempaa versiota:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250-ohjauspääte<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Näennäisohjaustaulu<br>
+<p>
+Jos käytät SSL-yhteyksiä, lataa ja aktivoi ohjelmalaitostasi vastaavat
+IBM i -järjestelmän PTF-korjaukset:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Jos käytät Navigator for i -käyttöliittymää, lataa ja aktivoi ohjelmalaitostasi vastaavat IBM i -järjestelmän PTF-korjaukset:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - Ryhmän PTF-korjaus SF99368 taso 37 tai uudempi<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - Ryhmän PTF-korjaus SF99713 taso 12 tai uudempi<br>
+	
+<p>
+Jos käytät 5250-ohjauspäätettä tai näennäisohjaustaulua, lataa ja aktivoi ohjelmalaitostasi vastaavat PTF-korjaukset:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Tuotteen sisältö</h3>
+<p>
+Seuraavat tiedostot ja hakemistot sisältyvät tuotteen zip-arkistotiedostoon:
+<pre>
+
+acsbundle.jar       - tuotteen jar-ohjelmatiedosto
+AcsConfig.properties- kokoonpanoasetukset sisältävä tiedosto (löytyy myös
+                      acsbundle.jar-tiedostosta)
+
+Mac_Application     - - Hakemisto, joka sisältää asennuskomentotiedostot Mac-tietokoneille
+
+Linux_Application   - Hakemisto, joka sisältää asennuskomentotiedostot Linux-tietokoneille
+
+Windows_Application   - Hakemisto, joka sisältää asennuskomentotiedostot Windows-tietokoneille
+
+Start_Programs      - Hakemisto, joka sisältää tuotteen käytön aloitukseen käytettävät
+                      käyttöjärjestelmäkohtaiset binaaritiedostot.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - oppaat sisältävä hakemisto
+    QuickStartGuide - pika-aloitusopas
+    GettingStarted  - aloitusopas, joka sisältää tietoja tuotteesta
+License             - Hakemisto, joka sisältää tuotteen käyttöehdot.
+Notices             - Hakemisto, joka sisältää huomautuksia ja tietoja.
+properties          - Hakemisto, joka sisältää tuotteen versiotiedot.
+  Sample_Scripts    - Hakemisto, joka sisältää mallikomentosarjat, joita voi
+                      käyttää tuotteen aloitukseen, jos Start_Programs-hakemiston
+                      binaaritiedostot eivät toimi.
+    Linux_Mac_Other - Hakemisto, joka sisältää tuotteen käytön aloitukseen käytettäviä Perl-komentotiedostoja.
+                      Hakemistoa voidaan käyttää kaikissa käyttöjärjestelmissä, joissa Perl-ohjelmointikieli on käytettävissä.
+    Windows         - Hakemisto, joka sisältää tuotteen käytön aloitukseen Windows-käyttöjärjestelmässä käytettävän JScript-komentotiedoston.
+
+Icons               - Hakemisto, jonka tiedostoja voidaan käyttää kuvakkeina.
+
+Fonts               - Hakemisto, josta voidaan lisätä suhteuttamattomia fontteja 
+                      5250-emulointiin.
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Asennus</h3>
+<p>
+IBM i Access Client Solutions -ohjelmistopaketti sisältää useita asennusvaihtoehtoja erittäin yksinkertaisesta yhden käyttäjän asennuksesta
+kehittyneempiin usean käyttäjän asennuksiin.
+<p>
+Asennuskomentosarjat on toimitettu Mac_Application-, Linux_Application- ja Windows_Appliciation-kansioissa
+(katso kohtaa <a href="#4.0">4.0 Tuotteen sisältö</a>) ja niiden avulla voi toteuttaa erilaisia asennusvaihtoehtoja.
+
+<p>
+Lisätietoja yhden käyttäjän asennuksesta Mac-, Linux- ja Windows-tietokoneelle tai usean käyttäjän asennuksesta Windows-tietokoneelle on <a href="./QuickStartGuide_en.html">Pika-aloitusoppaassa</a>.
+Pika-aloitusoppaassa kerrotaan, miten toimitettuja asennuksen komentosarjoja käytetään näiden yksikertaisten asennusten toteutukseen.
+<p>
+Jos olet pääkäyttäjä ja suunnittelet tämän käyttöönottoa useiden käyttäjien koneisiin, tutustu artikkeliin <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a>.
+Artikkelissa kerrotaan, kuinka pääkäyttäjä voi mukauttaa usean käyttäjän asennusta ennen käyttöönottoa käyttämällä /AdminConfig-parametria, jota asennuksen komentosarjat tukevat.
+<p>
+Jos pääkäyttäjät haluavat automatisoida asennuksen valvomattomassa tilassa, he voivat käyttää /AdminConfig-parametria asennuksen kokoonpanon määritykseen ennalta.  Sitten varsinaisessa asennuksessa käytetään parametria /Q. Esimerkki:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+Edellä olevien parametrien käytön lisäksi on myös mahdollista vain purkaa zip-tiedosto haluamaasi sijaintiin. Tämä voi olla mikä tahansa sijainti, jonka sisältämiin
+tiedostoihin työasemalla on lukuvaltuudet.  Sijainti voi olla paikallinen kiintolevyasema, etäverkko (yhteiskäytössä oleva) levyasema
+tai siirrettävä tallennusväline, kuten CD tai USB-flash-asema.  Zip-tiedoston purku tekee asennuksen valmiiksi.
+
+<p>
+Tekninen huomautus:<br>
+Tietyt arkistoapuohjelmat eivät säilytä kaikkia tallennettujen tiedostojen määritteitä.  Esimerkiksi
+Mac- ja Linux-alustoilla unzip-komento toimii usein paremmin kuin jar-
+komento.  Lisätietoja on kohdassa <a href="#6.0">6.0 Tiedoston käyttöoikeudet</a>.
+
+<h3><a id="5.1"></a>5.1 Aiemmin asennetun tuotteen päivitys</h3>
+<p>
+Tuotteeseen tulee parannuksia ja korjauksia aika ajoin.  Nämä päivitykset
+ovat käytettävissä valmiina tuoteasennuksena.  Kun nämä päivitykset ovat käytettävissä,
+järjestelmässä jo oleva asennus on päivitettävä.
+<p>
+Voit päivittää järjestelmässä jo olevan asennuksen komentosarjojen avulla tehdyn asennuksen purkamalla tuotteen uudemman version sisällön.  Kutsu asennuksen komentotiedostoa tästä uudesta versiosta samaan tapaan kuin teit alkuperäisen asennuksen aikana.  Tällöin tuotteen tiedostot päivittyvät muuttamatta käyttäjän aiemmin määritettyä kokoonpanoa.
+<p>
+Pääkäyttäjät, jotka haluavat pitää tuotteen version keskeisessä sijainnissa, josta useat käyttäjät käyttävät sitä, voivat purkaa uudemman version sisällön aiemman version päälle.
+Jos olet tehnyt mukautuksia AcsConfig.properties. tiedostoon, haluat ehkä tallentaa tiedoston, ennen kuin purat tuotteen uuden version sisällön järjestelmässä jo olevan version päälle.  Kun olet purkanut tuotteen uuden version sisällön ja olet palauttanut AcsConfig.properties-tiedoston, käyttäjät voivat päivittää asennuksensa ajamalla asennuksen komentotiedoston samalla tavalla kuin alkuperäisen asennuksen yhteydessä.
+<p>
+Jos haluat asentaa tuotteen käyttämättä asennuksen komentotiedostoja ja purkamalla zip-tiedoston sisällön haluamaasi sijaintiin, silloin tuotteen päivitys edellyttää tuotteen uudemman version sisällön purkua järjestelmässä jo olevan version päälle.
+Muista, että sinun on ehkä tallennettava AcsConfig.properties-tiedosto ja palautettava se, jos olet tehnyt siihen muutoksia.
+
+<hr><h3><a id="6.0"></a>6.0 Tiedoston käyttöoikeudet</h3>
+<p>
+Kohdassa <a href="#7.0">Section 7.0 Tuotteen käytön aloitus</a> kuvataan useita tapoja, joilla voit aloittaa
+IBM i Access Client Solutions -ohjelmiston käytön.  Jos aloitat tuotteen käytön käyttämällä jotain
+toimitettua binaaritiedostoa tai komentotiedostoa, varmista, että tiedoston ajovaltuudet on otettu käyttöön.  Zip-arkistotiedostoa
+purettaessa määritettyihin tiedoston käyttöoikeuksiin vaikuttavat useat tekijät, kuten käyttöjärjestelmä, zip-arkistotiedoston purkuun käytetty apuohjelma
+ja käyttäjän käyttöoikeudet.
+<p>
+Jos toimitettujen binaaritiedostojen tai komentotiedostojen käyttö aiheuttaa ongelmia, tarkista
+tiedoston käyttöoikeudet.  Seuraavissa osissa kuvataan joitakin menetelmiä, joiden avulla voidaan
+tarkistaa tiedoston käyttöoikeudet.
+
+
+<h3><a id="6.1"></a>6.1 Tiedoston käyttöoikeudet (Linux, Mac, AIX)</h3>
+<p>
+Unixin kaltaisissa käyttöjärjestelmissä voit tarkistaa tiedoston käyttöoikeudet antamalla komentoliittymään tai päätteeseen
+seuraavan komennon:<br>
+<pre>    ls -l &lt;tiedosto&gt;   			</pre>
+<p>
+Voit muuttaa tiedoston käyttöoikeuksia käyttämällä seuraavaa komentoa:<br>
+<pre>    chmod &lt;käyttöoikeus&gt; &lt;tiedosto&gt;	</pre><br>
+Esimerkki:<br>
+seuraavalla komennolla voit antaa kaikille käyttäjille luku- ja ajo-oikeudet tiedostoon:
+<pre>
+    chmod a+rx &lt;tiedosto&gt;
+</pre>
+seuraavalla komennolla voit antaa tiedoston omistajalle luku-, kirjoitus- ja ajo-oikeudet sekä muille käyttäjille luku- ja ajo-oikeudet tiedostoon:
+<pre>
+    chmod 755 &lt;tiedosto&gt;
+</pre>
+<p>
+Lisätietoja ls- ja chmod-komentojen käytöstä löytyy internetistä.
+
+
+
+<h3><a id="6.2"></a>6.2 Tiedoston käyttöoikeudet (Windows)</h3>
+<p>
+Voit tarkastella tiedoston käyttöoikeuksia Windowsissa aloittamalla ensin Windowsin Resurssienhallinnan, napsauttamalla
+haluamaasi tiedostoa hiiren kakkospainikkeella ja valitsemalla Ominaisuudet.  Tiedoston käyttöoikeudet näkyvät
+Suojaus-välilehdessä.  Varmista, että Lue- ja Suorita-oikeudet ovat valittuina.
+<p>
+Voit tarkastella ja muuttaa tiedoston käyttöoikeuksia Windowsin uusissa versioissa
+myös antamalla icacls-komennon.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Tuotteen käytön aloitus</h3>
+<p>
+IBM i Access Client Solutions -ohjelman käytön voi aloittaa useilla eri tavoilla.
+Jos olet asentanut tuotteen asennuksen komentosarjojen avulla, helpoin tapa ohjelman aloitukseen on esitelty <a href="./QuickStartGuide_en.html">Pika-aloitusoppaassa</a>.
+<p>
+Jos tuotetta ei ole asennettu asennuksen komentosarjojen avulla, seuraavassa kerrotaan vaihtoehtoisia tuotteen aloitustapoja.
+Koska Java-ohjelma voidaan asentaa useilla tavoilla ja useisiin sijainteihin,
+jotkin tavat voivat edellyttää lisämääritystä.  Jos
+jokin seuraavista tavoista ei toimi, kokeile muuta tapaa. Joissakin
+tapauksissa käytettävissä on lisäohjeita.  Lisätietoja voi löytyä kohdasta
+<a href="#11.0">11.0 Yleisimmät kysymykset</a>.
+<p>
+Kun käytät seuraavien ohjeiden mukaan binaaritiedostoa
+tai komentotiedostoa, sen on oltava zip-arkistotiedostoon
+sisältyvässä hakemistorakenteessa.  Käsittelyn helpottamiseksi voit myös
+kopioida tai siirtää käyttöjärjestelmäkohtaisen binaaritiedoston ja/tai
+komentotiedoston samaan hakemistoon, johon on tallennettu
+acsbundle.jar-tiedosto.
+
+
+<h3><a id="7.1"></a>7.1 Tuotteen käytön aloitus</h3>
+<p>
+Voit aloittaa tuotteen käytön käyttämällä tiedostojärjestelmän selaustoimintoa (esimerkiksi Windowsin Resurssienhallintaa tai
+Macin OS X Finder -ohjelmaa) ja paikantamalla käyttöjärjestelmäkohtaisen binaaritiedoston käyttöjärjestelmää ja laitteistoarkkitehtuuria
+vastaavasta Start_Programs-hakemiston alihakemistosta.
+<p>
+Paikanna binaaritiedosto, jonka käyttöjärjestelmä tunnistaa. Aloita sitten tuotteen
+käyttö kaksoisnapsauttamalla tiedostoa.
+Voit aloittaa tuotteen käytön tämän binaaritiedoston avulla myös kehotteesta,
+päätteestä tai komentoliittymästä.
+<p>
+Jos seuraava virhesanoma tulee kuvaruutuun:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Error loading Java module."<br>
+Tällöin IBM i Access Client Solutions -ohjelmisto ei löytänyt tunnistamastaan sijainnista
+Java-asennusta.  Voit yrittää ratkaista ongelman seuraavien osien ohjeiden avulla:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Tuotteen käytön aloitus - lisäasetukset</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Tuotteen käytön aloitus (komentosarjan avulla)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a><br>
+<p>
+Tekninen huomautus (Mac):<br>
+Jos järjestelmä kehottaa asentamaan "Java 6 SE runtime"-ympäristön, sinun ei tarvitse asentaa
+Java-versiota 6.  Asenna Java-versio 8 ja yritä sitten aloittaa ohjelma uudelleen.
+Jos käytät kohdetta acslaunch_mac ohjelman aloitukseen ja sama kehote tulee kuvaruutuun, siirry Lisäohjelmat-kansioon
+ja aloita Pääte-istunto. Aja seuraavat komennot ja yritä aloittaa ohjelma uudelleen:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Tuotteen käytön aloitus - lisäasetukset</h3>
+<p>
+Voit kokeilla myös seuraavia menetelmiä, kun yrität käyttää oman käyttöjärjestelmän
+binaaritiedostoa.  Näiden menetelmien avulla voit tunnistaa, minkä Java Runtime Environment (JRE) -ohjelmiston
+avulla tuotteen käyttö on aloitettava.  Lisätietoja työaseman Javan home-hakemistopolun paikantamisesta on osassa
+<a href="#7.1.2">7.1.2 Javan home-hakemistopolun haku</a>.  Nämä lisämenetelmät ovat käytettävissä vain Linux- ja
+Windows-ympäristöissä:
+<ul>
+<li>Määritä JAVA_HOME-ympäristömuuttuja vastaamaan Javan home-hakemistopolkua (tai)
+<li>Määritä Javan home-hakemistopolku binaarikomennon -vm-parametrilla.  Saat lisäohjeita antamalla binaarikomennon -h-parametrilla (tai)
+<li>Kopioi Java Runtime Environment (JRE) -hakemistorakenne samaan hakemistoon, josta ajettava binaaritiedosto löytyy.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Javan home-hakemistopolun haku</h3>
+<p>
+Jos voit aloittaa tuotteen käytön seuraavissa kohdissa esitetyllä tavalla:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Tuotteen käytön aloitus (komentosarjan avulla)</a>  (tai)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a><br>
+voit määrittää työasemasi java-home-polun IBM i Access Client Solutions -ohjelmiston
+pääkäyttöliittymän avulla.  Valitse valikkoriviltä seuraavat vaihtoehdot:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Ohje-&gt;Tietoja<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Java.home-polku näkyy esiin tulevassa näytössä.<br>
+<p>
+Java.home-ominaisuus sisältää työaseman Javan home-hakemiston polun
+sijainnin.  Tämä polku on annettava, kun määrität
+JAVA_HOME-ympäristömuuttujan tai kun käytät komennossa asetusta -vm.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Javan home-polun haku (Windows)</h3>
+<p>
+Etsi Windows-ympäristössä tiedostoa java.exe.  Java-binaaritiedosto sijaitsee tavallisesti Javan home-hakemiston
+polun bin- tai jre/bin-alihakemistossa.
+Javan home-hakemiston polkua voidaan käyttää, kun määritetään JAVA_HOME-ympäristömuuttuja
+tai kun komennossa käytetään asetusta -vm.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Javan home-polun haku (Linux)</h3>
+<p>
+Linux-järjestelmässä voit käyttää which-komentoa:<br>
+<pre>
+    which java
+</pre>
+Komento antaa tuloksena polun java-komentoon tai symbolisen linkin siihen.
+<p>
+Selvitä symboliset linkit, kunnes saat lopulta esiin Java-komennon
+binaaritiedoston.  Voit selvittää symboliset linkit käyttämällä komentoa ls
+parametrin -l kanssa:<br>
+<pre>
+ls -l &lt;tiedosto&gt;
+</pre>
+Java-binaaritiedosto sijaitsee tavallisesti Javan home-hakemiston
+polun bin- tai jre/bin-alihakemistossa.  Javan home-hakemiston polkua
+voidaan käyttää, kun määritetään JAVA_HOME-ympäristömuuttuja
+tai kun komennossa käytetään asetusta -vm.
+
+
+
+<h3><a id="7.2"></a>7.2 Tuotteen käytön aloitus (komentosarjan avulla)</h3>
+<p>
+Versiosta v1r1m5 lähtien Start_Scripts-hakemiston nimi on ollut Sample_Scripts-hakemisto ja se sijaitsee nyt Documentation-hakemistossa.
+<p>
+Tuotteen ensisijainen aloitustapa on käyttää ympäristökohtaista binaaritiedostoa, joka on Start_Programs-hakemistossa.  Sample_Scripts-hakemiston
+komentotiedostoja tulee käyttää vain silloin, kun ympäristökohtainen binaaritiedosto ei toimi.
+<p>
+Voit aloittaa tuotteen käytön käyttämällä tiedostojärjestelmän selaustoimintoa
+(esimerkiksi Windowsin Resurssienhallintaa tai Macin OS X Finder -ohjelmaa)
+ja paikantamalla komentotiedoston käyttöjärjestelmää vastaavasta Sample_Scripts-alihakemistosta.
+<p>
+Useimmissa ei-Windows-pohjaisissa käyttöjärjestelmissä on oletusarvon mukaan käytettävissä perl-komentotiedosto.  Sample_Scripts/Linux_Mac_Other-hakemistossa
+on (kolmen eri tunnisteen avulla nimetty) perl-komentotiedosto. Sen avulla tuotteen käyttö voidaan aloittaa kaikissa käyttöympäristöissä, joissa
+perl-komentotiedosto on käytettävissä.  Valitse tiedosto, jonka tunnisteen avulla
+käyttöjärjestelmä tunnistaa tiedoston perl-komentotiedostoksi.
+<p>
+Windows-pohjaisissa käyttöjärjestelmissä on oletusarvon mukaan käytettävissä JScript-komentotiedosto.  Sample_Script/Windows-hakemistossa
+on JScript-komentotiedosto, jonka avulla tuotteen käyttö voidaan aloittaa
+Windows-käyttöjärjestelmissä.
+<p>
+Paikanna komentotiedosto, jonka käyttöjärjestelmä tunnistaa, käyttämällä tiedostojärjestelmän
+selaukseen käyttöympäristökohtaista menetelmää (esimerkiksi Windowsin Resurssienhallinta
+tai Mac OS X Finder).  Aloita sitten tuotteen käyttö kaksoisnapsauttamalla tiedostoa.
+Voit aloittaa tuotteen käytön tämän komentotiedoston avulla myös kehotteesta,
+päätteestä tai komentoliittymästä.
+
+
+
+<h3><a id="7.3"></a>7.3 Tuotteen käytön aloitus (komentorivin avulla)</h3>
+<p>
+Voit aloittaa tuotteen käytön myös kehotteesta,
+päätteestä tai komentoliittymästä antamalla seuraavan komennon:<br>
+<pre>
+    java -Xmx1024m -jar &lt;polku&gt;/acsbundle.jar
+</pre>
+jossa &lt;polku&gt; määrittää tuotteen jar-ohjelmatiedoston sijainnin.<br>
+<br>
+Esimerkki:<br>
+<pre>
+    java -Xmx1024m -jar V:/jokin_sijainti/acsbundle.jar
+</pre>
+tai
+<pre>
+    &lt;java_polku&gt;java -jar V:/jokin_sijainti/acsbundle.jar
+</pre>
+jossa &lt;java_polku&gt; määrittää JDK-version 6.0 tai uudemman java-komennon sijainnin.
+<p>
+Kohdassa <a href="#7.1.2">7.1.2 Javan home-hakemistopolun haku</a> on lisätietoja java-komennon
+koko hakemistopolun määrityksestä.
+<p>
+Voit myös käyttää ohjelmaa tai komentotiedostoa komentorivin avulla. Esimerkki:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Tekninen huomautus:<br>
+Useimmissa käyttöympäristöissä Java-näennäiskoneen kekomuistin enimmäiskoko on oletusarvon mukaan liian
+pieni, jotta IBM i Access Client Solutions -tuotteessa
+voitaisiin käyttää useita toimintoja.  On suositeltavaa, että kekomuistin enimmäiskoko on vähintään
+yksi gigatavu (-Xmx1024m).  Jos kekomuistin enimmäiskooksi määritetään alle yksi gigatavu
+tai käytetään oletusarvoa, järjestelmässä saattaa ilmetä muistin loppumiseen liittyvä poikkeus.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Kokoonpanon määritysn</h3>
+<p>
+Aloita lisäämällä kunkin käytettävän tai hallittavan IBM i -järjestelmän kokoonpano.  Voit lisätä järjestelmäkokoonpanon
+valitsemalla Järjestelmäkokoonpanot-vaihtoehdon Hallinta-tehtävistä. Valitse
+sitten Uusi-vaihtoehto.  Anna Yleiset-välilehdessä järjestelmän nimi.  Jotta voit aloittaa
+Yleiset-välilehden tehtävien toteuttamisen, tarvitset vain järjestelmän nimen.
+<p>
+Kun olet määrittänyt kokoonpanon, tallenna tätä järjestelmää varten määrittämäsi tiedot valitsemalla OK-vaihtoehto.
+Jos haluat lisätä kokoonpanoon muita järjestelmiä, valitse
+Tallenna/Uusi-vaihtoehto.
+<p>
+Voit tarvittaessa lisätä uusia järjestelmiä kokoonpanoon tai päivittää aiemmin määritettyjä kokoonpanoja
+käyttämällä Yleiset- ja Yhteys-välilehtiä tai Ohjauspääte-välilehteä.
+<p>
+Ohjauspäätetehtävät edellyttävät lisäkokoonpanoa.  Järjestelmä lisää ohjauspäätekokoonpanoihin
+automaattisesti järjestelmän nimen, joka on annettu Yleiset-välilehdessä.
+Voit
+antaa järjestelmän ohjauspäätekokoonpanon valitsemalla Järjestelmäkokoonpanot-vaihtoehdon
+Hallinta-tehtävistä.  Valitse Uusi- tai Muokkaa-vaihtoehto.  Valitse sitten Ohjauspääte-välilehti.
+5250-ohjauspäätteen tehtävä edellyttää määritettyä lähiverkko-ohjauspäätettä tai
+määritettyä laitteistohallinnan ohjauspäätettä. Jos sinulla ei ole määritettyä LAN- tai HMC-ohjauspäätettä, katso lisätietoja
+kohdasta <a href="#9.9">9.9 Ohjauspääteyhteyden muodostaminen IBM i -järjestelmään</a>.
+<p>
+Laitteistohallintaliittymän tehtävä edellyttää määritettyä
+laitteistohallintaliittymää.  Voit määrittää enintään kaksi laitteistohallintaliittymän kokoonpanoa.
+<p>
+Kun kokoonpanon määritys on valmis, valitse Sulje-vaihtoehto Järjestelmäkokoonpanot-näytössä.
+<p>
+Valitse IBM i Access Client Solutions -päänäytön avattavasta Järjestelmä-luettelosta
+järjestelmä.  Kaikki ohjauspäätteen tehtävät liittävät (Yleiset-välilehdessä) valitun
+järjestelmän (Ohjauspääte-välilehdessä) valittuun ohjauspäätteen kokoonpanoon automaattisesti.
+<p>
+Nyt voit valita tehtävän valittua järjestelmää varten.  Jos valitset ohjauspäätteen tehtävän,
+jota vastaavia kokoonpanotietoja ei ole annettu Ohjauspääte-välilehdessä,
+näkyviin tulee virhesanoma.
+
+
+
+<h3><a id="8.1"></a>8.1 Kokoonpanon sijainti</h3>
+<p>
+Oletusarvon mukaan kunkin käyttäjän kokoonpanolla on oma yksilöllinen
+sijainti. Kokoonpanon päähakemisto määräytyy käyttöympäristökohtaisesti.  Järjestelmä
+luo kokoonpanohakemistot alkulatauksen aikana.  Voit selvittää kokoonpanohakemiston sijainnin seuraavasti:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Aloita tuotteen käyttö (lisätietoja on kohdassa <a href="#7.0">7.0 Tuotteen käytön aloitus)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-&gt;Oletusasetukset<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Valitse Paikalliset asetukset -välilehti<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Kokoonpanon päähakemisto<br>
+<p>
+Kokoonpanon sijaintia ei voi muuttaa, kun ohjelmatuotteen ajo on meneillään.  Lisätietoja
+kokoonpanon sijainnin muuttamisesta on kohdassa <a href="#9.3">9.3 Kokoonpanon sijainnin muutto</a>.
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Lisäaiheet</h3>
+<h3><a id="9.1"></a>9.1 Lisää komentoriviparametreja</h3>
+<p>
+Monia graafisen pääkäyttöliittymän toimintoja voidaan käyttää myös
+komentorivin avulla.  Nämä toiminnot voidaan toteuttaa määrittämällä asianmukaisesti
+komentoriviparametrit, jotka näkyvät kohdassa:<br>
+    <a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a>
+<p>
+Esimerkki:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+Seuraavissa kohdissa näkyvät vain lisäparametrit:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;tiedoston_nimi&gt;]
+    &lt;tiedoston_nimi&gt; on luotavan tiedoston nimi
+</pre>
+<p>
+Tämä tallentaa nykyisen kokoonpanon määritettyyn tiedostoon.
+Tuloksena olevan tiedoston avulla voidaan syöttää tietoja Restore-komentoriviparametriin
+samassa tai eri työasemassa riippumatta siitä, mikä käyttöjärjestelmä on käytössä.
+<p>
+Tallennettavan kokoonpanon sijainnin määrittää ominaisuus:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...joka sijaitsee AcsConfig.properties-tiedostossa.
+<p>
+Toiminto vastaa pääkäyttöliittymän valintaa Tiedosto -&gt; Vie kokoonpano.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Palauta</h3>
+<pre>
+/PLUGIN=restore /file=&lt;tiedoston_nimi&gt;
+    &lt;tiedoston_nimi&gt; on varmistuskopioinnissa luodun tiedoston sijainti
+</pre>
+Tämä palauttaa tallennetun kokoonpanon määritetystä tiedostosta. Järjestelmässä
+määritetty kokoonpano häviää, jos sitä ei ole määritetyssä tiedostossa.
+<p>
+Palautettavan kokoonpanon sijainnin määrittää ominaisuus:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...joka sijaitsee AcsConfig.properties-tiedostossa.
+<p>
+Toiminto vastaa pääkäyttöliittymän valintaa Tiedosto -&gt; Tuo kokoonpano.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Noutaa määritetystä IBM i -järjestelmästä varmenteen myöntäjän ja tallentaa
+sen käyttäjän paikalliseen truststore-varastoon. SSL-suojausta käyttävä palvelintodennus
+edellyttää tätä.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+/LIST     - luettelee määritetyt järjestelmät yhteysasetuksineen
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;järjestelmä&gt; [/ipaddr=&lt;toistoväli&gt;] [/userid=&lt;käyttäjätunnus&gt;]
+                                 [/ssl=&lt;kytkin&gt;]
+                                 [/5250path=&lt;polku&gt;]
+[/del]  [/r]
+
+    /SYSTEM     - järjestelmän nimi
+    /ipaddr     - kun yhteyttä pyydetään, tämä arvo määrittää, hakeeko järjestelmä
+                  IP-osoitetta. Kelvolliset toistovälin arvot ovat:
+                      ALWAYS - IP-osoitteen haku aina kullekin yhteydelle
+                      HOURLY, DAILY, WEEKLY - IP-osoitteen haku, jos edellisestä
+                          hausta on kulunut parametrin arvon määrittämä aika
+                      IP-osoite - jos IP-osoite on määritetty, haun
+                          toistoväli on NEVER
+    /userid     - käyttäjän käyttäjätunnus
+                  voi saada myös seuraavat arvot:
+                      *SHARE        - Pyytää kerran sisäänkirjauksen
+                                      valtuustietoja, jotka määritetään tätä vaihtoehtoa käyttävien järjestelmien yhteiskäyttöön
+                      *PROMPTALWAYS - kehote tulee näkyviin vähintään kerran kullekin yhteydelle
+                      *KERBEROS     - käytä Kerberos-ohjelman käyttöoikeustunnusta, ei kehotteita
+    /ssl        - valitsin 0 poistaa SSL-tilan käyttöön ja valitsin 1 ottaa sen käyttöön
+    /5250path   - 5250-emulointiprofiilien polku
+                  Polun /5250path voi määrittää valinnalla Tiedosto -&gt; Vaihda                   hakemistoa... 5250-istuntojen ohjausosasta
+    /del poistaa nykyisen kokoonpanon
+    /r   korvaa nykyisen kokoonpanon
+</pre>
+Tämän toiminnon avulla komentoriviltä voidaan tehdä useita kokoonpanon valintoja.
+Nämä valinnat voidaan määrittää myös valitsemalla graafisesta pääkäyttöliittymästä Järjestelmäkokoonpanot-vaihtoehto.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;parametrit&gt;]
+</pre>
+Pyytää kaikkia tuotteessa ajossa olevia prosesseja vedostamaan säikeensä.  IBM:n ohjelmistotuki
+antaa häiriöön liittyvää tukea näiden tietojen avulla.
+<p>
+Toiminnon luomia lokeja voi käsitellä valitsemalla graafisesta pääkäyttöliittymästä seuraavat vaihtoehdot:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-&gt;Oletusasetukset<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Paikalliset asetukset -välilehti<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Vedoshakemisto<br>
+<p>
+Jos asetuksia ei määritetä, tämä toiminto vastaa seuraavaa graafisen käyttöliittymän toimintoa:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Työkalut-&gt;Luo huoltolokit
+<p>
+Kelvollisia parametreja ovat seuraavat:
+<pre>
+    /heapdump - tekee yllä kuvatun toiminnon ja vedostaa JVM-keon
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Paketoi aiemmin luodut lokit ja säikeiden vedokset zip-tiedostoon, joka voidaan lähettää
+IBM:n ohjelmistotukeen.
+<p>
+Tuloksena syntyvää zip-tiedostoa voi käsitellä valitsemalla graafisesta pääkäyttöliittymästä seuraavat vaihtoehdot:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-Oletusasetukset<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Paikalliset asetukset -välilehti<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Huollon hakemisto<br>
+
+Toiminto vastaa pääkäyttöliittymän valintaa Työkalut-&gt;Paketoi huoltolokit.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;taso&gt;
+                &lt;taso&gt; on jokin seuraavista kirjaustasoista:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Tämän lisäosan avulla käyttäjä voi vaihtaa kirjaustasoa komentoriviltä.
+<p>
+Kirjaustason voi määrittää valitsemalla graafisesta pääkäyttöliittymästä seuraavat vaihtoehdot:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-&gt;Oletusasetukset<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Yleiset-välilehti<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Kirjaustaso<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;järjestelmä&gt; [/USERID=&lt;käyttäjätunnus&gt;] [/PASSWORD=&lt;salasana&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - järjestelmän nimi
+    /USERID   - käyttäjätunnus
+    /PASSWORD - käyttäjätunnukseen liittyvä salasana
+    /AUTH     - yrittää muodostaa yhteyden järjestelmään määritettyjä sisäänkirjaustietoja käyttäen
+                ja tallentaa ne välimuistiin vain onnistuneen yrityksen jälkeen
+    /C        - tyhjentää välimuistin
+    /GUI      - voiko graafista käyttöliittymää käyttää vai ei
+</pre>
+Tämä komento tallentaa käyttäjätunnuksen ja salasanan välimuistiin, minkä vuoksi järjestelmä ei kysy käyttäjän salasanaa.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Tuo näkyviin käyttöliittymän saman näytön kuin vaihtoehtojen Muokkaa-&gt;Oletusasetukset valinta.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint  [/&lt;parametrit&gt;]
+
+Kelvollisia parametreja ovat seuraavat:
+    /killdaemon     - lopettaa demoniohjelman säikeet.
+                      Sama kuin vaihtoehtojen Työkalut-&gt;Palautus ylläpitoa varten valinta
+    /clearpwcaches  - tyhjentää kaikki välimuistiin tallennetut salasanat
+    /clearjarcache  - tyhjentää tuotteen jar-välimuistin
+    /clearlogs      - tyhjentää Lokit-hakemiston, joka löytyy vaihtoehtojen Muokkaa-&gt;Oletusasetukset
+                      ja Paikalliset asetukset -välilehden valinnalla käyttöliittymästä
+    /cleardumps     - tyhjentää Vedokset-hakemiston, joka löytyy vaihtoehtojen Muokkaa-&gt;Oletusasetukset
+                      ja Paikalliset asetukset -välilehden valinnalla käyttöliittymästä
+    /clearsvcdir    - tyhjentää Huollon hakemiston, joka löytyy vaihtoehtojen Muokkaa-&gt;Oletusasetukset
+                      ja Paikalliset asetukset -välilehden valinnalla käyttöliittymästä
+    /clearsettings  - tyhjentää nykyisen käyttäjän kaikki asetukset
+</pre>
+Jos asetuksia ei määritetä, järjestelmä ei toteuta mitään toimia.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;järjestelmä&gt; [&lt;/parametrit&gt;]
+    Kelvollisia parametreja ovat seuraavat:
+        /SSL=&lt;1|0&gt;         Ottaa SSL:n käyttöön tai poistaa sen käytöstä.
+        /ACCEPTALLCERTS=&lt;1|0&gt; Määrittää, lisätäänkö kaikki SSL-varmenteet
+                          luotettavien joukkoon vai ei, kun SSL on käytössä.
+        /SERVERAUTH=&lt;1|0&gt; Ottaa SSL-palvelintodennuksen käyttöön tai
+                          poistaa
+sen käytöstä (oletusarvo). Tätä ei huomioida,
+                          jos SSL:ää ei testata.
+        /GUI=&lt;1|0&gt;  Ottaa käyttöliittymäikkunan käyttöön tai poistaa sen
+                          käytöstä
+(oletusarvo on ei käytössä, jos ohjelma
+                          aloitetaan komentoriviltä).
+        /PORTS=&lt;portti1,portti2&gt; Testattavien porttien pilkuin eroteltu
+                          luettelo. Se voi sisältää
+numeroita tai palvelun
+                          nimiä (esim. /PORTS=as-signon,as-sts). Jos tätä ei
+                          määritetä,
+järjestelmä testaa oletusasetuksen mukaisen joukon portteja.
+                          Jos määrität arvon .CONSOLE, järjestelmä testaa ohjauspäätteeseen liittyvät portit.
+
+        /TIMEOUT=&lt;sekunnit&gt;   Määritä aikakatkaisuarvo sekunteina.
+</pre>
+Tämä lisäosa tarkistaa yhteyden IBM i -järjestelmään avaamalla yhteyden
+asianmukaiseen porttiin.  Jos toiminto tarkistaa SSL-yhteyden, se yrittää SSL-kättelyä.
+Jos toiminto aloitetaan graafisesta pääkäyttöliittymästä tai jos toiminnon kutsussa käytetään määritystä /GUI=1, tämä lisäosa näyttää
+valintaikkunan.  Jos toiminto aloitetaan komentoriviltä ilman määritystä /GUI=1, toiminto lähettää tulosteen
+ohjauspäätteeseen.
+<p>
+Oletusarvon mukaan järjestelmä tarkistaa seuraavat palvelut:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central, as-rmtcmd, as-database, as-dtaq, as-file, as-netprt, drda,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+Tämän toiminnon voi aloittaa valitsemalla pääkäyttöliittymästä seuraavat vaihtoehdot:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Järjestelmäkokoonpanot<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Valitse ensin järjestelmä ja sitten vaihtoehto Muokkaa<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Yleiset-välilehti<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Tarkista yhteys<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Tämä lisäosa ottaa käyttöön 5250-istuntojen ohjausosan graafisen käyttöliittymän.
+<p>
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä 5250-istuntojen ohjausosa-vaihtoehto.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;järjestelmä&gt; [/&lt;parametrit&gt;]
+
+Tämä lisäosa aloittaa määritettyyn järjestelmään kohdistuvan 5250-emulointiohjelman käytön.
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä 5250-emulointiohjelma-vaihtoehto.
+
+Kelvollisia parametreja ovat seuraavat:
+    /id=&lt;A-Z&gt;                    - lyhyt istunnon tunnus
+    /name=&lt;nimi&gt;                 - istunnon nimi
+    /wsid=&lt;tunnus&gt;               - työaseman tunnus
+    /wide=&lt;1|0|true|false&gt;       - leveän näyttökoon käyttö (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - koko näytön käyttö
+    /nosave=&lt;1|0|true|false&gt;     - ei asetusten tallennusta lopetuksen yhteydessä
+    /prompt=&lt;1|0|true|false&gt;     - kokoonpanovalintaikkunan pakotus näkyviin
+    /port=&lt;portti&gt;               - portin numero
+    /ssl=&lt;1|0|true|false&gt;        - yhteyden muodostus käyttämällä SSL-suojausta
+    /sso=&lt;1|0|true|false&gt;        - sisäänkirjausnäytön ohitus
+    /kerberos                          - kerberos-ohjelman käyttö
+    /width=&lt;leveys&gt;              - emulointi-ikkunan aloitusleveys
+    /height=&lt;korkeus&gt;            - emulointi-ikkunan aloituskorkeus
+    /xpos=&lt;xkoord&gt;               - emulointi-ikkunan vasemman yläkulman
+                                   y-koordinaatti
+    /ypos=&lt;ykoord&gt;               - emulointi-ikkunan vasemman yläkulman
+                                   y-koordinaatti
+    /watermark                         - järjestelmän nimen näyttö vesileimana
+ näytössä
+    /watermark=&lt;teksti&gt;          - annetun tekstin näyttö vesileimana
+ näytössä
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Tämä lisäosa ottaa käyttöön tiedonsiirron graafisen pääkäyttöliittymän.
+
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Tiedonsiirto-vaihtoehto.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;käyttäjätunnus&gt;] &lt;tiedoston_nimi&gt; [&lt;tiedoston_nimi&gt; &lt;tiedoston_nimi&gt; ...]
+
+    /userid     - käyttäjätunnus, jolla muodostetaan yhteys kohdejärjestelmään
+    &lt;tiedoston_nimi&gt;- edellisestä tiedonsiirrosta luodun tiedoston nimi, jonka
+                tunniste on .dtfx.
+</pre>
+Lisäosan avulla käyttäjä voi ajaa aiemmin tallennetun tiedonsiirron, joka koskee pääkoneesta siirtoa.
+<p>
+Tiedonsiirto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Tiedonsiirto-vaihtoehto.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload [/userid=&lt;käyttäjätunnus&gt;] &lt;tiedoston_nimi&gt; [&lt;tiedoston_nimi&gt; &lt;tiedoston_nimi&gt; ...]
+
+    /userid     - käyttäjätunnus, jolla muodostetaan yhteys kohdejärjestelmään
+    &lt;tiedoston_nimi&gt;- edellisestä tiedonsiirrosta luodun tiedoston nimi, jonka
+                tunniste on .dtfx.
+</pre>
+Lisäosan avulla käyttäjä voi ajaa aiemmin tallennetun tiedonsiirron, joka koskee pääkoneeseen siirtoa.
+<p>
+Tiedonsiirto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Tiedonsiirto-vaihtoehto.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;järjestelmä&gt;
+                          [/userid=&lt;käyttäjätunnus&gt;]
+                          {/hostfile=&lt;kirjasto/tiedoston_nimi&gt; | /sql="käsky"}
+                          {/clientfile=&lt;polku&gt;&lt;tiedoston_nimi&gt;.&lt;tunniste&gt; | /display}
+
+    /userid     - käyttäjätunnus, jolla muodostetaan yhteys kohdejärjestelmään
+    /hostfile   - latauksen lähdekirjasto ja -tiedosto IBM i -järjestelmässä
+                  esimerkiksi /hostfile=QIWS/QCUSTCDT
+    /sql        - SQL-käsky
+                  esimerkki /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - latauksen kohdetiedoston sijainti
+                  Tiedoston muoto määräytyy tunnisteen
+                  (esimerkiksi .csv, .ods, .xlsx tai .xlsx) mukaan.
+                  Jos tiedoston tunnistetta ei ole määritetty tai
+                  määritetyn tunnisteen laji ei ole tuettu,
+                  järjestelmä muotoilee tiedot .csv-tiedostoksi.
+    /display    - kirjoittaa tulosteen päätteeseen.
+</pre>
+Lisäosan avulla käyttäjä voi ajaa kokonaisen tiedoston yksinkertaisen latauksen
+komentoriviltä.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Tämä lisäosa aloittaa 5250-ohjauspäätteen määritetyssä järjestelmässä.
+<p>
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä 5250-ohjauspääte-vaihtoehto.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Tämä lisäosa aloittaa näennäisohjaustaulun määritetyssä järjestelmässä.
+<p>
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Näennäisohjaustaulu-vaihtoehto.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Tämä lisäosa aloittaa selaimen IBM Navigator for i -ohjelmaan käyttämällä
+määritettyä järjestelmää ja porttia 2001.
+<p>
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Navigator for i -vaihtoehto.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Tämä lisäosa tuo näkyviin tulostustyön graafisen käyttöliittymän, jonka avulla IBM i -järjestelmän sivuajotiedostoja voidaan tarkastella ja ladata.
+<p>
+Tämä toiminto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Tulostustyö-vaihtoehto.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Tämä lisäosa tuo näyttöön avainten hallintatyökalun.
+<p>
+Tämä toiminto vastaa pääkäyttöliittymän vaihtoehtojen Työkalut-&gt;Avainten hallinta valintaa.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;järjestelmä&gt;
+                  {/CMD="&lt;CL-komento&gt;" | file=&lt;tiedoston_nimi&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL-komento&gt;"  - ajettava komento. Käytä lainausmerkkejä, etteivät
+                                 välit tee komennon syntaksia virheelliseksi.
+    /file=&lt;tiedoston_nimi&gt;    - määritä useita komentoja sisältävän syöttötiedoston nimi.
+                           Kukin komento tulee kirjoittaa omalle rivilleen ilman lainausmerkkejä.
+    /noprompt=&lt;1|0&gt;      - kun määrität syöttötiedoston, ohita tulokset ja kehotteet ennen jatkoa.
+</pre>
+Tämä lisäosa lähettää CL-komennot määritettyyn järjestelmään.
+<p>
+Tämä toiminto on käytettävissä vain komentoriviltä.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;järjestelmä,järjestelmä,järjestelmä,...&gt;
+</pre>
+Tämä lisäosa vaihtaa salasanan määritetyissä järjestelmissä.  Lisäosa pyytää
+käyttäjältä käyttäjätunnuksen sekä vanhan ja uuden salasanan.
+<p>
+Toimintoa voi käyttää myös pääkäyttöliittymästä valitsemalla ensin vaihtoehdot Muokkaa-&gt;Oletusasetukset
+ja sen jälkeen Salasanat-välilehden.
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;parametri&gt; /SYSTEM=&lt;järjestelmä&gt;
+
+Parametrin &lt;järjestelmä&gt; arvoksi voi määrittää jonkin järjestelmän nimen tai
+arvon *ALL, joka määrittää kaikki järjestelmät.
+
+Kelvollisia parametreja ovat seuraavat:
+    /IMPORT - Kopioi yhden tai kaikki järjestelmäkokoonpanot vanhasta Windows-
+              kokoonpanosta IBM i Access Client Solutions -ohjelmistoon.
+    /EXPORT - Kopioi yhden tai kaikki järjestelmäkokoonpanot vanhaan Windows-
+              kokoonpanoon IBM i Access Client Solutions -ohjelmistosta.
+    /DELETE - Poistaa yhden tai kaikki järjestelmäkokoonpanot vanhasta Windows-
+              kokoonpanosta.
+</pre>
+Tämän lisäosan avulla voidaan kopioida järjestelmän kokoonpanoja
+IBM i Access Client Solutions -ohjelmiston ja IBM i Access for Windows
+-ohjelmiston tukemien vanhojen Windows-kokoonpanojen välillä.
+<p>
+Tätä toimintoa voi käyttää myös pääkäyttöliittymästä valitsemalla
+vaihtoehdot Tiedosto-&gt;Kopioi yhteydet.
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Huomautus: Tämä lisäosa on käytettävissä vain käyttäjille, joilla on root-käyttöoikeudet tai pääkäyttäjän käyttöoikeudet.
+<pre>
+/PLUGIN=restrict /&lt;parametrit&gt;
+
+Kelvollisia parametreja ovat seuraavat:
+     /restrict=&lt;funk1,funk2,funk3&gt;   Rajoittaa määritettyjen toimintojen käytön tässä
+                                     työasemassa.
+     /unrestrict=&lt;funk1,funk2,funk3&gt;   Sallii määritettyjen toimintojen käytön tässä
+                                     työasemassa.
+     /list                           Luettelo tässä työasemassa sallituista tai rajoitetuista
+                                     toiminnoista.
+     /export=&lt;tiedosto&gt;              Vie rajoitukset nimettyyn tiedostoon, jonka
+                                     tunniste on .acsr.
+     /import=&lt;tiedosto&gt;.acsr         Tuo rajoitukset tiedostosta, jonka
+                                     tunniste on .acsr.
+     /exportreg=&lt;tiedosto&gt;           Vie Windowsin rekisteritiedoston (.reg-tiedosto).
+
+</pre>
+<p>Tämän lisäosan avulla kaikki käyttäjät, joilla on pääkäyttäjän
+oikeudet, voivat rajoittaa tiettyjä toimintoja kaikilta
+nykyisen työaseman käyttäjiltä.
+<pre>
+   Toiminto         Kuvaus
+    cfg             Järjestelmän kokoonpanot
+    sm              5250-istuntojen ohjausosa
+    5250            5250-emulointiohjelma
+    vcp             Näennäisohjaustaulu
+    console         5250-ohjauspääte
+    consoleprobe    Ohjauspäätekokoonpanojen haku lähiverkosta
+    hmcprobe        HMC:n haku osioille
+    hmi1            Laitteistohallintaliittymä 1
+    hmi2            Laitteistohallintaliittymä 2
+    keyman          SSL-/TLS-varmenteiden hallinta
+    dtgui           Tiedonsiirron graafinen käyttöliittymä
+    upload          Tiedonsiirrot pääkoneeseen
+    download        Tiedonsiirrot pääkoneesta
+    cldownload      Tiedonsiirrot pääkoneesta
+    l1c             IBM Navigator for i (tason 1 ohjauspääte)
+    rmtcmd           Etäkomento (käytettävissä komentoriviltä)
+    splf            Tulostustyöt (sivuajotiedostot)
+    ifs             Sisäinen tiedostojärjestelmä
+    db2             Skeemat
+    rss             SQL-komentotiedoston ajo
+    db2tools        SQL Performance Center
+    sysdbg          IBM i -järjestelmän testausohjelma
+    checkupdates    Käytettävissä olevien päivitysten tarkistus
+    ssh             Secure Shell
+</pre>
+<p>Toimintoja voi myös jättää pois käyttämällä ryhmäavainsanoja:
+<pre>
+   Ryhmä              Toiminnot
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+Pääkäyttäjä voi rajoittaa toimintoja myös graafisesta
+pääkäyttöliittymästä käsin:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-&gt;Oletusasetukset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rajoitukset-välilehti<br>
+
+<p>
+Lisätietoja helposta tavasta rajoittaa toimintoja on kohdassa <a href="#9.5">9.5 Mukautetut paketit</a>.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Näyttää luettelon toiminnoista, jotka ovat tällä hetkellä
+rajoitettuina tässä työasemassa.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;tiedoston_laji&gt; &lt;tiedoston_laji&gt; ...] [/c]
+
+    &lt;tiedoston_laji&gt; - kelvollisia tiedoston lajeja ovat seuraavat:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - tyhjentää määritettyjen tiedoston lajien tiedostoliitännän
+</pre>
+Windows-käyttöympäristössä tämä komento määrittää
+tiedostoliitännät tiedostoille, joiden laji on .dttx,
+.dtfx, .hod, .bchx, .ws ja .bch.  Muissa kuin
+Windows-käyttöympäristöissä järjestelmä esittää virhesanoman.
+<p>
+Tämä toiminto vastaa pääkäyttöliittymän vaihtoehtojen Työkalut-&gt;Tiedostoliitännät valintaa.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;käyttäjätunnus&gt;] &lt;tiedoston_nimi&gt; [&lt;tiedoston_nimi&gt; &lt;tiedoston_nimi&gt; ...]
+
+    /userid     - käyttäjätunnus, jolla muodostetaan yhteys kohdejärjestelmään
+    &lt;tiedoston_nimi&gt;- edellisestä tiedonsiirrosta luodun tiedoston nimi, jonka
+                tunniste on .dtfx tai .dttx.
+                Tällä avainsanalla tai ilman sitä voidaan määrittää useita tiedostoja.
+</pre>
+Lisäosan avulla käyttäjä voi ajaa aiemmin tallennetun
+tiedonsiirtopyynnön.
+<p>
+Tiedonsiirto voidaan toteuttaa myös valitsemalla graafisesta pääkäyttöliittymästä Tiedonsiirto-vaihtoehto.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;tiedosto&gt; ...  /output=&lt;hakemisto&gt;] [/verbose] [/gui]
+
+    /input    - Toiseen ympäristöön siirrettävät tiedostot.  Tiedostojen on oltava 5250-tiedostoja ja tunnisteen on oltava .ws, .bch, .kmp, .pmp tai .bar.
+    /output   - Sijainti, johon toiseen ympäristöön siirrettävät tiedostot tallennetaan.
+    /verbose  - Näytä toiseen ympäristöön siirrettävien tiedostojen tulokset.
+    /gui      - Aloita käyttöliittymä 5250-tiedostojen toiseen ympäristöön siirtoa varten.
+</pre>
+Lisäosan avulla käyttäjä voi siirtää tiedostoja IBM i Access for Windows
+Personal Communications -emulointiohjelmasta IBM i Access Client Solutions -emulointiohjelmaan.
+Joillakin muunnetuilla tiedostoilla on uusi tiedoston tunniste.  Katso lisätietoja osasta <a href="#9.6.2">9.6.2 5250-emuloinnin siirto</a>. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;järjestelmä&gt; /DATABASE=&lt;tietokanta&gt; [/FILE=&lt;tiedosto&gt;] [/SQL=&lt;tiedosto&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;tiedoston_nimi&gt; - Avaa määritetyn tiedoston
+    /SQL=&lt;tiedoston_nimi&gt; - Avaa määritetyn tiedoston
+    /AUTORUN=&lt;1,0&gt;   - Ajaa komentotiedoston automaattisesti
+</pre>
+Lisäosan avulla käyttäjä voi ajaa SQL-käskyt ja CL-komennot.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;järjestelmä&gt; /DATABASE=&lt;tietokanta&gt; [Asetukset]
+
+Kelvollisia parametreja ovat seuraavat:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Toteutettava toiminto:
+                      LIST-asetusta voi käyttää LISTNAME-argumentin kanssa.
+                      Se tuo näkyviin SQL Performance Center-ohjelman ja
+                      määritetty luettelo on näkyvissä.
+                      ANALYZE-asetus analysoi annetun suoritustehon tietojoukon.
+                      STATEMENTS-asetus näyttää joko SQL-suunnitelman
+                      välimuistin tai annetun suoritustehon tietojoukon käskyt.
+                      COMPARE-asetus vertaa annettuja suoritustehon tietojoukkoja.
+    /NAME=&lt;nimi&gt;    - Suoritustehon tietojoukon nimi
+    /TABLE=&lt;nimi&gt;   - Sen taulukon nimi, joka sisältää suoritustehotiedot
+    /SCHEMA=&lt;nimi&gt;  - Sen taulukon skeeman nimi, joka sisältää suoritustehotiedot
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - SQL Performance Center -ohjelmassa näkyvä ensimmäinen luettelo.
+</pre>
+SQL Performance Center -lisäosa sisältää joukon työkaluja, jotka auttavat optimoimaan SQL-kyselyt tietokantasovelluksissa:
+<ul>
+<li>Analysoi - Sisältää kerättyjen tehonvalvontatietojen tiivistetyn näkymän, joka toimii alasporautumisen avulla tapahtuvan syvällisemmän analyysin aloituskohtana.
+<li>Vertaa - Tarkastele kahden tai useamman suoritustehotietokokoelman tiivistelmän vertailua ja valitse sitten kaksi syvällisempään käskyvertailuun.
+<li>Näytä käskyt - SQL-käskyjen käsittely järjestelmän SQL-suunnitelman välimuistissa tai suoritustehotietojen kokoelmassa.
+<li>Visual Explain - Luo käskyn toteutussuunnitelman graafinen esitys, jotta näet, kuinka SQL-käskyt todella toimivat.
+<li>SQL-suunnitelman välimuisti - Järjestelmän SQL-suunnitelman välimuistin asetusten hallinta
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Sisäinen tiedostojärjestelmä sisältää liittymän, jolla voit selata IBM i -järjestelmän sisäistä tiedostojärjestelmää ja käsitellä sen objekteja seuraavasti:
+<ul>
+<li>kopioida objekteja työasemajärjestelmän ja IBM i -järjestelmän välillä
+<li>kopioida objekteja IBM i -järjestelmän sisäisessä tiedostojärjestelmässä tai toisen IBM i -järjestelmän sisäiseen tiedostojärjestelmään
+<li>lähettää objekteja toiseen IBM i -järjestelmään (tai useaan järjestelmään)
+<li>luoda uusia kansioita (hakemistoja, kirjastoja ja kansioita)
+<li>poistaa objekteja
+<li>nimetä objekteja uudelleen
+<li>tarkastella objektien ominaisuuksia.
+</ul>
+Lisätietoja tämän lisäosan käyttöön liittyvistä vaatimuksista ja rajoituksista on kohdassa <a href="#9.12">9.12 Sisäinen tiedostojärjestelmä (IFS)</a>.
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+Lisäosassa on Db2 for i -tietokantojen hallintaliittymä IBM i -palvelimessa.
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+Lisäosa sisältää liittymän käytettävissä olevien päivitysten tarkistamiseen.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;järjestelmä&gt;
+</pre>
+SSH-pääte aloittaa aiemmin asennetun SSH-työasemaohjelman (pääte-emulointiohjelman)
+PC-tietokoneessasi sisäiseen IBM i -tiedostojärjestelmään.
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Tiedostoliitännät</h3>
+<p>
+Järjestelmä tukee joidenkin IBM i Access Client Solutions -ohjelmiston kokoonpanotiedostojen käsittelyä
+komentorivin avulla, kun tiedostojen tunnisteet annetaan ensimmäisenä ja ainoana parametrina.
+Kun määritetyn tiedoston tunnisteen sisältävä tiedosto annetaan ensimmäisenä parametrina,
+IBM i Access Client Solutions -ohjelmisto liittää tiedostoon toteutettavan toiminnon ja
+määrittää tiedoston toiminnon syötteeksi.
+<p>
+Tiedostoliitännät ovat tuettuja seuraavien tunnisteiden yhteydessä:
+<pre>
+    .dttx   - tiedostonsiirron siirtopyyntö työasemasta pääkoneeseen
+    .dtfx   - tiedostonsiirron siirtopyyntö pääkoneesta työasemaan
+    .hod    - 5250-emuloinnin istuntoprofiili
+    .bchx   - useiden istuntojen emulointiprofiili
+    .ws     - 5250-emuloinnin istuntoprofiili (Personal Communications)
+    .bch    - useiden istuntojen emulointiprofiili (Personal Communications)
+</pre>
+Komentoriviesimerkkejä:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - ajaa tallennetun siirron pääkoneesta työasemaan
+    acslaunch_xxx dt_upload_file.dttx   - ajaa tallennetun siirron työasemasta pääkoneeseen
+    acslaunch_xxx system_lp13ut20.hod   - aloittaa 5250-istunnon järjestelmään
+</pre>
+...jossa acslaunch_xxx on tuotteen aloitukseen komentoriville annettavan komennon syntaksi. Lisätietoja on kohdassa
+      <a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a>.
+<p>
+Näiden komentorivin avulla toteuttavien tuettujen tiedostoliitäntöjen avulla käyttäjä voi määrittää manuaalisesti
+käyttöjärjestelmäkohtaisia tiedostoliitäntöjä.  Koska tiedostoliitännät
+määräytyvät käyttöympäristön mukaan, tarvittavat toimet ovat käyttöjärjestelmäkohtaisia.
+</p>
+Haluat ehkä harkita tiedostoliitäntöjen määrittämistä käyttämässäsi käyttöjärjestelmässä, koska
+tiedostoliitännän ansiosta voit aloittaa määritetyn toiminnon kaksoisnapsauttamalla tiedostoa,
+jos sen tunniste on edellä mainitussa tiedostoliitäntää tukevien tiedostojen luettelossa.
+<p>
+Seuraavissa osissa on esimerkkejä tiedostoliitäntöjen määrittämisestä joissakin
+käyttöjärjestelmissä.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Tiedostoliitännät (Windows)</h3>
+<ol>
+<li>Valitse pääkäyttöliittymän valikkorivin vaihtoehdot Työkalut-&gt;Tiedostoliitännät...
+<li>Valitse tiedostolajit, joille haluat luoda tiedostoliitännät.
+<li>Napsauta OK-painiketta.
+</ol>
+<p>
+Järjestelmä ajaa nyt IBM i Access Client Solutions -ohjelmiston asianmukaisen toiminnon,
+kun kaksoisnapsautat tämänlajisia tiedostoja.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Kuvakkeen vaihtaminen (Windows-pikakuvake)</h3>
+<ol>
+<li>Etsi laitteistoarkkitehtuuriasi vastaavalle binaaritiedostolle
+(acslaunch_win-32.exe tai acslaunch_win-64.exe) aiemmin luotu pikakuvake.
+<li>Napsauta hiiren kakkospainiketta ja valitse Ominaisuudet-vaihtoehto.
+<li>Valitse Pikakuvake-välilehti.
+<li>Napsauta Vaihda kuvake... -painiketta.
+<li>Valitse tässä pikakuvakkeessa käytettävä kuvake.
+<li>Napsauta OK-painiketta.
+<li>Napsauta OK-painiketta.
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Työpöytäkuvakkeen määritys (Linux)</h3>
+<p>
+Lisätietoja Linux-asetuksista on <a href="./QuickStartGuide_en.html">Pika-aloitusoppaassa</a>.  Tämä asentaa
+sovelluksen hakemistoon /opt/ibm/iAccessClientSolutions.  Se luo myös tiedoston
+/usr/share/applications/IBM i Accesss Client Solutions.desktop
+<p>
+Voit luoda tuotteen kuvakkeen työpöydälle kopioimalla yllä mainitun .desktop-tiedoston
+Työpöytä-kansioon.  Joudut ehkä määrittämään työpöydällä olevan tiedoston käyttöoikeudet,
+jotta sen voi ajaa.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Tiedostoliitännät (Linux)</h3>
+<p>
+Tiedostoliitäntöjen määrityksessä tarvittavat vaiheet määräytyvät Linux-version
+ja työpöytäympäristön perusteella.  Yleensä
+tarvittavat toimet ovat samankaltaisia kuin edellä kuvatut Windows-käyttöjärjestelmässä tarvittavat toimet.
+<ol>
+<li>Paikanna tiedostoliitäntään käytettävä tiedosto, joka sisältää tuetun tunnisteen (esimerkiksi
+.hod, .bchx, .dtfx tai .dttx).
+<li>Napsauta tiedostoa hiiren kakkospainikkeella. Etsi asetuksia tai ominaisuuksia, joiden avulla voit liittää
+tiedostoon ohjelman.
+<li>Liitä tiedostoon ja/tai sen tunnisteeseen asianmukainen IBM i Access
+Client Solutions -ohjelmiston binaaritiedosto tai komentotiedosto.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Tiedostoliitännät (Mac)</h3>
+<p>
+Jotta tiedostoliitäntöjä voi käyttää Mac-ympäristössä, tiedoston laji tulee liittää
+sovellukseen.  Asenna IBM i Access Client Solutions -sovellus noudattamalla Mac-käyttöjärjestelmän <a href="./QuickStartGuide_en.html">Pika-aloitusoppaassa</a> esiteltyjä vaiheita.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Tiedostoliitäntöjen luonti (Mac)</h3>
+<ol>
+<li>Paikanna Finderilla tiedostoliitäntään käytettävä tiedosto, joka sisältää tuetun tunnisteen (esimerkiksi
+.hod, .bchx, .dtfx tai .dttx).
+<li>Valitse tiedosto ja sen jälkeen vaihtoehdot Tiedosto-&gt;Näytä tiedot.
+<li>Valitse vaihtoehdot Avaa ohjelmalla ja Muu.
+<li>Selaa IBM i Access Client Solutions -sovelluksen kohdalle.
+<li>Valitse sovellus.
+<li>Valitse Always Open With (Avaa aina ohjelmassa) -valintaruutu.  Napsauta Add (Lisää) -painiketta.
+<li>Palaa Open with (Avaa ohjelmassa) -kohtaan ja valitse siinä Change All (Vaihda kaikki) -vaihtoehto.  Jatka muuhun valintaikkunaan.
+</ol>
+<p>
+Järjestelmä ajaa nyt IBM i Access Client Solutions -ohjelmiston asianmukaisen toiminnon,
+kun kaksoisnapsautat tämänlajisia tiedostoja.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Kuvakkeen vaihtaminen (Mac)</h3>
+<p>
+Etsi tuotteen hakemistossa oleva Icons-kansio Esikatselu-
+sovelluksella ja vaihda sitten symboli Finderin Näytä tiedot -kohdassa.
+<ol>
+<li>Valitse Esikatselussa vaihtoehdot Tiedosto-&gt;Avaa.
+<li>Etsi Icons-hakemisto.
+<li>Valitse tiedosto, joka sisältää kuvakkeen, ja napsauta Avaa-painiketta.
+<li>Valitse vaihtoehdot Muokkaa-&gt;Valitse kaikki.
+<li>Valitse vaihtoehdot Muokkaa-&gt;Kopioi.
+<li>Etsi Finderissa tiedosto (.hod, .bchx, .dtfx tai .dttx), jonka kuvakkeen
+haluat vaihtaa.<br>
+   Jos tiedosto on jo työpöydällä, valitse se napsauttamalla.  Jos tiedosto ei ole
+työpöydällä, valitse vaihtoehdot Siirry-&gt;Siirry kansioon, anna tiedoston polku ja napsauta Siirry-painiketta.<br>
+   Valitse tiedosto napsauttamalla sitä.
+<li>Valitse vaihtoehdot Tiedosto-&gt;Näytä tiedot.
+<li>Napsauta Näytä tiedot -ikkunan yläosassa näkyvää kuvaketta.
+<li>Valitse vaihtoehdot Muokkaa-&gt;Sijoita.
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Kokoonpanon sijainnin muutto</h3>
+<p>
+Oletusarvon mukaan kunkin käyttäjän kokoonpanolla on oma yksilöllinen
+sijainti. Kokoonpanon sijainnin voi muuttaa määrittämällä seuraavan ominaisuuden:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Tämä ominaisuus löytyy AcsConfig.properties-tiedostosta.
+<p>
+AcsConfig.properties-tiedostolla on kaksi sijaintia, kun tuote
+toimitetaan. Tiedosto sijaitsee acsbundle.jar file-tiedostossa.  Käytön helpottamiseksi AcsConfig.properties-tiedosto
+sijaitsee myös tuotteen arkistotiedostossa. Kun zip-arkistotiedosto puretaan, AcsConfig.properties-tiedosto
+sijaitsee samassa hakemistossa kuin acsbundle.jar-tiedosto.
+<p>
+Kun ohjelmaa aletaan käyttää, se käyttää vain ensimmäiseksi löytämäänsä
+AcsConfig.properties-tiedostoa.  Ohjelma tarkistaa ensin hakemiston, jossa acsbundle.jar-tiedosto sijaitsee.
+Jos AcsConfig.properties-tiedostoa ei löydy samasta hakemistosta kuin
+acsbundle.jar-tiedosto, ohjelma käyttää acsbundle.jar-tiedoston sisältämää AcsConfig.properties-tiedostoa.
+<p>
+Voit päivittää acsbundle.jar-tiedostossa olevan AcsConfig.properties-tiedoston mukautetun kokoonpanopolun mukaiseksi.  Jos teet tämän päivityksen, varmista, että acsbundle.jar-tiedoston hakemistossa ei ole AcsConfig.properties-tiedostoa, koska jos hakemistossa on kyseinen tiedosto, ohjelma käyttää sitä eikä acsbundle.jar-tiedostossa olevaa AcsConfig.properties-tiedostoa.
+Tällä tavalla kokoonpanon sijainti voidaan jaella joustavasti acsbundle.jar-tiedoston kanssa niin, että sijainti voidaan myös haluttaessa ohittaa.
+<p>
+Ohjelmassa on tiettyjä avainsanoja, joita voidaan käyttää määritettäessä
+kokoonpanopolkua.  Kun avainsanoja käytetään määritettävässä polussa, järjestelmä korvaa avainsanat
+tekstillä tai polulla, jonka ne määrittävät.  Kokoonpanopolussa voidaan käyttää vain yhtä avainsanaa.  Varatut avainsanat merkityksineen ovat seuraavat:<br>
+<pre>
+	{USER} - Nykyinen käyttäjätunnus. Tämä avainsana voi olla missä polun kohdassa tahansa.
+</pre>
+<p>
+Seuraavat avainsanat voivat olla vain määritetyn polun alussa:
+<pre>
+	{PRODUCTDIR} - sama kuin tiedoston acsbundle.jar polku
+	{TEMPDIR}    - ympäristökohtaisen tilapäishakemiston polku
+	{ROOT}       - tiedostojärjestelmän päähakemiston (root) polku
+	{HOME}       - käyttäjän omahakemiston polku
+	{DEFAULT}    - tuotteen oletuspolku.
+</pre>
+<p>
+Tekninen huomautus:<br>
+Saman kokoonpanon käyttö usean käyttäjän kesken ei ole suositeltavaa.
+Jos esimerkiksi X on yhteiskäyttöön määritetty verkkoasema, seuraava asetus voi aiheuttaa odottamattomia tuloksia:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/yhteiskäyttöinen_verkkoasema/config_directory
+</pre>
+<p>
+Jos useat käyttäjät käyttävät samaa kokoonpanopolkua, se voi aiheuttaa monenlaisia ongelmia:<br>
+<ol>
+<li>Jos useat käyttäjät käyttävät samanaikaisesti samaa kokoonpanoa, se voi aiheuttaa odottamattomia
+tuloksia.
+<li>Tässä esimerkissä oletetaan, että jokainen käyttäjä on määrittänyt X-aseman vastaamaan samaa sijaintia.
+<li>Verkkoaseman käyttö kokoonpanossa ei toimi Linux- tai Mac-työasemaohjelmasta
+käsin.  Käyttämällä seuraavissa esimerkeissä annettuja avainsanoja verkkoaseman
+käyttö onnistuu Windows-, Linux- ja Mac-järjestelmissä.
+</ol>
+<p>
+Jos kokoonpanopolku määritetään yhteiskäyttöön usean käyttäjän kesken, tulisi
+käyttää {USER}-avainsanaa päällekkäisyyksien välttämiseksi muiden käyttäjien kanssa.  Järjestelmä
+korvaa avainsanan nykyisen käyttäjän käyttäjätunnuksella.
+<p>
+Käytä kokoonpanopolkua määritettäessä vinoviivaa (/) kenoviivan (\)
+asemesta hakemistojen erottimena.  Tämä toimii kaikissa käyttöjärjestelmissä,
+myös Windows-järjestelmissä.
+<p>
+Seuraavassa on suositeltuja esimerkkikokoonpanoja:
+<p>
+Esimerkki 1 - nykyisen käyttäjän paikallinen kokoonpano (oletus):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Jos AcsBaseDirectory-ominaisuutta ei määritetä, järjestelmä käyttää kokoonpanossa
+oletusarvoa, joka on käyttöympäristön mukaan vaihteleva käyttäjän polku.
+Tämä on IBM i Access Client Solutions -ohjelmiston oletusasetus.
+<p>
+Esimerkki 2 - kullekin käyttäjälle yksilöllinen etä- tai paikalliskokoonpano:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+Kokoonpano on etä- tai paikalliskokoonpano. Tämä vaihtelee päähakemiston (ROOT) sijainnin mukaan.
+<p>
+Esimerkki 3 - kullekin käyttäjälle yksilöllinen etä- tai paikalliskokoonpano:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+Kokoonpano on etä- tai paikalliskokoonpano. Tämä vaihtelee tuotehakemiston (PRODUCTDIR) sijainnin mukaan.
+<p>
+Esimerkki 4 - siirrettävässä tallennusvälineessä (kuten USB-asemassa) oleva paikalliskokoonpano:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Koska siirrettävän tallennusvälineen polku vaihtelee sen mukaan, missä järjestelmässä
+tallennusvälinettä käytetään, tämän asetuksen avulla kokoonpano voidaan määrittää
+suhteellisesti tuotteen tiedostoihin nähden.  Tässä esimerkissä avainsana {USER}
+jätettiin tarkoituksella määrittämättä, jotta USB-aseman kokoonpanoa käyttäisi
+USB-aseman käyttäjä käyttäjätunnuksesta riippumatta.
+
+
+<h3><a id="9.4"></a>9.4 Muita käyttöönottovaihtoehtoja</h3>
+<p>
+Seuraavassa on muutamia käyttöönottovaihtoehtoja, joita kannattaa harkita:
+<ul>
+   <li>Ota tuote käyttöön yksittäisessä sijainnissa, josta useat käyttäjät
+     voivat käyttää sitä.
+   <li>Jos järjestelmässä on Web-palvelin, harkitse Web-aloitusta.
+	 Lisätietoja on osoitteessa http://java.com/en/download/faq/java_webstart.xml
+   <li>Tuo kokoonpanoasetukset automaattisesti.
+     Lisätietoja on kohdassa <a href="#9.4.1">9.4.1</a>
+   <li>Ota tuote käyttää IBM i -järjestelmässä. Lisätietoja on osassa <a href="#9.4.2">9.4.2</a>
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Kokoonpanoasetusten tuonti automaattisesti</h3>
+<p>
+Käyttämällä seuraavia ominaisuuksia AcsConfig.properties-tiedostossa voidaan
+asettaa järjestelmä määrittämään automaattisesti kokoonpano uusille käyttäjille
+tai päivittämään aiemmin luotujen käyttäjien kokoonpanoja:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Tee seuraavat toimet:
+<ol>
+<li>Luo kokoonpano, jonka haluat välittää useille käyttäjille.
+<li>Vie kokoonpano tiedostoon valitsemalla vaihtoehdot Tiedosto-&gt;Vie kokoonpano
+pääkäyttöliittymästä tai käytä kohdassa <a href="#9.1.1">9.1.1 Backup</a> kuvattua komentoriviparametria.
+<li>Siirrä kokoonpanotiedosto haluamaasi paikkaan.  Tämän jälkeen käytettävissä on
+   useita vaihtoehtoja, jotka esitellään jäljempänä.
+<li>Määritä kokoonpanotiedoston polku com.ibm.iaccess.autoimport-ominaisuuteen
+AcsConfig.properties-tiedostossa.
+<li>Määritä com.ibm.iaccess.autoimport.version-ominaisuuden arvoksi kokonaisluku,
+joka ilmaisee kokoonpanotiedoston version.
+</ol>
+<p>
+Toimintaperiaate on seuraava:<br>
+Järjestelmä tuo automaattisesti tallennetun kokoonpanon, johon ominaisuus
+com.ibm.iaccess.autoimport viittaa, kun ominaisuuden
+com.ibm.iaccess.autoimport.version arvo ei vastaa viimeisintä tuotua
+arvo.  Sen lisäksi, että näin voidaan määrittää alkuperäinen kokoonpano
+ja toimittaa päivityksiä aiemmin luotuun kokoonpanoon, tämä mahdollistaa
+myös kokoonpanon aiempien versioiden palauttamisen.  Järjestelmä päivittää
+kokoonpanon aina, kun versio-ominaisuuden kokonaislukuarvo ei vastaa viimeisintä
+tuotua versiota.  Huomaa, että vaikka tuotu kokoonpano voi muuttaa käyttäjän
+kokoonpanoon aiemmin luodun järjestelmän kokoonpanoa, järjestelmiä ei koskaan poisteta käyttäjän kokoonpanosta.
+<p>
+Ominaisuuden com.ibm.iaccess.autoimport polku voidaan määrittää absoluuttisena polkuna,
+URL-osoitteena tai käyttämällä kohdassa <a href="#9.3">9.3</a> määritettyjä avainsanoja.  Esimerkki:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+Saat käyttöön lisää vaihtoehtoja sallimalla kokoonpanotiedoston jakelun
+acsbundle.jar-tiedostossa tai samassa hakemistossa acsbundle.jar-tiedoston kanssa.
+Määritä kummassakin tapauksessa ominaisuuden com.ibm.iaccess.autoimport arvoksi
+tiedoston nimi ilman polkua.<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+Erikoisarvo * on käytössä com.ibm.iaccess.autoimport.version-ominaisuudessa:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Tällöin järjestelmä tuo kokoonpanon aina ottamatta huomioon aiempia versioita.
+
+<h3><a id="9.4.2"></a>9.4.2 Käyttöönotto IBM i -järjestelmässä</h3>
+<p>
+Joitakin komentorivin lisäosia, jotka eivät edellytä graafista käyttöliittymää, voi käyttää alkuperäisessä IBM i -järjestelmässä.
+Voit esimerkiksi tiedonsiirron avulla purkaa tietoja tietokannasta suoraan taulukkotiedostoon IBM i -järjestelmässä lataamatta tietoja PC-tietokoneeseen.
+<p>
+Tätä varten voit purkaa tuotteen zip-tiedoston mihin tahansa IBM:n sisäisen tiedostojärjestelmän sijaintiin.
+Jos esimerkiksi olet purkanut tuotteen zip-tiedoston hakemistoon
+<pre> /home/AccessClientSolutions </pre>
+ja olet aiemmin tallentanut tiedostonsiirron siirtopyynnön, joka on hakemistossa
+<pre> /some_path/qcustcdt.dtfx </pre>
+voit ajaa IBM i -järjestelmässä seuraavan komennon:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Mukautetut paketit</h3>
+<p>
+IBM i Access Client Solutions -ohjelmiston avulla järjestelmän pääkäyttäjät voivat
+rajoittaa tiettyjen toimintojen käyttöä määrittämällä seuraavan ominaisuuden
+AcsConfig.properties-tiedostoo:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;toiminto, toiminto,...&gt;
+</pre>
+Toimintoavainsanat, jotka voidaan määrittää, ovat seuraavat:<br>
+<pre>
+
+   Toiminto         Kuvaus
+    cfg             Järjestelmän kokoonpanot
+    sm              5250-istuntojen ohjausosa
+    5250            5250-emulointiohjelma
+    vcp             Näennäisohjaustaulu
+    console         5250-ohjauspääte
+    consoleprobe    Ohjauspäätekokoonpanojen haku lähiverkosta
+    hmcprobe        HMC:n haku osioille
+    hmi1            Laitteistohallintaliittymä 1
+    hmi2            Laitteistohallintaliittymä 2
+    keyman          SSL-/TLS-varmenteiden hallinta
+    dtgui           Tiedonsiirron graafinen käyttöliittymä
+    upload          Tiedonsiirrot pääkoneeseen
+    download        Tiedonsiirrot pääkoneesta
+    cldownload      Tiedonsiirrot pääkoneesta
+    l1c             IBM Navigator for i (tason 1 ohjauspääte)
+    rmtcmd           Etäkomento (käytettävissä komentoriviltä)
+    splf            Tulostustyöt (sivuajotiedostot)
+    ifs             Sisäinen tiedostojärjestelmä
+    db2             Skeemat
+    rss             SQL-komentotiedoston ajo
+    db2tools        SQL Performance Center
+    sysdbg          IBM i -järjestelmän testausohjelma
+    checkupdates    Käytettävissä olevien päivitysten tarkistus
+    ssh             Secure Shell
+</pre>
+<p>Toimintoja voi myös jättää pois käyttämällä ryhmäavainsanoja:
+<pre>
+
+   Ryhmä              Toiminnot
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+Järjestelmän pääkäyttäjä voi rajoittaa tiettyjen toimintojen käyttöä päivittämällä
+AcsConfig.properties-tiedostoa.  Käytön rajoittaminen poistaa toiminnon graafisesta
+pääkäyttöliittymästä ja poistaa toiminnon käytöstä myös komentoriviltä.
+<p>
+Voit rajoittaa toimintojen käyttöä lisäämällä esimerkiksi seuraavan rivin AcsConfig.properties-tiedostoon:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Jos järjestelmän pääkäyttäjä haluaa päivittää acsbundle.jar-arkiston sisältämää
+AcsConfig.properties-tiedostoa, ennen kuin arkisto otetaan käyttöön kaikille
+käyttäjille, hänen tulee käyttää seuraavaa komentoa:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+Lisätietoja siitä, miten IBM i Access Client Solutions -ohjelmisto määrittää, mitä
+AcsConfig.properties-tiedostoa se käyttää, on kohdassa <a href="#9.3">9.3 Kokoonpanon sijainnin muutto</a>.
+
+
+<h3><a id="9.6"></a>9.6 Siirto IBM i Access for Windows -ohjelmasta</h3>
+<p>
+IBM i Access Client Solutions -kokoonpanotiedostot eivät ole yhteensopivia
+IBM i Access for Windows -ohjelman vastaavien toimintojen kanssa.  IBM i Access Client
+Solutions -ohjelmistossa on siirtopolku useita tärkeitä objekteja varten. Näiden objektien
+kuvaukset löytyvät seuraavista kohdista.
+
+<h3><a id="9.6.1"></a>9.6.1 Järjestelmän kokoonpanojen siirto</h3>
+<p>
+Kopioi yhteydet -toimintoa voi käyttää valitsemalla vaihtoehdot
+Tiedosto-&gt;Kopioi yhteydet pääkäyttöliittymästä. Toiminto tuo näkyviin liittymän,
+jonka avulla voi kopioida järjestelmän kokoonpanoja IBM i Access Client Solutions -ohjelmiston ja
+IBM i Access for Windows -ohjelmiston tukemien vanhojen Windows-kokoonpanojen välillä.  Lisätietoja on Kopioi yhteydet
+-toiminnon päänäytön ohjeessa.
+
+Järjestelmän kokoonpanoja voidaan siirtää myös komentoriviltä käsin.  Lisätietoja
+on kohdassa <a href="#9.1.25">9.1.25 MIGRATE</a>.
+
+<h3><a id="9.6.2"></a>9.6.2 5250-emuloinnin siirto</h3>
+<p>
+IBM i Access for Windows Personal Communications -emulointiohjelman käyttämät
+5250-emulointitiedostot voidaan muuntaa IBM i Access Client Solutions -ohjelmiston
+5250-istuntojen ohjausosan avulla. Seuraavat tiedostolajit voidaan muuntaa Personal
+Communications -ohjelmasta:<br>
+<pre>
+   .ws   - emulointiohjelman profiili
+   .bch  - emulointiohjelman eräajotiedosto
+   .kmp  - näppäimistön mukautustiedosto
+   .pmp  - kohonäppäimistotiedostot
+   .bar  - valikkorivin tiedostot
+</pre>
+Tiedostot muunnetaan seuraaviin muotoihin:<br>
+<pre>
+   .hod  - emulointiohjelman profiili
+   .bchx - emulointiohjelman eräajotiedosto
+   .kmp  - näppäimistön mukautustiedosto
+   .pmp  - kohonäppäimistotiedostot
+   .bar  - valikkorivin tiedostot
+</pre>
+Kumpikin tuote käyttää .kmp-, .pmp- ja .bar-tiedostolajeja.  Kyseiset tiedostomuodot eivät kuitenkaan ole keskenään yhteensopivia. 
+Järjestelmä luo muunnetut tiedostot IBM i Access Client Solutions
+-ohjelmistokohtaiseen polkuun.
+<p>
+Näiden tiedostojen muunto voidaan aloittaa IBM i Access Client Solutions -ohjelmiston istuntojen ohjausosan valikosta:
+<ul>
+<li> valitsemalla vaihtoehdot Tiedosto –&gt; Tuo ja etsimällä Personal Communications -emulointiohjelman tiedostot.
+<li> vetämällä ja pudottamalla tiedosto IBM i Access Client Solutions -ohjelmiston istuntojen ohjausosan ikkunaan.
+</ul>
+...tai komentoriviltä PM5250-lisäosan avulla.  Lisätietoja on osassa  <a href="#9.1.30">9.1.30 PM5250</a>.
+
+<p>
+Makrojen muuntoapuohjelma on käytettävissä.  Valitse Istuntojen ohjausosasta vaihtoehdot:<br>
+<pre>
+    Työkalut -&gt; Muunna makro...
+</pre>
+Tekninen huomautus:<br>
+Makrojen muuntoapuohjelma ei ehkä pysty muuntamaan PC5250-makroa, jos makro
+on mukautettu ja jos se sisältää muitakin toimintoja kuin tallennettuja näppäilysarjoja.  
+
+<h3><a id="9.6.3"></a>9.6.3 Tallennettujen tiedonsiirtopyyntötiedostojen siirto</h3>
+<p>
+IBM i Access Client Solutions -ohjelmiston Tiedonsiirto-osa sisältää ohjatun toiminnon,
+jonka avulla IBM i Access for Windows -ohjelmistossa luodut ja tallennetut
+tiedonsiirtopyyntötiedostot voidaan muuntaa.
+<p>
+Seuraavat tiedostolajit voidaan muuntaa IBM i Access for Windows -ohjelmistosta:<br>
+<pre>
+   .dtf - tiedonsiirto IBM i -palvelimesta
+   .dtt - tiedonsiirto IBM i - palvelimeen
+</pre>
+Tiedostot muunnetaan seuraaviin muotoihin:
+<pre>
+   .dtfx - tiedonsiirto IBM i -palvelimesta
+   .dttx - tiedonsiirto IBM i - palvelimeen
+</pre>
+Ohjattu tiedonsiirron siirtotoiminto ei siirrä .fdf-tiedostoja. Uusi tiedostolaji,
+joka on pakollinen IBM i Access Client Solutions -ohjelmistossa, on .fdfx.
+Tämän lajin mukaisia tiedostoja voidaan luoda latauksen yhteydessä tai ohjatun tiedoston luontitoiminnon avulla.
+<p>
+Voit käyttää ohjatun tiedonsiirron siirtotoimintoa valitsemalla tiedonsiirron
+päävalikosta vaihtoehdot Toiminnot-&gt;Siirto toiseen ympäristöön Tiedonsiirto-sovelluksessa.
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+Jos käytössä on 5250-sovelluksia, jotka käyttävät IBM i Access for Windows -ohjelmiston
+yhteydessä toimitettua Personal Communications -emulointiohjelmaa EHLLAPI-rajapinnan avulla,
+katso seuraavasta tietämyskannan artikkelista lisätietoja EHLLAPI-rahapinnan käytöstä
+IBM i Access Client Solutions -ohjelmiston kanssa:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions -ohjelmisto tukee Kerberos-ohjelmaa.  Voit käyttää
+Kerberos-ohjelmaa, kun muodostat yhteyden ohjelmaan, tekemällä seuraavat toimet:<br>
+<ol>
+<li>Avaa Järjestelmäkokoonpanot pääkäyttöliittymästä.
+<li>Valitse vaihtoehto Uusi tai vaihtoehto Muokkaa, jos haluat muokata aiemmin määritettyä kokoonpanoa.
+<li>Valitse Yhteys-välilehdestä vaihtoehto<br>
+   "Käytä Kerberos-todennusta, ei kehotetta"
+</ol>
+Kerberos-ympäristön asetusten määritystä ei käsitellä tässä
+julkaisussa.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Avainten hallinta</h3>
+<p>
+Secure Socket Layer (SSL) -yhteyksien varmenteita voidaan hallita
+graafisesta pääkäyttöliittymästä valitsemalla Työkalut-&gt;Avainten hallinta.  Jotkin
+avaintietokannassa tehtävät toimenpiteet vaativat avainvaraston salasanan.
+
+<h3><a id="9.8"></a>9.8 Tiedonsiirto</h3>
+<h3><a id="9.8.1"></a>9.8.1 Tiedonsiirron tuki Excel- ja Calc-taulukoihin</h3>
+<p>
+Sen lisäksi, että Tiedonsiirto-toiminto tukee tietojen latausta tiedostoon,
+se tukee myös tiedonsiirtoa Microsoft Excel- ja OpenOffice Calc -taulukoihin.  Aktiiviseen
+taulukkoon lataamista varten tiedonsiirron pääkäyttöliittymässä on vaihtoehto
+tulostuslaitteen valinnalle.  Oletusarvon mukaan tulostuslaite on tiedosto.  Jos alusta
+tukee yhteistoimintaa Excel- ja/tai Calc-laskentataulukon kanssa, voidaan
+avautuvasta Tulostuslaite-valikosta valita kohteeksi aktiivinen Excel- tai
+Calc-taulukko.
+<p>
+Rajoitukset:
+<ul>
+<li>Windows-käyttöjärjestelmä vaatii vähintään OpenOfficen version 3.4.1.
+<li>Linux- ja Mac-käyttöjärjestelmissä vähintään OpenOffice-versio 4.2.1 on pakollinen, ja se on asennettava oletussijaintiin.
+<li>IBM i Access Client Solutions -ohjelmisto, jota ajetaan Linux- tai Mac-ympäristössä, tukee yhteistoimintaa vain OpenOffice-ohjelmiston kanssa.<br>
+IBM i Access Client Solutions -ohjelmisto, jota ajetaan Windows-ympäristössä, tukee yhteistoimintaa joko Microsoft Excel- tai OpenOffice Calc -ohjelman kanssa.
+<li>OpenOffice-ohjelmiston bittisyyden on oltava sama kuin IBM i Access Client
+Solutions -ohjelmiston bittisyys.<br>
+Selitys: OpenOffice on käytettävissä sekä 32- että 64-bittisenä versiona.  Molempia versioita voi käyttää 64-bittisessä PC:ssä.
+Kun käsittelet OpenOffice-taulukkoa, OpenOffice-ohjelmiston bittisyyden ja IBM i Access Client Solutions -sovelluksen
+bittisyyden on oltava sama tai tiedonsiirto ei voi toimia yhdessä taulukon kanssa.
+IBM i Access Client Solutions -ohjelmiston bittisyyden
+määrää Java Virtual Machine (JVM), jossa sitä käytetään.  Kun OpenOffice-ohjelmiston ja IBM i Access Client Solutions -ohjelmistoa ajavan JVM-koneen bittisyydet eivät vastaa toisiaan ja valitset aktiivisen taulukon tulostuslaitteeseen, saat seuraavan kaltaisen virhesanoman: "Aktiivista taulukkoa ei löytynyt".  Jos käytössäsi on 64-bittinen PC, voit käynnistää IBM i Access
+Client Solutions -ohjelmiston joko 32- tai 64-bittisellä binäärikäynnistinsovelluksella
+alustasi mukaisesti.  Jotta aktiivisen taulukon tuki toimii, käynnistä IBM i
+Access Client Solutions sillä binäärikäynnistinsovelluksella, jonka bittisyys vastaa käytössä olevaa OpenOffice-sovellusta.
+<br>Koska Mac-käyttöjärjestelmä tukee vain 64-bittistä Java-näennäiskonetta, OpenOffice-ohjelmiston 64-bittinen versio on asennettava, jotta aktiivisen taulukon tuki toimii Mac-käyttöjärjestelmässä.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Tiedonsiirron tuki merkkien katkaisulle ja numeeriselle ylivuodolle</h3>
+<p>
+Jos tiedostonsiirron siirtopyynnön aikana merkkikenttä tai numerokenttä ylittää kentälle määritetyn koon, siirtopyyntö keskeytyy.
+<p>
+Jotta merkkikentät voi katkaista lopusta, määritä seuraava ominaisuus AcsConfig.properties-tiedostossa:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Jos haluat, että numerokentille on mahdollista määrittää niiden suurin mahdollinen postiviinen tai negatiivinen arvo, kun kyseinen numerokenttä ylittää sille määritetyn raja-arvon, määritä seuraava ominaisuus AcsConfig.properties-tiedostossa:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Kun näiden ominaisuuksien arvoksi asetetaan true, siirtopyyntö jatkuu antamatta ilmoitusta tietojen katkaisusta tai ylivuodosta.  Merkkikentät katkaistaan lopusta.  Numerokentille määritetään niiden enimmäisarvo ylivuotoa ja vähimmäisarvo alivuotoa varten.
+<p> 
+Vaihtoehtoisesti edellä mainitut ominaisuudet voidaan määrittää komentoriviltä kuten muutkin java-ominaisuudet seuraavasti:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Tiedonsiirron taulukon nimi</h3>
+<p>
+Latausten aikana taulukon nimi muodostetaan IBM i -lähdekirjaston ja -tiedoston nimen perusteella ja siihen liitetään teksti ">Sheet#" (# korvataan taulukon numerolla).  Esimerkki:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+Jos haluat korvata taulukon nimen kirjasto- ja tiedosto-osan, voit määrittää seuraavan ominaisuuden:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=antamasi_merkkijono<br>
+Tästä muodostuu seuraava nimi:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;antamasi_merkkijono>Sheet1
+
+<h3><a id="9.9"></a>9.9 Ohjauspääteyhteyden muodostaminen IBM i -järjestelmään</h3>
+<p>
+Jos haluat tehdä hallintatoimintoja IBM i -järjestelmässä, tarvitset 5250-ohjauspäätteen.
+IBM i Access Client Solutions tukee sekä LAN- että HMC-ohjauspäätekokoonpanoja.
+<p>
+Jos tiedät IBM i -järjestelmän palvelun pääkoneen nimen tai palvelun IP-osoitteen tai
+HMC-ohjauspäätteen IP-osoitteen, voit määrittää ohjauspäätteen tiedot
+IBM i Access Client Solutions -ohjelmistossa tekemällä seuraavat toimet:<br>
+<ol>
+<li>Aloita IBM i Access Client Solutions -ohjelmisto tietokoneessasi.
+<li>Valitse pääkäyttöliittymässä vaihtoehto Järjestelmäkokoonpanot.
+<li>3. Anna uusi kokoonpano napsauttamalla Uusi-painiketta tai päivitä
+nykyinen kokoonpano napsauttamalla Muokkaa-painiketta.
+<li>Valitse Ohjauspääte-välilehti.
+<li>Anna ohjauspäätteen lajia vastaavat tarvittavat tiedot.
+</ol>
+<p>
+Jos IBM i -järjestelmän ohjauspäätekokoonpanoa ei ole vielä määritetty (esimerkiksi uusi
+järjestelmä on juuri toimitettu). ohjauspääteyhteyden IP-osoite määritettiin automaattisesti
+alueelta 169.254.62.0 - 169.254.62.63 alkulatauksen (IPL) aikana. Näissä tapauksissa tee
+seuraavien vaiheiden edellyttämät toimet, jotta ohjauspääteyhteyden muodostus onnistuu IBM i Access Client Solutions -ohjelmistolla:<br>
+<ol>
+<li>Poista tietokoneen langaton yhteys käytöstä.  Seuraavat vaiheet edellyttävät
+langallisen ethernet-portin käyttöä.
+<li>Yhdistä tietokoneesi ja IBM i -järjestelmän T1-portti ethernet-kaapelilla.
+<li>Aloita IBM i Access Client Solutions -ohjelmisto tietokoneessasi.
+<li>Valitse pääkäyttöliittymässä vaihtoehto Järjestelmäkokoonpanot.
+<li>Napsauta Järjestelmän kokoonpanot -kohdassa Paikanna ohjauspääte... -painiketta.
+<li>Napsauta IBM i -järjestelmän paikannin -näytössä Haku-painiketta.
+<li>Jos IBM i -järjestelmän alkulataus on edennyt niin pitkälle, että automaattinen IP-osoite
+   on määritetty, IP-osoitteen tulisi näkyä Haku-näytössä.
+<li>Valitse näytössä näkyvä IP-osoite napsauttamalla sitä ja muodosta yhteys sitten 5250-
+ohjauspäätteellä napsauttamalla Ohjauspääte-painiketta.
+<li>Kuvaruutuun tulee näyttö, jossa kysytään huoltotyökalujen valtuustietoja.
+<li>5250-ohjauspääte tulee näkyviin, kun olet antanut kelvolliset valtuustiedot.
+<li>Ohjauspäätteen avulla voit tehdä asennukseen ja asetusten määritykseen liittyviä toimia.
+</ol>
+<p>
+Kun olet valmis lisäämään IBM i -järjestelmän muuhun verkkoinfrastruktuuriin,
+löydät lisätietoja huoltotyökalujen lähiverkkosovittimen määrityksestä IBM InfoCenter -sivustosta:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Lisätietoja on kohdassa "Configuring the service tools server for DST"
+
+<p>
+IBM i -järjestelmissä, joissa on jo LAN-ohjauspäätekokoonpano ja jotka ovat jo
+osa verkkoinfrastruktuuria voidaan nykyiset ohjauspäätekokoonpanot löytää
+seuraavastis:<br>
+<ol>
+<li>Aloita IBM i Access Client Solutions -ohjelmisto tietokoneessasi.
+<li>Valitse pääkäyttöliittymässä vaihtoehto Järjestelmäkokoonpanot.
+<li>Napsauta Järjestelmän kokoonpanot -kohdassa Paikanna ohjauspääte... -painiketta.
+<li>Päivitä IBM i -järjestelmän paikannin -paneelissa Lähellä-kenttään IP-osoite
+alueelta, jota haluat hakea sitä.
+<li>Etsi määritetyllä alueella olevat LAN-ohjauspäätteet napsauttamalla Haku-painiketta.
+<li>Valitse näytössä näkyvä IP-osoite napsauttamalla sitä ja muodosta yhteys sitten 5250-
+ohjauspäätteellä napsauttamalla Ohjauspääte-painiketta.
+<li>Kuvaruutuun tulee näyttö, jossa kysytään huoltotyökalujen valtuustietoja.
+<li>5250-ohjauspääte tulee näkyviin, kun olet antanut kelvolliset valtuustiedot.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Lisäfontit</h3>
+<p>
+5250-emulointiohjelmalle voi lisätä fontteja Fonts-hakemistoon.
+<p>
+Voit määrittää toisen tai useita hakemistoja lisäfontteja määrittämällä
+com.ibm.iaccess.Fonts-ominaisuuden arvon AcsConfig.properties-tiedostossa.
+<p>
+Voit ohittaa oletusasetuksena olevan Fonts-hakemiston määrittämällä
+com.ibm.iaccess.Fonts-ominaisuuden arvoksi:<br>
+<ol> 
+<li>&lt;polku&gt;, joka on fontit sisältävä hakemisto
+<li>&lt;polku&gt;/&lt;tiedoston_nimi&gt;, jossa tiedosto on jokin tietty fonttitiedosto (tunniste .ttf)
+<li>fonttitiedoston URL-osoite
+<li>puolipistein eroteltu luettelo mistä tahansa edellä mainituista vaihtoehdoista.
+</ol>
+<p>
+Huomautus:<br>
+&lt;polku&gt; voi olla absoluuttinen polku tai acsbundle.jar-tiedoston hakemistosta
+alkava suhteellinen polku. 5250-emulointiohjelmassa voi käyttää vain suhteuttamattomia fontteja.
+<p>
+Esimerkki 1 (oletus):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+Esimerkki 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Netrc-tiedoston valtuustietojen käyttö</h3>
+<p>
+Voit ottaa .netrc-tiedoston käyttöön (Linux- ja Mac-käyttöjärjestelmissä) tai _netrc-tiedoston käyttöön (Windows-käyttöjärjestelmässä) siirtymällä
+IBM i Access Client Solutions  -ohjelmiston graafiseen pääkäyttöliittymään ja valitsemalla valikkoriviltä<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Muokkaa-&gt;Oletusasetukset<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Yleiset-välilehti<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Valitse valintaruutu: <b>Lue sisäänkirjaustiedot netrc-tiedostosta</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Napsauta Käytä-painiketta<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Aloita IBM i Access Client Solutions -ohjelmisto uudelleen<br>          
+<p>
+Netrc-tiedoston perusmuoto on seuraava:<br>
+<pre>
+     machine &lt;järjestelmä&gt; login &lt;käyttäjätunnus&gt; password &lt;salasana&gt;
+</pre>
+<p>
+Netrc-tiedosto on tallennettava käyttäjän omahakemistoon ja järjestelmän nimen ja käyttäjätunnuksen on vastattava kohdassa <b>Järjestelmäkokoonpanot</b> olevia tietoja.  IBM i Access Client Solutions -ohjelmistosta:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Valitse Järjestelmäkokoonpanot-vaihtoehto<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Valitse ensin järjestelmä ja sitten Muokkaa-vaihtoehto<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Yhteydet-välilehdestä<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;valitse <b>Käytä kehotteessa oletuskäyttäjätunnusta kerran kunkin järjestelmän yhteydessä</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Kirjoita käyttäjätunnus kohtaan <b>Oletuskäyttäjätunnus</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Napsauta OK-painiketta.<br>          
+
+<p>
+Kun järjestelmän nimi ja <b>oletuskäyttäjätunnus</b> vastaavat netrc-tiedoston sisältöä,
+yhteys järjestelmään muodostetaan käyttämällä netrc-tiedostossa olevaa salasanaa, eikä sitä pyydetä käyttäjältä.
+
+<h3><a id="9.12"></a>9.12 Sisäinen tiedostojärjestelmä (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 ja suojaus</h3>
+<p>
+Sisäisen tiedostojärjestelmän tuki käyttää QFileSvr.400-tiedostojärjestelmää objektien kopiointiin ja lähetykseen yhdestä IBM i -osiosta toiseen. Tämä tarkoittaa, että käyttäjäprofiilin ja salasanan on molemmissa osioissa vastattava toisiaan ja että osioilla on oltava sama salasanatason järjestelmäarvo (QPWDLVL).
+Jos käytössä on Kerberos-todennus, molemmissa osioissa on oltava verkon todennuspalvelu ja Enterprise Identity Mapping (EIM) määritettyinä. Lisätietoja on IBM i Knowledge Center -sivuston aiheessa Security and object authority in the QFileSvr.400 file system.
+<p>
+QFileSvr.400-tiedostojärjestelmän luomat yhteydet toisiin IBM i -osioihin eivät ole suojattuja.
+Jos suojattua yhteyttä tarvitaan kopioitaessa objekteja tai lähetettäessä niitä yhdestä IBM i -osioista toiseen, osion kokoonpano on määritettävä käyttämällä SSL-suojausta. Järjestelmäkokoonpanossa Käytä yhteyden muodostukseen SSL-suojausta -vaihtoehdon on oltava valittuna kyseiselle osiolle ja seuraavan ominaisuuden on oltava määritettynä AcsConfig.properties-tiedostossa:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+Vaihtoehtoisesti ominaisuus voidaan määrittää komentoriviltä kuten muutkin java-ominaisuudet seuraavasti:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 Sisäisen tiedostojärjestelmän valtuudet</h3>
+<p> 
+Sisäisen tiedostojärjestelmän tuki edellyttää seuraavien CL-komentojen käyttövaltuuksia:<br>
+<pre>
+CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+CRTDIR
+    CRTLIB
+    CRTSAVF
+RMVDIR
+    RST
+SAV
+    SETASPGRP
+ </pre>
+<p>
+Jos käyttäjä ei voi käyttää näitä CL-komentoja, Kopioi-, Liitä-, Lähetä-, Poista ja Uusi kansio -toiminnot epäonnistuvat.
+
+<h3><a id="9.12.3"></a>9.12.3  Sisäisen tiedostojärjestelmän rajoitukset</h3>
+<p>
+Sisäisen tiedostojärjestelmän tuki ei salli toimintoja objekteille, joiden polut alkavat /QFileSvr.400, /QNTC tai /QOPT.  Jos nykyinen hakemistopolku tai minkä tahansa valitun objektin polku alkaa /QFileSvr.400, /QNTC tai /QOPT, kaikki Toiminnot-valikon vaihtoehdot poistetaan käytöstä eikä pikavalikko tule näkyviin.
+
+<h3><a id="9.12.4"></a>9.12.4 Sisäinen tiedostojärjestelmä ja riippumattomat levymuistivarannot</h3>
+<p>
+Sisäinen tiedostojärjestelmä ei salli Kopioi-, Liitä- tai Lähetä-toimintoa, kun lähdeobjekti tai kohdepolku sijaitsee riippumattomassa levymuistivarannossa.
+
+<h3><a id="9.13"></a>9.13 Secure Shell (SSH) -pääte</h3>
+<p>
+Käyttöympäristöissä, jossa Secure Shell on oletusarvon mukaan, tai joihin se on asennettu, SSH-pääteominaisuus tulee näkyviin IBM i Access Client Solutions -ohjelmiston graafisessa käyttöliittymässä.SSH-pääte aloittaa pääte-emulointiohjelman sisäiseen IBM i -tiedostojärjestelmään.
+<p>
+Useimmissa Mac- ja Linux-järjestelmissä sekä muissa UNIX-perustaisissa järjestelmissä on Secure Shell jo oletusarvon mukaan. Näissä käyttöympäristöissä oletetaan OpenSSH-työasemaohjelman olevan asennettuna ja se sijaitsee polussa /usr/bin/ssh.  Windows-käyttäjien pitää asentaa jokin Secure Shells -ohjelman Windows-versio.
+<p>
+IBM i Access Client Solutions -ohjelmiston tukemat Secure Shells -versiot:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin edellyttää openssh-paketin asennusta
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash on käytettävissä Windowsin Linux-alijärjestelmän osana
+<p>
+Jos useita SSH-sovelluksia on asennettuna, voit com.ibm.iaccess.PreferredSSHClient-ominaisuuden avulla määrittää ensisijaisen SSH-työaseman.
+<p>Linux-esimerkkejä:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac-esimerkkejä:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows-esimerkkejä:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+Jos SSH-työasemaohjelmaa ei ole asennettu tavalliseen sijaintiin, voit com.ibm.iaccess.PreferredSSHClient-ominaisuuden avulla antaa asennetun SHH-työasemaohjelman tarkennetun polun.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+Kun tarkennettu polku on annettu, sinun on ehkä com.ibm.iaccess.SSHClientOpt-ominaisuuden avulla määritettävä kaikki tarvittavat argumentit. Voit esimerkiksi poistaa käytöstä varoitukset, jos et käytä X11-välitystä:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 SSH -päätteen asennusvaatimukset</h3>
+Asenna 5733-SC1 IBM Portable Utilities for i -ohjelma IBM i -järjestelmään.
+<br>Aloita Secure Shell -demoniohjelma seuraavalla komennolla:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Jos käynnistetyssä SSH-työasemaohjelmassa ilmenee yhteysvirhe (kuten "Yhteyttä ei myönnetty."),
+tai jos ikkuna tulee näkyviin, mutta katoaa heti, sinun on ehkä aloitettava SSH-demoniohjelma ajamalla edellä oleva komento.
+
+
+<hr><h3><a id="10.0"></a>10.0 Huollon vianmääritys</h3>
+<p>
+Jos ilmenee häiriö, joka edellyttää IBM:n huoltoa, IBM:n huoltoedustaja saattaa pyytää sinua
+tekemään jommankumman tai molemmat seuraavista toimista:
+<p>
+Tee seuraavat toimet IBM i Access Client Solutions -ohjelmiston pääkäyttöliittymästä:<br>
+<ul>
+ <li>Valitse vaihtoehdot Työkalut-&gt;Luo huoltolokit.<br>
+Tämä toteuttaa saman toiminnon kuin kohdassa <a href="#9.1.5">9.1.5 Dump</a> esitelty
+komentoriviparametri.  Tavallisesti tämä toiminto on toteutettava heti
+häiriön jälkeen.  Häiriön mukaan IBM:n huoltoedustaja saattaa opastaa tekemään tämän useita kertoja.
+ <li>Valitse vaihtoehdot Työkalut-&gt;Paketoi huoltolokit.<br>
+Tämä toteuttaa saman toiminnon kuin kohdassa <a href="#9.1.6">9.1.6 Medic</a> esitelty
+komentoriviparametri.  Tämä toiminto kerää työaseman käyttöympäristöä koskevia tietoja
+ja paketoi huoltolokit zip-arkistotiedostoksi, joka voidaan lähettää IBM:lle.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Yleisimmät kysymykset</h3>
+<p>
+<pre>
+K1    Kun yritän aloittaa IBM i Access Client Solutions -ohjelmiston käytön, saan
+      seuraavan virhesanoman:
+      class cannot be loaded: java.lang.UnsupportedClassVersionError
+V1-1  Käytä JDK-ohjelman versiota 6.0 tai sitä uudempaa versiota. Lisätietoja
+      on kohdassa <a href="#3.0">3.0 Asennusvaatimukset</a>
+
+K2    Kun yritän aloittaa tuotteen käytön toimitetun binaaritiedoston tai komentotiedoston avulla
+      komentoliittymässä tai pääteistunnossa, näkyviin tulee seuraava virhesanoma:
+         Permission denied
+V2-1  Tarkista tiedoston käyttöoikeudet ja varmista, että sinulla on tiedoston
+      ajo-oikeudet. Lisätietoja on kohdassa <a href="#6.0">6.0 Tiedoston käyttöoikeudet</a>.
+
+K3    Kun aloitan tuotteen käytön kaksoisnapsauttamalla toimitettua tiedostoa, mitään ei tapahdu.
+V3-1  Java-ohjelmaa ei ehkä ole asennettu. Lisätietoja on kohdassa <a href="#3.0">3.0 Asennusvaatimukset</a>
+V3-2  Tuotteen käytön aloitukseen käytettävällä tiedostolla ei ehkä ole ajo-oikeuksia.
+      Lisätietoja on kohdassa <a href="#6.0">6.0 Tiedoston käyttöoikeudet</a>.
+V3-3  Käyttöympäristössä voi olla häiriöitä. Tarkista ilmenevät virheet,
+      ajamalla ohjelmatiedosto komentoriviltä.
+Lisätietoja on kohdassa
+      <a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a>.
+
+K4    Haluan aloittaa tuotteen käytön toimitetun binaaritiedoston avulla, mutta näkyviin tulee
+      seuraava virhesanoma: "Virhe ladattaessa Java-moduulia."
+V4-1  Binaaritiedosto ei onnistunut paikantamaan Java-asennuksen home-hakemistoa.
+      Varmista, että Java-ohjelma on asennettu. Lisätietoja on kohdassa <a href="#3.0">3.0 Asennusvaatimukset</a>.
+V4-2  Kohdassa <a href="#7.1.1">7.1.1 Tuotteen käytön aloitus - lisäasetukset</a> kuvataan lisää
+      tapoja, joilla tuotteen käyttö voidaan aloittaa binaaritiedoston avulla.
+
+K5    Kun olen määrittänyt JAVA_HOME-ympäristömuuttujan, tuotteen käytön aloitukseen käytettävä
+      binaaritiedosto toimii komentoriviltä, mutta se ei toimi, kun kaksoisnapsautan
+      tiedostoa.
+V5-1  JAVA_HOME-ympäristömuuttuja ei ehkä näy tiedostonhallinnassa, kun
+      kaksoisnapsautat tiedostoa. Ympäristömuuttujien määritys ja
+      niiden näkyvyys vaihtelee käyttöjärjestelmäkohtaisesti.
+      Yritä määrittää JAVA_HOME-ympäristömuuttuja käyttöjärjestelmän
+      ympäristömuuttujaksi. Käyttöjärjestelmä saattaa viitata järjestelmän
+      ympäristömuuttujiin yleisinä ympäristömuuttujina.
+      Kun olet määrittänyt JAVA_HOME-ympäristömuuttujan, sulje tiedostonhallinta
+      ja avaa se uudelleen ja kokeile kaksoisnapsauttaa binaaritiedostoa uudelleen.
+
+K6    Kun aloitan tuotteen käytön kaksoisnapsauttamalla tiedostoa, tiedosto
+      avautuu tekstinmuokkausohjelmassa.
+V6-1  Varmista, että käytät komentotiedostoa, jonka tunnisteen käyttöjärjestelmäsi
+      tunnistaa.
+V6-2  Kokeile jotakin muuta komentotiedostoa.
+V6-3  Vaihda tiedoston avaukseen käytettävää ohjelmaa.
+V6-4  Tarkista tiedoston käyttöoikeudet ja varmista, että sinulla on tiedoston
+      ajo-oikeudet. Lisätietoja on kohdassa <a href="#6.0">6.0 Tiedoston käyttöoikeudet</a>.
+
+K7    Kun aloitan tuotteen käytön kaksoisnapsauttamalla toimitettua tiedostoa, näkyviin
+      tulee kehote, joka kysyy, minkä ohjelman avulla tiedosto on avattava.
+V7-1  Varmista, että käytät komentotiedostoa, jonka tunnisteen käyttöjärjestelmäsi
+      tunnistaa.
+V7-2  Määritä tiedoston avaukseen käytettävä ohjelma, joka on yhteensopiva käyttämäsi
+      binaaritiedoston tai komentotiedoston kanssa, esimerkiksi Pääte (Mac).
+V7-3  Tarkista tiedoston käyttöoikeudet ja varmista, että sinulla on tiedoston
+      ajo-oikeudet. Lisätietoja on kohdassa <a href="#6.0">6.0 Tiedoston käyttöoikeudet</a>.
+
+K8    Kun aloitan IBM i Access Client Solutions -ohjelmiston käytön Mac-käyttöjärjestelmässä
+      Finder-ohjelman avulla, näkyviin tulee pääteistuntoikkuna, joka ei poistu,
+      vaikka lopetan IBM i Access Client Solutions käytön.
+A8-1  Voit estää pääteistuntoikkunaa tulemasta näkyviin käyttämällä pika-aloitusoppaan asennuskomentotiedostoja Mac-tietokoneille.
+
+K9    Mikä on paras tapa aloittaa tuotteen käyttö?
+V9-1  Voit aloittaa tuotteen käytön kolmella tavalla, jotka on kuvattu kohdassa
+      <a href="#7.0">7.0 Tuotteen käytön aloitus</a>: binaaritiedoston, komentotiedoston
+      tai komentorivin avulla. Käytä sitä tapaa, joka toimii käyttöympäristössäsi.
+
+K10   Miksi tuotteen käytön aloitusta varten on käytettävissä sekä binaaritiedostoja
+     (Start_Programs) että komentotiedostoja (Sample_Scripts)?
+V10-1 Komentotiedostot eivät ole riippuvaisia käyttöjärjestelmästä. Niiden avulla tuotteen käyttö
+      voidaan aloittaa yleisesti, kun ympäristökohtainen binaaritiedosto ei toimi.
+V10-2 Joissakin käyttöjärjestelmissä tiedostoliitäntöjen määrittämiseen tarvitaan binaaritiedostoja.
+      Useimmissa tapauksissa binaaritiedostoja tulisi käyttää tuotteen aloitukseen.
+V10-3 Joissakin käyttöympäristöissä saattaa olla palomuureja, jotka rajoittavat
+      IBM i Access Client Solutions -ohjelmiston tiettyjen osien käyttöä.
+      Tuotteen mukana on toimitettu binaaritiedostoja, jotka helpottavat
+      järjestelmän pääkäyttäjien työtä, kun he myöntävät käyttöoikeuksia.
+
+K11   Kun olen asentanut JDK-ohjelmiston version 6.0 (tai sitä uudemman version), näkyviin tulee
+      seuraavan virhesanoman:
+      class cannot be loaded: java.lang.UnsupportedClassVersionError
+V11-1 Työasemassasi käytettävä Java-ohjelmiston oletusversio on JDK-ohjelmiston versiota
+      6.0 vanhempi. Käytä asetusta, joka määrittää JDK-ohjelmiston version 6.0
+      home-hakemiston polun. Lisätietoja on kohdassa <a href="#7.1.2">7.1.2 Javan
+      home-polun haku</a>. Käytä Javan home-hakemiston polkua seuraavissa kohdissa
+      esitetyillä tavoilla:
+      <a href="#7.1.1">7.1.1 Tuotteen käytön aloitus - lisäasetukset</a><br>
+      <a href="#7.3">7.3 Tuotteen käytön aloitus (komentorivin avulla)</a><br>
+
+K12   En onnistu tuomaan mukautettuja näppäimistön määritystiedostoja (.kmp)
+      Windows 5250 -emulointi-istunnoista.
+V12-1 Alkuperäisessä IBM i Access Client Solutions -ohjelmiston versiossa, joka
+      tuli saataville heinäkuussa 2012, .kmp-tiedostojen tuonti Windows 5250 -emulointiohjelman
+      istuntoprofiileista (.ws) ei ollut tuettu. Lokakuussa 2012 saataville
+      tulleessa versiossa .kmp-tiedostojen tuonti 5250-istuntoprofiileista (.ws)
+      on tuettua.
+
+K13   5250-emulointiohjelman näppäimistön mukautus on hyvin erilaista kuin
+      Windows-ympäristössä. Voitteko ehdottaa, miten sen voisi toteuttaa?
+V13-1 Näppäimistön määritys on jaettu luokkiin. Emulointi-istunnossa tee seuraavat toimet:
+      Valitse vaihtoehdot Muokkaa &gt; Oletusasetukset &gt; Näppäimistö tai napsauta
+      työkalurivin uudelleenmäärityspainiketta.
+      Valitse Näppäinmääritykset-välilehti.
+      Valitse luokka. Näppäinten oletusmääritykset näkyvät luokissa
+      "Pääkoneen toiminnot" ja "Valikon komennot".
+      Valitse määritettävä toiminto.
+      Napsauta Määritä näppäin -painiketta.
+      Paina näppäimistön näppäintä (tai näppäinyhdistelmää), jonka haluat liittää
+      tähän toimintoon.
+V13-2 Saat lisäohjeita näppäinmäärityksistä tekemällä seuraavat toimet:
+      Valitse vaihtoehdot Muokkaa &gt; Oletusasetukset &gt; Näppäimistö tai napsauta
+      työkalurivin uudelleenmäärityspainiketta. Napsauta Ohje-painiketta.
+
+K14   Kun yritän aloittaa tuotteen Mac OS X -käyttöjärjestelmän 10.8 Mountain
+      Lion -versiossa, näkyviin tulee kohosanoma, joka ilmoittaa, että sovellusta
+      ei ole allekirjoitettu.
+V14-1 Kyseessä on suojauskäytäntö, joka on oletusarvon mukaan käytössä Mac OS X
+      -käyttöjärjestelmän versiosta 10.8 Mountain Lion alkaen. Seuraavalla Web-sivulla
+      on ohjeet, joiden mukaan sovellus voidaan ajaa:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+K15   Käytössäni on IBM i Access for Windows -ohjelmisto. Voinko siirtää järjestelmän
+      kokoonpanon IBM i Access Client Solutions -ohjelmistoon?
+V15-1 Lisätietoja on kohdassa <a href="#9.6.1">9.6.1 Järjestelmän kokoonpanojen siirto</a>.
+
+K16   Käytössäni on IBM i Access for Windows -ohjelmisto. Voinko siirtää emulointi-
+      profiilit IBM i Access Client Solutions -ohjelmistoon?
+V16-1 Lisätietoja on kohdassa <a href="#9.6.2">9.6.2 5250-emuloinnin siirto</a>
+
+K17   Käytössäni on IBM i Access for Windows -ohjelmisto. Voinko siirtää tiedonsiirto-
+      pyyntötiedostot IBM i Access Client Solutions -ohjelmistoon?
+V17-1 Lisätietoja on kohdassa <a href="#9.6.3">9.6.3 Tallennettujen tiedonsiirtopyyntötiedostojen siirto</a>.
+
+K18   Toimiiko EHLLAPI-komento IBM i Access Client Solutions -ohjelmiston yhteydessä?
+V18-1 Lisätietoja on kohdassa <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+K18   Toimiiko Kerberos-ohjelma IBM i Access Client Solutions -ohjelmiston yhteydessä?
+V19-1 Lisätietoja on kohdassa <a href="#9.6.5">9.6.5 Kerberos</a>
+
+K20   Olen järjestelmän pääkäyttäjä ja haluaisin piilottaa joitakin toimintoja
+      käyttäjiltäni.
+V20-1 Lisätietoja on kohdassa <a href="#9.5">9.5 Mukautetut paketit</a>
+
+K21   Mitään ei näy, vaikka valitsen ohjekuvakkeen näytöstä.
+V21-1 Ohjeteksti näkyy yleensä työpöydän selaimessa. Joissakin tapauksissa
+      työpöydällä ei ole selainta tai selaimen asetukset on määritetty virheellisesti.
+V21-2 Voit tuoda ohjetekstin näkyviin ilman selainta, määrittämällä seuraavan
+      ominaisuuden AcsConfig.properties-tiedostossa:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      Voit määrittää ominaisuuden myös komentoriviltä samalla tavalla kuin
+      muitakin java-ominaisuuksia seuraavasti:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+K22   Jos valitsen tiedonsiirron tulostuslaitteeksi joko "Aktiivinen Excel-
+      taulukko" tai "Aktiivinen Calc-taulukko", saan seuraavan virheen:
+         "Aktiivista taulukkoa ei löytynyt"
+V22-1 Järjestelmässä ei ole aktiivista taulukkoa. Avaa uusi tai aiemmin luotu
+      taulukko ja yritä pyyntöä uudelleen.
+V22-2 Käyttämäsi taulukkolaskentasovelluksen ja IBM i Access Client Solutions
+      -sovelluksen käyttämän Java-virtuaalikoneen välillä saattaa olla bittisyysristiriita.
+      Lisätietoja on kohdassa <a href="#9.8">9.8 Tiedonsiirron tuki Excel- ja Calc-taulukoille</a>.
+
+K23   Kun käytän tiedonsiirtoa Macilla, en näe vaihtoehtoa jolla voisin
+      valita aktiivisen taulukon tulostuslaitteeksi.
+V23-1 Tiedonsiirto ei voi käyttää aktiivisia taulukoita Macilla, koska
+      OpenOffice-sovelluksen ja IBM i Access Client Solution -sovelluksen
+      välillä on bittisyysristiriita. Lisätietoja on kohdassa
+      <a href="#9.8">9.8 Tiedonsiirron tuki Excel- ja Calc-taulukoille</a>.
+
+K24   Jos valitsen tiedonsiirron tulostuslaitteeksi "Aktiivinen Calc-taulukko",
+      Nimi-kentässä ei näy mitään.
+V24-1 Tämä on normaalia uusille Calc-taulukoille, joita ei ole koskaan tallennettu.
+      Tiedonsiirto pystyy päivittämään ladatut tiedot aktiiviseen taulukkoon.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Päivityshistoria</h3>
+<p>
+Lisätietoja on seuraavassa Web-sivustossa:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

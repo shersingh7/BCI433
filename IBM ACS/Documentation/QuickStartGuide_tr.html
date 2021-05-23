@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hızlı Başlangıç Kılavuzu</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Çözümleri - Hızlı Başlangıç Kılavuzu</h2>
+<h2>Bu belgenin içeriği en son 21 Eylül 2017'de güncellenmiştir</h2>
+
+<h3>İçeriği:</h3>
+<a href="#1.0">1.0 Giriş</a><br>
+<a href="#2.0">2.0 Windows için Kuruluş</a><br>
+<a href="#3.0">3.0 Mac için Kuruluş</a><br>
+<a href="#4.0">4.0 Linux için Kuruluş</a><br>
+<a href="#5.0">5.0 Güncellemelerin kurulması</a><br>
+<a href="#6.0">6.0 Ek Bilgi</a><br>
+<a href="#7.0">7.0 Kaldır</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Giriş</h3>
+<p>
+Bu kılavuzda, bu ürünün tek bir kullanıcı için yerel disk sürücüsünde
+devreye alınmasına ilişkin yönergeler yer almaktadır. 
+<p>
+Bu ürünü devreye almanın çeşitli yolları bulunmaktadır:<br>
+<ul>
+<li>Birden çok kullanıcı tarafından erişilebilen paylaştırılmış bir konum.<br>
+Bkz. <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a> (IBM i Access Client Solutions: Daha kolay uyarlama ve devreye alma)
+<li>zip arşivinin, taşınabilir ortam (örn. CD, DVD, USB flash sürücü) ya da yerel disk sürücüsündeki herhangi bir yol da dahil olmak üzere seçtiğiniz herhangi bir konuma çıkarılması.  Documentation klasöründe bulunan <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> belgesinin <a href="../Documentation/GettingStarted_en.html#5.0">Installation</a> bölümüne bakın
+<li>Doğrudan IBM i'deki komut satırı eklentilerini kullanmak için <a href="../Documentation/GettingStarted_en.html#9.4.2">Yerel IBM i Devreye Alımları</a> ve aynı konfigürasyonu birden çok kullanıcıya yaygınlaştırmak için <a href="../Documentation/GettingStarted_en.html#9.4.1">Konfigürasyon ayarlarının otomatik olarak içe aktarılması</a> gibi seçenekler için <a href="../Documentation/GettingStarted_en.html">Başlarken</a> içinde <a href="../Documentation/GettingStarted_en.html#9.4">Diğer Devreye Alma Seçenekleri</a> bölümüne bakın.
+</ul> 
+
+<p>
+Tek bir kullanıcı için yerel disk sürücüsünde bu ürünü devreye almak için bu belgenin geri kalan bölümlerine bakın.
+
+<hr><h3><a id="2.0"></a>2.0 Windows için Kuruluş</h3>
+
+<p>
+Ürünün sıkıştırılmış arşivini ya da ürün CD'sini bulun.
+
+<p>
+Sıkıştırılmış arşivi kullanıyorsanız, sıkıştırılmış arşivin içeriğini açın.
+<br>Öneri: Bunu yapmak için Windows Explorer'ı kullanarak sıkıştırılmış arşivi seçin, daha sonra arşivi sağ tıklatıp "Tümü Çıkart..." seçeneği belirleyin.
+
+<p>
+Windows Explorer'ı kullanarak, ürünün Windows_Application klasörünü bulun.
+
+<p>
+Yürürlükteki kullanıcı için 32 bitlik sürümü kurmak üzere install_acs_32 öğesini çift tıklatın.
+<p>
+Yürürlükteki kullanıcı için 64 bitlik sürümü kurmak üzere install_acs_64 öğesini çift tıklatın.
+<p>
+Tüm kullanıcılar için 32 bitlik sürümü çok kullanıcılı bir bilgisayara kurmak üzere install_acs_32_allusers öğesini çift tıklatın.
+<p>
+Tüm kullanıcılar için 64 bitlik sürümü çok kullanıcılı bir bilgisayara kurmak üzere install_acs_64_allusers öğesini çift tıklatın.
+
+<p>
+Bu yeni bir kuruluşsa, ilk kuruluşu uyarlamanıza yardımcı olacak birçok bilgi istemi olacaktır.  Bir lisans sözleşmesi görüntülenirse kabul edin.
+<p>
+Bu bir yükseltmeyse önceki ayarlar korunur.
+<p>
+Kuruluş bittiğinde bir tamamlama iletisi görüntülenir.
+
+<p>
+Başarılı bir tek kullanıcılı kuruluş, uygulamayı şuraya kopyalar:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Not: Bu komut dosyalarının ilk sürümü ürün dosyalarını MyDocuments ile göreli bir yola kopyaladı. Yürürlükteki sürüm, ürün dosyalarını %HOMEDRIVE% ve %HOMEPATH% ortam değişkenlerine dayalı bir yola kopyalar. Ürünü güncellemek için bu komut dosyalarını kullanırken güncellemeler bulunan ilk konumda gerçekleşir.
+<p>
+Başarılı bir çok kullanıcılı kuruluş, uygulamayı şuraya kopyalar:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Windows için ürünün başlatılması</h3>
+<p>
+Masaüstündeki "Access Client Solutions" simgesini çift tıklatın.
+
+
+<hr><h3><a id="3.0"></a>3.0 Mac için Kuruluş</h3>
+<p>
+Finder'ı kullanarak ürünün sıkıştırılmış arşivini ya da CD'sini bulun.
+<p>
+Sıkıştırılmış arşivi kullanıyorsanız, sıkıştırılmış arşivin içeriğini açın.
+<br>Öneri: Ürünü karşıdan yeni yüklediyseniz Aşağı Yüklemeler klasörüne bakın.  Sıkıştırılmış arşivin içeriği açılmamışsa, çift tıklatarak sıkıştırılmış arşivin içeriğini açabilirsiniz.  
+<p>
+Mac_Application klasörünü bulun.   install_acs dosyasını çift tıklatın.
+
+<p>
+Bu yeni bir kuruluşsa, ilk kuruluşu uyarlamanıza yardımcı olacak birçok bilgi istemi olacaktır.  Bir lisans sözleşmesi görüntülenirse kabul edin.
+<p>
+Bu bir yükseltmeyse önceki ayarlar korunur.
+<p>
+Kuruluş bittiğinde bir tamamlama iletisi görüntülenir.
+<p>
+Başarılı bir kuruluş, uygulamayı Uygulamalar klasörüne kopyalar.
+
+<p>
+Kuruluşu Finder'dan başlattıysanız, kuruluşu gerçekleştirmek için bir uçbirim penceresi açılmıştır. Kuruluş tamamlandığında uçbirim penceresini kapatabilirsiniz.
+<p>
+Tenik Not:<br>
+Güvenlik ayarlarınıza ve kullanmakta olduğunuz İS X sürümüne bağlı olarak, install_acs
+dosyasının çalışmak için yetkili olmadığını belirten bir açılır pencere görüntülenebilir.
+Bu olursa, aşağıdaki yöntemlerden birini kullanarak install_acs dosyasının çalışması
+için yetki vermeniz gerekebilir.<br>
+<ul>
+<li>install_acs dosyası için Aç seçeneği sunulursa, bunu seçin.
+<li>install_acs dosyasını sağ tıklatın ve Aç seçeneğini sağ tıklatın.<br>
+   Açılır bir pencere sunulursa Aç seçeneğini belirleyin.
+<li>Yukarıdaki seçeneklerden hiçbiri işe yaramazsa, şuraya gidin:<br>
+    Sistem Tercihleri...<br>
+    Güvenlik ve Gizlilik<br>
+    "IBM i Access Client Solutions" olanağını açmak için bir seçenek varsa onu seçin.
+    Aksi takdirde, Genel sekmesinde ayarları, diğer uygulamaların çalışmasına izin verecek şekilde ayarlamanız gerekir.  "IBM i Access Client Solutions" uygulaması ilk
+kez çalıştıktan sonra güvenlik ayarlarını geri alabilirsiniz.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Ürününün Mac üzerinde başlatılması</h3>
+<p>
+Uygulamalara gitmek için Finder olanağını kullanın.
+<p>
+"IBM i Access Client Solutions" uygulamasını bulun ve ürünü başlatmak için çift
+tıklatın.
+<p>
+Tenik Not:<br>
+Güvenlik ayarlarınıza ve kullanmakta olduğunuz İS X sürümüne bağlı olarak, uygulamanın çalışmak için yetkili olmadığını belirten bir açılır pencere görüntülenebilir.
+Bu olursa, aşağıdaki yöntemlerden birini kullanarak uygulamanın çalışması için yetki
+vermeniz gerekebilir.<br>
+<ul>
+<li>Uygulama için "Aç" seçeneği sunulursa, bunu seçin.
+<li>"IBM i Access Client Solutions" simgesini sağ tıklatın ve "Aç"ı seçin.<br>
+   Açılır bir pencere sunulursa Aç seçeneğini belirleyin.
+<li>Yukarıdaki seçeneklerden hiçbiri işe yaramazsa, şuraya gidin:<br>
+    Sistem Tercihleri...<br>
+    Güvenlik ve Gizlilik<br>
+    "IBM i Access Client Solutions" olanağını açmak için bir seçenek varsa onu seçin.
+    Aksi takdirde, Genel sekmesinde ayarları, diğer uygulamaların çalışmasına izin verecek şekilde ayarlamanız gerekir.  "IBM i Access Client Solutions" uygulaması ilk
+kez çalıştıktan sonra güvenlik ayarlarını geri alabilirsiniz.  
+</ul>
+Tenik Not:<br>
+"Java 6 SE runtime" özelliğini kurmanız istenirse Java 6'yı kurmanız gerekmez.  Java 8'i kurun ve ürünü yeniden başlatmayı deneyin.
+
+
+
+
+<hr><h3><a id="4.0">4.0 Linux için Kuruluş</a></h3>
+<p>
+Ürünün sıkıştırılmış arşivini ya da ürün CD'sini bulun.
+<p>
+Sıkıştırılmış arşivi kullanıyorsanız, sıkıştırılmış arşivin içeriğini açın.
+<br>Öneri: Uçbirim penceresinde unzip komutunu kullanın.
+<p>
+Linux_Application klasörünü bulun.
+<p>
+Kuruluş komut dosyasını kullanmak için root yetkisine sahip olmanız gerektiğinden
+kuruluş komut dosyasını uçbirim penceresinden çalıştırmak için sudo komutunu kullanın.  Örneğin:
+<p>
+32 bitlik mimarideyseniz, şu komutu kullanın:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+64 bitlik mimarideyseniz, şu komutu kullanın:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Bu yeni bir kuruluşsa, ilk kuruluşu uyarlamanıza yardımcı olacak birçok bilgi istemi olacaktır.  Bir lisans sözleşmesi görüntülenirse kabul edin.
+<p>
+Bu bir yükseltmeyse önceki ayarlar korunur.
+<p>
+Kuruluş bittiğinde bir tamamlama iletisi görüntülenir.
+
+<p>
+Başarılı bir kuruluş, uygulamayı şuraya kopyalar:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Linux üzerinde ürünün başlatılması</h3>
+<p>
+Uygulamalar klasöründe ya da Super tuşunu kullanıp "IBM i Access Client Solutions" yazarak "IBM i Access Client Solutions" arayın.
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Güncellemelerin Kurulması</h3>
+<p>
+Yeni bir sürüm kullanılabilir olduğunda, güncellemeleri uygulamak için bu belgedeki
+kuruluş yönergelerini izleyebilirsiniz.  Var olan dosyaların üzerine kurmanız
+istendiğinde "Tümüne evet" yanıtını verin.
+<p>
+Windows, Mac ya da Linux için install_acs komut dosyalarını kullanıyorsanız,
+AcsConfig.properties dosyası güncellenmeyecek, böylece varsa bu dosyada yaptığınız özel yapılandırma değişiklikleri kaybedilmeyecektir.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Ek Bilgi</h3>
+<p>
+Ürünü özelleştirme hakkında ek bilgi edinmek isterseniz ya da ürünü kurarken ya da
+başlatırken sorunlar yaşarsanız Documentation klasöründe bulunan
+<a href="../Documentation/GettingStarted_en.html">GettingStarted</a> (Başlarken) belgesine bakın.
+
+<hr><h3><a id="7.0"></a>7.0 Kaldır</h3>
+<p>
+Kur komut dosyasıyla yukarıdaki konumlara kopyalanan uygulama dosyalarını kaldırmak için kur komut dosyasıyla aynı klasörde bulunan, platforma özgü kaldır komut dosyasını kullanın.
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

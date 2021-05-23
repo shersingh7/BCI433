@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Snelstartgids</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Snelstartgids</h2>
+<h2>De inhoud van dit document is voor het laatst bijgewerkt op: 11 oktober 2016 </h2>
+
+<h3>Inhoud:</h3>
+<a href="#1.0">1.0 Inleiding</a><br>
+<a href="#2.0">2.0 Installatie onder Windows</a><br>
+<a href="#3.0">3.0 Installatie onder Mac</a><br>
+<a href="#4.0">4.0 Installatie onder Linux</a><br>
+<a href="#5.0">5.0 Updates installeren</a><br>
+<a href="#6.0">6.0 Meer informatie</a><br>
+<a href="#7.0">7.0 Verwijderen</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Inleiding</h3>
+<p>
+In deze handleiding vindt u instructies voor het implementeren van het product op een lokaal schijfstation en voor een enkele gebruiker. 
+
+
+<p>
+Dit product kan op verschillende manieren worden geïmplementeerd, waaronder:<br>
+<ul>
+<li>een gemeenschappelijke locatie die toegankelijk is voor meerdere gebruikers.<br>
+Zie <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a>
+<li>het uitpakken van het zip-archief naar een willekeurige locatie van uw keuze, met inbegrip van draagbare media(bijvoorbeeld CD, DVD, USB-flashstation) of een pad op de lokale schijf. Zie de sectie <a href="../Documentation/GettingStarted_en.html#5.0">Installatie</a> van de publicatie <a href="../Documentation/GettingStarted_en.html">Aan de slag</a> in de map Documentation.
+<li>Zie <a href="../Documentation/GettingStarted_en.html#9.4">Overige implementatieopties</a> in <a href="../Documentation/GettingStarted_en.html">Aan de slag</a> voor informatie over opties als <a href="../Documentation/GettingStarted_en.html#9.4.1">Automatisch configuratie-instellingen importeren</a> voor het distribueren van dezelfde configuratie naar meerdere gebruikers, en <a href="../Documentation/GettingStarted_en.html#9.4.2">Implementatie van native IBM i</a> voor het gebruik van opdrachtregelplugins direct op de IBM i.
+</ul> 
+
+<p>
+Raadpleeg de resterende secties van dit document als u dit product wilt implementeren op het lokale schijfstation voor een enkele gebruiker.
+<hr><h3><a id="2.0"></a>2.0 Installatie onder Windows</h3>
+
+<p>
+Zoek het ZIP-archief of de product-CD voor het product op.
+
+<p>
+Als u het zip-archief gebruikt, extraheer dan de inhoud van het archief.
+<br>Suggestie: U kunt dit doen door in Windows Verkenner het zip-bestand te selecteren, met de rechter muisknop erop te klikken en dan "Alles uitpakken..." te kiezen.
+
+<p>
+Ga in Windows Verkenner naar de map Windows_Application van het product.
+
+<p>
+Om de 32-bit versie te installeren voor de huidige gebruiker, dubbelklikt u op install_acs_32.
+<p>
+Om de 64-bit versie te installeren voor de huidige gebruiker, dubbelklikt u op install_acs_64.
+<p>
+Voor de installatie van een 32-bit versie voor alle gebruikers op een PC met meerdere gebruikers, dubbelklikt u op install_acs_32_allusers.
+<p>
+Voor de installatie van een 64-bit versie voor alle gebruikers op een PC met meerdere gebruikers, dubbelklikt u op install_acs_64_allusers.
+<p>
+Als dit een nieuwe installatie is, volgen er verschillende aanwijzingen waarmee u de eerste installatie kunt aanpassen. Als er een licentie-overeenkomst wordt afgebeeld, gaat u daarmee akkoord.
+<p>
+Als dit een upgrade is, blijven de vorige instellingen bewaard.
+<p>
+Zodra de installatie is voltooid, wordt er een voltooiingsbericht afgebeeld.
+<p>
+Een succesvolle installatie voor één gebruiker kopieert de toepassing naar:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Bij een succesvolle multiuser-installatie wordt de toepassing gekopieerd naar:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Het product starten in Windows</h3>
+<p>
+Dubbelklik op het pictogram "Access Client Solutions" op het bureaublad.
+
+
+<hr><h3><a id="3.0"></a>3.0 Installatie onder Mac</h3>
+<p>
+Zoek het ZIP-archief voor het product of de CD met behulp van Finder.
+<p>
+Als u het zip-archief gebruikt, extraheer dan de inhoud van het archief.
+<br>Suggestie: Als u het product net hebt gedownload, zoekt u in Downloads.
+Als de inhoud van het ZIP-archief nog niet is geëxtraheerd, kunt u dat nu doen door erop te dubbelklikken.
+<p>
+Ga naar de map Mac_Application.   Dubbelklik op install_acs
+<p>
+Als dit een nieuwe installatie is, volgen er verschillende aanwijzingen waarmee u de eerste installatie kunt aanpassen. Als er een licentie-overeenkomst wordt afgebeeld, gaat u daarmee akkoord.
+<p>
+Als dit een upgrade is, blijven de vorige instellingen bewaard.
+<p>
+Zodra de installatie is voltooid, wordt er een voltooiingsbericht afgebeeld.
+<p>
+Een succesvolle installatie kopieert de toepassing naar de map Applications.
+<p>
+Als u de installatie vanuit Finder hebt gestart, wordt er een werkstationvenster geopend om de installatie uit te voeren. Na het voltooien van de installatie kunt u het werkstationvenster sluiten.
+<p>
+Technische opmerking:<br>
+Afhankelijk van uw beveiligingsinstellingen en de versie van OS X waarmee u werkt, wordt mogelijk een voorgrondvenster afgebeeld dat aangeeft dat install_acs niet is gemachtigd voor uitvoering.
+Als dat gebeurt moet u install_acs met een van de volgende methodes machtigen voor uitvoering:<br>
+<ul>
+<li>Als een optie voor het openen van install_acs wordt afgebeeld, selecteert u deze.
+<li>Klik met de rechtermuisknop op install_acs en selecteer "Open".<br>
+   Wanneer een voorgrondvenster wordt afgebeeld, selecteert u "Open".
+<li>Als geen van beide opties werkt, gaat u naar:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+ Als er een optie is voor het openen van "IBM i Access Client Solutions", selecteert u deze. Als dit niet het geval is, moet u de instellingen op het tabblad Algemeen aanpassen om ervoor te zorgen dat andere toepassingen kunnen worden uitgevoerd. Zodra "IBM i Access Client Solutions" voor de eerste keer is gestart, kunt u de beveiligingsinstellingen weer terugzetten.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Het product starten op Mac</h3>
+<p>
+In Finder gaat u naar Applications.
+<p>
+Ga naar "IBM i Access Client Solutions" en dubbelklik erop om het product te starten.
+<p>
+Technische opmerking:<br>
+Afhankelijk van uw beveiligingsinstellingen en de versie van OS X waarmee u werkt, wordt mogelijk een voorgrondvenster afgebeeld dat aangeeft dat de toepassing niet is gemachtigd voor uitvoering.
+Als dat gebeurt moet u de toepassing met een van de volgende methodes machtigen voor uitvoering:<br>
+<ul>
+<li>Als voor de toepassing een optie "Open" wordt afgebeeld, selecteert u deze.
+<li>Klik met de rechtermuisknop op het pictogram "IBM i Access Client Solutions" en selecteer "Open".<br>
+   Wanneer een voorgrondvenster wordt afgebeeld, selecteert u "Open".
+<li>Als geen van beide opties werkt, gaat u naar:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+ Als er een optie is voor het openen van "IBM i Access Client Solutions", selecteert u deze. Als dit niet het geval is, moet u de instellingen op het tabblad Algemeen aanpassen om ervoor te zorgen dat andere toepassingen kunnen worden uitgevoerd. Zodra "IBM i Access Client Solutions" voor de eerste keer is gestart, kunt u de beveiligingsinstellingen weer terugzetten.  
+</ul>
+Technische opmerking:<br>
+Als u wordt gevraagd om "Java 6 SE runtime" te installeren, hoeft u niet Java 6 te installeren.  Installeer Java 8 en probeer opnieuw het product te starten.
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Installatie onder Linux</h3>
+<p>
+Zoek het ZIP-archief of de product-CD voor het product op.
+<p>
+Als u het zip-archief gebruikt, extraheer dan de inhoud van het archief.
+<br>Suggestie: In een werkstationvenster kunt u de opdracht unzip gebruiken.
+<p>
+Ga naar de map Linux_Application.
+<p>
+Omdat u machtiging als rootgebruiker nodig hebt voor het uitvoeren van het installatiescript, kunt u met behulp van sudo het installatiescript uitvoeren in een werkstationvenster.  Bijvoorbeeld:
+<p>
+Als u werkt met een 32 bits architectuur, gebruikt u de volgende opdracht:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Als u werkt met een 64 bits architectuur, gebruikt u de volgende opdracht:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Als dit een nieuwe installatie is, volgen er verschillende aanwijzingen waarmee u de eerste installatie kunt aanpassen. Als er een licentie-overeenkomst wordt afgebeeld, gaat u daarmee akkoord.
+<p>
+Als dit een upgrade is, blijven de vorige instellingen bewaard.
+<p>
+Zodra de installatie is voltooid, wordt er een voltooiingsbericht afgebeeld.
+<p>
+Een succesvolle installatie kopieert de toepassing naar:
+<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Het product starten in Linux</h3>
+<p>
+U kunt het product openen door op de Super-toets (Windows-toets) te drukken en "IBM i Access
+Client Solutions" te typen.
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Updates installeren</h3>
+<p>
+Wanneer een nieuwe versie beschikbaar komt, kunt u de installatie-instructies in dit document volgen om de updates aan te brengen.  Als u wordt gevraagd om bestaande bestanden te overschrijven, antwoordt u met "Ja op alles".
+<p>
+Als u gebruikmaakt van de install_acs-scripts voor Windows, Mac of Linux, wordt het bestand AcsConfig.properties niet bijgewerkt, waardoor eventueel in dit bestand aangebrachte configuratiewijzigingen niet verloren gaan.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Meer informatie</h3>
+<p>
+Voor meer informatie over het aanpassen van het product of over eventuele
+problemen bij het installeren of starten van product, raadpleegt u het document <a href="../Documentation/GettingStarted_en.html">Aan de slag</a> in de map Documentation.
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Verwijderen</h3>
+<p>
+Voor het verwijderen van de toepassingsbestanden die door het installatiescript naar de bovenstaande locaties zijn gekopieerd, gebruikt u het platformgebonden verwijderingsscript dat te vinden is in dezelfde map als het installatiescript:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Komme i gang</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Komme i gang</h2>
+<h2>Innholdet i dette dokumentet ble sist oppdatert 27. mars 2018</h2>
+
+
+<h3><a id="0.5"></a>0.5 Startveiledning</h3>
+<p>
+<a href="./QuickStartGuide_en.html">Startveiledningen</a> inneholder instruksjoner for hvordan du distribuerer
+produktet slik at det fungerer for de fleste brukere som kjører Windows, Mac eller Linux.  Se <a href="./QuickStartGuide_en.html">startveiledningen</a> (QuickStartGuide) i mappen Documentation hvis du skal installere produktet for en enkelt bruker eller for flere brukere.
+<p>
+Du finner detaljerte opplysninger om produktet, andre alternativer for distribusjon og informasjon om
+hvordan du tilpasser produktet, i dette dokumentet.  
+
+<h3>Innhold:</h3>
+<a href="#0.5">0.5 Startveiledning</a><br>
+<a href="#1.0">1.0 Innledning</a><br>
+<a href="#2.0">2.0 Funksjoner</a><br>
+<a href="#3.0">3.0 Forhåndskrav</a><br>
+<a href="#4.0">4.0 Produktinnhold</a><br>
+<a href="#5.0">5.0 Installering</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Oppdatere en eksisterende installasjon</a><br>
+<a href="#6.0">6.0 Filtillatelser</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Filtillatelser (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Filtillatelser (Windows)</a><br>
+<a href="#7.0">7.0 Starte produktet</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Starte produktet</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Starte produktet (med et skript)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a><br>
+<a href="#8.0">8.0 Konfigurering</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Plassering av konfigurasjon</a><br>
+<a href="#9.0">9.0 Avanserte emner</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Flere kommandolinjeparametere</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Filtilknytninger</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Filtilknytninger (for Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Endre ikon (for Windows-snarvei)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Definere et skrivebordsikon (for Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Filtilknytninger (for Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Filtilknytninger (for Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Filtilknytninger (for Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Endre ikon (for Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Endre plassering av konfigurasjon</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Andre distribusjonsalternativer</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Importere konfigurasjonsinnstillinger automatisk</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Grunnleggende IBM i-distribusjon</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Tilpassede pakker</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Migrere fra IBM i Access for Windows</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Migrere systemkonfigurasjoner</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 Migrere 5250-emulering</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Migrere lagrede forespørselsfiler for dataoverføring</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Nøkkelstyring</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Dataoverføring</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Dataoverføringsstøtte for Excel- og Calc-regneark</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Dataoverføringsstøtte for avkutting av tegn og numerisk overflyt</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Dataoverføring og arknavn</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Opprette en konsolltilkobling til IBM i</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Tilleggsfonter</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Bruke legitimasjon fra en netrc-fil</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Integrert filsystem (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 og sikkerhet</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS-autorisasjon</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS-begrensninger</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS og uavhengige ASPer</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 Secure Shell (SSH) Terminal</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 Forhåndskrav for SSH-terminal</a><br>
+
+
+
+<a href="#10.0">10.0 Feilsøking for service</a><br>
+<a href="#11.0">11.0 Spørsmål og svar</a><br>
+<a href="#12.0">12.0 Oppdateringshistorikk</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Innledning</h3>
+<p>
+IBM i Access Client Solutions er det nyeste medlemmet i IBM i Access-produktfamilien.  Det inneholder et Java-basert plattformuavhengig grensesnitt som kan kjøres
+på de fleste operativsystemer som støtter Java, inkludert Linux, Mac og Windows. IBM i
+Access Client Solutions konsoliderer de vanligste oppgavene i forbindelse med å
+administrere IBM i, på ett enkelt sted.
+<p>
+IBM i Access Client Solutions bruker samme IBM i-vertstjenere som de andre IBM i
+Access Family-produktene og krever samme IBM i Access Family-lisens (XW1) hvis du
+skal bruke funksjonene for 5250-emulering og dataoverføring.
+<p>
+To valgbare pakker er også tilgjengelige, som inneholder mellomvare for bruk og utvikling
+av klientapplikasjoner for Windows og Linux.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows Application Package<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux Application Package<br>
+<p>
+Kunder som bruker IBM i 7.1 eller nyere og har en gjeldende lisens, kan anskaffe
+IBM i Access Client Solutions på en av disse måtene:
+<ul>
+<li> Last ned <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a>-basispakken. 
+<li> Last ned basispakken og valgfrie Windows- og Linux-applikasjonspakker fra nettstedet <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> under 5761-SS1 eller 5770-SS1.
+</ul>
+
+<p>
+De valgfrie Windows- og Linux-applikasjonspakkene er bare tilgjengelige fra nettstedet
+Entitled Software Support (ESS). 
+<p>
+Kunder kan anskaffe medier ved å bestille oppdateringsfunksjonen 6288 for 5761-SS1 eller 5770-SS1.
+De fysiske mediene inneholder en kjørbar versjon av produktet, som gjør det mulig å kjøre
+produktet direkte fra CDen.
+De fysiske mediene inneholder også et zip-arkiv med
+produktet, som kan kopieres og pakkes ut på et sted du selv velger.
+De fysiske mediene for IBM i Access Client Solutions inneholder ikke de valgbare pakkene
+Windows og Linux Application Package. 
+<p>
+Du finner mer informasjon her:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Du finner oppdatert informasjon om IBM i Access Family-produktene her:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Funksjoner</h3>
+<p>
+Dette er noen av funksjonene i IBM i Access Client Solutions:
+<ul>
+<li>En omfattende 5250-skjermemulator basert på IBM Rational Host-on-Demand. I
+tillegg til alle 5250-skjermfunksjonene du er vant til når du bruker IBM i
+Access for Windows, kan du nå bruke disse tilleggsfunksjonene:
+<ul>
+<li>Tab-funksjon som gjør at flere sesjoner kan dele et enkelt visningsområde
+<li>Musehjulfunksjon som gjør det mulig å bla intuitivt mellom sider
+<li>Veksle mellom språk uten å starte arbeidsstasjonen på nytt
+<li>Samtidige skjermsesjoner med ulike vertskodesett for ulike språk i ulike emulatorsesjoner
+</ul>
+<li>Skriveremulering
+<li>En 5250-sesjonsstyrer etter modell av IBM Personal Communications-sesjonsstyreren
+som kan brukes til administrasjon av alle dine 5250-emulatorsesjoner
+
+<li>Dataoverføringsfunksjon som gjør det mulig å overføre data fra/til IBM i-databasen
+og til/fra forskjellige filtyper på arbeidsstasjonen, som OpenDocument-regneark
+(*.ods), Excel Workbook (*.xlsx) og andre filformater
+
+<li>Utskrift har et grensesnitt der du kan vise filer i IBM i-utkøene og laste ned disse filene til klientsystemet.
+
+<li>Et virtuelt kontrollpanel med et grafisk grensesnitt til IBM i-operasjonskonsollen
+
+<li>5250-emulering for LAN-, HMC- og FSM-konsoller
+
+<li>Konsolidering av konfigurasjoner for grensesnittet for maskinvareadministrasjon, inkludert ASMI,
+IVM og HMC
+
+<li>Mulighet til å starte IBM Navigator for i med din standard nettleser
+
+<li> Databasefunksjoner som Kjør SQL-skript og SQL Performance Center.
+</ul>
+<p>
+Den valgbare pakken Windows Application Package inneholder følgende:
+<ul>
+<li>Mulighet for tilkobling til Db2 for i ved hjelp av ODBC, .Net og OLE DB
+<li>Programming Toolkit for tilgang til IBM i-systemobjekter
+<li>Støtte for TLS/SSL-tilkoblinger
+<li>AFP-skriverstyreprogram
+</ul>
+<p>
+Den valgbare pakken Linux Application Package inneholder følgende:
+<ul>
+<li>Et ODBC-styreprogram for tilgang til
+Db2 for i og støtte for fullstendige 64-bits ODBC-datatyper.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Forhåndskrav</h3>
+<h3><a id="3.1"></a>3.1 Forhåndskrav (arbeidsstasjon)</h3>
+<p>
+IBM i Access Client Solutions kan kjøres på de fleste operativsystemer som støtter
+Java 8.0 eller høyere, inkludert forskjellige versjoner av Linux, Mac og Windows.
+<p>
+Anbefaling:<br>
+Kontroller at du bruker den nyeste Java-versjonen slik at du har alle nye rettelser og sikkerhetspakker. 
+<p>
+Du kan kontrollere hvilken versjon av Java som er installert på systemet, ved å åpne
+en klarmelding der du kan oppgi en kommando (Ledetekst, Shell, Terminal, osv.) og
+skrive følgende kommando:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+Følgende utdata viser at versjon 8.0 er installert:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java versjon "1.8.0_65"<br>
+Tallet 65 i dette eksempelet viser til oppdateringsnivået.
+
+<p>
+Nedenfor finner du noen nettsteder for Java-leverandører.  Kontroller at du kjører med
+nyeste versjon av Java for din plattform.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<p>
+Teknisk merknad for Mac:<br>
+Når du installerer Java på Mac, velger du en JDK i stedet for en JRE.  JRE for Mac installerer Java bare for nettleseren.
+Den installerer ikke Java for andre applikasjoner.  Hvis du installerer JDK, blir Java tilgjengelig for andre
+applikasjoner som IBM i Access Client Solutions.
+
+<h3><a id="3.2"></a>3.2 Forhåndskrav (tilkobling til IBM i)</h3>
+<p>
+IBM i Access Client Solutions kan kobles til IBM i utgave 5.4 og høyere.
+Følgende funksjoner krever IBM i utgave 6.1 eller høyere:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250-konsoll<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Virtuelt kontrollpanel<br>
+<p>
+Hvis du skal bruke SSL-tilkoblinger, må du laste inn og ta i bruk riktige IBM i-PTFer for din utgave:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Hvis du skal bruke Navigator for i, må du laste inn og ta i bruk riktige IBM i-PTFer for din utgave:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - Gruppe-PTF SF99368 nivå 37 eller høyere<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - Gruppe-PTF SF99713 nivå 12 eller høyere<br>
+	
+<p>
+Hvis du skal bruke 5250-konsollen eller Virtuelt kontrollpanel, må du laste inn og ta i bruk følgende PTFer for din utgave:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Produktinnhold</h3>
+<p>
+Følgende filer og kataloger finnes i produktets zip-arkiv:
+<pre>
+
+acsbundle.jar       - en utførbar jar-fil for produktet
+AcsConfig.properties- fil som inneholder konfigurasjonsinnstillinger (finnes
+                      også i acsbundle.jar)
+
+Mac_Application     - katalog som inneholder installeringsskript for Mac
+
+Linux_Application   - katalog som inneholder installeringsskript for Linux
+
+Windows_Application - katalog som inneholder installeringsskript for Windows
+
+Start_Programs      - katalog som inneholder plattformspesifikke filer som kan
+                      brukes til å starte produktet.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - Katalog som inneholder dokumentasjon
+    QuickStartGuide - informasjon om hvordan du kommer i gang
+    GettingStarted  - detaljert informasjon om produktet
+License             - katalog som inneholder betingelser for bruk
+Notices             - katalog som inneholder merknader og informasjon
+properties          - katalog som inneholder informasjon om produktversjonen
+  Sample_Scripts    - katalog som inneholder eksempelskript som kan brukes til å
+                      starte produktet hvis binærfilene i Start_Programs
+                      ikke fungerer.
+    Linux_Mac_Other - katalog med perl-skript for å starte produktet
+                      på en plattform der perl er tilgjengelig.
+    Windows         - katalog som inneholder et JScript for å starte produktet på Windows
+
+Icons               - katalog som inneholder filer som kan brukes som ikoner
+
+Fonts               - katalog der flere ikke-proporsjonale fonter kan 
+                      tilføyes for 5250-emulering
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Installering</h3>
+<p>
+IBM i Access Client Solutions-pakken inneholder flere installeringsalternativer fra enkel installering for en enkelt bruker til en mer avansert installering for flere brukere.
+<p>
+Mappene Mac_Application, Linux_Application og Windows_Application inneholder installeringsskript (se <a href="#4.0">4.0 Produktinnhold</a>), som kan brukes for en rekke installeringsalternativer.
+
+<p>
+Slå opp i <a href="./QuickStartGuide_en.html">QuickStartGuide</a> hvis du vil ha informasjon om installering for én enkelt bruker på Mac, Linux og Windows eller flerbrukerinstallering på en Windows-PC.
+QuickStartGuide inneholder informasjon om hvordan du bruker installeringsskriptene for disse enkle installeringstypene.
+<p>
+Hvis du er administrator og planlegger å distribuere til flere brukere, er det nyttig å lese artikkelen <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a>.
+Artikkelen beskriver hvordan en administrator kan forhåndstilpasse installering for flere brukere før distribusjon, ved å bruke /AdminConfig-alternativet som støttes av installeringsskriptene.
+<p>
+For administratorer som vil automatisere installeringen i stille modus, kan du bruke /AdminConfig-parameteren til å forhåndskonfigurere installeringen.  Deretter kan /Q-parameteren brukes under den faktiske installeringen. For eksempel:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+I tillegg til alternativene overfor kan du også velge å bare pakke ut zip-arkivet til en valgfri plassering. Dette kan være en hvilken som helst plassering
+der arbeidsstasjonen har leseautorisasjon for tilgang til
+filene.  Dette kan være den lokale platelagerstasjonen, en (delt) nettverksstasjon eller
+et flyttbart medium som en CD eller en USB-flash-stasjon.  Når du har pakket ut zip-arkivet, er installeringen ferdig.
+
+<p>
+Teknisk merknad:<br>
+Noen arkivfunksjoner beholder ikke alle lagrede filattributter.  På
+Mac- og Linux-plattformer er for eksempel unzip-commandoen et bedre valg
+enn jar-kommandoen.  Se punkt <a href="#6.0">6.0 Filtillatelser</a> hvis du ønsker mer informasjon.
+
+<h3><a id="5.1"></a>5.1 Oppdatere en eksisterende installasjon</h3>
+<p>
+Forbedringer og rettelser blir jevnlig gjort tilgjengelig.  Disse oppdateringene
+leveres som en fullstendig produktinstallasjon.  Når disse oppdateringene er
+tilgjengelige, må du oppdatere den eksisterende installasjonen.
+<p>
+Hvis du skal oppdatere en eksisterende installasjon som ble utført ved å bruke installeringsskriptene, må du pakke ut innhold fra en nyere versjon av produktet.  Aktiver installeringsskriptet fra den nye versjonen på samme måte som under den første installeringen.  Da oppdateres produktfilene uten å endre brukerens eksisterende konfigurasjon.
+<p>
+For administratorer som skal vedlikeholde en versjon av produktet på et sentralt sted som flere brukere har tilgang til, kan du pakke ut innholdet i den nye versjonen over den eksisterende versjonen.
+Hvis du har endret filen AcsConfig.properties, lagrer du filen før du pakker ut innholdet i den nye versjonen av produktet over
+en eksisterende versjon.  Når du har pakket ut innholdet i den nye versjonen av produktet og gjenopprettet
+AcsConfig.properties, kan brukerne dine kjøre installeringsskriptet på samme måte som første installering for å oppdatere sin egen installasjon.
+<p>
+Hvis du velger å installere produktet uten å bruke installeringsskriptene og pakker ut innholdet i zip-arkivet til et valgfritt sted og deretter oppdaterer produktet, må du pakke ut innholdet i den nyere versjonen av produktet over den eksisterende versjonen.
+Husk at det kan være nødvendig å lagre og gjenopprette innholdet i AcsConfig.properties hvis du har endret filen.
+
+<hr><h3><a id="6.0"></a>6.0 Filtillatelser</h3>
+<p>
+<a href="#7.0">Punkt 7.0 Starte produktet</a> beskriver forskjellige måter å starte
+IBM i Access Client Solutions på.  Hvis du skal bruke et av de leverte skriptene
+eller binærfilene til å starte produktet, må du kontrollere at utføringstillatelse
+er aktivert i filtillatelsene.  Hvilke filtillatelser som blir tildelt når du
+pakker opp zip-arkivfilen, blir bestemt av flere faktorer, inkludert
+operativsystemet, arkivfunksjonen du bruker til å pakke opp zip-arkivet, og
+brukerens autorisasjon.
+<p>
+Hvis du får problemer med å bruke et av de leverte skriptene eller binærfilene,
+må du kontrollere filtillatelsene.  Nedenfor finner du en beskrivelse av noen av
+metodene for å kontrollere filtillatelser.
+
+
+<h3><a id="6.1"></a>6.1 Filtillatelser (Linux, Mac, AIX)</h3>
+<p>
+For operativsystemer av unix-typen, kan du bruke følgende kommando fra en shell-
+eller terminal-klarmelding når du skal sjekke filtillatelsene for en fil:<br>
+<pre>    ls -l &lt;fil&gt;   			</pre>
+<p>
+Hvis du skal endre tillatelsene for en fil, kan du bruke følgende kommando:<br>
+<pre>    chmod &lt;tillatelse&gt; &lt;fil&gt;	</pre><br>
+For eksempel:<br>
+tilføyer lese- og utføringstillatelse for alle:
+<pre>
+    chmod a+rx &lt;fil&gt;
+</pre>
+gir eieren av filen lese-/skrive-/utføringstillatelse og kun
+lese-/utføringstillatelse til alle andre:
+<pre>
+    chmod 755 &lt;fil&gt;
+</pre>
+<p>
+Du finner mer hjelp til ls- og chmod-kommandoen på Internett.
+
+
+
+<h3><a id="6.2"></a>6.2 Filtillatelser (Windows)</h3>
+<p>
+I Windows høyreklikker du på filen i Windows Utforsker og velger
+Egenskaper.  Flippen Sikkerhet inneholder filtillatelsene.  Kontroller
+at du har lese- og utføringstillatelse.
+<p>
+I nyere versjoner av Windows kan du også bruke icacls-kommandoen til å vise
+og endre tillatelsene for en fil.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Starte produktet</h3>
+<p>
+Du kan starte IBM i Access Client Solutions på flere måter.
+Hvis du brukte installeringsskriptene til å installere produktet, inneholder <a href="./QuickStartGuide_en.html">QuickStartGuide</a> en beskrivelse av hvordan du starter produktet på en enkel måte.
+<p>
+Hvis produktet ikke ble installert ved hjelp av installeringsskript, kan du lese om andre måter å starte produktet på nedenfor.
+Fordi Java kan installeres på flere måter og på forskjellige steder, kan
+det være at noen av metodene krever ytterligere konfigurering.  Hvis
+en av metodene nedenfor ikke fungerer, kan du prøve en annen metode. I
+noen tilfeller får du nærmere veiledning.  Du kan også finne nyttig
+informasjon i punkt <a href="#11.0">11.0 Spørsmål og svar</a>.
+<p>
+Når du bruker et skript eller en binærfil slik det er beskrevet
+nedenfor, må skriptet eller binærfilen finnes i katalogstrukturen i
+zip-arkivet.  Du kan også kopiere/flytte binærfilene og/eller
+skriptene for dine plattformer til katalogen som inneholder
+acsbundle.jar-filen.
+
+
+<h3><a id="7.1"></a>7.1 Starte produktet</h3>
+<p>
+Hvis du skal starte produktet fra et filvisningsprogram (for eksempel Windows
+Utforsker eller Mac OS X Finder) med en plattformspesifikk binærfil, må du
+finne underkatalogen under Start_Programs som identifiserer operativsystemet
+og maskinvarearkitekturen.
+<p>
+Finn binærfilen som operativsystemet vil gjenkjenne. Dobbeltklikk deretter
+på den for å starte produktet.
+Du kan også starte produktet med denne binærfilen fra en ledetekst,
+Terminal eller Shell.
+<p>
+Hvis du får følgende feil:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Error loading Java module."<br>
+fant ikke IBM i Access Client Solutions en Java-installasjon på et sted
+produktet gjenkjenner.  Du kan prøve en av metodene i følgende punkter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Starte produktet - Tilleggsalternativer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Starte produktet (med et skript)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a><br>
+<p>
+Teknisk merknad for Mac:<br>
+Hvis du blir bedt om å installere en "Java 6 SE runtime", trenger du ikke å installere
+Java 6.  Installer Java 8 og prøv deretter å starte produktet igjen.
+Hvis du bruker acslaunch_mac til å starte produktet og du fortsatt blir bedt om å
+installere en "Java 6 SE runtime", kan du gå til Utilities og starte en
+terminalsesjon. Kjør følgende kommandoer og prøv deretter å starte produktet igjen:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Starte produktet - Tilleggsalternativer</h3>
+<p>
+Du kan også prøve en av følgende metoder når du prøver å bruke binærfilen
+for din plattform.  Med disse metodene kan du oppgi hvilket Java
+Runtime Environment (JRE) som skal brukes til å starte produktet.  Se punkt
+<a href="#7.1.2">7.1.2 Finne banen til Java-hjemmekatalogen</a> som beskriver hvordan du finner
+Java-banen på din arbeidsstasjon.  Disse tilleggsmetodene støttes bare på
+Linux- og Windows-plattformer:
+<ul>
+<li>Sett JAVA_HOME-miljøvariabelen til Java-hjemmekatalogen      (ELLER)
+<li>Bruk parameteren -vm i binary-kommandoen til å oppgi Java-
+      hjemmekatalogen.  Oppgi parameteren -h i binary-kommandoen
+      for å får mer hjelp                                        (ELLER)
+<li>Kopier en JRE-katalogstruktur (Java Runtime Environment) til
+      katalogen som inneholder binærfilen du prøver å bruke.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Finne banen til Java-hjemmekatalogen</h3>
+<p>
+Hvis du kan starte produktet med en av metodene i disse punktene:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Starte produktet (med et skript)</a>  (ELLER)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a><br>
+kan du finne banen til Java-hjemmekatalogen på arbeidsstasjonen fra
+IBM i Access Client Solutions-hovedgrensesnittet.  På menylinjen velger du<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Hjelp-&gt;Om<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Java.home-banen er vist i dette vinduet.<br>
+<p>
+Egenskapen java.home inneholder plasseringen for Java-hjemmekatalogen for
+arbeidsstasjonen.  Dette er banen du må oppgi når du definerer
+miljøvariabelen JAVA_HOME eller bruker parameteren -vm i kommandoen.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Finne banen til Java-hjemmekatalogen (på Windows)</h3>
+<p>
+På Windows-plattformer søker du etter java.exe.  Java-binærfilen finnes
+vanligvis i en bin- eller jre/bin-underkatalog under Java-hjemmekatalogen.
+Du kan bruke banen til Java-hjemmekatalogen
+når du definerer JAVA_HOME-miljøvariabelen eller bruker parameteren -vm
+i kommandoen.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Finne banen til Java-hjemmekatalogen (på Linux)</h3>
+<p>
+På Linux kan du bruke "which"-kommandoen:<br>
+<pre>
+    which java
+</pre>
+Dette gir deg banen til Java-kommandoen eller en symbolsk link til den.
+<p>
+Tolk alle symbolske linker til du kommer til den faktiske binærfilen
+for Java-kommandoen.  Du kan tolke symbolske linker med ls-kommandoen
+med parameteren -l:<br>
+<pre>
+    ls -l &lt;fil&gt;
+</pre>
+Java-binærfilen finnes
+vanligvis i en bin- eller jre/bin-underkatalog under Java-hjemmekatalogen.  Du kan bruke banen til Java-hjemmekatalogen
+når du definerer JAVA_HOME-miljøvariabelen eller bruker parameteren -vm
+i kommandoen.
+
+
+
+<h3><a id="7.2"></a>7.2 Starte produktet (med et skript)</h3>
+<p>
+Fra og med v1r1m5 er navnet på Start_Scripts-katalogen endret til Sample_Scripts og plassert i katalogen Documentation.
+<p>
+Den anbefalte måten å starte produktet på, er å bruke en plattformspesifikk binærfil i Start_Programs.  Skriptene i Sample_Scripts
+skal brukes bare hvis den plattformspesifikke binærfilen ikke fungerer.
+<p>
+Start produktet fra en filsystemnettleser (for eksempel Windows
+Utforsker eller Mac OS X Finder) ved å bruke et av skriptene som ble levert, gå til skriptet i
+underkatalogen Sample_Scripts som er kompatibelt med operativsystemet.
+<p>
+I de fleste operativsystemer som ikke er Windows-basert, er perl tilgjengelig
+som standard.  Katalogen Sample_Scripts/Linux_Mac_Other inneholder et perl-skript
+(med tre forskjellige filtyper) som kan brukes til å starte produktet på en
+plattform der perl er tilgjengelig.  Velg filen som har en filtype som ditt
+operativsystem vil gjenkjenne som et perl-skript.
+<p>
+I Windows-baserte operativsystemer er JScript tilgjengelig som standard.  
+Katalogen Sample_Script/Windows inneholder et JScript som kan brukes til å
+starte produktet på Windows-operativsystemer.
+<p>
+Bruk en plattformspesifikk metode for å bla i filsystemet (for eksempel
+Windows Utforsker eller Mac OS X Finder) og finn skriptet ditt operativsystem
+vil gjenkjenne.  Dobbeltklikk på det for å starte produktet.
+Du kan også starte produktet med dette skriptet fra en ledetekst,
+Terminal eller Shell.
+
+
+
+<h3><a id="7.3"></a>7.3 Starte produktet (fra kommandolinjen)</h3>
+<p>
+Du kan også starte produktet fra kommandolinjen fra et sted der du kan
+oppgi en kommando (Ledetekst, Terminal, Shell, osv.)<br>
+<pre>
+    java -Xmx1024m -jar &lt;bane&gt;/acsbundle.jar
+</pre>
+der &lt;bane&gt; er plasseringen av produktets utførbare jar-fil<br>
+<br>
+For eksempel:<br>
+<pre>
+    java -Xmx1024m -jar V:/plassering/acsbundle.jar
+</pre>
+eller
+<pre>
+    &lt;java-bane&gt;java -jar V:/plassering/acsbundle.jar
+</pre>
+der &lt;java-bane&gt; er plasseringen av Java-kommandoen for JDK 6.0 eller høyere.
+<p>
+Se punkt <a href="#7.1.2">7.1.2 Finne banen til Java-hjemmekatalogen</a> som beskriver hvordan du
+finner den fullstendige banen til java-kommandoen.
+<p>
+Du kan også bruke programmene eller skriptene fra kommandolinjen. For eksempel:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Teknisk merknad:<br>
+På de fleste plattformer har heap-området for Java Virtual Machine en maksimal
+størrelse som er for liten til å utnytte flere funksjoner i IBM i Access
+Client Solutions-produktet.  En maksimal heap-størrelse på 1 gigabyte (-Xmx1024m)
+er anbefalt minimumsstørrelse.  Hvis du oppgir en størrelse som er mindre enn 1
+gigabyte eller bruker standard heap-størrelse, kan det gi et OutOfMemoryException.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Konfigurering</h3>
+<p>
+Tilføy en systemkonfigurasjon for hvert IBM i-system du skal bruke eller administrere.  Når du skal tilføye en systemkonfigurasjon, velger du Systemkonfigurasjoner fra
+administrasjonsoppgavene. Velg deretter Ny.  Oppgi systemnavnet på flippen Generelt.  Systemnavnet er det eneste du trenger for å komme i gang med generelle oppgaver.
+<p>
+Når du er ferdig, velger du OK for å lagre informasjonen du har oppgitt for dette
+systemet, eller velger Lagre/ny hvis du har flere systemer du vil tilføye til
+konfigurasjonen.
+<p>
+Du kan når som helst tilføye nye systemer til konfigurasjonen eller oppdatere
+eksisterende konfigurasjoner på flippene Generelt, Tilkobling eller Konsoll.
+<p>
+For konsolloppgaver er det nødvendig med ytterligere konfigurering.  Konsollkonfigurasjoner
+blir automatisk knyttet til systemnavnet du oppgav på flippen Generelt.
+Når du skal
+oppgi konsollkonfigurasjonen for et system, velger du Systemkonfigurasjoner fra
+administrasjonsoppgavene.  Velg Ny eller Rediger.  Velg deretter flippen Konsoll.
+Oppgaven 5250-konsoll krever en konfigurert LAN-konsoll eller HMC-konsoll. Hvis du ikke har en konfigurert LAN- eller HMC-konsoll, kan du se punkt
+<a href="#9.9">9.9 Opprette en konsolltilkobling til IBM i</a>.
+<p>
+Oppgaven Grensesnitt for maskinvareadministrasjon krever et konfigurert grensesnitt
+for maskinvareadministrasjon.  Du kan oppgi opptil to konfigurasjoner for grensesnitt
+for maskinvareadministrasjon.
+<p>
+Når du er ferdig, velger du Lukk i vinduet Systemkonfigurasjoner.
+<p>
+Velg et system fra valglisten System i hovedvinduet i IBM i Access Client Solutions.  Alle konsolloppgaver knytter automatisk det valgte systemet (oppgitt på flippen
+Generelt) til konsollkonfigurasjonen (oppgitt på flippen Konsoll).
+<p>
+Du kan nå velge en oppgave for det valgte systemet.  Hvis du velger en
+konsolloppgave som ikke har tilsvarende informasjon oppgitt på konfigurasjonsflippen
+Konsoll, blir det vist en feilmelding.
+
+
+
+<h3><a id="8.1"></a>8.1 Plassering av konfigurasjon</h3>
+<p>
+Som standard har hver bruker sin egen entydige plassering for sin konfigurasjon. Konfigurasjonsrotkatalogen blir bestemt avhengig av plattformen.  Konfigurasjonskatalogen blir opprettet under første oppstart.  Slik ser du hvor konfigurasjonskatalogen er plassert:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Start produktet (se punkt <a href="#7.0">7.0 Starte produktet)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Rediger-&gt;Preferanser<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Velg flippen Lokale innstillinger<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Konfigurasjonsrot<br>
+<p>
+Plasseringen av konfigurasjonen kan ikke endres mens produktet kjører.  Hvis du
+vil endre plasseringen av konfigurasjonen, kan du lese punkt
+<a href="#9.3">9.3 Endre plassering av konfigurasjon</a>
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Avanserte emner</h3>
+<h3><a id="9.1"></a>9.1 Flere kommandolinjeparametere</h3>
+<p>
+Mange av funksjonene som er tilgjengelige fra det grafiske hovedgrensesnittet, er
+også tilgjengelige fra kommandolinjen.  Disse funksjonene kan startes ved at du oppgir
+riktige verdier for kommandolinjeparameterne som er vist i<br>
+punkt <a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a>
+<p>
+For eksempel:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+Bare tilleggsparametere blir vist i punktene nedenfor:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;filnavn&gt;]
+    &lt;filnavn&gt; er navnet på filen som skal opprettes
+</pre>
+<p>
+Dette lagrer gjeldende konfigurasjon i den oppgitte filen.
+Resultatfilen kan brukes som inndata til restore-kommandolinjeparameteren på
+samme eller en annen arbeidsstasjon (uavhengig av operativsystem).
+<p>
+Plasseringen av konfigurasjonen som skal lagres, er bestemt av egenskapen<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...som finnes i filen AcsConfig.properties.
+<p>
+Denne funksjonen tilsvarer Fil-&gt;Eksporter konfigurasjon i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Restore</h3>
+<pre>
+/PLUGIN=restore /file=&lt;filnavn&gt;
+    &lt;filnavn&gt; er plasseringen av filen som ble opprettet med Backup
+</pre>
+Dette gjenoppretter en lagret konfigurasjon fra den oppgitte filen. En
+eksisterende konfigurasjon som ikke finnes i den oppgitte filen, går tapt.
+<p>
+Plasseringen til den gjenopprettede konfigurasjonen er bestemt av egenskapen
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...som finnes i filen AcsConfig.properties.
+<p>
+Denne funksjonen tilsvarer Fil-&gt;Importer konfigurasjon i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;system&gt;
+</pre>
+Laster ned en sertifikatutsteder (CA) fra det oppgitte IBM i-systemet og lagrer
+den i brukerens lokale klareringslager. Dette kreves for tjenerautentisering
+med SSL.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+/LIST     - liste over konfigurerte systemer med tilkoblingsalternativer
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;system&gt; [/ipaddr=&lt;frequency&gt;] [/userid=&lt;userid&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;path&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - navnet på systemet
+    /ipaddr     - når det blir bedt om en tilkobling, bestemmer denne verdien om
+                  det skal utføres et oppslag for IP-adressen. Gyldige frekvenser
+                  er:
+                      ALWAYS - oppslag av IP-adresse for hver tilkobling
+                      HOURLY, DAILY, WEEKLY - oppslag av IP-adresse avhengig av
+                           tiden som har gått siden siste oppslag av
+                      IP-adresse - hvis det blir oppgitt en IP-adresse,
+                          blir oppslagsfrekvensen ansett å være NEVER
+    /userid     - bruker-IDen til en bruker
+                  kan også settes til følgende verdier:
+                      *SHARE        - spør en gang etter påloggingslegitimasjon som
+                                      deles av systemene som bruker dette alternativet
+                      *PROMPTALWAYS - forespørsel minst en gang for hver tilkobling
+                      *KERBEROS     - bruk Kerberos-prinsipalnavn, ikke spør
+    /ssl        - bryter er 0 for å slå SSL-modus av, eller 1 for å slå den på
+    /5250path   - bane til 5250-emuleringsprofiler
+                  /5250path kan defineres ved å velge Fil-&gt;Endre katalog... fra
+5250-sesjonsstyrer
+    /del sletter eksisterende konfigurasjon
+    /r   erstatter eksisterende konfigurasjon
+</pre>
+Dette gjør det mulig å definere forskjellige konfigurasjonsalternativer fra kommandolinjen.
+Disse alternativene kan også defineres fra hovedgrensesnittet med Systemkonfigurasjoner.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;options&gt;]
+</pre>
+Ber om at alle prosesser som kjører i produktet, skal dumpe sine tråder.  Denne
+informasjonen kan brukes av IBM Kundeservice for å gi støtte ved problemer.
+<p>
+Loggene som genereres, er tilgjengelige i hovedgrensesnittet fra<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Rediger-&gt;Preferanser<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Flippen Lokale innstillinger<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Katalog for dumper<br>
+<p>
+Hvis ingen parametere er oppgitt, tilsvarer denne funksjonen følgende funksjon
+fra det grafiske hovedgrensesnittet:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Verktøy-&gt;Generer servicelogger
+<p>
+Gyldige parametere er
+<pre>
+    /heapdump - genererer det som er beskrevet ovenfor, pluss en dump av JVM-minneområdet
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Pakker eksisterende logger og tråddumper i en zip-fil som kan sendes til
+IBM for service.
+<p>
+Zip-filen som opprettes, er tilgjengelig i hovedgrensesnittet fra<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Rediger-Preferanser<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Flippen Lokale innstillinger<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Servicekatalog<br>
+
+Denne funksjonen tilsvarer Verktøy-&gt;Pakk servicelogger i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Level&gt;
+                &lt;Level&gt; er ett av følgende støttede loggenivåer:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Denne plugin-modulen gjør det mulig for brukerne å endre sitt loggenivå fra kommandolinjen.
+<p>
+Loggenivået kan også defineres fra hovedgrensesnittet gjennom<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Rediger-&gt;Preferanser<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Flippen Generelt<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Loggenivå<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;userid&gt;] [/PASSWORD=&lt;password&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - navnet på systemet
+    /USERID   - bruker-ID
+    /PASSWORD - passordet som er knyttet til bruker-IDen
+    /AUTH     - forsøker å koble til systemet med oppgitt påloggingslegitimasjon
+                og hurtigbufrer bare hvis den er vellykket
+    /C        - tømmer hurtigbufferen
+    /GUI      - om et grafisk brukergrensesnitt kan benyttes
+</pre>
+Denne kommandoen bufrer bruker-ID og passord, som kan brukes til å forhindre
+forespørsler om passord.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Åpner samme grensesnittvindu som Rediger-&gt;Preferanser fra hovedgrensesnittet.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;options&gt;]
+
+Gyldige parametere er
+    /killdaemon     - avslutter demontråder.
+                      Samme som Verktøy-&gt;Tilbakestill for vedlikehold fra hovedgrensesnittet
+    /clearpwcaches  - fjerner alle bufrede passord
+    /clearjarcache  - tømmer produktets jar-buffer
+    /clearlogs      - tømmer Katalog for logger under Rediger-&gt;Preferanser
+                      flippen Lokale innstillinger fra hovedgrensesnittet
+    /cleardumps     - tømmer Katalog for dumper under Rediger-&gt;Preferanser
+                      flippen Lokale innstillinger fra hovedgrensesnittet
+    /clearsvcdir    - tømmer Servicekatalog under Rediger-&gt;Preferanser
+                      flippen Lokale innstillinger fra hovedgrensesnittet
+    /clearsettings  - fjerner alle innstillinger for gjeldende bruker
+</pre>
+Hvis ingen parametere er oppgitt, blir det ikke utført noen handlinger.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;system&gt; [&lt;/options&gt;]
+    Omfatter følgende parametere:
+        /SSL=&lt;1|0&gt;        Aktiver/deaktiver SSL
+        /ACCEPTALLCERTS=&lt;1|0&gt; Oppgir om alle SSL-sertifikater skal
+                           tilføyes til det klarerte settet (når SSL brukes).
+        /SERVERAUTH=&lt;1|0&gt; Aktiver/deaktiver SSL-tjenerautentisering (standard er
+                          deaktivert). Parameteren blir oversett hvis SSL ikke testes.
+        /GUI=&lt;1|0&gt;        Aktiver/deaktiver GUI-vindu (standard er deaktivert ved start
+                          fra kommandolinjen).
+        /PORTS=&lt;port1,port2&gt; En kommadelt liste med porter som skal testes. Det kan være
+                numre eller tjenestenavn (for eksempel /PORTS=as-signon,as-sts). Hvis ikke
+                oppgitt, blir et standardsett med porter testet.
+                Hvis .CONSOLE er oppgitt, blir en liste over konsollspsifikke porter kontrollert.
+
+        /TIMEOUT=&lt;sekunder&gt;   Oppgi en tidsgrenseverdi i sekunder.
+</pre>
+Denne plugin-modulen sjekker tilkoblingen til IBM i ved å åpne en tilkobling til
+den aktuelle porten.  Hvis du kontrollerer en SSL-tilkobling, blir et SSL-håndtrykk forsøkt.
+Ved start fra hovedgrensesnittet, eller med /GUI=1, viser denne plugin-modulen et
+tilleggsvindu.  Ved start fra kommandolinjen uten /GUI=1 blir utdataene sendt til
+konsollen.
+<p>
+For ikke-SSL blir følgende tjenester og porter kontrollert:<br>
+<pre>
+    sshd            22
+    telnet          23
+    drda           446
+    as-svrmap      449
+    as-nav        2004
+    as-central    8470
+    as-database   8471
+    as-dtaq       8472
+    as-file       8473
+    as-netprt     8474
+    as-rmtcmd     8475
+    as-signon     8476
+</pre>
+<p>
+For SSL blir følgende tjenester og porter kontrollert:<br>
+<pre>
+    sshd            22
+    telnet-ssl     992
+    ddm-ssl        448
+    as-svrmap      449
+    as-nav        2005
+    as-central-s  9470
+    as-database-s 9471
+    as-dtaq-s     9472
+    as-file-s     9473
+    as-netprt-s   9474
+    as-rmtcmd-s   9475
+    as-signon-s   9476
+ </pre>
+
+<p>
+Denne funksjonen kan startes fra hovedgrensesnittet gjennom<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Systemkonfigurasjoner<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;velg et system og deretter Rediger<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Flippen Generelt<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Kontroller tilkobling<br>
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Denne plugin-modulen starter det grafiske brukergrensesnittet for 5250-sesjonsstyreren.
+<p>
+Dette tilsvarer å velge 5250-sesjonsstyrer i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;options&gt;]
+
+Denne plugin-modulen starter en 5250-emulator på det oppgitte systemet.
+Denne funksjonen tilsvarer å velge 5250-emulator i det grafiske hovedgrensesnittet.
+
+Gyldige parametere er
+    /id=&lt;A-Z&gt;                    - kort sesjons-ID
+    /name=&lt;name&gt;                 - sesjonsnavn
+    /wsid=&lt;identifier&gt;           - arbeidsstasjons-ID
+    /wide=&lt;1|0|true|false&gt;       - bruk bred skjerm (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - bruk hele skjermen
+    /nosave=&lt;1|0|true|false&gt;     - ikke lagre innstillinger ved avslutning
+    /prompt=&lt;1|0|true|false&gt;     - fremtving visning av konfigurasjonsvinduet
+    /port=&lt;port&gt;                 - portnummer
+    /ssl=&lt;1|0|true|false&gt;        - tilkoble med SSL
+    /sso=&lt;1|0|true|false&gt;        - hopp over påloggingsvindu
+    /kerberos                          - bruk Kerberos
+    /width=&lt;width&gt;               - startbredde for emulatorvinduet
+    /height=&lt;height&gt;             - starthøyde for emulatorvinduet
+    /xpos=&lt;xpos&gt;                 - første x-koordinatposisjon for øvre venstre
+                                   hjørne av emulatorvinduet
+    /ypos=&lt;ypos&gt;                 - første y-koordinatposisjon for øvre venstre
+                                   hjørne av emulatorvinduet
+    /watermark                   - vis systemnavn som vannmerke på skjermbildet
+    /watermark=&lt;text&gt;            - vis oppgitt tekst som vannmerke på skjermbildet
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Denne plugin-modulen starter det grafiske hovedgrensesnittet for dataoverføring.
+
+Denne funksjonen tilsvarer å velge Dataoverføring i det grafiske hovedgrensesnittet.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - bruker-ID som skal brukes for tilkobling til målsystemet
+    &lt;filename&gt;- fil med filtype dtfx som ble opprettet i en tidligere
+                Dataoverføring-nedlasting.
+</pre>
+Plugin-modulen gjør det mulig å kjøre en tidligere lagret Dataoverføring-nedlasting.
+<p>
+Dataoverføring er også tilgjengelig ved at du velger Dataoverføring i hovedgrensesnittet.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - bruker-ID som skal brukes for tilkobling til målsystemet
+    &lt;filename&gt;- fil med filtype dttx som ble opprettet i en tidligere
+                Dataoverføring-opplasting.
+</pre>
+Plugin-modulen gjør det mulig å kjøre en tidligere lagret Dataoverføring-opplasting.
+<p>
+Dataoverføring er også tilgjengelig ved at du velger Dataoverføring i hovedgrensesnittet.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;system&gt;
+                          [/userid=&lt;userid&gt;]
+                          {/hostfile=&lt;library/filename&gt; | /sql="statement"}
+                          {/clientfile=&lt;path&gt;&lt;filename&gt;.&lt;extension&gt; | /display}
+
+    /userid   - bruker-ID som skal brukes for tilkobling til målsystemet
+    /hostfile   - kildebibliotek og fil på IBM i-systemet for nedlastingen
+                  f.eks. /hostfile=QIWS/QCUSTCDT
+    /sql        - oppgi en SQL-setning
+                  f.eks. /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - målfilplassering for nedlastingen.
+                  Formatet til denne filen bestemmes av filtypen som er oppgitt
+                  (for eksempel .csv .ods .xlsx .xlsx).
+                  Hvis filtypen ikke er oppgitt eller den ikke støttes,
+                  blir dataene formatert som en csv-fil
+    /display    - skriv utdataene til terminalen
+</pre>
+Plugin-modulen gjør det mulig å kjøre en enkel nedlasting av en hel fil fra kommandolinjen.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;system&gt;
+</pre>
+Denne plugin-modulen starter en 5250-konsoll på det oppgitte systemet.
+<p>
+Denne funksjonen tilsvarer å velge 5250-konsoll i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;system&gt;
+</pre>
+Denne plugin-modulen starter et virtuelt kontrollpanel for det oppgitte systemet.
+<p>
+Denne funksjonen tilsvarer å velge Virtuelt kontrollpanel i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;system&gt;
+</pre>
+Denne plugin-modulen starter en nettleser for IBM Navigator for i som bruker oppgitt
+system og port 2001.
+<p>
+Denne funksjonen tilsvarer å velge Navigator for i i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;system&gt;
+</pre>
+Denne plugin-modulen viser utskriftsgrensesnittet for visning og
+nedlasting av utskriftsfiler fra IBM i.
+<p>
+Denne funksjonen tilsvarer å velge Utskrift i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Denne plugin-modulen viser verktøyet Nøkkelstyring.
+<p>
+Denne funksjonen tilsvarer Verktøy-&gt;Nøkkelstyring i det grafiske hovedgrensesnittet.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;system&gt;
+                  {/CMD="&lt;CL command&gt;" | file=&lt;file_name&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL command&gt;"  - en kommando som skal kjøres. Bruk anførselstegn for å
+                           unngå at mellomrom lager brudd i kommandoen.
+    /file=&lt;file_name&gt;    - oppgi en inndatafil med flere kommandoer. Angi
+                           en kommando per linje uten anførselstegn.
+    /noprompt=&lt;1|0&gt;      - hvis en inndatafil er oppgitt, ignoreres resultatet og
+                           eventuelle forespørsler før behandlingen går videre.
+</pre>
+Denne plugin-modulen sender CL-kommandoer til det oppgitte systemet.
+<p>
+Denne funksjonen er bare tilgjengelig fra kommandolinjen.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;system,system,system,...&gt;
+</pre>
+Denne plugin-modulen endrer passordet på de oppgitte systemene.  Den spør
+brukeren etter en bruker-ID og gammelt og nytt passord.
+<p>
+Denne funksjonen kan også brukes fra det grafiske brukergrensesnittet
+ved å velge flippen Passord fra Rediger-&gt;Preferanser
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;option&gt; /SYSTEM=&lt;system&gt;
+
+&lt;system&gt; kan være et systemnavn eller *ALL som angir alle systemer.
+
+Gyldige parametere er
+    /IMPORT - Kopier en eller alle systemkonfigurasjoner fra Windows-
+              konfigurasjonen til IBM i Access Client Solutions.
+    /EXPORT - Kopier en eller alle systemkonfigurasjoner til Windows-
+              konfigurasjonen fra IBM i Access Client Solutions.
+    /DELETE - Slett en eller alle systemkonfigurasjoner fra Windows-
+              konfigurasjonen.
+</pre>
+Denne plugin-modulen gjør det mulig å kopiere systemkonfigurasjoner mellom
+IBM i Access Client Solutions og den gamle Windows-konfigurasjonen som
+var støttet av IBM i Access for Windows.
+<p>
+Denne funksjonen kan også brukes fra det grafiske brukergrensesnittet
+ved å velge Fil-&gt;Kopier tilkoblinger
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Merk: Denne plugin-modulen er bare tilgjengelig for brukere med rot- eller administratorautorisasjon.
+<pre>
+/PLUGIN=restrict /&lt;options&gt;
+
+Gyldige parametere er
+     /restrict=&lt;func1,func2,func3&gt;   Tillater ikke de oppgitte funksjonene på denne
+                                     arbeidsstasjonen.
+     /unrestrict=&lt;func1,func2,func3&gt; Tillater de oppgitte funksjonene på denne
+                                     arbeidsstasjonen.
+     /list                           Oppgir om funksjonene er tillatt eller
+                                     ikke på denne arbeidsstasjonen.
+     /export=&lt;file&gt;                  Eksporter begrensninger til oppgitt fil med
+                                     filtypen .acsr.
+     /import=&lt;file&gt;.acsr             Importer begrensinger fra en file med
+                                     filtypen .acsr.
+     /exportreg=&lt;file&gt;               Eksporter en Windows-registerfil (.reg-fil)
+
+</pre>
+<p>Denne plugin-modulen gjør det mulig for brukere med administrator- eller
+root-autorisasjon å definere funksjonsbegrensninger for alle brukere på den gjeldende
+arbeidsstasjonen.
+<pre>
+   Funksjon           Beskrivelse
+    cfg             Systemkonfigurasjoner
+    sm              5250-sesjonsstyrer
+    5250            5250-emulator
+    vcp             Virtuelt kontrollpanel
+    console         5250-konsoll
+    consoleprobe    Søk i det lokale nettverket etter konsollkonfigurasjoner
+    hmcprobe        Søk etter partisjoner i et HMC-system
+    hmi1            Grensesnitt for maskinvareadministrasjon 1
+    hmi2            Grensesnitt for maskinvareadministrasjon 2
+    keyman          SSL/TLS-sertifikatadministrasjon
+    dtgui           Grafisk brukergrensesnitt for dataoverføring
+    upload          Satsvise opplastinger for dataoverføring
+    download        Satsvise nedlastinger for dataoverføring
+    cldownload      Satsvise nedlastinger for dataoverføring
+    l1c             IBM Navigator for i (konsoll nivå 1)
+    rmtcmd          Fjernkommando (tilgjengelig fra kommandolinjen)
+    splf            Utskrift (filer i kø)
+    ifs             Integrert filsystem
+    db2             Skjemaer
+    rss             Kjør SQL-skript
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+    checkupdates    Søk etter tilgjengelige oppdateringer
+    ssh             Secure Shell
+</pre>
+<p>Funksjoner kan også utelates ved å bruke gruppenøkkelord:
+<pre>
+   Gruppe             Funksjoner
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+En administrator eller  bruker med root-autorisasjon kan også definere
+funksjonsbegrensninger fra hovedgrensesnittet.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rediger-&gt;Preferanser<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Flippen Begrensninger<br>
+
+<p>
+Punkt <a href="#9.5">9.5 Tilpassede pakker</a> inneholder informasjon om hvordan du enkelt begrenser funksjoner på flere arbeidsstasjoner.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Viser en liste over funksjonene som for øyeblikket er begrenset på denne arbeidsstasjonen.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;filetype&gt; &lt;filetype&gt; ...] [/c]
+
+    &lt;filetype&gt;   - gyldige filtyper er dttx, dtfx, hod, bchx, ws, bch
+    /c           - fjern filtilknytningen for de oppgitte filtypene
+</pre>
+På en Windows-plattform definerer dette filtilknytningene for filer av typen .dttx,
+.dtfx, .hod, .bchx, .ws og .bch.  På en annen plattform enn Windows blir det
+vist en feilmelding.
+<p>
+Denne funksjonen tilsvarer Verktøy-&gt;Filtilknytninger i det grafiske hovedgrensesnittet.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - bruker-ID som skal brukes for tilkobling til målsystemet
+    &lt;filename&gt;- fil med filtype .dtfx eller .dttx som ble opprettet i en
+                tidligere Dataoverføring-nedlasting eller -opplasting.
+                Flere filer kan oppgis med eller uten dette nøkkelordet.
+</pre>
+Plugin-modulen gjør det mulig å kjøre en tidligere lagret dataoverføringsforespørsel.
+<p>
+Dataoverføring er også tilgjengelig ved at du velger Dataoverføring i hovedgrensesnittet.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;file&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - filer som skal migreres. Filene må være 5250-filer med
+                filtypen .ws, .bch, .kmp, .pmp eller .bar.
+    /output   - plass der migrerte filer skal lagres.
+    /verbose  - vise resultat av migrerte filer.
+    /gui      - start brukergrensesnittet for migrering av 5250-filer.
+</pre>
+Plugin-modulen gjør det mulig å migrere filer fra IBM i Access for Windows
+Personal Communications-emulatoren til IBM i Access Client Solutions-emulatoren.
+Noen av de konverterte filene får ny filtype.  Se punkt <a href="#9.6.2">9.6.2 Migrere 5250-emulering</a>. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - Åpne oppgitt fil
+    /SQL=&lt;filename&gt;  - Åpne oppgitt fil
+    /AUTORUN=&lt;1,0&gt;   - Kjør skript automatisk
+</pre>
+Plugin-modulen gjør det mulig å kjøre SQL-setninger og CL-kommandoer.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [Options]
+
+Gyldige parametere er
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Handling for å utføre følgende:
+                      LIST-alternativet kan brukes sammen med LISTNAME-argumentet og viser
+                      SQL Performance Center med den oppgitte listen.
+                      ANALYZE-alternativet analyserer det oppgitte ytelsesdatasettet.
+                      STATEMENTS-alternativet viser setninger for SQL-planbuffer eller
+                      oppgitt ytelsesdatasett.
+                      COMPARE-alternativet sammenlikner oppgitt(e) ytelsesdatasett.
+    /NAME=&lt;name&gt;    - Navnet på ytelsesdatasettet
+    /TABLE=&lt;name&gt;   - Navnet på tabellen som inneholder ytelsesdata
+    /SCHEMA=&lt;name&gt;  - Navnet på skjemaet for tabellen som inneholder ytelsesdata
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - Startliste som skal vises i SQL Performance Center.
+</pre>
+SQL Performance Center-tilleggsmodulen inneholder et sett med verktøy som hjelper deg med å optimalisere SQL i databaseapplikasjoner:
+<ul>
+<li>Analyser - Gir en oversikt over innsamlede ytelsesdata som fungerer som et utgangspunkt for dypere analyse ved hjelp av neddrillingsnavigering.
+<li>Sammenlikn - Viser en sammenlikningsoversikt mellom to eller flere ytelsesdatainnsamlinger, der du kan velge to for ytterligere setningssammenlikning.
+<li>Vis setninger - Arbeid med SQL-setninger i SQL-planbufferen eller i en ytelsesdatainnsamling.
+<li>Visual Explain - Generer en grafisk fremstilling av setningsutføringsplanen for å se hvordan SQL-setningene fungerer.
+<li>SQL-planbuffer - Administrer innstillingene for systemets SQL-planbuffer.
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+Integrert filsystem gir et grensesnitt for å bla i det integrerte filsystemet på IBM i, og for å arbeide med objekter i det integrerte filsystemet på følgende måter:
+<ul>
+<li>Kopier objekter mellom klientsystemet og IBM i
+<li>Kopier objekter innenfor det integrerte filsystemet på en IBM i eller til det integrerte filsystemet på en annen IBM i
+<li>Send objekter til en annen IBM i (eller til flere)
+<li>Opprett nye mapper (kataloger, biblioteker og mapper)
+<li>Slett objekter
+<li>Endre navn på objekter
+<li>Vis egenskaper for objekter
+</ul>
+Se punktet <a href="#9.12">9.12 Integrert filsystem (IFS)</a> for krav og begrensninger når du bruker denne tilleggsmodulen.
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+Plugin-modulen gir et grensesnitt for administrasjon av Db2 for i-databasene på IBM i.
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+Plugin-modulen gir et grensesnitt for å se etter tilgjengelige oppdateringer.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;system&gt;
+</pre>
+SSH-terminal starter en allerede installert SSH-klient (terminalemulator) på
+PCen til det integrerte IBM i-filsystemet.
+
+
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Filtilknytninger</h3>
+<p>
+Noen konfigurasjonsfiler som genereres av IBM i Access Client Solutions, støttes
+fra kommandolinjen når de oppgis som første og eneste parameter.
+Når disse filene med bestemte filtyper blir oppgitt som første parameter,
+knytter IBM i Access Client Solutions filen til funksjonen som skal
+startes, og leverer filen som inndata til funksjonen.
+<p>
+Følgende filtyper har støtte for filtilknytning:
+<pre>
+    .dttx   - Dataoverføring-forespørsel om opplasting
+    .dtfx   - Dataoverføring-forespørsel om nedlasting
+    .hod    - 5250-emuleringssesjonsprofil
+    .bchx   - emuleringsprofil for flere sesjoner
+    .ws     - 5250-emuleringssesjonsprofil (Personal Communications)
+    .bch    - emuleringsprofil for flere sesjoner (Personal Communications)
+</pre>
+Kommandolinjeeksempler:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - kjører den lagrede nedlastingsforespørselen
+    acslaunch_xxx dt_upload_file.dttx   - kjører den lagrede opplastingsforespørselen
+    acslaunch_xxx system_lp13ut20.hod   - starter en 5250-sesjon på systemet
+</pre>
+...der acslaunch_xxx er kommandolinjesyntaksen som brukes for å starte produktet. Se
+punkt <a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a>.
+<p>
+Disse støttede filtilknytningene fra kommandolinjen gjør det mulig for brukeren
+å definere operativsystemspesifikke filtilknytninger manuelt.  Siden filtilknytninger
+er plattformavhengige, avhenger fremgangsmåten av operativsystemet.
+</p>
+Årsaken til at du kan ønske å definere filtilknytninger for ditt operativsystem,
+er at du da får mulighet til å dobbeltklikke på en fil (med en av de støttede
+filtypene) for å starte den tilhørende funksjonen.
+<p>
+Nedenfor finner du eksempler på hvordan du definerer filtilknytninger for
+noen operativsystemer.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Filtilknytninger (for Windows)</h3>
+<ol>
+<li>Velg Verktøy-&gt;Filtilknytninger... fra menylinjen i hovedgrensesnittet.
+<li>Velg filtypen du vil opprette filtilknytninger for.
+<li>Velg OK
+</ol>
+<p>
+Den aktuelle IBM i Access Client Solutions-funksjonen blir nå utført når du
+dobbeltklikker på filer av denne typen.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Endre ikon (for Windows-snarvei)</h3>
+<ol>
+<li>Finn snarveien som tidligere er opprettet for binærfilen som passer for
+din maskinvarearkitektur (acslaunch_win-32.exe ELLER acslaunch_win-64.exe)
+<li>Høyreklikk og velg Egenskaper
+<li>Velg flippen Snarvei
+<li>Klikk på knappen Endre ikon...
+<li>Velg ikonet du vil bruke for denne snarveien
+<li>Velg OK
+<li>Velg OK
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Definere et skrivebordsikon (for Linux)</h3>
+<p>
+Følg fremgangsmåten i <a href="./QuickStartGuide_en.html">QuickStartGuide</a> for Linux.  Da blir applikasjonen
+installert i /opt/ibm/iAccessClientSolutions.  Dessuten blir
+/usr/share/applications/IBM i Accesss Client Solutions.desktop opprettet
+<p>
+Hvis du vil opprette et ikon for produktet på skrivebordet, kopierer du
+desktop-filen ovenfor til mappen Desktop.  Det er mulig du må tilpasse tillatelsene
+for filen på skrivebordet slik at den blir utførbar.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Filtilknytninger (for Linux)</h3>
+<p>
+Fremgangsmåten for å definere filtilknytninger avhenger av Linux-distribusjonen
+og hvilket skrivebordsmiljø du bruker.  Generelt likner fremgangsmåten på den
+som er beskrevet ovenfor for Windows.
+<ol>
+<li>Finn en fil du vil tilknytte, som har en støttet filtype (for eksempel
+   .hod, .bchx, .dtfx eller .dttx)
+<li>Høyreklikk på filen. Se etter alternativer eller egenskaper som gjør
+det mulig å knytte et program til filen.
+<li>Knytt filen og/eller filtypen til den aktuelle binærfilen eller
+oppstartsskriptet for IBM i Access Client Solutions.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Filtilknytninger (for Mac)</h3>
+<p>
+Når du skal bruke Filtilknytninger på en Mac, må filtypen knyttes til en
+applikasjon.  Følg fremgangsmåten i <a href="./QuickStartGuide_en.html">QuickStartGuide</a> for Mac
+slik at IBM i Access Client Solutions er en installert applikasjon.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Opprette filtilknytninger (for Mac)</h3>
+<ol>
+<li>Bruk Finder til å finne en fil du vil tilknytte, som har en støttet filtype
+   (f.eks. .hod, .bchx, .dtfx, eller .dttx)
+<li>Velg filen og deretter File-&gt;Get Info
+<li>Velg Other under "Open with:"
+<li>Bla til stedet for IBM i Access Client Solutions-applikasjonen.
+<li>Velg applikasjonen.
+<li>Merk av for Always Open With.  Velg Add.
+<li>Velg Change All ved "Open with:".  Velg Continue.
+</ol>
+<p>
+Den aktuelle IBM i Access Client Solutions-funksjonen blir nå utført når du
+dobbeltklikker på filer av denne typen.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Endre ikon (for Mac)</h3>
+<p>
+Bruk applikasjonen Preview til å finne mappen Icons i produktkatalogen,
+og bruk Finder til å erstatte ikonet i Get Info.
+<ol>
+<li>Velg File-&gt;Open fra Preview
+<li>Finn katalogen Icons for produktet
+<li>Velg filen som inneholder ikonet, og velg deretter Open
+<li>Velg Edit-&gt;Select All
+<li>Velg Edit-&gt;Copy
+<li>Fra Finder finner du .hod-, .bchx-, .dtfx- eller .dttx-filen som ikonet
+   skal endres for.<br>
+   Hvis filen allerede finnes på skrivebordet, klikker du på den for å velge den.  Ellers
+   velger du Go-&gt;Go To Folder og oppgir deretter banen til filen og velger Go.<br>
+   Klikk på filen for å velge den.
+<li>File-&gt;Get Info
+<li>Klikk på ikonet øverst i Get Info
+<li>Edit-&gt;Paste
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Endre plassering av konfigurasjon</h3>
+<p>
+Som standard har hver bruker sin egen entydige plassering for sin konfigurasjon. Du kan endre plasseringen av konfigurasjonen ved å oppgi en verdi for egenskapen<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Denne egenskapen finnes i filen AcsConfig.properties.
+<p>
+Filen AcsConfig.properties finnes på to steder når produktet leveres. Den finnes i filen acsbundle.jar.  Den finnes også i produktets zip-arkivfil
+og ligger i samme katalog som filen acsbundle.jar når zip-arkivet er pakket opp.
+<p>
+Under oppstart bruker produktet bare den første AcsConfig.properties-filen
+det finner.  Produktet sjekker først katalogen der filen acsbundle.jar finnes.
+Hvis AcsConfig.properties ikke blir funnet i samme katalog som acsbundle.jar,
+bruker produktet filen AcsConfig.properties som finnes i acsbundle.jar.
+<p>
+Du kan velge å oppdatere AcsConfig.properties i acsbundle.jar med en tilpasset
+konfigurasjonsbane.  Hvis du gjør det, må du passe på at katalogen der acsbundle.jar
+finnes, ikke inneholder en AcsConfig.properties-fil, ellers blir den brukt.
+Dette gir fleksibilitet ved distribusjon av konfigurasjonsplasseringen
+med filen acsbundle.jar samtidig som den kan overstyres.
+<p>
+Spesielle nøkkelord kan brukes ved defineringen av konfigurasjonsbanen.  Når
+nøkkelordene brukes i den oppgitte banen, blir de erstattet med teksten
+eller banen de definerer.  Bare ett enkelt nøkkelord kan brukes i
+konfigurasjonsbanen.  Dette er de spesielle nøkkelordene og deres betydning:<br>
+<pre>
+	{USER} - Gjeldende bruker-ID. Dette nøkkelordet kan brukes hvor som helst i banen
+</pre>
+<p>
+Følgende nøkkelord kan bare brukes i begynnelsen av banen:
+<pre>
+	{PRODUCTDIR} - banen til samme katalog som acsbundle.jar
+	{TEMPDIR}    - banen til en plattformspesifikk midlertidig katalog
+	{ROOT}       - banen til rotkatalogen for filsystemet
+	{HOME}       - banen til brukerens hjemmekatalog
+	{DEFAULT}    - standardbanen som produktet vanligvis vil bruke
+</pre>
+<p>
+Teknisk merknad:<br>
+Vi anbefaler ikke at en konfigurasjon deles av flere brukere.
+Hvis for eksempel X er en delt nettverksstasjon, kan følgende innstilling
+gi uforutsette resultater:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+Mulige problemer hvis flere brukere deler denne konfigurasjonsbanen:<br>
+<ol>
+<li>Det kan gi uforutsette resultater hvis flere brukere bruker konfigurasjonen samtidig.
+<li>Dette eksempelet forutsetter at brukerne har en X-stasjon med samme plassering
+<li>Bruk av en nettverksstasjon for konfigurasjonen fungerer ikke fra en Linux-
+   eller Mac-klient.  Nøkkelordene som er oppgitt i eksemplene nedenfor, vil
+   fungere på Windows, Linux og Mac.
+</ol>
+<p>
+Når en konfigurasjonsbane deles av flere brukere, må nøkkelordet {USER}
+brukes for å unngå kollisjon med andre brukere.  Det erstattes med
+bruker-IDen til gjeldende bruker.
+<p>
+Når du definerer konfigurasjonsbanen, bruker du en skråstrek ('/') i stedet for en
+omvendt skråstrek ('\') som skilletegn mellom kataloger.  Dette fungerer på alle
+operativsystemer inkludert Windows.
+<p>
+Her er noen eksempler på anbefalte konfigurasjoner:
+<p>
+Eksempel 1 - Lokal konfigurasjon for gjeldende bruker (standard):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Når AcsBaseDirectory ikke er definert, er standardverdien for konfigurasjonen
+en plattformavhengig bane for brukeren.
+Dette er standardinnstillingen for IBM i Access Client Solutions.
+<p>
+Eksempel 2 - Ekstern (eller lokal) konfigurasjon som er unik for hver bruker:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+Om konfigurasjonen er ekstern eller lokal avhenger av plasseringen for {ROOT}.
+<p>
+Eksempel 3 - Ekstern (eller lokal) konfigurasjon som er unik for hver bruker:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+Om konfigurasjonen er ekstern eller lokal avhenger av plasseringen for {PRODUCTDIR}.
+<p>
+Eksempel 4 - Lokal konfigurasjon på flyttbart medium (som en USB-stasjon):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Siden banen for et flyttbart medium avhenger av systemet der det blir brukt,
+gjør denne innstillingen det mulig at konfigurasjonen er relativ til
+produktfilene.  I dette eksempelet er nøkkelordet {USER} med hensikt ikke
+oppgitt, slik at konfigurasjonen på USB-stasjonen kan brukes av den som bruker
+USB-stasjonen, uavhengig av brukerens bruker-ID.
+
+
+<h3><a id="9.4"></a>9.4 Andre distribusjonsalternativer</h3>
+<p>
+Dette er noen andre distribusjonsalternativer du kanskje vil vurdere:
+<ul>
+   <li>Distribuer produktet på ett enkelt sted der det er tilgjengelig for
+     flere brukere.
+   <li>Hvis du har en web-tjener, kan du bruke Web Start.
+	 Se http://java.com/en/download/faq/java_webstart.xml
+   <li>Importer konfigurasjonsinnstillinger automatisk
+     Se punkt <a href="#9.4.1">9.4.1</a>
+   <li>Distribuer på IBM i. Se punkt <a href="#9.4.2">9.4.2</a>
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Importere konfigurasjonsinnstillinger automatisk</h3>
+<p>
+Følgende egenskaper kan brukes i filen AcsConfig.properties for å
+sette opp en konfigurasjon automatisk for nye brukere eller
+oppdatere en konfigurasjon for eksisterende brukere:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Dette er fremgangsmåten:
+<ol>
+<li>Opprett konfigurasjonen du vil spre til en eller flere brukere.
+<li>Eksporter konfigurasjonen til en fil med Fil-&gt;Eksporter konfigurasjon i
+   hovedgrensesnittet, eller bruk kommandolinjeparameteren i punkt <a href="#9.1.1">9.1.1 Backup</a>.
+<li>Flytt konfigurasjonsfilen til ønsket plassering.  Flere tilgjengelige
+   alternativer er beskrevet nedenfor.
+<li>Sett egenskapen com.ibm.iaccess.autoimport i AcsConfig.properties
+   til banen for konfigurasjonsfilen.
+<li>Sett egenskapen com.ibm.iaccess.autoimport.version til en heltallsverdi
+   som representerer versjonen av konfigurasjonsfilen.
+</ol>
+<p>
+Slik fungerer dette:<br>
+Den lagrede konfigurasjonen som egenskapen com.ibm.iaccess.autoimport refererer
+til, blir importert automatisk når heltallsverdien for egenskapen
+com.ibm.iaccess.autoimport.version ikke samsvarer med den siste verdien som
+ble importert.  I tillegg til å gi en mulighet for å sette opp en første
+konfigurasjon og levere oppdateringer til en eksisterende konfigurasjon, gir
+dette en mulighet til å tilbakestille en konfigurasjon.  Konfigurasjonen blir
+oppdatert hver gang heltallsverdien for versjonsegenskapen ikke samsvarer
+med siste versjon som ble importert.  Men mens en importert konfigurasjon
+kan endre konfigurasjonen for et eksisterende system i brukerens
+konfigurasjon, blir et system aldri slettet fra brukerens konfigurasjon.
+<p>
+Banen for egenskapen com.ibm.iaccess.autoimport kan oppgis som en absolutt
+bane, en URL eller med nøkkelordene som er beskrevet i punkt <a href="#9.3">9.3</a>.  For eksempel:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+Ekstra fleksibilitet oppnås ved at konfigurasjonsfilen kan distribueres
+i acsbundle.jar eller i samme katalog som acsbundle.jar.
+I begge tilfeller defineres com.ibm.iaccess.autoimport med navnet på filen
+uten foranstilt bane:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+Spesialverdien * er tillatt for com.ibm.iaccess.autoimport.version:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Da blir konfigurasjonen alltid importert uavhengig av en tidligere versjon.
+
+<h3><a id="9.4.2"></a>9.4.2 Grunnleggende IBM i-distribusjoner</h3>
+<p>
+Noen kommandolinjetilleggsmoduler (plugins) krever ikke et grafisk brukergrensesnitt og kan brukes i IBM i.
+Du kan for eksempel bruke Dataoverføring til å trekke ut data fra databasen til et regneark direkte i IBM i uten å hente dataene til PCen.
+<p>
+Det gjør du ved å pakke ut produktets zip-arkiv til et valgfritt sted i det integrerte IBM i-filsystemet (IFS).
+Hvis du for eksempel har pakket ut produktets zip-arkiv til:
+<pre> /home/AccessClientSolutions </pre>
+og har lagret dataoverføringens nedlastingsforespørsel som finnes i:
+<pre> /some_path/qcustcdt.dtfx </pre>
+kan du kjøre følgende kommando i IBM i:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Tilpassede pakker</h3>
+<p>
+IBM i Access Client Solutions gir systemadministratorer mulighet til å
+begrense bruken av bestemte funksjoner ved å definere følgende egenskap i
+filen AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;function, function,...&gt;
+</pre>
+Disse funksjonsnøkkelordene kan oppgis:<br>
+<pre>
+
+   Funksjon           Beskrivelse
+    cfg             Systemkonfigurasjoner
+    sm              5250-sesjonsstyrer
+    5250            5250-emulator
+    vcp             Virtuelt kontrollpanel
+    console         5250-konsoll
+    consoleprobe    Søk i det lokale nettverket etter konsollkonfigurasjoner
+    hmcprobe        Søk etter partisjoner i et HMC-system
+    hmi1            Grensesnitt for maskinvareadministrasjon 1
+    hmi2            Grensesnitt for maskinvareadministrasjon 2
+    keyman          SSL/TLS-sertifikatadministrasjon
+    dtgui           Grafisk brukergrensesnitt for dataoverføring
+    upload          Satsvise opplastinger for dataoverføring
+    download        Satsvise nedlastinger for dataoverføring
+    cldownload      Satsvise nedlastinger for dataoverføring
+    l1c             IBM Navigator for i (konsoll nivå 1)
+    rmtcmd          Fjernkommando (tilgjengelig fra kommandolinjen)
+    splf            Utskrift (filer i kø)
+    ifs             Integrert filsystem
+    db2             Skjemaer
+    rss             Kjør SQL-skript
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+    checkupdates    Søk etter tilgjengelige oppdateringer
+    ssh             Secure Shell
+</pre>
+<p>Funksjoner kan også utelates ved å bruke gruppenøkkelord:
+<pre>
+
+   Gruppe             Funksjoner
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+Systemadministratoren kan velge å begrense tilgangen til bestemte funksjoner
+ved å oppdatere filen AcsConfig.properties.  Dette fjerner funksjonen fra det
+grafiske brukergrensesnittet og deaktiverer bruk av funksjonen fra kommandolinjen.
+<p>
+Et eksempel på å begrense funksjoner er å tilføye følgende linje til
+filen AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Hvis systemadministratoren ønsker å oppdatere filen AcsConfig.properties
+inne i acsbundle.jar før den distribueres til brukerne, er dette et eksempel
+på hvordan det kan gjøres:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+Se punkt <a href="#9.3">9.3 Endre plassering av konfigurasjon</a> hvis du ønsker med informasjon
+om hvordan IBM i Access Client Solutions avgjør hvilken AcsConfig.properties-fil
+som skal brukes.
+
+
+<h3><a id="9.6"></a>9.6 Migrere fra IBM i Access for Windows</h3>
+<p>
+IBM i Access Client Solutions-konfigurasjonsfilene er ikke kompatible med tilsvarende funksjoner i
+IBM i Access for Windows.  IBM i Access Client
+Solutions inneholder en migreringsbane for flere nøkkelelementer som er
+beskrevet nedenfor.
+
+<h3><a id="9.6.1"></a>9.6.1 Migrere systemkonfigurasjoner</h3>
+<p>
+Funksjonen Kopier tilkoblinger som er tilgjengelig fra det grafiske brukergrensesnittet
+med valget Fil-&gt;Kopier tilkoblinger, har et grensesnitt for kopiering av systemkonfigurasjoner mellom IBM i Access Client Solutions og den
+gamle Windows-konfigurasjonen som var støttet av IBM i Access for Windows.  Du finner mer informasjon i hjelpen til hovedvinduet for
+Kopier tilkoblinger.
+
+Systemkonfigurasjonen kan også migreres fra kommandolinjen.  Se
+punkt <a href="#9.1.25">9.1.25 MIGRATE</a> hvis du ønsker mer informasjon.
+
+<h3><a id="9.6.2"></a>9.6.2 Migrere 5250-emulering</h3>
+<p>
+5250-emuleringsfilene som ble brukt av Personal Communications-emulatoren i IBM i
+Access for Windows, kan konverteres ved hjelp av 5250-sesjonsstyreren i IBM i
+Access Client Solutions. Følgende filtyper kan konverteres fra Personal
+Communications:<br>
+<pre>
+   .ws   - emulatorprofil
+   .bch  - emulatorsatsfil
+   .kmp  - fil for tastbordtilpasning
+   .pmp  - tastgruppefil
+   .bar  - filer på menylinje
+</pre>
+Filene blir konvertert til:<br>
+<pre>
+   .hod  - emulatorprofil
+   .bchx - emulatorsatsfil
+   .kmp  - fil for tastbordtilpasning
+   .pmp  - tastgruppefil
+   .bar  - filer på menylinje
+</pre>
+Filtypene .kmp, .pmp og .bar brukes av begge produkter.  Formatene er imidlertid ikke
+kompatible. De konverterte filene blir opprettet i en bane som er spesifikk for
+IBM i Access Client Solutions.
+<p>
+Du kan starte konverteringen av disse filene fra Sesjonsstyrer-menyen i IBM i
+Access Client Solutions ved å
+<ul>
+<li> velge Fil-&gt;Importer og deretter finne Personal
+Communications-filene.
+<li> dra og slippe filen i Sesjonsstyrer-vinduet i IBM i Access Client Solutions.
+</ul>
+...eller fra kommandolinjen ved å bruke PM5250-tilleggsmodulen.  Se punkt <a href="#9.1.30">9.1.30 PM5250</a>.
+
+<p>
+Et makrokonverteringsverktøy er tilgjengelig.  Fra sesjonsstyreren:<br>
+<pre>
+    Verktøy-&gt;Konverter makro...
+</pre>
+Teknisk merknad:<br>
+Det er mulig at makrokonverteringsverktøyet ikke kan konvertere en PC5250-makro hvis
+makroen er en tilpasset makro som inneholder mer enn bare registrerte tastetrykk.  
+
+<h3><a id="9.6.3"></a>9.6.3 Migrere lagrede forespørselsfiler for dataoverføring</h3>
+<p>
+Dataoverføringsfunksjonen i IBM i Access Client Solutions inneholder en veiviser
+for konvertering av lagrede forespørselsfiler for dataoverføring som er generert
+av IBM i Access for Windows.
+<p>
+Følgende filtyper kan konverteres fra IBM i Access for Windows:<br>
+<pre>
+   .dtf - dataoverføring fra IBM i
+   .dtt - dataoverføring til IBM i
+</pre>
+Filene blir konvertert til:
+<pre>
+   .dtfx - dataoverføring fra IBM i
+   .dttx - dataoverføring til IBM i
+</pre>
+Veiviseren for migrering av Dataoverføring migrerer ikke .fdf-filer. Den nye
+filtypen som IBM i Access Client Solutions bruker, er .fdfx, som kan genereres
+under en nedlasting eller ved hjelp av veiviseren for opprettelse av filer.
+<p>
+Veiviseren for migrering av Dataoverføring er tilgjengelig fra hovedmenyen
+for dataoverføring når du velger Handlinger-&gt;Migrering av Dataoverføring
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+For 5250-applikasjoner som benytter EHLLAPI ved tilgang til Personal
+Communications-emulatoren som ble levert sammen med IBM i Access for
+Windows, henvises det til følgende KB-artikkel for informasjon om bruk
+av EHLLAPI sammen med IBM i Access Client Solutions:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions har støtte for Kerberos.  Slik bruker du Kerberos ved tilkobling til et
+system:<br>
+<ol>
+<li>Åpne Systemkonfigurasjoner fra hovedgrensesnittet
+<li>Velg Ny eller rediger en eksisterende systemkonfigurasjon
+<li>På flippen Tilkobling velger du<br>
+   "Bruk Kerberos-autentisering, ingen forespørsel"
+</ol>
+Hvordan du konfigurerer et Kerberos-miljø er ikke beskrevet i dette dokumentet.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Nøkkelstyring</h3>
+<p>
+Du åpner funksjonen for administrasjon av sertifikater for SSL-tilkoblinger
+(Secure Sockets Layer) fra det grafiske brukergrensesnittet ved å velge
+Verktøy-&gt;Nøkkelstyring.  Noen av oppgavene for nøkkeldatabasen krever
+passordstrengen for nøkkeldatabaseintegritet.
+
+<h3><a id="9.8"></a>9.8 Dataoverføring</h3>
+<h3><a id="9.8.1"></a>9.8.1 Dataoverføringsstøtte for Excel- og Calc-regneark</h3>
+<p>
+I tillegg til å støtte nedlastinger til en fil støtter Dataoverføring også nedlasting til
+et aktivt regneark for Microsoft Excel-regneark og OpenOffice Calc-regneark.  Når du laster ned til et aktivt regneark,
+inneholder vinduet Dataoverføring et alternativ for å velge en
+utdataenhet.  Som standard er utdataenheten en fil.  Hvis plattformen
+støtter interaksjon med Excel- og/eller Calc-regneark, finnes det
+tilleggsalternativer for et aktivt Excel-regneark og et aktivt Calc-regneark,
+som kan velges fra valglisten Utdataenhet.
+<p>
+Begrensninger:
+<ul>
+<li>En minimumsversjon av OpenOffice 3.4.1 kreves for Windows.
+<li>En minimumsversjon av OpenOffice 4.2.1 kreves for Linux og Mac, og installasjonen må ha en standardplassering.
+<li>IBM i Access Client Solutions som kjører på Linux eller Mac støtter bare interaksjon med OpenOffice.<br>
+IBM i Access Client Solutions som kjører på Windows støtter interaksjon med Microsoft Excel eller
+OpenOffice Calc.
+<li>Bitverdien for OpenOffice må samsvare med bitverdien for IBM i Access Client Solutions.<br>
+Forklaring: OpenOffice er tilgjengelig i både 32-bits og 64-bits versjon.  Begge versjoner kan kjøres på en 64-bits PC.
+Ved interaksjon med et OpenOffice-regneark må OpenOffice og IBM i Access Client Solutions ha samme bitverdi (bitness),
+ellers kan ikke dataoverføringsfunksjonen virke sammen med regnearket.
+Bitverdien for IBM i Access Client Solutions bestemmes av JVM (Java Virtual Machine) der programmet
+kjører.  Når det ikke er samsvar mellom bitverdien for OpenOffice
+og JVM som kjører IBM i Access Client Solutions og du velger et aktivt
+regneark for utdataenheten, får du en feilmelding av typen "Aktivt regneark ble ikke
+funnet".  Hvis du kjører på en 64-bits PC, kan du starte IBM i Access Client
+Solutions med den 32-bits eller 64-bits binære oppstarteren som er spesifikk
+for din plattform.  Hvis støtten for aktivt regneark skal fungere, må du starte IBM i
+Access Client Solutions med den plattformspesifikke binærfilen som samsvarer med
+bitverdien for OpenOffice-applikasjonen du bruker.
+<br>Fordi Mac bare støtter en 64-bits JVM, må du installere 64 bits versjonen av OpenOffice for å kunne bruke den aktiv regnearkstøtten på Mac.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Dataoverføringsstøtte for avkutting av tegn og numerisk overflyt</h3>
+<p>
+Hvis et tegn eller numerisk felt overskrider den definerte feltstørrelsen under en opplastingsforespørsel i Dataoverføring, avsluttes opplastingsforespørselen.
+<p>
+Hvis du vil at tegnfelt skal kuttes av fra slutten, definerer du følgende egenskap i filen AcsConfig.properties:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Hvis du vil at numeriske felt skal settes til maksimumsverdien (positiv eller negativ) når det oppgitte numeriske feltet
+overskrider den definerte grensen, oppgir du følgende egenskap i filen
+AcsConfig.properties file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Når disse egenskapene er satt til true, fortsetter opplastingsforespørselen uten å gi beskjed om en eventuell avkutting eller overflyt.  Tegnfelt blir kuttet av fra slutten.  Numeriske felt blir satt til maksimumsverdien for overflyt og minimumsverdien for underflyt.
+<p> 
+      Alternativt kan du definere egenskapene ovenfor fra kommandolinjen som for andre
+      Java-egenskaper, på følgende måte:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Dataoverføring og arknavn</h3>
+<p>
+Under nedlasting blir det generert et arknavn basert på navnet til IBM i-kildebiblioteket og filen som har
+">Ark#" tilføyd. # erstattes av riktig arknummer.  For eksempel:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Ark1<br>
+<p>
+Hvis du vil overstyre bibliotek- og fildelen av arknavnet, kan du oppgi følgende egenskap:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=din_streng<br>
+Dette vil generere:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;din_streng>Ark1
+
+<h3><a id="9.9"></a>9.9 Opprette en konsolltilkobling til IBM i</h3>
+<p>
+Når du skal utføre administrative funksjoner på IBM i, trenger du en 5250-konsoll.
+IBM i Access Client Solutions støtter både LAN- og HMC-konsollkonfigurasjoner.
+<p>
+Hvis du kjenner servicevertsnavnet eller IP-adressen for service for IBM i-maskinen
+eller vertsnavnet eller IP-adressen for HMC-konsollen, kan du konfigurere konsollinformasjonen
+i IBM i Access Client Solutions med følgende fremgangsmåte:<br>
+<ol>
+<li>Start IBM i Access Client Solutions på PCen.
+<li>Klikk på Systemkonfigurasjoner i hovedvinduet.
+<li>Klikk på knappen Ny for å opprette en ny konfigurasjon eller på knappen Rediger
+for å oppdatere en eksisterende konfigurasjon
+<li>Velg flippen Konsoll
+<li>Oppgi informasjon for din konsolltype.
+</ol>
+<p>
+For en IBM i der konsollkonfigurasjonen ikke finnes ennå (for eksempel et nytt
+system som nettopp er levert), blir det automatisk tildelt en IP-adresse for en
+konsolltilkobling i verdiområdet 169.254.62.0 - 169.254.62.63 under IPL. I slike tilfeller vil følgende fremgangsmåte hjelpe til med å opprette en
+konsolltilkobling med IBM i Access Client Solutions:<br>
+<ol>
+<li>Deaktiver PCens trådløse tilkobling.  Trinnene nedenfor krever kablet
+   tilkobling til Ethernet-porten.
+<li>Koble en Ethernet-kabel mellom PCen og T1-porten på IBM i.
+<li>Start IBM i Access Client Solutions på PCen.
+<li>Klikk på Systemkonfigurasjoner i hovedvinduet.
+<li>Klikk på knappen Finn konsoll... i vinduet Systemkonfigurasjoner.
+<li>Klikk på knappen Søk i vinduet IBM i-posisjonsviser.
+<li>Hvis IPLen på IBM i har kommet så langt at den automatiske IP-adressen er
+   tildelt, blir IP-adressen vist i vinduet Søk.
+<li>Klikk på IP-adressen for å velge den, og klikk deretter på knappen Konsoll
+   for å koble til en 5250-konsoll.
+<li>Det blir åpnet et vindu der du blir bedt om å oppgi legitimasjon for Serviceverktøy.
+<li>Når du har oppgitt gyldig legitimasjon, blir en 5250-konsoll åpnet.
+<li>Konsollen kan brukes til å behandle installerings- og konfigureringsoppgaver.
+</ol>
+<p>
+Når du er klar for å tilføye IBM i-systemet til resten av nettverksinfrastrukturen,
+finner du informasjon i IBM InfoCenter om hvordan du konfigurerer LAN-kortet for
+Serviceverktøy:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Se emnet "Configuring the service tools server for DST"
+
+<p>
+For IBM i-systemer som allerede har en LAN-konsollkonfigurasjon og allerede finnes i
+nettverksinfrastrukturen, kan du bruke følgende fremgangsmåte for å finne eksisterende
+konsollkonfigurasjoner:<br>
+<ol>
+<li>Start IBM i Access Client Solutions på PCen.
+<li>Klikk på Systemkonfigurasjoner i hovedvinduet.
+<li>Klikk på knappen Finn konsoll... i vinduet Systemkonfigurasjoner.
+<li>I feltet Nær i vinduet IBM i-posisjonsviser oppgir du en IP-adresse i området
+   du vil søke i.
+<li>Klikk på knappen Søk for å finne LAN-konsoller i det oppgitte området.
+<li>Klikk på IP-adressen for å velge den, og klikk deretter på knappen Konsoll
+   for å koble til en 5250-konsoll.
+<li>Det blir åpnet et vindu der du blir bedt om å oppgi legitimasjon for Serviceverktøy.
+<li>Når du har oppgitt gyldig legitimasjon, blir en 5250-konsoll åpnet.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Tilleggsfonter</h3>
+<p>
+Du kan tilføye tilleggsfonter for 5250-emulering i katalogen Fonts.
+<p>
+Hvis du vil oppgi alternative og/eller flere plasseringer for tilleggsfonter, definerer du
+egenskapen com.ibm.iaccess.Fonts i filen AcsConfig.properties.
+<p>
+Standardkatalogen Fonts kan overstyres ved at du setter egenskapen
+com.ibm.iaccess.Fonts til en<br>
+<ol> 
+<li>&lt;bane&gt; som er en katalog som inneholder fonter
+<li>&lt;bane&gt;/&lt;filnavn&gt; for en bestemt fontfil (.ttf)
+<li>URL til en fontfil
+<li>semikolondelt liste over noe av det som er oppgitt ovenfor
+</ol>
+<p>
+Merk:<br>
+&lt;bane&gt; kan være en absolutt bane eller en relativ bane som starter fra plasseringen
+av acsbundle.jar. Bare ikke-proporsjonale fonter gjenkjennes av 5250-emuleringen.
+<p>
+Eksempel 1 (standard):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+Eksempel 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Bruke legitimasjon fra en netrc-fil</h3>
+<p>
+Hvis du vil at det skal være mulig å bruke en .netrc-fil (Linux og Mac) eller en _netrc-fil (Windows),
+går du til hovedgrensesnittet i IBM i Access Client Solutions og velger følgende fra menylinjen:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Rediger-&gt;Preferanser<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Flippen Generelt<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Merk av for <b>Les netrc-fil for påloggingsinformasjon</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Klikk å Bruk-knappen<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Start IBM i Access Client Solutions på nytt<br>          
+<p>
+Dette er standardformatet til en netrc-fil:<br>
+<pre>
+     machine &lt;system&gt; login &lt;bruker-ID&gt; password &lt;passord&gt;
+</pre>
+<p>
+Netrc-filen må lagres i brukerens hjemmekatalog og systemnavnet og bruker-IDen må samsvare med <b>Systemkonfigurasjoner</b>.  Fra IBM i Access Client
+Solutions:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Velg Systemkonfigurasjoner<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Velg og endre systemet<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Flippen Tilkoblinger<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Velg <b>Bruk standard brukernavn, spør en gang for hvert system</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Fyll ut bruker-ID for <b>Standard brukernavn</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Velg OK<br>          
+
+<p>
+Når systemnavnet og <b>Standard brukernavn</b> samsvarer med innholdet i netrc-filen, blir det opprettet en tilkobling til
+systemet ved å bruke passordet i netrc-filen uten at brukeren blir spurt om dette.
+
+<h3><a id="9.12"></a>9.12 Integrert filsystem (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 og sikkerhet</h3>
+<p>
+Det integrerte filsystemet bruker QFileSvr.400-filsystemet til å kopiere objekter fra én IBM i-partisjon til en annen. Det betyr at brukerprofilen og passordet på begge partisjonene må samsvare, og partisjonene må ha samme systemverdi for passordnivå (QPWDLVL).
+Hvis Kerberos-autentisering brukes må NAS (nettverksautentiseringstjeneste) og EIM (Enterprise Identity Mapping) være konfigurert for begge partisjonene. Du finner flere opplysninger om dette under emnet "Security and object authority in the QFileSvr.400 file system" i IBM i Knowledge center.
+<p>
+Tilkoblingen til andre IBM i-partisjoner utført av filsystemet QFileSvr.400, er ikke sikker.
+Hvis det kreves en sikker tilkobling for å kopiere og sende objekter fra én IBM i-partisjon til en annen, må partisjonen konfigureres
+for SSL. Alternativet "Bruk SSL (Secure Sockets Layer) for tilkobling" må være valgt for partisjonen i Systemkonfigurasjoner, og følgende egenskap må være definert i filen
+AcsConfig.properties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+      Alternativt kan du definere egenskapen fra kommandolinjen som for andre
+      Java-egenskaper, på følgende måte:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS-autorisasjon</h3>
+<p> 
+Det integrerte filsystemet krever autorisasjon for å bruke følgende CL-kommandoer:<br>
+<pre>
+CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+CRTDIR
+    CRTLIB
+    CRTSAVF
+RMVDIR
+    RST
+SAV
+    SETASPGRP
+ </pre>
+<p>
+Hvis brukeren ikke har autorisasjon til å bruke disse CL-kommandoene, er det ikke mulig å utføre handlingene Kopier, Lim inn, Send, Slett og Ny mappe.
+
+<h3><a id="9.12.3"></a>9.12.3 IFS-begrensninger</h3>
+<p>
+Det integrerte filsystemet tillater ikke handlinger for objekter som har baner som begynner med /QFileSvr.400, /QNTC eller /QOPT.  Hvis den gjeldende katalogbanen eller en valgt objektbane begynner med /QFileSvr.400, /QNTC eller /QOPT, blir alle valgene på menyen Handlinger deaktivert og det blir ikke vist noen kontekstmeny.
+
+<h3><a id="9.12.4"></a>9.12.4 IFS og uavhengige ASPer</h3>
+<p>
+Det integrerte filsystemet tillater ikke handlingene Kopier, Lim inn eller Send, når kildeobjektet eller målbanen er plassert i en uavhengig ASP.
+
+<h3><a id="9.13"></a>9.13 Secure Shell (SSH) Terminal</h3>
+<p>
+For plattformer der et Secure Shell finnes som standard eller er installert, blir funksjonen SSH-terminal
+vist i hovedgrensesnittet til IBM i Access Client Solutions.  SSH-terminal starter en terminalemulator
+til det integrerte IBM i-filsystemet.
+<p>
+De fleste Mac- og Linux-systemer og andre UNIX-baserte systemer har allerede et Secure Shell som standard. For disse plattformene
+antas det at det finnes en OpenSSH-klient plassert i /usr/bin/ssh.  Windows-brukere må installere et
+Secure Shell som er tilgjengelig for Windows.
+<p>
+Secure Shells støttet av IBM i Access Client Solutions:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin krever at openssh-pakken er installert
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash er tilgjengelig som en del av Linux-delsystemet for Windows
+
+<p>
+Hvis flere SSH-applikasjoner er installert, kan du bruke egenskapen com.ibm.iaccess.PreferredSSHClient til å
+angi foretrukket SSH-klient.
+<p>Linux-eksempler:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac-eksempler:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows-eksempler:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+Hvis SSH-klienten ikke er installert på standardplasseringen, kan du bruke egenskapen com.ibm.iaccess.PreferredSSHClient
+til å angi den fullstendige banen til den installerte SSH-klienten.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+Når du har angitt den fullstendige banen, er det også mulig at du må angi com.ibm.iaccess.SSHClientOpt for å få med
+alle nødvendige argumenter. Eksempel hvis du vil deaktivere advarsler hvis du ikke bruker X11-videresending:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 Forhåndskrav for SSH-terminal</h3>
+Installer 5733-SC1 IBM Portable Utilities for i på IBM i.
+<br>Start Secure Shell-demonen med denne kommandoen:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Hvis du får en tilkoblingsfeil i den startede SSH-klienten (for eksempel "connection refused"),
+eller hvis et vindu åpnes men straks forsvinner, er det mulig at du må starte SSH-demonen med kommandoen ovenfor.
+
+
+<hr><h3><a id="10.0"></a>10.0 Feilsøking for service</h3>
+<p>
+Hvis det oppstår et problem som krever service fra IBM, kan IBMs servicepersonale be deg om å gjøre følgende:
+<p>
+Fra hovedgrensesnittet i IBM i Access Client Solutions:<br>
+<ul>
+ <li>Velg Verktøy-&gt;Generer servicelogger<br>
+     Dette utfører samme funksjon som kommandolinjefunksjonen i punkt
+     <a href="#9.1.5">9.1.5 Dump</a>.  Denne funksjonen bør vanligvis utføres rett etter at feilen
+     har oppstått.  Avhengig av problemet kan IBMs servicepersonale be deg
+     om å gjøre dette flere ganger.
+ <li>Velg Verktøy-&gt;Pakk servicelogger<br>
+Dette utfører samme funksjon som kommandolinjefunksjonen i punkt
+     <a href="#9.1.6">9.1.6 Medic</a>.  Denne funksjonen samler inn opplysninger om
+     arbeidsstasjonsmiljøet og pakker serviceloggene i et zip-arkiv som kan
+     sendes til IBM.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Spørsmål og svar</h3>
+<p>
+<pre>
+Sp1   Når jeg prøver å starte IBM i Access Client Solutions, får jeg følgende
+      feil:
+             class cannot be loaded: java.lang.UnsupportedClassVersionError
+Sv1-1 Du må bruke JDK 6.0 eller høyere. Se punkt <a href="#3.0">3.0 Forhåndskrav</a>
+
+Sp2   Når jeg prøver å starte produktet med en av de leverte binærfilene eller
+      skriptene fra en shell- eller terminal-sesjon, får jeg følgende feil:
+         Permission denied
+Sv2-1 Sjekk filens filtillatelser for å kontroller at du har utføringstillatelse.
+      Se punkt <a href="#6.0">6.0 Filtillatelser</a>.
+
+Sp3   Når jeg dobbeltklikker på en av de leverte filene for å starte produktet,
+      skjer det ingen ting.
+Sv3-1 Java er kanskje ikke installert. Se punkt <a href="#3.0">3.0 Forhåndskrav</a>
+Sv3-2 Filen du bruker til å starte produktet, har kanskje ikke utføringstillatelse.
+      Se punkt <a href="#6.0">6.0 Filtillatelser</a>.
+Sv3-3 Det kan være problemer med systemmiljøet. For å se hvilke feil som
+      oppstår, kan du prøve å kjøre filen fra en kommandolinje.
+Se
+punkt <a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a>.
+
+Sp4   Jeg vil starte produktet med en av binærfilene, men jeg får
+      følgende feil:  "Error loading Java module."
+Sv4-1 Binærfilen fant ikke hjemmekatalogen for Java-installasjonen.
+      Kontroller at Java er installert.  Se punkt <a href="#3.0">3.0 Forhåndskrav</a>.
+Sv4-2 Punkt <a href="#7.1.1">7.1.1 Starte produktet - Tilleggsalternativer</a>
+      inneholder flere metoder for å starte produktet med en binærfil.
+
+Sp5   Når jeg har definert miljøvariabelen JAVA_HOME, fungerer binærfilen jeg
+      bruker til å starte produktet, fra en kommandolinje, men ikke når jeg
+      dobbeltklikker på filen.
+Sv5-1 Det er mulig at miljøvariabelen JAVA_HOME ikke er synlig for filstyreren
+      du bruker når du dobbeltklikker på filen. Definering av miljøvariabler
+      varierer for operativsystemer og det gjør også synligheten.
+      Prøv å definere miljøvariabelen JAVA_HOME som en systemmiljøvariabel for
+      operativsystemet. Operativsystemet kan referere til systemmiljøvariabler
+      som globale miljøvariabler.
+      Når du har definert miljøvariabelen JAVA_HOME, lukker du filstyreren,
+      åpner den på nytt og dobbeltklikker på binærfilen igjen.
+
+Sp6   Når jeg dobbeltklikker på en av de leverte filene for å starte produktet,
+      blir filen vist i et tekstredigeringsprogram.
+Sv6-1 Kontroller at du bruker et skript som har en filtype ditt operativsystem
+      gjenkjenner.
+Sv6-2 Prøv å bruke et av de andre skriptene.
+Sv6-3 Endre programmet som åpner filen.
+Sv6-4 Sjekk filens filtillatelser for å kontroller at du har utføringstillatelse.
+      Se punkt <a href="#6.0">6.0 Filtillatelser</a>.
+
+Sp7   Når jeg dobbeltklikker på en av de leverte filene for å starte produktet,
+      blir jeg spurt om hvilket program jeg vil bruke til å åpne filen.
+Sv7-1 Kontroller at du bruker et skript som har en filtype ditt operativsystem
+      gjenkjenner.
+Sv7-2 Sett programmet som åpner filen, til noe som er kompatibelt med binærfilen
+      eller skriptet du bruker. For eksempel Terminal (på Mac).
+Sv7-3 Sjekk filens filtillatelser for å kontroller at du har utføringstillatelse.
+      Se punkt <a href="#6.0">6.0 Filtillatelser</a>.
+
+Sp8    Når jeg starter IBM i Access Client Solutions på en Mac fra Finder, dukker det opp
+      en terminalsesjon som ikke forsvinner etter at IBM i Access Client Solutions
+      er avsluttet.
+Sv8-1 Hvis du skal unngå at en terminalsesjon åpnes, må du bruke installeringsskriptene
+      for Mac i QuickStartGuide.
+
+
+Sp9   Hva er beste metode for å starte produktet?
+Sv9-1 Du kan starte produktet med en hvilken som helst av de tre metodene i punkt
+      <a href="#7.0">7.0 Starte produktet</a>, med binærfiler eller skript eller fra
+      kommandolinjen. Alle metoder som fungerer i ditt systemmiljø kan brukes.
+
+Sp10  Hvorfor finnes det både binærfiler (Start_Programs) og skript
+      (Sample_Scripts) for å starte produktet?
+Sv10-1 Skriptene er ikke operativsystemspesifikke og gir en mer generell
+      fremgangsmåte for å starte produktet når den plattformspesifikke binærfilen ikke fungerer.
+Sv10-2 Noen operativsystemer krever binærfiler når du definerer filtilknytninger.
+      I de fleste tilfellene bør binærfilene brukes til å starte produktet.
+Sv10-3 Noen systemmiljøer kan ha brannmurer som begrenser tilgangen til deler av
+      IBM i Access Client Solutions. Hvis en av binærfilene brukes til å starte
+      produktet, blir det enklere for systemadministratorer å autorisere tilgang.
+
+Sp11  Etter at jeg har installert JDK 6.0 (eller høyere), får jeg fortsatt følgende
+      feil:
+             class cannot be loaded: java.lang.UnsupportedClassVersionError
+Sv11-1 Standardversjonen av Java som blir brukt på din arbeidsstasjon, er lavere enn
+      JDK 6.0. Du må bruke et alternativ som eksplisitt oppgir
+      banen til Java Home for JDK 6.  Se punkt <a href="#7.1.2">7.1.2 Finne banen til
+      Java-hjemmekatalogen</a>.  Bruk Java Home-banen for en av metodene som er beskrevet i
+      et av disse punktene:
+      <a href="#7.1.1">7.1.1 Starte produktet - Tilleggsalternativer</a><br>
+      <a href="#7.3">7.3 Starte produktet (fra kommandolinjen)</a><br>
+
+Sp12  Jeg får ikke importert tilpassede tastborddefinisjonsfiler (.kmp) fra
+      mine Windows 5250-emuleringssesjoner.
+Sv12-1 I den første versjonen av IBM i Access Client Solutions som ble
+      tilgjengelig i juli 2012, var det ikke mulig å importere kmp-filer fra fra
+      Windows 5250-emulatorsesjonsprofiler (.ws). I versjonen som ble tilgjengelig
+      i oktober 2012, er det mulig å importere .kmp-filer fra 5250-sesjonsprofiler
+      (.ws).
+
+Sp13  Tastbordtilpasning for 5250-emulatoren er svært forskjellig fra slik
+      det var på Windows. Har du noen forslag?
+Sv13-1 Tastborddefinering er delt inn i kategorier. Fra en emulatorsesjon:
+      Velg Rediger &gt; Innstillinger &gt; Tastbord eller klikk på knappen Omdefiner på
+         verktøylinjen.
+      Klikk på flippen Tastdefinisjon.
+      Velg en kategori. Standard tastdefinisjoner blir vist under
+         kategoriene "Vertsfunksjoner" og "Menyvalg".
+      Velg funksjonen du vil tildele.
+      Klikk på Definer en tast.
+      Trykk på den tasten (eller tastkombinasjonen) på tastbordet som du vil tildele
+         til denne funksjonen.
+Sv13-2 For hjelp til tilpasning av tastdefinisjoner:
+      Velg Rediger &gt; Innstillinger &gt; Tastbord eller klikk på knappen Omdefiner på
+      verktøylinjen. Velg knappen Hjelp.
+
+Sp14  Når jeg prøver å starte produktet på Mac OS X 10.8 Mountain Lion, får
+      jeg en melding om at applikasjonen ikke er signert.
+Sv14-1 Dette er en standard sikkerhetspolicy fra og med Mac OS X
+      10.8 Mountain Lion. På denne nettsiden kan du se hvordan du gjør
+      det mulig å kjøre applikasjonen:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+S15   Jeg bruker IBM i Access for Windows, kan jeg migrere
+      systemkonfigurasjonene til IBM i Access Client Solutions?
+Sv15-1 Se punkt <a href="#9.6.1">9.6.1 Migrere systemkonfigurasjoner</a>.
+
+Sp16  Jeg bruker IBM i Access for Windows, kan jeg migrere emuleringsprofilene
+      til IBM i Access Client Solutions?
+Sv16-1 Se punkt <a href="#9.6.2">9.6.2 Migrere 5250-emulering</a>
+
+Sp17  Jeg bruker IBM i Access for Windows, kan jeg migrere forespørselsfiler
+      for dataoverføring til IBM i Access Client Solutions?
+Sv17-1 Se punkt <a href="#9.6.3">9.6.3 Migrere lagrede forespørselsfiler for dataoverføring</a>.
+
+Sp18  Kan EHLLAPI brukes sammen med IBM i Access Client Solutions?
+Sv18-1 Se punkt <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+Sp19  Kan Kerberos brukes sammen med IBM i Access Client Solutions?
+Sv19-1 Se punkt <a href="#9.6.5">9.6.5 Kerberos</a>
+
+Sp20  Jeg er systemadministrator og vil gjerne skjule enkelte funksjoner
+      for brukerne.
+Sv20-1 Se punkt <a href="#9.5">9.5 Tilpassede pakker</a>
+
+Sp21   Når jeg velger et Hjelp-ikon i et vindu, blir det ikke vist noe tekst.
+Sv21-1 Hjelpeteksten vises vanligvis i nettleseren i arbeidsområdet. I enkelte
+       tilfeller har ikke arbeidsområdet noen nettleser, eller den er ikke riktig
+       konfigurert.
+Sv21-2 Når du skal vise hjelpetekst uten en nettleser i arbeidsområdet, må du definere
+       følgende egenskap i filen AcsConfig.properties:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+       Alternativt kan du definere egenskapen fra kommandolinjen som for andre
+       Java-egenskaper, på følgende måte:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+Sp22   Når jeg bruker Dataoverføring, velger jeg utdataenheten "Aktivt Excel-
+       regneark" eller "Aktivt Calc-regneark" og får følgende feil:
+         "Aktivt regneark ble ikke funnet"
+Sv22-1 Det finnes ikke noe aktivt regneark. Åpne et nytt eller eksisterende
+       regneark og prøv igjen.
+Sv22-2 Det er mulig at regnearkapplikasjonen du bruker og JVM (Java Virtual Machine)
+      som kjører IBM i Access Client Solutions ikke har samsvarende bitverdier.
+      Se punkt <a href="#9.8">9.8 Dataoverføringsstøtte for Excel- og Calc-regneark</a>
+
+Sp23   Når jeg bruker Dataoverføring på en Mac, ser jeg ingen alternativer under
+       Utdataenhet for interaksjon med et aktivt regneark.
+Sv23-1 Dataoverføring kan ikke virke sammen med aktive regneark på Mac fordi det
+      ikke er overensstemmelse med bitverdien for OpenOffice-applikasjonen og JVM
+      som kjører IBM i Access Client Solutions. Du finner nærmere opplysninger i punkt
+      <a href="#9.8">9.8 Dataoverføringsstøtte for Excel- og Calc-regneark</a>.
+
+Sp24   Når jeg bruker Dataoverføring, velger jeg utdataenheten "Aktivt Excel-
+       regneark", og det skjer ikke noe i boksen Navn.
+Sv24-1 Dette er normalt for nye Calc-regneark som aldri har vært lagret.
+       Dataoverføring kan fortsatt oppdatere regnearket med nedlastede data.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Oppdateringshistorikk</h3>
+<p>
+Se følgende nettside:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

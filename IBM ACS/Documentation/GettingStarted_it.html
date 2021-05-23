@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduzione</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Introduzione</h2>
+<h2>L'ultimo aggiornamento del contenuto di questo documento è stato eseguito il 27 marzo 2018</h2>
+
+
+<h3><a id="0.5"></a>0.5 Guida rapida</h3>
+<p>
+La <a href="./QuickStartGuide_en.html">Guida rapida</a> contiene le istruzioni per la distribuzione del prodotto che funzionerà per la maggior parte degli utenti che utilizzano Windows, Mac o Linux.  Per installare questo prodotto per un singolo utente, o per un PC multiutente, consultare la <a href="./QuickStartGuide_en.html">Guida rapida</a> nella cartella Documentation.
+<p>
+Ulteriori dettagli sul prodotto, altre opzioni di distribuzione e personalizzazione del prodotto sono inclusi nella parte restante di questo documento.  
+
+<h3>Contenuto:</h3>
+<a href="#0.5">0.5 Guida rapida</a><br>
+<a href="#1.0">1.0 Introduzione</a><br>
+<a href="#2.0">2.0 Funzioni</a><br>
+<a href="#3.0">3.0 Prerequisiti</a><br>
+<a href="#4.0">4.0 Contenuto del prodotto</a><br>
+<a href="#5.0">5.0 Installazione</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Aggiornamento di un'installazione esistente</a><br>
+<a href="#6.0">6.0 Autorizzazioni file</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Autorizzazioni file (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Autorizzazioni file (Windows)</a><br>
+<a href="#7.0">7.0 Avvio del prodotto</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Avvio del prodotto</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Avvio del prodotto (mediante uno script)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a><br>
+<a href="#8.0">8.0 Configurazione</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Ubicazione di configurazione</a><br>
+<a href="#9.0">9.0 Argomenti avanzati</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Ulteriori opzioni della riga comandi</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Associazioni file</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Associazioni di file (per Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Cambia icona (per collegamento Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Impostazione di un'icona del desktop (per Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Associazioni file (per Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Associazioni file (per Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Creazione di associazioni file (per Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Cambia icona (per Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Modifica dell'ubicazione di configurazione</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Ulteriori opzioni di distribuzione</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Importazione automatica delle impostazioni di configurazione</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Distribuzione IBM i nativa</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Pacchetti personalizzati</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Migrazione da IBM i Access per Windows</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Migrazione delle configurazioni di sistema</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 Migrazione dell'emulazione 5250</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Migrazione dei file della richiesta di trasferimento dati salvati</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Gestione chiave</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Trasferimento dati</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Supporto Trasferimento dati per i fogli elettronici Excel e Calc</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Supporto Trasferimento dati per troncamento caratteri e eccedenza numerica</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3  Trasferimento dati - Nome foglio</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Come stabilire una connessione di console con IBM i</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Ulteriori font</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Utilizzo di credenziali da un file netrc</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 IFS (Integrated File System)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 e sicurezza</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 Autorizzazione IFS</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 Limitazioni IFS</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS e ASP indipendenti</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 Terminale SSH (Secure Shell)</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 Prerequisiti terminale SSH</a><br>
+
+
+
+<a href="#10.0">10.0 Diagnostica del servizio</a><br>
+<a href="#11.0">11.0 FAQ (Frequently Asked Questions)</a><br>
+<a href="#12.0">12.0 Cronologia aggiornamento</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Introduzione</h3>
+<p>
+IBM i Access Client Solutions è il nuovo membro della famiglia di prodotti IBM i Access.  Offre un'interfaccia indipendente da piattaforma basata su Java,
+che può essere eseguita sulla maggior parte dei sistemi operativi che supportano Java, tra cui
+Linux, Mac e Windows. IBM i
+Access Client Solutions riunisce le attività utilizzate più comunemente per la gestione di
+IBM i in un'unica ubicazione semplificata.
+<p>
+IBM i Access Client Solutions utilizza gli stessi server host IBM i di altri prodotti della famiglia IBM i
+Access e richiede la stessa licenza della famiglia IBM i Access (XW1) per poter utilizzare l'emulazione
+5250 e le funzioni di trasferimento dati.
+<p>
+Sono disponibili anche due pacchetti facoltativi che includono il middleware per l'utilizzo e
+lo sviluppo di applicazioni client per Windows e Linux:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Pacchetto applicazione Windows<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Pacchetto applicazione Linux<br>
+<p>
+I clienti che utilizzano IBM i 7.1 o successive, che dispongono di titolarità correnti, possono acquistare le soluzioni
+IBM i Access Client tramite uno dei seguenti due metodi:
+<ul>
+<li> Scaricare il pacchetto di base <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a>. 
+<li> Scaricare il pacchetto di base e i pacchetti applicativi facoltativi Windows e Linux dal sito web <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> sotto 5761-SS1 o 5770-SS1.
+</ul>
+
+<p>
+I pacchetti applicativi facoltativi Windows e Linux sono disponibili solo sul sito web ESS (Entitled Software Support). 
+<p>
+I clienti possono ottenere il supporto ordinando la funzione di aggiornamento 6288 5761-SS1 o 5770-SS1.
+Il supporto fisico contiene una versione eseguibile del prodotto che consente di eseguire il prodotto direttamente dal CD.
+Il supporto
+fisico include anche un archivio zip del prodotto che può essere copiato ed estratto in un'ubicazione scelta dall'utente.
+Il supporto fisico per IBM i Access Client Solutions non contiene i pacchetti facoltativi di applicazioni
+Windows e Linux. 
+<p>
+Per ulteriori informazioni, visitare la pagina:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Per le informazioni più recenti sulla famiglia di prodotti IBM i Access, visitare:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Funzioni</h3>
+<p>
+Le funzioni di IBM i Access Client Solutions includono:
+<ul>
+<li>un emulatore del video 5250 con tutte le funzioni, basato su IBM Rational Host-on-Demand. Oltre a tutte le funzioni del video
+5250 a cui si è abituati quando si utilizza IBM i Access per Windows, sono presenti queste funzioni aggiuntive:
+<ul>
+<li>supporto separatore che consente a più sessioni di condividere una singola area di visualizzazione
+<li>supporto rotella del mouse che consente uno scorrimento intuitivo tra le pagine
+<li>il passaggio da una lingua all'altra può essere effettuato senza riavviare la stazione di lavoro
+<li>sessioni di visualizzazione simultanee con codepage host differenti che consentono lingue separate in sessioni emulazione diverse
+</ul>
+<li>Emulazione stampante
+<li>un Session Manager 5250 modellato su IBM Personal Communications Session Manager, che può essere utilizzato per gestire tutte le sessioni
+dell'emulatore 5250
+
+<li>Trasferimento dati, che consente di trasferire i dati dal/sul database IBM i
+da/su diversi tipi di file sulla stazione di lavoro, ad esempio foglio di calcolo OpenDocument
+(*.ods), cartella di lavoro di Excel (*.xlsx) e altri formati di file
+
+<li>Emissione di stampa fornisce un'interfaccia che consente di visualizzare i file nelle code di emissione di IBM i e di scaricare questi file nel sistema client.
+
+<li>un pannello di controllo virtuale con un'interfaccia grafica per il pannello di operazioni IBM i
+
+<li>emulazione 5250 per Console LAN, HMC e FSM
+
+<li>consolidamento delle configurazioni dell'interfaccia di gestione, tra cui ASMI, IVM e HMC
+
+<li>funzionalità di avvio di IBM Navigator per i mediante il browser predefinito
+
+<li> Funzioni database come Esegui script SQL e Centro prestazioni SQL.
+</ul>
+<p>
+Il pacchetto applicazione Windows facoltativo include:
+<ul>
+<li>connettività a Db2 per i mediante ODBC, .Net e OLE DB
+<li>toolkit di programmazione per accedere agli oggetti del sistema IBM i
+<li>supporto per le connessioni TLS/SSL
+<li>programma di controllo stampante AFP
+</ul>
+<p>
+Il pacchetto applicazione Linux facoltativo include:
+<ul>
+<li>un programma di controllo ODBC per accedere a
+Db2 per i e il supporto completo per i tipi di dati ODBC a 64 bit.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Prerequisiti</h3>
+<h3><a id="3.1"></a>3.1 Prerequisiti (stazione di lavoro)</h3>
+<p>
+IBM i Access Client Solutions funziona sulla maggior parte dei sistemi operativi che supportano Java 8.0 o versioni successive, incluso varie versioni di Linux, Mac e Windows.
+<p>
+Suggerimento:<br>
+mantenere la versione utilizzata di Java alla versione più recente garantirà che le correzioni e le patch di sicurezza
+di cui si dispone siano le più recenti. 
+<p>
+Per controllare quale versione di Java è installata sul sistema è possibile, ad esempio, accedere a una richiesta
+(richiesta comandi, shell, terminale e così via) e digitare il comando:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+La seguente emissione indica che è installata la versione 8.0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+Il numero 65 in questo esempio si riferisce al livello di aggiornamento.
+
+<p>
+Di seguito vengono riportati alcuni siti Web di fornitori Java.  Accertarsi che sia in esecuzione la versione più aggiornata di Java per la piattaforma in uso.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<p>
+Nota tecnica per Mac:<br>
+Quando si installa Java su Mac, selezionare un JDK invece di un JRE.  Il JRE per Mac installa Java solo per il browser.
+Non installa Java per altre applicazioni. L'installazione del JDK renderà Java disponibile per altre applicazioni come IBM i Access Client Solutions.
+
+<h3><a id="3.2"></a>3.2 Prerequisiti (connettività a IBM i)</h3>
+<p>
+IBM i Access Client Solutions si connette ai release IBM i 5.4 e successivi.
+Le seguenti funzioni richiedono IBM i release 6.1 o successivo:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator per i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Console 5250<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Pannello di controllo virtuale<br>
+<p>
+Se si utilizzeranno connessioni SSL, caricare e applicare le PTF IBM i
+appropriate per il release utilizzato:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Se si utilizzerà Navigator per i, caricare e applicare le PTF IBM i
+appropriate per il release utilizzato:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - PTF di gruppo PTF SF99368 livello 37 o successivo<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - PTF di gruppo PTF SF99713 livello 12 o successivo<br>
+	
+<p>
+Se si utilizzerà la console 5250 o il pannello di controllo virtuale, caricare e
+applicare i PTF appropriati per il release utilizzato:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Contenuto del prodotto</h3>
+<p>
+I seguenti file e indirizzari sono contenuti nell'archivio zip del prodotto:
+<pre>
+
+acsbundle.jar       - un file jar eseguibile del prodotto
+AcsConfig.properties- file contenente le impostazioni di configurazione (è presente anche
+                      nel file acsbundle.jar)
+
+Mac_Application     - indirizzario che contiene lo script di installazione per Mac
+
+Linux_Application   - indirizzario che contiene gli script di installazione per Linux
+
+Windows_Application - indirizzario che contiene gli script di installazione per Windows
+
+Start_Programs      - indirizzario contenente i file binari specifici della piattaforma che è possibile utilizzare
+                      per avviare il prodotto.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - indirizzario contenente la documentazione
+  Guida rapida - informazioni su come iniziare a utilizzare il prodotto
+  Introduzione  - informazioni dettagliate sul prodotto
+  License             - indirizzario contenente i termini e le condizioni di uso
+  Notices             - indirizzario contenente le informazioni particolari
+  properties          - indirizzario contenente le informazioni sulla versione del prodotto
+  Sample_Scripts    - indirizzario che contiene gli script di esempio che possono essere utilizzati per
+                      avviare il prodotto se i file binari in Start_Programs
+                      non funzionano.
+    Linux_Mac_Other - indirizzario di script perl per avviare il prodotto
+                      su qualsiasi piattaforma su cui sia disponibile perl.
+    Windows         - indirizzario contenente un JScript per l'avvio in Windows
+
+Icons               - indirizzario contenente i file che possono essere utilizzati come icone
+
+Fonts               - indirizzario in cui possono essere aggiunti ulteriori font monospace 
+                      per l'emulazione 5250
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Installazione</h3>
+<p>
+Il pacchetto di IBM i Access Client Solutions fornisce diverse opzioni di installazione che vanno dalla semplice installazione per un singolo utente a più avanzate installazioni multiutente.
+<p>
+Nelle cartelle Mac_Application, Linux_Application e Windows_Application
+sono stati forniti degli script di installazione (vedere la sezione <a href="#4.0">4.0 Contenuto del prodotto</a>) che possono essere utilizzati per una gamma di opzioni di installazione.
+
+<p>
+Per un'installazione per un singolo utente su Mac, Linux e Windows o per un'installazione multiutente su un PC Windows, consultare la <a href="./QuickStartGuide_en.html">Guida rapida</a>.
+La Guida rapida spiega come utilizzare gli script di installazione forniti per eseguire questi tipi di installazioni semplici.
+<p>
+Se si è un amministratore che pianifica di eseguire questa distribuzione a più utenti, si consiglia di leggere
+l'articolo <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a>.
+L?articolo spiega in che modo un amministratore può pre-personalizzare l'installazione per più utenti prima della distribuzione utilizzando l'opzione /AdminConfig supportata dagli script di installazione.
+<p>
+Per gli amministratori che desiderano automatizzare l'installazione in modalità non presidiata, utilizzare il parametro /AdminConfig per pre-configurare l'installazione.  Utilizzare quindi il parametro /Q durante l'effettiva installazione. Ad esempio:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+Oltre alle opzioni sopra indicate, si dispone anche dell'opzione di decomprimere semplicemente l'archivio compresso in qualsiasi ubicazione a scelta. Può essere qualsiasi ubicazione su cui
+la stazione di lavoro abbia l'autorizzazione alla lettura per accedere ai file.  Sono inclusi
+l'unità disco fisso locale, un'unità di rete remota (condivisa) o un supporto portatile, ad esempio un'unità flash USB o CD.  La decompressione dell'archivio compresso completa
+l'installazione.
+
+<p>
+Nota tecnica:<br>
+Alcuni programmi di utilità di archiviazione non conservano tutti gli attributi del file salvato.  Ad esempio,
+sulle piattaforme Mac e Linux, il comando unzip in genere è una scelta migliore del comando jar.  Per ulteriori informazioni, consultare la sezione <a href="#6.0">6.0 Autorizzazioni file</a>.
+
+<h3><a id="5.1"></a>5.1 Aggiornamento di un'installazione esistente</h3>
+<p>
+Miglioramenti e correzioni saranno resi disponibili su base periodica.  Tali aggiornamenti vengono
+forniti come un'installazione del prodotto completa.  Quando sono disponibili gli aggiornamenti, è necessario aggiornare l'installazione esistente.
+<p>
+Per aggiornare un'installazione esistente che era stata installata utilizzando gli script di installazione, estrarre il contenuto
+di una versione più recente del prodotto.  Richiamare lo script di installazione da questa nuova versione nello stesso modo in cui
+era stato fatto durante l'installazione iniziale.  Ciò aggiornare i file del prodotto senza modificare la configurazione esistente dell'utente.
+<p>
+Per gli amministratori che gestiscono una versione del prodotto in un'ubicazione centrale a cui accedono più utenti,
+è possibile estrarre il contenuto della versione più recente sulla versione esistente.
+Se sono state apportate delle modifiche personalizzate al file AcsConfig.properties, si consiglia di
+salvare AcsConfig.properties prima di estrarre il contenuto della nuova versione del prodotto su una
+versione esistente.  Dopo aver estratto il contenuto della nuova versione del prodotto e aver ripristinato
+AcsConfig.properties, gli utenti possono eseguire lo script di installazione nello stesso modo dell'installazione
+iniziale per aggiornare la loro installazione.
+<p>
+Se si è scelto di installare il prodotto senza utilizzare gli script di installazione estraendo il contenuto
+dell'archivio compresso in un'ubicazione di propria scelta, per aggiornare il prodotto sarà necessario estrarre
+il contenuto della versione più recente del prodotto sulla versione esistente.
+Tenere presente che potrebbe essere necessario salvare e ripristinare il contenuto di AcsConfig.properties se ad esso sono state apportate delle modifiche personalizzate.
+
+<hr><h3><a id="6.0"></a>6.0 Autorizzazioni file</h3>
+<p>
+La <a href="#7.0">sezione 7.0 Avvio del prodotto</a> descrive i diversi modi di avviare
+IBM i Access Client Solutions.  Se per avviare il prodotto verrà utilizzato uno degli script o dei file binari forniti,
+sarà necessario verificare che siano abilitati i permessi per l'esecuzione dei file.  I permessi dei file assegnati durante
+la decompressione del file di archivio zip vengono determinati da una serie di fattori, tra cui il sistema operativo,
+il il programma di utilità di archivio utilizzato per decomprimere l'archivio zip, l'autorizzazione dell'utente e così via.
+<p>
+In caso di problemi di uso di uno degli script o dei file binari forniti, controllare i permessi dei file.  Nelle
+seguenti sezioni vengono descritti alcuni metodi per controllare i permessi dei file.
+
+
+<h3><a id="6.1"></a>6.1 Autorizzazioni file (Linux, Mac, AIX)</h3>
+<p>
+Per i sistemi operativi come Unix, è possibile utilizzare il seguente comando da una shell o terminale per controllare le autorizzazioni di un file:<br>
+<pre>    ls -l &lt;file&gt;   			</pre>
+<p>
+Per modificare i permessi di un file, è possibile utilizzare il seguente comando:<br>
+<pre>    chmod &lt;permission&gt; &lt;file&gt;	</pre><br>
+Ad esempio:<br>
+per aggiungere l'autorizzazione per la lettura e l'esecuzione per tutti:
+<pre>
+    chmod a+rx &lt;file&gt;
+</pre>
+per fornire al proprietario del file il permesso di lettura/scrittura/esecuzione e solo
+il permesso di lettura/esecuzione agli altri utenti:
+<pre>
+    chmod 755 &lt;file&gt;
+</pre>
+<p>
+Un'ulteriore guida per i comandi ls e chmod sono disponibili su
+internet.
+
+
+
+<h3><a id="6.2"></a>6.2 Autorizzazioni file (Windows)</h3>
+<p>
+Per Windows, mentre si visualizza il file mediante Esplora risorse, fare clic con il tasto destro del mouse sul file e selezionare
+Proprietà.  Il separatore relativo alla protezione conterrà i permessi
+dei file.  Verificare di disporre del permesso per la lettura e l'esecuzione.
+<p>
+Sulle versioni recenti di Windows, è anche possibile utilizzare il comando
+icacls per visualizzare e modificare il permesso di un file.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Avvio del prodotto</h3>
+<p>
+Vi sono diversi modi per avviare IBM i Access Client Solutions.
+Se si è fatto uso degli script di installazione per installare il prodotto, il modo più facile per avviare il prodotto
+è disponibile nella <a href="./QuickStartGuide_en.html">Guida rapida</a>.
+<p>
+Se il prodotto non era stato installato utilizzando gli script di installazione, il resto di questa sezione descriverà dei
+modi alternativi per avviare il prodotto.
+Poiché sono disponibili una varietà di modi e di ubicazioni in cui è possibile
+installare java, alcuni dei metodi potrebbero richiedere ulteriori attività di configurazione.  Se uno
+dei metodi illustrati di seguito non funziona, provare un metodo differente. In alcuni
+casi, viene fornita una guida aggiuntiva.  Probabilmente, la sezione <a href="#11.0">11.0
+FAQ (Frequently Asked Questions)</a> potrà rivelarsi utile.
+<p>
+Quando si utilizza uno script o un file binario come descritto di seguito, lo script o
+il file binario devono risiedere nella struttura indirizzario contenuta nell'archivio
+zip.  Per praticità, è anche possibile copiare/spostare gli script e/o i
+file binari relativi alla piattaforma in uso nello stesso indirizzario
+contenente il file acsbundle.jar.
+
+
+<h3><a id="7.1"></a>7.1 Avvio del prodotto</h3>
+<p>
+Per avviare il prodotto da un viewer di file (ad es. Windows
+Explorer, Mac OS X Finder e così via) utilizzando un file binario specifico della piattaforma, individuare il sottoindirizzario in Start_Programs che identifica l'architettura
+hardware e il sistema operativo in uso.
+<p>
+Individuare il file binario riconosciuto dal sistema operativo in uso. Quindi, fare doppio clic su di esso per avviare
+il prodotto.
+È anche possibile avviare il prodotto mediante questo file binario da una richiesta comandi, un
+terminale o una shell.
+<p>
+Se si riceve il seguente errore:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Errore durante il caricamento del modulo Java."<br>
+IBM i Access Client solutions non riesce a trovare un'installazione java in
+un'ubicazione riconosciuta.  È possibile tentare uno dei seguenti metodi nelle sezioni:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Avvio del prodotto – Ulteriori opzioni</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Avvio del prodotto (mediante uno script)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a><br>
+<p>
+Nota tecnica per Mac:<br>
+Se viene richiesto di installare "Java 6 SE runtime", non è necessario installare Java 6.  Installare Java 8 e provare ad avviare nuovamente il prodotto.
+Se si sta utilizzando acslaunch_mac per avviare il prodotto e continua a venire richiesto di installare "Java 6 SE runtime", andare ai programmi di utilità e avviare una sessione terminale. Eseguire i seguenti comandi e tentare di avviare il prodotto di nuovo:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Avvio del prodotto – Ulteriori opzioni</h3>
+<p>
+È anche possibile tentare uno dei seguenti metodi quando si prova ad utilizzare il file binario per la piattaforma utilizzata.  Questi metodi consentono di identificare il
+JRE (Runtime Environment) da utilizzare per avviare il prodotto.  Consultare la sezione
+<a href="#7.1.2">7.1.2 Ricerca del percorso home Java</a> per informazioni su come individuare il percorso home Java sulla
+stazione di lavoro in uso.  Questi altri metodi sono supportati solo su piattaforme Linux e
+Windows:
+<ul>
+<li>Impostare la variabile di ambiente JAVA_HOME sul percorso home java (OPPURE)
+<li>Utilizzare l'opzione -vm sul comando binario per specificare il percorso home
+      java.  Specificare -h sul comando binario per visualizzare altre informazioni della guida (OPPURE)
+<li>Copiare una struttura indirizzario JRE (Java Runtime Environment) nello stesso indirizzario
+      del file binario che si sta tentando di utilizzare.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Ricerca del percorso home Java</h3>
+<p>
+Se è possibile avviare il prodotto mediante uno dei metodi descritti nella sezione:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Avvio del prodotto (mediante uno script)</a> (OPPURE)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a><br>
+è possibile determinare il percorso home java sulla propria stazione di lavoro dalla GUI principale di IBM i Access Client Solutions.  Nella barra di menu, selezionare<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;?-&gt;Informazioni su<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Il percorso java.home viene visualizzato in questo pannello.<br>
+<p>
+La proprietà java.home contiene l'ubicazione del percorso home java per la stazione di lavoro in uso.  Si tratta del percorso che è necessario specificare durante l'impostazione della
+variabile di ambiente JAVA_HOME o quando si utilizza l'opzione -vm sul comando.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Ricerca del percorso home Java (in Windows)</h3>
+<p>
+Sulle piattaforme Windows, ricercare il file java.exe.  Generalmente, il file binario java
+è contenuto nel sottoindirizzario bin o jre/bin sotto il percorso home Java.
+Il percorso home Java può essere utilizzato durante l'impostazione della variabile di ambiente JAVA_HOME
+o quando si utilizza l'opzione -vm sul comando.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Ricerca del percorso home Java (in Linux)</h3>
+<p>
+In Linux è possibile utilizzare il comando "which":<br>
+<pre>
+    which java
+</pre>
+Questo comando fornirà un percorso del comando java o un collegamento simbolico a esso.
+<p>
+Risolvere i collegamenti simbolici finché non si giunge al file binario effettivo
+del comando java.  È possibile risolvere i collegamenti simbolici mediante il comando ls
+con l'opzione -l:<br>
+<pre>
+    ls -l &lt;file&gt;
+</pre>
+Generalmente, il file binario java
+è contenuto nel sottoindirizzario bin o jre/bin sotto il percorso home Java.  Il percorso home Java può essere utilizzato durante l'impostazione della variabile di ambiente JAVA_HOME
+o quando si utilizza l'opzione -vm sul comando.
+
+
+
+<h3><a id="7.2"></a>7.2 Avvio del prodotto (mediante uno script)</h3>
+<p>
+A partire dalla v1r1m5, l'indirizzario Start_Scripts è stato ridenominato come Sample_Scripts
+e inserito nell'indirizzario Documentation.
+<p>
+Il modo preferito per avviare il prodotto consiste nell'utilizzare un file binario
+specifico per la piattaforma disponibile in Start_Programs.  Gli script Sample_Scripts
+devono essere utilizzati solo se il file binario specifico per la piattaforma non funziona.
+<p>
+Per avviare il prodotto da un browser del file system (ad esempio, Windows Explorer,
+Mac OS X Finder e così via) mediante uno degli script forniti, individuare lo script nel
+sottoindirizzario Sample_Scripts compatibile con il sistema operativo in uso.
+<p>
+Sulla maggior parte dei sistemi operativi non Windows, per impostazione predefinita è disponibile perl.  L'indirizzario
+Sample_Scripts/Linux_Mac_Other contiene uno script perl (con tre estensioni
+file differenti), che può essere utilizzato per avviare il prodotto su qualsiasi
+piattaforma su cui sia disponibile perl.  Selezionare il file con un'estensione che
+il sistema operativo in uso riconoscerà come uno script perl.
+<p>
+Sui sistemi operativi Windows, per impostazione predefinita è disponibile JScript.  L'indirizzario
+Sample_Script/Windows contiene un JScript che è possibile utilizzare per avviare il prodotto
+sui sistemi operativi Windows.
+<p>
+Utilizzando un metodo specifico della piattaforma per sfogliare il file system (ad esempio, Windows
+Explorer, Mac OS X Finder e così via), individuare lo script riconosciuto dal sistema operativo
+in uso.  Quindi, fare doppio clic sui di esso per avviare il prodotto.
+È anche possibile avviare il prodotto con questo script da una richiesta comandi,
+un terminale o una shell.
+
+
+
+<h3><a id="7.3"></a>7.3 Avvio del prodotto (mediante la riga comandi)</h3>
+<p>
+È anche possibile avviare il prodotto dalla riga comandi da qualsiasi luogo sia possibile digitare un comando (richiesta comandi, terminale, shell, ecc.)<br>
+<pre>
+    java -Xmx1024m -jar &lt;path&gt;/acsbundle.jar
+</pre>
+dove &lt;path&gt; è il percorso al file jar eseguibile del prodotto<br>
+<br>
+Ad esempio:<br>
+<pre>
+    java -Xmx1024m -jar V:/some_location/acsbundle.jar
+</pre>
+oppure
+<pre>
+    &lt;java_path&gt;java -jar V:/some_location/acsbundle.jar
+</pre>
+dove &lt;java_path&gt; è l'ubicazione del comando java per JDK 6.0 o superiore.
+<p>
+Consultare la sezione <a href="#7.1.2">7.1.2 Ricerca del percorso home Java</a> per determinare il percorso
+completo del comando java.
+<p>
+È anche possibile utilizzare uno degli script o dei programmi dalla riga comandi. Ad esempio:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Nota tecnica:<br>
+Sulla maggior parte delle piattaforme, la dimensione massima predefinita dello
+spazio heap di Java Virtual Machine è troppo piccola per consentire l'utilizzo di più
+funzioni nel prodotto IBM i Access Client Solutions.  La dimensione minima consigliata è di un gigabyte
+di spazio heap massimo (-Xmx1024m).  Se si specifica una dimensione più piccola di un gigabyte o
+si utilizza la dimensione heap predefinita, potrebbe verificarsi l'eccezione OutOfMemoryException.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Configurazione</h3>
+<p>
+Aggiungere una configurazione di sistema per ogni sistema IBM i che si desidera utilizzare o gestire.  Per aggiungere
+una configurazione di sistema, selezionare Configurazioni di sistema da Attività di gestione. Quindi, selezionare
+Nuovo.  Nel separatore Generale, immettere il nome del sistema.  Per iniziare, il nome del sistema è sufficiente
+per eseguire le attività generali.
+<p>
+Al termine, selezionare OK per salvare le informazioni immesse per questo
+sistema oppure selezionare Salva/Nuovo se si desidera aggiungere altri sistemi
+alla configurazione.
+<p>
+È possibile aggiungere nuovi sistemi alla configurazione oppure aggiornare le configurazioni esistenti
+in qualsiasi momento mediante i separatori Generale, Connessione o Console.
+<p>
+Per le attività della console, sono richieste altre informazioni.  Le configurazioni della console
+vengono associate automaticamente al nome del sistema immesso nel separatore Generale.
+Per specificare
+la configurazione della console per un sistema, selezionare Configurazioni di sistema in
+Attività di gestione.  Selezionare Nuovo o Modifica.  Quindi, selezionare il separatore Console.
+L'attività Console 5250 richiede una console LAN configurata o una console HMC configurata. Se non si dispone di una console LAN o HMC configurata, consultare la sezione <a href="#9.9">9.9 Come stabilire
+una connessione della console a IBM i</a>.
+<p>
+Hardware Management Interface richiede un'interfaccia di gestione hardware
+configurata.  È possibile specificare fino a due configurazioni dell'interfaccia di gestione hardware.
+<p>
+Al termine, selezionare Chiudi sul pannello Configurazioni di sistema.
+<p>
+Utilizzando la casella a discesa Sistema sul pannello principale di IBM i Access Client Solutions,
+selezionare un sistema.  Tutte le attività della console associano automaticamente il sistema selezionato
+(immesso sul separatore Generale) con la configurazione della console (immessa sul separatore
+Console).
+<p>
+Ora è possibile selezionare un'attività per il sistema selezionato.  Se si seleziona un'attività della console
+per la quale non sono state immesse le informazioni corrispondenti sul separatore di configurazione della
+console, verrà visualizzato un messaggio di errore.
+
+
+
+<h3><a id="8.1"></a>8.1 Ubicazione di configurazione</h3>
+<p>
+Per impostazione predefinita, ogni utente disporrà di un'ubicazione univoca per la propria configurazione. L'indirizzario root di configurazione viene determinato in base alla piattaforma.  Gli indirizzari
+di configurazione verranno creati durante l'avvio iniziale.  Per visualizzare l'ubicazione dell'indirizzario di configurazione:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Avviare il prodotto (consultare la sezione <a href="#7.0">7.0 Avvio del prodotto)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Modifica-&gt;Preferenze<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Selezionare il separatore Impostazioni locali<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Root di configurazione<br>
+<p>
+L'ubicazione della configurazione non può essere modificato mentre il prodotto è in esecuzione.  Per
+modificare l'ubicazione della configurazione, consultare la sezione
+    <a href="#9.3">9.3 Modifica dell'ubicazione di configurazione</a>
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Argomenti avanzati</h3>
+<h3><a id="9.1"></a>9.1 Ulteriori opzioni della riga comandi</h3>
+<p>
+Molte delle funzioni disponibili dalla GUI principale sono disponibili anche dalla
+riga comandi.  Queste funzioni possono essere richiamate fornendo i parametri
+appropriati a una qualsiasi delle opzioni della riga comandi mostrate nella:<br>
+    sezione <a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a>
+<p>
+Ad esempio:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+Nelle seguenti sezioni verranno mostrati soli i parametri aggiuntivi:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;filename&gt;]
+    &lt;filename&gt; è il nome del file da creare
+</pre>
+<p>
+In tal modo, la configurazione corrente verrà salvata nel file specificato.
+Il file risultante può essere utilizzato come immissione per l'opzione di ripristino della riga comandi
+sulla stessa stazione di lavoro o su una stazione di lavoro differente (indipendentemente dal sistema operativo).
+<p>
+L'ubicazione della configurazione da salvare viene determinata dalla proprietà:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...che si trova nel file AcsConfig.properties.
+<p>
+Questa funzione è equivalente a File-&gt;Esporta configurazione dalla GUI principale.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Ripristino</h3>
+<pre>
+/PLUGIN=restore /file=&lt;filename&gt;
+    &lt;filename&gt; è l'ubicazione del file creato dal backup
+</pre>
+In tal modo, la configurazione salvata verrà ripristinata dal file specificato. Le configurazioni
+esistenti non contenute nel file specificato verranno perse.
+<p>
+L'ubicazione della configurazione ripristinata viene determinata dalla proprietà:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...che si trova nel file AcsConfig.properties.
+<p>
+Questa funzione è equivalente a File-&gt;Importa configurazione dalla GUI principale.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;system&gt;
+</pre>
+Scarica una AC (autorità di certificazione) dal sistema IBM i specificato e la memorizza
+nella memoria attendibile locale dell'utente. È necessaria per l'autenticazione del server
+con SSL.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST     - elenca i sistemi configurati con le relative opzioni di connessione
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;system&gt; [/ipaddr=&lt;frequency&gt;] [/userid=&lt;userid&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;path&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - nome del sistema
+    /ipaddr     - quando è richiesta una connessione, questo valore determina se
+                  verrà eseguita o meno una ricerca dell'indirizzo IP. Frequenze valide
+                  sono:
+                      ALWAYS - ricerca l'indirizzo IP per ogni connessione
+                      HOURLY, DAILY, WEEKLY - ricerca l'indirizzo IP se la quantità di
+                          tempo è scaduta dall'ultima ricerca
+                      Indirizzo IP – se si specifica un indirizzo IP, si presume che
+                          la frequenza di ricerca sia NEVER
+    /userid     - id utente per un utente
+                  può anche essere impostato sui seguenti valori:
+                      *SHARE        - richiede una volta le credenziali di accesso che
+                                      saranno condivise dai sistemi utilizzando questa opzione
+                      *PROMPTALWAYS - effettua una richiesta almeno una volta per ogni connessione
+                      *KERBEROS     - utilizza nome principale Kerberos, senza richiesta
+    /ssl        - 0 per disattivare la modalità SSL o 1 per attivarla
+    /5250path   - percorso ai profili dell'emulazione 5250
+                  Il /5250path può essere impostato da File-&gt;Cambia indirizzario... da
+                  Session Manager 5250
+    /del elimina la configurazione esistente
+    /r   sostituisce la configurazione esistente
+</pre>
+In tal modo, è possibile impostare diverse opzioni di configurazione dalla riga comandi.
+Queste opzioni possono essere impostate anche dalla GUI principale mediante Configurazioni di sistema.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;options&gt;]
+</pre>
+Richiede che tutti i processi in esecuzione nel prodotto eseguano il dump dei propri sottoprocessi.  Queste
+informazioni verranno utilizzate dall'assistenza IBM per offrire il supporto per il problema.
+<p>
+Alle registrazioni generate sarà possibile accedere dalla GUI principale selezionando:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Modifica-&gt;Preferenze<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Separatore Impostazioni locali<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Indirizzario di dump<br>
+<p>
+Se non è specificata alcuna opzione, questa funzione equivale alla seguente funzione
+della GUI principale:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Strumenti-&gt;Genera registrazioni servizio
+<p>
+Le opzioni valide sono:
+<pre>
+    /heapdump - esegue quanto riportato in precedenza oltre a un dump dell'heap JVM
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Comprime le registrazioni esistenti e i dump del sottoprocesso in un file zip che è possibile inviare
+a IBM per ricevere assistenza.
+<p>
+Al file zip risultante sarà possibile accedere dalla GUI principale selezionando:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Modifica-Preferenze<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Separatore Impostazioni locali<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Indirizzario di servizio<br>
+
+Questa funzione equivale a selezionare Strumenti-&gt;Comprimi registrazioni servizio dalla GUI principale.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Registrazione</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Level&gt;
+                &lt;Level&gt; è uno dei seguenti livelli di registrazione supportati:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Questo modulo aggiuntivo consente all'utente di attivare e disattivare il livello di registrazione dalla riga comandi.
+<p>
+Il livello di registrazione può essere impostato anche dalla GUI principale tramite:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Modifica-&gt;Preferenze<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Separatore Generale<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Livello di registrazione<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Accesso</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;sistema&gt; [/USERID=&lt;idutente&gt;] [/PASSWORD=&lt;parolad'ordine&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - nome del sistema
+    /USERID   - id utente
+    /PASSWORD - parola d'ordine associata all'id utente
+    /AUTH     - prova a stabilire una connessione al sistema con le credenziali di accesso specificate
+                e le memorizza in cache solo in caso di esito positivo del tentativo
+    /C        - svuota la cache
+    /GUI      - indica se è possibile utilizzare o meno una GUI (graphical user interface)
+</pre>
+Questo comando memorizza nella cache l'id utente e la parola d'ordine che è possibile utilizzare per
+impedire che venga richiesta la parola d'ordine.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Viene visualizzato lo stesso pannello della GUI visualizzato selezionando Modifica-&gt;Preferenze dalla GUI principale.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;options&gt;]
+
+Le opzioni valide sono:
+    /killdaemon     - termina i sottoprocessi del daemon.
+                      Equivale a Strumenti-&gt;Reimposta per manutenzione dalla GUI principale
+    /clearpwcaches  - elimina tutte le parole d'ordine memorizzate in cache
+    /clearjarcache  - ripulisce la cache del jar di prodotto
+    /clearlogs      - ripulisce l'indirizzario delle registrazioni in Modifica-&gt;Preferenze
+                      Separatore Impostazioni locali dalla GUI principale
+    /cleardumps     - ripulisce l'indirizzario dei dump in Modifica-&gt;Preferenze
+                      Separatore Impostazioni locali dalla GUI principale
+    /clearsvcdir     - ripulisce l'indirizzario di servizio in Modifica-&gt;Preferenze
+                      Separatore Impostazioni locali dalla GUI principale
+    /clearsettings  - elimina tutte le impostazioni per l'utente corrente
+</pre>
+Se non viene specificata alcuna opzione, non verrà eseguita alcuna azione.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;system&gt; [&lt;/options&gt;]
+    Le opzioni includono:
+        /SSL=&lt;1|0&gt;        Attiva o disattiva SSL
+        /ACCEPTALLCERTS=&lt;1|0&gt; Se aggiungere o meno automaticamente tutti
+                          i certificati SSL all'insieme affidabile (quando si utilizza SSL).
+        /SERVERAUTH=&lt;1|0&gt; Attiva o disattiva l'autenticazione server SSL (il valore predefinito è
+                          disattivo). L'opzione non viene considerata se non si verifica l'SSL.
+        /GUI=&lt;1|0&gt;        Attiva e disattiva la finestra della GUI (per impostazione predefinita, non è attiva se avviata
+                          dalla riga comandi)
+        /PORTS=&lt;port1,port2&gt; Un elenco di porte, separate da virgole, da verificare. Può essere
+                numeri o nomi di servizio (ad esempio, /PORTS=as-signon,as-sts). Se non
+                specificato, viene verificato un insieme di porte predefinito.
+                Specificando .CONSOLE, verrà controllato un elenco di porte specifiche della console.
+
+        /TIMEOUT=&lt;seconds&gt;   Specificare un valore di superotempo, in secondi.
+</pre>
+Questo modulo aggiuntivo verifica la connettività a IBM i aprendo una connessione alla porta
+appropriata.  Se si verifica una connessione SSL, viene tentato un handshake SSL.
+Se viene avviato dalla GUI principale o richiamato con /GUI=1, questo modulo aggiuntivo visualizza
+una finestra di dialogo.  Se viene avviato dalla riga comandi senza /GUI=1, l'emissione viene inviata
+alla console.
+<p>
+Per non-SSL, sono controllati i seguenti servizi e porte:<br>
+<pre>
+    sshd            22
+    telnet          23
+    drda           446
+    as-svrmap      449
+    as-nav        2004
+    as-central    8470
+    as-database   8471
+    as-dtaq       8472
+    as-file       8473
+    as-netprt     8474
+    as-rmtcmd     8475
+    as-signon     8476
+</pre>
+<p>
+Per SSL, sono controllati i seguenti servizi e porte:<br>
+<pre>
+    sshd            22
+    telnet-ssl     992
+    ddm-ssl        448
+    as-svrmap      449
+    as-nav        2005
+    as-central-s  9470
+    as-database-s 9471
+    as-dtaq-s     9472
+    as-file-s     9473
+    as-netprt-s   9474
+    as-rmtcmd-s   9475
+    as-signon-s   9476
+ </pre>
+
+<p>
+Questa funzione può essere avviata dalla GUI principale selezionando:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Configurazioni di sistema<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;selezionare un sistema e poi Modifica<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Separatore Generale<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Verifica connessione<br>
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Questo modulo aggiuntivo avvia la GUI del Session Manager 5250.
+<p>
+Equivale a selezionare Session Manager 5250 dalla GUI principale.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;options&gt;]
+
+Questo modulo aggiuntivo avvia un emulatore 5250 sul sistema specificato.
+Questa funzione equivale a selezionare Emulatore 5250 dalla GUI principale.
+
+Le opzioni valide sono:
+    /id=&lt;A-Z&gt;                    - ID sessione breve
+    /name=&lt;name&gt;                 - nome sessione
+    /wsid=&lt;identifier&gt;           - id stazione di lavoro
+    /wide=&lt;1|0|true|false&gt;       - utilizza una dimensione schermo grande (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - utilizza lo schermo intero
+    /nosave=&lt;1|0|true|false&gt;     - non salva le impostazioni all'uscita
+    /prompt=&lt;1|0|true|false&gt;     - forza la visualizzazione della finestra di dialogo di configurazione
+    /port=&lt;port&gt;                 - numero di porta
+    /ssl=&lt;1|0|true|false&gt;        - connette mediante Secure Socket
+    /sso=&lt;1|0|true|false&gt;        - ignora il pannello di collegamento
+    /kerberos                    - Utilizza kerberos
+    /width=&lt;width&gt;               - larghezza iniziale della finestra dell'emulatore
+    /height=&lt;height&gt;             - altezza iniziale della finestra dell'emulatore
+    /xpos=&lt;xpos&gt;                 - posizione iniziale coordinata x in alto a sinistra
+                                   della finestra dell'emulatore
+    /ypos=&lt;ypos&gt;                 - posizione iniziale coordinata y in alto a sinistra
+                                   della finestra dell'emulatore
+    /watermark                   - visualizza il nome sistema come filigrana sullo schermo
+    /watermark=&lt;text&gt;            - visualizza il testo fornito come filigrana sullo schermo
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Questo modulo aggiuntivo avvia la GUI principale per il trasferimento dati.
+
+Questa funzione equivale a selezionare Trasferimento dati dalla GUI principale.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Scaricamento</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - id utente da utilizzare durante la connessione al sistema di destinazione
+    &lt;filename&gt;- file con estensione .dtfx che è stato creato da un precedente
+                scaricamento di Trasferimento dati.
+</pre>
+Il modulo aggiuntivo consente all'utente di eseguire uno scaricamento Trasferimento dati salvato precedentemente.
+<p>
+Il Trasferimento dati è disponibile anche dalla GUI principale selezionando Trasferimento dati.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Caricamento</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - id utente da utilizzare durante la connessione al sistema di destinazione
+    &lt;filename&gt;- file con estensione .dttx che è stato creato da un precedente
+                caricamento di Trasferimento dati.
+</pre>
+Il modulo aggiuntivo consente all'utente di eseguire un caricamento Trasferimento dati salvato precedentemente.
+<p>
+Il Trasferimento dati è disponibile anche dalla GUI principale selezionando Trasferimento dati.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;system&gt;
+                          [/userid=&lt;userid&gt;]
+                          {/hostfile=&lt;library/filename&gt; | /sql="statement"}
+                          {/clientfile=&lt;path&gt;&lt;filename&gt;.&lt;extension&gt; | /display}
+
+    /userid   - id utente da utilizzare durante la connessione al sistema di destinazione
+    /hostfile   - file e libreria di origine sul sistema IBM i per lo scaricamento
+                  ad es. /hostfile=QIWS/QCUSTCDT
+    /sql        - specificare un'istruzione SQL
+                  ad es. /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - Ubicazione file di destinazione per lo scaricamento.
+                  Il formato di questo file è determinato dall'estensione specificata (ad esempio, .csv .ods .xlsx .xlsx).
+                  Se l'estensione del file non è specificata o è di un tipo non supportato, i dati vengono formattati come un file .csv
+    /display    - scrivere l'emissione sul terminale
+</pre>
+Il modulo aggiuntivo consente all'utente di eseguire uno scaricamento semplice di un intero file dalla riga comandi.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;system&gt;
+</pre>
+Questo modulo aggiuntivo avvia una console 5250 sul sistema specificato.
+<p>
+Questa funzione equivale a selezionare la Console 5250 dalla GUI principale.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;system&gt;
+</pre>
+Questo modulo aggiuntivo avvia un Pannello di controllo virtuale sul sistema specificato.
+<p>
+Questa funzione equivale a selezionare il Pannello di controllo virtuale dalla GUI principale.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;system&gt;
+</pre>
+Questo modulo aggiuntivo avvia un browser su IBM Navigator per i mediante il sistema specificato e la porta 2001.
+<p>
+Questa funzione equivale a selezionare Navigator per i
+dalla GUI principale.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;system&gt;
+</pre>
+Questo modulo aggiuntivo visualizza la GUI di emissione di stampa per visualizzare e scaricare i file di spool da IBM i.
+<p>
+Questa funzione
+equivale a selezionare Emissione di stampa dalla GUI principale.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Questo modulo aggiuntivo visualizza lo strumento Gestione chiave.
+<p>
+Questa funzione equivale a selezionare Strumenti-&gt;Gestione chiave dalla GUI principale.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;system&gt;
+                  {/CMD="&lt;CL command&gt;" | file=&lt;file_name&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL command&gt;"  - un comando da eseguire. Utilizzare le virgolette per evitare che gli spazi
+                           interrompano il comando.
+    /file=&lt;file_name&gt;    - specificare un file di immissione con più comandi. I comandi
+                           devono essere uno per riga senza virgolette.
+    /noprompt=&lt;1|0&gt;      - quando si specifica un file di immissione, ignora i risultati e
+                           le richieste prima di continuare.
+</pre>
+Questo modulo aggiuntivo invia comandi CL a un sistema specificato.
+<p>
+Questa funzione è disponibile solo dalla riga comandi.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;system,system,system,...&gt;
+</pre>
+Questo modulo aggiuntivo modifica la parola d'ordine sui sistemi specificati.  All'utente vengono richiesti l'ID utente, la parole d'ordine vecchia e quella nuova.
+<p>
+Questa funzione può essere utilizzata anche dalla GUI principale selezionando il separatore Parole d'ordine da Modifica-&gt;Preferenze
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;option&gt; /SYSTEM=&lt;system&gt;
+
+&lt;system&gt; può essere impostato su un nome di sistema o su *ALL per indicare tutti i sistemi.
+
+Le opzioni valide sono:
+    /IMPORT - Copia una (o tutte) le configurazioni di sistema dalla configurazione Windows legacy
+a IBM i Access Client Solutions.
+    Le opzioni valide sono:
+/EXPORT - Copia una (o tutte) le configurazioni di sistema dalla configurazione Windows legacy
+a IBM i Access Client Solutions.
+    /DELETE - Elimina una (o tutte) le configurazioni di sistema dalla configurazione Windows legacy.
+</pre>
+Questo modulo aggiuntivo fornisce la capacità di copiare le configurazioni di sistema tra IBM i Access Client Solutions e la configurazione Windows legacy
+supportata da IBM i Access per Windows.
+<p>
+Questa funzione può essere utilizzata anche dalla GUI principale selezionando File-&gt;Copia connessioni
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Nota: questo modulo aggiuntivo è disponibile solo per utenti con autorizzazione amministratore o root.
+<pre>
+/PLUGIN=restrict /&lt;options&gt;
+
+ Le opzioni valide sono:
+     /restrict=&lt;func1,func2,func3&gt;   Limita le funzioni fornite su questa
+                                     stazione di lavoro.
+     /unrestrict=&lt;func1,func2,func3&gt; Consente tutte le funzioni fornite su questa
+                                     stazione di lavoro.
+     /list                           Elenca se le funzioni sono consentite o limitate su questa stazione di lavoro.
+     /export=&lt;file&gt;                  Esporta le limitazioni nel file indicato con
+                                     un'estensione file .acsr.
+     /import=&lt;file&gt;.acsr             Importa le limitazioni da un file con
+                                     un'estensione file .acsr.
+     /exportreg=&lt;file&gt;               Esporta un file di registro Windows (file .reg).
+
+</pre>
+<p>Questo modulo aggiuntivo fornisce a chiunque abbia l'autorizzazione di amministratore o root la capacità di limitare determinate funzioni a tutti gli utenti sulla stazione di lavoro corrente.
+<pre>
+   Funzione           Descrizione
+    cfg             Configurazioni di sistema
+    sm              Session Manager 5250
+    5250            Emulazione 5250
+    vcp             Pannello di controllo virtuale
+    console         Console 5250
+    consoleprobe    Ricerca le configurazioni della console nella rete locale
+    hmcprobe        Ricerca le partizioni in una HMC
+    hmi1            Hardware Management Interface 1
+    hmi2            Hardware Management Interface 2
+    keyman          Gestione certificati SSL/TLS
+    dtgui           GUI (graphical user interface) di Trasferimento dati
+    upload          Caricamenti Trasferimento dati
+    download        Scaricamenti Trasferimento dati
+    cldownload      Scaricamenti batch Trasferimento dati
+    l1c             IBM Navigator per i (Console livello 1)
+    rmtcmd          Comando remoto (disponibile dalla riga comandi)
+    splf            Emissione di stampa (file di spool)
+    ifs             Integrated File System
+    db2             Schemi
+    rss             Esegui script SQL
+    db2tools        Centro prestazioni SQL
+    sysdbg          Programma di debug di sistema IBM i
+    checkupdates    Controlla gli aggiornamenti disponibili
+    ssh             Secure Shell
+</pre>
+<p>Le funzioni possono essere escluse anche utilizzando le parole chiave di gruppo:
+<pre>
+   Gruppo           Funzioni
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+La possibilità di limitare le funzioni è anche disponibile per un amministratore o utente con autorizzazione root dalla GUI principale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Modifica-&gt;Preferenze<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Separatore Limitazioni<br>
+
+<p>
+Per un modo facile per limitare le funzioni su più stazioni di lavoro, vedere la sezione <a href="#9.5">9.5 Pacchetti personalizzati</a>.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Elenca le funzioni correntemente limitate su questa stazione di lavoro.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;filetype&gt; &lt;filetype&gt; ...] [/c]
+
+    &lt;filetype&gt;   - tipi di file validi:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - annulla l'associazione file per i tipi di file specificati
+</pre>
+Su una piattaforma Windows, questo comando imposta le associazioni file per i file di tipo .dttx,
+.dtfx, .hod, .bchx, .ws e .bch.  Su una piattaforma non Windows, sarà visualizzato un messaggio di errore.
+<p>
+Questa funzione equivale a selezionare Strumenti-&gt;Associazioni file dalla GUI principale.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - id utente da utilizzare durante la connessione al sistema di destinazione
+    &lt;filename&gt;- file con estensione .dtfx o .dttx che è stato creato da un
+                precedente scaricamento o caricamento di Trasferimento dati.
+                È possibile specificare più file con o senza questa parola chiave.
+</pre>
+Il modulo aggiuntivo consente all'utente di eseguire una richiesta Trasferimento dati salvata precedentemente.
+<p>
+Il Trasferimento dati è disponibile anche dalla GUI principale selezionando Trasferimento dati.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;file&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - File da migrare. I file devono essere file 5250 con
+                un'estensione .ws, .bch, .kmp, .pmp o .bar.
+    /output   - ubicazione dove verranno memorizzati i file migrati.
+    /verbose  - visualizzare i risultati dei file migrati.
+    /gui      - avviare l'interfaccia utente per migrare i file 5250.
+</pre>
+Il modulo aggiuntivo consente all'utente di migrare file dall'emulatore Personal Communications di IBM i Access per Windows
+all'emulatore IBM i Access Client Solutions.
+Alcuni file convertiti avranno una nuova estensione file.  Consultare la sezione
+ <a href="#9.6.2">9.6.2 Migrazione dell'emulazione 5250</a>. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - Apre il file specificato
+    /SQL=&lt;filename&gt; - Apre il file specificato
+    /AUTORUN=&lt;1,0&gt;   - Esegue automaticamente lo script
+</pre>
+Il modulo aggiuntivo consente all'utente di eseguire istruzioni SQL e comandi CL.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [Opzioni]
+
+Le opzioni valide sono:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Azione da eseguire:
+                      L'opzione LIST può essere utilizzata con l'argomento LISTNAME e visualizza
+                      il Centro prestazioni SQL con l'elenco specificato.
+                      L'opzione ANALYZE analizza la serie di dati delle prestazioni indicata.
+                      L'opzione STATEMENTS mostra le istruzioni per la cache piano SQL o
+                      la serie di dati delle prestazioni indicata.
+                      L'opzione COMPARE confronta la serie o le serie di dati delle prestazioni.
+    /NAME=&lt;name&gt;    - Il nome del dataset delle prestazioni
+    /TABLE=&lt;name&gt;   - Il nome della tabella che contiene i dati delle prestazioni
+    /SCHEMA=&lt;name&gt;  - Il nome dello schema della tabella che contiene i dati delle prestazioni
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - L'elenco iniziale da visualizzare nel Centro prestazioni SQL.
+</pre>
+Il plug-in Centro prestazioni SQL fornisce una serie di strumenti per aiutare a ottimizzare l'SQL nelle applicazioni database:
+<ul>
+<li>Analizza - fornisce una vista riepilogata dei dati sulle prestazioni raccolti che funge da punto di partenza per un'analisi più approfondita utilizzando la navigazione drill-down.
+<li>Confronta - visualizzare un confronto di riepilogo di due o più raccolte di dati sulle prestazioni e sceglierne quindi due per un confronto delle istruzioni più approfondito.
+<li>Visualizza istruzioni - gestire le istruzioni SQL nella Cache piano SQL oppure in una raccolta di dati sulle prestazioni.
+<li>Visual Explain - generare una rappresentazione grafica del piano di esecuzione delle istruzioni per vedere come funzionano esattamente le proprie istruzioni SQL.
+<li>Cache piano SQL - gestire le impostazioni della Cache piano SQL.
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+L'IFS (Integrated File System) fornisce un'interfaccia per sfogliare l'IFS del proprio IBM i e gestire gli oggetti nell'IFS come segue:
+<ul>
+<li>Copiare oggetti tra il sistema client e IBM i
+<li>Copiare oggetti presenti nell'IFS su un IBM i o sull'IFS su un altro IBM i
+<li>Inviare oggetti a un altro IBM i (o a vari)
+<li>Creare nuove cartelle (indirizzari, librerie e cartelle)
+<li>Eliminare oggetti
+<li>Ridenominare gli oggetti
+<li>Visualizzare le proprietà degli oggetti
+</ul>
+Consultare la sezione <a href="#9.12">9.12 Integrated File System (IFS)</a> per conoscere i requisiti e le limitazioni dell'utilizzo di questo  plugin.
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+Il plugin fornisce un'interfaccia per la gestione dei database di Db2 per i su IBM i.
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+Il plugin fornisce un'interfaccia per controllare gli aggiornamenti disponibili.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;system&gt;
+</pre>
+Il terminale SSH avvierà un client SSH già installato (emulazione terminale) sul PC per l'IFS (integrated file system) IBM i.
+
+
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Associazioni file</h3>
+<p>
+Alcuni file di configurazione generati da IBM i Access Client Solutions sono supportati
+dalla riga comandi quando vengono forniti come primo e unico parametro.
+Quando questi file con estensioni specifiche vengono forniti come primo
+parametro, IBM i Access Client Solutions associa il file alla funzione da
+richiamare e fornisce il file come immissione per la funzione in questione.
+<p>
+Le seguenti estensioni possono disporre del supporto associazione file:
+<pre>
+    .dttx   - richiesta di caricamento di Trasferimento dati
+    .dtfx   - richiesta di scaricamento di Trasferimento dati
+    .hod    - profilo sessione emulazione 5250
+    .bchx   - profilo emulazione sessione multipla
+    .ws     - profilo sessione emulazione 5250 (Personal Communications)
+    .bch    - profilo emulazione sessione multipla (Personal Communications)
+</pre>
+Esempi della riga comandi:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - esegue l'operazione di scaricamento salvata
+    acslaunch_xxx dt_upload_file.dttx   - esegue l'operazione di caricamento salvata
+    acslaunch_xxx system_lp13ut20.hod   - avvia una sessione 5250 sul sistema
+</pre>
+...dove acslaunch_xxx è la sintassi della riga comandi utilizzata per avviare il prodotto. Consultare la sezione <a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a>.
+<p>
+Queste associazioni di file della riga comandi supportate consentono all'utente di
+impostare manualmente associazioni di file specifiche del sistema operativo (SO).  Poiché
+le associazioni di file dipendono dalla piattaforma, le operazioni richieste dipendono dal SO.
+</p>
+Impostando le associazioni di file per il SO in uso sarà possibile
+fare doppio clic su un file (di uno dei tipi di file supportati indicati precedentemente)
+per avviare la funzione designata.
+<p>
+Le seguenti sezioni contengono alcuni esempi di impostazione delle associazioni di file per
+alcuni sistemi operativi.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Associazioni file (per Windows)</h3>
+<ol>
+<li>Dalla barra dei menu della GUI principale, selezionare Strumenti-&gt;Associazioni file...
+<li>Selezionare i tipi di file per cui si desidera creare le associazioni file.
+<li>Selezionare OK
+</ol>
+<p>
+La funzione appropriata di IBM i Access Client Solutions verrà eseguita quando
+si fa doppio clic sui file di questo tipo.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Cambia icona (per collegamento Windows)</h3>
+<ol>
+<li>Individuare il collegamento precedentemente creato per il file binario appropriato per l'architettura hardware in uso (acslaunch_win-32.exe o acslaunch_win-64.exe)
+<li>Fare clic son il tasto destro del mouse e selezionare Proprietà
+<li>Selezionare il separatore Collegamento
+<li>Fare clic sul pulsante Cambia icona...
+<li>Selezionare l'icona da utilizzare per questo collegamento
+<li>Selezionare OK
+<li>Selezionare OK
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Impostazione di un'icona del desktop (per Linux)</h3>
+<p>
+Attenersi ala procedura nella <a href="./QuickStartGuide_en.html">Guida rapida</a> per Linux.  Ciò installerà l'applicazione in /opt/ibm/iAccessClientSolutions.  Creerà anche:
+/usr/share/applications/IBM i Accesss Client Solutions.desktop
+<p>
+Per creare un'icona per il prodotto sul desktop, copiare il file .desktop
+nella cartella Desktop.  Potrebbe essere necessario regolare le autorizzazioni del file sul desktop in modo che sia eseguibile.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Associazioni file (per Linux)</h3>
+<p>
+I passi necessari per l'impostazione delle associazioni di file dipenderà dalla distribuzione Linux e dall'ambiente desktop in uso.  In generale, le operazioni da eseguire
+saranno simili alle operazioni utilizzate per Windows, descritte precedentemente.
+<ol>
+<li>Individuare un file che si desidera associare, contenente un'estensione supportata (ad esempio,
+   .hod, .bchx, .dtfx o .dttx)
+<li>Fare clic con il tasto destro del mouse sul file. Ricercare le opzioni o le proprietà che consentono di
+associare un programma a un file.
+<li>Associare il file e/o la sua estensione allo script di avvio o al file binario appropriato di
+IBM i Access Client Solutions.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Associazioni file (per Mac)</h3>
+<p>
+Per utilizzare Associazioni file su Mac, il tipo di file deve essere associato ad un'applicazione.  Attenersi alla procedura indicata
+nella <a href="./QuickStartGuide_en.html">Guida rapida</a> per Mac in modo che IBM i Access Client Solutions sia un'applicazione installata.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Creazione associazioni file (per Mac)</h3>
+<ol>
+<li>Utilizzare Finder per individuare un file che si desidera associare, contenente un'estensione supportata (ad esempio,
+   .hod, .bchx, .dtfx o .dttx)
+<li>Selezionare il file, quindi File-&gt;Get Info
+<li>Nell'opzione "Open with:" selezionare Other
+<li>Andare all'ubicazione dell'applicazione IBM i Access Client Solutions.
+<li>Selezionare l'applicazione.
+<li>Selezionare la casella Always Open With.  Selezionare Add.
+<li>In "Open with:" selezionare Change All.  Selezionare Continue nelle altre finestre di dialogo.
+</ol>
+<p>
+La funzione appropriata di IBM i Access Client Solutions verrà eseguita quando
+si fa doppio clic sui file di questo tipo.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Cambia icona (per Mac)</h3>
+<p>
+Utilizzare l'applicazione Preview per individuare la cartella Icons nell'indirizzario
+del prodotto e utilizzare Finder per sostituire l'icona in Get Info.
+<ol>
+<li>Da Preview, selezionare File-&gt;Open
+<li>Individuare l'indirizzario delle icone del prodotto
+<li>Selezionare il file che contiene l'icona e aprirlo
+<li>Selezionare Edit-&gt;Select All
+<li>Selezionare Edit-&gt;Copy
+<li>Da Finder, individuare il file .hod, .bchx, .dtfx o .dttx di cui deve essere modificata l'icona.<br>
+   Se il file è già sul desktop, fare clic su di esso per selezionarlo.  Altrimenti,
+   selezionare Go-&gt;Go To Folder e immettere il percorso del file, quindi selezionare Go.<br>
+   Fare clic sul file per selezionarlo.
+<li>File-&gt;Get Info
+<li>Fare clic sull'icona nella parte superiore di Get Info
+<li>Edit-&gt;Paste
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Modifica dell'ubicazione di configurazione</h3>
+<p>
+Per impostazione predefinita, ogni utente disporrà di un'ubicazione univoca per la propria configurazione. L'ubicazione della configurazione può essere modificata impostando la proprietà:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Questa proprietà è contenuta nel file AcsConfig.properties.
+<p>
+Il file AcsConfig.properties è presente in due ubicazioni quando viene fornito il prodotto. È contenuto nel file acsbundle.jar.  Per praticità, viene anche fornito nel file di archivio zip
+del prodotto e sarà nello stesso indirizzario del file
+acsbundle.jar quando viene decompresso l'archivio zip.
+<p>
+Durante l'avvio, il prodotto utilizzerà solo il primo file AcsConfig.properties
+trovato.  Esso controlla innanzitutto l'indirizzario contenente il file acsbundle.jar.
+Se
+il file AcsConfig.properties non viene trovato nello stesso indirizzario del file acsbundle.jar,
+verrà utilizzato il file AcsConfig.properties presente nel file acsbundle.jar.
+<p>
+È possibile scegliere di aggiornare il file AcsConfig.properties in acsbundle.jar con un percorso di configurazione
+personalizzato.  In tal caso, accertarsi che l'indirizzario contenente il file acsbundle.jar
+non contenga un file AcsConfig.properties oppure verrà utilizzato quest'ultimo.
+Ciò offre la flessibilità di poter
+distribuire l'ubicazione della configurazione con il file acsbundle.jar e, al tempo stesso, la flessibilità per sovrascriverlo.
+<p>
+Vengono fornite delle parole chiave speciali che possono essere utilizzate per la definizione del percorso di configurazione.  Quando
+vengono utilizzate nel percorso specificato, le parole chiave vengono sostituite con il testo o il percorso che definiscono.  Nel percorso di
+configurazione è possibile utilizzare una sola parola chiave.  Le parole chiave speciali e i loro significati sono:<br>
+<pre>
+	{USER} - L'id utente corrente. Questa parola chiave può essere ovunque nel percorso
+</pre>
+<p>
+Le seguenti parole chiave possono essere solo all'inizio del percorso specificato:
+<pre>
+	{PRODUCTDIR} - il percorso allo stesso indirizzario di acsbundle.jar
+	{TEMPDIR}    - il percorso a un indirizzario temporaneo specifico della piattaforma
+	{ROOT}       – il percorso alla root del file system
+	{HOME}       - il percorso all'indirizzario home dell'utente
+	{DEFAULT}    - il percorso predefinito che il prodotto normalmente utilizzerà
+</pre>
+<p>
+Nota tecnica:<br>
+Non si consiglia di condividere una configurazione tra più utenti.
+Ad esempio,
+se X è un'unità di rete condivisa, la seguente impostazione potrebbe causare risultati imprevedibili:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+Ci sono vari problemi con la condivisione da parte di più utenti di questo percorso di configurazione:<br>
+<ol>
+<li>Si verificheranno risultati imprevedibili se più utenti utilizzano simultaneamente la configurazione.
+<li>Questo esempio presuppone che ogni utente abbia l'unità X associata alla stessa ubicazione.
+<li>L'utilizzo di un'unità di rete nella configurazione non funziona da un client Linux o Mac.  L'utilizzo delle parole chiave fornite, come negli esempi che seguono, funzionerà in Windows, Linux e Mac.
+</ol>
+<p>
+Quando si condivide un percorso di configurazione tra più utenti, utilizzare la parola chiave {USER}
+per evitare conflitti con altri utenti.  Verrà sostituito con l'ID dell'utente corrente.
+<p>
+Quando si imposta il percorso di configurazione, utilizzare una barra ('/') invece di una barra retroversa ('\') come separatore di indirizzario.  Ciò
+funzionerà su tutti i sistemi operativi, tra cui Windows.
+<p>
+Di seguito vengono riportate alcune configurazioni di esempio consigliate:
+<p>
+Esempio 1- configurazione locale per l'utente corrente (valore predefinito):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Quando il valore AcsBaseDirectory non è impostato, la configurazione utilizza automaticamente un percorso
+dipendente dalla piattaforma per l'utente.
+Si tratta dell'impostazione predefinita per IBM i Access Client Solutions.
+<p>
+Esempio 2 - configurazione remota (o locale) univoca per ciascun utente:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+La configurazione sarà remota o locale in base all'ubicazione di {ROOT}.
+<p>
+Esempio 3 - configurazione remota (o locale) univoca per ciascun utente:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+La configurazione sarà remota o locale in base all'ubicazione di {PRODUCTDIR}.
+<p>
+Esempio 4 – configurazione locale su supporto portatile (ad esempio unità USB):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Poiché il percorso al supporto portatile varia a seconda del sistema su cui è in uso,
+questa impostazione consente alla configurazione di essere relativa ai file del prodotto.  In questo
+esempio la parola chiave {USER} non è stata specificata in modo intenzionale per far sì che
+la configurazione sull'unità USB venga utilizzata dall'utente dell'unità USB a prescindere dall'ID utente.
+
+
+<h3><a id="9.4"></a>9.4 Ulteriori opzioni di distribuzione</h3>
+<p>
+Sono qui di seguito riportate delle altre opzioni di distribuzione che possono essere prese in considerazione:
+<ul>
+   <li>Distribuire il prodotto in una singola ubicazione a cui possono accedere più utenti.
+   <li>Se si dispone di un server Web, si consiglia l'utilizzo dell'avvio da Web.
+	 Consultare http://java.com/en/download/faq/java_webstart.xml
+   <li>Importazione automatica delle impostazioni di configurazione.
+     Consultare la sezione <a href="#9.4.1">9.4.1</a>
+   <li>Distribuire in modo nativo su IBM i. Vedere la sezione <a href="#9.4.2">9.4.2</a>
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Importazione automatica delle impostazioni di configurazione</h3>
+<p>
+Le seguenti proprietà possono essere utilizzate nel file AcsConfig.properties per
+impostare automaticamente una configurazione per nuovi utenti o per aggiornare una
+configurazione per gli utenti esistenti:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Di seguito sono riportate le operazioni necessarie:
+<ol>
+<li>Creare la configurazione che si desidera trasmettere a uno o più utenti.
+<li>Esportare la configurazione in un file utilizzando File-&gt;Esporta configurazione dalla
+GUI principale o utilizzare l'opzione della riga comandi nella sezione <a href="#9.1.1">9.1.1 Backup</a>.
+<li>Spostare il file di configurazione nell'ubicazione desiderata.  Sono disponibili
+diverse opzioni descritte più avanti.
+<li>Impostare la proprietà com.ibm.iaccess.autoimport nel file AcsConfig.properties sul
+percorso del file di configurazione.
+<li>Impostare la proprietà com.ibm.iaccess.autoimport.version su un valore intero che
+rappresenta la versione del file di configurazione.
+</ol>
+<p>
+Il funzionamento è il seguente:<br>
+La configurazione
+salvata a cui fa riferimento la proprietà com.ibm.iaccess.autoimport verrà importata automaticamente
+quando il valore intero della proprietà com.ibm.iaccess.autoimport.version non corrisponde all'ultimo
+valore che è stato importato.  Oltre ad offrire un modo per impostare una configurazione iniziale e per aggiornare
+una configurazione esistente, offre anche un modo per ritornare al livello precedente di una configurazione.  La
+configurazione verrà aggiornata ogniqualvolta viene riscontrata una mancata corrispondenza tra il valore intero
+della proprietà della versione e l'ultima versione che è stata importata.  Tuttavia, mentre una configurazione
+importata può modificare la configurazione per un sistema esistente nella configurazione dell'utente, un sistema
+non verrà mai eliminato dalla configurazione dell'utente.
+<p>
+Il percorso della proprietà com.ibm.iaccess.autoimport può essere specificato come
+un percorso assoluto, un URL o con le parole chiave definite nella sezione <a href="#9.3">9.3</a>.  Ad esempio:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+Viene offerta un'ulteriore flessibilità, poiché è possibile distribuire il file di configurazione nel file
+acsbundle.jar o nello stesso indirizzario del file acsbundle.jar.
+In entrambi i casi, impostare la proprietà
+com.ibm.iaccess.autoimport con il nome del file senza un percorso precedente:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+Un valore speciale * è consentito per com.ibm.iaccess.autoimport.version:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+In tal modo, la configurazione verrà importata sempre, indipendentemente dalla versione precedente.
+
+<h3><a id="9.4.2"></a>9.4.2 Distribuzioni IBM i native</h3>
+<p>
+Alcuni dei componenti aggiuntivi di riga comandi che non richiedono una GUI possono essere utilizzate in modo nativo su IBM i.
+Ad esempio, è possibile utilizzare Trasferimento dati per estrarre dati dal database in un tipo di file di foglio elettronico direttamente su IBM i senza scaricare i dati dal PC.
+<p>
+Per eseguire tale operazione, è possibile estrarre l'archivio compresso del prodotto in qualsiasi ubicazione nell'IFS (Integrated File System) IBM i.
+Ad esempio, se si è estratto il file compresso del prodotto in:
+<pre> /home/AccessClientSolutions </pre>
+E si dispone di una richiesta di scaricamento di Trasferimento dati salvata in precedenza in:
+<pre> /some_path/qcustcdt.dtfx </pre>
+È possibile eseguire il seguente comando su IBM i:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Pacchetti personalizzati</h3>
+<p>
+IBM i Access Client Solutions offre agli amministratori di sistema la possibilità di
+limitare l'utilizzo di funzioni specifiche impostando la seguente proprietà nel file
+AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;function, function,...&gt;
+</pre>
+Le parole chiave della funzione che possono essere specificate sono:<br>
+<pre>
+
+   Funzione           Descrizione
+    cfg             Configurazioni di sistema
+    sm              Session Manager 5250
+    5250            Emulazione 5250
+    vcp             Pannello di controllo virtuale
+    console         Console 5250
+    consoleprobe    Ricerca le configurazioni della console nella rete locale
+    hmcprobe        Ricerca le partizioni in una HMC
+    hmi1            Hardware Management Interface 1
+    hmi2            Hardware Management Interface 2
+    keyman          Gestione certificati SSL/TLS
+    dtgui           GUI (graphical user interface) di Trasferimento dati
+    upload          Caricamenti Trasferimento dati
+    download        Scaricamenti Trasferimento dati
+    cldownload      Scaricamenti batch Trasferimento dati
+    l1c             IBM Navigator per i (Console livello 1)
+    rmtcmd          Comando remoto (disponibile dalla riga comandi)
+    splf            Emissione di stampa (file di spool)
+    ifs             Integrated File System
+    db2             Schemi
+    rss             Esegui script SQL
+    db2tools        Centro prestazioni SQL
+    sysdbg          Programma di debug di sistema IBM i
+    checkupdates    Controlla gli aggiornamenti disponibili
+    ssh             Secure Shell
+</pre>
+<p>Le funzioni possono essere escluse anche utilizzando le parole chiave di gruppo:
+<pre>
+
+   Gruppo           Funzioni
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+L'amministratore di sistema può scegliere di limitare l'accesso a specifiche funzioni,
+aggiornando il file AcsConfig.properties.  Limitando l'accesso, la funzione verrà rimossa
+dalla GUI principale e il suo utilizzo verrà disabilitato dalla riga comandi.
+<p>
+Un esempio di come limitare le funzioni consiste nell'aggiungere la seguente riga
+al file AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Se l'amministratore del sistema desidera aggiornare il file AcsConfig.properties
+all'interno di acsbundle.jar prima di distribuirlo agli utenti, di seguito viene illustrato
+come effettuare tale operazione:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+Fare riferimento alla sezione <a href="#9.3">9.3 Modifica dell'ubicazione della configurazione</a> 
+per ulteriori informazioni su come IBM i Access Client Solutions determina quale file AcsConfig.properties utilizzare.
+
+
+<h3><a id="9.6"></a>9.6 Migrazione da IBM i Access per Windows</h3>
+<p>
+I file di configurazione di IBM i Access Client Solutions non sono compatibili con le funzioni corrispondenti in IBM i Access per Windows.  IBM i Access Client Solutions fornisce un percorso di migrazione
+per diversi elementi chiave, come descritto nelle seguenti sezioni.
+
+<h3><a id="9.6.1"></a>9.6.1 Migrazione delle configurazioni di sistema</h3>
+<p>
+La funzione Copia connessioni disponibile dal menu della GUI principale in File-&gt;Copia connessioni fornisce un'interfaccia per copiare le configurazioni di sistema tra IBM i Access Client Solutions e la configurazione Windows legacy supportata da IBM i Access per Windows.  Per
+ulteriori informazioni, consultare la guida per il pannello principale di Copia connessioni.
+
+Le configurazioni di sistema possono anche essere migrate utilizzando la riga comandi.  Per ulteriori informazioni, consultare
+la sezione <a href="#9.1.25">9.1.25 MIGRATE</a>.
+
+<h3><a id="9.6.2"></a>9.6.2 Migrazione dell'emulazione 5250</h3>
+<p>
+I file dell'emulazione 5250 utilizzati dall'emulatore Personal Communications di
+IBM i Access per Windows possono essere convertiti utilizzando Session Manager 5250 in IBM i Access Client Solutions. I seguenti tipi di file possono essere convertiti da Personal Communications:<br>
+<pre>
+   .ws   - profilo emulazione
+   .bch  - file batch emulazione
+   .kmp  - file di personalizzazione della tastiera
+   .pmp  - file tastierino
+   .bar  - file barra dei menu
+</pre>
+I file verranno convertiti in:<br>
+<pre>
+   .hod  - profilo emulazione
+   .bchx - file batch emulazione
+   .kmp  - file di personalizzazione della tastiera
+   .pmp  - file tastierino
+   .bar  - file barra dei menu
+</pre>
+I tipi di file .kmp, .pmp e .bar sono utilizzati da entrambi i prodotti.  Tuttavia,
+i formati non sono compatibili. I file convertiti verranno creati in un percorso specifico di IBM i Access Client Solutions.
+<p>
+La conversione di questi file può essere avviata dal menu Session Manager di IBM i Access Client
+Solutions nel seguente modo:
+<ul>
+<li> selezionando File-&gt;Importa e individuando quindi i file Personal Communications.
+<li> trascinando e rilasciando il file nella finestra Session Manager di IBM i Access Client Solutions.
+</ul>
+...oppure dalla riga comandi utilizzando il modulo aggiuntivo PM5250.  Vedere la sezione <a href="#9.1.30">9.1.30 PM5250</a>.
+
+<p>
+È disponibile un programma di utilità di conversione macro.  Da Session Manager:<br>
+<pre>
+    Strumenti-&gt;Converti macro...
+</pre>
+Nota tecnica:<br>
+Il programma di utilità di conversione macro potrebbe non essere in grado di convertire una macro PC5250 se è una macro personalizzata che contiene altro oltre alle sole sequenze di tasti registrate.  
+
+<h3><a id="9.6.3"></a>9.6.3 Migrazione dei file della richiesta di trasferimento dati salvati</h3>
+<p>
+Trasferimento dati in IBM i Access Client Solutions fornisce un wizard per convertire i file di richiesta di Trasferimento dati salvati che sono stati generati da IBM i Access per Windows.
+<p>
+I seguenti tipi di file possono essere convertiti da IBM i Access per Windows:<br>
+<pre>
+   .dtf - trasferimento dati da IBM i
+   .dtt - trasferimento dati a IBM i
+</pre>
+I file verranno convertiti in:
+<pre>
+   .dtfx - trasferimento dati da IBM i
+   .dttx - trasferimento dati a IBM i
+</pre>
+Il wizard di migrazione di Trasferimento dati non migra i file .fdf. Il nuovo
+tipo di file richiesto da IBM i Access Client Solutions è di tipo .fdfx
+e può essere generato durante uno scaricamento o utilizzando il wizard Crea file.
+<p>
+Il wizard di migrazione del trasferimento file è disponibile dal menu principale
+di Trasferimento dati selezionando Azioni-&gt;Migrazione trasferimento dati
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+Per le applicazioni 5250 che si avvalgono di EHLLAPI quando accedono all'emulazione
+Personal Communications fornito con IBM i Access per Windows, fare riferimento
+al seguente articolo KB per informazioni sull'utilizzo EHLLAPI con IBM i Access Client Solutions:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions ha il supporto per kerberos.  Per utilizzare kerberos
+durante la connessione a un sistema:<br>
+<ol>
+<li>Richiamare Configurazioni di sistema dalla GUI principale
+<li>Selezionare Nuovo o Modifica per modificare una configurazione di sistema esistente
+<li>Nel separatore Connessione, selezionare<br>
+   "Utilizza autenticazione Kerberos; non richiedere"
+</ol>
+L'impostazione di un ambiente kerberos non rientra nello scopo di questo documento.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Gestione chiave</h3>
+<p>
+La gestione dei certificati per le connessioni SSL (Secure Socket Layer) è disponibile dalla GUI principale
+selezionando Strumenti-&gt;Gestione chiave.  Alcune attività nel database di chiavi richiedono la frase di accesso di
+integrità della memorizzazione chiave.
+
+<h3><a id="9.8"></a>9.8 Trasferimento dati</h3>
+<h3><a id="9.8.1"></a>9.8.1 Supporto Trasferimento dati per i fogli elettronici Excel e Calc</h3>
+<p>
+Oltre a supportare gli scaricamenti in un file, Trasferimento dati supporta anche gli scaricamenti in un foglio elettronico attivo per i fogli elettronici Excel di Microsoft o  Calc di OpenOffice.  Per eseguire lo scaricamento in un foglio elettronico attivo,
+nel pannello principale della GUI Trasferimento dati è possibile selezionare
+un'Unità di emissione.  L'Unità di emissione predefinita è File.  Se la
+piattaforma in uso supporta l'interazione con il foglio elettronico Excel e/o Calc,
+dalla casella a discesa Unità di emissione è possibile
+selezionare altre opzioni per un foglio elettronico Excel attivo
+e un foglio elettronico Calc attivo.
+<p>
+Restrizioni:
+<ul>
+<li>Su Windows è richiesta una versione minima di OpenOffice 3.4.1.
+<li>Su Linux e Mac è richiesta una versione minima di OpenOffice 4.2.1 e deve essere installata nell'ubicazione predefinita.
+<li>IBM i Access Client Solutions in esecuzione su Linx o Mac supporta solo l'interazione con OpenOffice.<br>
+IBM i Access Client Solutions in esecuzione su Windows supporta l'interazione con Microsoft Excel o
+OpenOffice Calc.
+<li>La tipologia bit di OpenOffice deve corrispondere alla tipologia bit
+di IBM i Access Client Solutions.<br>
+Spiegazione: OpenOffice è disponibile in entrambe le versioni 32 bit e 64 bit.  Entrambe le versioni possono essere eseguite su un PC a 64 bit.
+Quando si interagisce con un foglio elettronico OpenOffice, la tipologia bit di OpenOffice e IBM i Access Client Solutions deve essere identica altrimenti Trasferimento dati non potrà interagire con il
+foglio elettronico.
+La tipologia bit di IBM i Access Client
+Solutions viene determinata dalla JVM (Java Virtual Machine) su cui è in esecuzione.  Quando vi è una mancata corrispondenza della tipologia bit tra OpenOffice e
+la JVM su cui è in esecuzione IBM i Access Client Solutions e si seleziona un foglio elettronico
+attivo per Unità di emissione, viene visualizzato un errore simile a "Foglio elettronico attivo non trovato".  Se si utilizza un PC a 64 bit, è possibile avviare IBM i Access Client Solutions utilizzando
+il programma di avvio binario a 32 bit o a 64 bit specifico della piattaforma in uso.  Affinché il supporto per il foglio elettronico attivo funzioni, avviare IBM i
+Access Client Solutions utilizzando il file binario specifico della piattaforma che
+corrisponde alla tipologia bit dell'applicazione OpenOffice in uso.
+<br>Poiché Mac supporta solo una JVM a 64 bit, è necessario installare la versione a 64 bit di
+OpenOffice per utilizzare il supporto di foglio elettronico attivo su Mac.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Supporto Trasferimento dati per troncamento caratteri ed eccedenza numerica</h3>
+<p>
+Durante una richiesta di caricamento di Trasferimento dati, se un campo di caratteri o numerico supera la dimensione definita
+del campo, la richiesta di caricamento verrà terminata.
+<p>
+Per consentire che i campi di caratteri vengano troncati dalla fine, impostare la seguente proprietà nel file
+AcsConfig.properties:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Per consentire l'impostazione dei campi numerici sul loro valore positivo o negativo massimo
+quando il campo numerico fornito supera il limite definito, impostare la seguente
+proprietà nel file AcsConfig.properties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Quando queste proprietà sono impostate su true, la richiesta di caricamento continuerà senza fornire
+alcuna indicazione che si è verificato un troncamento o un'eccedenza.  I campi di caratteri
+verranno troncati alla fine.  I campi numerici verranno impostati sul loro valore massimo per un'eccedenza e
+il loro valore minimo per un'insufficienza.
+<p> 
+In alternativa, le proprietà sopra indicate possono essere impostate dalla riga comandi come altre proprietà java nel seguente modo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Trasferimento dati - Nome foglio</h3>
+<p>
+Durante gli scaricamenti, un nome foglio viene generato in base al nome della libreria e del file di origine IBM i
+con ">Sheet#" accodato, dove # viene sostituito con il numero di foglio appropriato.  Ad esempio:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+Per sovrascrivere la parte di libreria e file del nome foglio, è possibile specificare la seguente proprietà:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=stringa_personale<br>
+Ciò genererà:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stringa_personale>Sheet1
+
+<h3><a id="9.9"></a>9.9 Come stabilire una connessione di console con IBM i</h3>
+<p>
+Per eseguire le funzioni amministrative su IBM i, è richiesta una console 5250.
+IBM i Access Client Solutions supporta entrambe le configurazioni della console LAN e HMC.
+<p>
+Se si conosce il nome host di servizio o l'indirizzo IP del servizio per IBM i o il
+nome host o l'indirizzo IP della console HMC, è possibile configurare le informazioni della
+console in IBM i Access Client Solutions effettuando le operazioni riportate di seguito:<br>
+<ol>
+<li>Avviare IBM i Access Client Solutions sul PC.
+<li>Nel pannello principale, fare clic su Configurazioni di sistema.
+<li>Fare clic sul pulsante Nuovo per immettere una nuova configurazione oppure sul
+   pulsante Modifica per aggiornare una configurazione esistente
+<li>Selezionare il separatore Console
+<li>Immettere le informazioni appropriate per il tipo di console.
+</ol>
+<p>
+Per un IBM i in cui la configurazione della console non esista già (ad esempio, un nuovo sistema
+appena ricevuto), durante l'IPL verrà assegnato automaticamente un indirizzo IP per una connessione della console
+compreso nell'intervallo tra 169.254.62.0 e 169.254.62.63. Per questi casi, le seguenti operazioni consentiranno di stabilire una connessione della console utilizzando
+IBM i Access Client Solutions:<br>
+<ol>
+<li>Disabilitare la connettività wireless del PC.  Le seguenti operazioni richiedono
+   una porta ethernet cablata.
+<li>Collegare con un cavo ethernet il PC e la porta T1 di IBM i.
+<li>Avviare IBM i Access Client Solutions sul PC.
+<li>Nel pannello principale, fare clic su Configurazioni di sistema.
+<li>Da Configurazioni di sistema, fare clic sul pulsante Individua console...
+<li>Dal pannello Localizzatore di IBM i fare clic sul pulsante Ricerca.
+<li>Se la sequenza IPL su IBM i ha raggiunto la fase in cui viene assegnato l'indirizzo IP
+   automatico, l'indirizzo IP viene visualizzato nel pannello Ricerca.
+<li>Fare clic sull'indirizzo IP visualizzato per selezionarlo e fare clic sul pulsante Console per
+   connettere una console 5250.
+<li>Viene visualizzato un pannello in cui vengono chieste le credenziali dei programmi di manutenzione.
+<li>Una volta immesse le credenziali valide, verrà visualizzata una console 5250.
+<li>La console può essere utilizzata per gestire le attività di installazione e configurazione iniziali.
+</ol>
+<p>
+Quando si è pronti ad aggiungere il sistema IBM i al resto dell'infrastruttura di rete,
+consultare le altre informazioni contenute in IBM InfoCenter per configurare
+l'adattatore LAN programmi di manutenzione:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Consultare la sezione "Configurazione del server dei programmi di manutenzione per DST"
+
+<p>
+Per i sistemi IBM i che già dispongono di una configurazione della console LAN e sono già
+nell'infrastruttura di rete, è possibile effettuare le operazioni riportate di seguito per trovare le
+configurazioni esistenti della console:<br>
+<ol>
+<li>Avviare IBM i Access Client Solutions sul PC.
+<li>Nel pannello principale, fare clic su Configurazioni di sistema.
+<li>Da Configurazioni di sistema, fare clic sul pulsante Individua console...
+<li>Nel pannello Localizzatore di IBM i, nel campo Vicino, immettere
+   un indirizzo IP compreso nell'intervallo in cui si desidera effettuare la ricerca.
+<li>Fare clic sul pulsante Ricerca per trovare le console LAN nell'intervallo specificato.
+<li>Fare clic sull'indirizzo IP visualizzato per selezionarlo e fare clic sul pulsante Console per
+   connettere una console 5250.
+<li>Viene visualizzato un pannello in cui vengono chieste le credenziali dei programmi di manutenzione.
+<li>Una volta immesse le credenziali valide, verrà visualizzata una console 5250.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Ulteriori font</h3>
+<p>
+È possibile aggiungere ulteriori font per l'emulazione 5250 nell'indirizzario Font.
+<p>
+Per fornire più ubicazioni e/o alternative per i font aggiuntivi, impostare la proprietà com.ibm.iaccess.Fonts contenuta nel file AcsConfig.properties.
+<p>
+L'indirizzario Font predefinito può essere sovrascritto impostando la proprietà
+com.ibm.iaccess.Fonts su:<br>
+<ol> 
+<li>&lt;percorso&gt; che è un indirizzario contenente i font
+<li>&lt;percorso&gt;/&lt;nomefile&gt; di uno specifico file di font (ad es. .ttf)
+<li>URL a un file di font
+<li>un elenco delimitato da punti e virgola di uno dei precedenti
+</ol>
+<p>
+Nota:<br>
+&lt;path&gt; può essere un percorso assoluto o un percorso relativo a partire dall'ubicazione di acsbundle.jar. Verranno riconosciuti solo font monospace dall'emulazione 5250.
+<p>
+Esempio 1 (predefinito):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+Esempio 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Utilizzo di credenziali da un file netrc</h3>
+<p>
+Per abilitare l'utilizzo di un file .netrc (Linux e Mac) o di un file _netrc (Windows),
+andare alla GUI principale di IBM i Access Client Solutions e, dalla barra dei menu principale, selezionare<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Modifica-&gt;Preferenze<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Separatore Generale<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selezionare la casella: <b>Leggere il file netrc per informazioni di collegamento</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Fare clic sul pulsante Applica<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Riavviare IBM i Access Client Solutions<br>          
+<p>
+Il formato standard di un file netrc è:<br>
+<pre>
+     machine &lt;sistema&gt; login &lt;id-utente&gt; password &lt;parola d'ordine&gt;
+</pre>
+<p>
+Il file netrc deve essere memorizzato nell'indirizzario principale dell'utente e nome sistema e id-utente devono corrispondere a <b>Configurazioni di sistema</b>.  Da IBM i Access Client
+Solutions:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selezionare Configurazioni di sistema<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Scegliere quindi Seleziona e poi Modifica per modificare il sistema<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Separatore Connessioni<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selezionare <b>Utilizza nome utente predefinito da richiedere una volta per ogni sistema</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Immettere l'id-utente per: <b>Nome utente predefinito</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selezionare OK<br>          
+
+<p>
+Quando il nome sistema e <b>Nome utente predefinito</b> corrispondono al contenuto del file netrc,
+verrà stabilita una connessione al sistema utilizzando la parola d'ordine dal file netrc senza
+presentare alcuna richiesta all'utente.
+
+<h3><a id="9.12"></a>9.12 IFS (Integrated File System)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 e sicurezza</h3>
+<p>
+Il supporto Integrated File System utilizza il file system QFileSvr.400 per copiare o inviare oggetti
+da una partizione IBM i a un'altra. Ciò significa che profilo e parola d'ordine utente su entrambe le partizioni
+devono corrispondere e le partizioni devono avere lo stesso valore di sistema a livello della parola d'ordine (QPWDLVL).
+Se si sta utilizzando l'autenticazione Kerberos, entrambe le partizioni devono avere Network Authentication Service e
+EIM (Enterprise Identity Mapping) configurati. Per ulteriori dettagli, consultare l'argomento "Security and object authority in the QFileSvr.400 file system" nell'IBM i Knowledge center.
+<p>
+Le connessioni ad altre partizioni IBM i stabilite dal file system QFileSvr.400 non sono protette.
+Se è necessaria una connessione protetta quando si copiano o inviano oggetti da una partizione IBM i a un'altra,
+la configurazione per la partizione deve essere impostata per utilizzare SSL, Configurazioni di sistema deve avere
+l'opzione "Utilizza SSL per la connessione" selezionata per tale partizione e la seguente proprietà deve
+essere impostata nel file AcsConfig.properties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+In alternativa, la proprietà può essere impostata dalla riga comandi come altre proprietà java nel seguente modo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 Autorizzazione IFS</h3>
+<p> 
+Il supporto Integrated File System richiede l'autorizzazione per utilizzare i seguenti comandi CL:<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+Se l'utente non può utilizzare questi comandi CL, le azioni Copia, Incolla, Invia, Elimina e Nuova cartella avranno esito negativo.
+
+<h3><a id="9.12.3"></a>9.12.3 Limitazioni dell'IFS</h3>
+<p>
+Il supporto Integrated File System non consente azioni per gli oggetti che hanno percorsi che iniziano con
+/QFileSvr.400, /QNTC o /QOPT.  Se il percorso di indirizzario corrente o qualsiasi percorso oggetto selezionato iniziano con
+/QFileSvr.400, /QNTC o /QOPT, tutte le voci nel menu Azioni saranno disabilitate e non verrà visualizzato un menu di contesto.
+
+<h3><a id="9.12.4"></a>9.12.4 IFS e ASP indipendenti</h3>
+<p>
+Il supporto Integrated File System non consente le azioni Copia, Incolla o Invia quando l'oggetto di origine
+o il percorso di destinazione si trovano su un ASP indipendente.
+
+<h3><a id="9.13"></a>9.13 Terminale SSH (Secure Shell)</h3>
+<p>
+Per le piattaforme su cui esiste un Secure Shell per impostazione predefinita o su cui è stato installato, la funzione terminale SSH apparirà sulla GUI principale di IBM i Access Client Solutions.  Il terminale SSH avvierà un'emulazione terminale all'IFS (integrated file system) IBM i.
+<p>
+La maggior parte dei sistemi Mac, Linux e altri derivati di UNIX dispongono già di un Secure Shell per impostazione predefinita. Per tali piattaforme, si presume che esista un client OpenSSH e si trovi in /usr/bin/ssh.  Gli utenti Windows dovranno installare uno dei Secure Shell disponibili per Windows.
+<p>
+Secure Shell supportati da IBM i Access Client Solutions:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin richiede l'installazione del pacchetto openssh
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash è disponibile come parte del sottosistema Linux per Windows
+
+<p>
+Se sono installate più applicazioni SSH, è possibile utilizzare la proprietà com.ibm.iaccess.PreferredSSHClient per impostare il client SSH preferito.
+<p>Esempi Linux:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Esempi Mac:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Esempi Windows:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+Nei casi in cui il client SSH non è installato nell'ubicazione standard è possibile utilizzare la proprietà com.ibm.iaccess.PreferredSSHClient
+per fornire il percorso completo al client SSH installato.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+Dopo aver fornito il percorso cmpleto, occorre anche impostare com.ibm.iaccess.SSHClientOpt per fornire tutti gli argomenti necessari. Ad esempio, per disabilitare le avvertenze se non si utilizza l'inoltro X11:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 Prerequisiti terminale SSH</h3>
+Installare l'opzione 5733-SC1 IBM Portable Utilities per i su IBM i.
+<br>Avviare il daemon Secure Shell utilizzando il comando:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Se si riceve un errore di connessione nel client SSH avviato (ad esempio, "connessione rifiutata"),
+o viene visualizzata una finestra che scompare immediatamente, può essere necessario avviare il daemon SSH con il comando sopra indicato.
+
+
+<hr><h3><a id="10.0"></a>10.0 Diagnostica del servizio</h3>
+<p>
+Se si verifica un problema che richiede l'assistenza IBM, il rappresentante del servizio IBM può indirizzare verso una o entrambe le seguenti operazioni:
+<p>
+Dalla GUI principale di IBM i Access Client Solutions:<br>
+<ul>
+ <li>selezionare Strumenti-&gt;Genera registrazioni servizio<br>
+     Questa opzione esegue la stessa funzione dell'opzione della riga comandi nella sezione <a href="#9.1.5">9.1.5 Dump</a>.  Normalmente, questa funzione deve essere eseguita subito dopo il verificarsi
+dell'errore.  A seconda del problema, il rappresentante dell'assistenza IBM
+     indicherà all'utente di eseguire questa operazione più volte.
+ <li>selezionare Strumenti-&gt;Comprimi registrazioni servizio<br>
+     Questa opzione esegue la stessa funzione dell'opzione della riga comandi nella sezione <a href="#9.1.6">9.1.6 Medic</a>.  Questa funzione raccolte i dettagli relativi all'ambiente della stazione di lavoro
+     e ai pacchetti registrati dal servizio in un archivio zip che è possibile
+     inviare a IBM.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 FAQ (Frequently Asked Questions)</h3>
+<p>
+<pre>
+D1    Quando tento di avviare IBM i Access Client Solutions, viene visualizzato il seguente
+      errore:
+             impossibile caricare la classe: java.lang.UnsupportedClassVersionError
+R1-1  È necessario utilizzare JDK 6,0 o una versione successiva. Consultare la sezione <a href="#3.0">3.0 Prerequisiti</a>
+
+D2    Quando tento di avviare il prodotto mediante uno dei file binari forniti o
+      script da una sessione del terminale o una shell, viene visualizzato il seguente errore:
+         Autorizzazione negata
+R2-1  Controllare i permessi del file per accertarsi di disporre dell'autorizzazione
+      per l'esecuzione. Consultare la sezione <a href="#6.0">6.0 Autorizzazioni file</a>.
+
+D3    Quando si fa doppio clic su uno dei file forniti per avviare il prodotto,
+      non accade nulla.
+R3-1  Probabilmente, Java non è installato. Consultare la sezione <a href="#3.0">3.0 Prerequisiti</a>
+R3-2  Il file utilizzato per avviare il prodotto probabilmente non dispone dell'autorizzazione
+      per l'esecuzione. Consultare la sezione <a href="#6.0">6.0 Autorizzazioni file</a>.
+R3-3  Probabilmente, vi sono dei problemi relativi all'ambiente in uso. Per visualizzare gli errori che si sono
+      verificati, provare ad eseguire il file fornito da una riga comandi.
+      Consultare la sezione <a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a>.
+
+D4    Si desidera utilizzare uno dei file binari per avviare il prodotto, ma viene visualizzato
+      il seguente errore: "Errore durante il caricamento del modulo Java."
+R4-1  Il file binario non è riuscito a individuare l'indirizzario home dell'installazione java.
+      Verificare che java sia installato. Consultare la sezione <a href="#3.0">3.0 Prerequisiti</a>.
+R4-2  La sezione <a href="#7.1.1">7.1.1 Avvio del prodotto – Ulteriori opzioni</a>
+      contiene altri metodi per avviare il prodotto mediante un file binario.
+
+D5    Dopo avere impostato la variabile di ambiente JAVA_HOME, il file binario utilizzato per
+      avviare il prodotto funziona da una riga comandi, ma non funziona se si fa doppio clic
+      sul file.
+R5-1  La variabile di ambiente JAVA_HOME potrebbe non essere visibile dal gestore file
+      che si sta utilizzando quando si fa doppio clic sul file. L'impostazione
+      delle variabili di ambiente varia da un sistema operativo all'altro e così la relativa visibilità.
+      Provare ad impostare la variabile di ambiente JAVA_HOME come una variabile di ambiente di sistema
+      per il proprio sistema operativo. Il sistema operativo può fare riferimento
+      alle variabili di ambiente come a variabili di ambiente globali.
+      Dopo avere impostato la variabile di ambiente JAVA_HOME, chiudere e riaprire il gestore file e
+      provare nuovamente a fare doppio clic sul file binario.
+
+D6    Quando si fa doppio clic su uno dei file forniti per avviare il prodotto,
+      il file viene visualizzato in un editor di testo.
+R6-1  Accertarsi di utilizzare uno script con un'estensione file riconosciuta dal
+      sistema operativo in uso.
+R6-2  Provare uno degli altri script.
+R6-3  Cambiare il programma che apre il file.
+R6-4  Controllare i permessi del file per accertarsi di disporre dell'autorizzazione
+      per l'esecuzione. Consultare la sezione <a href="#6.0">6.0 Autorizzazioni file</a>.
+
+D7    Quando si fa doppio clic su uno dei file forniti per avviare il prodotto,
+      viene richiesto quale programma utilizzare per aprire il file.
+R7-1  Accertarsi di utilizzare uno script con un'estensione file riconosciuta dal
+      sistema operativo in uso.
+R7-2 Impostare il programma che apre il file su un valore compatibile con il file binario
+      o lo script che si sta utilizzando. Ad esempio, terminale (su Mac).
+R7-3  Controllare i permessi del file per accertarsi di disporre dell'autorizzazione
+      per l'esecuzione. Consultare la sezione <a href="#6.0">6.0 Autorizzazioni file</a>.
+
+D8    Quando si avvia IBM i Access Client Solutions su Mac da Finder, viene
+      visualizzata una sessione del terminale che rimane visualizzata anche dopo aver chiuso
+      IBM i Access Client Solutions.
+R8-1  Per impedire che venga visualizzata la sessione del terminale, utilizzare gli script di installazione
+      per Mac nella Guida rapida.
+
+D9    Qual è il modo migliore per avviare il prodotto?
+R9-1  Il prodotto può essere avviato con uno qualsiasi dei tre metodi illustrati nella sezione
+      <a href="#7.0">7.0 Avvio del prodotto</a> utilizzando i file binari, gli script o
+      la riga comandi. Qualsiasi metodo che funzioni nell'ambiente in uso è accettabile.
+
+D10   Perché sono disponibili sia i file binari (Start_Programs) che gli script
+      (Sample_Scripts) per avviare il prodotto?
+R10-1 Gli script non sono specifici per il sistema operativo e offrono un modo più generico
+      per avviare il prodotto quando il file binario specifico per la piattaforma non funziona.
+R10-2 Alcuni sistemi operativi richiedono dei file binari durante la definizione delle associazioni di file.
+      Per la maggior parte dei casi, per avviare il prodotto è necessario utilizzare i file binari.
+R10-3 Alcuni ambienti possono essere dotati di firewall che limitano l'accesso a parti di
+      IBM i Access Client Solutions.  L'utilizzo di uno dei file binari per avviare il
+      prodotto faciliterà l'autorizzazione dell'accesso da parte degli amministratori di sistema.
+
+D11   Dopo avere installato JDK 6.0 (o una versione successiva), viene ancora visualizzato il
+      seguente
+      errore:
+      impossibile caricare la classe: java.lang.UnsupportedClassVersionError
+R11-1 La versione predefinita di java in uso sulla stazione di lavoro è precedente
+      a JDK 6.0. Sarà necessario utilizzare un'opzione che specifichi esplicitamente
+      il percorso alla home Java per JDK 6. Consultare la sezione <a href="#7.1.2">7.1.2 Ricerca
+      del percorso home Java</a>. Utilizzare il percorso home Java per uno dei metodi descritti in
+      una delle seguenti sezioni:
+      <a href="#7.1.1">7.1.1 Avvio del prodotto – Ulteriori opzioni</a><br>
+      <a href="#7.3">7.3 Avvio del prodotto (mediante la riga comandi)</a><br>
+
+D12   Non si riesce ad importare i file di corrispondenza personalizzati della tastiera (.kmp)
+      dalle sessioni dell'emulatore 5250 di Windows.
+R12-1 Nella versione iniziale di IBM i Access Client Solutions, che è diventata
+      disponibile nel luglio 2012, l'importazione dei file .kmp dai profili della sessione
+      dell'emulazione 5250 di Windows (.ws) non era supportata. A partire dalla versione che
+      è diventata disponibile nell'ottobre 2012, l'importazione dei file .kmp dai profili della sessione
+      5250 (.ws) è supportata.
+
+D13   La personalizzazione della tastiera per l'emulatore 5250 è molto diversa rispetto a come
+      era in Windows. Come procedere?
+R13-1 La corrispondenza della tastiera è suddivisa in categorie. Da una sessione di emulazione:
+      Fare clic su Modifica &gt; Preferenze &gt; tastiera o fare clic sul pulsante Riconfigura sulla
+         barra degli strumenti.
+      Fare clic sul separatore Assegnazione di tasti.
+      Selezionare una categoria. Le corrispondenze di tasti predefinite verranno visualizzate sotto
+         le categorie "Funzioni host" e "Comandi di menu".
+      Selezionare la funzione che si desidera assegnare.
+      Fare clic su Assegna tasto.
+      Sulla tastiera premere il tasto (o la combinazione di tasti) che si desidera assegnare
+a questa funzione.
+R13-2 Per la guida sulle corrispondenze di tasti personalizzate:
+      Fare clic su Modifica &gt; Preferenze &gt; tastiera o fare clic sul pulsante Riconfigura sulla
+      barra degli strumenti. Selezionare il pulsante ?.
+
+D14   Quando si tenta di avviare il prodotto su Mac OS X 10.8 Mountain Lion, viene visualizzato
+      un messaggio in cui viene indicato che l'applicazione non è firmata.
+R14-1 Si tratta di una politica di sicurezza applicata per impostazione predefinita a partire da Mac OS X
+      10.8 Mountain Lion. Fare riferimento alla seguente pagina Web per informazioni su come consentire
+      l'esecuzione dell'applicazione:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+D15   Gli utenti di IBM i Access per Windows possono migrare le configurazioni di sistema
+verso IBM i Access Client Solutions?
+R15-1 Consultare la sezione <a href="#9.6.1">9.6.1 Migrazione delle configurazioni di sistema</a>.
+
+D16   Gli utenti di IBM i Access per Windows possono migrare i profili dell'emulazione
+      verso IBM i Access Client Solutions?
+R16-1 Consultare la sezione <a href="#9.6.2">9.6.2 Migrazione dell'emulazione 5250</a>
+
+D17   Gli utenti di IBM i Access per Windows possono migrare i file della richiesta di trasferimento
+      dati verso IBM i Access Client Solutions?
+R17-1 Consultare la sezione <a href="#9.6.3">9.6.3 Migrazione dei file della richiesta di trasferimento dati salvati</a>.
+
+D18   EHLLAPI funziona con IBM i Access Client Solutions?
+R18-1 Consultare la sezione <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+D19   Kerberos funziona con IBM i Access Client Solutions?
+R19-1 Consultare la sezione <a href="#9.6.5">9.6.5 Kerberos</a>
+
+D20  Gli amministratori di sistema possono nascondere alcune funzioni agli utenti?
+R20-1 Consultare la sezione <a href="#9.5">9.5 Pacchetti personalizzati</a>
+
+D21   Quando si seleziona l'icona della guida in un pannello, non viene visualizzato alcun testo.
+R21-1 Il testo della guida normalmente viene visualizzato nel browser del desktop. In alcuni casi
+      il desktop potrebbe non avere un browser o potrebbe non essere configurato correttamente.
+R21-2 Per visualizzare il testo della guida senza usare il browser del desktop, impostare la seguente
+      proprietà nel file AcsConfig.properties:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      In alternativa, la proprietà può essere impostata dalla riga comandi come altre
+      proprietà java nel seguente modo:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+D22   Quando si utilizza Trasferimento dati e si seleziona un'Unità di emissione di tipo "Foglio
+      elettronico Excel attivo" o "Foglio elettronico Calc attivo", viene visualizzato il seguente errore:
+         "Foglio elettronico attivo non trovato"
+R22-1 Non è disponibile alcun foglio elettronico attivo. Aprire un foglio elettronico nuovo o esistente
+      e ripetere la richiesta.
+R22-2 Potrebbe esistere una mancata corrispondenza della tipologia bit tra l'applicazione del foglio elettronico
+      utilizzato e Java Virtual Machine che esegue IBM i Access Client Solutions.
+      Consultare la sezione <a href="#9.8">9.8 Supporto Trasferimento dati per i fogli elettronici Excel e Calc</a>
+
+D23   Quando si usa Trasferimento dati su Mac, non viene visualizzata alcuna opzione nell'Unità di emissione
+      per interagire con un foglio elettronico attivo.
+R23-1 Trasferimento dati non è in grado di interagire con i fogli elettronici attivi su Mac a causa
+      della mancata corrispondenza della tipologia bit tra l'applicazione OpenOffice e
+      la JVM che esegue IBM i Access Client Solutions. Per ulteriori dettagli, consultare la sezione
+      <a href="#9.8">9.8 Supporto Trasferimento dati per i fogli elettronici Excel e Calc</a>.
+
+D24   Quando si utilizza Trasferimento dati e si seleziona un'Unità di emissione di tipo "Foglio elettronico Calc attivo"
+      nella casella Nome non viene visualizzato alcun nome.
+R24-1 Questo funzionamento è normale per i nuovi fogli elettronici Calc che non sono mai stati salvati.
+      Trasferimento dati
+      sarà comunque in grado di aggiornare il foglio elettronico con i dati scaricati.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Cronologia aggiornamento</h3>
+<p>
+Fare riferimento alla seguente pagina Web:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

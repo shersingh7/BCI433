@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QuickStartGuide</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - QuickStartGuide</h2>
+<h2>此文件內容的前次更新日期：2017 年 9 月 21 日</h2>
+
+<h3>內容：</h3>
+<a href="#1.0">1.0 簡介</a><br>
+<a href="#2.0">2.0 Windows 安裝</a><br>
+<a href="#3.0">3.0 Mac 安裝</a><br>
+<a href="#4.0">4.0 Linux 安裝</a><br>
+<a href="#5.0">5.0 安裝更新項目</a><br>
+<a href="#6.0">6.0 相關資訊</a><br>
+<a href="#7.0">7.0 解除安裝</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 簡介</h3>
+<p>
+本手冊提供有關如何在本端磁碟機為單一使用者部署本產品的指示。
+
+
+<p>
+也有各種其他方式可以用來部署本產品，包括：<br>
+<ul>
+<li>可由多個使用者存取的共用位置。<br>
+請參閱 <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a>
+<li>將 zip 保存檔解壓縮至您選擇的任何位置，包括可攜式媒體（例如 CD、DVD、USB 快閃記憶體隨身碟）或本端磁碟機上的任何路徑。請參閱 <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> 文件（位於 Documentation 資料夾）的<a href="../Documentation/GettingStarted_en.html#5.0">安裝</a>一節
+<li>請參閱 <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> 中的<a href="../Documentation/GettingStarted_en.html#9.4">其他部署選項</a>，以取得如下的這些選項：<a href="../Documentation/GettingStarted_en.html#9.4.1">自動匯入配置設定</a>（用來傳送相同配置至多個使用者）及<a href="../Documentation/GettingStarted_en.html#9.4.2">原生 IBM i 部署</a>（讓您可在 IBM i 直接使用指令行外掛程式）。
+</ul> 
+
+<p>
+若要在本端磁碟機上為單一使用者部署本產品，請參閱本文件的其餘章節。
+
+<hr><h3><a id="2.0"></a>2.0 Windows 安裝</h3>
+
+<p>
+找出產品 zip 保存檔或產品 CD。
+
+<p>
+如果您是使用產品 zip 保存檔，請解壓縮 zip 保存檔的內容。
+<br>建議：這可以透過下列方式完成：使用「Windows 檔案總管」選取 zip 保存檔，然後對其按一下滑鼠右鍵，接著選取「解壓縮全部...」。
+<p>
+使用「Windows 檔案總管」，找出產品的 Windows_Application 資料夾。
+<p>
+若要為現行使用者安裝 32 位元版本，請按兩下 install_acs_32。
+<p>
+若要為現行使用者安裝 64 位元版本，請按兩下 install_acs_64。
+<p>
+若要在多使用者 PC 上為所有使用者安裝 32 位元版本，請按兩下 install_acs_32_allusers。
+<p>
+若要在多使用者 PC 上為所有使用者安裝 64 位元版本，請按兩下 install_acs_64_allusers。
+<p>
+如果這是新安裝，將有數個提示，協助您自訂初次安裝。如果授權合約出現，請接受它。
+<p>
+如果這是升級，將保留先前設定。
+<p>
+當安裝完成時，將顯示完成訊息。
+
+<p>
+成功的單一使用者安裝將複製應用程式到：
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+附註：這些 Script 的起始版本已將產品檔案複製到相對於 MyDocuments 的路徑。
+現行版本已將產品檔案複製到基於環境變數 %HOMEDRIVE% 和 %HOMEPATH% 的路徑。使用這些 Script 更新產品時，更新項目會出現在找到的第一個位置。
+<p>
+成功的多使用者安裝將複製應用程式到：
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 在 Windows 上啟動產品</h3>
+<p>
+連按兩下桌面上的「存取用戶端解決方案」圖示。
+
+<hr><h3><a id="3.0"></a>3.0 Mac 安裝</h3>
+<p>
+使用 Finder 找出產品 zip 保存檔或 CD。
+<p>
+如果您是使用產品 zip 保存檔，請解壓縮 zip 保存檔的內容。
+<br>建議：如果您剛下載產品，請在 Downloads 中尋找。
+如果尚未解壓縮 zip 保存檔的內容，則您可以連按兩下 zip 保存檔以解壓縮其內容。
+<p>
+找出 Mac_Application 資料夾。按兩下 install_acs
+<p>
+如果這是新安裝，將有數個提示，協助您自訂初次安裝。如果授權合約出現，請接受它。
+<p>
+如果這是升級，將保留先前設定。
+<p>
+當安裝完成時，將顯示完成訊息。
+<p>
+成功安裝將複製應用程式到 Applications 資料夾。
+
+<p>
+如果已從 Finder 啟動安裝，則會開啟終端機視窗來執行安裝。安裝完成時，您可以關閉終端機視窗。
+<p>
+技術文件：<br>
+根據您的安全設定及所使用的 OS X 版本，您可能會得到一個蹦現視窗，指出無權執行 install_acs。
+如果發生該情況，您需要使用下列其中一種方法，來授權 install_acs 執行：<br>
+<ul>
+<li>如果呈現一個選項讓您「開啟」install_acs，請選取它。
+<li>在 install_acs 上按一下滑鼠右鍵，然後選取「開啟」。<br>
+   呈現蹦現視窗時，請選取「開啟」。
+<li>如果上述選項都無法運作，請移至：<br>
+    系統喜好設定...<br>
+    安全與隱私權<br>
+    如果有一個開啟 "IBM i Access Client Solutions" 的選項，請選取它。
+    否則，您將需要調整「一般」標籤上的設定，以容許其他應用程式執行。在 "IBM i Access Client Solutions" 第一次啟動之後，您可以變回原先的安全設定。
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 在 Mac 上啟動產品</h3>
+<p>
+使用 Finder 移至 Applications。
+<p>
+找出 "IBM i Access Client Solutions"，然後按兩下以啟動產品。
+<p>
+技術文件：<br>
+根據您的安全設定及所使用的 OS X 版本，您可能會得到一個蹦現視窗，指出無權執行應用程式。
+如果發生該情況，您需要使用下列其中一種方法，來授權應用程式執行：<br>
+<ul>
+<li>如果呈現一個選項讓您「開啟」應用程式，請選取它。
+<li>在 "IBM i Access Client Solutions" 圖示上按一下滑鼠右鍵，然後選取「開啟」。<br>
+   呈現蹦現視窗時，請選取「開啟」。
+<li>如果上述選項都無法運作，請移至：<br>
+    系統喜好設定...<br>
+    安全與隱私權<br>
+    如果有一個開啟 "IBM i Access Client Solutions" 的選項，請選取它。
+    否則，您將需要調整「一般」標籤上的設定，以容許其他應用程式執行。在 "IBM i Access Client Solutions" 第一次啟動之後，您可以變回原先的安全設定。
+</ul>
+技術文件：<br>
+如果系統提示您安裝「Java 6 SE 執行時期」，則不需要安裝 Java 6。請安裝 Java 8，然後嘗試重新啟動產品。
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Linux 安裝</h3>
+<p>
+找出產品 zip 保存檔或產品 CD。
+
+<p>
+如果您是使用產品 zip 保存檔，請解壓縮 zip 保存檔的內容。
+<br>建議：從終端機視窗中，使用 unzip 指令。
+<p>
+找出 Linux_Application 資料夾。
+<p>
+因為需要具有 root 權限，才能使用安裝 Script，所以請使用 sudo，從終端機視窗執行安裝 Script。例如：<p>
+如果是在 32 位元架構上，請使用下列指令：<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+如果是在 64 位元架構上，請使用下列指令：<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+如果這是新安裝，將有數個提示，協助您自訂初次安裝。如果授權合約出現，請接受它。
+<p>
+如果這是升級，將保留先前設定。
+<p>
+當安裝完成時，將顯示完成訊息。
+
+<p>
+成功安裝將複製應用程式到下列位置：<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 在 Linux 上啟動產品</h3>
+<p>
+在應用程式資料夾中，或者使用「超鍵」，然後鍵入 "IBM i Access Client Solutions" 來搜尋 "IBM i Access Client Solutions"。
+
+
+<hr><h3><a id="5.0"></a>5.0 安裝更新項目</h3>
+<p>
+有新版本可用時，您可以遵循本文件中的安裝指示來套用更新項目。如果系統提示您置換現有檔案，請回答「全部皆是」。
+<p>
+如果您是使用 Windows、Mac 或 Linux 的 install_acs Script，則不會更新 AcsConfig.properties
+檔案，因此您對該檔案所做的任何自訂配置變更都不會遺失。
+
+
+
+<hr><h3><a id="6.0"></a>6.0 相關資訊</h3>
+<p>
+如需自訂產品的相關資訊，或如果您在安裝或啟動產品時遇到問題，請參閱位於 Documentation 資料夾的 <a href="../Documentation/GettingStarted_en.html">GettingStarted</a> 文件。
+
+
+
+<hr><h3><a id="7.0"></a>7.0 解除安裝</h3>
+<p>
+若要移除已由安裝 Script 複製到以上位置的應用程式檔案，請使用安裝 Script 所在的同一個資料夾中平台專用的解除安裝 Script：
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

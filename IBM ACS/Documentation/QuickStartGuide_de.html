@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Leitfaden für den Schnelleinstieg</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Leitfaden für den Schnelleinstieg</h2>
+<h2>Letzte Aktualisierung des Dokumentinhalts: 21. September 2017</h2>
+
+<h3>Inhalt</h3>
+<a href="#1.0">1.0 Einführung</a><br>
+<a href="#2.0">2.0 Installation für Windows</a><br>
+<a href="#3.0">3.0 Installation für Mac</a><br>
+<a href="#4.0">4.0 Installation für Linux</a><br>
+<a href="#5.0">5.0 Installation von Updates</a><br>
+<a href="#6.0">6.0 Weitere Informationen</a><br>
+<a href="#7.0">7.0 Deinstallation</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Einführung</h3>
+<p>
+Dieser Schnelleinstieg enthält Anweisungen zur Implementierung dieses Produkts auf einer lokale Festplatte für einen einzelnen Benutzer.
+<p>
+Es gibt eine Vielzahl von anderen Möglichkeiten, wie dieses Produkt
+bereitgestellt werden kann. Dazu gehören: <br>
+<ul>
+<li>Sie verwenden eine gemeinsam genutzte Position, auf die mehrere Benutzer
+zugreifen können.
+<br>
+Weitere Informationen finden Sie im Artikel
+<a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a>.
+<li>Sie entpacken das ZIP-Archiv an einer beliebigen Position Ihrer Wahl, die
+auch ein tragbares Medium (z. B. CD, DVD oder USB-Flashlaufwerk) oder ein
+beliebiger Pfad im lokalen Festplattenlaufwerk sein kann.
+Weitere
+Informationen
+enthält
+der
+Abschnitt <a href="../Documentation/GettingStarted_en.html#5.0">Installation</a>
+des Dokuments
+<a href="../Documentation/GettingStarted_en.html">Erste Schritte</a>, das im
+Dokumentationsordner verfügbar ist.
+<li>Im Abschnitt <a href="../Documentation/GettingStarted_en.html#9.4">Andere
+Implementierungsoptionen</a>
+des Dokuments
+<a href="../Documentation/GettingStarted_en.html">Erste Schritte</a>
+finden Sie beispielsweise unter
+<a href="../Documentation/GettingStarted_en.html#9.4.1">Konfigurationseinstellungen
+automatisch importieren</a> Informationen dazu, wie Sie dieselbe Konfiguration
+an mehrere Benutzer weitergeben können. Unter
+<a href="../Documentation/GettingStarted_en.html#9.4.2">Native IBM
+i-Implementierungen</a> ist dort beschrieben, wie Sie die Befehlszeilen-Plug-ins
+direkt auf dem IBM i-System verwenden.
+</ul> 
+
+<p>
+Die Implementierung dieses Produkts
+auf einer lokale Festplatte für einen einzelnen Benutzer ist in den übrigen
+Abschnitten des vorliegenden Dokuments beschrieben.
+
+<hr><h3><a id="2.0"></a>2.0 Installation für Windows</h3>
+
+<p>
+Suchen Sie das ZIP-Archiv oder die Produkt-CD. <p>
+Wenn Sie das ZIP-Archiv des Produkts verwenden, extrahieren Sie jetzt dessen Inhalt.
+<br>Vorschlag: Dazu können Sie folgendermaßen vorgehen: Wählen Sie das ZIP-Archiv mit Windows Explorer aus, klicken Sie mit der rechten Maustaste darauf, und wählen Sie dann
+"Alle extrahieren..." aus.
+
+<p>
+Suchen Sie mit Windows Explorer den Windows_Application-Ordner des Produkts aus.
+<p>
+Zur Installation der 32-Bit-Version für den aktuellen Benutzer doppelklicken Sie
+auf "install_acs_32".
+<p>
+Zur Installation der 32-Bit-Version für den aktuellen Benutzer doppelklicken
+Sie auf "install_acs_64".
+<p>
+Zur Installation der 32-Bit-Version für alle Benutzer auf einem PC
+für mehrere Benutzer doppelklicken Sie auf "install_acs_32_allusers".
+<p>
+Zur Installation der 64-Bit-Version für alle Benutzer auf einem PC für mehrere
+Benutzer doppelklicken Sie auf "install_acs_64_allusers".
+<p>
+Bei einer Neuinstallation werden mehrere Eingabeaufforderungen angezeigt, in
+denen Sie die Erstinstallation anpassen können.
+Falls eine Lizenzvereinbarung angezeigt wird, akzeptieren Sie diese.
+<p>
+Bei einem Upgrade bleiben die bisherigen Einstellungen erhalten.
+<p>
+Nach Abschluss der Installation wird eine Beendigungsnachricht angezeigt.
+
+<p>
+Bei einer erfolgreichen Installation für einen Einzelbenutzer wird die
+Anwendung an die folgende Position kopiert:
+<pre>
+    /Users/benutzer-id/IBM/ClientSolutions/
+</pre>
+<p>
+Anmerkung: Bei der ersten Version dieser Scripts wurden die Produktdateien in einen Pfad in Bezug zu MyDocuments kopiert.
+Bei der aktuellen Version werden die Produktdateien auf der Basis der Umgebungsvariablen %HOMEDRIVE% und %HOMEPATH% in einen Pfad kopiert. 
+Werden diese Scripts zur Aktualisierung des Produkts verwendet, finden Aktualisierungen an der zuerst gefundenen Position statt.
+<p>
+Bei einer erfolgreichen Installation für mehrere Benutzer wird die
+Anwendung an die folgende Position kopiert:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Produkt unter Windows starten</h3>
+<p>
+Doppelklicken Sie auf das Symbol "Access Client Solutions" auf dem Desktop.
+
+
+<hr><h3><a id="3.0"></a>3.0 Installation für Mac</h3>
+<p>
+Suchen Sie das ZIP-Archiv oder die CD des Produkts mit dem Finder. <p>
+Wenn Sie das ZIP-Archiv des Produkts verwenden, extrahieren Sie jetzt dessen Inhalt.
+<br>Vorschlag: Wenn Sie das Produkt gerade heruntergeladen haben, suchen Sie unter "Downloads".
+Sofern der Inhalt des ZIP-Archivs noch nicht extrahiert wurde, können sie ihn jetzt durch Doppelklicken auf das ZIP-Archiv extrahieren.
+<p>
+Suchen Sie den Ordner "Mac_Application". Doppelklicken Sie auf "install_acs".<p>
+Bei einer Neuinstallation werden mehrere Eingabeaufforderungen angezeigt, in
+denen Sie die Erstinstallation anpassen können.
+Falls eine Lizenzvereinbarung angezeigt wird, akzeptieren Sie diese.
+<p>
+Bei einem Upgrade bleiben die bisherigen Einstellungen erhalten.
+<p>
+Nach Abschluss der Installation wird eine Beendigungsnachricht angezeigt.
+
+<p>
+Bei einer erfolgreichen Installation wird die
+Anwendung in den Ordner "Applications" kopiert.
+<p>
+Falls Sie die Installation aus der Funktion "Finder" heraus gestartet haben,
+wurde zur Durchführung der Installation ein Terminalfenster geöffnet.
+Nach Abschluss der Installation können Sie das Terminalfenster schließen.
+<p>
+Technischer Hinweis:<br>
+Abhängig von Ihren Sicherheitseinstellungen und der verwendeten Version des Betriebssystems X erscheint möglicherweise ein Popup-Fenster mit dem Hinweis, dass keine Berechtigung für die Ausführung von "install_acs" vorhanden ist.
+Ist dies der Fall, müssen Sie eine Berechtigung für die Ausführung von "install_acs" erteilen. Verwenden Sie dazu eine der folgenden Methoden:
+<br>
+<ul>
+<li>Wenn Ihnen eine Option zum Öffnen von "install_acs" angeboten wird, wählen Sie sie aus.
+<li>Klicken Sie mit der rechten Maustaste auf "install_acs" und wählen Sie "Open" (Öffnen) aus. <br>
+   Wenn ein Popup-Fenster erscheint, wählen Sie "Open" aus.
+<li>Wenn keine der beiden oben genannten Optionen funktioniert, rufen Sie Folgendes auf:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+    Wenn eine Option zum Öffnen von IBM i Access Client Solutions verfügbar
+    ist, wählen Sie diese Option aus.
+    Andernfalls müssen Sie die Einstellungen auf der Registerkarte "General"
+    (Allgemein) anpassen, damit die Ausführung anderer Anwendungen zulässig ist.
+Nachdem "IBM i Access Client Solutions" zum ersten Mal gestartet wurde, können Sie Ihre Sicherheitseinstellungen zurückändern.
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Produkt auf Mac starten</h3>
+<p>
+Rufen Sie mit dem Finder "Applications" auf.
+<p>
+Suchen Sie "IBM i Access Client Solutions" und doppelklicken Sie darauf, um das Produkt zu starten.
+<p>
+Technischer Hinweis:<br>
+Abhängig von Ihren Sicherheitseinstellungen und der verwendeten Version des Betriebssystems X erscheint möglicherweise ein Popup-Fenster mit dem Hinweis, dass keine Berechtigung für die Ausführung der Anwendung vorhanden ist.
+Ist dies der Fall, müssen Sie eine Berechtigung für die Ausführung der Anwendung erteilen. Verwenden Sie dazu eine der folgenden Methoden:
+<br>
+<ul>
+<li>Wenn Ihnen eine Option zum Öffnen der Anwendung angeboten wird, wählen Sie sie aus.
+<li>Klicken Sie mit der rechten Maustaste auf das Symbol "IBM i Access Client Solutions" und wählen Sie "Open" aus.<br>
+   Wenn ein Popup-Fenster erscheint, wählen Sie "Open" aus.
+<li>Wenn keine der beiden oben genannten Optionen funktioniert, rufen Sie Folgendes auf:<br>
+    System Preferences...<br>
+    Security &amp; Privacy<br>
+    Wenn eine Option zum Öffnen von IBM i Access Client Solutions verfügbar
+    ist, wählen Sie diese Option aus.
+    Andernfalls müssen Sie die Einstellungen auf der Registerkarte "General"
+    (Allgemein) anpassen, damit die Ausführung anderer Anwendungen zulässig ist.
+    Nachdem "IBM i Access Client Solutions" zum ersten Mal gestartet wurde,
+    können Sie Ihre Sicherheitseinstellungen zurückändern.
+</ul>
+Technischer Hinweis:<br>
+Wenn Sie zur Installation von "Java 6 SE runtime" aufgefordert werden, müssen Sie Java 6 nicht installieren. 
+Installieren Sie Java 8 und versuchen Sie dann, das Produkt erneut zu starten.
+<hr><h3><a id="4.0"></a>4.0 Installation für Linux</h3>
+<p>
+Suchen Sie das ZIP-Archiv oder die Produkt-CD. <p>
+Wenn Sie das ZIP-Archiv des Produkts verwenden, extrahieren Sie jetzt dessen Inhalt.
+<br>Vorschlag: Verwenden Sie den unzip-Befehl im Terminalfenster.
+<p>
+Suchen Sie den Ordner "Linux_Application". <p>
+Da Sie für das Installationsscript Rootberechtigung benötigen, müssen Sie sudo verwenden, um das Installationsscript in einem Terminalfenster auszuführen.
+Beispiel: <p>
+Verwenden Sie bei einer 32-Bit-Architektur den folgenden Befehl: <br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Verwenden Sie bei einer 64-Bit-Architektur den folgenden Befehl: <br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Bei einer Neuinstallation werden mehrere Eingabeaufforderungen angezeigt, in
+denen Sie die Erstinstallation anpassen können.
+Falls eine Lizenzvereinbarung angezeigt wird, akzeptieren Sie diese.
+<p>
+Bei einem Upgrade bleiben die bisherigen Einstellungen erhalten.
+<p>
+Nach Abschluss der Installation wird eine Beendigungsnachricht angezeigt.
+
+<p>
+Bei einer erfolgreichen Installation wird die
+Anwendung an die folgende Position kopiert:
+<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Produkt unter Linux starten</h3>
+<p>
+Sie können nach "IBM i Access Client Solutions" im Anwendungsordner suchen oder indem Sie die Super-Taste verwenden und dann
+"IBM i Access Client Solutions" eingeben.
+<hr><h3><a id="5.0"></a>5.0 Installation von Updates</h3>
+<p>
+Wenn eine neue Version verfügbar ist, können Sie die Aktualisierungen anhand der Installationsanweisungen in diesem Dokument ausführen.
+Die Aufforderung, vorhandene Dateien zu überschreiben, beantworten Sie mit "Yes to all".
+<p>
+Wenn sie die Scripts "install_acs" für Windows, Mac oder Linux verwenden, wird die Datei AcsConfig.properties
+nicht aktualisiert, dadurch gehen keine der von Ihnen vorgenommenen Änderungen der angepassten Konfiguration verloren.
+<hr><h3><a id="6.0"></a>6.0 Weitere Informationen</h3>
+<p>
+Weitere Informationen zur Anpassung des Produkts oder Hinweise, wenn Probleme
+bei der Installation oder dem Starten des Produkts auftreten, finden Sie im Dokument <a href="../Documentation/GettingStarted_en.html">Erste Schritte</a>, das
+sich im Verzeichnis der Produktdokumentation befindet.
+<hr><h3><a id="7.0"></a>7.0 Deinstallation</h3>
+<p>
+Um die Anwendungsdateien, die von dem Installationsscript an die oben genannten Positionen kopiert wurden, zu entfernen, verwenden Sie das plattformspezifische Deinstallationsscript, das sich
+in demselben Ordner wie das Installationsscript befindet.
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

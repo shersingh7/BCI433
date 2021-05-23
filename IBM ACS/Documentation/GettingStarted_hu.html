@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Kezdeti lépések</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Kezdeti lépések</h2>
+<h2>A dokumentum tartalmának legutóbbi frissítése: 2018. január 8. </h2>
+
+
+<h3><a id="0.5"></a>0.5 Gyors üzembe helyezési útmutató</h3>
+<p>
+A <a href="./QuickStartGuide_en.html">Gyors üzembe helyezési útmutató</a> a
+legtöbb Windows, Mac vagy Linux rendszert futtató felhasználó számára
+működőképes utasításokat tartalmaz a termék telepítéséhez.  Ha egyetlen felhasználó számára vagy többfelhasználós számítógépre telepíti a
+terméket, akkor a Dokumentácó mappában tekintse meg a <a href="./QuickStartGuide_en.html">Gyors üzembe helyezési útmutató</a> című dokumentumot.
+<p>
+A jelen dokumentum hátralévő részében a termékkel kapcsolatos további részletek,
+az egyéb telepítési lehetőségek és a termék személyre szabásának beállításai
+kerülnek bemutatásra.  
+
+<h3>Tartalom:</h3>
+<a href="#0.5">0.5 Gyors üzembe helyezési útmutató</a><br>
+<a href="#1.0">1.0 Bevezetés</a><br>
+<a href="#2.0">2.0 Jellemzők</a><br>
+<a href="#3.0">3.0 Előfeltételek</a><br>
+<a href="#4.0">4.0 A termék tartalma</a><br>
+<a href="#5.0">5.0 Telepítés</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Meglévő telepítés frissítése</a><br>
+<a href="#6.0">6.0 Fájljogosultságok</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Fájljogosultságok (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Fájljogosultságok (Windows)</a><br>
+<a href="#7.0">7.0 A termék indítása</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 A termék indítása</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 A termék indítása (parancsfájllal)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 A termék indítása (parancssorból)</a><br>
+<a href="#8.0">8.0 Konfiguráció</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Konfiguráció helye</a><br>
+<a href="#9.0">9.0 Speciális témakörök</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 További parancssori paraméterek</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Fájltársítások</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Fájltársítások (Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Ikon cseréje (Windows parancsikon)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Asztali ikon beállítása (Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Fájltársítások (Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Fájltársítások (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Fájltársítások létrehozása (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Ikon cseréje (Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Konfiguráció helyének módosítása</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Egyéb telepítési beállítások</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Konfigurációs beállítások automatikus importálása</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Natív IBM i telepítése</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Egyéni csomagok</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Átállítás az IBM i Access for Windows rendszerről</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Rendszerkonfigurációk átállítása</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 5250 emuláció átállítása</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Mentett adatátviteli kérésfájlok átállítása</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Kulcskezelés</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Adatátvitel</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Excel és Calc táblázatok adatátvitelének támogatása</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Csonkolt karakterek és és numerikus túlcsordulás adatátvitelének támogatása</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Adatátvitel munkalap neve</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Konzolkapcsolat létesítése IBM i rendszerhez</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Kiegészítő betűkészletek</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Netrc fájl hitelesítési adatainak használata</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Integrált fájlrendszer (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 és Biztonság</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS jogosultság</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS korlátozásai</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS és független lemeztárak</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 Biztonságos parancsértelmező (SSH) terminál</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 SSH terminál előfeltételei</a><br>
+
+
+
+<a href="#10.0">10.0 Szervizdiagnosztikák</a><br>
+<a href="#11.0">11.0 Gyakran ismételt kérdések (GyIK)</a><br>
+<a href="#12.0">12.0 Frissítési történet</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Bevezetés</h3>
+<p>
+Az IBM i Access Client Solutions az IBM i Access termékcsalád legújabb
+tagja.  Ez egy Java alapú platform-független interfész, amely fut a Java-t támogató
+legtöbb operációs rendszeren, beleértve a Linux, Mac és Windows rendszereket. Az IBM i Access Client Solutions egyetlen helyre vonja össze az IBM i
+kezeléséhez használt legáltalánosabb feladatokat.
+<p>
+Az IBM i Access Client Solutions ugyanazokat az IBM i hoszt szervereket
+használja, mint az egyéb IBM i Access termékcsalád többi terméke, és ugyanazt
+az IBM i Access licencet (XW1) igényli az 5250 emulációhoz és adatátviteli
+szolgáltatásokhoz.
+<p>
+Rendelkezésre áll két külön megrendelhető csomagként is, amelyek a Windows és
+Linux rendszerek kliensalkalmazásainak használatához és fejlesztéséhez szükséges
+köztes szoftvereket tartalmazzák:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows
+alkalmazáscsomag<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux alkalmazáscsomag<br>
+<p>
+Az IBM i 7.1 vagy újabb változatát használó, aktuális felhatalmazással rendelkező vásárlók az IBM i Access Client Solutions
+terméket az alábbi módon szerezhetik be:
+<ul>
+<li> Az alapvető <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a> csomag letöltésével. 
+<li> Az alapvető csomag és a külön megrendelhető Windows és Linux alkalmazáscsomagok letöltésével a <a href="https://www.ibm.com/servers/eserver/ess">Entitled
+Software Support (ESS)</a> webhelyről az 5761-SS1 vagy az 5770-SS1 alatt.
+</ul>
+
+<p>
+A külön megrendelhető Windows és Linux alkalmazáscsomagok csaj az Entitled Software Support (ESS) webhelyről érhetők el. 
+<p>
+Az ügyfelek az adathordozót az 5761-SS1 vagy 5770-SS1
+6288-as frissítési szolgáltatásának megrendelésével szerezhetik be.
+A fizikai adathordozó tartalmazza a termék futtatható változatát, amely lehetővé teszi,
+hogy a terméket közvetlenül a CD-ről futtassa.
+A fizikai adathordozó tartalmazza továbbá
+a termék zip archívumát, amelyet tetszés szerinti helyre másolva kibonthat.
+Az IBM i Access Client Solutions fizikai adathordozója nem tartalmazza a külön
+megrendelhető Windows és Linux alkalmazáscsomagokat. 
+<p>
+További információkért keresse fel a következő weboldalt:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Az IBM i Access termékcsaláddal kapcsolatos legfrissebb információkért
+látogasson el a következő weboldalra:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Jellemzők</h3>
+<p>
+Az IBM i Access Client Solutions termék jellemzői közé tartoznak az alábbiak:
+<ul>
+<li>IBM Rational Host-on-Demand alapú teljes 5250 képernyőemulátor. Az IBM i Access for Windows használatakor
+megszokott 5250 képernyőfunkciók mellett, további szolgáltatások is elérhetők:
+<ul>
+<li>lap támogatás, amely engedélyezi, hogy több szekció egyetlen megjelenítési területen osztozzon
+<li>egér kerék támogatás, amely lehetővé teszi az intuitív görgetést az oldalak között
+<li>a nyelvek közötti váltás a munkaállomás újrabetöltése nélkül végrehajtható
+<li>egyidejű képernyőszekciók  hoszt kódlapokkal, amelyek lehetővé teszik különálló nyelvek jelenlétét különböző emulátor szekciókban
+</ul>
+<li>Nyomtatóemuláció
+<li>az IBM Personal Communications szekciókezelő mintájára felépített 5250
+szekciókezelő, amely az összes 5250 emulátorszekció kezelésére használható
+
+<li>adatátvitel, amely lehetővé teszi adatok átvitelét az IBM i adatbázis
+felé/felől a munkaállomás különféle (például OpenDocument táblázat (*.ods),
+Excel munkafüzet (*.xlsx) és egyéb fájlformátumú) fájltípusába/fájltípusából
+
+<li>A Nyomtatókimenet felület segítségével megjelenítheti az IBM i kimeneti
+sorok fájljait, és letöltheti ezeket a fájlokat a kliensrendszerére.
+
+<li>Virtuális vezérlőpanel grafikus felülettel az IBM i operátori paneljéhez
+
+<li>5250 emuláció LAN, HMC és FSM konzolhoz
+
+<li>hardverfelügyeleti interfészkonfigurációk, például ASMI, IVM és HMC
+konfigurációk összevonása
+
+<li>az IBM i navigátorához indítási képesség az alapértelmezett böngészővel
+
+<li> Adatbázis szolgáltatások, például SQL parancsfájlok futtatása és SQL teljesítményközpont.
+</ul>
+<p>
+A külön megrendelhető Windows alkalmazáscsomag a következőket tartalmazza:
+<ul>
+<li>csatlakozási lehetőség a Db2 for i termékhez ODBC, .Net és OLE DB használatával
+<li>programozási eszközkészlet az IBM i rendszerobjektumok eléréséhez
+<li>TLS/SSL kapcsolatok támogatása
+<li>AFP nyomtató-illesztőprogram
+</ul>
+<p>
+A külön megrendelhető Linux alkalmazáscsomag a következőket tartalmazza:
+<ul>
+<li>ODBC illesztőprogram a Db2 for i eléréséhez, valamint támogatás a teljes
+64 bites ODBC adattípusok számára.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Előfeltételek</h3>
+<h3><a id="3.1"></a>3.1 Előfeltételek (munkaállomás)</h3>
+<p>
+Az IBM i Access Client Solutions képes futni a Java 8.0 vagy újabb változatokat
+támogató legtöbb rendszeren, beleértve a Linux, Mac és Windows különféle
+verzióit.
+<p>
+Javaslat:<br>
+Ha a használt Java változat mindig a legfrissebb változatot, akkor biztosan rendelkezik a legújabb javításokkal és biztonsági javításokkal. 
+<p>
+A rendszeren telepített Java változat ellenőrzésének egyik lehetősége a parancs
+beírását lehetővé tevő parancssor (parancsértelmező, terminál stb.)
+megnyitásával jár, ahová a következő parancsot kell beírnia:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+A következő kimenet azt jelzi, hogy a 8.0 változat van telepítve:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+A példában a 65 a frissítési szintet jelöli.
+
+<p>
+Az alábbiakban néhány Java szolgáltató webhelye látható.  Gondoskodjék róla,
+hogy az operációs rendszeréhez a legfrissebb Java változatot futtassa.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 Előfeltételek (IBM i csatlakozás)</h3>
+<p>
+Az IBM i Access Client Solutions az IBM i 5.4 és újabb kiadásaihoz fog
+csatlakozni.
+Az alábbi IBM i szolgáltatások 6.1 vagy újabb kiadást igényelnek:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;i navigátor<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250 konzol<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Virtuális vezérlőpanel<br>
+<p>
+Ha SSL kapcsolatokat fog használni, akkor töltse be és alkalmazza a megfelelő IBM i kiadásspecifikus PTF csomagokat:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Ha Navigator i rendszert fog használni, akkor töltse be és alkalmazza a megfelelő IBM i
+kiadásspecifikus PTF csomagokat:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - Csoportos PTF SF99368, 37. vagy magasabb szint<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - Csoportos PTF SF99713, 12. vagy magasabb szint<br>
+	
+<p>
+Ha az 5250-es konzolt vagy a Virtuális vezérlőpanel szolgáltatást fogja használni, akkor a következő kiadásspecifikus PTF csomagokat
+töltse le és alkalmazza:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 A termék tartalma</h3>
+<p>
+A termék ZIP archívuma az alábbi fájlokat és könyvtárakat tartalmazza:
+<pre>
+
+acsbundle.jar       - a termék végrehajtható jar fájlja
+AcsConfig.properties- konfigurációs beállításokat tartalmazó könyvtár (ugyanez
+                      megvan az acsbundle.jar fájlban is)
+
+Mac_Application     - a Mac telepítési parancsfájlt tartalmazó katalógus
+
+Linux_Application   - a Linux telepítési parancsfájlt tartalmazó katalógus
+
+Windows_Application - a Windows telepítési parancsfájlokat tartalmazó katalógus
+
+Start_Programs      - azokat a platform-specifikus bináris fájlokat tartalmazó
+                      könyvtár, melyek használhatók a termék indításához.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation   - dokumentációkat tartalmazó könyvtár
+  QuickStartGuide - információk a termék használatának megkezdéséhez
+  GettingStarted  - részletes információk a termékkel kapcsolatban
+  License             - a felhasználás feltételeit és kikötéseit tartalmazó könyvtár
+  Notices             - megjegyzéseket és információkat tartalmazó könyvtár
+  properties          - a termékverzió-információkat tartalmazó katalógus
+  Sample_Scripts    - minta parancsfájlokat tartalmazó katalógus, amely segítségével
+                      elindíthatja a terméket, ha az indítási programok bináris fájljai
+                      nem működnek.
+    Linux_Mac_Other - könyvtár a termék indításához használható perl parancsfájlokkal
+                      olyan platformokra, melyeken a perl elérhető.
+    Windows         - könyvtár JScript parancsfájllal Windows rendszeren
+                      történő indításhoz
+
+Icons               - az ikonokként használható fájlokat tartalmazó katalógus
+
+Fonts               - az a könyvtár, ahol a kiegészítő fix szélességű betűkészletek 
+                      adhatók hozzá az 5250 emulációhoz
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Telepítés</h3>
+<p>
+Az IBM i Access Client Solutions csomagolása számos telepítési megoldást biztosít a
+legegyszerűbb egyfelhasználós telepítéstől az összetettebb többfelhasználós telepítésekig.
+<p>
+A telepítési parancsfájlok a Mac_Application, Linux_Application és Windows_Application mappákban vannak megadva (lásd a
+<a href="#4.0">4.0 Termék tartalma</a> szakaszban), melyek különböző telepítési beállításokkal használhatók.
+
+<p>
+Egyfelhasználós Mac, Linux és Windows telepítés esetén, vagy többfelhasználós, Windows PC-re történő telepítés esetén olvassa el a
+<a href="./QuickStartGuide_en.html">Gyors üzembe helyezési útmutató</a> dokumentumot.
+A Gyors üzembe helyezési útmutató elmagyarázza, hogyan használhatja a biztosított telepítési parancsfájlokat ezen egyszerű telepítési típusok
+végrehajtására.
+<p>
+Ha Ön egy adminisztrátor, és számos felhasználó számára szeretne telepítést végezni, akkor olvassa el a
+<a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM
+i Access Client Solutions: Testreszabás és telepítés egyszerűen</a> témakört.
+A cikk elmagyarázza, hogy az adminisztrátor szabhatja személyre előre a telepítést több felhasználó számára a telepítés előtt a   telepítési
+parancsfájlok által támogatott /AdminConfig beállítással.
+<p>
+Azok az adminisztrátorok, akik automatizálni szeretnék a telepítést csendes módban, a telepítés előkészítéséhez  használhatják az
+/AdminConfig paramétert.  Majd a tényleges telepítés során a /Q paramétert használhatják Például:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+A fenti beállítások mellett lehetőség van arra is, hogy egyszerűen kibontsa a zip archívumot bármilyen tetszőleges helyre. Ez
+lehet bármely olyan hely, ahol a munkaállomás a fájlok eléréséhez olvasási
+jogosultsággal rendelkezik.  Lehet helyi merevlemez, távoli hálózati (megosztott)
+meghajtó vagy hordozható adathordozó, például egy CD vagy egy USB flash meghajtó.  A
+zip archívum kicsomagolása befejezi a telepítést.
+
+<p>
+Technikai megjegyzés:<br>
+Néhány archiválási segédprogram nem őrzi meg az összes mentett
+fájlattribútumot.  Például Mac
+és Linux platformokon az unzip parancs általában jobb választás, mint a jar parancs.  További információkért lásd a
+<a href="#6.0">6.0 Fájljogosultságok</a> részt.
+
+<h3><a id="5.1"></a>5.1 Meglévő telepítés frissítése</h3>
+<p>
+A továbbfejlesztések és javítások rendszeres időközönként elérhetőek
+lesznek.  Ezek a frissítések teljes terméktelepítésként állnak rendelkezésre.  Amikor
+ezek a frissítések elérhetőek, frissítenie kell a meglévő telepítését.
+<p>
+A telepítési parancsfájlok használatával végzett meglévő telepítés frissítéséhez bontsa ki a
+termék egy újabb változatának a tartalmát.  Erről az új változatról indítsa el a telepítési
+parancsfájlt, ugyanolyan módon, ahogy azt kezdeti telepítés során tette.  Ez
+úgy végzi el a termékfájlok frissítését, hogy nem módosítja a felhasználók meglévő konfigurációit.
+<p>
+Ha Ön olyan adminisztrátor, aki fenntartja a termék egy változatát egy központii helyen, melyhez több felhasználó is hozzáfér, akkor az új
+változat tartalmát a meglévő változat tetejére bonthatja ki.
+Ha egyéni módosításokat végzett az AcsConfig.properties fájlon, akkor mentse el az  AcsConfig.properties fájlt, mielőtt kibontja a
+termék új változatának tartalmát a meglévő tetejére.  Miután kibontotta a termék új változatának a tartalmát,
+és visszaállított az AcsConfig.properties fájlt, a felhasználók a telepítés frissítéséhez ugyanolyan
+módon futtathatják a telepítési parancsfájlt, mint a kezdeti telepítés során.
+<p>
+Ha úgy dönt, hogy a terméket a telepítési parancsfájlok használata nélkül telepíti, vagyis kibontja a zip archívum tartalmát egy tetszőleges
+helyre, akkor a termék frissítéséhez az újabb változat tartalmát a meglévő változat tetejére kell kibontania.
+Ne feledje, hogy szükség lehet az AcsConfig.properties fájl tartalmának mentésére és visszaállítására, ha azon egyéni módosításokat végzett.
+
+<hr><h3><a id="6.0"></a>6.0 Fájljogosultságok</h3>
+<p>
+<a href="#7.0">7.0 A termék indítása</a> szakasz az IBM i Access Client
+Solutions indításának több módszerét mutatja be.  Ha a termék indításához valamelyik megadott bináris fájlt
+vagy parancsfájlt fogja használni, akkor meg kell győződnie arról, hogy az adott fájl jogosultságai
+tartalmazzák a végrehajtási engedélyt.  A zip archív fájl kicsomagolása során hozzárendelt fájljogosultságokat sok
+tényező határozza meg, például az operációs rendszer, a zip fájl
+kicsomagolásához használt segédprogram, a felhasználó jogosultsága stb.
+<p>
+Ha problémája van a megadott bináris fájlokkal vagy parancsfájlokkal, akkor ellenőrizze
+a fájljogosultságokat.  A következő szakaszok leírják a
+fájlengedélyek ellenőrzésének néhány módszerét.
+
+
+<h3><a id="6.1"></a>6.1 Fájljogosultságok (Linux, Mac, AIX)</h3>
+<p>
+A UNIX-szerű operációs rendszerek esetén az alábbi parancsot használhatja a
+parancsértelmező vagy a terminál parancssorában egy fájl jogosultságainak
+ellenőrzéséhez:<br>
+<pre>    ls -l &lt;fájl&gt;   			</pre>
+<p>
+A fájl jogosultságainak módosításához az alábbi parancsot használhatja:<br>
+<pre>    chmod &lt;jogosultság&gt; &lt;fájl&gt;	</pre><br>
+Példa:<br>
+mindenki számára olvasási és végrehajtási jogosultságat ad:
+<pre>
+    chmod a+rx &lt;fájl&gt;
+</pre>
+a fájl tulajdonosa számára olvasási/írási/végrehajtási jogosultságot, mindenki
+más számára olvasási/végrehajtási jogosultságot ad:
+<pre>
+    chmod 755 &lt;fájl&gt;
+</pre>
+<p>
+Az ls és chmod parancs további súgója elérhető az Interneten.
+
+
+
+<h3><a id="6.2"></a>6.2 Fájljogosultságok (Windows)</h3>
+<p>
+Windows rendszer esetén a Windows Intézőben kattintson a jobb egérgombbal a
+fájlra, majd válassza az előugró menü tulajdonságok menüpontját.  A biztonság
+lap fogja tartalmazni a fájljogosultságokat.  Győződjön meg róla, hogy
+rendelkezik-e olvasási és végrehajtási jogosultsággal.
+<p>
+A Windows legújabb változataiban az icacls parancsot is használhatja egy fájl
+engedélyének megjelenítéséhez és módosításához.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 A termék indítása</h3>
+<p>
+Több módszer létezik az IBM i Access Client Solutions indítására.
+Ha a telepítési parancsfájlokat használta a termék telepítéséhez, akkor a legegyszerűbb
+módszer a termék indítására megtalálható a <a href="./QuickStartGuide_en.html">Gyors üzembe helyezési útmutató</a> dokumentumban.
+<p>
+Ha a termék nem a telepítési parancsfájlok használatával került telepítésre, akkor a fejezet további része ismerteti a termék indításának
+alternatív módjait.
+Mivel a java számos helyre és számos módon telepíthető, előfordulhat, hogy néhány módszer
+konfigurációt igényel.  Ha valamelyik alábbi módszer nem
+működik, akkor próbálkozzon másik módszerrel. Bizonyos esetekben további
+útmutatás érhető el.  Hasznos lehet a <a href="#11.0">11.0 Gyakran ismételt
+kérdések (GyIK)</a> szakasz is.
+<p>
+Bináris fájl vagy parancsfájl lenti felhasználása esetén a bináris fájlnak
+vagy parancsfájlnak a zip archívum könyvtárstruktúrájában kell
+lennie.  Kényelmi okokból átmásolhatja/áthelyezheti az operációs rendszer(ek) bináris fájljait
+és/vagy parancsfájljait ugyanabba a könyvtárba, ahol az acsbundle.jar fájl
+található.
+
+
+<h3><a id="7.1"></a>7.1 A termék indítása</h3>
+<p>
+A terméknek egy fájlrendszeri megjelenítőből (pl. Windows Intéző, Mac OS X
+Finder stb.) platformspecifikus bináris fájl segítségével történő indításához
+keresse meg Start_Programs mappának azt az almappáját, amely azonosítja az
+operációs rendszert és a hardverarchitektúrát.
+<p>
+Keresse meg azt a bináris fájlt, amelyet az operációs rendszer felismer. Ezután
+a fájlra duplán kattintva indítsa el a terméket.
+A terméket ezzel a bináris fájllal parancssorból, terminálból vagy
+parancsértelmezőből is indíthatja.
+<p>
+Ha ezt a hibaüzenetet kapja:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Hiba történt a Java modul betöltésekor."<br>
+akkor az IBM i Access Client Solutions nem talál Java telepítést általa
+felismerhető helyen.  Megpróbálkozhat a következő szakaszok módszereinek
+egyikével:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 A termék indítása - További
+lehetőségek</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 A termék indítása (parancsfájllal)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 A termék indítása (parancssorból)</a><br>
+<p>
+Mac technikai megjegyzés:<br>
+Ha a rendszer felszólítja a "Java 6 SE futási környezet" telepítésére, akkor
+nem szükséges elvégeznie a Java 6-os változatának telepítését.  Telepítse a Java 8-as változatát, majd  próbálja meg ismét elindítani a terméket.
+Ha az
+acslaunch_mac fájl segítségével indítja el a terméket, és a rendszer továbbra
+is felszólítja a "Java 6 SE futási környezet" telepítésére, akkor lépjen át a
+Utilities könyvtárba és indítson el egy terminálszekciót. Futtassa az alábbi
+parancsokat, majd próbálja meg ismét elindítani a terméket:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 A termék indítása - További lehetőségek</h3>
+<p>
+Ha a platformhoz tartozó bináris fájlt használja, megpróbálkozhat az alábbi
+módszerek egyikével.  Ezek a módszerek lehetővé teszik, hogy azonosítsa, melyik
+Java futási környezetet (JRE) kell használnia a termék indításához.  A
+munkaállomáson a Java saját könyvtárának megkereséséhez lásd: <a href="#7.1.2">7.1.2
+A Java saját könyvtárának megkeresése</a>.  Ezek a kiegészítő módszerek csak
+Linux és Windows platformokon támogatottak:
+<ul>
+<li>Állítsa be a JAVA_HOME környezeti változót a Java elérési útjára   (VAGY)
+<li>A bináris parancshoz használja a -vm paramétert, mellyel megadja a Java
+      saját könyvtárának elérési útját.  További segítségért adja meg a -h
+      paramétert    (VAGY)
+<li>Másolja át a Java futási környezet (JRE) könyvtárstruktúráját ugyanabba a
+      könyvtárba, ahol a használni kívánt bináris fájl található.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 A Java saját könyvtárának megkeresése</h3>
+<p>
+Ha a terméket az alábbi szakaszok módszereinek egyikével el tudja indítani:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 A termék indítása (parancsfájllal)</a>  (VAGY)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 A termék indítása (parancssorból)</a><br>
+akkor munkaállomáson a Java saját könyvtárának elérési útját az IBM i Access
+Client Solutions fő grafikus felhasználói felületéről állapíthatja meg.  A
+menüsoron válassza a következő lehetőséget:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Súgó-&gt;Névjegy<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;A panelen megjelenik a java.home útvonal.<br>
+<p>
+A java.home tartalmazza a munkaállomás Java saját könyvtárának elérési útját.  Ez az az útvonal, melyet meg kell adnia a JAVA_HOME környezeti változó
+beállítása során, vagy a parancs -vm paraméterének használata során.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 A Java saját könyvtárának megkeresése
+(Windows)</h3>
+<p>
+Windows platformokon keresse meg a java.exe fájlt.  Ez a Java bináris fájl
+rendes körülmények között egy bin vagy jre/bin alkönyvtárban található a Java
+saját könyvtár útvonalán.
+A Java saját
+könyvtár elérési útja vagy a JAVA_HOME környezeti változó beállításakor, vagy a
+parancs -vm paraméterének használatakor alkalmazható.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 A Java saját könyvtárának megkeresése (Linux)</h3>
+<p>
+Linux rendszeren használhatja a "which" parancsot:<br>
+<pre>
+    which java
+</pre>
+Ez megadja a java parancs elérési útját vagy egy erre mutató szimbolikus
+hivatkozást.
+<p>
+Oldja fel a szimbolikus hivatkozást, amíg végül megkapja a java parancs
+tényleges bináris fájlját.  A szimbolikus hivatkozást az ls parancs és az -l
+paraméter használatával oldhatja fel:<br>
+<pre>
+    ls -l &lt;fájl&gt;
+</pre>
+Ez a Java bináris fájl
+rendes körülmények között egy bin vagy jre/bin alkönyvtárban található a Java
+saját könyvtár útvonalán.  A Java saját
+könyvtár elérési útja vagy a JAVA_HOME környezeti változó beállításakor, vagy a
+parancs -vm paraméterének használatakor alkalmazható.
+
+
+
+<h3><a id="7.2"></a>7.2 A termék indítása (parancsfájllal)</h3>
+<p>
+A v1r1m5 változattól kezdődően, a Start_Scripts könyvtár új neve Sample_Scripts, és a Dokumentáció könyvtárban található.
+<p>
+A termék indításának előnyben részesített módja a Start_Programs könyvtárban található, a platformra jellemző bináris fájl használata.  A
+ Sample_Scripts könyvtárban található parancsfájlokat csak akkor használja, ha a platformra jellemző bináris fájl nem működik.
+<p>
+Ha a terméket fájlrendszer böngészőből akarja indítani (pl. Windows Explorer, Mac OS X Finder stb.), az egyik megadott parancsfájl
+használatával, akkor keresse meg azt a parancsfájlt a Sample_Scripts alkönyvtárban, amely kompatíbilis a használt operációs rendszerrel.
+<p>
+A legtöbb nem-Windows alapú operációs rendszeren alapértelmezésben elérhető a
+Perl.  A Sample_Scripts/Linux_Mac_Other könyvtár egy perl parancsfájlt tartalmaz (három különböző fájlkiterjesztéssel), amellyel a termék minden
+olyan platformon elindítható, amelyen rendelkezésre áll a perl.  Válassza ki azt a fájlt, mely
+olyan kiterjesztéssel rendelkezik, amit az operációs rendszer perl
+parancsfájlként ismer fel.
+<p>
+A Windows alapú operációs rendszereken alapértelmezésben elérhető JScript.  A
+Sample_Script/Windows könyvtár olyan JScript kódot tartalmat, amellyel a terméket Windows operációs rendszereken el lehet indítani.
+<p>
+Valamely platformspecifikus módszerrel (pl. Windows Intéző, Mac OS X Finder
+stb.) a fájlrendszer tallózásával keresse meg azt a parancsfájlt, amelyet az
+operációs rendszer felismer.  Ezután a fájlra duplán kattintva indítsa el a
+terméket.
+A terméket ezzel a parancsfájllal parancssorból, terminálból vagy
+parancsértelmezőből is indíthatja.
+
+
+
+<h3><a id="7.3"></a>7.3 A termék indítása (parancssorból)</h3>
+<p>
+A terméket a parancssorból bárhonnan indíthatja, ahol ki tud adni egy parancsot
+(a parancssorban, terminálon, parancsértelmezőben stb.).<br>
+<pre>
+    java -Xmx1024m -jar &lt;elérési_út&gt;/acsbundle.jar
+</pre>
+ahol az &lt;elérési_út&gt; a termék végrehajtható JAR fájljának helye<br>
+<br>
+Például:<br>
+<pre>
+    java -Xmx1024m -jar V:/some_location/acsbundle.jar
+</pre>
+vagy
+<pre>
+    &lt;java_útvonal&gt;java -jar V:/some_location/acsbundle.jar
+</pre>
+ahol a &lt;java_útvonal&gt; a JDK 6.0 vagy újabb változat java parancsának
+helye.
+<p>
+A java parancs teljes elérési útjának megállapításához lásd:
+<a href="#7.1.2">7.1.2 A Java saját könyvtárának megkeresése</a>.
+<p>
+Használhatja parancssorból bármelyik programot vagy parancsfájlt is. Például:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Technikai megjegyzés:<br>
+A legtöbb platformon a Java virtuális gép kupacterületének alapértelmezett
+maximuma túl kicsi ahhoz, hogy használni lehessen az IBM i Access Client
+Solutions termék többszörös funkcióit.  Az egy gigabyte-os maximális kupacméret
+(-Xmx1024m) az ajánlott minimális méret.  Az egy gigabyte-nál kisebb méret
+megadása vagy az alapértelmezett kupacméret használata OutOfMemoryException
+kivételt okozhat.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Konfiguráció</h3>
+<p>
+Vegyen fel egy rendszerkonfigurációt minden egyes IBM i rendszerhez, amelyet
+használni vagy felügyelni szeretne.  Rendszerkonfiguráció hozzáadásához válassza ki a
+Felügyeleti feladatok közül a Rendszerkonfigurációk lehetőséget. Ezután
+válassza az Új elemet.  Az Általános lapon adja meg a Rendszer nevét.  A
+kezdéshez elegendő a Rendszer neve az Általános feladatok elvégzéséhez.
+<p>
+Miután befejezte, kattintson az OK gombra a rendszer megadott információinak
+mentéséhez, vagy válasszuk a Mentés/Új gombot, ha további rendszereket kíván
+felvenni a konfigurációba.
+<p>
+Az Általános, Kapcsolat vagy Konzol lappal bármikor hozzáadhat új rendszereket
+a konfigurációhoz, vagy frissíthet meglévő konfigurációt.
+<p>
+A Konzol feladatok esetében további konfiguráció szükséges.  A Konzolkonfigurációk automatikusan társításra kerülnek az Általános lapon megadott
+Rendszernévvel.
+Egy rendszer konzolkonfiguráció hozzáadásához válassza ki a
+Felügyeleti feladatok közül a Rendszerkonfigurációk lehetőséget.  Válassza az Új
+vagy Szerkesztés lehetőséget.  Ezután válassza ki a Konzol lapot.
+Az 5250 konzolfeladat konfigurált LAN konzolt vagy konfigurált HMC konzolt
+igényel. Ha nem rendelkezik konfigurált LAN vagy HMC konzollal, akkor tekintse
+meg a <a href="#9.9">9.9 Konzolkapcsolat létesítése IBM i rendszerhez</a> című
+részt.
+<p>
+A Hardverfelügyeleti interfész feladat konfigurált hardverfelügyeleti
+interfészt igényel.  Legfeljebb két hardverfelügyeleti interfész konfigurációt
+adhat meg.
+<p>
+Amikor elkészült, a Rendszerkonfigurációk panelen kattintson a Bezárás gombra.
+<p>
+A fő IBM i Access Client Solutions panelen a Rendszer legördülő listából
+válasszon ki egy rendszert.  Minden Konzolfeladat automatikusan társítja az
+(Általános lapon megadott) kijelölt rendszert a (Konzol lapon megadott) konzolkonfigurációval.
+<p>
+Most kijelölhet egy feladatot a kijelölt rendszerhez.  Ha olyan konzolfeladatot
+jelöl ki, amely nem rendelkezik a Konzolkonfiguráció lapon megadott megfelelő
+információkkal, akkor hibaüzenet jelenik meg.
+
+
+
+<h3><a id="8.1"></a>8.1 Konfiguráció helye</h3>
+<p>
+Alapértelmezésben minden egyes felhasználó a konfigurációjához saját egyedi
+hellyel rendelkezik. A konfiguráció gyökérkönyvtára platformfüggő módon kerül meghatározásra.  A
+konfigurációs könyvtárak a kezdeti indítás során kerülnek létrehozásra.  A
+konfigurációs könyvtár helyének megtekintéséhez:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Indítsa el a terméket (lásd: <a href="#7.0">7.0 A
+termék indítása)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-&gt;Beállítások<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Válassza ki a Helyi beállítások lapot<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Konfigurációgyökér<br>
+<p>
+A konfiguráció helyét nem lehet megváltoztatni, amíg a termék fut.  A
+konfiguráció helyének módosításához lásd: <a href="#9.3">9.3 Konfiguráció
+helyének módosítása</a>
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Speciális témakörök</h3>
+<h3><a id="9.1"></a>9.1 További parancssori paraméterek</h3>
+<p>
+A fő grafikus felhasználói felületen rendelkezésre álló funkciók közül számos a
+parancssorból is elérhető.  Ezek a funkciók hívhatók meg a megfelelő paraméter
+megadásával az itt bemutatott parancssori lehetőségekhez:<br>
+    <a href="#7.3">7.3 A termék indítása (parancssorból)</a>
+<p>
+Például:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+Csak a további paraméterek jelennek meg a következő szakaszokban:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;fájlnév&gt;]
+    &lt;fájlnév&gt; a létrehozandó fájl neve
+</pre>
+<p>
+Elmenti az aktuális konfigurációt a megadott fájlba.
+Az eredményül kapott fájl bemenetként felhasználható a Restore parancssori
+paraméterhez ugyanazon vagy másik munkaállomáson (operációs rendszertől
+függetlenül).
+<p>
+A mentendő konfiguráció helyét ez a tulajdonság határozza meg:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...ami az AcsConfig.properties fájlban található.
+<p>
+Ez a funkció egyenértékű a Fájl-&gt;Konfiguráció exportálása a központi grafikus felületről művelettel.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Restore</h3>
+<pre>
+/PLUGIN=restore /file=&lt;fájlnév&gt;
+    &lt;fájlnév&gt; a Backup által létrehozott fájl helye
+</pre>
+Visszaállítja az elmentett konfigurációs a megadott fájlból. Minden olyan
+meglévő konfiguráció elvész, ami nem szerepel a megadott fájlban.
+<p>
+A visszaállítandó konfiguráció helyét ez a tulajdonság határozza meg:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...ami az AcsConfig.properties fájlban található.
+<p>
+Ez a funkció egyenértékű a Fájl-&gt;Konfiguráció importálása a központi grafikus felületről művelettel.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;rendszer&gt;
+</pre>
+Letölt egy tanúsítványt (CA) a megadott IBM i rendszerről, és eltárolja azt a
+felhasználó helyi igazolástárolójában. Ez az SSL szerverhitelesítéshez
+szükséges.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST     - konfigurált rendszerek felsorolása kapcsolati beállításaikkal
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;rendszer&gt; [/ipaddr=&lt;gyakoriság&gt;] [/userid=&lt;felhasználói_azonosító&gt;]
+                                 [/ssl=&lt;kapcsoló&gt;]
+                                 [/5250path=&lt;útvonal&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - a rendszer neve
+    /ipaddr     - kapcsolat kérésekor ez az érték határozza meg, hogy az IP cím
+                  kikeresése megtörténjen-e, vagy sem. Az érvényes gyakoriságok
+                  a következők:
+                      ALWAYS - IP cím kikeresése minden egyes kapcsolathoz
+                      HOURLY, DAILY, WEEKLY - IP cím kikeresése, ha a megfelelő
+                          eltelt a legutóbbi kikeresés óta (óra, nap, hét)
+                      IP cím - ha meg van adva egy IP cím, akkor a kikeresési
+                          gyakoriság feltételezett értéke: NEVER (soha)
+    /userid     - egy felhasználóhoz tartozó felhasználói azonosító, amely
+                  a következő beállított érték is lehet:
+                      *SHARE        - egy alkalommal kéri a bejelentkezési azonosítókat
+                                      amelyeket a beállítást használó rendszerek használnak
+                      *PROMPTALWAYS - rákérdezés minden csatlakozás során
+                                      legalább egyszer
+                      *KERBEROS     - Kerberos azonosító használata kérdés nélkül
+    /ssl        - a kapcsoló 0 értéke ki-, 1 értéke bekapcsolja az SSL módot
+    /5250path   - az 5250 emulációs profilok elérési útja
+                  A /5250-es útvonalat a Fájl-&gt;Könyvtár módosítása... művelettel lehet megadni
+                  5250 szekciókezelő
+    /del - törli a meglévő konfigurációt
+    /r   - lecseréli a meglévő konfigurációt
+</pre>
+Ez lehetővé teszi a parancssorból különféle konfigurációs paraméterek
+beállítását.
+Ezek a paraméterek a fő grafikus felhasználói felület Rendszerkonfigurációk
+lehetőségével szintén beállíthatók.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;paraméterek&gt;]
+</pre>
+A terméken belüli összes futó folyamatot felkéri a száljaik kiíratására.  Ezeket
+az információkat az IBM használja majd fel problémamegoldás támogatásához.
+<p>
+Az előállított naplók a fő grafikus felhasználói felületről így érhetők el:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-&gt;Beállítások<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Helyi beállítások lap<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Dumps könyvtár<br>
+<p>
+Ha nincsenek megadva paraméterek, akkor a funkció megegyezik a fő grafikus
+felhasználói felület következő funkciójával:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Eszközök-&gt;Szolgáltatásnaplók előállítása
+<p>
+Az érvényes paraméterek a következők:
+<pre>
+    /heapdump - végrehajtja a fentieket, valamint a JVM kupac kiíratását
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Összecsomagolja a meglévő naplókat és szálkiíratásokat egy zip fájlba, ami
+elküldhető az IBM számára szerviz célokra.
+<p>
+Az eredményül kapott ZIP fájl a fő grafikus felhasználói felületről így érhető el:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-Beállítások<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Helyi beállítások lap<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Service könyvtár<br>
+
+Ez a funkció egyenértékű a fő grafikus felhasználói felület
+Eszközök-&gt;Szerviznaplók csomagolása lehetőségével.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Szint&gt;
+                A &lt;Szint&gt; ezen támogatási naplózási szintek egyike lehet:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Ezzel a bedolgozóval a felhasználó parancssorból átkapcsolhatja a naplózási
+szintjét.
+<p>
+Ez a naplózási szint a fő grafikus felhasználói felületen is beállítható a következőképpen:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-&gt;Beállítások<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Általános lap<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Naplózási szint<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;userid&gt;] [/PASSWORD=&lt;password&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - a rendszer neve
+    /USERID   - felhasználói azonosító
+    /PASSWORD - a felhasználói azonosítóhoz tartozó jelszó
+    /AUTH     - a rendszerhez csatlakozásra tett kísérletek adott bejelentkezési azonosítókkal
+                csak a sikeresek ideiglenes mentése
+    /C        - gyorsítótár kiürítése
+    /GUI      - használható-e a grafikus felhasználói felület
+</pre>
+Ezzel a paranccsal a felhasználói azonosító és jelszó ideiglenes tárolóba
+kerül, ezáltal elkerülhető a jelszó rákérdezés.
+
+
+<h3><a id="9.1.9"></a>9.1.9 Props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Előhozza ugyanazt a grafikus felületi panelt, mint ami a fő grafikus
+felhasználói felület Szerkesztés-&gt;Beállítások lehetőségével jelenik meg.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;paraméterek&gt;]
+
+Az érvényes paraméterek a következők:
+    /killdaemon     - leállítja a démon szálakat.
+                      Egyenértékű a fő grafikus felület Eszközök-&gt;Visszaállítás
+                      karbantartáshoz lehetőségével
+    /clearpwcaches  - minden gyorsítótárban tárolt jelszót töröl
+    /clearjarcache  - kiüríti a termék JAR ideiglenes tárolóját
+    /clearlogs      - kiüríti a naplók könyvtárát a fő grafikus felület
+                      Szerkesztés-&gt;Beállítások Helyi beállítások lapján
+    /cleardumps     - kiüríti a kiíratások könyvtárát a fő grafikus felület
+                      Szerkesztés-&gt;Beállítások Helyi beállítások lapján
+    /clearsvcdir    - kiüríti a szerviz könyvtárat a fő grafikus felület
+                      Szerkesztés-&gt;Beállítások Helyi beállítások lapján
+    /clearsettings  - az aktuális felhasználó összes beállítását törli
+</pre>
+Ha nincs megadva paraméter, akkor nem kerül végrehajtásra művelet.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;rendszer&gt; [&lt;/paraméterek&gt;]
+    A paraméterek az alábbiak:
+        /SSL=&lt;1|0&gt;        SSL be- vagy kikapcsolása
+        /ACCEPTALLCERTS=&lt;1|0&gt; Az összes SSL tanúsítvány automatikusan
+                          hozzáadásra kerüljön-e a megbízható készlethez (SSL használata esetén).
+        /SERVERAUTH=&lt;1|0&gt; SSL szerverhitelesítés be- vagy kikapcsolása
+                          (alapértelmezés: ki). Ha nem SSL tesztelést végez, akkor ez a paraméter figyelmen kívül marad.
+        /GUI=&lt;1|0&gt;         GUI ablak be/kikapcsolása (parancssorból indítva az
+                          alapértelmezés ki).
+        /PORTS=&lt;port1,port2&gt; A tesztelendő portok vesszővel elválasztott felsorolása.
+                                Számok vagy szolgáltatásnevek lehetnek (pl.:
+                                /PORTS=as-signon,as-sts). Ha nincs megadva, akkor a
+                                portok alapértelmezett készlete kerül tesztelésre.
+                A .CONSOLE megadása esetén a rendszer ellenőrzi a konzolspecifikus portok listáját.
+
+        /TIMEOUT=&lt;másodperc&gt;   Időkorlátérték megadása másodpercben.
+</pre>
+Ez a bedolgozó az IBM i összekapcsolhatóságot úgy ellenőrzi, hogy megnyit egy
+kapcsolatot a megfelelő port felé.  SSL kapcsolat vizsgálatához SSL egyeztetést
+kísérel meg.
+Ha a fő grafikus felhasználói felületről lett indítva, vagy a /GUI=1
+paraméterrel került meghívásra, akkor a bedolgozó párbeszédpanelt jelenít meg.  Ha a parancssorból a /GUI=1 paraméter nélkül indult, akkor a kimenet a konzolra
+kerül.
+<p>
+Alapértelmezésben a következő szolgáltatások kerülnek vizsgálatra:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central, as-rmtcmd, as-database, as-dtaq, as-file, as-netprt, drda,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+Ez a funkció a fő grafikus felhasználói felületről a következőképp indítható:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Rendszerkonfigurációk<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;jelöljön ki egy rendszert, majd válassza a Szerkesztés lehetőséget<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Általános lap<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Kapcsolat ellenőrzése<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Ez a bedolgozó indítja az 5250 szekciókezelő grafikus felhasználói
+felületét.
+<p>
+Egyenértékű a fő grafikus felhasználói felület 5250 szekciókezelő
+lehetőségének kiválasztásával.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;options&gt;]
+
+A bedolgozó egy 5250 emulátort indít a megadott rendszerhez.
+Egyenértékű a fő grafikus felhasználói felület 5250 emulátor lehetőségének
+kiválasztásával.
+
+Az érvényes paraméterek a következők:
+    /id=&lt;A-Z&gt;                    - rövid szekcióazonosító
+    /name=&lt;név&gt;                  - a szekció neve
+    /wsid=&lt;identifier&gt;           - munkaállomás azonosító
+    /wide=&lt;1|0|true|false&gt;       - széles képernyőméret használata (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - a teljes képernyő használata
+    /nosave=&lt;1|0|true|false&gt;     - nem menti a beállításokat kilépéskor
+    /prompt=&lt;1|0|true|false&gt;     - konfigurációs párbeszédablak megjelenésének kényszerítése
+    /port=&lt;port&gt;                 - portszám
+    /ssl=&lt;1|0|true|false&gt;        - csatlakozás védett socketekkel
+    /sso=&lt;1|0|true|false&gt;        - bejelentkezési képernyő kihagyása
+    /kerberos                          - Kerberos használata
+    /width=&lt;szélesség&gt;           - emulátorablak kezdeti szélessége
+    /height=&lt;magasság&gt;           - emulátorablak kezdeti magassága
+    /xpos=&lt;xpos&gt;                 - emulátorablak bal felső sarkának kezdeti X-koordinátája
+    /ypos=&lt;ypos&gt;                 - emulátorablak bal felső sarkának kezdeti Y-koordinátája
+    /watermark                   - rendszernév megjelenítése vízjelként a képernyőn
+    /watermark=&lt;text&gt;            -megjelenítéshez megadott szöveget használhat vízjelként a képernyőn
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Ez a bedolgozó adatátvitelhez elindítja a fő grafikus felhasználói felületet.
+
+Egyenértékű a fő grafikus felhasználói felület Adatátvitel lehetőségének
+kiválasztásával.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;felhasználói_azonosító&gt;] &lt;fájlnév&gt; [&lt;fájlnév&gt; &lt;fájlnév&gt; ...]
+
+    /userid         - felhasználói azonosító a célrendszerhez való csatlakozáshoz
+    &lt;fájlnév&gt; - fájl .dtfx kiterjesztéssel, amely egy korábbi adatátviteli letöltésből
+                      került létrehozásra.
+</pre>
+A bedolgozóval a felhasználó futtathat egy előzőleg elmentett Adatátviteli
+letöltést.
+<p>
+Az Adatátvitel elérhető a fő grafikus felhasználói felület Adatátvitel
+lehetőségének kiválasztásával is.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;felhasználói_azonosító&gt;] &lt;fájlnév&gt; [&lt;fájlnév&gt; &lt;fájlnév&gt; ...]
+
+    /userid         - felhasználói azonosító a célrendszerhez való csatlakozáshoz
+    &lt;fájlnév&gt; - fájl .dttx kiterjesztéssel, amely egy korábbi adatátviteli feltöltésből
+                      került létrehozásra.
+</pre>
+A bedolgozóval a felhasználó futtathat egy előzőleg elmentett Adatátviteli
+feltöltést.
+<p>
+Az Adatátvitel elérhető a fő grafikus felhasználói felület Adatátvitel
+lehetőségének kiválasztásával is.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;rendszer&gt;
+                          [/userid=&lt;felhasználói_azonosító&gt;]
+                          {/hostfile=&lt;könyvtár/fájlnév&gt; | /sql="utasítás"}
+                          {/clientfile=&lt;útvonal&gt;&lt;fájlnév&gt;.&lt;kiterjesztés&gt; | /display}
+
+    /userid         - felhasználói azonosító a célrendszerhez való csatlakozáshoz
+    /hostfile   - Forráskönyvtár és fájl az IBM i rendszeren a letöltéshez
+                  e.g. /hostfile=QIWS/QCUSTCDT
+    /sql        - egy SQL utasítást ad meg
+                  e.g. /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - A letöltés cél fájlhelye.
+                  A fájl formátumát a megadott kiterjesztés dönti el
+                  (például .csv .ods .xlsx .xlsx)
+                  Ha nincs megadva a fájl kiterjesztése, vagy nem támogatott
+                  típusú, akkor az adatok .csv fájlformátumot kapnak
+    /display    - kimenet kiírása a terminálra
+</pre>
+A bedolgozó lehetővé teszi a felhasználó számára egy teljes fájl egyszerű
+letöltésének futtatását parancssorból.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;rendszer&gt;
+</pre>
+A bedolgozó egy 5250 konzolt indít a megadott rendszerhez.
+<p>
+Egyenértékű a fő grafikus felhasználói felület 5250 konzol lehetőségének kiválasztásával.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;rendszer&gt;
+</pre>
+A bedolgozó egy virtuális vezérlőpanelt indít a megadott rendszerhez.
+<p>
+Egyenértékű a fő grafikus felhasználói felület Virtuális vezérlőpanel lehetőségének kiválasztásával.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;rendszer&gt;
+</pre>
+A bedolgozó egy böngészőt indít az IBM i navigátorához a megadott rendszerrel
+és a 2001-es porttal.
+<p>
+Egyenértékű a fő grafikus felhasználói felület Navigator for i lehetőségének kiválasztásával.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;rendszer&gt;
+</pre>
+A bedolgozó megjeleníti a nyomtatókimenet grafikus felhasználói felületét IBM i
+spoolfájlok megtekintéséhez és letöltéséhez.
+<p>
+Egyenértékű a fő grafikus felhasználói felület Nyomtatókimenet lehetőségének kiválasztásával.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Ez a bedolgozó a Kulcskezelő eszközt jeleníti meg.
+<p>
+Ez a funkció egyenértékű a fő grafikus felhasználói felület
+Eszközök-&gt;Kulcskezelő lehetőségével.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;rendszer&gt;
+                  {/CMD="&lt;CL parancs&gt;" | file=&lt;fájlnév&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL parancs&gt;"  - futtatandó parancs. A parancsnak idézőjelek
+                           között kell lennie, hogy elkerülje a parancs felbontását
+                           szóközökkel.
+    /file=&lt;fájlnév&gt;      - adja meg a több parancsban használt bemeneti fájlt.                            Soronként egy parancsot kell megadni idézőjelek nélkül.
+    /noprompt=&lt;1|0&gt;      - bemeneti fájl megadásakor mellőzze az eredményeket és
+                           a rákérdezéseket a folytatás előtt.
+</pre>
+A bedolgozó CL parancso(ka)t küld a megadott rendszernek.
+<p>
+Ez a funkció csak parancssorból érhető el.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;rendszer,rendszer,rendszer,...&gt;
+</pre>
+Ez a bedolgozó módosítja a jelszót a megadott rendszereken.  Bekéri a felhasználótól
+a felhasználói azonosítót, valamint a régi és új jelszót.
+<p>
+Ez a funkció a fő grafikus felhasználói felületen is használható a
+Szerkesztés-&gt;Beállítások menü Jelszavak lapjának kiválasztásával.
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;paraméter&gt; /SYSTEM=&lt;rendszer&gt;
+
+&lt;rendszer&gt; lehet egy rendszer neve, vagy lehet *ALL, ami az összes rendszert jelöli.
+
+Az érvényes paraméterek a következők:
+    /IMPORT - Egy (vagy az összes) rendszerkonfiguráció másolása az örökölt Windows
+              konfigurációból az IBM i Access Client Solutions megoldásba.
+    /EXPORT - Egy (vagy az összes) rendszerkonfiguráció másolása az örökölt Windows
+              konfigurációba az IBM i Access Client Solutions megoldásból.
+    /DELETE - Egy (vagy az összes) rendszerkonfiguráció törlése az örökölt Windows
+              konfigurációból.
+</pre>
+Ez a bedolgozó lehetőséget nyújt rendszerkonfigurációk másolására
+az IBM i Access Client Solutions és az IBM i Access for Windows által
+támogatott örökölt Windows konfiguráció között oda-vissza.
+<p>
+Ez a funkció a fő grafikus felhasználói felületről is elérhető a
+Fájl-&gt;Kapcsolatok másolása lehetőséggel.
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Megjegyzés: Ez a bedolgozó csak a root vagy rendszergazda jogosultsággal rendelkező felhasználók számára érhető el.
+<pre>
+/PLUGIN=restrict /&lt;paraméterek&gt;
+
+ Az érvényes paraméterek a következők:
+     /restrict=&lt;func1,func2,func3&gt;   Adott funkciókat korlátoz a
+                                 munkaállomáson.
+     /unrestrict=&lt;funkc1,funkc2,funkc3&gt; Adott funkciókat engedélyez a
+                                 munkaállomáson.
+     /list                              Megjeleníti, hogy a funkciók engedélyezettek
+                                        vagy korlátozottak a munkaállomáson.
+     /export=&lt;fájl&gt;                  Megszorítások exportálása a megnevezett,
+                                        .acsr kiterjesztésű fájlba.
+     /import=&lt;fájl&gt;.acsr             Megszorítások importálása .acsr kiterjesztéssel
+                                        rendelkező fájlból.
+     /exportreg=&lt;fájl&gt;               Windows rendszerleíróadatbázis-fájl
+                                        (.reg fájl) exportálása.
+
+</pre>
+<p>Ez a bedolgozó az adminisztrátori vagy root jogosultsággal rendelkező
+felhasználók számára biztosítja bizonyos funkciók korlátozásának képességét a
+munkaállomás valamennyi felhasználója esetében.
+<pre>
+   Funkció           Leírás
+    cfg             Rendszerkonfigurációk
+    sm              5250 szekciókezelő
+    5250            5250 emulátor
+    vcp             Virtuális vezérlőpanel
+    console         5250 konzol
+    consoleprobe    Konzolkonfigurációk keresése a helyi hálózaton
+    hmcprobe        partíciók keresése a HMC-n
+    hmi1            1. hardverfelügyeleti felület
+    hmi2            2. hardverfelügyeleti felület
+    keyman          SSL/TLS tanúsítványkezelés
+    dtgui           Adatátvitel grafikus felhasználói felülete
+    upload          Adatátvitel kötegelt feltöltései
+    download        Adatátvitel kötegelt letöltései
+    cldownload      Adatátvitel kötegelt letöltései
+    l1c             IBM i navigátor (1. szintű konzol)
+    rmtcmd          Távol parancs (a parancssorból elérhető)
+    splf            Nyomtatókimenet (spoolfájlok)
+    ifs             Integrált fájlrendszer
+    db2             Sémák
+    rss             SQL parancsfájlok futtatása
+    db2tools        SQL teljesítményközpont
+    sysdbg          IBM i rendszer hibakereső
+    checkupdates    Rendelkezésre álló frissítések ellenőrzése
+    ssh             Biztonságos parancsértelmező
+</pre>
+<p>A függvényeket csoport kulcsszavakkal is ki lehet zárni:
+<pre>
+   Csoport            Függvény
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+A funkciók korlátozásának képessége a fő grafikus felhasználói felületen is
+elérhető az adminisztrátorok vagy root jogosultsággal rendelkező felhasználók
+számára:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-&gt;Beállítások<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Megszorítások lap<br>
+
+<p>
+A funkciók korlátozásának legegyszerűbb módját,
+több munkaállomáson, az <a href="#9.5">9.5 Egyéni
+csomagok</a> rész írja le.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Felsorolja a munkaállomáson jelenleg korlátozott funkciókat.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;fájltípus&gt; &lt;fájltípus&gt; ...] [/c]
+
+    &lt;filetype&gt;   - érvényes fájltípusok:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - törli a megadott fájltípusokhoz tartozó fájltársítást
+</pre>
+Windows platformon a .dttx, .dtfx, .hod, .bchx, .ws és .bch típusú fájlok
+társításait állítja be.  Nem Windows platformon hibaüzenet jelenik meg.
+<p>
+Ez a funkció a fő grafikus felhasználói felület Eszközök -&gt; Fájltársítások
+létrehozása műveletével egyenértékű.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;felhasználói_azonosító&gt;] &lt;fájlnév&gt; [&lt;fájlnév&gt; &lt;fájlnév&gt; ...]
+
+    /userid         - felhasználói azonosító a célrendszerhez való csatlakozáshoz
+    &lt;fájlnév&gt; - fájl .dtfx vagy .dttx kiterjesztéssel, amely egy korábbi
+                Adatátviteli le- vagy feltöltésből került létrehozásra.
+                Több fájl ezzel a kulcsszóval vagy enélkül is megadható.
+</pre>
+A bedolgozóval a felhasználó egy előzőleg elmentett Adatátviteli kérést
+futtathat.
+<p>
+Az Adatátvitel elérhető a fő grafikus felhasználói felület Adatátvitel
+lehetőségének kiválasztásával is.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;file&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - Átállítandó fájlok.  A fájloknak 5250-es fájloknak kell lenniük
+                .ws, .bch, .kmp, .pmp vagy .bar kiterjesztéssel.
+    /output   - az átállított fájlok tárolási helye.
+    /verbose  - átállított fájlok eredményének megjelenítése
+    /gui      - felhasználói felület indítása 5250-es fájlok átállításához.
+</pre>
+A bedolgozóval a felhasználó fájlokat állíthat át az IBM i Access for Windows Personal  Communications emulátor  és az IBM i Access Client
+Solutions emulátort között.
+Néhány konvertált fájl új fájlkiterjesztést kap.  Olvassa
+le a <a href="#9.6.2">9.6.2 5250 emuláció átállítása</a> témakört. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;rendszer&gt; /DATABASE=&lt;adatbázis&gt; [/FILE=&lt;fájl&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - Megadott fájl megnyitása
+    /SQL=&lt;filename&gt;  - Megadott fájl megnyitása
+    /AUTORUN=&lt;1,0&gt;   - Parancsfájl automatikus futtatása
+</pre>
+A bedolgozó lehetővé teszi a felhasználó számára SQL utasítások és CL parancsok futtatását.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;rendszer&gt; /DATABASE=&lt;adatbázis&gt; [Beállítások]
+
+Az érvényes paraméterek a következők:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Végrehajtandó tevékenység:
+                      A LIST paraméter használható a LISTNAME argumentummal, és megjeleníti az
+                      SQL teljesítményközpontot a megadott listával.
+                      Az ANALYZE paraméter elemzi a megadott teljesítmény adathalmazt.
+                      A STATEMENTS paraméter megjeleníti az utasításokat az SQL terv gyorsítótár vagy
+                      a megadott teljesítmény adathalmaz számára.
+                      A COMPARE paraméter összehasonlítja a megadott teljesítmény adathalmaz(oka)t.
+    /NAME=&lt;név&gt;    - A teljesítmény adathalmaz neve
+    /TABLE=&lt;név&gt;   - A teljesítményadatokat tartalmaz tábla neve
+    /SCHEMA=&lt;név&gt;  - A teljesítményadatokat tartalmazó tábla sémájának neve
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - Az SQL teljesítményközpontban megjelenítendő kezdeti lista.
+</pre>
+Az SQL teljesítményközpont bedolgozó egy eszközkészletet biztosít, amely segít optimalizálni az SQL kódot az adatbázis alkalmazásokban.
+<ul>
+<li>Elemzés - Az összegyűjtött teljesítményadatok összesített nézetét biztosítja, ami kiindulási pontként szolgál a mélyebb elemzéshez, ráközelítéses navigáció használatával.
+<li>Összehasonlítás - Kettő vagy több teljesítményadat-gyűjtemény összegzésének összehasonlítása, majd kettő kiválasztása mélyebb utasítás összehasonlításra.
+<li>Utasítások megjelenítése - SQL utasítások kezelése az SQL terv gyorsítótárban vagy teljesítményadat-gyűjteményben.
+<li>Vizuális magyarázat - Az utasítás végrehajtási terv grafikus megjelenésének előállítása, az SQL utasítások pontos működésének megjelenítéséhez.
+<li>SQL terv gyorsítótár - A rendszer SQL terv gyorsítótár beállításainak kezelése .
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;rendszer&gt;
+</pre>
+Integrált fájlrendszer egy felületet biztosít az IBM i rendszer integrált fájlrendszerének böngészéséhez, és az objektumok kezeléséhez az integrált fájlrendszeren, az alábbi módokon:
+<ul>
+<li>Objektumok másolása a kliens rendszer és az IBM i között
+<li>Objektumok másolása az integrált fájlrendszeren belül az IBM i rendszeren, vagy egy integrált fájlrendszerre egy másik IBM rendszeren
+<li>Objektumok küldése egy (vagy több) IBM i rendszerre
+<li>Új mappák (címjegyzékek, könyvtárak és mappák) létrehozása
+<li>Objektumok törlése
+<li>Objektumok átnevezése
+<li>Objektumok tulajdonságainak megjelenítése
+</ul>
+A <a href="#9.12">9.12 integrált fájlrendszer (IFS)</a> részben olvashat a bedolgozó használatára vonatkozó követelményekről és korlátozásokról
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;rendszer&gt;
+</pre>
+A bedolgozó egy felületet biztosít a Db2 for i adatbázisok kezeléséhez az IBM i rendszeren.
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+A bedolgozó egy felületet biztosít a rendelkezésre álló frissítek ellenőrzéséhez.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;rendszer&gt;
+</pre>
+Az SSH terminál elindít egy már telepített SSH ügyfelet (terminál emulátor) a számítógépén
+az IBM i integrált fájlrendszer felé.
+
+
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Fájltársítások</h3>
+<p>
+Az IBM i Access Client Solutions által előállított bizonyos konfigurációs
+fájlok akkor támogatottak a parancssorban, amikor első és egyetlen paraméterként
+vannak megadva.
+Amikor ezek az adott fájlkiterjesztésű fájlok első paraméterként vannak
+megadva, akkor az IBM i Access Client Solutions a fájlt a meghívandó funkcióval
+társítja, és megadja a funkció számára bemenetként az adott fájlt.
+<p>
+Az alábbi kiterjesztések rendelkeznek fájltársítás-támogatással:
+<pre>
+    .dttx   - Adatátvitel - feltöltési kérés
+    .dtfx   - Adatátvitel - letöltési kérés
+    .hod    - 5250 emulátorszekció-profil
+    .bchx   - többszörös szekcióemulációs profil
+    .ws     - 5250 emulátorszekció-profil (Personal Communications)
+    .bch    - többszörös szekcióemulációs profil (Personal Communications)
+</pre>
+Parancssori példák:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - futtatja a mentett letöltési műveletet
+    acslaunch_xxx dt_upload_file.dttx   - futtatja a mentett feltöltési műveletet
+    acslaunch_xxx system_lp13ut20.hod   - a rendszer 5250 szekcióját indítja
+</pre>
+...ahol acslaunch_xxx a termék indításához használt parancssori szintaxis. Lásd:
+<a href="#7.3">7.3 A termék indítása (parancssorból)</a>.
+<p>
+Ezek a támogatott fájltársítások lehetővé teszik a felhasználó számára az
+operációsrendszer-specifikus fájltársítások saját kezű beállítását.  Mivel a
+fájltársítás platformfüggő, a szükséges lépések az adott operációs rendszertől
+függenek.
+</p>
+Azért lehet érdemes megfontolnia az operációs rendszer fájltársításinak
+beállítást, mert így valamelyik fenti támogatott fájltípusra történő dupla
+kattintással elindíthatja a megcélzott funkciót.
+<p>
+A következő szakaszok néhány példát adnak bizonyos operációs rendszerek
+fájltársításainak beállítására.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Fájltársítások (Windows)</h3>
+<ol>
+<li>A fő grafikus felhasználói felület menüsorában válassza az
+Eszközök-&gt;Fájltársítások létrehozása... menüpontot.
+<li>Válassza ki azokat a fájltípusokat, amelyekhez fájltársításokat kíván
+készíteni.
+<li>Kattintson az OK gombra.
+</ol>
+<p>
+Ha ezután az ilyen típusú fájlra duplán kattint, akkor a megfelelő IBM i Access
+Client Solution funkció fog futni.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Ikon cseréje (Windows parancsikon)</h3>
+<ol>
+<li>Keresse meg a bináris fájl számára korábban létrehozott, az architektúrának
+(acslaunch_win-32.exe VAGY acslaunch_win-64.exe) megfelelő parancsikont.
+<li>Kattintson a jobb egérgombbal, majd válassza az előugró menü Tulajdonságok
+menüpontját.
+<li>Válassza a Parancsikon lapot.
+<li>Kattintson az Ikon módosítása... gombra.
+<li>Válassza ki a parancsikon esetében használni kívánt ikont.
+<li>Kattintson az OK gombra.
+<li>Kattintson az OK gombra.
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Asztali ikon beállítása (Linux)</h3>
+<p>
+Kövesse a <a href="./QuickStartGuide_en.html">Gyors üzembe helyezési
+útmutató</a> Linux rendszerre vonatkozó lépéseit.  Ezzel a következő helyen
+telepíti az alkalmazást: /opt/ibm/iAccessClientSolutions.  Létrehozza továbbá a
+következőt: /usr/share/applications/IBM i Accesss Client Solutions.desktop
+<p>
+Ha ikont kíván készíteni a termékhez az Asztalon, akkor másolja át a fenti .desktop fájlt a Desktop mappába.  Lehetséges, hogy be kell állítania az asztali
+fájl jogosultságait, hogy az végrehajthatóvá váljék.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Fájltársítások (Linux)</h3>
+<p>
+A fájltársítások beállításához szükséges lépések a használt Linux
+disztribúciótól és asztali környezettől függenek.  Általánosságban a szükséges
+lépések hasonlóak lesznek a Windows esetében alkalmazott fenti lépésekhez.
+<ol>
+<li>Keresse meg a támogatott kiterjesztéssel (pl. .hod, .bchx, .dtfx vagy .dttx)
+   rendelkező társítani kívánt fájlt.
+<li>Kattintson a jobb egérgombbal a fájlra. Keresse meg a beállításokat vagy
+tulajdonságokat, melyek lehetővé teszik a fájlhoz program társítását.
+<li>Társítsa a fájlt és/vagy annak kiterjesztését a megfelelő IBM i Access
+Client Solutions bináris fájlhoz vagy indítási parancsfájlhoz.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Fájltársítások (Mac)</h3>
+<p>
+A fájltársítások Mac rendszeren való használatához a fájltípusnak társítva kell
+lennie egy alkalmazással.  Kövesse a Mac rendszerre vonatkozó <a href="./QuickStartGuide_en.html">Gyors
+üzembe helyezési útmutató</a> dokumentumot, ahol az IBM i Access Client Solutions telepített alkalmazás.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 fájltársítások létrehozása (Mac)</h3>
+<ol>
+<li>A Finder alkalmazással keresse meg a támogatott kiterjesztéssel (pl. .hod,
+.bchx, .dtfx vagy .dttx) rendelkező társítani kívánt fájlt.
+<li>Jelölje ki a fájlt, majd válassza a Fájl-&gt;Információk lekérése
+lehetőséget.
+<li>A "Megnyitás ezzel:" részben válassza ki az Egyéb lehetőséget.
+<li>Keresse meg az IBM i Access Client Solutions alkalmazás helyét.
+<li>Válassza ki az alkalmazást.
+<li>Jelölje be a Megnyitás mindig ezzel jelölőnégyzetet.  Válassza ki a Hozzáadás-t.
+<li>Lépjen vissza a "Megnyitás ezzel:" beállításra, majd válassza ki az Összes
+módosítása lehetőséget.  Kattintson a folytatásra a párbeszédpanelen.
+</ol>
+<p>
+Ha ezután az ilyen típusú fájlra duplán kattint, akkor a megfelelő IBM i Access
+Client Solution funkció fog futni.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Ikon módosítása (Mac)</h3>
+<p>
+Az termék könyvtárban az Icons mappa megkereséséhez használja az Előnézet
+alkalmazást, majd a Finder alkalmazás segítségével cserélje ki az ikont az
+Információk lekérése területen.
+<ol>
+<li>Az Előnézetben válassza a Fájl-&gt;Megnyitás lehetőséget.
+<li>Keresse meg a termék Icons könyvtárát.
+<li>Válassza ki a fájlt, amely az ikont tartalmazza, és kattintson a Megnyitás
+lehetőségre.
+<li>Válassza a Szerkesztés-&gt;Mindet kijelöli lehetőséget.
+<li>Válassza a Szerkesztés-&gt;Másolás lehetőséget.
+<li>A Finder alkalmazásban keresse meg azt a .hod, .bchx, .dtfx vagy .dttx
+fájlt, amelynek ikonját módosítani kívánja.<br>
+   Ha a fájl már a számítógépén van, kattintson rá a kiválasztáshoz.  Egyéb
+esetben válassza ki az Ugrás-&gt;Ugrás a mappára lehetőséget, majd adja meg a
+fájl útvonalát, és kattintson az Ugrás lehetőségre.<br>
+   Kattintson a fájlra a kiválasztásához.
+<li>Válassza a Fájl-&gt;Információk lekérése lehetőséget.
+<li>Kattintson az ikonra az Információk lekérése panel tetején.
+<li>Válassza a Szerkesztés-&gt;Beillesztés lehetőséget.
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Konfiguráció helyének módosítása</h3>
+<p>
+Alapértelmezésben minden egyes felhasználó a konfigurációjához saját egyedi
+hellyel rendelkezik. A konfiguráció helye a következő tulajdonság beállításával
+módosítható:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Ez a tulajdonság az AcsConfig.properties fájlban található.
+<p>
+A AcsConfig.properties fájl a termék szállításakor két helyen létezik. A acsbundle.jar fájlban található.  Kényelmi okokból a zip archív fájl is tartalmazza,
+és ugyanabban a könyvtárban helyezkedik el, ahol az
+acsbundle.jar fájl, a zip archívum kicsomagolásakor.
+<p>
+Az indítás során a termék csak az első megtalált AcsConfig.properties fájlt
+használja.  Először ellenőrzi azt a könyvtárat, ahol az acsbundle.jar fájl található.
+Ha az AcsConfig.properties nem található ugyanabban a könyvtárban, ahol az acsbundle.jar
+fájl, akkor az acsbundle.jar fájlban lévő AcsConfig.properties fájlt használja.
+<p>
+Lehetősége van frissíteni az AcsConfig.properties fájlt az acsbundle.jar helyen egyéni
+konfigurációs útvonallal.  Ha ezt teszi, akkor gondoskodjék róla, hogy az acsbundle.jar
+könyvtára ne tartalmazzon AcsConfig.properties fájlt, különben ez kerül felhasználásra.
+Ez biztosítja a konfigurációs hely acsbundle.jar fájllal történő terjesztésének,
+egyúttal a felülbírálásának rugalmasságát.
+<p>
+Speciális kulcsszavak állnak rendelkezésre, melyek használhatók a konfigurációs útvonal
+meghatározásakor.  Amikor a megadott útvonalban szerepelnek a kulcsszavak, akkor azok
+az általuk meghatározott szövegre vagy útvonalra lesznek cserélve.  Csak egy kulcsszó használható
+a konfigurációs útvonalban.  A
+speciális kulcsszavak és azok jelentése:<br>
+<pre>
+	{USER} - Az aktuális felhasználói azonosító. Ez a kulcsszó akárhol elhelyezkedhet az útvonalban.
+</pre>
+<p>
+Az alábbi kulcsszavak csak a megadott útvonal elején helyezkedhetnek el:
+<pre>
+	{PRODUCTDIR} - az acsbundle.jar fájl könyvtárával megegyező útvonal
+	{TEMPDIR}    - a platformspecifikus ideiglenes könyvtár útvonala
+	{ROOT}       - a fájlrendszer gyökerének útvonala
+	{HOME}       - a felhasználó alapkönyvtárának útvonala
+	{DEFAULT}    - az alapértelmezett útvonal, amelyet a termék normál esetben használ
+</pre>
+<p>
+Technikai megjegyzés:<br>
+Nem javasoljuk egy konfiguráció megosztását több felhasználó között.
+Ha például
+X egy megosztott hálózati meghajtó, akkor a következő beállítás megjósolhatatlan
+eredményt ad:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+Számos problémát okoz az, ha több felhasználó osztozik ezen a konfigurációs
+útvonalon:<br>
+<ol>
+<li>Megjósolhatatlan kimenetelt eredményez az, ha több felhasználó egyidejűleg
+   használja a konfigurációt.
+<li>Ez a példa azt tételezi fel, hogy minden egyes felhasználónál az X meghajtó
+   ugyanahhoz a helyhez van rendelve.
+<li>A konfigurációban a hálózati meghajtó nem használható Linux vagy Mac
+   kliensről.  A lenti példák szerint megadott kulcsszavak használatával
+   működni fog Windows, Linux és Mac rendszeren.
+</ol>
+<p>
+Ha egy konfigurációs útvonal több felhasználó között meg van osztva, akkor a {USER}
+kulcsszót kell használni a többi felhasználóval történő ütközés elkerülése érdekében.  Ez
+az aktuális felhasználó felhasználói azonosítójára lesz cserélve.
+<p>
+A konfigurációs útvonal beállításakor osztásjelet ('/') használjon
+könyvtárelválasztóként fordított osztásjel ('\') helyett.  Ez minden
+operációs rendszeren működni fog, beleértve a Windows rendszert is.
+<p>
+Néhány ajánlott mintakonfiguráció:
+<p>
+1. példa - aktuális felhasználó helyi konfigurációja (alapértelmezett):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Ha az AcsBaseDirectory nincs beállítva, akkor a konfiguráció alapértelmezése a
+felhasználó platformfüggő elérési útja.
+Az IBM i Access Client Solutions alapértelmezett beállítása.
+<p>
+2. példa - a távoli (vagy helyi) konfiguráció egyedi minden felhasználó esetén:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+A konfiguráció a {ROOT} helyétől függően távoli vagy helyi lesz.
+<p>
+3. példa - a távoli (vagy helyi) konfiguráció egyedi minden felhasználó esetén:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+A konfiguráció a {PRODUCTDIR} helyétől függően távoli vagy helyi lesz.
+<p>
+4. példa - helyi konfiguráció cserélhető adathordozón (például USB meghajtón):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Mivel a cserélhető adathordozó útvonala változó attól a rendszertől függően,
+ahol felhasználásra kerül, ez a beállítás lehetővé teszi a konfigurációnak a
+termékfájlokhoz képest relatív megadását.  Ebben a példában a {USER} kulcsszó
+szándékosan nem volt megadva, így az USB meghajtón lévő konfigurációt az USB
+meghajtó felhasználója használja, a felhasználói azonosítótól függetlenül.
+
+
+<h3><a id="9.4"></a>9.4 Egyéb telepítési beállítások</h3>
+<p>
+A következőkben néhány további megfontolandó telepítési lehetőséget talál:
+<ul>
+   <li>A termék telepítése egyetlen helyre, ahol több felhasználó is elérheti.
+   <li>Ha webszerverrel rendelkezik, akkor fontolja meg a Web Start használatát.
+	 Lásd: http://java.com/en/download/faq/java_webstart.xml
+   <li>Automatikusan importálja a konfigurációs beállításokat.
+     Lásd a következő szakaszt: <a href="#9.4.1">9.4.1</a>.
+   <li>Natív telepítése IBM i rendszeren. Olvassa el a <a href="#9.4.2">9.4.2</a> témakört.
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Konfigurációs beállítások automatikus importálása</h3>
+<p>
+Az AcsConfig.properties fájlban az alábbi tulajdonságok használhatók az új
+felhasználók automatikus beállításához vagy meglévő felhasználók
+konfigurációjának frissítéséhez:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+A szükséges lépések a következők:
+<ol>
+<li>Hozza létre a legalább egy felhasználó felé terjesztendő konfigurációt.
+<li>Exportálja a konfigurációt a fő grafikus felület Fájl-&gt;Konfiguráció
+   exportálása menüpontjával, vagy a <a href="#9.1.1">9.1.1 Backup</a> szakasz
+   parancssori paraméterével.
+<li>Helyezze át a konfigurációs fájlt a kívánt helyre.  Számos, később bemutatott
+   lehetőség áll rendelkezésre.
+<li>Állítsa be a com.ibm.iaccess.autoimport tulajdonságot az AcsConfig.properties
+   fájlban a konfigurációs fájl útvonalának értékére.
+<li>Állítsa be a com.ibm.iaccess.autoimport.version tulajdonságot olyan egész
+   értékre, amely a konfigurációs fájl változatát képviseli.
+</ol>
+<p>
+Így működik:<br>
+A com.ibm.iaccess.autoimport tulajdonság által hivatkozott mentett konfiguráció
+automatikusan importálásra kerül, amikor a com.ibm.iaccess.autoimport.version
+tulajdonság egész értéke eltér az utoljára importált
+értéktől.  Ez azon felül, hogy módot ad kezdeti konfiguráció beállítására
+és frissítéseket biztosít meglévő konfigurációhoz, lehetőséget nyújt
+konfiguráció szintjének csökkentésére.  A konfiguráció minden esetben frissítésre
+kerül, amikor a változat tulajdonság egész értéke eltér a legutolsó
+importált változattól.  Azonban míg egy importált konfiguráció módosíthatja
+a felhasználó konfigurációjában egy meglévő rendszer konfigurációját, a
+rendszer soha nem kerül törlésre a felhasználó konfigurációjából.
+<p>
+A com.ibm.iaccess.autoimport tulajdonság útvonala megadható abszolút útvonallal,
+URL címmel vagy a <a href="#9.3">9.3</a> szakaszban meghatározott
+kulcsszavakkal.  Például:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+További rugalmasságot biztosít a konfigurációs fájl terjesztésének
+engedélyezése az acsbundle.jar fájlban vagy az acsbundle.jar fájl könyvtárában.
+Bármely esetben állítsa be a com.ibm.iaccess.autoimport tulajdonság értékét a
+fájl nevére a megelőző elérési út nélkül:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+A speciális * érték engedélyezett a com.ibm.iaccess.autoimport.version esetében:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Ennek hatására a konfiguráció mindig importálásra kerül, bármely előző
+változattól függetlenül.
+
+<h3><a id="9.4.2"></a>9.4.2 Natív IBM i telepítések</h3>
+<p>
+Néhány parancssori bedolgozó, melyekhez nem szükséges grafikus felület, használható natív módon az IBM i rendszeren.
+Az adatátvitelt például közvetlenül használhatja az IBM i rendszeren az adatok kinyeréséhez adatbázisból táblázat fájltípusba, anélkül, hogy
+letöltené az adatokat a számítógépre.
+<p>
+Ehhez kibonthatja a termék zip archívumát az IBM i integrált fájlrendszer (IFS) tetszőleges helyére.
+Ha például az alábbi zip archívumba bontotta ki a terméket:
+<pre> /home/AccessClientSolutions </pre>
+És korábban elmentette az adatátvitel letöltési kérést az alábbi helyre:
+<pre> /some_path/qcustcdt.dtfx </pre>
+Akkor futtassa a következő parancs az IBM i rendszeren:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Egyéni csomagok</h3>
+<p>
+Az IBM i Access Client Solutions a rendszeradminisztrátorok számára lehetővé
+teszi adott funkciók használatának korlátozását az AcsConfig.properties fájl
+következő tulajdonságának beállításával:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;funkció, funkció,...&gt;
+</pre>
+A megadható funkciókulcsszavak a következők:<br>
+<pre>
+
+   Funkció           Leírás
+    cfg             Rendszerkonfigurációk
+    sm              5250 szekciókezelő
+    5250            5250 emulátor
+    vcp             Virtuális vezérlőpanel
+    console         5250 konzol
+    consoleprobe    Konzolkonfigurációk keresése a helyi hálózaton
+    hmcprobe        partíciók keresése a HMC-n
+    hmi1            1. hardverfelügyeleti felület
+    hmi2            2. hardverfelügyeleti felület
+    keyman          SSL/TLS tanúsítványkezelés
+    dtgui           Adatátvitel grafikus felhasználói felülete
+    upload          Adatátvitel kötegelt feltöltései
+    download        Adatátvitel kötegelt letöltései
+    cldownload      Adatátvitel kötegelt letöltései
+    l1c             IBM i navigátor (1. szintű konzol)
+    rmtcmd          Távol parancs (a parancssorból elérhető)
+    splf            Nyomtatókimenet (spoolfájlok)
+    ifs             Integrált fájlrendszer
+    db2             Sémák
+    rss             SQL parancsfájlok futtatása
+    db2tools        SQL teljesítményközpont
+    sysdbg          IBM i rendszer hibakereső
+    checkupdates    Rendelkezésre álló frissítések ellenőrzése
+    ssh             Biztonságos parancsértelmező
+</pre>
+<p>A függvényeket csoport kulcsszavakkal is ki lehet zárni:
+<pre>
+
+   Csoport            Függvény
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+A rendszeradminisztrátor adott funkciók hozzáférésének korlátozását az
+AcsConfig.properties fájl frissítésével érheti el.  A hozzáférés korlátozása eltávolítja
+a funkciót a fő grafikus felhasználói felületről, és letiltja annak parancssori használatát.
+<p>
+A funkciók korlátozásának egyik példája a következő sor hozzáadása az
+AcsConfig.properties fájlhoz:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Ha a rendszeradminisztrátor az AcsConfig.properties fájlt az acsbundle.jar
+fájlban azelőtt kívánja frissíteni, mielőtt telepítené azt a felhasználókhoz,
+akkor a követendő módszerre lehet példa az alábbi:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+A <a href="#9.3">9.3 Konfiguráció helyének módosítása</a> szakaszban további
+információk találhatók arról, hogyan dönti el az IBM i Access Client Solutions
+rendszer azt, hogy melyik AcsConfig.properties fájl kerüljön felhasználásra.
+
+
+<h3><a id="9.6"></a>9.6 Átállítás az IBM i Access for Windows rendszerről</h3>
+<p>
+Az IBM i Access Client Solutions konfigurációs fájlok nem kompatibilisek az IBM
+i Access for Windows megfelelő funkcióival.  Az IBM i Access Client
+Solutions átállítási útvonalat biztosít számos kulcselemhez, ahogyan az a
+következő szakaszokban tárgyalásra kerül.
+
+<h3><a id="9.6.1"></a>9.6.1 Rendszerkonfigurációk átállítása</h3>
+<p>
+A fő grafikus felhasználói felület Fájl-&gt;Kapcsolatok másolása menüjéből
+elérhető Kapcsolatok másolása funkció felülete segítségével
+rendszerkonfigurációk másolhatók az IBM i Access Client Solutions és az IBM i
+Access for Windows által támogatott örökölt Windows konfiguráció
+között.  További információkért tekintse meg a Kapcsolatok
+másolása főablakának Súgóját.
+
+A rendszerkonfigurációk parancssorból is átállíthatók.  További információkért
+tanulmányozza a <a href="#9.1.25">9.1.25 MIGRATE</a> szakaszt.
+
+<h3><a id="9.6.2"></a>9.6.2 5250 emuláció átállítása</h3>
+<p>
+Az IBM i Access for Windows Personal Communications emulátor által használt
+5250 emulációfájlok az IBM i Access Client Solutions 5250 szekciókezelőjével
+konvertálhatók. A Personal Communications programból az alábbi fájltípusok
+konvertálhatók:<br>
+<pre>
+   .ws   - emulátorprofil
+   .bch  - emulátor-parancsfájl
+   .kmp  - billentyűzet egyéni beállításait tartalmazó fájl
+   .pmp  - előugró billentyűblokkhoz tartozó fájlok
+   .bar  - menüsor fájljai
+</pre>
+A fájlok az alábbiakra lesznek konvertálva:<br>
+<pre>
+   .hod  - emulátorprofil
+   .bchx - emulátor-parancsfájl
+   .kmp  - billentyűzet egyéni beállításait tartalmazó fájl
+   .pmp  - előugró billentyűblokkhoz tartozó fájlok
+   .bar  - menüsor fájljai
+</pre>
+A .kmp, .pmp és .bar fájltípusokat mindkét termék használja.  A formátumok azonban nem
+kompatibilisek. Az átalakított fájlok egy IBM i Access Client Solutions
+termékre jellemző útvonalon kerülnek létrehozásra.
+<p>
+A fájlok konvertálása az BM i Access Client Solutions szekciókezelőjéből indítható, az alábbi módon:
+<ul>
+<li> válassza a Fájl-&gt;Importálás menüpontot, majd keresse meg a Personal Communications fájlokat.
+<li> húzza át és rakja le a fájlt az IBM i Access Client Solutions szekciókezelő ablakba.
+</ul>
+...vagy használja a parancssorból a PM5250 bedolgozót.  Olvassa el a <a href="#9.1.30">9.1.30 PM5250</a> témakört.
+
+<p>
+Rendelkezésre áll egy makrókonverziós segédprogram.  A Szekciókezelőben válassza
+a következőt:<br>
+<pre>
+    Eszközök-&gt;Makró konvertálása...
+</pre>
+Technikai megjegyzés:<br>
+Előfordulhat, hogy a makrókonverziós segédprogram nem tud átalakítani egy
+PC5250 makrót, ha az egy rögzített billentyűleütéseknél többet tartalmazó
+egyéni makró.  
+
+<h3><a id="9.6.3"></a>9.6.3 Mentett adatátviteli kérésfájlok átállítása</h3>
+<p>
+Az IBM i Access Client Solutions adatátvitele varázslót biztosít az IBM i
+Access for Windows által előállított mentett adatátviteli kérésfájlok
+átalakításához.
+<p>
+Az alábbi fájltípusok konvertálhatók IBM i Access for Windows programból:<br>
+<pre>
+   .dtf - adatátvitel IBM i rendszerből
+   .dtt - adatátvitel IBM i rendszerbe
+</pre>
+A fájlok az alábbiakra lesznek konvertálva:
+<pre>
+   .dtfx - adatátvitel IBM i rendszerből
+   .dttx - adatátvitel IBM i rendszerbe
+</pre>
+Az Adatátvitel átállítási varázslója nem állít át .fdf fájlokat. Az IBM i Access
+Client Solutions által igényelt új fájltípus .fdfx, amely letöltés során vagy
+a Fájl létrehozása varázsló segítségével állítható elő.
+<p>
+Az Adatátvitel átállítási varázslója az Adatátvitel főmenü
+Műveletek-&gt;Adatátvitel átállítás menüpontjával érhető el
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+Azok az 5250 alkalmazások, amelyek EHLLAPI felhasználásával érik el az IBM i
+Access for Windows termékkel együtt szállított Personal Communications
+emulátort, a következő KB cikkben nyújtanak információkat az EHLLAPI
+IBM i Access Client Solutions termékkel való felhasználásáról:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+Az IBM i Access Client Solutions termék rendelkezik Kerberos támogatással.  Ha a
+rendszerekhez való csatlakozás során Kerberost kíván használni, akkor tegye a
+következőket:<br>
+<ol>
+<li>A fő grafikus felhasználói felületen nyissa meg a Rendszerkonfigurációk
+   lehetőséget.
+<li>Válassza az Új lehetőséget, vagy egy meglévő rendszerkonfiguráció esetén
+   kattintson a Szerkesztés gombra.
+<li>A Kapcsolat lapon jelölje be a következőt:<br>
+   "Kerberos hitelesítés használata; nincs kérdés".
+</ol>
+A Kerberos környezet beállítása kívül esik a jelen dokumentum hatókörén.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Kulcskezelés</h3>
+<p>
+A Védett socket réteg (SSL) típusú kapcsolatok kezelési tanúsítványai a fő
+grafikus felhasználói felületen érhetők el az Eszközök-&gt;Kulcskezelés
+lehetőség kiválasztásával.  A Kulcsadatbázis
+néhány feladatához a kulcstároló integritási jelmondatára van szükség.
+
+<h3><a id="9.8"></a>9.8 Adatátvitel</h3>
+<h3><a id="9.8.1"></a>9.8.1 Adatátviteli támogatás Excel és Calc táblázatokhoz</h3>
+<p>
+A Fájlba történő letöltések támogatása mellett az Adatátvitel támogatja a
+letöltést aktív táblázatba a Microsoft Excel táblázatkezelő vagy az OpenOffice
+Calc táblázatkezelője esetében.  Egy aktív táblázat
+letöltéséhez a fő Adatátviteli grafikus felhasználói felületi panel egy beállítást
+biztosít, amellyel kiválaszthat egy kimeneti eszközt.  A Kimeneti eszköz
+alapértelmezésben a Fájl.  Ha a platform támogatja az együttműködést az Excel és/vagy Calc
+táblázatkezelővel, akkor az Aktív Excel táblázat és az Aktív Calc táblázat
+esetében további beállítások választhatók ki a Kimeneti eszköz legördülő
+mezőben.
+<p>
+Megszorítások:
+<ul>
+<li>Legalább az OpenOffice 3.4.1 változata szükséges Windows rendszeren.
+<li>Legalább az OpenOffice 4.2.1 változata szükséges Linux és Mac rendszeren, az alapértelmezett helyre telepítve.
+<li>A Linux és Mac rendszeren futó IBM i Access Client Solutions csak az OpenOffice együttműködést támogatja.<br>
+A Windows rendszeren futó IBM i Access Client Solutions a Microsoft
+Excel és az OpenOffice Calc programokkal való együttműködést is
+támogatja.
+<li>Az OpenOffice bitszámának meg kell egyeznie az IBM i Access
+Client Solutions alkalmazás bitszámával.<br>
+Magyarázat: Az OpenOffice elérhető 32 bites és 64 bites
+változatban is.  64 bites PC-n mindkét változat fut.
+Az OpenOffice táblázatkezelő használatakor a bitszámnak azonosnak
+kell lennie az OpenOffice alkalmazás és az IBM
+i Access Client Solutions alkalmazás esetében, különben az Adatátvitel
+nem lesz képes együttműködni a táblázatkezelővel.
+Az IBM i Access
+Client Solutions alkalmazás bitszámát a Java Virtual Machine (JVM) határozza meg, amelyen fut.  Ha a bitszám nem egyezik meg az OpenOffice alkalmazás és az BM i
+Access Client Solutions terméket futtató JVM között, és a Kimeneti
+eszközként az aktív táblázatot választja ki, akkor az
+"Aktív táblázat nem található" üzenethez hasonló hiba jelenik meg.  Ha 64 bites PC rendszert használ, akkor az IBM i Access
+Client Solutions terméket elindíthatja a platformnak megfelelő 32 bites vagy 64 bites
+bináris indítóval.  Ahhoz, hogy az aktív táblázat támogatás működjön,
+indítsa el az IBM i Access Client Solutions terméket a használt
+OpenOffice alkalmazás bitszámának megfelelő platformspecifikus
+binárissal.
+<br>Mivel a Mac csak a 64 bites JVM gépet támogatja, az OpenOffice 64 bites változatát kell telepíteni az aktív táblázatkezelő támogatás
+használatához Mac rendszeren.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Adatátvitel támogatása karaktercsonkolás és numerikus túlcsordulás esetén</h3>
+<p>
+Adatátviteli feltölt kérés során, ha egy karakteres vagy numerikus mező meghaladja a mező meghatározott méretét, akkor a feltöltési kérés
+lezárul.
+<p>
+A karakteres mezők végének csonkolása akkor lesz engedélyezett, ha beállítja a következő tulajdonságot az AcsConfig.properties fájlban:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Ahhoz, hogy a numerikus mezők esetében engedélyezett legyen, hogy a maximális pozitív vagy negatív értékre legyenek beállítva, ha az
+adott mező meghaladja a megadott határt, akkor állítsa be a következő tulajdonságit az AcsConfig.properties fájlban:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Ha ezen tulajdonságok értéke igaz, akkor a feltöltési kérés anélkül folytatódik, hogy jelezné, hogy csonkolás vagy túlcsordulás történt.  A
+karakteres mező vége kerül csonkolásra.  A numerikus mezők a maximális értékre kerülnek
+beállításra a túlcsorduláshoz, illetve a minimális értékre az alulcsorduláshoz.
+<p> 
+Alternatív megoldásként a fenti tulajdonságokat a parancssorból is beállíthatja, a többi java tulajdonsághoz hasonlóan, az alábbiak szerint:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Adatátviteli lap neve</h3>
+<p>
+A letöltések során, a munkalap neve az IBM i forráskönyvtár és -fájl neve  alapján kerül
+előállításra, a ">Sheet#"  karaktersorozat hozzáfűzésével, ahol a # a megfelelő lapszámot
+jelenti.  Például:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+A lapnév könyvtár és fájl részének felülbírálásához megadhatja a következő tulajdonságot:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=your_string<br>
+Ez az alábbit állítja elő:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;your_string>Sheet1
+
+<h3><a id="9.9"></a>9.9 Konzolkapcsolat létesítése IBM i rendszerhez</h3>
+<p>
+Az adminisztratív funkciók IBM i rendszeren való végrehajtásához 5250-es konzol
+szükséges.
+Az IBM i Access Client Solutions támogatja a LAN és a HMC konzolkonfigurációt is.
+<p>
+Ha ismeri az IBM i Szerviz hosztnevét vagy Szerviz IP címét, vagy a HMC konzol
+hosztnevét vagy IP címét, akkor az alábbi lépéseket követve beállíthatja a
+konzolinformációkat az IBM i Access Client Solutions terméken belül:<br>
+<ol>
+<li>Indítsa el az IBM i Access Client Solutions terméket a számítógépen.
+<li>A fő panelen kattintson a Rendszerkonfigurációk lehetőségre.
+<li>Kattintson az Új gombra új konfiguráció megadásához, vagy a Szerkesztés
+gombra egy meglévő konfiguráció frissítéséhez.
+<li>Válassza a Konzol lapot.
+<li>Adja meg konzoltípusa megfelelő információit.
+</ol>
+<p>
+Olyan IBM i esetében, ahol a konzolkonfiguráció még nem létezik, (pl.: a vállalatához
+újonnan szállított rendszer), a konzolkapcsolathoz automatikusan hozzárendelésre kerül
+egy IP cím a 169.254.62.0 - 169.254.62.63 tartományon az IPL során. Ezekben az
+esetekben a következő lépésekkel létesíthető konzolkapcsolat az IBM i Access Client
+Solutions használatával:<br>
+<ol>
+<li>Tiltsa le a számítógép vezetéknélküli csatlakozását.  A következő lépésekhez vezetékes
+Ethernet port szükséges.
+<li>Kösse össze a számítógépet és az IBM i T1 portot egy Ethernet-kábellel.
+<li>Indítsa el az IBM i Access Client Solutions terméket a számítógépen.
+<li>A fő panelen kattintson a Rendszerkonfigurációk lehetőségre.
+<li>A Rendszerkonfigurációk területen kattintson a Konzol keresése... gombra.
+<li>Az IBM i Kereső panelen kattintson a Keresés gombra.
+<li>Ha az IPL szekvencia az IBM i rendszeren eléggé előrehaladott állapotban van az
+automatikus IP cím hozzárendeléséhez, akkor az IP címnek meg kell jelennie a Keresés
+panelen.
+<li>A kiválasztásához kattintson a megjelenített IP címre, majd kattintson a
+Konzol gombra egy 5250-es konzol csatlakoztatásához.
+<li>Megjelenik egy panel, amely a Szervizeszközök hitelesítési adatait kéri.
+<li>Az érvényes hitelesítési adatok megadását követően megjelenik egy 5250-es konzol.
+<li>A konzol segítségével kezelhetők a kezdeti telepítési és beállítási feladatok.
+</ol>
+<p>
+Amikor készen áll, hogy hozzáadja az IBM i rendszert hálózati
+infrastruktúrájának többi részéhez, akkor a Szervizeszközök LAN adapterének
+konfigurálásával kapcsolatban további információkat talál az IBM információs
+központban:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Forduljon a "Szervizeszközszerver beállítása a kijelölt szervizeszközök (DST)
+számára" című szakaszhoz.
+
+<p>
+A LAN konzolkonfigurációval már rendelkező, és már a hálózati infrastruktúra
+részét képező IBM i rendszerek esetében a következő lépések segítségével
+kereshet meglévő konzolkonfigurációkat:<br>
+<ol>
+<li>Indítsa el az IBM i Access Client Solutions terméket a számítógépen.
+<li>A fő panelen kattintson a Rendszerkonfigurációk lehetőségre.
+<li>A Rendszerkonfigurációk területen kattintson a Konzol keresése... gombra.
+<li>Az IBM i Kereső panelen frissítse a Közelében mezőt egy IP címre a
+tartományban, amelyben keresni kíván.
+<li>Kattintson a Keresés gombra a megadott tartományban található LAN konzolok
+megkereséséhez.
+<li>A kiválasztásához kattintson a megjelenített IP címre, majd kattintson a
+Konzol gombra egy 5250-es konzol csatlakoztatásához.
+<li>Megjelenik egy panel, amely a Szervizeszközök hitelesítési adatait kéri.
+<li>Az érvényes hitelesítési adatok megadását követően megjelenik egy 5250-es konzol.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Kiegészítő betűkészletek</h3>
+<p>
+Az 5250 emuláció kiegészítő betűkészleteit a Fonts könyvtárba lehet felvenni.
+<p>
+A kiegészítő betűkészletek alternatív és/vagy többszörös helyének megadásához a com.ibm.iaccess.Fonts tulajdonságot kell beállítania az AcsConfig.properties
+fájlban.
+<p>
+Az alapértelmezett Fonts könyvtárat a com.ibm.iaccess.Fonts tulajdonság
+következőre való beállításával lehet felülbírálni:<br>
+<ol> 
+<li>&lt;útvonal&gt; - amely egy betűkészleteket tartalmazó könyvtár
+<li>&lt;útvonal&gt;/&lt;fájlnév&gt; - amely egy adott betűkészletfájl (pl.:
+.ttf)
+<li>betűkészletre mutató URL cím
+<li>a fentiek bármelyikének pontosvesszővel tagolt listája
+</ol>
+<p>
+Megjegyzés:<br>
+Az &lt;útvonal&gt; abszolút, illetve az acsbundle.jar fájltól kiinduló relatív
+elérési útvonal lehet. Az 5250 emuláció csak fix szélességű betűkészleteket
+ismer fel.
+<p>
+1. példa (alapértelmezett):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+2. példa:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Azonosítók használata netrc fájlból</h3>
+<p>
+.netrc fájl (Linux és Mac) vagy _netrc fájl (Windows) használatának engedélyezéséhez lépjen az IBM i Access Client
+Solutions központi grafikus felületére, és a menüsorból válassza az alábbiakat:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Szerkesztés-&gt;Beállítások<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Általános lap<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Jelölje be a következő jelölőnégyzetet: <b>netrc fájl beolvasása bejelentkezési információkhoz </b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Kattintson az Alkalmaz gombra<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Indítsa újra az IBM i Access Client Solutions terméket<br>          
+<p>
+A netrc fájl szabványos formátuma a következő:<br>
+<pre>
+     machine &lt;rendszer&gt; login &lt;felhasználói_azonosító&gt; password &lt;jelszó&gt;
+</pre>
+<p>
+A netrc fájlt a felhasználó alapkönyvtárában kell tárolni, a rendszernévnek és a felhasználói azonosítónak pedig meg kell felelnie a
+<b>rendszer-konfigurációnak</b>.  IBM i Access Client Solutions terméken tegye a következőket:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Válassza ki a rendszerkonfigurációt<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Válassza ki és szerkessze a rendszert<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Kapcsolatok lap<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Válassza ki az <b>alapértelmezett felhasználói név használata paraméterbeviteli képernyő egyszeri megjelenítéséhez az egyes rendszereken</b> beállítást<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Adja meg a felhasználói azonosítót a következőhöz: <b>Alapértelmezett felhasználói név</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Kattintson az OK gombra.<br>          
+
+<p>
+Ha a rendszer neve és az <b>Alapértelmezett felhasználói név</b> megfelel a netrc fájl tartalmának, akkor a rendszerhez való csatlakozás
+a netrc fájlban lévő jelszóval történik, felhasználói közreműködés nélkül.
+
+<h3><a id="9.12"></a>9.12 Integrált fájlrendszer (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 és biztonság</h3>
+<p>
+Az integrált fájlrendszer támogatás a QFileSvr.400 fájlrendszert használja az objektumok másolására és IBM i partíciók közötti
+küldésére. Ez azt jelenti, hogy a felhasználói profilnak és a jelszónak mindkét partíción egyeznie kell, és hogy a partíciókon azonos
+jelszószint rendszerváltozónak kell lenni (QPWDLVL).
+Kerberos hitelesítés használatakor mindkét partíciónak rendelkeznie kell Hálózati
+hitelesítési szolgáltatással és Vállalati azonosság leképezéssel. További részletekért tekintse meg a következő
+témakört: "Biztonság és objektumjogosultság a QFileSvr.400 fájlrendszeren" az IBM i  információs központban.
+<p>
+A QFileSvr.400 fájlrendszerrel használatával, más IBM i partíciókkal létesített kapcsolatok nem biztonságosak.
+Ha biztonságos kapcsolat szükséges objektum másolásakor vagy küldésekor IBM i partíciók között, akkor a partíció konfigurációját ne kell
+állítani SSL használatára, a rendszerkonfiguráción ki kell választani az "SSL kapcsolat használata" beállítást a partícióhoz,
+és be kell állítani a következő tulajdonságot az AcsConfig.properties fájlban:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+Alternatív megoldásként a tulajdonság beállítható a parancssorból, mint bármely más java tulajdonság az alábbi módon:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS jogosultság</h3>
+<p> 
+Az integrált fájlrendszer támogatás jogosultságot igényel a következő CL parancsokhoz:<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+Ha a felhasználó nem használhatja ezeket a CL parancsokat, akkor a másolás, beillesztés,
+küldés, törlés és új mappa műveletek sikertelenek lesznek.
+
+<h3><a id="9.12.3"></a>9.12.3
+IFS korlátozások</h3>
+<p>
+Az integrált fájlrendszer nem engedélyez műveleteket olyan objektumokon, melyek elérési útja /QFileSvr.400, /QNTC vagy /QOPT
+karaktersorozattal kezdődik.  Ha az aktuális könyvtárútvonal, vagy valamely kijelölt útvonal /QFileSvr.400, /QNTC vagy /QOPT
+karaktersorozattal kezdődik, akkor a Műveletek menü minden eleme tiltott lesz, és nem jelenik meg az előugró menü.
+
+<h3><a id="9.12.4"></a>9.12.4 IFS és független lemeztárak</h3>
+<p>
+Az integrált fájlrendszer támogatás nem engedélyezi a másolás, beillesztés vagy küldés műveleteket, ha a forrásobjektum vagy a
+célútvonal független lemeztáron található.
+
+<h3><a id="9.13"></a>9.13 Biztonságos parancsértelmező (SSH) terminál</h3>
+<p>
+Azokon a platformokon, ahol a biztonságos parancsértelmező alapértelmezetten létezik vagy már
+telepítették, az SSH terminál jellemző megjelenik az IBM i Access Client Solutions fő grafikus
+felhasználói felületén. Az SSH terminál elindít egy terminál emulátort az IBM i integrált fájlrendszer felé.
+<p>
+A legtöbb Mac, Linux és más UNIX-ból származó rendszerek már alapértelmezésben tartalmaznak biztonságos parancsértelmezőt. 
+Ezeken a platformokon feltételezett egy OpenSSH kliens létezése az usr/in/ssh könyvtárban.  Windows
+felhasználóknak telepíteniük kell egy Windows számára rendelkezésre álló biztonságos parancsértelmezőt.
+<p>
+Az IBM i Access Client Solutions megoldások az alábbi biztonságos parancsértelmezőket támogatják:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a cygwin az openssh csomag telepítését igényli
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a bash a Linux subsystem for Windows részeként érhető el
+
+<p>
+Ha több SSH alkalmazás van telepítve, akkor az előnyben részesített SSH klienset a
+com.ibm.iaccess.PreferredSSHClient tulajdonság segítségével állíthatja be.
+<p>Linux példák:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac példák:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows példák:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+Olyan esetekben, amikor az SSH kliens nem a szabványos helyre került telepítésre, a com.ibm.iaccess.PreferredSSHClient tulajdonság
+segítségével megadhatja a teljes képzésű útvonalat a telepített SSH klienshez.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+A teljes képzésű útvonal megadása után szükséges lehet a com.ibm.iaccess.SSHClientOpt beállítása is
+az összes szükséges argumentum megadásához. Például le kívánja tiltani a figyelmeztetéseket, ha nem használ X11 továbbítást:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 SSH terminál előfeltételei</h3>
+Telepítse az 5733-SC1 IBM Portable Utilities for i programot az IBM i rendszeren.
+<br>Indítsa el a biztonságos parancsértelmező démont a következő paranccsal:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Ha kapcsolati hibáról kap értesítést, az elindított SSH kliensen (pl. "kapcsolat elutasítva"), vagy ha egy ablak felugrás után azonnal eltűnik, akkor lehet, hogy el kell indítania az SSH démont a fenti programmal.
+<hr><h3><a id="10.0"></a>10.0 Szervizdiagnosztikák</h3>
+<p>
+Ha olyan problémával találkozik, amely az IBM közreműködését igényli, akkor az
+IBM szervizképviselője a következők egyikéhez vagy mindkettőhöz irányíthatja
+Önt:
+<p>
+Az IBM i Access Client Solutions fő grafikus felhasználói felületéről:<br>
+<ul>
+ <li>válassza ki az Eszközök-&gt;Szerviznaplók előállítása lehetőséget<br>
+     Ez ugyanazt a funkciót valósítja meg, mint a <a href="#9.1.5">9.1.5 Dump</a>
+     szakasz parancssori paramétere.  Ezt jellemzően közvetlenül a meghibásodás után kell
+     elvégezni.  A problémától függően az IBM szerviz képviselő ennek többszöri
+     végrehajtását is kérheti.
+ <li>válassza ki az Eszközök-&gt;Szerviznaplók csomagolása lehetőséget<br>
+     Ez ugyanazt a funkciót valósítja meg, mint a <a href="#9.1.6">9.1.6 Medic</a>
+     szakasz parancssori paramétere.  Ez a funkció összegyűjti a munkaállomás környezetének részleteit,
+     és becsomagolja a szerviznaplókat egy zip archívumba, melyet elküldhet az
+     IBM részére.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Gyakran ismételt kérdések (GyIK)</h3>
+<p>
+<pre>
+K1    Amikor megpróbálom elindítani az IBM i Access Client Solutions programot,
+      akkor a következő hibát kapom:
+             az osztály nem tölthető be: java.lang.UnsupportedClassVersionError
+V1-1  A JDK 6.0 vagy újabb változatát kell használnia. Lásd:
+      <a href="#3.0">3.0 Előfeltételek</a>
+
+K2    Amikor megpróbálom elindítani a terméket az egyik megadott bináris
+      fájllal vagy parancsfájllal a parancsértelmezőből vagy terminálszekcióból,
+      akkor a következő hibát kapom:
+         Engedély megtagadva
+A2-1  Ellenőrizze a fájljogosultságokat, hogy rendelkezik-e  végrehajtási
+      engedéllyel.  Lásd a <a href="#6.0">6.0 Fájlengedélyek</a> szakaszt.
+
+K3    Amikor a termék indításához duplán kattintok valamelyik megadott fájlra,
+      semmi sem történik.
+V3-1  Valószínűleg nincs Java telepítve. Lásd: <a href="#3.0">3.0 Előfeltételek</a>
+A3-2  Lehetséges, hogy a termék indításához használt fájl nem rendelkezik végrehajtási
+      engedéllyel. Lásd a <a href="#6.0">6.0 Fájlengedélyek</a> szakaszt.
+A3-3  Lehet, hogy a környezettel vannak problémák. Az esetlegesen előforduló hibák
+      megtekintéséhez próbálja meg a megadott fájl parancssorból történő futtatását.
+      Lásd: <a href="#7.3">7.3 A termék indítása (parancssorból)</a>.
+
+K4    A termék indításához az egyik megadott bináris fájlt szeretném használni, de a következő
+      hibát kapom:  "Hiba a Java modul betöltése során."
+V4-1  A bináris fájl nem találta a Java telepítés saját könyvtárát.
+      Ellenőrizze, hogy van-e Java telepítve. Lásd:
+      <a href="#3.0">3.0 Előfeltételek</a>.
+V4-2  A <a href="#7.1.1">7.1.1 A termék indítása - További lehetőségek</a> rész
+      további módszereket tartalmaz a termék bináris fájl segítségével történő
+      indításához.
+
+K5    A JAVA_HOME környezeti változó beállítása után a termék indításához használt
+      bináris fájl parancssorból működik, de nem működik, ha duplán kattintok rá.
+V5-1  A JAVA_HOME környezeti változó valószínűleg nem látható abból a
+      fájlkezelőből, ahol duplán kattint a fájlra. A környezeti változók
+      beállítása operációs rendszertől függően változó, ahogy azok láthatósága
+      is.
+      Próbálja meg a JAVA_HOME környezeti változót az operációs rendszerhez
+      tartozó rendszerszintű környezeti változóként beállítani. Az operációs
+      rendszer a rendszerváltozókat globális környezeti változóként
+      azonosíthatja.
+      A JAVA_HOME környezeti változó beállítása után zárja be és nyissa meg
+      a fájlkezelőt, majd próbálkozzon meg újra a bináris fájlon a dupla kattintással.
+
+Q6    Amikor a termék indításához duplán kattintok valamelyik megadott fájlra,
+      egy szövegszerkesztő megjeleníti a fájlt.
+V6-1  Győződjön meg róla, hogy a parancsfájl az operációs rendszer által
+      felismerhető fájlkiterjesztéssel rendelkezik-e.
+V6-2  Próbálkozzon másik parancsfájllal.
+V6-3  Módosítsa a fájlt megnyitó programot.
+A6-4  Ellenőrizze a fájljogosultságokat, hogy rendelkezik-e végrehajtási
+      engedéllyel.  Lásd a <a href="#6.0">6.0 Fájlengedélyek</a> szakaszt.
+
+K7    Ha a termék indításához duplán kattintok valamelyik megadott fájlra, akkor
+      a rendszer rákérdez, hogy melyik programot használja a fájl megnyitásához.
+V7-1  Győződjön meg róla, hogy a parancsfájl az operációs rendszer által
+      felismerhető fájlkiterjesztéssel rendelkezik-e.
+A7-2  Állítsa be, hogy a fájlt megnyitó program a használt bináris fájllal vagy parancsfájllal
+      kompatibilis legyen. Például: terminál (Mac esetén).
+A7-3  Ellenőrizze a fájljogosultságokat, hogy rendelkezik-e végrehajtási
+      engedéllyel.  Lásd a <a href="#6.0">6.0 Fájlengedélyek</a> szakaszt.
+
+K8    Amikor az IBM i Access Client Solutions terméket Mac rendszeren a Finder
+      alkalmazásból indítom, akkor előugrik egy terminál, és nem tűnik el akkor
+      sem, amikor bezárom az IBM i Access Client Solutions programot.
+A8-1  Ahhoz, hogy ne kapjon előugró terminálszekciót, használja a telepítő parancsfájlokat
+      Mac rendszerhez a Gyors üzembe helyezési útmutatóban.
+
+K9    Mi a legjobb módszer a termék indítására?
+A9-1  A <a href="#7.0">7.0 Termék indítása</a> szakaszban leírt három módszer közül bármelyiket
+      használhatja, akár a bináris fájlt, akár a parancsfájlt, akár a
+      parancssort. A környezetében működő bármelyik módszer elfogadható.
+
+Q10   Miért vannak bináris fájlok (Start_Programs) és parancsfájlok
+      (Sample_Scripts) egyaránt a termék indításához?
+A10-1 A parancsfájlok nem operációs rendszerre jellemzők, és általánosabb módot biztosítanak
+      a termék indításához, ha a platformra jellemző bináris fájlok nem működnek.
+V10-2 Bizonyos operációs rendszerek a fájltársítások során bináris fájlokat igényelnek.
+      A legtöbb esetben a bináris fájlokat kell használni a termék indításához.
+A10-3 Néhány környezet tűzfalakat tartalmazhat, melyek korlátozzák a hozzáférést
+      az IBM i Access Client Solutions bizonyos részeihez. Ha bináris fájllal indítja el a
+      terméket, akkor egyszerűbb lesz a rendszeradminisztrátorok számára a hozzáférés beállítása.
+
+K11   A JDK 6.0 (vagy újabb) változat telepítése után még mindig a következő
+      hibaüzenetet kapom:
+      az osztály nem tölthető be: java.lang.UnsupportedClassVersionError
+A11-1 A munkaállomásán használt Java alapértelmezett változata a JDK 6.0 változat
+      előtti. Meg kell adnia azt a beállítást, amely kifejezetten meghatározza a JDK 6 Java saját
+      könyvtárát. Lásd a <a href="#7.1.2">7.1.2 A Java saját könyvtárának megkeresése</a>. Használja a Java
+      saját könyvtárát valamelyik alábbi szakaszban ismertetett módszerhez:
+      <a href="#7.1.1">7.1.1 A termék indítása - További lehetőségek</a><br>
+      <a href="#7.3">7.3 A termék indítása (parancssorból)</a><br>
+
+K12   Nem tudok importálni egyéni billentyűzetkiosztás (.kmp) fájlokat a
+      Windows 5250 emulátorszekciómból.
+A12-1 A 2012 júliusában megjelent IBM i Access Client Solutions kezdeti
+      változatában a .kmp fájlok Windows 5250 emulátor szekcióprofilokból (.ws)
+      történő importálása nem volt támogatott. A 2012 októberétől elérhető
+      változattól a .kmp fájlok importálása az 5250 szekcióprofilokból
+      (.ws) már támogatott.
+
+Q13   Az 5250 emulátor billentyűzet személyre szabása teljesen más, mint a
+      Windows rendszeren volt. Van javaslata?
+V13-1 A billentyűzetkiosztás kategóriákra van bontva. Emulátorszekcióból:
+      Kattintson a Szerkesztés &gt; Beállítások &gt; Billentyűzet elemekre,
+      vagy kattintson az eszköztár Átdefiniálás gombjára.
+      Kattintson a Billentyű hozzárendelések fülre.
+      Válasszon kategóriát. Az alapértelmezett billentyűkiosztások a
+      "Hosztfunkciók" és a "Menüparancsok" kategóriákban jelennek meg.
+      Válassza ki a hozzárendelni kívánt funkciót.
+      Kattintson a Hozzárendelés gombra.
+      A billentyűzeten nyomja meg azt a billentyűt (vagy billentyűkombinációt),
+      amit hozzá kíván rendelni ehhez a funkcióhoz.
+V13-2 Az egyéni billentyűkiosztások súgójáért:
+      Kattintson a Szerkesztés &gt; Beállítás &gt; Billentyűzet lehetőségre,
+      vagy kattintson az eszköztár Átdefiniálás gombjára. Kattintson a Súgó
+      gombra.
+
+K14   Amikor a terméket Mac OS X 10.8 Mountain Lion rendszeren próbálom indítani,
+      előugró üzenetet kapok, ami jelzi, hogy az alkalmazás nincs aláírva.
+V14-1 Ez a Mac OS X 10.8 Mountain Lion változata óta alapértelmezésben
+      foganatosított biztonsági irányelv. A következő weboldal leírja, hogyan
+      kell az alkalmazás futtatását engedélyezni:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+K15   IBM i Access for Windows felhasználó vagyok, átállíthatom a
+      rendszerkonfigurációkat IBM i Access Client Solutions termékre?
+V15-1 Lásd: <a href="#9.6.1">9.6.1 Rendszerkonfigurációk átállítása</a>.
+
+K16   IBM i Access for Windows felhasználó vagyok, átállíthatom az emuláció
+      profiljaimat IBM i Access Client Solutions termékre?
+V16-1 Lásd: <a href="#9.6.2">9.6.2 5250 emuláció átállítása</a>
+
+K17   IBM i Access for Windows felhasználó vagyok, átállíthatom az adatátviteli
+      kérésfájljaimat IBM i Access Client Solutions termékre?
+V17-1 Lásd: <a href="#9.6.3">9.6.3 Mentett adatátviteli kérésfájlok
+      átállítása</a>
+
+K18   Használható EHLLAPI az IBM i Access Client Solutions termékkel?
+V18-1 Lásd: <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+K19   Használható Kerberos az IBM i Access Client Solutions termékkel?
+V19-1 Lásd: <a href="#9.6.5">9.6.5 Kerberos</a>
+
+K20   Rendszeradminisztrátor vagyok, el szeretnék rejteni bizonyos funkciókat a
+      felhasználóim elől.
+V20-1 Lásd: <a href="#9.5">9.5 Egyéni csomagok</a>
+
+Q21   Amikor kiválasztom a súgóikont a panelen, nem jelenik meg szöveg.
+A21-1 A súgószöveg általában a munkaasztali böngészőben jelenik meg. Bizonyos esetekben a
+      munkaasztal nem rendelkezik böngészővel, vagy az nincs helyesen beállítva.
+A21-2 A munkaasztali böngésző használata nélkül úgy jelenítheti meg a súgó szövegét, ha beállítja
+      az alábbi tulajdonságot az AcsConfig.properties fájlban:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      Alternatív megoldásként a tulajdonság beállítható a parancssorból, mint bármely más java tulajdonság az alábbi módon:
+      -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+K22   Adatátvitel használatakor, kiválasztva Kimeneti eszközként az "Aktív Excel
+      táblázat" vagy az "Aktív Calc táblázat" lehetőséget, a következő hibát
+      kapom:
+         "Aktív táblázat nem található"
+V22-1 Nincs aktív táblázat. Nyisson meg egy új vagy egy meglévő táblázatot, és
+      próbálkozzon meg ismét a kéréssel.
+V22-2 Előfordulhat, hogy bitszámeltérés van a használt táblázatkezelő
+      alkalmazás és az IBM i Access Client Solutions terméket futtató Java
+      virtuális gép között.
+      Lásd: <a href="#9.8">9.8 Excel és Calc táblázatok adatátvitelének
+      támogatása</a>
+
+K23   Adatátvitel használatakor Mac készüléken, nem látom az aktív táblázattal
+      való együttműködés lehetőséget a Kimeneti eszköz területen.
+Q23-1 Az Adatátvitel nem tud együttműködni az aktív táblázatokkal Mac készüléken, mert az
+      OpenOffice és az IBM i Access Client Solutions terméket futtató termék között bitszámeltérés van.
+      További részletekért lásd az <a href="#9.8">9.8 Excel és Calc táblázatok adatátvitelének
+      támogatása</a> szakaszt.
+
+K24   Adatátvitel használatakor Kimeneti eszközként az "Aktív Calc táblázat"
+      lehetőséget kiválasztva semmi nem jelenik meg a Név mezőben.
+Q24-1 Ez normális az új, még nem mentett Calc táblázatok esetében.
+      Az
+      Adatátvitel továbbra is képes lesz frissíteni a táblázatot a letöltött
+      adatokkal.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Frissítési történet</h3>
+<p>
+Tekintse meg a következő weboldalt:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

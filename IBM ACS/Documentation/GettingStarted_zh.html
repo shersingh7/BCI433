@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GettingStarted</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - GettingStarted</h2>
+<h2>本文档内容的最近一次更新日期：2018 年 1 月 8 日</h2>
+
+
+<h3><a id="0.5"></a>0.5 QuickStartGuide</h3>
+<p>
+<a href="./QuickStartGuide_en.html">QuickStartGuide</a> 中包含的指示信息说明如何部署适用于大多数运行
+Windows、Mac 或 Linux 的用户的产品。要为单用户或多用户 PC 安装本产品，请参阅
+Documentation 文件夹中的 <a href="./QuickStartGuide_en.html">QuickStartGuide</a>。<p>
+本文档的其余部分提供了有关此产品、其他部署选项以及定制此产品的更多详细信息。<h3>目录：</h3>
+<a href="#0.5">0.5 QuickStartGuide</a><br>
+<a href="#1.0">1.0 简介</a><br>
+<a href="#2.0">2.0 功能特性</a><br>
+<a href="#3.0">3.0 先决条件</a><br>
+<a href="#4.0">4.0 产品内容</a><br>
+<a href="#5.0">5.0 安装</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 更新现有安装</a><br>
+<a href="#6.0">6.0 文件许可权</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 文件许可权（Linux、Mac 和 AIX）</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 文件许可权 (Windows)</a><br>
+<a href="#7.0">7.0 启动产品</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 启动产品</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 使用脚本启动产品</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 使用命令行启动产品</a><br>
+<a href="#8.0">8.0 配置</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 配置位置</a><br>
+<a href="#9.0">9.0 高级主题</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 更多命令行选项</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 文件关联</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 文件关联（对于 Windows）</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 更改图标（对于 Windows 快捷方式）</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 设置桌面图标（对于 Linux）</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 文件关联（对于 Linux）</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 文件关联（对于 Mac）</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 创建文件关联（对于 Mac）</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 更改图标（对于 Mac）</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 更改配置位置</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 其他部署选项</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 自动导入配置设置</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 本机 IBM i 部署</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 定制包</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 从 IBM i Access for Windows 进行迁移</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 迁移系统配置</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 迁移 5250 仿真</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 迁移已保存的数据传输请求文件</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 密钥管理</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 数据传输</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 对 Excel 电子表格和 Calc 电子表格的数据传输支持</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 对字符截断和数字溢出的数据传输支持</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 数据传输工作表名称</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 建立控制台与 IBM i 的连接</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 其他字体</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 使用 netrc 文件中的凭证</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 集成文件系统 (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS、QFileSvr.400 和安全性</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS 权限</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS 限制</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS 和独立 ASP</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 安全 Shell (SSH) 终端</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 SSH 终端先决条件</a><br>
+
+
+
+<a href="#10.0">10.0 服务诊断</a><br>
+<a href="#11.0">11.0 常见问题 (FAQ)</a><br>
+<a href="#12.0">12.0 更新历史记录</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 简介</h3>
+<p>
+IBM i Access Client Solutions 是 IBM i Access 产品系列的最新成员。它提供了一个基于 Java 且独立于平台的接口，该接口在大多数支持 Java 的操作系统（其中包括 Linux、Mac 和 Windows）上运行。IBM i Access Client Solutions 将用于管理 IBM i 的最常用任务整合到一个经过简化的位置。<p>
+IBM i Access Client Solutions 与其他 IBM i Access Family 产品使用相同的 IBM i 主机服务器，
+并且需要同一 IBM i Access Family 许可证 (XW1)，以便使用 5250 仿真和数据传输功能。<p>
+并且，还提供了两个包含中间件的可选包，以便使用和开发面向 Windows 及 Linux 的客户机应用程序：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows 应用程序包<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux 应用程序包<br>
+<p>
+使用 IBM i 7.1 或更高版本并具有当前权利的客户可以通过以下两种方法之一来获取 IBM i Access Client Solutions：
+<ul>
+<li> 下载基本 <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a> 软件包。<li> 从 <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> Web 站点的 5761-SS1 或 5770-SS1 中下载基本软件包以及可选的 Windows 和 Linux 应用程序包。</ul>
+
+<p>
+可选的 Windows 和 Linux 应用程序包只能从 Entitled Software Support (ESS) Web 站点获得。<p>
+客户可以通过订购 5761-SS1 或 5770-SS1 刷新功能部件 6288 来获取介质。物理介质包含产品的可运行版本，该版本允许您直接从 CD 运行产品。物理介质还包含产品的 zip 归档，可以将该归档复制和解压缩至
+您选择的位置。IBM i Access Client Solutions 的物理介质不包含可选 Windows 和 Linux
+应用程序包。<p>
+有关更多信息，请访问：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+有关 IBM i Access Family 产品的最新信息，请访问：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 功能特性</h3>
+<p>
+IBM i Access Client Solutions 具有下列功能特性：
+<ul>
+<li>提供了基于 IBM Rational Host On-Demand 的功能全面的
+5250 显示仿真器。除了您在使用 IBM i Access for Windows 时习惯使用的所有 5250 显示功能以外，还有一些其他功能，它们是：<ul>
+<li>选项卡支持，允许多个会话共享单个查看区域
+<li>鼠标滚轮支持，允许在页面之间进行直观滚动
+<li>可以在语言之间切换，而不必重新引导工作站
+<li>使用不同主机代码页的并发显示会话，允许在不同仿真器会话中使用不同语言
+</ul>
+<li>打印机仿真
+<li>仿效 IBM 个人通信会话管理器的 5250 会话管理器，可用于管理所有 5250 仿真器会话
+<li>可以执行数据传输，能够将数据从 IBM i 数据库传输至工作站上各种类型的文件（例如，OpenDocument 电子表格 (*.ods)、Excel 工作簿 (*.xlsx) 和其他文件格式），也可以将数据从这些文件传输至 IBM i 数据库
+<li>“打印机输出”提供了一个界面，此界面使您能够查看 IBM i 输出队列中的文件，并且还使您能够将这些文件下载到客户机系统。<li>虚拟控制面板，此面板提供了 IBM i 操作面板的图形界面
+<li>针对 LAN、HMC 和 FSM 控制台的 5250 仿真
+<li>硬件管理界面配置（包括 ASMI、IVM 和 HMC）整合
+<li>能够使用缺省浏览器来启动 IBM Navigator for i
+<li> 数据库功能，例如“运行 SQL 脚本”和 SQL 性能中心。</ul>
+<p>
+可选的 Windows 应用程序包中包含以下内容：
+<ul>
+<li>使用 ODBC、.Net 和 OLE DB 与 Db2 for i 进行连接
+<li>用于访问 IBM i 系统对象的编程工具箱
+<li>对 TLS/SSL 连接的支持
+<li>AFP 打印机驱动程序</ul>
+<p>
+可选的 Linux 应用程序包中包含以下内容：
+<ul>
+<li>用于访问 Db2 for i 的 ODBC 驱动程序，并且支持全部的 64 位 ODBC 数据类型。</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 先决条件</h3>
+<h3><a id="3.1"></a>3.1 先决条件（工作站）</h3>
+<p>
+IBM i Access Client Solutions 能够在大多数支持 Java 8.0 或更高版本的操作系统（包括各种版本的 Linux、Mac 和 Windows）上运行。<p>
+建议：<br>
+使 Java 版本保持在最新版本将确保您具有所有最新修订和安全补丁。<p>
+检查系统上安装的 Java 版本的一种方法是显示支持输入命令的提示符（命令提示符、Shell 和终端等等），然后输入以下命令：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+以下输出指示已安装 V8.0：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+此示例中的 65 指的是更新级别。<p>
+以下是 Java 提供程序的一些 Web 站点。请确保您使用的平台运行的是最新版本的 Java。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 先决条件（连接到 IBM i）</h3>
+<p>
+IBM i Access Client Solutions 能够连接到 IBM i R5.4
+及更高版本。下列功能部件要求安装 IBM i R6.1 或更高版本：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250 控制台<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;虚拟控制面板<br>
+<p>
+如果您将使用 SSL 连接，请为您的发行版装入并应用相应的 IBM i PTF：<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610、SI55204、SI55389、SI57332 和 MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392、SI57320、MF60333 和 MF60334
+
+<p>
+如果您将使用 Navigator for i，请为您的发行版装入并应用相应的 IBM i PTF：<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - 组 PTF SF99368 级别 37 或更高级别<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - 组 PTF SF99713 级别 12 或更高级别<br>
+	
+<p>
+如果您将使用 5250 控制台或虚拟控制面板，请为您的发行版装入并应用相应的 PTF：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543 和 MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540 和 MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485 和 MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 产品内容</h3>
+<p>
+产品 zip 归档包含下列文件和目录：
+<pre>
+
+acsbundle.jar       - 产品的可执行 JAR 文件
+AcsConfig.properties - 此文件包含配置设置（在 acsbundle.jar 文件中也存在这些设置）
+
+Mac_Application     - 此目录包含 Mac 的安装脚本
+
+Linux_Application   - 此目录包含 Linux 的安装脚本
+
+Windows_Application - 此目录包含 Windows 的安装脚本
+
+Start_Programs      - 此目录包含特定于平台的二进制文件（可用来启动产品）。
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - 这是包含文档的目录
+    QuickStartGuide - 包含关于如何入门的信息
+    GettingStarted  - 包含关于产品的详细信息
+License             - 此目录包含使用条款和条件
+Notices             - 此目录包含声明和信息
+properties          - 此目录包含产品版本信息
+  Sample_Scripts    - 此目录包含样本脚本，如果 Start_Programs 中的二进制文件不工作，那么可以使用这些脚本来启动产品。    Linux_Mac_Other - 此目录包含用于在任何具备 Perl 的平台上启动产品的 Perl 脚本。    Windows         - 此目录包含用于在 Windows 上启动的 JScript
+
+Icons               - 此目录包含可以用作图标的文件
+
+Fonts               - 此目录包含可能为 5250 仿真添加的其他等宽字体
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 安装</h3>
+<p>
+IBM i Access Client Solutions 包提供了若干安装选项，从非常简单的单用户安装到更高级的多用户安装，均包括在内。<p>
+在 Mac_Application、Linux_Application 和 Windows_Application 文件夹（请参阅
+<a href="#4.0">4.0 产品内容</a>一节）中提供了安装脚本，这些脚本可用于各种安装选项。<p>
+要了解 Mac、Linux 和 Windows 上的单用户安装或者 Windows PC 上的多用户安装，请参阅 <a href="./QuickStartGuide_en.html">QuickStartGuide</a>。QuickStartGuide 说明了如何使用提供的安装脚本来执行这些类型的简单安装。<p>
+如果您是计划对多个用户部署本产品的管理员，那么您将需要阅读
+<a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a> 一文。该文章说明了管理员如何使用安装脚本所支持的
+/AdminConfig 选项在部署之前预先定制多用户安装。<p>
+对于希望以静默方式自动安装的管理员，请使用 /AdminConfig 参数对安装进行预配置。然后在实际安装期间使用 /Q 参数。例如：<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+除了以上选项以外，您还具有只将 zip 归档解包到您选择的任何位置的选项。此位置可以是工作站
+具有读权限（以访问这些文件）的任何位置。此位置包括本地硬盘驱动器、远程网络（共享）驱动器或便携介质（例如，CD 或
+USB 闪存驱动器）。将 zip 归档解包以完成安装。<p>
+技术说明：<br>
+某些归档实用程序不会保留所有已保存的文件属性。例如，在 Mac 和 Linux
+平台上，选择 unzip 命令通常好于选择 jar 命令。有关更多信息，请参阅 <a href="#6.0">6.0 文件许可权</a>一节。<h3><a id="5.1"></a>5.1 更新现有安装</h3>
+<p>
+我们定期提供增强功能和修订。这些更新作为完整的产品安装来提供。当这些更新可用时，您将需要更新现有安装版本。<p>
+要更新已使用安装脚本进行的现有安装，请抽取更高产品版本的内容。采用初始安装期间调用安装脚本的方式，从这个新版本调用安装脚本。这将更新产品文件，而不会更改用户的现有配置。<p>
+对于在由多个用户访问的中央位置维护产品版本的管理员，您可以抽取较高版本的内容来覆盖现有版本。如果您对
+AcsConfig.properties 文件进行了定制更改，那么在抽取产品新版本的内容来覆盖现有版本之前，将需要保存
+AcsConfig.properties。在您抽取产品新版本的内容并复原
+AcsConfig.properties 之后，用户可以采用与初始安装相同的方式运行安装脚本以更新其安装。<p>
+如果您选择了通过将 zip 归档的内容抽取到您选择的某个位置来安装产品，而不使用安装脚本，那么要更新产品，您将需要抽取较高产品版本的内容来覆盖现有版本。请记住，如果您对
+AcsConfig.properties 进行了定制更改，那么可能需要保存 AcsConfig.properties 并复原其内容。<hr><h3><a id="6.0"></a>6.0 文件许可权</h3>
+<p>
+<a href="#7.0">第 7.0 节 启动产品</a>描述了几种启动 IBM i Access Client Solutions
+的不同方法。如果将使用所提供的其中一个二进制文件或脚本来启动产品，那么将需要确保其文件许可权已启用执行许可权。将 zip 归档文件解包时所指定的文件许可权由多种因素确定，这些因素包括操作系统、用来将此 zip 归档解包的归档实用程序以及用户权限等。<p>
+如果在使用所提供的其中一个二进制文件或脚本时遇到问题，请检查文件许可权。下列各节描述了用于检查文件许可权的一些方法。<h3><a id="6.1"></a>6.1 文件许可权（Linux、Mac 和 AIX）</h3>
+<p>
+对于类 UNIX 操作系统，可以从 Shell 或终端提示符使用以下命令来检查文件的许可权：<br>
+<pre>    ls -l &lt;file&gt;   			</pre>
+<p>
+要更改文件的许可权，您可以使用以下命令：<br>
+<pre>    chmod &lt;permission&gt; &lt;file&gt;	</pre><br>
+例如，<br>
+要为所有用户添加读许可权和执行许可权，请使用以下命令：
+<pre>
+    chmod a+rx &lt;file&gt;
+</pre>
+要向文件所有者授予读取/写入/执行许可权，而对于其他所有用户仅授予读取/执行许可权，请使用以下命令：
+<pre>
+    chmod 755 &lt;file&gt;
+</pre>
+<p>
+通过因特网很容易获得有关 ls 和 chmod 命令的更多帮助。<h3><a id="6.2"></a>6.2 文件许可权 (Windows)</h3>
+<p>
+对于 Windows，在使用 Windows 资源管理器来查看文件时，请右键单击该文件，然后选择“属性”。“安全”选项卡应包含文件许可权。
+请确保您具有读取和执行许可权。<p>
+在最新版本的 Windows 中，您还可以使用 icacls 命令来查看和更改文件的许可权。<hr><h3><a id="7.0"></a>7.0 启动产品</h3>
+<p>
+您可以通过多种方法来启动 IBM i Access Client Solutions。如果使用了安装脚本来安装产品，那么可以在
+<a href="./QuickStartGuide_en.html">QuickStartGuide</a> 中找到最容易的产品启动方式。<p>
+如果未使用安装脚本来安装产品，那么本节的其余部分将描述产品的备用启动方式。由于可以使用各种方法来安装 Java 以及将 Java 安装在各种位置，因此，某些方法可能要求执行其他配置。如果下面的其中一个方法不起作用，请尝试使用另外的方法。在某些情况下，提供了更多指导。您可能还会发现 <a href="#11.0">11.0 常见问题 (FAQ)</a> 一节很有帮助。<p>
+按下面所述使用二进制文件或脚本时，该二进制文件或脚本必须位于 zip
+归档所包含的目录结构中。为了方便起见，还可将用于您的平台的二进制文件和/或脚本复制/移动到
+acsbundle.jar 所在的目录。<h3><a id="7.1"></a>7.1 启动产品</h3>
+<p>
+要从文件查看器（例如，Windows 资源管理器和 Mac OS X Finder 等等）中使用特定于平台的二进制文件来启动产品，请在 Start_Programs 中找到标识了您使用的操作系统及硬件体系结构的子目录。<p>
+找到您的操作系统识别的二进制文件。然后双击此文件以启动产品。您还可以从命令提示符、终端或 Shell 使用此二进制文件来启动产品。<p>
+如果发生了以下错误：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;“装入 Java 模块时发生错误。”<br>
+这表示 IBM i Access Client Solutions 在其识别的位置找不到
+Java 安装版本。您可以尝试下面各节中的其中一种方法：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 启动产品 - 其他选项</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 使用脚本启动产品</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 使用命令行启动产品</a><br>
+<p>
+针对 Mac 的技术说明：<br>
+如果系统提示您安装“Java 6 SE 运行时”，那么您无需安装 Java 6。安装 Java 8，然后重试启动产品。如果您是使用 acslaunch_mac 来启动产品，并且系统仍然提示您安装“Java 6 SE 运行时”，请转至“实用程序”并启动终端会话。运行以下命令，然后重新尝试启动产品：
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 启动产品 - 其他选项</h3>
+<p>
+尝试使用平台的二进制文件时，您还可以尝试下列其中一种方法。这些方法允许您确定应使用哪个
+Java 运行时环境 (JRE) 来启动产品。请参阅 <a href="#7.1.2">7.1.2 查找 Java 主路径</a>一节，以了解如何在工作站上找到 Java 主路径。这些附加方法仅在 Linux 和 Windows 平台上受支持：
+<ul>
+<li>将 JAVA_HOME 环境变量设置为 Java 主路径，或者
+<li>在二进制命令中使用 -vm 选项来指定 Java 主路径。在二进制命令中指定 -h 以显示更多帮助，或者
+<li>将 Java 运行时环境 (JRE) 目录结构复制到您尝试使用的二进制文件所在的同一目录。</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 查找 Java 主路径</h3>
+<p>
+如果您可以使用下列某一节中的其中一种方法来启动产品：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 使用脚本启动产品</a>，或者<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 使用命令行启动产品</a><br>
+那么您可以从 IBM i Access Client Solutions 主 GUI 中确定工作站上的
+Java 主路径。在菜单栏中，选择<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;“帮助”-&gt;“关于”<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;java.home 路径将显示在此面板上。<br>
+<p>
+java.home 属性包含工作站的 Java 主路径的位置。这是您在设置
+JAVA_HOME 环境变量或者在命令中使用 -vm 选项时将需要指定的路径。<h3><a id="7.1.2.1"></a>7.1.2.1 查找 Java 主路径 (Windows)</h3>
+<p>
+在 Windows 平台上，请搜索 java.exe。java 二进制文件通常位于 Java 主路径下的 bin 子目录或者 jre/bin 子目录中。设置 JAVA_HOME 环境变量或者在命令中使用 -vm 选项时可以使用 Java 主路径。<h3><a id="7.1.2.2"></a>7.1.2.2 查找 Java 主路径 (Linux)</h3>
+<p>
+在 Linux 上，可以使用“which”命令：<br>
+<pre>
+    which java
+</pre>
+此命令将提供 java 命令的路径或者指向该命令的符号链接。<p>
+解析任何符号链接，直到您最终找到 java 命令实际的二进制文件。您可以使用带有 -l 选项的 ls 命令来解析符号链接：<br>
+<pre>
+    ls -l &lt;file&gt;
+</pre>
+java 二进制文件通常位于 Java 主路径下的 bin 子目录或者 jre/bin 子目录中。设置 JAVA_HOME 环境变量或者在命令中使用 -vm 选项时可以使用 Java 主路径。<h3><a id="7.2"></a>7.2 使用脚本启动产品</h3>
+<p>
+从 V1.1.5 开始，Start_Scripts 目录已重命名为 Sample_Scripts 并放置在 Documentation 目录中。<p>
+启动产品的首选方式是使用 Start_Programs 中提供的特定于平台的二进制文件。仅当特定于平台的二进制文件不工作时，才应该使用
+Sample_Scripts 中的脚本。<p>
+要使用一个提供的脚本从文件系统浏览器（例如 Windows 资源管理器和 Mac OS X Finder 等）启动产品，请在
+Sample_Scripts 子目录中找到与操作系统兼容的脚本。<p>
+缺省情况下，大多数非基于 Windows 的操作系统都有 perl 可用。Sample_Scripts/Linux_Mac_Other 目录包含一个
+perl 脚本（有三个不同的文件扩展名），在有 perl 可用的任何平台上都可以使用此脚本来启动产品。选择具有操作系统将识别为 perl 脚本的文件扩展名的文件。<p>
+缺省情况下，基于 Windows 的操作系统有 JScript 可用。Sample_Script/Windows 目录包含可以用来在 Windows 操作系统上启动产品的 JScript。<p>
+使用特定于平台的方法来浏览文件系统（例如，Windows 资源管理器和 Mac OS X Finder 等），找到操作系统识别的脚本。然后，双击此脚本以启动产品。您还可以从命令提示符、终端或 Shell 使用此脚本来启动产品。<h3><a id="7.3"></a>7.3 使用命令行启动产品</h3>
+<p>
+您还可以从任何可以输入命令的位置（命令提示符、终端和 Shell 等等）使用命令行来启动产品。<br>
+<pre>
+    java -Xmx1024m -jar &lt;path&gt;/acsbundle.jar
+</pre>
+其中 &lt;path&gt; 是产品的可执行 JAR 文件的位置<br>
+<br>
+例如：<br>
+<pre>
+    java -Xmx1024m -jar V:/some_location/acsbundle.jar
+</pre>
+或者<pre>
+    &lt;java_path&gt;java -jar V:/some_location/acsbundle.jar
+</pre>
+其中 &lt;java_path&gt; 是 JDK 6.0 或更高版本的 java 命令的位置。<p>
+请参阅 <a href="#7.1.2">7.1.2 查找 Java 主路径</a>一节，以确定 java 命令的完整路径。<p>
+您还可以从命令行使用任何程序或脚本。例如：<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+技术说明：<br>
+在大多数平台上，Java 虚拟机堆空间缺省设置为最大大小，然而，该最大大小过小，导致无法利用
+IBM i Access Client Solutions 产品中的多项功能。建议将一千兆字节的最大堆大小 (-Xmx1024m) 作为最小大小。指定小于一千兆字节的大小或者使用缺省堆大小可能会产生 OutOfMemoryException。<hr><h3><a id="8.0"></a>8.0 配置</h3>
+<p>
+请针对您要使用或管理的每个 IBM i 系统添加一项系统配置。要添加系统配置，请从“管理任务”中选择“系统配置”。然后选择“新建”。在“常规”选项卡上输入系统名称。要开始执行操作，系统名称是执行“常规”任务时需要的所有信息。<p>
+完成之后，选择“确定”以保存您为此系统输入的信息；如果您想要将其他系统添加至配置，请选择“保存/新建”。<p>
+您随时都可以使用“常规”、“连接”或“控制台”选项卡将新系统添加至配置或者更新现有配置。<p>
+对于控制台任务，需要其他配置。控制台配置会自动与您在“常规”选项卡上输入的系统名称相关联。要输入系统的控制台配置，请从“管理任务”中选择“系统配置”。选择“新建”或“编辑”。然后选择“控制台”选项卡。“5250 控制台”任务需要一个已配置的 LAN 控制台或者已配置的 HMC 控制台。如果不存在已配置的 LAN 或 HMC 控制台，请参阅 <a href="#9.9">9.9 建立控制台与 IBM i 的连接</a>一节。<p>
+“硬件管理界面”任务需要一个已配置的硬件管理接口。您最多可以输入两个硬件管理接口配置。<p>
+完成之后，在“系统配置”面板上选择“关闭”。<p>
+使用 IBM i Access Client Solutions 主面板上的“系统”下拉框来选择一个系统。所有控制台任务会自动将所选系统（在“常规”选项卡上输入）与控制台配置（在“控制台”选项卡上输入）相关联。<p>
+您现在可为所选系统选择一项任务。如果您选择一项在“控制台配置”选项卡上未输入相应信息的控制台任务，那么将显示一条错误消息。<h3><a id="8.1"></a>8.1 配置位置</h3>
+<p>
+缺省情况下，每个用户都使用自己的唯一位置来存放他们的配置。将按照一种依赖于平台的方式来确定配置根目录。配置目录在初始启动期间创建。要查看配置目录的位置，请完成下列步骤：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;启动产品（请参阅 <a href="#7.0">7.0 启动产品</a>一节）<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“编辑”-&gt;“首选项”<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;选择“本地设置”选项卡<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;配置根目录<br>
+<p>
+在产品运行时，无法更改配置位置。要更改配置所在的位置，请参阅 <a href="#9.3">9.3 更改配置位置</a>一节。<hr><h3><a id="9.0"></a>9.0 高级主题</h3>
+<h3><a id="9.1"></a>9.1 更多命令行选项</h3>
+<p>
+在主 GUI 中提供的许多功能也可以从命令行使用。可以通过向下面这一节中显示的任何命令行选项提供适当的参数来调用这些功能：<br>
+    <a href="#7.3">7.3 使用命令行启动产品</a>
+<p>
+例如：
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+下列各节仅显示附加参数：<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;filename&gt;]
+    &lt;filename&gt; 是要创建的文件的名称
+</pre>
+<p>
+这会将当前配置保存到所指定的文件。可以将最终获得的文件用作同一工作站或另一工作站（不考虑操作系统）上的“复原”命令行选项的输入。<p>
+要保存的配置所在的位置由以下属性确定：<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...此属性位于 AcsConfig.properties 文件中。<p>
+此功能相当于主 GUI 中的“文件 -&gt; 导出配置”。<h3><a id="9.1.2"></a>9.1.2 Restore</h3>
+<pre>
+/PLUGIN=restore /file=&lt;filename&gt;
+    &lt;filename&gt; 是备份所创建的文件的位置
+</pre>
+这将从所指定的文件复原已保存的配置。任何不在所指定文件中的现有配置都将丢失。<p>
+复原后的配置所在的位置由以下属性确定：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...此属性位于 AcsConfig.properties 文件中。<p>
+此功能相当于主 GUI 中的“文件 -&gt; 导入配置”。<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;system&gt;
+</pre>
+从所指定的 IBM i 系统下载认证中心 (CA) 并将其存储在用户的本地信任库中。使用 SSL 进行服务器认证时需要这样做。<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST       - 列示已配置的系统及其连接选项
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;system&gt; [/ipaddr=&lt;frequency&gt;] [/userid=&lt;userid&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;path&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - 系统的名称
+    /ipaddr     - 请求进行连接时，此值确定是否执行 IP 地址查找。有效频率如下所示：
+                      ALWAYS - 每次连接时都查找 IP 地址
+                      HOURLY、DAILY 和 WEEKLY - 如果自从最近一次查找 IP 地址以来已经过指定的时间长度，那么查找 IP 地址
+                      IP 地址 - 如果指定了 IP 地址，那么假定查找频率为 NEVER
+    /userid     - 用户的用户标识，还可以设置为下列值：
+                      *SHARE        - 使用此选项来提示输入一次将由系统共享的
+                                      登录凭证
+                      *PROMPTALWAYS - 对于每次连接，至少提示输入一次
+                      *KERBEROS     - 使用 Kerberos 主体名称，不提示输入
+    /ssl        - 开关为 0 表示关闭 SSL 方式，开关为 1 表示开启 SSL 方式
+    /5250path   - 5250 仿真概要文件的路径
+                  /5250path 可通过 5250 会话管理器中的“文件”-&gt;“切换目录...”
+                  进行设置
+    /del 删除现有配置
+    /r   替换现有配置
+</pre>
+这允许从命令行设置各种配置选项。也可以从主 GUI 中使用“系统配置”来设置这些选项。<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;options&gt;]
+</pre>
+请求产品中所有正在运行的进程以转储它们的线程。IBM 服务中心将使用此信息来提供问题支持。<p>
+在主 GUI 中，可以从下列位置访问所生成的日志：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“编辑”-&gt;“首选项”<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“本地设置”选项卡<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;转储目录<br>
+<p>
+如果未指定任何选项，那么此功能相当于主 GUI 中的以下功能：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;工具 -&gt; 生成服务日志
+<p>
+有效选项为：
+<pre>
+    /heapdump - 执行以上功能并转储 JVM 堆
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+将现有日志和线程转储打包为一个 zip 文件，可以将此文件发送至 IBM 以便为您提供服务。<p>
+在主 GUI 中，可以从下列位置访问所产生的 zip 文件：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;编辑 -> 首选项<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“本地设置”选项卡<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;服务目录<br>
+
+此功能相当于主 GUI 中的“工具”-&gt;“将服务日志打包”。<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Level&gt;
+                &lt;Level&gt; 是下列其中一个支持日志记录级别：
+                OFF、SEVERE、WARNING、INFO、CONFIG、FINE 和 FINEST
+</pre>
+此插件使用户能够从命令行切换其日志记录级别。<p>
+在主 GUI 中，还可以从下列位置设置日志记录级别：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“编辑”-&gt;“首选项”<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“常规”选项卡<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;日志记录级别<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;userid&gt;] [/PASSWORD=&lt;password&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - 系统的名称
+    /USERID   - 用户标识
+    /PASSWORD - 与用户标识相关联的密码
+    /AUTH     - 尝试使用指定的登录凭证来连接至系统
+                并且仅在成功时对这些凭证进行高速缓存
+    /C        - 清除高速缓存
+    /GUI      - 是否可以使用图形用户界面
+</pre>
+此命令将对用户标识和密码进行高速缓存，可以用来阻止发出密码提示。<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+显示从主 GUI 中选择“编辑”-&gt;“首选项”时显示的 GUI 面板。<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;options&gt;]
+
+有效选项为：
+    /killdaemon     - 结束守护程序线程。                      相当于从主 GUI 中选择“工具”-&gt;“重置以进行维护”
+    /clearpwcaches  - 清除所有已高速缓存的密码
+    /clearjarcache  - 清除产品 JAR 高速缓存
+    /clearlogs      - 清除从主 GUI 中选择“编辑”-&gt;“首选项”后在“本地设置”选项卡上设置的日志目录
+    /cleardumps     - 清除从主 GUI 中选择“编辑”-&gt;“首选项”后在“本地设置”选项卡上设置的转储目录
+    /clearsvcdir    - 清除从主 GUI 中选择“编辑”-&gt;“首选项”后在“本地设置”选项卡上设置的服务目录
+    /clearsettings  - 清除当前用户的所有设置
+</pre>
+如果未指定任何选项，那么将不执行任何操作。<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;system&gt; [&lt;/options&gt;]
+    选项包括：
+        /SSL=&lt;1|0&gt;        开启或关闭 SSL
+        /ACCEPTALLCERTS=&lt;1|0&gt; （使用 SSL 时）是否将所有 SSL 证书自动添加到
+                          可信集合。
+        /SERVERAUTH=&lt;1|0&gt; 开启或关闭 SSL 服务器认证（缺省值为“关”）。如果不是在测试 SSL，那么将忽略此选项。        /GUI=&lt;1|0&gt;        开启或关闭 GUI 窗口（如果是从命令行启动，那么缺省值为“关”）
+        /PORTS=&lt;port1,port2&gt; 要测试的一列端口（以逗号分隔）。它可以是数字或服务名称（例如，/PORTS=as-signon,as-sts）。如果未指定此选项，那么将测试一组缺省端口。                指定 .CONSOLE 将检查特定于控制台的端口的列表。
+        /TIMEOUT=&lt;seconds&gt;   指定超时值（以秒计）。</pre>
+此插件将通过与适当的端口建立连接来检查与 IBM i 的连接。如果验证 SSL 连接，那么会尝试进行 SSL 握手。如果是从主 GUI 来启动此插件，或者使用 /GUI=1 来调用此插件，那么此插件将显示一个对话框。如果是从命令行且未使用 /GUI=1 的情况下启动此插件，那么会将输出发送至控制台。<p>
+缺省情况下，将检查下列服务：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central、as-rmtcmd、as-database、as-dtaq、as-file、as-netprt、drda 和<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+可以通过从主 GUI 中执行以下操作来启动此功能：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;系统配置<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;选择系统，然后选择“编辑”<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;“常规”选项卡<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;验证连接<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+此插件将启动 5250 会话管理器 GUI。<p>
+此功能相当于主 GUI 中的“5250 会话管理器”。<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;options&gt;]
+
+此插件将对所指定的系统启动 5250 仿真器。此功能相当于主 GUI 中的“5250 仿真器”。
+有效选项为：
+    /id=&lt;A-Z&gt;                    - 短会话标识
+    /name=&lt;name&gt;                 - 会话名称
+    /wsid=&lt;identifier&gt;           - 工作站标识
+    /wide=&lt;1|0|true|false&gt;       - 使用宽屏幕大小 (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - 使用整个屏幕
+    /nosave=&lt;1|0|true|false&gt;     - 退出时不保存设置
+    /prompt=&lt;1|0|true|false&gt;     - 强制显示配置对话框
+    /port=&lt;port&gt;                 - 端口号
+    /ssl=&lt;1|0|true|false&gt;        - 使用安全套接字进行连接
+    /sso=&lt;1|0|true|false&gt;        - 绕过登录屏幕
+    /kerberos                    - 使用 Kerberos
+    /width=&lt;width&gt;               - 仿真器窗口的初始宽度
+    /height=&lt;height&gt;             - 仿真器窗口的初始高度
+    /xpos=&lt;xpos&gt;                 - 仿真器窗口左上角的初始 X 坐标位置
+    /ypos=&lt;ypos&gt;                 - 仿真器窗口左上角的初始 Y 坐标位置
+    /watermark                   - 在屏幕上以水印形式显示系统名称
+    /watermark=&lt;text&gt;            - 在屏幕上以水印形式显示所提供的文本
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+此插件将启动主 GUI 以进行数据传输。
+此功能相当于主 GUI 中的数据传输。</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - 连接至目标系统时要使用的用户标识
+    &lt;filename&gt;- 以前某次执行数据传输下载时创建的具有 .dtfx 扩展名的文件。</pre>
+此插件使用户能够运行先前保存的数据传输下载。<p>
+还可从主 GUI 中通过选择数据传输来进行数据传输。<h3><a id="9.1.16"></a>9.1.16 上载</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - 连接至目标系统时要使用的用户标识
+    &lt;filename&gt;- 最近一次执行数据传输上载时创建的具有 .dttx 扩展名的文件。</pre>
+此插件使用户能够运行先前保存的数据传输上载。<p>
+还可从主 GUI 中通过选择数据传输来进行数据传输。<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;system&gt;
+                          [/userid=&lt;userid&gt;]
+                          {/hostfile=&lt;library/filename&gt; | /sql="statement"}
+                          {/clientfile=&lt;path&gt;&lt;filename&gt;.&lt;extension&gt; | /display}
+
+    /userid   - 连接至目标系统时要使用的用户标识
+    /hostfile   - IBM i 系统上用于下载的源代码库和文件，例如，/hostfile=QIWS/QCUSTCDT
+    /sql        - 指定 SQL 语句
+                  例如，/sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - 用于下载的目标文件位置。                  此文件的格式将由指定的扩展名（例如，.csv、.ods、.xlsx 或 .xlsx）确定
+                  如果未指定文件扩展名，或文件扩展名的类型不受支持，那么会将数据的格式设置为 .csv 文件
+    /display    - 将输出写至终端
+</pre>
+此插件使用户能够从命令行运行整个文件的简单下载。<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;system&gt;
+</pre>
+此插件会对所指定系统启动 5250 控制台。<p>
+此功能相当于主 GUI 中的 5250 控制台。<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;system&gt;
+</pre>
+此插件会对所指定系统启动虚拟控制面板。<p>
+此功能相当于主 GUI 中的虚拟控制面板。<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;system&gt;
+</pre>
+此插件会使用所指定系统和端口 2001 对 IBM Navigator for i 启动浏览器。<p>
+此功能相当于主 GUI 中的 Navigator for i。<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;system&gt;
+</pre>
+此插件显示用于从 IBM i 查看和下载假脱机文件的打印机输出 GUI。<p>
+此功能相当于主 GUI 中的打印机输出。<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+此插件显示“密钥管理”工具。<p>
+此功能相当于主 GUI 中的“工具”-&gt;“密钥管理”。<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;system&gt;
+                  {/CMD="&lt;CL command&gt;" | file=&lt;file_name&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL command&gt;"  - 要运行的命令。使用引号可以避免空格拆分命令。    /file=&lt;file_name&gt;    - 指定包含多个命令的输入文件。其中每个命令都应该独占一行并且不含引号。    /noprompt=&lt;1|0&gt;      - 指定输入文件时，此选项指定在继续操作前是否忽略结果和所有提示。</pre>
+此插件用于将 CL 命令发送到指定系统。<p>
+此功能仅可从命令行中使用。<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;system,system,system,...&gt;
+</pre>
+此插件用于在所指定系统上更改密码。它提示用户提供用户标识、旧密码和新密码。<p>
+另外，在主 GUI 中，还可以通过选择“编辑”-&gt;“首选项”并选择“密码”选项卡使用此功能
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;option&gt; /SYSTEM=&lt;system&gt;
+
+&lt;system&gt; 可以设置为一个系统名称，也可以设置为 *ALL 以指示所有系统。
+有效选项为：
+    /IMPORT - 将旧 Windows 配置中的一个（或所有）系统配置复制到 IBM i Access Client Solutions。    /EXPORT - 将一个（或所有）系统配置从 IBM i Access Client Solutions
+              复制到旧 Windows 配置中。    /DELETE - 从旧 Windows 配置中删除一个（或所有）系统配置。</pre>
+此插件使您能够在 IBM i Access Client Solutions 与受 IBM i Access for Windows
+支持的旧 Windows 配置之间复制系统配置。<p>
+另外，在主 GUI 中，还可以通过选择“文件”-&gt;“复制连接”使用此功能
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+注：此插件仅适用于具有 root 或管理员权限的用户。<pre>
+/PLUGIN=restrict /&lt;options&gt;
+
+有效选项为：
+     /restrict=&lt;func1,func2,func3&gt;   在此工作站上限制使用给定功能。
+
+     /unrestrict=&lt;func1,func2,func3&gt; 在此工作站上允许使用给定功能。
+
+     /list                           列示此工作站上允许使用或受限制的功能。
+     /export=&lt;file&gt;                  将限制导出到文件扩展名为 .acsr 的指定文件。
+     /import=&lt;file&gt;.acsr             从文件扩展名为 .acsr 的文件中导入限制。
+     /exportreg=&lt;file&gt;               导出 Windows 注册表文件（.reg 文件）。
+</pre>
+<p>此插件使具有管理员权限或 root 用户权限的任何用户能够限制当前工作站上的所有用户
+使用某些功能。<pre>
+   功能            描述
+    cfg             系统配置
+    sm              5250 会话管理器
+    5250            5250 仿真器
+    vcp             虚拟控制面板
+    console         5250 控制台
+    consoleprobe    在本地网络中搜索控制台配置
+    hmcprobe        搜索分区的 HMC
+    hmi1            硬件管理界面 1
+    hmi2            硬件管理界面 2
+    keyman          SSL/TLS 证书管理
+    dtgui           数据传输图形用户界面
+    upload          数据传输批处理上载
+    download        数据传输批处理下载
+    cldownload      数据传输批处理下载
+    l1c             IBM Navigator for i（第 1 级控制台）
+    rmtcmd          远程命令（可以从命令行使用）
+    splf            打印机输出（假脱机文件）
+    ifs             集成文件系统
+    db2             模式
+    rss             运行 SQL 脚本
+    db2tools        SQL 性能中心
+    sysdbg          IBM i 系统调试器
+    checkupdates    查找可用的更新
+    ssh             安全 Shell
+</pre>
+<p>还可以使用组关键字来排除功能：
+<pre>
+   组                 功能
+  dataxfer          dtgui、upload、download 和 cldownload
+  emulator          sm 和 5250
+  keyman            keyman
+  opconsole         console、vcp、consoleprobe 和 hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1 和 hmi2
+  l1cplugin         l1c
+  database          db2、rss 和 db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+管理员或具有 root 用户权限的用户还能够从主 GUI 限制功能。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;“编辑”-&gt;“首选项”<br>
+&nbsp;&nbsp;&nbsp;&nbsp;“限制”选项卡<br>
+
+<p>
+要了解在多个工作站限制功能的简单方式，请参阅 <a href="#9.5">9.5 定制包</a>一节。<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+列示当前在此工作站上受限制的功能<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;filetype&gt; &lt;filetype&gt; ...] [/c]
+
+    &lt;filetype&gt;   - 有效文件类型为：dttx、dtfx、hod、bchx、ws 和 bch
+    /c           - 清除所指定文件类型的文件关联
+</pre>
+在 Windows 平台上，此插件将设置类型为 .dttx、.dtfx、.hod、.bchx、.ws, 和 .bch
+的文件的文件关联。在非 Windows 平台上，将显示错误消息。<p>
+此功能相当于主 GUI 中的“工具”-&gt;“文件关联”。<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid   - 连接至目标系统时要使用的用户标识
+    &lt;filename&gt;- 上一次执行数据传输下载或上载时创建的具有 .dtfx 或 .dttx 扩展名的文件。                可以指定多个具有此关键字或不具有此关键字的文件。</pre>
+此插件使用户能够运行先前保存的数据传输请求。<p>
+还可从主 GUI 中通过选择数据传输来进行数据传输。<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;file&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - 要迁移的文件。这些文件必须是扩展名为 .ws、.bch、.kmp、.pmp 或 .bar 的 5250 文件。    /output   - 将存储已迁移文件的位置。    /verbose  - 显示已迁移文件的结果。    /gui      - 启动用于迁移 5250 文件的用户界面。</pre>
+该插件使用户能够将文件从 IBM i Access for Windows
+Personal Communications 仿真器迁移到 IBM i Access Client Solutions 仿真器。某些已转换的文件将具有新的文件扩展名。请参阅
+<a href="#9.6.2">9.6.2 迁移 5250 仿真</a>一节
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - 打开指定的文件
+    /SQL=&lt;filename&gt;  - 打开指定的文件
+    /AUTORUN=&lt;1,0&gt;   - 自动运行脚本
+</pre>
+此插件使用户能够运行 SQL 语句和 CL 命令。<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [Options]
+
+有效选项为：
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - 要执行的操作：
+                      LIST 选项可以与 LISTNAME 自变量配合使用，并显示
+                      SQL 性能中心以及指定的列表。
+                      ANALYZE 选项分析给定的性能数据集。
+                      STATEMENTS 选项显示 SQL 计划高速缓存或
+                      给定性能数据集的语句。
+                      COMPARE 选项比较给定的性能数据集。    /NAME=&lt;name&gt;    - 性能数据集的名称
+    /TABLE=&lt;name&gt;   - 性能数据所在的表的名称
+    /SCHEMA=&lt;name&gt;  - 性能数据所在的表的模式名
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - 要在 SQL 性能中心内显示的初始列表。</pre>
+“SQL 性能中心”插件提供一组工具，帮助您优化数据库应用程序中的 SQL：
+<ul>
+<li>分析 - 提供所收集的性能数据的摘要视图，用作使用向下钻取导航进行更深入分析的启动点。<li>比较 - 查看两个或两个以上性能数据集合的摘要比较，然后选择两个集合进行更深入的语句比较。<li>显示语句 - 处理 SQL 计划高速缓存或性能数据集合中的 SQL 语句。<li>Visual Explain - 生成语句执行计划的图形表示，以查看 SQL 语句的确切工作情况。<li>SQL 计划高速缓存 - 管理系统 SQL 计划高速缓存的设置。</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+“集成文件系统”提供一个界面，通过以下方式浏览 IBM i 的集成文件系统以及处理集成文件系统中的对象：
+<ul>
+<li>在客户机系统与 IBM i 之间复制对象
+<li>在 IBM i 上的集成文件系统内复制对象，或者复制到另一个 IBM i 上的集成文件系统
+<li>将对象发送到另一个 IBM i（或多个 IBM i）
+<li>创建新文件夹（目录、库和文件夹）
+<li>删除对象
+<li>重命名对象
+<li>查看对象属性
+</ul>
+请参阅 <a href="#9.12">9.12 集成文件系统 (IFS)</a> 一节，以了解使用此插件时的需求和限制。<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+此插件提供一个用于在 IBM i 上管理 Db2 for i 数据库的界面。<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+此插件提供一个界面，用来查找可用的更新。<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;system&gt;
+</pre>
+SSH 终端将对 IBM i 集成文件系统启动 PC 上已安装的 SSH 客户机（终端仿真器）。<br>
+<br>
+<h3><a id="9.2"></a>9.2 文件关联</h3>
+<p>
+将 IBM i Access Client Solutions 所生成的某些配置文件作为第一个参数并且也是唯一参数来提供时，支持从命令行使用这些配置文件。将这些具有特定文件扩展名的文件作为第一个参数来提供时，IBM i Access Client Solutions 会将此文件与要调用的功能相关联，并将此文件作为该功能的输入来提供。<p>
+下列扩展名具有文件关联支持：
+<pre>
+    .dttx   - 数据传输上载请求
+    .dtfx   - 数据传输下载请求
+    .hod    - 5250 仿真器会话概要文件
+    .bchx   - 多会话仿真概要文件
+    .ws     - 5250 仿真器会话概要文件 (Personal Communications)
+    .bch    - 多会话仿真概要文件 (Personal Communications)
+</pre>
+命令行示例：
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - 运行已保存的下载操作
+    acslaunch_xxx dt_upload_file.dttx   - 运行已保存的上载操作
+    acslaunch_xxx system_lp13ut20.hod   - 启动与系统的 5250 会话
+</pre>
+...其中，acslaunch_xxx 是用于启动产品的命令行语法。请参阅 <a href="#7.3">7.3 使用命令行启动产品</a>一节。<p>
+这些受支持的命令行文件关联使用户能够手动设置特定于操作系统 (OS) 的文件关联。由于文件关联依赖于平台，因此需要执行的步骤取决于操作系统。</p>
+您之所以可能想要考虑为操作系统设置文件关联，原因在于这样您就能够双击（上述受支持的其中一种文件类型的）文件以启动所指定的功能。<p>
+下列各节提供了为某些操作系统设置文件关联的一些示例。<h3><a id="9.2.1"></a>9.2.1 文件关联（对于 Windows）</h3>
+<ol>
+<li>从主 GUI 菜单栏中，选择“工具”-&gt;“文件关联...”
+<li>选择要为其创建文件关联的文件类型。<li>选择“确定”
+</ol>
+<p>
+现在，当您双击此类型的文件时，就将运行相应的 IBM i Access Client Solution 功能。<h3><a id="9.2.1.1"></a>9.2.1.1 更改图标（对于 Windows 快捷方式）</h3>
+<ol>
+<li>找到先前为您的硬件体系结构的相应二进制文件（acslaunch_win-32.exe 或 acslaunch_win-64.exe）创建的快捷方式
+<li>单击鼠标右键，并选择“属性”
+<li>选择“快捷方式”选项卡
+<li>单击“更改图标...”按钮
+<li>选择要用于此快捷方式的图标
+<li>选择“确定”
+<li>选择“确定”
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 设置桌面图标（对于 Linux）</h3>
+<p>
+完成 <a href="./QuickStartGuide_en.html">QuickStartGuide</a> 中适用于 Linux 的步骤。这会将应用程序安装到 /opt/ibm/iAccessClientSolutions 中。另外，还会创建 /usr/share/applications/IBM i Accesss Client Solutions.desktop
+<p>
+要在桌面上为产品创建图标，请将以上 .desktop 文件复制到“桌面”文件夹。您可能需要调整此文件在桌面上的许可权，以使其可执行。<h3><a id="9.2.2.1"></a>9.2.2.1 文件关联（对于 Linux）</h3>
+<p>
+设置文件关联所需完成的步骤取决于 Linux 发行版以及所使用的桌面环境。通常，需要执行的步骤将类似于上述用于 Windows 的步骤。<ol>
+<li>找到您要关联并且具有受支持扩展名（例如，.hod、.bchx、.dtfx 或 .dttx）的文件
+<li>右键单击该文件。查找使您能够将程序与文件相关联的选项或属性。<li>使该文件和/或其扩展名与相应的 IBM i Access Client Solutions 二进制文件或启动脚本相关联。</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 文件关联（对于 Mac）</h3>
+<p>
+要在 Mac 上使用“文件关联”，文件类型必须与某个应用程序相关联。完成 <a href="./QuickStartGuide_en.html">QuickStartGuide</a> 中适用于
+Mac 的步骤，这样即可安装 IBM i Access Client Solutions 应用程序。<h3><a id="9.2.3.1"></a>9.2.3.1 创建文件关联（对于 Mac）</h3>
+<ol>
+<li>使用 Finder 找到您要关联并且具有受支持扩展名（例如，.hod、.bchx、.dtfx 或 .dttx）的文件
+<li>选择此文件，然后选择“文件”-&gt;“获取信息”
+<li>在“打开方式：”选项下选择“其他”
+<li>浏览到 IBM i Access Client Solutions 应用程序的位置。<li>选择应用程序。<li>选中“始终采用的打开方式”的框。选择“添加”。<li>返回到“打开方式：”，选择“全部更改”。对任何对话框都选择“继续”。</ol>
+<p>
+现在，当您双击此类型的文件时，就将运行相应的 IBM i Access Client Solution 功能。<h3><a id="9.2.3.2"></a>9.2.3.2 更改图标（对于 Mac）</h3>
+<p>
+使用“预览”应用程序可以找到产品目录中的 Icons 文件夹，然后使用 Finder 在“获取信息”中替换该图标。<ol>
+<li>从“预览”中，选择“文件”-&gt;“打开”
+<li>找到产品 Icons 目录
+<li>选择包含该图标的文件，然后选择“打开”
+<li>选择“编辑”-&gt;“全部选中”
+<li>选择“编辑”-&gt;“复制”
+<li>通过 Finder 找到要更改其图标的 .hod、.bchx、.dtfx 或 .dttx 文件。<br>
+   如果该文件已经在桌面上，请单击该文件以将其选中。否则，请选择“前往”-&gt;“前往文件夹”，然后输入该文件的路径，接着选择“前往”。<br>
+   单击该文件以将其选中。<li>“文件”-&gt;“获取信息”
+<li>单击“获取信息”顶部的图标
+<li>“编辑”-&gt;“粘贴”
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 更改配置位置</h3>
+<p>
+缺省情况下，每个用户都使用自己的唯一位置来存放他们的配置。可通过设置以下属性来更改配置位置：<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+此属性位于 AcsConfig.properties 文件中。<p>
+交付产品时，AcsConfig.properties 文件存在于两个位置。此文件包含在 acsbundle.jar 文件中。为了方便起见，在产品 zip 归档文件中也提供了此文件，并且在将 zip 归档解包时，此文件将与
+acsbundle.jar 文件位于同一目录中。<p>
+启动期间，产品将仅使用它找到的第一个 AcsConfig.properties 文件。它首先检查 acsbundle.jar 文件所在的目录。如果在 acsbundle.jar 文件所在的目录中找不到 AcsConfig.properties，那么它将使用
+acsbundle.jar 文件内的 AcsConfig.properties 文件。<p>
+可选择使用定制配置路径来更新 acsbundle.jar 中的 AcsConfig.properties。如果您这样做，请确保 acsbundle.jar
+所在的目录不包含 AcsConfig.properties 文件，否则将会改为使用该文件。这使您能够灵活使用 acsbundle.jar 文件分配配置位置，同时还使您能够灵活对其进行覆盖。<p>
+提供了定义配置路径时可使用的特殊关键字。在指定路径中使用了这些关键字时，会将这些关键字替换为它们定义的文本或路径。在配置路径中，只能使用一个关键字。特殊关键字及其含义如下所示：<br>
+<pre>
+	{USER} - 当前用户标识。此关键字可以出现在路径中的任何位置
+</pre>
+<p>
+下列关键字只能位于所指定路径的开头：
+<pre>
+	{PRODUCTDIR} - acsbundle.jar 所在目录的路径
+	{TEMPDIR}    - 特定于平台的临时目录的路径
+	{ROOT}       - 文件系统的根目录的路径
+	{HOME}       - 用户的主目录的路径
+	{DEFAULT}    - 产品通常使用的缺省路径
+</pre>
+<p>
+技术说明：<br>
+我们建议不要在多个用户之间共享配置。例如，如果 X 是共享的网络驱动器，那么以下设置可能会导致不可预测的结果：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+共享此配置路径的多个用户存在数个问题：<br>
+<ol>
+<li>如果多个用户同时使用此配置，那么将发生不可预测的结果。<li>此示例假定每个用户都将 X 驱动器映射到同一位置。<li>在 Linux 或 Mac 客户机上，无法在配置中使用网络驱动器。在 Windows、Linux 和 Mac 上，使用所提供关键字（如下面的示例中所示）将起作用。</ol>
+<p>
+在多个用户之间共享配置路径时，应该使用 {USER}
+关键字来避免与其他用户发生冲突。它将替换为当前用户的用户标识。<p>
+设置该配置路径时，请使用正斜杠（“/”）而不是反斜杠（“\”）作为目录分隔符。这将在所有操作系统（其中包括
+Windows）上起作用。<p>
+以下是建议的一些样本配置：<p>
+示例 1 - 当前用户的本地配置（缺省情况）：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+如果未设置 AcsBaseDirectory，那么此配置将缺省为用户的依赖于平台的路径。这是 IBM i Access Client Solutions 的缺省设置。<p>
+示例 2 - 每个用户特有的远程（或本地）配置：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+此配置将是远程配置或本地配置，具体取决于 {ROOT} 的位置。<p>
+示例 3 - 每个用户特有的远程（或本地）配置：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+此配置将是远程配置或本地配置，具体取决于 {PRODUCTDIR} 的位置。<p>
+示例 4 - 便携介质（例如 USB 驱动器）上的本地配置：
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+由于便携介质的路径将随使用该介质的系统不同而变化，因此，此设置允许该配置相对于产品文件。在此示例中，有意未指定 {USER} 关键字，因此 USB 驱动器上的配置将由 USB 驱动器的用户使用，而不考虑用户标识。<h3><a id="9.4"></a>9.4 其他部署选项</h3>
+<p>
+以下是一些您可能要考虑使用的其他部署选项：
+<ul>
+   <li>将产品部署在多个用户可以访问的单个位置。<li>如果您有 Web 服务器，那么可以考虑使用 Web Start。请参阅 http://java.com/en/download/faq/java_webstart.xml
+   <li>自动导入配置设置。请参阅 <a href="#9.4.1">9.4.1</a> 一节<li>部署在 IBM i 本机上。请参阅 <a href="#9.4.2">9.4.2</a> 一节
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 自动导入配置设置</h3>
+<p>
+在 AcsConfig.properties 文件中，可以使用下列属性，以便自动为新用户设置配置或者为现有用户更新配置：<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+必须完成的步骤如下所示：
+<ol>
+<li>创建要传播到一个或多个用户的配置。<li>通过使用主 GUI 中的“文件”-&gt;“导出配置”，或者使用 <a href="#9.1.1">9.1.1 Backup</a> 一节中的命令行选项，将该配置导出到文件。<li>将配置文件移至期望位置。后面描述了若干可用选项。<li>将 AcsConfig.properties 中的 com.ibm.iaccess.autoimport 属性设置为配置文件的路径。<li>将 com.ibm.iaccess.autoimport.version 设置为表示配置文件版本的整数值。</ol>
+<p>
+此功能的工作方式如下：<br>
+当 com.ibm.iaccess.autoimport.version 属性的整数值与导入的最后一个值不匹配时，将自动导入 com.ibm.iaccess.autoimport 属性所引用的已保存配置。除了提供用于设置初始配置以及对现有配置提供更新的方法之外，这还提供了用于将配置作为后备级别的方法。当版本属性的整数值与导入的最后一个版本不匹配时，将随时更新该配置。不过，虽然所导入配置可能更改用户的配置中针对现有系统的配置，但是将决不会从用户的配置中删除系统。<p>
+可采用绝对路径、URL 或使用 <a href="#9.3">9.3</a> 一节中定义的关键字指定 com.ibm.iaccess.autoimport 属性的路径。例如：
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+另外，允许将配置文件分配在 acsbundle.jar 内或分配在 acsbundle.jar
+所在的目录中将使其更加灵活。对于上述任意一种情况，请使用文件的名称（不带上述路径）来设置
+com.ibm.iaccess.autoimport：<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+允许将特殊值 * 用于 com.ibm.iaccess.autoimport.version：
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+这将始终导入配置，而不考虑任何先前版本。<h3><a id="9.4.2"></a>9.4.2 本机 IBM i 部署</h3>
+<p>
+可以在 IBM i 本机上使用上某些不需要 GUI 的命令行插件。例如，可以在 IBM i
+上使用数据传输将数据直接从数据库抽取到电子表格文件类型，而不必将数据下载到 PC。<p>
+为此，可以将产品 zip 归档抽取到 IBM i 集成文件系统 (IFS)
+中的任何位置。例如，如果已将产品 zip 归档抽取到以下位置：
+<pre> /home/AccessClientSolutions </pre>
+并且先前保存的数据传输下载请求位于以下位置：
+<pre> /some_path/qcustcdt.dtfx </pre>
+那么可以在 IBM i 上运行以下命令：
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 定制包</h3>
+<p>
+IBM i Access Client Solutions 使系统管理员能够通过在 AcsConfig.properties 文件中设置以下属性来限制对特定功能的使用：<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;function, function,...&gt;
+</pre>
+可以指定的功能关键字如下所示：<br>
+<pre>
+
+   功能            描述
+    cfg             系统配置
+    sm              5250 会话管理器
+    5250            5250 仿真器
+    vcp             虚拟控制面板
+    console         5250 控制台
+    consoleprobe    在本地网络中搜索控制台配置
+    hmcprobe        搜索分区的 HMC
+    hmi1            硬件管理界面 1
+    hmi2            硬件管理界面 2
+    keyman          SSL/TLS 证书管理
+    dtgui           数据传输图形用户界面
+    upload          数据传输批处理上载
+    download        数据传输批处理下载
+    cldownload      数据传输批处理下载
+    l1c             IBM Navigator for i（第 1 级控制台）
+    rmtcmd          远程命令（可以从命令行使用）
+    splf            打印机输出（假脱机文件）
+    ifs             集成文件系统
+    db2             模式
+    rss             运行 SQL 脚本
+    db2tools        SQL 性能中心
+    sysdbg          IBM i 系统调试器
+    checkupdates    查找可用的更新
+    ssh             安全 Shell
+</pre>
+<p>还可以使用组关键字来排除功能：
+<pre>
+
+   组                 功能
+  dataxfer          dtgui、upload、download 和 cldownload
+  emulator          sm 和 5250
+  keyman            keyman
+  opconsole         console、vcp、consoleprobe 和 hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1 和 hmi2
+  l1cplugin         l1c
+  database          db2、rss 和 db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+系统管理员可选择通过更新 AcsConfig.properties 文件来限制对特定功能的访问。限制访问将从主
+GUI 中除去功能并且禁止从命令行对它进行使用。<p>
+有关如何对功能进行限制的一个示例是，在 AcsConfig.properties 文件中添加下面这一行：<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+如果系统管理员希望先更新 acsbundle.jar 内的 AcsConfig.properties 文件，然后再部署该文件以供用户使用，那么执行此操作的示例如下：<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+有关 IBM i Access Client Solutions 如何确定要使用哪个 AcsConfig.properties 文件的更多信息，请参阅 <a href="#9.3">9.3 更改配置位置</a>一节。<h3><a id="9.6"></a>9.6 从 IBM i Access for Windows 进行迁移</h3>
+<p>
+IBM i Access Client Solutions 配置文件与 IBM i Access for Windows 中的相应功能不兼容。IBM i Access Client Solutions
+为若干关键项提供了迁移路径，如下列各节中所讨论。<h3><a id="9.6.1"></a>9.6.1 迁移系统配置</h3>
+<p>
+主 GUI 菜单的“文件”-&gt;“复制连接”提供了“复制连接”功能，此功能提供了一个界面，用于在
+IBM i Access Client Solutions 与 IBM i Access for Windows 所支持的旧 Windows
+配置之间复制系统配置。有关额外信息，请参阅“复制连接”的主面板的帮助。还可使用命令行来迁移系统配置。有关更多信息，请参阅 <a href="#9.1.25">9.1.25 MIGRATE</a> 一节。<h3><a id="9.6.2"></a>9.6.2 迁移 5250 仿真</h3>
+<p>
+可通过使用 IBM i Access Client Solutions 中的 5250 会话管理器来转换由
+IBM i Access for Windows 个人通信仿真器使用的 5250
+仿真文件。可以转换个人通信中的下列文件类型：<br>
+<pre>
+   .ws   - 仿真器概要文件
+   .bch  - 仿真器批处理文件
+   .kmp  - 键盘定制文件
+   .pmp  - 弹出式小键盘文件
+   .bar  - 菜单栏文件
+</pre>
+这些文件将转换为：<br>
+<pre>
+   .hod  - 仿真器概要文件
+   .bchx - 仿真器批处理文件
+   .kmp  - 键盘定制文件
+   .pmp  - 弹出式小键盘文件
+   .bar  - 菜单栏文件
+</pre>
+这两个产品都使用 .kmp、.pmp 和 .bar 文件类型。但是，这些格式不兼容。将在特定于
+IBM i Access Client Solutions 的路径中创建转换后的文件。<p>
+可以通过执行以下操作，从 IBM i Access Client Solutions 的“会话管理器”菜单启动对这些文件的转换：<ul>
+<li> 选择“文件 -&gt;导入”，然后找到 Personal Communications 文件。<li> 将文件拖放到 IBM i Access Client Solutions 的“会话管理器”窗口。</ul>
+...或者使用 PM5250 插件从命令行进行转换。请参阅 <a href="#9.1.30">9.1.30 PM5250</a> 一节。<p>
+提供了宏转换实用程序。在会话管理器中：<br>
+<pre>
+    工具 -&gt; 转换宏...
+</pre>
+技术说明：<br>
+如果 PC5250 宏是不仅仅包含所记录击键的定制宏，那么宏转换实用程序可能无法转换该宏。<h3><a id="9.6.3"></a>9.6.3 迁移已保存的数据传输请求文件</h3>
+<p>
+IBM i Access Client Solutions 中的“数据传输”提供了一个向导，用于转换由 IBM i Access for Windows 生成的已保存数据传输请求文件。<p>
+可以转换 IBM i Access for Windows 中的下列文件类型：<br>
+<pre>
+   .dtf - 以 IBM i 为源的数据传输
+   .dtt - 以 IBM i 为目标的数据传输
+</pre>
+这些文件将转换为：<pre>
+   .dtfx - 以 IBM i 为源的数据传输
+   .dttx - 以 IBM i 为目标的数据传输
+</pre>
+“数据传输”迁移向导不迁移 .fdf 文件。IBM i Access Client Solutions 需要的
+新文件类型为 .fdfx，并且可以在下载期间或者通过使用“创建文件”向导生成。<p>
+通过选择“操作”-&gt;“数据传输迁移”，可以从“数据传输”主菜单中使用“数据传输”迁移向导
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+对于利用 EHLLAPI 访问 IBM i Access for Windows 随附的个人通信仿真器的 5250 应用程序，请参阅以下 KB 文章，以获取有关将 EHLLAPI 与 IBM i Access Client Solutions 配合使用的信息：<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions 支持 Kerberos。要在连接到系统时使用 Kerberos，请完成下列步骤：<br>
+<ol>
+<li>从主 GUI 中显示“系统配置”
+<li>选择新建系统配置或编辑现有系统配置
+<li>在“连接”选项卡上，选择<br>
+   “使用 Kerberos 认证；不提示”
+</ol>
+设置 Kerberos 环境超出了本文档的范围。<h3><a id="9.7"></a>9.7 密钥管理</h3>
+<p>
+通过选择“工具”-&gt;“密钥管理”，可以从主 GUI 中管理用于安全套接字层 (SSL) 连接的证书。针对密钥数据库的某些任务需要密钥库完整性口令。<h3><a id="9.8"></a>9.8 数据传输</h3>
+<h3><a id="9.8.1"></a>9.8.1 对 Excel 电子表格和 Calc 电子表格的数据传输支持</h3>
+<p>
+除了支持下载至文件以外，数据传输还支持下载至 Microsoft Excel 电子表格或 OpenOffice Calc 电子表格的活动电子表格。为了下载至活动电子表格，主数据传输 GUI 面板提供了选择输出设备的选项。缺省情况下，输出设备为文件。如果平台支持与 Excel 和/或 Calc 电子表格交互，那么可以从“输出设备”下拉框选择用于活动 Excel 电子表格和活动 Calc 电子表格的其他选项。<p>
+限制：
+<ul>
+<li>在 Windows 上，要求 OpenOffice 的最低版本为 3.4.1。<li>在 Linux 和 Mac 上，要求 OpenOffice 的最低版本为 4.2.1，并且必须安装到缺省位置。<li>在 Linux 或 Mac 上运行的 IBM i Access Client Solutions 仅支持与 OpenOffice 进行交互。<br>
+在 Windows 上运行的 IBM i Access Client Solutions 支持与 Microsoft Excel 或 OpenOffice Calc 进行交互。<li>OpenOffice 的位数必须与 IBM i Access Client Solutions 的位数匹配。<br>
+说明：OpenOffice 有 32 位版本和 64 位版本。这两个版本都能够在 64 位 PC 上运行。与
+OpenOffice 电子表格进行交互时，OpenOffice 和 IBM i Access Client Solutions
+的位数必须相同，否则“数据传输”无法与电子表格进行交互。IBM i Access Client Solutions
+的位数由其运行所在的 Java 虚拟机 (JVM) 确定。如果 OpenOffice 与运行 IBM i Access Client Solutions 的 JVM 之间存在位数不匹配，并且您为“输出设备”选择活动电子表格，那么将显示类似于“找不到活动电子表格”的错误。如果您正在 64 位 PC 上
+运行，那么可以使用特定于平台的 32 位或 64 位二进制启动程序来启动 IBM i Access
+Client Solutions。为了使活动电子表格支持正常工作，请使用与所用 OpenOffice
+应用程序的位数匹配的平台特定二进制文件来启动 IBM i Access Client Solutions。<br>由于 Mac 仅支持 64 位 JVM，因此，为了在 Mac 上使用电子表格有效支持，您必须安装 64 位版本的 OpenOffice。</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 对字符截断和数字溢出的数据传输支持</h3>
+<p>
+在执行数据传输上载请求期间，如果字符字段或数字字段超过字段的已定义大小，那么上载请求将终止。<p>
+要使字符字段能够从末尾截断，请在 AcsConfig.properties 文件中设置以下属性：<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+要使数字字段能够在提供的数字字段超过已定义的边界时设置为其最大正值或负值，请在 AcsConfig.properties 文件中设置以下属性：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+当这些属性设置为 true 时，上载请求将继续，而不会提供任何指示来说明已发生截断或溢出。将在结束时截断字符字段。数字字段将设置为其最大值（对于上溢）和最小值（对于下溢）。<p> 
+或者，可以像设置其他 Java 属性一样，从命令行设置以上属性，如下所示：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 数据传输工作表名称</h3>
+<p>
+在下载期间，将根据 IBM i 源库和文件的名称生成工作表名称并附加“>Sheet#”，其中 # 将替换为工作表号码。例如：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+要覆盖工作表名称的库和文件部分，可以指定以下属性：<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=your_string<br>
+这将生成：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;your_string>Sheet1
+
+<h3><a id="9.9"></a>9.9 建立控制台与 IBM i 的连接</h3>
+<p>
+要对 IBM i 执行管理功能，您需要 5250 控制台。IBM i Access Client Solutions
+支持 LAN 和 HMC 控制台配置。<p>
+如果您知道 IBM i 的服务主机名或服务 IP 地址，或者知道 HMC 控制台的主机名或 IP 地址，那么可以使用以下步骤来配置 IBM i Access Client Solutions 中的控制台信息：<br>
+<ol>
+<li>在 PC 上启动 IBM i Access Client Solutions。<li>在主面板上，单击“系统配置”。<li>单击“新建”按钮以输入新配置，或者单击“编辑”按钮以更新现有配置。<li>选择“控制台”选项卡。<li>输入控制台类型的相应信息。</ol>
+<p>
+对于其中还不存在控制台配置的 IBM i（例如，刚刚交付给企业的新系统），在 IPL 期间，将在范围 169.254.62.0 - 169.254.62.63 中自动分配控制台连接的 IP 地址。对于这些情况，以下步骤将有助于使用 IBM i Access Client Solutions 建立控制台连接：<br>
+<ol>
+<li>禁用 PC 的无线连接。以下步骤需要联网的以太网端口。<li>在 PC 与 IBM i T1 端口之间铺设以太网电缆。<li>在 PC 上启动 IBM i Access Client Solutions。<li>在主面板上，单击“系统配置”。<li>在“系统配置”中，单击“查找控制台...”按钮。<li>在“IBM i 定位器”面板中，单击“搜索”按钮。<li>如果 IBM i 上的 IPL 序列已进行到足以自动分配 IP 地址的程度，那么“搜索”面板中应该会显示该 IP 地址。<li>单击显示的 IP 地址以将其选中，然后单击“控制台”按钮以连接 5250 控制台。<li>将显示一个面板，要求输入服务工具凭证。<li>在输入有效凭证后，将显示 5250 控制台。<li>该控制台可以用来处理初始安装和设置任务。</ol>
+<p>
+IBM 信息中心提供了有关如何配置服务工具 LAN 适配器的其他信息，当您准备好将 IBM i 系统添加到网络基础结构的其余部分时，可以参阅该信息：
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+请参阅“为 DST 配置服务工具服务器”一节
+<p>
+对于已具有 LAN 控制台配置并且已存在于网络基础结构中的 IBM i 系统，可以通过以下步骤查找现有的控制台配置：<br>
+<ol>
+<li>在 PC 上启动 IBM i Access Client Solutions。<li>在主面板上，单击“系统配置”。<li>在“系统配置”中，单击“查找控制台...”按钮。<li>在“IBM i 定位器”面板上，将“附近”字段更新为您要搜索的范围中的 IP 地址。<li>单击“搜索”按钮，以便在指定范围内查找 LAN 控制台。<li>单击显示的 IP 地址以将其选中，然后单击“控制台”按钮以连接 5250 控制台。<li>将显示一个面板，要求输入服务工具凭证。<li>在输入有效凭证后，将显示 5250 控制台。</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 附加字体</h3>
+<p>
+可以将用于 5250 仿真的附加字体添加到 Fonts 目录。<p>
+要提供附加字体备用位置和/或多个附加字体位置，请设置 AcsConfig.properties 文件中的 com.ibm.iaccess.Fonts 属性。<p>
+通过将 com.ibm.iaccess.Fonts 属性设置为以下内容，可以覆盖缺省 Fonts 目录：<br>
+<ol> 
+<li>&lt;path&gt;，这是包含字体的目录
+<li>特定字体文件（例如 .ttf）的 &lt;path&gt;/&lt;filename&gt;
+<li>字体文件的 URL
+<li>一列以分号定界的上述任意项目
+</ol>
+<p>
+注：<br>
+&lt;path&gt; 可以是绝对路径，也可以是开始于 acsbundle.jar 的位置的相对路径。5250 仿真只能识别等宽字体。<p>
+示例 1（缺省值）：
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+示例 2：
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 使用 netrc 文件中的凭证</h3>
+<p>
+要启用 .netrc 文件（Linux 和 Mac）或 _netrc 文件 (Windows)，请转至 IBM i Access Client Solutions 主 GUI，然后从菜单栏中选择<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;“编辑”-&gt;“首选项”<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;“常规”选项卡<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;选中以下框：<b>读取 netrc 文件以获取登录信息</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;单击“应用”按钮<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;重新启动 IBM i Access Client Solutions<br>          
+<p>
+netrc 文件的标准格式为：<br>
+<pre>
+     machine &lt;system&gt; login &lt;user-id&gt; password &lt;password&gt;
+</pre>
+<p>
+netrc 文件必须存储在用户的主目录中，并且系统名称和用户标识必须与<b>系统配置</b>匹配。从 IBM i Access Client
+Solutions 中：<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;选择“系统配置”<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;选择系统，然后编辑系统<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;“连接”选项卡<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;选择<b>使用缺省用户名对每个系统提示一次</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;在<b>缺省用户名</b>中填写用户标识<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;选择“确定”<br>          
+
+<p>
+当系统名称和<b>缺省用户名</b>与 netrc 文件的内容匹配时，将使用 netrc 文件中的密码建立与系统的连接，而不会提示用户。<h3><a id="9.12"></a>9.12 集成文件系统 (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS、QFileSvr.400 和安全性</h3>
+<p>
+集成文件系统支持将使用 QFileSvr.400 文件系统在 IBM i 分区之间复制或发送对象。这意味着两个分区上的用户概要文件和密码必须匹配，并且这两个分区必须具有相同密码级别系统值
+(QPWDLVL)。如果要使用 Kerberos 认证，那么这两个分区必须已配置网络认证服务和企业身份映射 (EIM)。有关更多详细信息，请参阅 IBM i Knowledge Center
+中的“QFileSvr.400 文件系统中的安全性和对象权限”主题。<p>
+由 QFileSvr.400 文件系统建立的与其他 IBM i
+分区的连接不安全。如果在 IBM i 分区之间复制或发送对象需要安全连接，那么必须设置分区的配置以使用
+SSL，系统配置必须已为该分区选择“使用 SSL 进行连接”选项，并且必须在 AcsConfig.properties 文件中设置以下属性：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+或者，可以像设置其他 Java 属性一样，从命令行设置该属性，如下所示：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS 权限</h3>
+<p> 
+集成文件系统支持将需要权限以使用下列 CL 命令：<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+如果用户无法使用这些 CL 命令，那么“复制”、“粘贴”、“发送”、“删除”和“新建文件夹”操作将失败。<h3><a id="9.12.3"></a>9.12.3 IFS 限制</h3>
+<p>
+集成文件系统支持不允许对其路径以 /QFileSvr.400、/QNTC 或 /QOPT
+开头的对象执行操作。如果当前目录路径或任何所选对象路径以
+/QFileSvr.400、/QNTC 或 /QOPT 开头，那么将禁用“操作”菜单中的所有项，并且不会显示上下文菜单。<h3><a id="9.12.4"></a>9.12.4 IFS 和独立 ASP</h3>
+<p>
+当源对象或目标对象位于独立 ASP 中时，集成文件系统支持不允许执行“复制”、“粘贴”或“发送”操作。<h3><a id="9.13"></a>9.13 安全 Shell (SSH) 终端</h3>
+<p>
+对于缺省情况下存在安全 Shell 或者已安装安全 Shell 的平台，SSH 终端功能部件将显示在
+IBM i Access Client Solutions 的主 GUI 上。SSH 终端将对 IBM i 集成文件系统启动终端仿真器。<p>
+缺省情况下，大多数 Mac、Linux 以及其他从 UNIX 派生的系统已具有安全 Shell。对于这些平台，假定
+OpenSSH 客户机存在并位于 /usr/bin/ssh。Windows 用户将需要安装某个可供 Windows 使用的安全 Shell。<p>
+IBM i Access Client Solutions 所支持的安全 Shell：<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm、XterminalEmulator、MateTerminal、Terminator、GnomeTerminal、Konsole 和 Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal 和 iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows：cygwin、PuTTY 和 bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin 要求安装 openssh 软件包
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash 将作为 Windows 的 Linux 子系统的一部分提供
+
+<p>
+如果安装了多个 SSH 应用程序，那么可以使用 com.ibm.iaccess.PreferredSSHClient 属性来设置首选
+SSH 客户机。<p>Linux 示例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac 示例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows 示例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+对于 SSH 客户机未安装到标准位置的情况，可以使用 com.ibm.iaccess.PreferredSSHClient
+属性来提供所安装 SSH 客户机的标准路径。<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+提供标准路径时，可能还需要设置 com.ibm.iaccess.SSHClientOpt
+以提供所有必需自变量。例如，要在不使用 X11 转发时禁用警告，请进行以下设置：
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 SSH 终端先决条件</h3>
+在 IBM i 上安装 5733-SC1 IBM Portable Utilities for i。<br>使用以下命令启动安全 Shell
+守护程序：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>如果在启动的 SSH 客户机中遇到连接错误（例如“已拒绝连接”），或者窗口弹出又立即消失，那么可能需要以上命令来启动 SSH 守护程序。
+<hr><h3><a id="10.0"></a>10.0 服务诊断</h3>
+<p>
+如果您遇到需要 IBM 服务的问题，那么 IBM 服务代表可能会指导您执行下列一项或两项操作：
+<p>
+从主 IBM i Access Client Solutions GUI 中：<br>
+<ul>
+ <li>选择“工具”-&gt;“生成服务日志”<br>
+     这将执行 <a href="#9.1.5">9.1.5 Dump</a> 一节中的命令行选项所执行的功能。通常，发生故障之后应立即执行此操作。根据所发生的问题，IBM 服务代表可能会指示您多次执行此操作。<li>选择“工具”-&gt;“将服务日志打包”<br>
+这将执行 <a href="#9.1.6">9.1.6 Medic</a> 一节中的命令行选项所执行的功能。此功能将收集有关工作站环境的详细信息，并将服务日志打包为一个 zip 归档，可以将此 zip 归档发送给 IBM。</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 常见问题 (FAQ)</h3>
+<p>
+<pre>
+Q1    尝试启动 IBM i Access Client Solutions 时，发生以下错误：
+             无法装入类：java.lang.UnsupportedClassVersionError
+A1-1  您需要使用 JDK 6.0 或更高版本。请参阅 <a href="#3.0">3.0 先决条件</a>一节
+
+Q2    尝试使用其中一个提供的二进制文件或脚本从 Shell 或终端会话中启动产品时，发生以下错误：
+         许可权被拒绝
+A2-1  请检查该文件的文件许可权，以确保您具有执行许可权。请参阅 <a href="#6.0">6.0 文件许可权</a>一节。
+Q3    双击所提供的其中一个文件以启动产品时未执行任何操作。A3-1  可能未安装 Java。请参阅 <a href="#3.0">3.0 先决条件</a>一节
+A3-2  用来启动产品的文件可能不具有执行许可权。请参阅 <a href="#6.0">6.0 文件许可权</a>一节。A3-3  您所处的环境可能存在问题。要了解可能发生的错误，请尝试从命令行运行提供的文件。请参阅 <a href="#7.3">7.3 使用命令行启动产品</a>一节。
+Q4    我想要使用其中一个二进制文件来启动产品，但是产生了以下错误：“装入 Java 模块时发生错误。”
+A4-1  该二进制文件找不到 Java 安装的主目录。      请验证是否安装了 Java。请参阅 <a href="#3.0">3.0 先决条件</a>一节。A4-2  <a href="#7.1.1">7.1.1 启动产品 - 其他选项</a>一节包含其他使用二进制文件启动产品的方法。
+
+Q5    设置 JAVA_HOME 环境变量之后，从命令行可以使用我用来启动产品的二进制文件，而双击该文件就不起作用。A5-1  双击该文件时，JAVA_HOME 环境变量在您使用的文件管理器中可能不可见。设置环境变量的方法随操作系统
+不同而异，环境变量的可视性也是如此。请尝试将 JAVA_HOME 环境变量设置为您使用的操作系统的系统环境变量。您使用的操作系统可能会将系统环境变量称为全局环境变量。设置 JAVA_HOME 环境变量之后，关闭文件管理器，
+然后将其重新打开，并尝试再次双击该二进制文件。
+Q6    双击所提供的其中一个文件以启动产品时，文本编辑器显示该文件。A6-1  请确保您正在使用的脚本具有操作系统可以识别的文件扩展名。A6-2  尝试使用另外一个脚本。A6-3  更改用于打开该文件的程序。A6-4  请检查该文件的文件许可权，以确保您具有执行许可权。请参阅 <a href="#6.0">6.0 文件许可权</a>一节。
+Q7    双击所提供的其中一个文件以启动产品时，系统提示我应使用哪个程序来打开该文件。A7-1  请确保您正在使用的脚本具有操作系统可以识别的文件扩展名。A7-2  将用来打开该文件的程序设置为与您正在使用的二进制文件或脚本兼容的程序。例如，终端（对于 Mac）。A7-3  请检查该文件的文件许可权，以确保您具有执行许可权。请参阅 <a href="#6.0">6.0 文件许可权</a>一节。
+Q8    在 Mac 上从 Finder 启动 IBM i Access Client Solutions 时，弹出了一个终端会话，即使在结束 IBM i Access Client Solutions 之后也不消失。
+A8-1  要使终端会话不再弹出，请使用 QuickStartGuide 中适用于 Mac 的安装脚本。
+Q9    产品的最佳启动方式是什么？
+A9-1  您可以使用 <a href="#7.0">7.0 启动产品</a>一节中描述的三种方法中的任意一种（二进制文件、脚本或命令行）来启动产品。任何在您所处的环境中有效的方法都可接受。
+Q10   为什么同时提供了二进制文件 (Start_Programs) 和脚本 (Sample_Scripts) 来启动产品？
+A10-1 这些脚本并不特定于操作系统，它们提供了更通用的方式，用于在特定于平台的二进制
+文件不工作时启动产品。A10-2 定义文件关联时，某些操作系统需要二进制文件。      大多数情况下，应该使用二进制文件来启动产品。A10-3 某些环境中可能存在防火墙，这些防火墙会限制访问 IBM i Access Client Solutions
+      的某些部分。通过使用某个二进制文件来启动产品，将使系统管理员更容易授予访问权。
+Q11   安装 JDK 6.0 或更高版本之后，仍然发生以下错误：
+             无法装入类：java.lang.UnsupportedClassVersionError
+A11-1 您的工作站上使用的 Java 的缺省版本低于 JDK 6.0。您需要使用一个显式指定 JDK 6 的 Java 主路径的选项。请参阅 <a href="#7.1.2">7.1.2 查找 Java 主路径</a>一节。请将 Java 主路径用于下面任意一节中描述的其中一种方法：
+      <a href="#7.1.1">7.1.1 启动产品 - 其他选项</a><br>
+      <a href="#7.3">7.3 使用命令行启动产品</a><br>
+
+Q12   我无法从 Windows 5250 仿真器会话导入定制的键盘映射文件 (.kmp)。A12-1 在 2012 年 7 月发布的 IBM i Access Client Solutions 的初始版本中，不支持从 Windows 5250 仿真器会话概要文件 (.ws) 中导入 .kmp 文件。从 2012 年 10 月发布的版本开始，现支持从 5250 会话概要文件 (.ws) 中导入 .kmp 文件。
+
+Q13   5250 仿真器的键盘定制与 Windows 上的定制存在许多不同之处。您有什么建议吗？
+A13-1 键盘映射分为多个类别。在仿真器会话中：
+      单击“编辑”&gt;“首选项”&gt;“键盘”，或者单击工具栏上的“重新映射”按钮。      单击“指定键”选项卡。      选择类别。缺省键映射将显示在“主机功能”和“菜单命令”类别之下。      选择您想要指定的功能。      单击“指定键”。      在键盘上，按您想要为此功能指定的键（或组合键）。
+A13-2 要获取有关定制键映射的帮助，请完成下列步骤：
+      单击“编辑”&gt;“首选项”&gt;“键盘”，或者单击工具栏上的“重新映射”按钮。选择“帮助”按钮。
+
+Q14   当我尝试在 Mac OS X 10.8 Mountain Lion 上启动产品时，收到一条弹出消息，它指示应用程序未签名。A14-1 这是从 Mac OS X 10.8 Mountain Lion 开始在缺省情况下强制实施的安全策略。请参阅以下 Web 页面，以了解如何使应用程序能够运行：
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+Q15   我是 IBM i Access for Windows 的用户，我可将我的系统配置迁移到
+      IBM i Access Client Solutions 吗？
+A15-1 请参阅 <a href="#9.6.1">9.6.1 迁移系统配置</a>一节。
+Q16   我是 IBM i Access for Windows 的用户，我可将我的仿真概要文件迁移到
+      IBM i Access Client Solutions 吗？
+A16-1 请参阅 <a href="#9.6.2">9.6.2 迁移 5250 仿真</a>一节
+
+Q17   我是 IBM i Access for Windows 的用户，我可将我的数据传输请求文件迁移到
+      IBM i Access Client Solutions 吗？
+A17-1 请参阅 <a href="#9.6.3">9.6.3 迁移已保存的数据传输请求文件</a>一节。
+Q18   EHLLAPI 会与 IBM i Access Client Solutions 协同工作吗？
+A18-1 请参阅 <a href="#9.6.4">9.6.4 EHLLAPI</a> 一节
+
+Q19   Kerberos 会与 IBM i Access Client Solutions 协同工作吗？
+A19-1 请参阅 <a href="#9.6.5">9.6.5 Kerberos</a> 一节
+
+Q20   我是系统管理员，希望向我的用户隐藏某些功能。A20-1 请参阅 <a href="#9.5">9.5 定制包</a>一节
+
+Q21   当我选择面板上的帮助图标时，未显示任何文本。A21-1 帮助文本通常显示在桌面浏览器中。在某些情况下，桌面可能没有浏览器，或者可能未正确配置浏览器。A21-2 要在不使用桌面浏览器的情况下显示帮助文本，请在 AcsConfig.properties 文件中
+      设置以下属性：
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      或者，可以像其他 Java 属性一样从命令行设置该属性，如下所示：
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+Q22   使用数据传输时，我选择“活动 Excel 电子表格”或“活动 Calc 电子表格”作为输出设备，但发生以下错误：
+         “找不到活动电子表格”
+Q22-1 不存在活动电子表格。请打开新的或现有电子表格，然后重试该请求。Q22-2 您正在使用的电子表格应用应用程序与运行 IBM i Access Client Solutions
+      的 Java 虚拟机之间可能存在位数不匹配的情况。      请参阅 <a href="#9.8">9.8 对 Excel 电子表格和 Calc 电子表格的数据传输支持</a>一节
+
+Q23   在 Mac 上使用数据传输时，我在输出设备中看不到任何用于与活动电子表格交互的
+      选项。Q23-1 因为 OpenOffice 应用程序与运行 IBM i Access Client Solutions 的 JVM 之间位数不匹配，所以数据传输无法与 Mac 上的活动电子表格进行交互。有关更多详细信息，请参阅 <a href="#9.8">9.8 对 Excel 电子表格和 Calc 电子表格的数据传输支持</a>一节。
+
+Q24   使用数据传输时，我选择“活动 Calc 电子表格”作为输出设备，但“名称”框中
+      未显示任何内容。Q24-1 对于从未保存的新 Calc 电子表格，这是正常情况。数据传输将仍然能够使用下载的
+      数据来更新该电子表格。</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 更新历史记录</h3>
+<p>
+请参阅以下 Web 页面：<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

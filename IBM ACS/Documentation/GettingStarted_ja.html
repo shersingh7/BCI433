@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GettingStarted</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - GettingStarted</h2>
+<h2>この文書の内容の最終更新日: 2018 年 3 月 27 日</h2>
+
+
+<h3><a id="0.5"></a>0.5 QuickStartGuide</h3>
+<p>
+<a href="./QuickStartGuide_en.html">QuickStartGuide</a> は、Windows、Mac、または Linux を実行するほとんどのユーザーに対して機能する本製品をデプロイするための手順を説明しています。
+この製品を単一ユーザー向け (または、マルチユーザー PC 向け) にインストールする場合は、Documentation フォルダーにある<a href="./QuickStartGuide_en.html">「QuickStartGuide」</a>を参照してください。
+<p>
+この文書の残りの部分には、この製品、他のデプロイメント・オプション、およびこの製品のカスタマイズについてのさらに詳しい説明が含まれています。
+<h3>目次:</h3>
+<a href="#0.5">0.5 QuickStartGuide</a><br>
+<a href="#1.0">1.0 概要</a><br>
+<a href="#2.0">2.0 フィーチャー</a><br>
+<a href="#3.0">3.0 前提条件</a><br>
+<a href="#4.0">4.0 製品内容</a><br>
+<a href="#5.0">5.0 インストール</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 インストール済みの既存製品の更新</a><br>
+<a href="#6.0">6.0 ファイル許可</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 ファイル許可 (Linux、Mac、AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 ファイル許可 (Windows)</a><br>
+<a href="#7.0">7.0 製品の開始</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 製品の開始</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 製品の開始 (スクリプトを使用)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 製品の開始 (コマンド行を使用)</a><br>
+<a href="#8.0">8.0 構成</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 構成ロケーション</a><br>
+<a href="#9.0">9.0 上級トピック</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 追加のコマンド行オプション</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 ファイル・アソシエーション</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 ファイル・アソシエーション (Windows の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 アイコンの変更 (Windows ショートカット用)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 デスクトップ・アイコンのセットアップ (Linux の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 ファイル・アソシエーション (Linux の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 ファイル・アソシエーション (Mac の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 ファイル・アソシエーションの作成 (Mac の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 アイコンの変更 (Mac の場合)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 構成ロケーションの変更</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 デプロイメントに関するその他のオプション</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 構成設定の自動インポート</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 ネイティブ IBM i デプロイメント</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 カスタマイズされたパッケージ</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 IBM i Access for Windows からのマイグレーション</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 システム構成のマイグレーション</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 5250 エミュレーションのマイグレーション</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 保管されたデータ転送要求ファイルのマイグレーション</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 鍵管理</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 データ転送</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 データ転送での Excel スプレッドシートおよび Calc スプレッドシートのサポート</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 データ転送での文字切り捨ておよび数値オーバーフローのサポート</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 データ転送シート名</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 IBM i へのコンソール接続の確立</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 追加フォント</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 netrc ファイルからの資格情報の使用</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 統合ファイル・システム (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS、QFileSvr.400、およびセキュリティー</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS 権限</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS の制限</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS と独立 ASP</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 セキュア・シェル (SSH) 端末</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 SSH 端末の前提条件</a><br>
+
+
+
+<a href="#10.0">10.0 保守診断</a><br>
+<a href="#11.0">11.0 よくある質問 (FAQ)</a><br>
+<a href="#12.0">12.0 更新履歴</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 概要</h3>
+<p>
+IBM i Access Client Solutions は、IBM i Access 製品ファミリーの最新メンバーです。
+当製品はプラットフォームに依存しない Java ベースのインターフェースを提供し、Java を
+サポートするほとんどのオペレーティング・システム (Linux、Mac、Windows 等) で稼働します。
+IBM i Access Client Solutions は、IBM i を管理するために最もよく使用されるタスクを
+まとめて、1 つの単純な場所に置きます。<p>
+IBM i Access Client Solutions は、5250 エミュレーションおよびデータ転送フィーチャー
+を使用するために、他の IBM i Access ファミリー製品と同じ IBM i ホスト・サーバーを
+使用し、同じ IBM i Access ファミリー・ライセンス (XW1) を必要とします。<p>
+Windows および Linux のクライアント・アプリケーションの使用と開発のための
+ミドルウェアが含まれている、以下の 2 つのオプションのパッケージもあります。 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows Application Package<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux Application Package<br>
+<p>
+現在のライセンスが有効な IBM i 7.1 以降をご使用のお客様は、次の 2 つの方法のいずれかで IBM i Access Client Solutions を入手できます。
+<ul>
+<li> <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a> の基本パッケージをダウンロードする。
+<li> 基本パッケージとオプションの Windows および Linux のアプリケーション・パッケージを、<a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> Web サイトの 5761-SS1 または 5770-SS1 の下でダウンロードする。
+</ul>
+
+<p>
+オプションの Windows および Linux アプリケーション・パッケージは、Entitled Software Support (ESS) Web サイトからのみ入手できます。
+<p>
+お客様は、5761-SS1 または 5770-SS1 リフレッシュ・フィーチャー 6288 を注文することで、
+メディアを入手できます。物理メディアには、実行可能なバージョンの製品が含まれており、それを使用すると、CD から製品を直接実行できます。物理メディアには製品の zip アーカイブも含まれ、任意の場所にそれをコピーして解凍することができます。IBM i Access Client Solutions の物理メディアには、オプション
+の Windows Application Package および Linux Application Package は含まれていません。<p>
+詳しくは、以下を参照してください。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+IBM i Access ファミリー製品の最新情報については、以下を参照してください。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 フィーチャー</h3>
+<p>
+IBM i Access Client Solutions には以下のフィーチャーがあります。<ul>
+<li>IBM Rational Host-on-Demand に基づいた、機能完備の 5250 ディスプレイ・エミュレーター。IBM i Access for Windows の使用時に使い慣れている、5250 ディスプレイのすべての機能に加えて、以下のいくつかの追加機能が提供されています。
+<ul>
+<li>複数のセッションが単一の表示領域を共有できるようにするタブ・サポート
+<li>ページ間を直観的にスクロールできるようにするマウス・ホイール・サポート
+<li>ワークステーションをリブートせずに言語間の切り替えが可能
+<li>異なるホスト・コード・ページを使用する複数のセッションを同時に表示し、異なるエミュレーター・セッション内で別個の言語が使用可能
+</ul>
+<li>プリンター・エミュレーション
+<li>IBM Personal Communications Session Manager をモデルにした、すべての 5250
+エミュレーター・セッションを管理するのに使用できる 5250 セッション管理機能
+
+<li>IBM i データベースと、ワークステーション上のさまざまなファイル・タイプ
+(OpenDocument スプレッドシート (*.ods)、Excel ワークブック (*.xlsx)、および
+その他のファイル形式) との間でのデータのやり取りを可能にするデータ転送
+
+<li>「プリンター出力」には、IBM i の出力待ち行列に入っているファイルを表示できるインターフェースがあるほか、これらのファイルをご使用のクライアント・システムにダウンロードする機能もあります。
+
+<li>IBM i 操作パネルへのグラフィカル・インターフェースを備えた仮想制御パネル
+
+<li>LAN、HMC、および FSM コンソールのための 5250 エミュレーション
+
+<li>ASMI、IVM、および HMC などのハードウェア管理インターフェース構成の統合
+
+<li>デフォルトのブラウザーを使用した IBM Navigator for i の起動機能
+<li> 「SQL スクリプトの実行」および「SQL Performance Center」などのデータベース機能。
+</ul>
+<p>
+オプションの Windows Application Package には以下のものが含まれています。
+<ul>
+<li>ODBC、.Net、および OLE DB を使用した DB2 for i への接続
+<li>IBM i システム・オブジェクトにアクセスするためのプログラミング・ツールキット
+<li>TLS/SSL 接続のサポート
+<li>AFP プリンター・ドライバー
+</ul>
+<p>
+オプションの Linux Application Package には以下のものが含まれています。
+<ul>
+<li>Db2 for i にアクセスするための ODBC ドライバー。このパッケージは完全な 64 ビット ODBC データ・タイプをサポートします。
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 前提条件</h3>
+<h3><a id="3.1"></a>3.1 前提条件 (ワークステーション)</h3>
+<p>
+IBM i Access Client Solutions は、さまざまなバージョンの Linux、Mac、および Windows など、Java 8.0 以上をサポートするほとんどのオペレーティング・システムで稼働します。
+<p>
+推奨:<br>
+Java のバージョンを最新バージョンに維持すると、最新の修正およびセキュリティー・パッチをすべて確保できます。
+<p>
+システムにインストールされている Java のバージョンを確認する 1 つの方法は、コマンド
+を入力できるプロンプト (コマンド・プロンプト、シェル、ターミナルなど) を起動し、次の
+コマンドを入力することです。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+以下の出力は、バージョン 8.0 がインストールされていることを示しています。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+この例の 65 は、更新レベルを表しています。
+<p>
+以下に、Java プロバイダーのいくつかの Web サイトを示します。プラットフォームに合った最新
+バージョンの Java を使用して稼働するように注意してください。
+<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<p>
+技術情報 (Mac 向け):<br>
+Java を Mac にインストールする場合は、JRE でなく JDK を選択してください。Mac 用の JRE では、Java がブラウザー用にのみインストールされます。
+他のアプリケーション用には Java がインストールされません。JDK をインストールすれば、IBM i Access Client Solutions など、他のアプリケーションで Java を使用できるようになります。
+
+<h3><a id="3.2"></a>3.2 前提条件 (IBM i への接続性)</h3>
+<p>
+IBM i Access Client Solutions は IBM i リリース 5.4 以上に接続できます。
+以下のフィーチャーは IBM i リリース 6.1 以上を必要とします。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250 コンソール<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;仮想制御パネル<br>
+<p>
+SSL 接続を使用する場合は、以下のとおり、ご使用のリリースに適合する IBM i PTF をロードして、適用してください。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610、SI55204、SI55389、SI57332、MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392、SI57320、MF60333、MF60334
+
+<p>
+Navigator for i を使用する場合は、以下のとおり、ご使用のリリースに適合する IBM i PTF をロードして、適用してください。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - グループ PTF SF99368 レベル 37 以上<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - グループ PTF SF99713 レベル 12 以上<br>
+	
+<p>
+5250 コンソールまたは仮想コントロール・パネルを使用する場合は、以下のとおり、ご使用のリリースに適合する PTF をロードして、適用してください。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543、MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540、MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485、MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 製品内容</h3>
+<p>
+製品 zip アーカイブには、以下のファイルおよびディレクトリーが含まれています。
+<pre>
+
+acsbundle.jar       - この製品の実行可能 jar ファイル
+AcsConfig.properties- 構成設定を含むファイル (acsbundle.jar 内にも
+                      存在します)
+
+Mac_Application     - Mac 用のインストール・スクリプトを含んでいるディレクトリー
+
+Linux_Application   - Linux 用のインストール・スクリプトを含んでいるディレクトリー
+
+Windows_Application - Windows 用のインストール・スクリプトを含んでいるディレクトリー
+
+Start_Programs      - 製品を開始するのに使用できるプラットフォーム固有の
+                      バイナリー・ファイルを含んでいるディレクトリー。
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+Documentation       - 文書を含むディレクトリー
+    QuickStartGuide - 開始方法に関する情報
+    GettingStarted  - この製品に関する詳細情報
+License             - ご使用条件を含んでいるディレクトリーNotices             - 注意事項およびお知らせを含んでいるディレクトリーproperties          - 製品バージョン情報を含んでいるディレクトリー  Sample_Scripts    - Start_Programs 内のバイナリー・ファイルが機能しない場合に製品を開始するために使用できるスクリプトを含んでいるディレクトリー。
+    Linux_Mac_Other - Perl が使用可能な任意のプラットフォームで製品を開始
+                      するのに使用できる Perl スクリプトのディレクトリー。
+    Windows         - Windows で開始するための JScript を含んでいるディレクトリー
+Icons               - アイコンとして使用できるファイルを含んでいるディレクトリー
+Fonts               - 5250 エミュレーション用の追加モノスペース・フォントを
+                      含むことがあるディレクトリー
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 インストール</h3>
+<p>
+IBM i Access Client Solutions のパッケージには、非常に簡単な単一ユーザー向けインストールから、より拡張されたマルチユーザー向けインストールまで、いくつかのインストール・オプションが用意されています。
+<p>
+各種のインストール・オプションに使用できるインストール・スクリプトが、Mac_Application、Linux_Application、および Windows_Application の各フォルダーで提供されています (セクション <a href="#4.0">4.0 『製品内容』</a>を参照してください)。
+<p>
+Mac、Linux、および Windows 上の単一ユーザー向けインストール、または Windows PC 上のマルチユーザー向けインストールについては、<a href="./QuickStartGuide_en.html">「QuickStartGuide」</a>を参照してください。
+「QuickStartGuide」では、これらのタイプの簡易インストールを行うために提供されているインストール・スクリプトの使用法を説明しています。
+<p>
+この製品を複数のユーザーにデプロイする計画の管理者は、記事<a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">「IBM i Access Client Solutions: Customization and deployment made easy」</a>をお読みください。
+この記事には、インストール・スクリプトでサポートされている /AdminConfig オプションを使用してデプロイメントを行う前に、管理者が複数ユーザー向けインストールを事前カスタマイズする方法が説明されています。
+<p>
+インストールをサイレント・モードで自動化することを希望する管理者は、/AdminConfig パラメーターを使用して、インストールを事前構成します。その後、実際のインストール時に /Q パラメーターを使用します。例:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+上記のオプションの他に、選択した任意の場所に zip アーカイブを解凍するだけのオプションもあります。ワークステーションが製品ファイルにアクセスする読み取り権限を持っている
+任意の場所に移動することができます。具体的には、ローカル・ハード・ディスク、リモート・ネットワーク (共有) ドライブ、
+または、携帯用メディア (CD や USB フラッシュ・ドライブなど) にすることができます。zip アーカイブを解凍すれば、インストールは完了です。
+<p>
+技術注記:<br>
+アーカイブ・ユーティリティーの中には、保管されたファイル属性のすべてが保持 されるわけではないものもあります。例えば、Mac および Linux プラットフォーム
+では、unzip コマンドの方が jar コマンドよりも好ましい選択であることが一般的
+です。追加情報については、セクション <a href="#6.0">6.0 『ファイル許可』</a>を参照してください。
+
+<h3><a id="5.1"></a>5.1 インストール済みの既存製品の更新</h3>
+<p>
+機能拡張と修正を定期的に入手できます。
+これらのアップデートは、完全
+な製品インストールとして提供されます。これらのアップデートが使用可能になったら、
+インストール済みの既存製品の更新が必要になります。<p>
+インストール・スクリプトを使用してインストールされた既存のインストール済み環境を更新するには、製品の新しいバージョンの内容を抽出します。初期インストール時に行ったのと同じ方法で、この新規バージョンからインストール・スクリプトを起動します。これにより、ユーザーの既存の構成を変更することなく、製品のファイルが更新されます。
+<p>
+複数のユーザーがアクセスする中央の場所に製品のバージョンを維持している管理者は、新しいバージョンの内容を既存のバージョンの上に抽出できます。
+AcsConfig.properties ファイルにカスタム変更を行った場合は、製品の新規バージョンの内容を既存のバージョンの上に抽出する前に、AcsConfig.properties を保管します。製品の新規バージョンの内容を抽出し、AcsConfig.properties を復元した後、各ユーザーが初期インストールと同じ方法でインストール・スクリプトを実行し、それぞれのインストールを更新することができます。
+<p>
+インストール・スクリプトを使用せずに、任意の場所に zip アーカイブの内容を抽出することで製品をインストールして、製品を更新する場合は、製品の新しいバージョンの内容を既存のバージョンの上に抽出する必要があります。
+AcsConfig.properties にカスタム変更を加えた場合は、その内容を保管して復元することが必要になる場合があることに注意してください。
+<hr><h3><a id="6.0"></a>6.0 ファイル許可</h3>
+<p>
+<a href="#7.0">セクション 7.0 製品の開始</a>は、IBM i Access Client Solutions を開始するためのいくつかの異なる方法について説明しています。
+提供されているバイナリー・ファイルまたはスクリプト
+の 1 つを使用して製品を開始する場合は、そのファイルまたはスクリプトのファイル許可で
+実行許可が有効になっていることを確認する必要があります。zip アーカイブを解凍する間に
+割り当てられるファイル許可は、オペレーティング・システム、zip アーカイブの解凍に使用
+されるアーカイブ・ユーティリティー、ユーザーの権限など、いくつかの要因によって決まり
+ます。<p>
+提供されているバイナリー・ファイルまたはスクリプトの 1 つを使用する際に問題が発生
+する場合は、ファイル許可を確認してください。以下のセクションに、ファイル許可を確認
+するためのいくつかの方法が説明されています。<h3><a id="6.1"></a>6.1 ファイル許可 (Linux、Mac、AIX)</h3>
+<p>
+UNIX 系のオペレーティング・システムの場合は、シェルまたは端末のプロンプトで、次のコマンドを使用してファイル許可を確認できます。
+<br>
+<pre>        ls -l &lt;file&gt;
+</pre>
+<p>
+ファイル許可を変更するには、次のコマンドを使用できます。<br>
+<pre>    chmod &lt;permission&gt; &lt;file&gt;	</pre><br>
+例えば、次のようにします。<br>
+全員を対象に読み取りおよび実行許可を追加する場合:
+<pre>
+    chmod a+rx &lt;file&gt;
+</pre>
+ファイル所有者に読み取り/書き込み/実行許可を付与し、それ以外の全員には
+読み取り/実行許可のみを付与する場合:
+<pre>
+    chmod 755 &lt;file&gt;
+</pre>
+<p>
+ls コマンドおよび chmod コマンドに関する追加ヘルプはインターネットで簡単に
+入手できます。<h3><a id="6.2"></a>6.2 ファイル許可 (Windows)</h3>
+<p>
+Windows の場合、Windows エクスプローラを使用してファイルを表示中に、「ファイル」を
+右クリックして「プロパティ」を選択します。「セキュリティ」タブにファイル許可
+が示されます。読み取りおよび実行許可があることを確認してください。
+<p>
+最近のバージョンの Windows では、icacls コマンドを使用してファイル許可の表示
+および変更を行うこともできます。<hr><h3><a id="7.0"></a>7.0 製品の開始</h3>
+<p>
+IBM i Access Client Solutions を開始する方法はいくつかあります。
+インストール・スクリプトを使用して製品をインストールした場合、製品を開始する最も簡単な方法が<a href="./QuickStartGuide_en.html">「QuickStartGuide」</a>に記載されています。
+<p>
+インストール・スクリプトを使用して製品をインストールしなかった場合、このセクションのこれ以降の部分で、製品を開始する代替方法について説明します。
+java をインストールする方法および場所は多様であるため、一部の方法では追加の構成が必要になる場合があります。下記の方法の 1 つが機能
+しない場合、別の方法を試してください。いくつかのケースでは、追加の
+説明が用意されています。セクション <a href="#11.0">11.0 『よくある質問 (FAQ)』</a>が
+役に立つこともあります。
+<p>
+以下に説明されているようにバイナリー・ファイルまたはスクリプトを使用する
+際は、そのバイナリー・ファイルまたはスクリプトが、zip アーカイブに含まれ
+ているディレクトリー構造に存在していなければなりません。利便性のため、
+ご使用のプラットフォーム向けのバイナリー・ファイルまたはスクリプト (ある
+いは両方) を、acsbundle.jar が入っているのと同じディレクトリーにコピー/移動
+することもできます。<h3><a id="7.1"></a>7.1 製品の開始</h3>
+<p>
+ファイル・ビューアー (例えば、Windows エクスプローラ、Mac OS X Finder など) から、
+プラットフォーム固有のバイナリー・ファイルを使用して製品を開始するには、
+Start_Programs 内で、ご使用のオペレーティング・システムおよびハードウェア・
+アーキテクチャーを示すサブディレクトリーを見つけます。
+<p>
+ご使用のオペレーティング・システムが認識するバイナリー・ファイルを見つけます。次に、
+それをダブルクリックして製品を開始します。
+コマンド・プロンプト、ターミナル、またはシェルから、このバイナリー・ファイルを使用
+して製品を開始することもできます。<p>
+次のエラーを受け取った場合:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;「Java モジュールのロードでエラーが発生しました。」<br>
+IBM i Access Client Solutions は、認識する場所で Java のインストールを検出できませんでした。
+以下のセクションでは次のいずれかの方法を試みることができます。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 製品の開始 - 追加オプション</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 製品の開始 (スクリプトを使用)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 製品の開始 (コマンド行を使用)</a><br>
+<p>
+技術情報 (Mac 向け):<br>
+「Java 6 SE ランタイム」のインストールを指示するプロンプトが出されても、Java 6 をインストールする必要はありません。
+Java 8 をインストールして、製品の開始を再試行してください。
+製品の開始に acslaunch_mac を使用しても、「Java 6 SE ランタイム」のインストールを指示するプロンプトが続く場合は、「ユーティリティーに移動」して、端末セッションを開始してください。
+以下のコマンドを実行し、その後で製品の開始を再度試みてください。
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 製品の開始 - 追加オプション</h3>
+<p>
+プラットフォーム向けのバイナリー・ファイルを使用しようとしているときは、次のいずれかの方法を試みることもできます。
+これらの方法を使用すると、製品を開始する
+ためにどの Java Runtime Environment (JRE) を使用するべきかを特定できます。
+ワークステーション上の Java ホーム・パスを見つける方法については、セクション
+<a href="#7.1.2">7.1.2 『Java ホーム・パスの検出』</a>を参照してください。これらの追加の方法は、
+Linux および Windows プラットフォームでのみサポートされます。
+<ul>
+<li>JAVA_HOME 環境変数を Java ホーム・パスに設定します (または)
+<li>バイナリー・コマンドに -vm オプションを使用して、Java ホーム・パス
+      を指定します。追加ヘルプを取得するにはバイナリー・コマンドに -h を指定します (または)
+<li>Java ランタイム環境 (JRE) ディレクトリー構造を、使用しようとしている
+      バイナリー・ファイルと同じディレクトリーにコピーします。</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Java ホーム・パスの検出</h3>
+<p>
+以下のセクションに示すいずれかの方法を使用して製品を開始できる場合は、<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 製品の開始 (スクリプトを使用)</a> (または)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 製品の開始 (コマンド行を使用)</a><br>
+IBM i Access Client Solutions のメイン GUI からワークステーション上の Java ホーム・パスを確認できます。
+メニュー・バーで、次のように選択します。<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「ヘルプ」&gt;「製品情報」<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;このパネルに java.home パスが表示されます。<br>
+<p>
+java.home プロパティーには、ワークステーションの Java ホーム・パスの場所
+が含まれています。このパスは、JAVA_HOME 環境変数を設定するときや、当該コマンドで -vm オプションを使用するときに指定する必要があるものです。
+<h3><a id="7.1.2.1"></a>7.1.2.1 Java ホーム・パスの検出 (Windows 上)</h3>
+<p>
+Windows プラットフォームでは、java.exe を検索してください。
+通常、Java バイナリー
+は、Java ホーム・パスの下の bin または jre/bin サブディレクトリーにあります。
+Java ホーム・パスは、JAVA_HOME 環境変数を設定するとき、または、コマンド
+に -vm オプションを使用するときに使用されることがあります。
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Java ホーム・パスの検出 (Linux 上)</h3>
+<p>
+Linux では、「which」コマンドを使用できます。<br>
+<pre>
+    which java
+</pre>
+これにより、java コマンドへのパスまたはシンボリック・リンクを取得できます。
+<p>
+最終的に Java コマンドの実際のバイナリー・ファイルが得られるまで、すべての
+シンボリック・リンクを解決してください。シンボリック・リンクを解決するには、-l オプション付きの ls コマンドを使用します。<br>
+<pre>
+    ls -l &lt;file&gt;
+</pre>
+通常、Java バイナリー
+は、Java ホーム・パスの下の bin または jre/bin サブディレクトリーにあります。
+Java ホーム・パスは、JAVA_HOME 環境変数を設定するとき、または、コマンド
+に -vm オプションを使用するときに使用されることがあります。
+
+<h3><a id="7.2"></a>7.2 製品の開始 (スクリプトを使用)</h3>
+<p>
+v1r1m5 以降、Start_Scripts ディレクトリーの名前が Sample_Scripts に変更され、Documentation ディレクトリーに配置されています。
+<p>
+製品を開始するために推奨される方法は、Start_Programs で使用可能なプラットフォーム固有のバイナリー・ファイルを使用することです。Sample_Scripts 内のスクリプトは、プラットフォーム固有のバイナリーが機能しない場合にのみ使用してください。
+<p>
+ファイル・システム・ブラウザー (Windows エクスプローラや Mac OS X Finder など) から、提供されたスクリプトの 1 つを使用して製品を開始する場合は、Sample_Scripts サブディレクトリーで、ご使用のオペレーティング・システムと互換性のあるスクリプトを見つけてください。
+<p>
+非 Windows ベースのほとんどのオペレーティング・システムでは、デフォルトで Perl が使用可能です。Sample_Scripts/Linux_Mac_Other ディレクトリーには Perl スクリプト (ファイル拡張子は 3 種類あります) が入っており、Perl が使用可能な任意のプラットフォームで製品を開始するのに使用できます。ご使用のオペレーティング・システムが Perl スクリプトとして認識するファイル拡張子の
+ファイルを選択してください。<p>
+Windows ベースのオペレーティング・システムでは、デフォルトで JScript が使用可能です。Sample_Script/Windows ディレクトリーに、Windows オペレーティング・システムで製品を開始するのに使用できる JScript が入っています。
+<p>
+ファイル・システムを表示するためのプラットフォーム固有の方法 (例えば、Windows エクスプローラ、
+Mac OS X Finder など) を使用して、ご使用のオペレーティング・システムが認識するスクリプト
+を見つけます。次に、それをダブルクリックして製品を開始します。
+このスクリプトをコマンド・プロンプト、ターミナル、またはシェルから使用して製品を開始する
+こともできます。<h3><a id="7.3"></a>7.3 製品の開始 (コマンド行を使用)</h3>
+<p>
+コマンドを入力できる任意の場所 (コマンド・プロンプト、端末、シェル など) で、コマンド行から製品を開始することもできます。
+<br>
+<pre>
+    java -Xmx1024m -jar &lt;path&gt;/acsbundle.jar
+</pre>
+ここで &lt;path&gt; は、製品の実行可能 jar ファイルの場所です。<br>
+<br>
+例:<br>
+<pre>
+    java -Xmx1024m -jar V:/some_location/acsbundle.jar
+</pre>
+または<pre>
+    &lt;java_path&gt;java -jar V:/some_location/acsbundle.jar
+</pre>
+ここで &lt;java_path&gt; は、JDK 6.0 以上に対応する java コマンドの場所です。
+<p>
+java コマンドへの完全なパスを判別する方法については、セクション <a href="#7.1.2">7.1.2
+『Java ホーム・パスの検出』</a>を参照してください。
+<p>
+プログラムまたはスクリプトのどれもが、コマンド行からも使用できます。
+例:
+<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+技術注記:<br>
+ほとんどのプラットフォームで、Java 仮想マシンのヒープ・スペースにデフォルト
+で設定される最大サイズは、IBM i Access Client Solutions 製品内で複数の機能を
+利用するには小さすぎます。1 ギガバイトの最大ヒープ・サイズ (-Xmx1024m) が、
+推奨される最小サイズです。1 ギガバイトより小さいサイズを指定するか、デフォルト
+のヒープ・サイズを使用すると、OutOfMemoryException が発生する可能性があります。<hr><h3><a id="8.0"></a>8.0 構成</h3>
+<p>
+使用または管理したい各 IBM i システムごとに 1 つのシステム構成を追加します。システム
+構成を追加するには、「管理」タスクから「システム構成」を選択します。次に、「新規」を
+選択します。「一般」タブで、システム名を入力します。始めるのに必要なのは、「一般」
+タスクを実行するためのシステム名だけです。<p>
+完了したら、このシステム用に入力した情報を保存するために「OK」を選択するか、
+または、構成に追加したい別のシステムがある場合は「保管」/「新規」を選択します。<p>
+任意の時点で「一般」タブ、「接続」タブ、または「コンソール」タブを使用して、
+構成に新規システムを追加したり、既存の構成を更新したりできます。<p>
+「コンソール」タスクの場合、追加の構成が必要です。コンソール構成は、「一般」タブ
+で入力したシステム名と自動的に関連付けられます。システムのコンソール構成を入力
+するには、「管理」タスクから「システム構成」を選択します。
+「新規」または「編集」を選択します。次に、「コンソール」タブを選択します。
+「5250 コンソール」タスクには、構成済みの LAN コンソールまたは HMC コンソールが必要です。
+構成済みの LAN コンソールまたは HMC コンソールがない場合、セクション <a href="#9.9">9.9 『IBM i への
+コンソール接続の確立』</a>を参照してください。
+<p>
+「ハードウェア管理インターフェース」タスクには、構成済みのハードウェア管理インターフェース
+が必要です。2 つまでのハードウェア管理インターフェース構成を入力できます。<p>
+完了したら、「システム構成」パネルで「閉じる」を選択します。<p>
+メイン IBM i Access Client Solutions パネルにある「システム」ドロップダウン・ボックス
+を使用して、システムを選択します。すべての「コンソール」タスクは、選択されたシステム
+(「一般」タブで入力されたもの) をコンソール構成 (「コンソール」タブで入力されたもの) と
+自動的に関連付けます。
+<p>
+
+これで、選択したシステムに対してタスクを選択できるようになります。「コンソール構成」
+タブで入力した情報と対応していない「コンソール」タスクを選択すると、エラー・メッセージ
+が表示されます。<h3><a id="8.1"></a>8.1 構成ロケーション</h3>
+<p>
+デフォルトでは、各ユーザーは各自の構成用に固有のロケーションを使用します。
+構成ルート・ディレクトリーが決定される方法は、プラットフォームに依存します。構成
+ディレクトリーは、初回の開始時に作成されます。構成ディレクトリーの場所を確認するには、次のようにします。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;製品を開始する (セクション <a href="#7.0">7.0 製品の開始</a>を参照)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「ローカル設定」タブを選択する<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;構成ルート<br>
+<p>
+製品が稼働している間は構成ロケーションを変更することはできません。構成
+ロケーションを変更するには、次のセクションを参照してください。
+    <a href="#9.3">9.3 構成ロケーションの変更</a>
+
+<hr><h3><a id="9.0"></a>9.0 上級トピック</h3>
+<h3><a id="9.1"></a>9.1 追加のコマンド行オプション</h3>
+<p>
+メイン GUI から使用可能な機能の多くは、コマンド行からも使用できます。
+これらの機能は、次のセクションに記述されているコマンド行オプション
+のうちの任意のオプションに、適切なパラメーターを指定することで起動できます。<br>
+    セクション <a href="#7.3">7.3 『製品の開始 (コマンド行を使用)』</a>
+<p>
+例: <pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+以下のセクションには、これらの追加パラメーターのみを示します。<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;filename&gt;]
+    &lt;filename&gt; は作成するファイルの名前です。
+</pre>
+<p>
+これによって、指定されたファイルに現行構成が保存されます。
+結果のファイルは、同じまたは異なるワークステーションで (オペレーティング・システムに
+関係なく)、restore コマンド行オプションへの入力として使用できます。<p>
+構成が保存される場所は、次のプロパティーで決まります。<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+このプロパティーは AcsConfig.properties ファイル内にあります。
+<p>
+この機能は、メイン GUI での「ファイル」-&gt;「構成のエクスポート」に相当します。
+<h3><a id="9.1.2"></a>9.1.2 Restore</h3>
+<pre>
+/PLUGIN=restore /file=&lt;filename&gt;
+    &lt;filename&gt; はバックアップによって作成されたファイルの場所です。
+</pre>
+これによって、指定されたファイルから、保存済みの構成がリストアされます。指定
+されたファイル内にない既存の構成は失われます。<p>
+リストアされた構成の場所は、次のプロパティーで決まります。
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+このプロパティーは AcsConfig.properties ファイル内にあります。
+<p>
+この機能は、メイン GUI での「ファイル」-&gt;「構成のインポート」に相当します。
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;system&gt;
+</pre>
+指定された IBM i システムから認証局 (CA) をダウンロードし、それをユーザーの
+ローカル・トラストストアに保管します。これは、SSL によるサーバー認証に必要
+です。<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+/LIST     - 構成済みシステムをそれらの接続オプションとともにリストします
+
+/PLUGIN=cfg     /SYSTEM=&lt;system&gt; [/ipaddr=&lt;frequency&gt;] [/userid=&lt;userid&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;path&gt;]
+[/del]  [/r]
+    /SYSTEM     - システムの名前
+    /ipaddr     - この値は、接続が要求されたとき、IP アドレスのルックアップを
+                  行うかどうかを決定します。有効頻度は次の通りです。
+                      ALWAYS - 接続のたびに IP アドレスをルックアップします
+                      HOURLY、DAILY、WEEKLY - 最後のルックアップ以降に指定の時間
+                           が経過していれば IP アドレスをルックアップします
+                      IP アドレス - IP アドレスが指定された場合、ルックアップの
+                           頻度は NEVER であると想定されます
+    /userid     - ユーザーのユーザー ID
+                  以下の値に設定することもできます。
+  *SHARE        - このオプションを使用するシステムで共有される
+                  ログオン資格情報を求めるプロンプトを 1 回出す
+  *PROMPTALWAYS - 各接続ごとに少なくとも 1 回プロンプトを出す
+  *KERBEROS     - プロンプトなしで Kerberos プリンシパル名を使用
+    /ssl        - switch が 0 の場合は SSL モードはオフに、1 の場合はオンになります
+    /5250path   - 5250 エミュレーション・プロファイルへのパス
+                  /5250path は、5250 セッション管理機能の「ファイル」&gt;「ディレクトリーの変更...」
+で設定できます。   /del は、既存の構成を削除します
+   /r   は既存の構成を置き換えます
+</pre>
+これによって、さまざまな構成オプションをコマンド行から設定することができます。
+これらのオプションは、メイン GUI からでも「システム構成」を使用して設定できます。<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;options&gt;]
+</pre>
+製品内の稼働中のすべてのプロセスに、プロセスのスレッドをダンプすることを要求します。
+この情報は、問題判別をサポートするために IBM サービスによって使用されます。<p>
+生成されるログには、メイン GUI から以下によってアクセスできます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「ローカル設定」タブ<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ダンプ・ディレクトリー<br>
+<p>
+オプションが指定されていない場合、この機能はメイン GUI での以下の機能
+に相当します。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「ツール」-&gt;「保守ログの生成」
+<p>
+有効なオプションは次の通りです。
+<pre>
+    /heapdump - 上記に加えて JVM ヒープのダンプも実行します
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+既存のログおよびスレッド・ダンプを圧縮して、1 つの zip ファイルにします。
+このファイルはサービスを受けるために IBM に送付できます。<p>
+結果の zip ファイルには、メイン GUI から以下によってアクセスできます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「ローカル設定」タブ<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;サービス・ディレクトリー<br>
+
+この機能は、メイン GUI での「ツール」-&gt;「保守ログのパッケージ」に相当します。
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Level&gt;
+                &lt;Level&gt; は、次に示すサポートするロギング・レベルの 1 つです。
+                OFF、SEVERE、WARNING、INFO、CONFIG、FINE、FINEST
+</pre>
+このプラグインを使用すれば、ユーザーはコマンド行からロギング・レベルを切り替えることができます。<p>
+ロギング・レベルは、メイン GUI から以下を使用して設定することもできます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「一般」タブ<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ロギング・レベル<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;userid&gt;] [/PASSWORD=&lt;password&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - システムの名前
+    /USERID   - ユーザー ID
+    /PASSWORD - ユーザー ID に関連付けられたパスワード
+    /AUTH     - 指定されたログオン資格情報を使用してシステムへの接続を試行し、
+                成功時にのみキャッシュに入れます
+    /C        - キャッシュをクリアします
+    /GUI      - グラフィカル・ユーザー・インターフェースを使用できるかどうか
+</pre>
+このコマンドは、ユーザー ID およびパスワードをキャッシュに入れます。これはパスワード・プロンプト
+を防止するために使用できます。<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+メイン GUI からの「編集」-&gt;「設定」と同じ GUI パネルを表示します。
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;options&gt;]
+
+有効なオプションは次の通りです。
+    /killdaemon     - デーモン・スレッドを終了します。
+                      メイン GUI からの「ツール」-&gt;「保守のためにリセット」と同じ
+    /clearpwcaches  - キャッシュに入れられたすべてのパスワードをクリアします
+    /clearjarcache  - 製品の jar キャッシュをクリアします
+    /clearlogs      - メイン GUI の「編集」-&gt;「設定」、「ローカル設定」タブ
+                      の「ログ・ディレクトリー」をクリアします
+    /cleardumps     - メイン GUI の「編集」-&gt;「設定」、「ローカル設定」タブ
+                      の「ダンプ・ディレクトリー」をクリアします
+    /clearsvcdir    - メイン GUI の「編集」-&gt;「設定」、「ローカル設定」タブ
+                      の「サービス・ディレクトリー」をクリアします
+    /clearsettings  - 現行ユーザーに対するすべての設定をクリアします
+</pre>
+オプションが指定されていない場合、アクションは実行されません。<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;system&gt; [&lt;/options&gt;]
+    次のオプションがあります。
+        /SSL=&lt;1|0&gt;        SSL をオンまたはオフにします
+        /ACCEPTALLCERTS=&lt;1|0&gt; すべての SSL 証明書を、信頼できるセットに
+                          自動的に追加するかどうか (SSL を使用している時)。
+        /SERVERAUTH=&lt;1|0&gt; SSL サーバー認証をオンまたはオフにします (デフォルトは
+                          オフ)。このオプションは、SSL をテストしない場合は無視されます。
+        /GUI=&lt;1|0&gt;        GUI ウィンドウのオン/オフを切り替えます (コマンド行から
+                          起動される場合のデフォルトはオフ)
+        /PORTS=&lt;port1,port2&gt; テストするポートのコンマ区切りリスト。番号
+                またはサービス名を指定できます (例、/PORTS=as-signon,as-sts)。
+                指定されない場合、デフォルトのポート・セットがテストされます。
+                .CONSOLE を指定すると、コンソール固有ポートのリストがチェックされます。
+
+        /TIMEOUT=&lt;seconds&gt;   タイムアウト値を秒単位で指定します。
+</pre>
+このプラグインは、適切なポートへの接続を開くことによって、IBM i への接続性を
+チェックします。SSL 接続を検証する場合は、SSL ハンドシェークが試行されます。
+メイン GUI から起動されるか、/GUI=1 を指定して起動された場合、このプラグインは
+ダイアログを表示します。/GUI=1 を指定せずにコマンド行から起動された場合、
+出力はコンソールに送信されます。<p>
+非 SSL の場合、以下のサービスとポートが検査されます。<br>
+<pre>
+    sshd            22
+    telnet          23
+    drda           446
+    as-svrmap      449
+    as-nav        2004
+    as-central    8470
+    as-database   8471
+    as-dtaq       8472
+    as-file       8473
+    as-netprt     8474
+    as-rmtcmd     8475
+    as-signon     8476
+</pre>
+<p>
+SSL の場合、以下のサービスとポートが検査されます。<br>
+<pre>
+    sshd            22
+    telnet-ssl     992
+    ddm-ssl        448
+    as-svrmap      449
+    as-nav        2005
+    as-central-s  9470
+    as-database-s 9471
+    as-dtaq-s     9472
+    as-file-s     9473
+    as-netprt-s   9474
+    as-rmtcmd-s   9475
+    as-signon-s   9476
+ </pre>
+
+<p>
+この機能は、メイン GUI から、次のようにして起動できます。<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;システム構成<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;システムを選択してから「編集」を選択する<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;「一般」タブ<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;接続の確認<br>
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+このプラグインは、5250 セッション管理機能 GUI を開始します。<p>
+これは、メイン GUI での「5250 セッション管理機能」に相当します。<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;options&gt;]
+
+このプラグインは、指定されたシステムに対して 5250 エミュレーターを開始します。
+この機能は、メイン GUI での「5250 エミュレーター」に相当します。
+有効なオプションは次の通りです。
+    /id=&lt;A-Z&gt;                    - 短縮セッション ID
+    /name=&lt;name&gt;                 - セッション名
+    /wsid=&lt;identifier&gt;           - ワークステーション ID
+    /wide=&lt;1|0|true|false&gt;       - ワイド画面サイズ (27x132) を使用します
+    /fullscreen&lt;1|0|true|false&gt;  - 画面全体を使用します
+    /nosave=&lt;1|0|true|false&gt;     - 終了時に設定を保管しません
+    /prompt=&lt;1|0|true|false&gt;     - 構成ダイアログの表示を強制します
+    /port=&lt;port&gt;                 - ポート番号
+    /ssl=&lt;1|0|true|false&gt;        - セキュア・ソケットを使用して接続します
+    /sso=&lt;1|0|true|false&gt;        - サインオン画面をバイパスします
+    /kerberos                    - kerberos を使用します
+    /width=&lt;width&gt;               - エミュレーター・ウィンドウの初期幅
+    /height=&lt;height&gt;             - エミュレーター・ウィンドウの初期高さ
+    /xpos=&lt;xpos&gt;                 - エミュレーター・ウィンドウの左上隅の初期 x 座標
+    /ypos=&lt;ypos&gt;                 - エミュレーター・ウィンドウの左上隅の初期 y 座標
+    /watermark                   - システム名を画面にウォーターマークとして表示します
+    /watermark=&lt;text&gt;            - 指定されたテキストを画面にウォーターマークとして表示します
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+このプラグインは、データ転送のメイン GUI を開始します。
+この機能は、メイン GUI での「データ転送」に相当します。</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid     - ターゲット・システムに接続する際に使用するユーザー ID
+    &lt;filename&gt;- 前のデータ転送ダウンロードから作成されたファイル
+                (拡張子 .dtfx)。
+</pre>
+このプラグインを使用して、ユーザーは、以前に保存されたデータ転送ダウンロードを実行することができます。<p>
+データ転送は、メイン GUI で「データ転送」を選択することでも使用可能です。<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid     - ターゲット・システムに接続する際に使用するユーザー ID
+    &lt;filename&gt;- 前のデータ転送アップロードから作成されたファイル
+                (拡張子 .dttx)。
+</pre>
+このプラグインを使用して、ユーザーは、以前に保存されたデータ転送アップロードを実行することができます。<p>
+データ転送は、メイン GUI で「データ転送」を選択することでも使用可能です。<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;system&gt;
+                          [/userid=&lt;userid&gt;]
+                          {/hostfile=&lt;library/filename&gt; | /sql="statement"}
+                          {/clientfile=&lt;path&gt;&lt;filename&gt;.&lt;extension&gt; | /display}
+
+    /userid     - ターゲット・システムに接続する際に使用するユーザー ID
+    /hostfile   - ダウンロード用の IBM i システム上のソース・ライブラリーおよびファイル
+                  例: /hostfile=QIWS/QCUSTCDT
+    /sql        - SQL ステートメントを指定します
+                  例: /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - ダウンロード用のターゲット・ファイルの場所。
+                  このファイルのフォーマットは、指定された拡張子 (.csv、.ods、.xlsx、.xlsx
+                  など) によって決定されます。
+                  ファイル拡張子が指定されていない場合、またはサポートされないタイプ
+                  である場合、データは .csv ファイルとしてフォーマットされます。     /display    - 出力を端末に書き出します
+</pre>
+このプラグインを使用すると、ユーザーは、コマンド行からファイル全体の単純ダウンロードを実行できます。<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;system&gt;
+</pre>
+このプラグインは、指定されたシステムに対して 5250 コンソールを開始します。
+<p>
+この機能は、メイン GUI での「5250 コンソール」に相当します。<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;system&gt;
+</pre>
+このプラグインは、指定されたシステムに対して仮想コントロール・パネルを開始します。
+<p>
+この機能は、メイン GUI での「仮想コントロール・パネル」に相当します。<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;system&gt;
+</pre>
+このプラグインは、指定されたシステムおよびポート 2001 を使用して IBM Navigator for i に
+対してブラウザーを起動します。
+<p>
+この機能は、メイン GUI での「Navigator for i」に相当します。<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;system&gt;
+</pre>
+このプラグインは、IBM i からスプール・ファイルを表示してダウンロードするための
+プリンター出力 GUI を表示します。
+<p>
+この機能は、メイン GUI での「プリンター出力」に相当します。<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+このプラグインは、鍵管理ツールを表示します。
+<p>
+この機能は、メイン GUI での「ツール」-&gt;「鍵管理」に相当します。
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;system&gt;
+                  {/CMD="&lt;CL command&gt;" | file=&lt;file_name&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL command&gt;"  - 実行するコマンド。スペースによるコマンドの分割を
+                                 回避するために引用符を使用してください。
+    /file=&lt;file_name&gt;    - 複数のコマンドを含む入力ファイルを指定します。
+                           コマンドは引用符なしで 1 行に 1 つとする必要があります。
+    /noprompt=&lt;1|0&gt;      - 入力ファイルを指定する時、続行する前に、結果
+                           およびすべてのプロンプトを無視します。
+</pre>
+このプラグインは、指定されたシステムに CL コマンドを送信します。
+<p>
+この機能は、コマンド行からのみ使用可能です。
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;system,system,system,...&gt;
+</pre>
+このプラグインは、指定されたシステム上でパスワードを変更します。
+ユーザー ID、古いパスワード、および新しいパスワードに関するプロンプトをユーザーに出します。
+<p>
+「編集」-&gt;「設定」で「パスワード」タブを選択すれば、この機能は、メイン GUI からも使用可能です。
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;option&gt; /SYSTEM=&lt;system&gt;
+
+&lt;system&gt; は、1 つのシステム名に設定するか、すべてのシステムを示すために *ALL に設定することができます。
+
+有効なオプションは次の通りです。
+    /IMPORT - 1 つ (またはすべて) のシステム構成を既存の Windows 構成から
+              IBM i Access Client Solutions にコピーします。
+
+    /EXPORT - 1 つ (またはすべて）のシステム構成を IBM i Access Client Solutions から
+              既存の Windows にコピーします。
+    /DELETE - 1 つ (またはすべて）のシステム構成を既存の Windows 構成から削除します。</pre>
+このプラグインは、IBM i Access Client Solutions と IBM i Access for Windows でサポートされる
+既存の Windows 構成の相互間でシステム構成をコピーできるようにします。
+<p>
+「ファイル」-&gt;「接続のコピー」を選択すれば、この機能は、メイン GUI からも使用可能です。
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+注: このプラグインは、root 権限または管理者権限を有するユーザーのみが使用可能です。
+<pre>
+/PLUGIN=restrict /&lt;options&gt;
+
+ 有効なオプションは次の通りです。
+     /restrict=&lt;func1,func2,func3&gt;   指定された機能をこのワークステーションで制限します。
+     /unrestrict=&lt;func1,func2,func3&gt; 指定された機能をこのワークステーションで許可します。
+     /list                                 機能がこのワークステーションで許可されるか制限
+                                           されるかを示します。
+     /export=&lt;file&gt;                  .acsr ファイル拡張子を持つ指定されたファイルに
+                                           制限対象機能をエクスポートします。
+     /import=&lt;file&gt;.acsr             .acsr ファイル拡張子を持つファイルから制限対象機能
+                                           をインポートします。
+     /exportreg=&lt;file&gt;               Windows レジストリー・ファイル (.reg ファイル) を
+                                           エクスポートします。
+
+</pre>
+<p>このプラグインにより、管理者権限または root 権限を有するユーザーは、現行ワークステーション
+のすべてのユーザーに対して一定の機能を制限することができます。<pre>
+    機能            説明
+    cfg             システム構成
+    sm              5250 セッション管理機能
+    5250            5250 エミュレーター
+    vcp             仮想制御パネル
+    console         5250 コンソール
+    consoleprobe    コンソール構成を見つけるためにローカル・ネットワークを検索します
+    hmcprobe        HMC で区画を検索します
+    hmi1            ハードウェア管理インターフェース 1
+    hmi2            ハードウェア管理インターフェース 2
+    keyman          SSL/TLS 証明書管理
+    dtgui           データ転送グラフィカル・ユーザー・インターフェース
+    upload          データ転送バッチ・アップロード
+    download        データ転送バッチ・ダウンロード
+    cldownload      データ転送バッチ・ダウンロード
+    l1c             IBM Navigator for i (レベル 1 コンソール)
+    rmtcmd          リモート・コマンド (コマンド行から使用可能)
+    splf            プリンター出力 (スプール・ファイル)
+    ifs             統合ファイル・システム
+    db2             スキーマ
+    rss             SQL スクリプトの実行
+    db2tools        SQL Performance Center
+    sysdbg          IBM i システム・デバッガー
+    checkupdates    使用可能な更新の確認
+    ssh             セキュア・シェル
+</pre>
+<p>以下のグループ・キーワードを使用して、機能を除外することもできます。
+<pre>
+   グループ              機能
+  dataxfer          dtgui、upload、download、cldownload
+  emulator          sm、5250
+  keyman            keyman
+  opconsole         console、vcp、consoleprobe、hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1、hmi2
+  l1cplugin         l1c
+  database          db2、rss、db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+また、管理者または root 権限を有するユーザーは、メイン GUI から機能を制限することが
+できます。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+&nbsp;&nbsp;&nbsp;&nbsp;「制限対象機能」タブ<br>
+
+<p>
+複数のワークステーション上の機能を制限する簡単な方法については、セクション <a href="#9.5">9.5 『カスタマイズされたパッケージ』</a>を参照してください。
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+このワークステーションで現在制限されている機能をリストします。<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;filetype&gt; &lt;filetype&gt; ...] [/c]
+
+    &lt;filetype&gt;   - 有効なファイル・タイプ:  dttx、dtfx、hod、bchx、ws、bch
+    /c           - 指定されたファイル・タイプのファイル・アソシエーションを
+                   クリアします
+</pre>
+Windows プラットフォームでは、これはタイプ .dttx、.dtfx、.hod、.bchx、.ws、および
+.bch のファイルのファイル・アソシエーションを設定します。Windows 以外の
+プラットフォームでは、エラー・メッセージが表示されます。<p>
+この機能は、メイン GUI での「ツール」-&gt;「ファイル・アソシエーション」に相当します。
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;userid&gt;] &lt;filename&gt; [&lt;filename&gt; &lt;filename&gt; ...]
+
+    /userid     - ターゲット・システムに接続する際に使用するユーザー ID
+    &lt;filename&gt;- 前のデータ転送ダウンロードまたはアップロードから作成された、
+                ファイル (拡張子 .dtfx または .dttx)。
+このキーワードの有無にかかわらず複数のファイルを指定することができます。</pre>
+このプラグインを使用して、ユーザーは、以前に保管されたデータ転送要求を実行することができます。<p>
+データ転送は、メイン GUI で「データ転送」を選択することでも使用可能です。<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;file&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - マイグレーション対象のファイル。ファイルは、拡張子が .ws、.bch、.kmp、.pmp、または .bar の
+                5250 ファイルでなければなりません。
+    /output   - マイグレーション後のファイルが保管される場所。
+    /verbose  - マイグレーションされたファイルの結果を表示します。
+    /gui      - 5250 ファイルをマイグレーションするためにユーザー・インターフェースを開始します。
+</pre>
+このプラグインを使用して、ユーザーは IBM i Access for Windows パーソナル・コミュニケーションズ・エミュレーターから IBM i Access Client Solutions エミュレーターにファイルをマイグレーションすることができます。
+変換後の一部のファイルには、新しいファイル拡張子が付きます。セクション <a href="#9.6.2">9.6.2 『5250 エミュレーションのマイグレーション』</a>を参照してください。
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - 指定されたファイルを開きます
+    /SQL=&lt;filename&gt;  - 指定されたファイルを開きます
+    /AUTORUN=&lt;1,0&gt;   - スクリプトを自動的に実行します
+</pre>
+このプラグインは、ユーザーが SQL ステートメントおよび CL コマンドを実行することを可能にします。
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [Options]
+
+有効なオプションは次の通りです。
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - 実行するアクション:
+                      LIST オプションは、LISTNAME 引数と共に使用でき、指定されたリストを含む
+                      SQL Performance Center を表示します。
+                      ANALYZE オプションは、指定されたパフォーマンス・データ・セットを分析します。
+                      STATEMENTS オプションは、SQL プラン・キャッシュまたは指定された
+                      パフォーマンス・データ・セットのステートメントを表示します。
+                      COMPARE オプションは、指定されたパフォーマンス・データ・セットを比較します。
+    /NAME=&lt;name&gt;    - パフォーマンス・データ・セットの名前
+    /TABLE=&lt;name&gt;   - パフォーマンス・データを含むテーブルの名前
+    /SCHEMA=&lt;name&gt;  - パフォーマンス・データを含むテーブルのスキーマの名前
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - SQL Performance Center に表示する初期リスト。
+</pre>
+SQL Performance Center プラグインは、データベース・アプリケーション内の SQL の最適化に役立つ、以下のツール・セットを提供します。
+<ul>
+<li>分析 - 収集されたパフォーマンス・データの要約ビューを提供します。これは、ドリルダウン・ナビゲーションを使用して深く掘り下げた分析を行うための開始点としての役目を果たします。
+<li>比較 - 複数のパフォーマンス・データ収集の要約比較を表示した後、より深く掘り下げたステートメントの比較を行うために、2 つ選択します。
+<li>ステートメントの表示 - SQL プラン・キャッシュ内またはパフォーマンス・データ収集内の SQL ステートメントを処理します。
+<li>Visual Explain - SQL ステートメントがどのように機能するかを正確に確認するために、ステートメント実行プランのグラフィカル表現を生成します。
+<li>SQL プラン・キャッシュ - システム SQL プラン・キャッシュの設定を管理します。
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+統合ファイル・システムには、IBM i の統合ファイル・システムを参照し、以下の方法で統合ファイル・システム内のオブジェクトを処理するためのインターフェースが用意されています。
+<ul>
+<li>クライアント・システムと IBM i の間でオブジェクトをコピーする
+<li>IBM i の統合ファイル・システム内で、または別の IBM i の統合ファイル・システムにオブジェクトをコピーする
+<li>別の 1 台の IBM i (または複数の IBM i) にオブジェクトを送信する
+<li>新しいフォルダー (ディレクトリー、ライブラリー、およびフォルダー) を作成する
+<li>オブジェクトを削除する
+<li>オブジェクトを名前変更する
+<li>オブジェクトのプロパティーを表示する
+</ul>
+このプラグインを使用する際の要件と制限については、<a href="#9.12">9.12 統合ファイル・システム (IFS) </a>セクションを参照してください。
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+このプラグインは、IBM i で DB2 for i データベースを管理するためのインターフェースを提供します。
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+このプラグインは、使用可能な更新について確認するためのインターフェースを提供します。
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;system&gt;
+</pre>
+SSH 端末は、既にお客様の PC にインストールされている SSH クライアント (端末エミュレーター) を IBM i 統合ファイル・システムに対して起動します。
+
+
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 ファイル・アソシエーション</h3>
+<p>
+IBM i Access Client Solutions によって生成される構成ファイルの一部は、先頭かつ
+唯一のパラメーターとして指定される場合、コマンド行からサポートされます。
+特定のファイル拡張子を持つこれらのファイルが先頭パラメーターとして指定されると、
+IBM i Access Client Solutions は、起動される機能をファイルに関連付け、その機能
+への入力としてそのファイルを提供します。<p>
+以下の拡張子にはファイル・アソシエーションのサポートがあります。
+    <pre>
+.dttx   - データ転送アップロード要求
+    .dtfx   - データ転送ダウンロード要求
+    .hod    - 5250 エミュレーター・セッション・プロファイル
+    .bchx   - 複数セッション・エミュレーション・プロファイル
+    .ws     - 5250 エミュレーター・セッション・プロファイル (パーソナル・コミュニケーションズ)
+    .bch    - 複数セッション・エミュレーション・プロファイル (パーソナル・コミュニケーションズ)</pre>
+コマンド行の例:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - 保存されたダウンロード操作を実行する
+    acslaunch_xxx dt_upload_file.dttx   - 保存されたアップロード操作を実行する
+    acslaunch_xxx system_lp13ut20.hod   - システムに対して 5250 セッションを開始する
+</pre>
+...ここで、acslaunch_xxx は、製品の開始に使用されるコマンド行構文です。セクション
+<a href="#7.3">7.3 『製品の開始 (コマンド行を使用)』</a>を参照してください。
+<p>
+コマンド行でサポートされているこれらのファイル・アソシエーションにより、ユーザーは
+オペレーティング・システム (OS) 固有のファイル・アソシエーションを手動でセットアップできます。
+ファイル・アソシエーションはプラットフォームに依存するため、必要な手順は OS によって異なります。</p>
+ご使用の OS 用にファイル・アソシエーションをセットアップすることが検討に値する理由は、
+ファイル (上記のサポートされるファイル・タイプの 1 つ) をダブルクリックすることで、
+指定された機能を開始できるようになることです。<p>
+以下のセクションでは、各オペレーティング・システムでのファイル・アソシエーションの
+セットアップの例をいくつか示します。<h3><a id="9.2.1"></a>9.2.1 ファイル・アソシエーション (Windows の場合)</h3>
+<ol>
+<li>メイン GUI のメニュー・バーで、「ツール」-&gt;「ファイル・アソシエーション...」を選択します。
+<li>ファイル・アソシエーションを作成したいファイル・タイプを選択します。
+<li>「OK」を選択します</ol>
+<p>
+これで、このタイプのファイルをダブルクリックすると、適切な IBM i Access Client Solution 機能
+が実行されるようになります。<h3><a id="9.2.1.1"></a>9.2.1.1 アイコンの変更 (Windows ショートカット用)</h3>
+<ol>
+<li>ハードウェア・アーキテクチャーに適したバイナリー・ファイル (acslaunch_win-32.exe
+   または acslaunch_win-64.exe) 用に以前に作成されたショートカットを見つけます
+<li>右クリックして「プロパティ」を選択します
+<li>「ショートカット」タブを選択します
+<li>「アイコンの変更...」ボタンをクリックします
+<li>このショートカット用に使用するアイコンを選択します
+<li>「OK」を選択します<li>「OK」を選択します</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 デスクトップ・アイコンのセットアップ (Linux の場合)</h3>
+<p>
+Linux 向けの <a href="./QuickStartGuide_en.html">QuickStartGuide</a> に記載されているステップに従ってください。
+そうすると、当該アプリケーションが /opt/ibm/iAccessClientSolutions にインストールされます。
+このとき、/usr/share/applications/IBM i Accesss Client Solutions.desktop も作成されます。
+<p>
+デスクトップ上に製品のアイコンを作成したい場合は、上記の .desktop ファイルを「デスクトップ」フォルダーにコピーしてください。
+デスクトップでのファイル許可調整して、実行できるようにすることが必要な場合があります。
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 ファイル・アソシエーション (Linux の場合)</h3>
+<p>
+ファイル・アソシエーションの設定に必要な手順は、Linux ディストリビューション、および使用しているデスクトップ環境によって決まります。
+一般的に、必要な手順は、
+Windows で使用される上記の手順に似たものです。
+<ol>
+<li>サポートされている拡張子 (例えば、.hod、.bchx、.dtfx、.dttx) を含んでいる、
+   関連付けの対象にしたいファイルを見つけます。
+<li>そのファイルを右クリックします。そのファイルにプログラムを関連付けること
+   ができるオプションまたはプロパティーを探します。
+<li>ファイルまたは拡張子 (あるいは両方）を、適切な IBM i Access Client Solutions
+   バイナリー・ファイルまたは起動スクリプトと関連付けます。
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 ファイル・アソシエーション (Mac の場合)</h3>
+<p>
+Mac でファイル・アソシエーションを使用するためには、ファイル・タイプがアプリケーションに関連付けられていなければなりません。
+<a href="./QuickStartGuide_en.html">QuickStartGuide</a> (Mac 向け) の手順に従って、
+IBM i Access Client Solutions をインストール済みアプリケーションにします。
+<h3><a id="9.2.3.1"></a>9.2.3.1 ファイル・アソシエーションの作成 (Mac の場合)</h3>
+<ol>
+<li>Finder を使用して、サポートされている拡張子 (例えば、.hod、.bchx、.dtfx、.dttx) を含んでいる、関連付けの対象にしたいファイルを見つけます。
+<li>そのファイルを選択し、「ファイル」-&gt;「情報を見る」を選択します。
+<li>「このアプリケーションで開く:」オプションの下で「その他」を選択します。
+<li>IBM i Access Client Solutions アプリケーションの場所までブラウズします。
+<li>アプリケーションを選択します。
+<li>「常にこのアプリケーションで開く」ボックスをチェックします。「追加」を選択します。
+<li>「このアプリケーションで開く:」に戻り、「すべてを変更」を選択します。
+   「続ける」を選択して次のダイアログに進みます。</ol>
+<p>
+これで、このタイプのファイルをダブルクリックすると、適切な IBM i Access Client Solution 機能
+が実行されるようになります。<h3><a id="9.2.3.2"></a>9.2.3.2 アイコンの変更 (Mac の場合)</h3>
+<p>
+プレビュー・アプリケーションを使用して製品ディレクトリー内の「Icons」フォルダー
+を見つけ、Finder を使用して「情報を見る」でアイコンを置換します。
+<ol>
+<li>プレビューから、「ファイル」-&gt;「開く」を選択します。
+<li>製品の Icons ディレクトリーを見つけます。
+<li>アイコンを含んでいるファイルを選択し、「開く」を選択します。
+<li>「編集」-&gt;「すべて選択」を選択します。
+<li>「編集」-&gt;「コピー」を選択します。
+<li>Finder で、アイコンを変更する .hod、.bchx、.dtfx、または .dttx ファイルを見つけます。
+<br>
+   ファイルが既にデスクトップにある場合は、それをクリックして選択します。それ以外の場合、
+   「移動」-&gt;「フォルダへ移動」を選択し、ファイルへのパスを入力して「移動」を選択します。<br>
+   ファイルをクリックして選択します。
+<li>「ファイル」-&gt;「情報を見る」
+<li>「情報を見る」の一番上にあるアイコンをクリックします。
+<li>「編集」-&gt;「貼り付け」
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 構成ロケーションの変更</h3>
+<p>
+デフォルトでは、各ユーザーは各自の構成用に固有のロケーションを使用します。
+構成ロケーションは、次のプロパティーを設定することで変更できます。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+このプロパティーは AcsConfig.properties ファイル内にあります。
+<p>
+AcsConfig.properties ファイルは、製品の出荷時には 2 つの場所に存在しています。
+このファイルは acsbundle.jar ファイル内に含まれています。利便性のため、製品の zip
+アーカイブ・ファイルにも提供されていて、この zip アーカイブが解凍されると
+acsbundle.jar ファイルと同じディレクトリーに入れられます。<p>
+この製品は、開始時に、製品が最初に検出した AcsConfig.properties ファイルのみ
+を使用します。製品は最初に acsbundle.jar ファイルが存在するディレクトリーをチェックします。
+AcsConfig.properties が acsbundle.jar ファイルと同じディレクトリー内で見つからない場合、
+acsbundle.jar ファイル内の AcsConfig.properties ファイルを使用します。<p>
+acsbundle.jar 内の AcsConfig.properties をカスタム構成パスで更新することを選択すること
+ができます。その場合は、acsbundle.jar が存在するディレクトリーに AcsConfig.properties
+ファイルが含まれないようにしてください。さもないと、代わりにその AcsConfig.properties
+ファイルが使用されてしまいます。
+これにより、acsbundle.jar ファイルで構成ロケーションを配布する上で柔軟性がもたらされる一方、
+構成ロケーションをオーバーライドする上でも柔軟性がもたらされます。<p>
+構成パスを定義する際に使用できる特殊キーワードが提供されています。これらの
+キーワードは、指定されたパスの中で使用されると、これらのキーワードの定義する
+テキストまたはパスで置き換えられます。構成パス内ではキーワードは 1 つしか使用できません。
+特殊キーワードとその意味は以下のとおりです。<br>
+<pre>
+	{USER} - 現行ユーザー ID。このキーワードはパス内のどこにあってもかまいません。
+</pre>
+<p>
+以下のキーワードは、指定されたパスの先頭にしか置けません。
+<pre>
+	{PRODUCTDIR} - acsbundle.jar と同じディレクトリーへのパス
+	{TEMPDIR}    - プラットフォーム固有の一時ディレクトリーへのパス
+	{ROOT}       - ファイル・システムのルートへのパス
+	{HOME}       - ユーザーのホーム・ディレクトリーへのパス
+	{DEFAULT}    - 製品が通常使用するデフォルト・パス
+</pre>
+<p>
+技術注記:<br>
+構成を複数のユーザー間で共有することはお勧めしません。
+例えば、X が共有ネットワーク・ドライブである場合、次の設定で予測不能な結果となることがあります。
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+この構成パスを複数のユーザーで共有することについては以下のようないくつかの問題があります。<br>
+<ol>
+<li>複数のユーザーが同時にこの構成を使用すると、予測不能な結果が生じます。
+<li>この例では、各ユーザーが同じロケーションにマップされた X ドライブを持っていることを前提としています。
+<li>この構成のネットワーク・ドライブを使用しても、Linux または Mac クライアントでは機能しません。以下の
+   例のように提供されたキーワードを使用すると、Windows、Linux、および Mac で機能します。</ol>
+<p>
+複数のユーザー間で構成パスを共有する場合、{USER} キーワードを使用して他のユーザーとの
+衝突を回避してください。これは、現行ユーザーのユーザー ID に置き換えられます。<p>
+構成パスを設定する際に、ディレクトリー区切り文字として円記号 ('\') ではなくスラッシュ ('/') を
+使用します。これで、Windows を含むすべてのオペレーティング・システムで機能するようになります。<p>
+以下には、推奨される構成例のいくつかを示しています。<p>
+例 1 - 現行ユーザーのローカル構成 (デフォルト):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+AcsBaseDirectory が設定されていないと、デフォルトによって構成パスはユーザーのプラットフォーム依存パスになります。
+これは、IBM i Access Client Solutions のデフォルト設定です。<p>
+例 2 - 各ユーザーに固有のリモート (またはローカル) 構成:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+構成は、{ROOT} のロケーションに基づいてリモートまたはローカルになります。
+<p>
+例 3 - 各ユーザーに固有のリモート (またはローカル) 構成:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+構成は、{PRODUCTDIR} のロケーションに基づいてリモートまたはローカルになります。
+<p>
+例 4 - 携帯用メディア (USB ドライブなど) のローカル構成:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+携帯用メディアへのパスはそのメディアが使用されているシステムによって異なるので、構成パスは、この設定によって製品ファイルに対して相対とすることができます。
+この例では、{USER}
+キーワードは意図的に指定されていません。これは、USB ドライブ上の構成がユーザー ID
+に関係なく USB ドライブのユーザーによって使用されるようにするためです。<h3><a id="9.4"></a>9.4 デプロイメントに関するその他のオプション</h3>
+<p>
+デプロイメントに関して検討できるその他のオプションをいくつか以下に示します。
+<ul>
+   <li>複数のユーザーがアクセス可能な 1 つの場所に製品をデプロイする。
+
+   <li>Web サーバーがある場合、Web Start を使用することを検討する。
+	 http://java.com/en/download/faq/java_webstart.xml を参照してください
+   <li>構成設定の自動インポート。
+     セクション <a href="#9.4.1">9.4.1</a> を参照してください
+<li>IBM i 上にネイティブにデプロイする。セクション <a href="#9.4.2">9.4.2</a> を参照してください。
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 構成設定の自動インポート</h3>
+<p>
+以下のプロパティーは、新規ユーザー用に構成を自動的にセットアップするか、
+既存のユーザー用に構成を更新するために、AcsConfig.properties ファイル内で
+使用できます。<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+必要な手順を以下に示します。
+<ol>
+<li>1 人以上のユーザーに伝搬させたい構成を作成します。
+<li>メイン GUI の「ファイル」-&gt;「構成のエクスポート」を使用して構成をファイルに
+エクスポートするか、セクション <a href="#9.1.1">9.1.1 『バックアップ』</a>のコマンド行オプションを使用します。
+<li>構成ファイルを所定の場所に移動します。後で説明するように使用可能なオプションがいくつか
+   あります。
+<li>AcsConfig.properties 内の com.ibm.iaccess.autoimport プロパティーを構成ファイルのパスに
+   設定します。
+<li>com.ibm.iaccess.autoimport.version を、構成ファイルのバージョンを表わす整数値に
+   設定します。
+</ol>
+<p>
+以下にその仕組みを説明します。<br>
+com.ibm.iaccess.autoimport.version プロパティーの整数値が最後にインポートされた
+値と一致しないときは、com.ibm.iaccess.autoimport プロパティーによって参照されている
+保存済み構成が自動的にインポートされます。これにより、初期構成をセットアップする手段
+が提供され、また既存の構成に対する更新が提供されるほかに、構成のバックレベルを保持する
+手段も提供されます。バージョン・プロパティーの整数値と最後にインポートされたバージョン
+との間に不一致があると、必ず構成が更新されます。ただし、インポートされた構成がユーザー
+の構成内にある既存のシステム用の構成を変更する可能性がある限り、ユーザーの構成から
+システムが削除されることは決してありません。<p>
+com.ibm.iaccess.autoimport プロパティーのパスは、絶対パスまたは URL として
+指定するか、セクション <a href="#9.3">9.3</a> で定義するキーワードを使用して指定できます。例: <pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+構成ファイルを acsbundle.jar 内、または acsbundle.jar と同じ
+ディレクトリー内で配布できるようにすることで、さらなる柔軟性が
+もたらされます。
+いずれの場合にも、先行パスなしで com.ibm.iaccess.autoimport を
+ファイルの名前で設定します。<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+com.ibm.iaccess.autoimport.version には特殊値 * を使用できます。
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+これにより、前のバージョンに関係なく構成が常にインポートされます。
+
+
+<h3><a id="9.4.2"></a>9.4.2 ネイティブ IBM i デプロイメント</h3>
+<p>
+GUI を必要としない一部のコマンド行プラグインは、IBM i 上でネイティブに使用できます。
+例えば、データを PC にダウンロードせずに、IBM i 上でデータ転送を使用して、データベースからスプレッドシート・ファイル・タイプに直接データを抽出できます。
+<p>
+これを行うには、製品 zip アーカイブを IBM i 統合ファイル・システム (IFS) 内の任意の場所に抽出します。
+例えば、製品 zip アーカイブを次の場所に抽出するとします。
+<pre> /home/AccessClientSolutions </pre>
+また、前に保管したデータ転送ダウンロード要求が、次の場所にあるとします。
+<pre> /some_path/qcustcdt.dtfx </pre>
+この場合、IBM i 上で次のコマンドを実行できます。
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                    
+</pre>
+
+<h3><a id="9.5"></a>9.5 カスタマイズされたパッケージ</h3>
+<p>
+IBM i Access Client Solutions では、システム管理者が AcsConfig.properties ファイルに
+次のプロパティーを設定して特定の機能の使用を制限できるようになっています。<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;function, function,...&gt;
+</pre>
+指定できる機能キーワードは以下のとおりです。<br>
+<pre>
+
+    機能            説明
+    cfg             システム構成
+    sm              5250 セッション管理機能
+    5250            5250 エミュレーター
+    vcp             仮想制御パネル
+    console         5250 コンソール
+    consoleprobe    コンソール構成を見つけるためにローカル・ネットワークを検索します
+    hmcprobe        HMC で区画を検索します
+    hmi1            ハードウェア管理インターフェース 1
+    hmi2            ハードウェア管理インターフェース 2
+    keyman          SSL/TLS 証明書管理
+    dtgui           データ転送グラフィカル・ユーザー・インターフェース
+    upload          データ転送バッチ・アップロード
+    download        データ転送バッチ・ダウンロード
+    cldownload      データ転送バッチ・ダウンロード
+    l1c             IBM Navigator for i (レベル 1 コンソール)
+    rmtcmd          リモート・コマンド (コマンド行から使用可能)
+    splf            プリンター出力 (スプール・ファイル)
+    ifs             統合ファイル・システム
+    db2             スキーマ
+    rss             SQL スクリプトの実行
+    db2tools        SQL Performance Center
+    sysdbg          IBM i システム・デバッガー
+    checkupdates    使用可能な更新の確認
+    ssh             セキュア・シェル
+</pre>
+<p>以下のグループ・キーワードを使用して、機能を除外することもできます。
+<pre>
+
+   グループ              機能
+  dataxfer          dtgui、upload、download、cldownload
+  emulator          sm、5250
+  keyman            keyman
+  opconsole         console、vcp、consoleprobe、hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1、hmi2
+  l1cplugin         l1c
+  database          db2、rss、db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+システム管理者は、必要であれば、AcsConfig.properties ファイルを更新して、特定の機能への
+アクセスを制限することができます。アクセスを制限すると、その機能がメイン GUI から除去され、
+コマンド行から使用できなくなります。<p>
+機能を制限する方法の 1 例は、AcsConfig.properties ファイルに次の行を追加することです。
+<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+システム管理者が、acsbundle.jar 内の AcsConfig.properties ファイルを、ユーザーに
+デプロイする前に更新したい場合、それを行う方法の例は以下のとおりです。<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+使用される AcsConfig.properties ファイルを IBM i Access Client Solutions がどのように
+決定するかについて詳しくは、セクション <a href="#9.3">9.3「構成ロケーションの変更」</a>を参照してください。
+<h3><a id="9.6"></a>9.6 IBM i Access for Windows からのマイグレーション</h3>
+<p>
+IBM i Access Client Solutions の構成ファイルは、IBM i Access for Windows の対応する機能と互換性がありません。
+IBM i Access Client Solutions は、以下のセクションで説明するいくつかの
+重要な項目のマイグレーション・パスを提供します。<h3><a id="9.6.1"></a>9.6.1 システム構成のマイグレーション</h3>
+<p>
+メイン GUI メニューで「ファイル」-&gt;「接続のコピー」と選択して使用可能な「接続のコピー」機能は、IBM i Access Client Solutions と IBM i Access for Windows でサポートされる既存の Windows 構成との間でシステム構成をコピーするためのインターフェースを提供します。
+詳しくは、「接続のコピー」のメインパネルのヘルプを参照してください。システム構成は、コマンド行を使用してマイグレーションすることもできます。詳しくは、
+セクション <a href="#9.1.25">9.1.25「MIGRATE」</a>を参照してください。
+
+<h3><a id="9.6.2"></a>9.6.2 5250 エミュレーションのマイグレーション</h3>
+<p>
+IBM i Access for Windows パーソナル・コミュニケーションズ・エミュレーターによって使用される
+5250 エミュレーション・ファイルは、IBM i Access Client Solutions で 5250 セッション
+管理機能を使用して変換できます。以下のファイル・タイプをパーソナル・コミュニケーションズから
+変換することができます。<br>
+<pre>
+   .ws   - エミュレーター・プロファイル
+   .bch  - エミュレーター・バッチ・ファイル
+   .kmp  - キーボード・カスタマイズ・ファイル
+   .pmp  - ポップパッド・ファイル
+   .bar  - メニュー・バー・ファイル
+</pre>
+これらのファイルは以下のファイルに変換されます。<br>
+<pre>
+   .hod   - エミュレーター・プロファイル
+   .bchx  - エミュレーター・バッチ・ファイル
+   .kmp  - キーボード・カスタマイズ・ファイル
+   .pmp  - ポップパッド・ファイル
+   .bar  - メニュー・バー・ファイル
+</pre>
+ファイル・タイプ .kmp、.pmp、および .bar は、両方の製品で使用されます。ただし、フォーマットは、
+互換性がありません。変換されたファイルは、IBM i Access Client Solutions 固有のパスに作成
+されます。<p>
+これらのファイルの変換は、IBM i Access Client Solutions セッション管理機能のメニューで、以下の方法で開始できます。
+<ul>
+<li> 「ファイル」-&gt;「インポート」を選択し、パーソナル・コミュニケーションズ・ファイルを見つけます。
+<li> ファイルを「IBM i Access Client Solutions セッション管理機能」ウィンドウにドラッグ・アンド・ドロップします。
+</ul>
+...あるいは、PM5250 プラグインを使用して、コマンド行から実行します。セクション <a href="#9.1.30">9.1.30 『PM5250』</a>を参照してください。
+<p>
+マクロ変換ユーティリティーが使用可能です。
+セッション管理機能から、次の選択を行います。<br>
+<pre>
+    「ツール」-&gt;「マクロの変換...」
+</pre>
+技術注記:<br>
+マクロ変換ユーティリティーは、PC5250 が単なる記録されたキー・ストローク以上のものを含むカスタム・マクロである場合、このマクロを変換できないことがあります。
+
+<h3><a id="9.6.3"></a>9.6.3 保管されたデータ転送要求ファイルのマイグレーション</h3>
+<p>
+IBM i Access Client Solutions のデータ転送には、IBM i Access for Windows によって生成された保管済みデータ転送要求ファイルを変換するためのウィザードがあります。
+<p>
+以下のファイル・タイプは、IBM i Access for Windows から変換できるものです。<br>
+<pre>
+   .dtf - IBM i からのデータ転送
+   .dtt - IBM i へのデータ転送
+</pre>
+これらのファイルは以下のファイルに変換されます。
+<pre>
+   .dtfx - IBM i からのデータ転送
+   .dttx - IBM i へのデータ転送
+</pre>
+データ転送マイグレーション・ウィザードは .fdf ファイルをマイグレーションしません。
+
+IBM i Access Client Solutions で必要な新規ファイル・タイプは、タイプ .fdfx であり、
+ダウンロード時に生成するか、ファイル作成ウィザードを使用して生成できます。<p>
+データ転送マイグレーション・ウィザードは、データ転送メインメニューで
+「アクション」-&gt;「データ転送マイグレーション」と選択すると使用可能です。
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+IBM i Access for Windows に付属のパーソナル・コミュニケーションズ・エミュレーターにアクセスする際に EHLLAPI を活用する 5250 アプリケーションの場合は、次の KB セクションで IBM i Access Client Solutions での EHLLAPI の使用に関する情報を参照してください。
+<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions は kerberos をサポートする用意があります。
+システムに接続する
+際に kerberos を使用するためには、次のようにします。<br>
+<ol>
+<li>メイン GUI から「システム構成」を起動します
+<li>「新規」を選択するか、または既存のシステム構成を「編集」します
+<li>「接続」タブで、<br>
+   「kerberos 認証を使用し、プロンプトを出さない」を選択します
+</ol>
+kerberos 環境のセットアップは、この文書の範囲外です。<h3><a id="9.7"></a>9.7 鍵管理</h3>
+<p>
+Secure Socket Layer (SSL) 接続用の証明書の管理は、「ツール」-&gt;「鍵管理」を選択する
+ことによってメイン GUI から行うことができます。鍵データベースに関する一部のタスク
+では、鍵ストア保全性パスフレーズが必要です。<h3><a id="9.8"></a>9.8 データ転送</h3>
+<h3><a id="9.8.1"></a>9.8.1 データ転送での Excel スプレッドシートおよび Calc スプレッドシートのサポート</h3>
+<p>
+データ転送は、ファイルへのダウンロードをサポートするほかに、Microsoft の Excel スプレッドシートまたは OpenOffice の Calc スプレッドシートのいずれかのためのアクティブ・スプレッドシートへのダウンロードもサポートします。
+アクティブ
+なスプレッドシートへのダウンロードのため、データ転送のメイン GUI パネルには
+出力装置を選択するオプションがあります。デフォルトの出力装置はファイルです。
+Excel/Calc スプレッドシートとの相互作用をサポートするプラットフォームの場合、
+アクティブ Excel スプレッドシートおよびアクティブ Calc スプレッドシートに対応
+する追加オプションを「出力装置」ドロップダウン・ボックスから選択できます。<p>
+制約事項:<ul>
+<li>Windows では、最小バージョンとして OpenOffice 3.4.1 が必要です。
+<li>Linux および Mac では、最小バージョンとして OpenOffice 4.2.1 が必要であり、
+デフォルトの場所にインストールされていなければなりません。
+<li>Linx または Mac 上で稼働する IBM i Access Client Solutions では、OpenOffice との対話のみがサポートされます。<br>
+Windows 上で稼働する IBM i Access Client Solutions では、Microsoft Excel または OpenOffice Calc のいずれかとの対話がサポートされます。
+<li>OpenOffice のビット数は、IBM i Access Client Solutions のビット数と一致している必要があります。<br>
+説明: OpenOffice は、32bit と 64bit の両方の版で使用可能です。どちらの版も 64 ビット PC で実行可能です。
+OpenOffice スプレッドシートと対話する時、OpenOffice と IBM i Access Client Solutions のビット数は同じでなければなりません。さもないと、データ転送はスプレッドシートと対話できません。IBM i Access Client Solutions のビット数は、IBM i Access Client Solutions が稼働している Java 仮想マシン (JVM) によって決まります。OpenOffice と IBM i Access Client Solutions を実行している Java 仮想マシンとの間でビット数が一致しておらず、出力装置としてアクティブ・スプレッドシートを選択すると、「アクティブ・スプレッドシートが見つからなかった」というエラーが表示されます。64 ビット PC で実行している場合、使用している
+プラットフォームに固有の 32 ビットまたは 64 ビットのいずれかのバイナリー・ランチャーを使用して
+IBM i Access Client Solutions を開始できます。アクティブ・スプレッドシートのサポートを機能させるには、使用されている OpenOffice アプリケーションのビット数に一致する、プラットフォーム固有のバイナリーを使用して IBM i Access Client Solutions を開始してください。
+<br>Mac では 64 ビット JVM のみがサポートされるため、Mac 上でアクティブ・スプレッドシート・サポートを使用するには、64 ビット版の OpenOffice をインストールする必要があります。
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 データ転送での文字切り捨ておよび数値オーバーフローのサポート</h3>
+<p>
+データ転送のアップロード要求時に、文字フィールドまたは数値フィールドが定義済みフィールド・サイズを超える場合、アップロード要求は終了します。
+<p>
+文字フィールドの末尾からの切り捨てを有効にするには、以下のプロパティーを AcsConfig.properties ファイルに設定します。<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+指定された数値フィールドが定義済み境界を超える場合に、数値フィールドを正または負の最大値に設定できるようにするには、以下のプロパティーを AcsConfig.properties ファイルに設定します。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+これらのプロパティーを true に設定すると、切り捨てまたはオーバーフローが発生したことを表示せずに、アップロード要求が続行されます。文字フィールドは末尾で切り捨てられます。数値フィールドは、オーバーフローの場合は最大値に、アンダーフローの場合は最小値に設定されます。
+<p> 
+あるいは、他の java プロパティーと同様に、上記のプロパティーをコマンド行から以下のように設定できます。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 データ転送シート名</h3>
+<p>
+ダウンロード時に、シート名が生成されます。シート名は IBM i ソース・ライブラリーとファイルの名前を基にして「>Sheet#」が付加されます。ここで、 # は、適切なシート番号に置き換えられます。例:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+シート名のライブラリーとファイルの部分を指定変更するには、以下のプロパティーを指定します。<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=your_string<br>
+これにより、以下のように生成されます。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;your_string>Sheet1
+
+<h3><a id="9.9"></a>9.9 IBM i へのコンソール接続の確立</h3>
+<p>
+IBM i で管理機能を実行するためには、5250 コンソールが必要です。
+IBM i Access Client Solutions は、LAN と HMC の両方のコンソール構成をサポートします。<p>
+IBM i のサービス・ホスト名またはサービス IP アドレスが分かっている場合、または、
+HMC コンソールのホスト名または IP アドレスが分かっている場合は、以下の手順を
+使用して IBM i Access Client Solutions 内でコンソール情報を構成できます。<br>
+<ol>
+<li>PC 上で IBM i Access Client Solutions を開始します。
+<li>メインパネルで「システム構成」をクリックします。
+<li>「新規」ボタンをクリックして新規構成を入力するか、または、「編集」ボタンを
+   クリックして既存の構成を更新します。
+<li>「コンソール」タブを選択します。
+<li>コンソール・タイプに応じた適切な情報を入力します。
+</ol>
+<p>
+コンソール構成がまだ存在しない IBM i (例: 会社に納品されたばかりの新しいシステム) の
+場合、コンソール接続用の IP アドレスは IPL 中に 169.254.62.0 から 169.254.62.63 までの
+範囲で自動的に割り当てられます。
+このような場合には、IBM i Access Client Solutions を使用してコンソール接続を確立する
+際に以下の手順が役立ちます。<br>
+<ol>
+<li>PC のワイヤレス接続を無効にします。以下のステップでは、有線イーサネット・ポート
+   が必要です。
+<li>PC と IBM i T1 ポートの間にイーサネットのケーブルを引きます。
+<li>PC 上で IBM i Access Client Solutions を開始します。
+<li>メインパネルで「システム構成」をクリックします。
+<li>「システム構成」で、「コンソールの検出...」ボタンをクリックします。
+<li>IBM i の「ロケーター」パネルで、「検索」ボタンをクリックします。
+<li>IBM i の IPL 手順が、自動 IP アドレスが割り当てられるところまで進行していれば、
+   その IP アドレスが「検索」パネルに表示されます。
+<li>表示された IP アドレスをクリックして選択し、次に、5250 コンソールに接続するため
+   「コンソール」ボタンをクリックします。
+<li>保守ツール資格情報の入力を求めるパネルが表示されます。
+<li>有効な資格情報を入力すると、5250 コンソールが表示されます。
+<li>このコンソールは初期インストールおよびセットアップ作業の処理に使用できます。</ol>
+<p>
+IBM i システムを残りのネットワーク・インフラストラクチャーに追加する準備ができたら、以下の IBM インフォメーション・センターにある、保守ツール LAN アダプターの構成方法に関する追加情報を参照できます。
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+セクション『DST 用保守ツール・サーバーの構成』を参照してください。
+
+<p>
+既に LAN コンソール構成を持ち、既にネットワーク・インフラストラクチャーに存在する IBM i システムの場合は、以下の手順を使用して既存のコンソール構成を見つけることができます。
+<br>
+<ol>
+<li>PC 上で IBM i Access Client Solutions を開始します。
+<li>メインパネルで「システム構成」をクリックします。
+<li>「システム構成」で、「コンソールの検出...」ボタンをクリックします。
+<li>IBM i の「ロケーター」パネルで、「近似」フィールドを、検索したい範囲内にある
+   IP アドレスに更新します。
+<li>指定した範囲内で LAN コンソールを見つけるため、「検索」ボタンをクリックします。
+<li>表示された IP アドレスをクリックして選択し、次に、5250 コンソールに接続するため
+   「コンソール」ボタンをクリックします。
+<li>保守ツール資格情報の入力を求めるパネルが表示されます。
+<li>有効な資格情報を入力すると、5250 コンソールが表示されます。
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 追加フォント</h3>
+<p>
+5250 エミュレーション用の追加フォントを Fonts ディレクトリーに追加できます。
+<p>
+追加フォント用に代替場所また複数の場所 (あるいはその両方) を提供するためには、AcsConfig.properties ファイルにある com.ibm.iaccess.Fonts プロパティーを設定してください。
+<p>
+com.ibm.iaccess.Fonts プロパティーを以下のものに設定することによって、デフォルトの Fonts ディレクトリーをオーバーライドできます。<br>
+<ol> 
+<li>フォントが入っているディレクトリーである &lt;path&gt;
+<li>特定のフォント・ファイル (例えば .ttf) の &lt;path&gt;/&lt;filename&gt;
+<li>フォント・ファイルへの URL
+<li>上記のいずれかから成るセミコロン区切りリスト
+</ol>
+<p>
+注:<br>
+&lt;path&gt; は、絶対パスか acsbundle.jar の場所を起点とする相対パスのいずれかとすることができます。
+5250 エミュレーションによって認識されるのはモノスペース・フォントのみです。
+<p>
+例 1 (デフォルト):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+例 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 netrc ファイルからの資格情報の使用</h3>
+<p>
+.netrc ファイル (Linux および Mac) または _netrc ファイル (Windows) を使用可能にするには、IBM i Access Client Solutions メイン GUI に進み、メニュー・バーから以下を選択します。<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「編集」-&gt;「設定」<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「一般」タブ<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;<b>「netrc ファイルを読み取ってログイン情報を取得する」</b>ボックスにチェック・マークを付けます<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「適用」ボタンをクリックします<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions を再始動します<br>          
+<p>
+netrc ファイルの標準フォーマットは、次のとおりです。<br>
+<pre>
+     machine &lt;system&gt; login &lt;user-id&gt; password &lt;password&gt;
+</pre>
+<p>
+netrc ファイルは、ユーザーのホーム・ディレクトリーに保管する必要があり、システム名とユーザー ID が<b>「システム構成」</b>に一致していなければなりません。IBM i Access Client Solutions から、以下を行います。<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「システム構成」を選択します<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;システムを選択して、編集します<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「接続」タブ<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;<b>「デフォルト・ユーザー名を使用してシステムごとに 1 回プロンプトを出す」</b>を選択します<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;<b>「デフォルト・ユーザー名」</b>のユーザー ID を入力します<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;「OK」を選択します<br>          
+
+<p>
+システム名と<b>「デフォルト・ユーザー名」</b>が netrc ファイルの内容と一致している場合、ユーザーにプロンプトを出さずに、netrc ファイルからのパスワードを使用してシステムへの接続が行われます。
+<h3><a id="9.12"></a>9.12 統合ファイル・システム (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS、QFileSvr.400、およびセキュリティー</h3>
+<p>
+統合ファイル・システム・サポートでは、QFileSvr.400 ファイル・システムを使用して、一方の IBM i 区画から他方へオブジェクトをコピーまたは送信します。つまり、両方の区画のユーザー・プロファイルとパスワードが一致している必要があり、両方の区画が同じパスワード・レベル・システム値 (QPWDLVL) を持っていなければなりません。
+Kerberos 認証を使用している場合は、両方の区画にネットワーク認証サービスとエンタープライズ識別マッピング (EIM) が構成されている必要があります。詳細については、IBM i Knowledge Center 内のトピック「Security and object authority in the QFileSvr.400 file system」を参照してください。
+<p>
+QFileSvr.400 ファイル・システムによって行われる他の IBM i 区画への接続はセキュアではありません。
+一方の IBM i 区画から他方にオブジェクトをコピーまたは送信するときにセキュア接続が必要な場合は、SSL を使用するように区画の構成をセットアップし、システム構成でその区画に対して「接続に SSL を使用する」オプションを選択し、以下のプロパティーを AcsConfig.properties ファイルに設定する必要があります。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+あるいは、他の java プロパティーと同様に、コマンド行から以下のようにプロパティーを設定できます。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS 権限</h3>
+<p> 
+統合ファイル・システム・サポートでは、以下の CL コマンドを使用する権限が必要です。<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+ユーザーがこれらの CL コマンドを使用できない場合、コピー、貼り付け、送信、削除、および新規フォルダーの各アクションは失敗します。
+<h3><a id="9.12.3"></a>9.12.3 IFS の制限</h3>
+<p>
+統合ファイル・システム・サポートでは、/QFileSvr.400、/QNTC、または /QOPT で始まるパスを持つオブジェクトに対するアクションは許可されません。現行ディレクトリー・パスまたは選択したオブジェクト・パスが /QFileSvr.400、/QNTC、または /QOPT で始まっている場合、「アクション」メニュー内のすべての項目が使用不可になり、コンテキスト・メニューは表示されません。
+<h3><a id="9.12.4"></a>9.12.4 IFS と独立 ASP</h3>
+<p>
+統合ファイル・システム・サポートでは、ソース・オブジェクトまたはターゲット・パスが独立 ASP 上に配置されている場合、コピー、貼り付け、および送信のアクションは許可されません。
+<h3><a id="9.13"></a>9.13 セキュア・シェル (SSH) 端末</h3>
+<p>
+セキュア・シェルがデフォルトで存在するかインストールされているプラットフォームでは、SSH 端末機能が IBM i Access Client Solutions のメイン GUI に表示されます。SSH 端末は、IBM i 統合ファイル・システムに対して端末エミュレーターを起動します。
+<p>
+ほとんどの Mac、Linux、およびその他の UNIX から派生したシステムは、デフォルトで既にセキュア・シェルを備えています。それらのプラットフォームでは、OpenSSH クライアントが存在し、/usr/bin/ssh に置かれていると想定されます。Windows ユーザーは、Windows で使用可能なセキュア・シェルの 1 つをインストールする必要があります。
+<p>
+IBM i Access Client Solutions がサポートするセキュア・シェル:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm、XterminalEmulator、MateTerminal、Terminator、GnomeTerminal、Konsole、Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal、iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin、PuTTY、bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin を使用するには、openssh パッケージがインストールされている必要があります。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash は、Windows 用の Linux サブシステムの一部として使用できます。
+<p>
+複数の SSH アプリケーションがインストールされている場合は、com.ibm.iaccess.PreferredSSHClient プロパティーを使用して、優先 SSH クライアントを設定できます。
+
+<p>Linux の例:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac の例:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows の例:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+SSH クライアントが標準的な場所にインストールされていない場合は、com.ibm.iaccess.PreferredSSHClient プロパティーを使用して、インストールした SSH クライアントへの完全修飾パスを提供できます。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+完全修飾パスを提供するときは、必要なすべての引数を提供するために、com.ibm.iaccess.SSHClientOpt の設定も必要になる場合があります。例えば、X11 転送を使用しない場合、警告を使用不可にするには、次のようにします。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 SSH 端末の前提条件</h3>
+IBM i に 5733-SC1 IBM Portable Utilities for i をインストールします。
+<br>次のコマンドを使用して、セキュア・シェル・デーモンを開始します。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>起動した SSH クライアント内で接続エラー (例えば、「接続拒否」) が起きる場合、または、ウィンドウがポップアップしてもすぐに消えてしまう場合は、上記のコマンドを使用して SSH デーモンを開始することが必要なときもあります。
+
+
+<hr><h3><a id="10.0"></a>10.0 保守診断</h3>
+<p>
+IBM サービスを必要とする問題に遭遇した場合は、IBM サービス担当員から次のいずれかまたは両方を行うように指示されることがあります。
+<p>
+IBM i Access Client Solutions のメイン GUI から、以下を行います。<br>
+<ul>
+ <li>「ツール」-&gt;「保守ログの生成」を選択します。<br>
+     これによって、セクション <a href="#9.1.5">9.1.5 『Dump』</a>のコマンド行オプションと
+     同じ機能が実行されます。この機能は、通常は障害の直後に実行する必要
+     があります。問題によっては、これを複数回行うよう IBM サービス担当員
+     から指示が出されることがあります。
+<li>「ツール」-&gt;「保守ログのパッケージ」を選択します。<br>
+     これによって、セクション <a href="#9.1.6">9.1.6 『Medic』</a>のコマンド行オプションと
+     同じ機能が実行されます。この機能は、ワークステーション環境に関する
+     詳細を収集し、保守ログをパッケージして、IBM に送付可能な 1 つの zip
+     アーカイブにします。</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 よくある質問 (FAQ)</h3>
+<p>
+<pre>
+Q1    IBM i Access Client Solutions を開始しようとすると、次のエラーが発生します。
+      クラスをロードできません: java.lang.UnsupportedClassVersionError
+A1-1  JDK 6.0 以上を使用する必要があります。セクション <a href="#3.0">3.0 前提条件</a>を参照してください。
+
+Q2    シェルまたは端末セッションから、提供されているバイナリー・ファイルまたは
+      スクリプトの 1 つを使用して製品を開始しようとすると、次のエラーが発生します。
+         許可が拒否されました
+A2-1  ファイルのファイル許可をチェックして、実行許可があることを確認して
+      ください。セクション <a href="#6.0">6.0 『ファイル許可』</a>を参照してください。
+
+Q3    提供されているファイルの 1 つをダブルクリックして製品を開始しようとしても
+      何も起こりません。
+A3-1  Java がインストールされていない可能性があります。セクション <a href="#3.0">3.0 『前提条件』</a>を参照してください。
+A3-2  製品を開始するために使用しているファイルに実行許可がない可能性が
+      あります。セクション <a href="#6.0">6.0 『ファイル許可』</a>を参照してください。
+A3-3  環境に問題がある可能性があります。どのようなエラーが発生しているのかを
+      確認するため、提供されているファイルをコマンド行から実行してみてください。
+セクション
+<a href="#7.3">7.3 『製品の開始 (コマンド行を使用)』</a>を参照してください。
+
+Q4    バイナリー・ファイルの 1 つを使用して製品を開始したいのですが、次のエラー
+      が出されます: 「Java モジュールのロードでエラーが発生しました」
+A4-1  そのバイナリーは、Java インストールのホーム・ディレクトリーを検出できませんでした。
+      Java がインストールされていることを検証してください。セクション <a href="#3.0">3.0 『前提条件』</a>を参照してください。
+A4-2  A4-2  セクション <a href="#7.1.1">7.1.1 『製品の開始 - 追加オプション』</a>に、
+      バイナリー・ファイルを使用して製品を開始するための追加の方法が説明されています。
+
+Q5    JAVA_HOME 環境変数を設定した後、製品を開始するために使用するバイナリー・ファイル
+      は、コマンド行からは機能しますが、このファイルをダブルクリックする場合は
+      機能しません。
+A5-1  ファイルをダブルクリックするときに使用するファイル・マネージャーから
+      JAVA_HOME 環境変数が可視ではない可能性があります。環境変数の設定方法は
+      オペレーティング・システムによって異なり、環境変数の可視性も同様です。
+      JAVA_HOME 環境変数を、ご使用のオペレーティング・システムのシステム環境
+      変数として設定してみてください。ご使用のオペレーティング・システムが
+      システム環境変数をグローバル環境変数として参照する可能性があります。
+      JAVA_HOME 環境変数を設定した後、ファイル・マネージャーをいったん閉じてから
+      開き、再度バイナリー・ファイルをダブルクリックしてみてください。
+Q6    提供されているファイルの 1 つをダブルクリックして製品を開始しようとすると、
+      そのファイルがテキスト・エディターで表示されます。
+A6-1  使用しているスクリプトのファイル拡張子が、ご使用のオペレーティング・システム
+      で認識されるものであることを確認してください。
+A6-2  他のスクリプトのいずれかを試行してください。
+A6-3  ファイルを開くプログラムを変更してください。
+A6-4  ファイルのファイル許可をチェックして、実行許可があることを確認して
+      ください。セクション <a href="#6.0">6.0 『ファイル許可』</a>を参照してください。
+
+Q7    提供されているファイルの 1 つをダブルクリックして製品を開始しようとすると、
+      どのプログラムを使用してファイルを開くのかを指定するプロンプトが出されます。
+A7-1  使用しているスクリプトのファイル拡張子が、ご使用のオペレーティング・システム
+      で認識されるものであることを確認してください。
+A7-2  ファイルを開くプログラムを、使用しているバイナリー・ファイルまたはスクリプト
+      と互換のものに設定してください。例えば、Terminal (Mac の場合) です。
+A7-3  ファイルのファイル許可をチェックして、実行許可があることを確認して
+      ください。セクション <a href="#6.0">6.0 『ファイル許可』</a>を参照してください。
+
+Q8    Mac で Finder から IBM i Access Client Solutions を開始すると、
+      ターミナル・セッションが表示され、IBM i Access Client Solutions を終了しても
+      消えません。
+A8-1  ターミナル・セッションがポップアップ表示されないようにするには、
+      QuickStartGuide 内の Mac 用のインストール・スクリプトを使用します。
+
+Q9    製品を開始する最良の方法は何ですか?
+A9-1  セクション <a href="#7.0">7.0 『製品の開始』</a>に説明されている 3 つの方法のどれを使用しても
+      よく、バイナリー、スクリプト、またはコマンド行のいずれかを使用して
+      製品を開始できます。環境で機能する方法であれば、どの方法でもかまいません。
+
+Q10   製品を開始するためにバイナリー・ファイル (Start_Programs) とスクリプト
+      (Start_Scripts) の両方がある理由は何ですか?
+A10-1 これらのスクリプトは、オペレーティング・システムに固有のものではなく、
+      プラットフォーム固有のバイナリー・ファイルが機能しない場合に、製品を開始するためのより汎用的な方法を提供します。
+A10-2 オペレーティング・システムによっては、ファイル・アソシエーションを定義
+      するときにバイナリーが必要なものがあります。
+      ほとんどの場合、製品の開始にはバイナリー・ファイルを使用する必要があります。
+A10-3 環境によっては、IBM i Access Client Solutions の一部へのアクセスを制限
+      するファイアウォールがある場合があります。
+      いずれかのバイナリー・ファイルを使用して製品を開始すると、
+      システム管理者がアクセスを認可するのが容易になります。
+
+Q11   JDK 6.0 (またはそれ以上) をインストールした後でも、まだ次のエラーが
+      発生します。
+      クラスをロードできません: java.lang.UnsupportedClassVersionError
+A11-1 ワークステーションで使用されている Java のデフォルトのバージョンが、
+      JDK 6.0 より古いものです。JDK 6 の Java ホームへのパスを明示的に指定する
+      オプションを使用する必要があります。セクション <a href="#7.1.2">7.1.2 『Java ホーム・パス
+      の検出』</a>を参照してください。以下のいずれかのセクションで説明されている
+      方法の 1 つに対しては、Java ホーム・パスを使用してください。
+      <a href="#7.1.1">7.1.1 製品の開始 - 追加オプション</a><br>
+      <a href="#7.3">7.3 製品の開始 (コマンド行を使用)</a><br>
+
+Q12   カスタマイズされたキーボード・マッピング・ファイル (.kmp) を、
+      Windows 5250 エミュレーター・セッションからインポートできません。
+A12-1 2012 年 7 月に使用可能になった IBM i Access Client Solutions の初期バージョン
+      では、.kmp ファイルを Windows 5250 エミュレーター・セッション・プロファイル
+      (.ws) からインポートすることはサポートされていませんでした。2012 年 10 月に使用可能
+      になったバージョン以後、.kmp ファイルを Windows 5250 エミュレーター・
+      セッション・プロファイル (.ws) からインポートすることがサポートされるように
+      なりました。
+
+Q13   5250 エミュレーター用のキーボード・カスタマイズは、Windows で使われていた
+      手順と大きく異なっています。何か提案はありますか?
+A13-1 キーボード・マッピングは、いくつかのカテゴリーに分かれています。エミュレーター・セッションから次のように操作します。
+「編集」&gt;「設定」&gt;「キーボード」をクリックするか、あるいはツールバーの「再マップ」ボタンをクリックします。
+      「キー割り当て」タブをクリックします。
+      「カテゴリー」を選択します。「ホスト機能」カテゴリーと「メニュー・コマンド」
+       カテゴリーの下には、デフォルトのキー・マッピングが表示されます。
+      割り当てたい機能を選択します。
+      「キーの割り当て」をクリックします。
+      キーボードで、この機能に割り当てたいキー (またはキーの組み合わせ) を
+      押します。
+A13-2 カスタム・キー・マッピングのヘルプを取得するには、次のようにします。
+      「編集」&gt;「設定」&gt;「キーボード」をクリックするか、ツールバーの「再マップ」
+      ボタンをクリックします。「ヘルプ」ボタンを選択します。
+
+Q14   Mac OS X 10.8 Mountain Lion で製品を開始しようとしたときに、アプリケーションが
+      署名されていないことを示すポップアップ・メッセージが表示されます。
+A14-1 これは、Mac OS X 10.8 Mountain Lion で開始するときにデフォルトで強制される
+      セキュリティー・ポリシーです。アプリケーションを実行できるようにする方法に
+      ついては、以下の Web ページを参照してください。
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+Q15   IBM i Access for Windows を使用していますが、システム構成を
+      IBM i Access Client Solutions にマイグレーションできますか?
+A15-1 セクション <a href="#9.6.1">9.6.1 システム構成のマイグレーション</a>を参照してください。
+
+Q16   IBM i Access for Windows を使用していますが、エミュレーション・プロファイルを
+      IBM i Access Client Solutions にマイグレーションできますか?
+A16-1 セクション <a href="#9.6.2">9.6.2「5250 エミュレーションのマイグレーション」</a>を参照してください。
+
+Q17   IBM i Access for Windows を使用していますが、データ転送要求ファイルを
+      IBM i Access Client Solutions にマイグレーションできますか?
+A17-1 セクション <a href="#9.6.3">9.6.3 保管されたデータ転送要求ファイルのマイグレーション</a>を参照してください。
+
+Q18   EHLLAPI は IBM i Access Client Solutions で機能しますか?
+A18-1 セクション <a href="#9.6.4">9.6.4「EHLLAPI」</a>を参照してください。
+
+Q19   kerberos は IBM i Access Client Solutions で機能しますか?
+A19-1 セクション <a href="#9.6.5">9.6.5「Kerberos」</a>を参照してください。
+
+Q20   システム管理者としてユーザーに一定の機能を非表示にしたいのですが。
+A20-1 セクション <a href="#9.5">9.5 『カスタマイズされたパッケージ』</a>を参照してください。
+
+Q21   パネルでヘルプ・アイコンを選択してもテキストが表示されません。
+A21-1 ヘルプ・テキストは通常はデスクトップ・ブラウザーで表示されます。場合によっては、
+      デスクトップにブラウザーがないか、正しく構成されていないことがあります。
+A21-2 デスクトップ・ブラウザーを使用せずにヘルプ・テキストを表示するには、以下の
+      プロパティーを AcsConfig.properties ファイル内に設定します。
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      または、以下のように、このプロパティーを他の java プロパティーと同じように
+      コマンド行から設定することもできます。
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+Q22   データ転送を使用しているときに、出力装置として「アクティブ Excel
+      スプレッドシート」または「アクティブ Calc スプレッドシート」を選択すると、
+      「アクティブ・スプレッドシートが見つかりませんでした」というエラーになります。
+Q22-1 アクティブなスプレッドシートがありません。新規または既存のスプレッドシート
+      を開いて、要求を再試行してください。
+Q22-2 使用しているスプレッドシート・アプリケーションと IBM i Access Client Solutions
+      が稼働している Java 仮想マシンとの間にビット数の不一致がある可能性があります。
+      セクション <a href="#9.8">9.8 『データ転送での Excel スプレッドシートおよび Calc スプレッドシートのサポート』</a>を参照してください。
+
+Q23   Mac でデータ転送を使用しているとき、アクティブ・スプレッドシートとやり取りする
+      ためのオプションが「出力装置」に表示されません。
+Q23-1 Mac ではデータ転送はアクティブ・スプレッドシートとやり取りできません。これは、
+      OpenOffice アプリケーションと IBM i Access Client Solutions が稼働する JVM との
+      ビット数の不一致が原因です。さらに詳しい説明については、セクション <a href="#9.8">9.8
+      『データ転送での Excel スプレッドシートおよび Calc スプレッドシートのサポート』</a>を参照してください。
+
+Q24   データ転送を使用しているときに、出力装置として「アクティブ Calc スプレッドシート」
+      を選択しましたが「名前」ボックスに何も表示されません。
+Q24-1 これは、保存されたことのない新規 Calc スプレッドシートの場合は正常です。データ転送
+      は、ダウンロードされたデータでスプレッドシートを更新することができます。</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 更新履歴</h3>
+<p>
+以下の Web ページを参照してください。<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

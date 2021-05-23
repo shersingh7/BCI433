@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Stručná úvodní příručka</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Stručná úvodní příručka</h2>
+<h2>Obsah tohoto dokumentu byl naposledy aktualizován: 21. září 2017</h2>
+
+<h3>Obsah:</h3>
+<a href="#1.0">1.0 Úvod</a><br>
+<a href="#2.0">2.0 Instalace pro operační systém Windows</a><br>
+<a href="#3.0">3.0 Instalace pro operační systém Mac</a><br>
+<a href="#4.0">4.0 Instalace pro operační systém Linux</a><br>
+<a href="#5.0">5.0 Instalace aktualizací</a><br>
+<a href="#6.0">6.0 Další informace</a><br>
+<a href="#7.0">7.0 Odinstalace</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Úvod</h3>
+<p>
+Tato příručka poskytuje pokyny k implementaci tohoto produktu na lokální diskovou jednotku
+pro jednotlivého uživatele. 
+<p>
+Existuje mnoho způsobů, jak lze tento produkt implementovat:<br>
+<ul>
+<li>Sdílené umístění, ke kterému má přístup více uživatelů.<br>
+Viz <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a>
+<li>Rozbalení archivu zip do libovolného umístění včetně přenosných médií (CD, DVD, jednotka paměti USB)
+nebo do jakékoli cesty na jednotce lokálního disku.  Viz sekce <a href="../Documentation/GettingStarted_en.html#5.0">Instalace</a> v dokumentu <a href="../Documentation/GettingStarted_en.html">Začínáme s produktem</a>
+umístěném ve složce Documentation.
+<li>Prohlédněte si možnosti uvedené v sekci <a href="../Documentation/GettingStarted_en.html#9.4">Ostatní možnosti implementace</a>
+v dokumentu <a href="../Documentation/GettingStarted_en.html">Začínáme s produktem</a>, například <a href="../Documentation/GettingStarted_en.html#9.4.1">Automatické importování nastavení konfigurace</a>,
+chcete-li rozšířit stejnou konfiguraci mezi více uživatelů a <a href="../Documentation/GettingStarted_en.html#9.4.2">Nativní implementace v systému IBM i</a>, chcete-li
+použít moduly plug-in příkazového řádku přímo v systému IBM i.
+</ul> 
+
+<p>
+K implementaci tohoto produktu na lokální diskovou jednotku pro jednotlivého uživatele
+si prohlédněte zbývající části tohoto dokumentu.
+
+<hr><h3><a id="2.0"></a>2.0 Instalace pro systém Windows</h3>
+
+<p>
+Vyhledejte archivní soubor zip nebo disk CD s produktem.
+
+<p>
+Pokud používáte archivní soubor zip produktu, extrahujte obsah archivního souboru zip.
+<br>Návrh: Můžete tak učinit pomocí Průzkumníku Windows. Vyberte archivní soubor zip, pak na něj klepněte pravým tlačítkem myši a vyberte položku "Extrahovat vše...".
+
+<p>
+Pomocí Průzkumníku Windows vyhledejte složku Windows_Application produktu.
+
+<p>
+Chcete-li nainstalovat 32bitovou verzi pro aktuálního uživatele, poklepejte na soubor install_acs_32.
+<p>
+Chcete-li nainstalovat 64bitovou verzi pro aktuálního uživatele, poklepejte na soubor install_acs_64.
+<p>
+Chcete-li nainstalovat 32bitovou verzi pro všechny uživatele na víceuživatelské PC, poklepejte na soubor install_acs_32_allusers.
+<p>
+Chcete-li nainstalovat 64bitovou verzi pro všechny uživatele na víceuživatelské PC, poklepejte na soubor install_acs_64_allusers.
+
+<p>
+Pokud se jedná o novou instalaci, obdržíte několik výzev, které vám pomohou upravit
+počáteční instalaci.  Pokud se zobrazí licenční smlouva, přijměte ji.
+<p>
+Jedná-li se o upgrade, předchozí nastavení budou zachována.
+<p>
+Jakmile bude instalace dokončena, zobrazí se zpráva o dokončení.
+
+<p>
+Úspěšná instalace pro jednoho uživatele zkopíruje aplikaci do:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Poznámka: Počáteční verze těchto skriptů zkopírovala soubory produktu do cesty relativní ke složce Dokumenty.
+Aktuální verze kopíruje soubory produktu do cesty na základě proměnných prostředí
+%HOMEDRIVE% a %HOMEPATH%.  Při použití těchto skriptů k aktualizaci produktu dojde k aktualizacím
+na prvním nalezeném umístění.
+<p>
+Úspěšná instalace pro více uživatelů zkopíruje aplikaci do:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Spuštění produktu v systému Windows</h3>
+<p>
+Poklepejte na ikonu "Access Client Solutions" na pracovní ploše.
+
+
+<hr><h3><a id="3.0"></a>3.0 Instalace pro systém Mac</h3>
+<p>
+Vyhledejte archivní soubor zip nebo disk CD s produktem pomocí vyhledávače.
+<p>
+Pokud používáte archivní soubor zip produktu, extrahujte obsah archivního souboru zip.
+<br>Návrh: Pokud jste produkt
+právě stáhli, najdete jej ve složce Downloads.  Není-li obsah archivního souboru zip již extrahován,
+můžete obsah archivního souboru zip extrahovat poklepáním.  
+<p>
+Vyhledejte složku Mac_Application.   Poklepejte na skript install_acs.
+
+<p>
+Pokud se jedná o novou instalaci, obdržíte několik výzev, které vám pomohou upravit
+počáteční instalaci.  Pokud se zobrazí licenční smlouva, přijměte ji.
+<p>
+Jedná-li se o upgrade, předchozí nastavení budou zachována.
+<p>
+Jakmile bude instalace dokončena, zobrazí se zpráva o dokončení.
+<p>
+Úspěšná instalace zkopíruje aplikaci do složky Applications.
+
+<p>
+Pokud jste spustili instalaci z aplikace Finder, spustilo se okno terminálu pro provedení instalace. Po dokončení
+instalace můžete okno terminálu zavřít.
+<p>
+Technická poznámka:<br>
+V závislosti na nastavení zabezpečení a na vámi používané verzi OS X se může zobrazit
+rozevírací okno, které označuje, že skript install_acs není autorizován ke spuštění.
+Pokud k tomu dojde,
+budete muset autorizovat skript install_acs ke spuštění pomocí jedné z těchto metod:<br>
+<ul>
+<li>Je-li nabídnuta volba "Otevřít" install_acs, vyberte ji.
+<li>Pravým tlačítkem myši klepněte na skript install_acs a vyberte volbu "Otevřít".<br>
+   Je-li volba "Otevřít" nabídnuta v rozevíracím okně, vyberte ji.
+<li>Pokud žádná z výše uvedených voleb nefunguje, přejděte do:<br>
+    Předvolby systému...<br>
+    Zabezpečení &amp; soukromí<br>
+    Pokud vidíte volbu Otevřít "IBM i Access Client Solutions", vyberte ji.
+    Jinak budete muset upravit nastavení na kartě Obecné, aby bylo možné
+    spouštění ostatních aplikací.  Když se produkt "IBM i Access Client Solutions"
+    poprvé spustí, můžete změnit nastavení zabezpečení zpět.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Spuštění produktu na počítači Mac</h3>
+<p>
+Pomocí vyhledávače přejděte do aplikací.
+<p>
+Vyhledejte "IBM i Access Client Solutions" a poklepáním spusťte produkt.
+<p>
+Technická poznámka:<br>
+V závislosti na nastavení zabezpečení a na vámi používané verzi OS X se může zobrazit
+rozevírací okno, které označuje, že aplikace není autorizována pro spuštění.
+Pokud k tomu dojde,
+budete muset autorizovat aplikaci ke spuštění pomocí jedné z těchto metod:<br>
+<ul>
+<li>Je-li nabídnuta volba "Otevřít", vyberte ji.
+<li>Pravým tlačítkem myši klepněte na ikonu "IBM i Access Client Solutions" a vyberte volbu "Otevřít".<br>
+   Je-li volba "Otevřít" nabídnuta v rozevíracím okně, vyberte ji.
+<li>Pokud žádná z výše uvedených voleb nefunguje, přejděte do:<br>
+    Předvolby systému...<br>
+    Zabezpečení &amp; soukromí<br>
+    Pokud vidíte volbu Otevřít "IBM i Access Client Solutions", vyberte ji.
+    Jinak budete muset upravit nastavení na kartě Obecné, aby bylo možné
+    spouštění ostatních aplikací.  Když se produkt "IBM i Access Client Solutions"
+    poprvé spustí, můžete změnit nastavení zabezpečení zpět.  
+</ul>
+Technická poznámka:<br>
+Budete-li vyzváni k instalaci prostředí "Java 6 SE runtime", nemusíte produkt
+Java 6 instalovat.  Nainstalujte produkt Java 8 a pokuste se spustit produkt znovu.
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Instalace pro systém Linux</h3>
+<p>
+Vyhledejte archivní soubor zip nebo disk CD s produktem.
+<p>
+Pokud používáte archivní soubor zip produktu, extrahujte obsah archivního souboru zip.
+<br>Návrh: V okně terminálu použijte příkaz unzip.
+<p>
+Vyhledejte složku Linux_Application.
+<p>
+Protože použití instalačního skriptu vyžaduje oprávnění root, použijte ke spuštění skriptu z okna
+terminálu příkaz sudo.  Například:
+<p>
+Používáte-li 32bitovou architekturu, použijte příkaz:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Používáte-li 64bitovou architekturu, použijte příkaz:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Pokud se jedná o novou instalaci, obdržíte několik výzev, které vám pomohou upravit
+počáteční instalaci.  Pokud se zobrazí licenční smlouva, přijměte ji.
+<p>
+Jedná-li se o upgrade, předchozí nastavení budou zachována.
+<p>
+Jakmile bude instalace dokončena, zobrazí se zpráva o dokončení.
+
+<p>
+Úspěšná instalace zkopíruje aplikaci do:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Spuštění produktu v systému Linux</h3>
+<p>
+Vyhledejte "IBM i Access Client Solutions" ve složce applications nebo
+pomocí Super klíče a poté zadejte "IBM i Access Client Solutions".
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Instalace aktualizací</h3>
+<p>
+Když bude k dispozici nová verze, můžete aktualizace použít dle pokynů pro instalaci
+v tomto dokumentu.  Pokud budete vyzváni k nahrazení existujících souborů, odpovězte "Ano pro všechny".
+<p>
+Používáte-li skripty install_acs pro systémy Windows, Mac nebo Linux, soubor
+AcsConfig.properties nebude aktualizován, takže nepřijdete o žádné vlastní změny konfigurace,
+které jste provedli v tomto souboru.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Další informace</h3>
+<p>
+Další informace o přizpůsobení produktu nebo o problémech, na které můžete narazit při
+instalaci či spouštění produktu, najdete v dokumentu <a href="../Documentation/GettingStarted_en.html">GettingStarted</a>,
+který je ve složce Documentation.
+
+<hr><h3><a id="7.0"></a>7.0 Odinstalace</h3>
+<p>
+K odebrání souborů aplikace, které byly instalačním skriptem zkopírovány do výše uvedených umístění,
+použijte odinstalační skript specifický pro platformu, který se nachází ve stejné složce jako instalační skript:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

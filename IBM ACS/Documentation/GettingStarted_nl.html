@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aan de slag</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Aan de slag</h2>
+<h2>De inhoud van dit document is voor het laatst bijgewerkt op: 12 juli 2017 </h2>
+
+
+<h3><a id="0.5"></a>0.5 Snel aan de slag</h3>
+<p>
+In <a href="./QuickStartGuide_en.html">Snel aan de slag</a> vindt u instructies voor het in gebruik nemen van het product, dat werkt voor de meeste gebruikers die werken onder Windows, Mac of Linux.  Om dit product te installeren voor een enkele gebruiker of voor een PC met meerdere gebruikers, raadpleegt u <a href="./QuickStartGuide_en.html">Snel aan de slag</a> in de documentatiemap.
+<p>
+Aanvullende informatie over het product, andere implementatieopties en het aanpassen van het product vindt u in het resterende deel van dit document.  
+
+<h3>Inhoud:</h3>
+<a href="#0.5">0.5 Snel aan de slag</a><br>
+<a href="#1.0">1.0 Inleiding</a><br>
+<a href="#2.0">2.0 Voorzieningen</a><br>
+<a href="#3.0">3.0 Vereisten</a><br>
+<a href="#4.0">4.0 Productinhoud</a><br>
+<a href="#5.0">5.0 Installatie</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Bijwerken van bestaande installatie</a><br>
+<a href="#6.0">6.0 Bestandsmachtigingen</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Bestandsmachtigingen (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Bestandsmachtigingen (Windows)</a><br>
+<a href="#7.0">7.0 Het product starten</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Het product starten</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Het product starten (met een script)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Het product starten (via de opdrachtregel)</a><br>
+<a href="#8.0">8.0 Configuratie</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Configuratielocatie</a><br>
+<a href="#9.0">9.0 Geavanceerde onderwerpen</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Meer opdrachtregelopties</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Bestandskoppelingen</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Bestandskoppelingen (voor Windows)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Wijzigingspictogram (voor Windows-snelkoppeling)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Bureaubladpictogram instellen (voor Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Bestandskoppelingen (voor Linux)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Bestandskoppelingen (voor Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Bestandskoppelingen maken (voor Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Pictogram wijzigen (voor Mac)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Configuratielocatie wijzigen</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Overige implementatieopties</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Automatisch configuratie-instellingen importeren</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Implementatie van native IBM i</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Aangepaste pakketten</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 Migreren vanaf IBM i Access for Windows</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Systeemconfiguraties migreren</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 5250-emulatie migreren</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Opgeslagen opdrachtbestanden van Gegevensoverdracht migreren</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Sleutelbeheer</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Gegevensoverdracht</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Ondersteuning van gegevensoverdracht voor Excel- en Calc-spreadsheets</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Ondersteuning gegevensoverdracht voor tekenafkapping en numerieke overloop</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Bladnaam gegevensoverdracht</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 Consoleverbinding met IBM i tot stand brengen</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Aanvullende lettertypen</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 Legitimatiegegevens van een netrc-bestand gebruiken</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Integrated File System (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 en beveiliging</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS-machtiging</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS-beperkingen</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS en onafhankelijke ASP's</a><br>
+
+
+<a href="#10.0">10.0 Servicediagnose</a><br>
+<a href="#11.0">11.0 Veelgestelde vragen (FAQ)</a><br>
+<a href="#12.0">12.0 Historie bijwerken</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Inleiding</h3>
+<p>
+IBM i Access Client Solutions is het nieuwste lid van de productfamilie IBM i Access.  IBM i Access Client Solutions is een platform-onafhankelijke, op Java
+gebaseerde interface die werkt onder de meeste besturingssystemen die Java
+ondersteunen, zoals Linux, Mac en Windows. In IBM i Access Client Solutions
+zijn de meest gangbare taken voor het beheer van uw IBM i samengebracht op één
+overzichtelijke locatie.
+<p>
+IBM i Access Client Solutions maakt gebruik van dezelfde IBM i-hostservers als de
+andere IBM i Access-producten, en verlangt dezelfde licentie voor de IBM i Access
+Family (XW1) om het gebruik van de functies 5250-emulatie en Gegevensoverdracht te
+rechtvaardigen.
+<p>
+Er zijn ook twee optionele pakketten beschikbaar met middleware voor het werken met en ontwikkelen van clienttoepassingen voor Windows en Linux:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows Application Package<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux Application Package<br>
+<p>
+Klanten met IBM i 7.1 of later en een actief gebruiksrecht kunnen IBM i Access Client Solutions op een van de volgende twee methoden verkrijgen:
+<ul>
+<li> Download het basispakket van <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a>.
+<li> Download het basispakket en de optionele Windows- en Linux-toepassingspakketten vanaf de website <a href="https://www.ibm.com/servers/eserver/ess">Entitled Software Support (ESS)</a> onder 5761-SS1 of 5770-SS1.
+</ul>
+
+<p>
+De optionele Windows- en Linux-toepassingspakketten zijn alleen
+beschikbaar via de ESS-website (Entitled Software Support).
+<p>
+Klanten kunnen media verkrijgen door een bestelling uit te voeren voor
+5761-SS1 of 5770-SS1, refresh feature 6288.
+De fysieke media bevatten een uitvoerbare versie van het product, waarmee u het
+product rechtstreeks vanaf de CD kunt uitvoeren.  Op de fysieke media vindt u
+ook een zip-archief van het product dat naar een gewenste locatie kan
+worden gekopieerd en geëxtraheerd.
+De fysieke media for IBM i Access Client Solutions bevatten geen optionele
+toepassingspakketten voor Windows en Linux.  <p>
+Voor meer informatie gaat u naar:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+Voor de meest recente informatie over de productgroep IBM i Access gaat u naar:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Voorzieningen</h3>
+<p>
+IBM i Access Client Solutions bevat de volgende voorzieningen:
+<ul>
+<li>Een volledig toegeruste 5250-weergave-emulator, gebaseerd op IBM Rational
+Host-on-Demand. In aanvulling op alle 5250-weergavefuncties, die u bekend zijn bij het gebruik van IBM i Access for Windows, zijn er de volgende aanvullende functies:
+<ul>
+<li>ondersteuning van tabbladen, waardoor meerdere sessies een gemeenschappelijk weergavegebied kunnen delen
+<li>ondersteuning van het muiswiel waardoor er eenvoudiger tussen pagina's gebladerd kan worden
+<li>schakelen tussen talen kan worden uitgevoerd zonder dat het nodig is om uw werkstation opnieuw op te starten
+<li>gelijktijdige beeldstationsessies met verschillende hostcodetabellen waardoor verschillende talen mogelijk zijn binnen afzonderlijke emulatorsessies
+</ul>
+<li>Printeremulatie
+<li>5250-sessiebeheer naar model van IBM Personal Communications Sessiebeheer. Deze
+kan worden gebruikt voor het beheren van al uw 5250-emulatorsessies.
+
+<li>Gegevensoverdracht, met de mogelijkheid om gegevens over te brengen van of naar uw
+IBM i-database naar of van diverse bestandstypen op uw werkstation, zoals OpenDocument
+spreadsheet (*.ods), Excel Workbook (*.xlsx) en andere indelingen.
+
+<li>Afdrukuitvoer is een interface waarmee u bestanden in de uitvoerwachtrijen van IBM i kunt bekijken; daarnaast kunt u deze bestanden naar uw clientsysteem downloaden.
+
+<li>Een Virtueel Bedieningspaneel met een grafische interface voor het bedieningspaneel
+van IBM i.
+
+<li>5250-emulatie voor LAN-, HMC- en FSM-consoles
+
+<li>Consolidatie van configuraties voor hardwaremanagementinterfaces, waaronder ASMI,
+IVM en HMC
+
+<li>Mogelijkheid om IBM Navigator for i te starten in uw standaardbrowser
+<li> Databasefuncties zoals uitvoering van SQL-scripts en SQL Performance Center.
+</ul>
+<p>
+Het optionele Windows Application Package bevat:
+<ul>
+<li>connectiviteit naar DB2 for i met behulp van ODBC, .Net en OLE DB
+<li>Programming Toolkit voor toegang tot IBM i-systeemobjecten
+<li>ondersteuning voor TLS/SSL-verbindingen
+<li>AFP-printerstuurprogramma
+</ul>
+<p>
+Het optionele Linux Application Package bevat:
+<ul>
+<li>ODBC-stuurprogramma voor
+toegang tot DB2 for i; het ondersteunt volledig 64-bits ODBC-gegevenstypen.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Vereisten</h3>
+<h3><a id="3.1"></a>3.1 Vereisten (werkstation)</h3>
+<p>
+IBM i Access Client Solutions werkt onder de meeste besturingssystemen die Java 6.0 of hoger ondersteunen, waaronder diverse versies van Linux, Mac en Windows.
+<p>
+Aanbeveling:<br>
+Door steeds de meest recente versie van Java te gebruiken, zorgt u ervoor dat u alle nieuwste fixes en beveiligingspatches hebt.
+<p>
+Een van de manieren om na te gaan welke versie van Java er op uw systeem is
+geïnstalleerd, is naar een opdrachtaanwijzing te gaan (Opdrachtaanwijzing, Shell, Terminal,
+etc.) en de volgende opdracht te typen:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+De volgende uitvoer geeft aan dat versie 8.0 is geïnstalleerd:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+De 65 in dit voorbeeld geeft het updateniveau aan.
+
+<p>
+Hieronder vindt u de internetadressen van enkele Java-leveranciers.  Zorg dat u werkt
+met de meest recente versie van Java voor uw platform.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 Vereisten (Connectiviteit met IBM i)</h3>
+<p>
+IBM i Access Client Solutions kan werken met IBM i-releases 5.4 en hoger.
+Voor de volgende voorzieningen is IBM i-release 6.1 of hoger vereist:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250-console<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Virtueel bedieningspaneel<br>
+<p>
+Als u van plan bent SSL-verbindingen te gebruiken, laadt u de toepasselijke
+IBM i-PTF's voor uw release:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Als u van plan bent Navigator for i te gebruiken, laadt u de toepasselijke
+IBM i-PTF's voor uw release:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 Groeps-PTF SF99368 niveau 37 of hoger<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 Groeps-PTF SF99713 niveau 12 of hoger<br>
+	
+<p>
+Als u van plan bent de 5250-console of het Virtuele Bedieningspaneel te gaan gebruiken, laadt u de toepasselijke PTF's voor uw release:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Productinhoud</h3>
+<p>
+Het ZIP-archief van het product bevat de volgende bestanden en directory's:
+<pre>
+
+acsbundle.jar       - een uitvoerbaar JAR-bestand van het product
+AcsConfig.properties- bestand met configuratie-instellingen (ook aanwezig
+                      binnen acsbundle.jar)
+
+Mac_Application     - directory met installatiescript voor Mac
+
+Linux_Application   - directory met installatiescripts voor Linux
+
+Windows_Application - directory met installatiescripts voor Windows
+
+Start_Programs      - directory met platform-specifieke binaire bestanden die kunnen
+                      worden gebruikt om het product te starten.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - directory met documentatie
+    QuickStartGuide - informatie over hoe u aan de slag kunt gaan
+    GettingStarted  - gedetailleerde informatie over het product
+License             - directory met bepalingen en voorwaarden voor gebruik
+Notices             - directory met kennisgevingen en andere informatie
+properties          - directory die informatie over de productversie bevat
+Sample_Scripts      - directory met voorbeeldscripts die kunnen worden gebruikt om
+                      het programma te starten als de binaire bestanden in Start_Programs
+                      niet werken.
+    Linux_Mac_Other - directory met perl-scripts om het product te starten op een
+                      platform waarop perl beschikbaar is.
+    Windows         - directory met een JScript om het product te starten onder
+                      Windows
+
+Icons               - directory met bestanden die als pictogrammen kunnen
+worden gebruikt
+
+Fonts               - directory waar u aanvullende monospace lettertypen 
+                      kunt toevoegen voor 5250-emulatie
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Installatie</h3>
+<p>
+De pakketten van IBM i Access Client Solutions bevatten verschillende installatie-opties: van een zeer eenvoudige installatie met één gebruiker tot de meer geavanceerde multi-user installaties.
+<p>
+Er bevinden zich installatiescripts in de mappen Mac_Application, Linux_Application en Windows_Application (zie sectie <a href="#4.0">4.0 Productinhoud</a>) die kunnen worden gebruikt voor een scala van installatie-opties.
+
+<p>
+Voor een installatie van een enkele gebruiker op Mac, Linux en Windows, of een multiuser-installatie op een Windows-PC raadpleegt u de <a href="./QuickStartGuide_en.html">QuickStartGuide</a>.
+In de QuickStartGuide wordt uitgelegd hoe u met de geleverde installatiescripts deze eenvoudige installaties uitvoert.
+<p>
+Als u een beheerder bent die een implementatie naar verschillende gebruikers plant, is het een goed idee het artikel <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a> te lezen.
+In het artikel wordt uitgelegd hoe een beheerder de installatie van meerdere gebruikers vooraf op maat kan maken voorafgaand aan de implementatie met behulp van de optie /AdminConfig die door de installatiescripts wordt ondersteund.
+<p>
+Voor beheerders die automatisch willen installeren in onbewaakte modus, gebruikt u de parameter /AdminConfig om de installatie vooraf te configureren. Gebruik vervolgens de parameter /Q bij de feitelijke installatie. Bijvoorbeeld:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+Naast de bovenstaande opties hebt u ook de mogelijkheid om alleen het zip-archief te decomprimeren op een gewenste locatie. Dat kan elke locatie zijn waar het werkstation leesmachtiging tot de bestanden heeft.
+Het gaat daarbij onder meer om de lokale vaste schijf, een (gedeelde)
+netwerkschijf of een draagbaar medium zoals een CD of een USB-flashstation.
+Na het uitpakken van het zip-archief is de installatie voltooid.
+
+<p>
+Technische opmerking:<br>
+Sommige archiefprogramma's handhaven niet alle kenmerken van de opgeslagen
+bestanden.  Op Mac- en Linux-platforms is de opdracht unzip vaak een
+betere keuze dan de jar-opdracht.  Aanvullende informatie vindt u in sectie <a href="#6.0">6.0 Bestandsmachtigingen</a>.
+
+<h3><a id="5.1"></a>5.1 Bijwerken van bestaande installatie</h3>
+<p>
+Verbeteringen en fixes worden periodiek beschikbaar gesteld.  Dergelijke
+updates kunnen worden verstrekt in de vorm van een volledige productinstallatie.  Zodra
+dergelijke updates beschikbaar zijn, moet u uw bestaande installatie bijwerken.
+<p>
+Om een bestaande installatie bij te werken die is geïnstalleerd met de installatiescripts, extraheert u de content van een nieuwere versie van het product. Roep het installatiescript van deze nieuwe versie op dezelfde manier aan als u deed tijdens de eerste installatie. Hiermee worden de productbestanden bijgewerkt zonder de bestaande gebruikersconfiguratie te wijzigen.
+<p>
+Voor beheerders die een versie van het product op een centrale locatie onderhouden die toegankelijk is voor meerdere gebruikers, kunt u de content van de nieuwere versie extraheren over de bestaande versie.
+Als u aangepaste wijzigingen hebt aangebracht aan het bestand AcsConfig.properties moet u AcsConfig.properties opslaan voordat u de inhoud van de nieuwe versie van het product over een bestaande versie extraheert. Nadat u de inhoud van de nieuwe versie van het product hebt geëxtraheerd en AcsConfig.properties hebt hersteld, kunnen uw gebruikers het installatiescript op dezelfde manier als bij de eerste installatie uitvoeren om hun installatie te updaten.
+<p>
+Als u ervoor hebt gekozen om het product te installeren zonder gebruik te maken van de installatiescripts, door het extraheren van de inhoud van het zip-archief naar een bepaalde locatie van uw keuze, en u vervolgens het product wilt bijwerken, moet u de inhoud van de nieuwere versie van het product over de bestaande versie extraheren.
+Houd er rekening mee dat u de inhoud van het bestand AcsConfig.properties moet opslaan en herstellen als u daarin aanpassingen hebt aangebracht.
+<hr><h3><a id="6.0"></a>6.0 Bestandsmachtigingen</h3>
+<p>
+In <a href="#7.0">Sectie 7.0 Het product starten</a> worden verschillende manieren voor het starten van IBM i Access Client Solutions aangegeven.  Als u het product wilt starten met een van de
+bijgeleverde binaire bestanden of scripts, controleer dan eerst in de
+bestandsmachtigingen van die bestanden of de uitvoeringsmachtiging ingeschakeld is.  Welke bestandsmachtigingen er tijdens het uitpakken van het ZIP-archief worden
+toegewezen, hangt af van diverse factoren, zoals het besturingssysteem, het
+programma waarmee het ZIP-archief is uitgepakt, de machtigingen van de
+gebruiker, etc.
+<p>
+Als u problemen hebt bij het werken met de meegeleverde binaire bestanden of
+scripts, controleer dan de bestandsmachtigingen.  In de volgende secties worden
+enkele manieren besproken waarop u de bestandsmachtigingen kunt controleren.
+
+
+<h3><a id="6.1"></a>6.1 Bestandsmachtigingen (Linux, Mac, AIX)</h3>
+<p>
+Voor aan unix verwante besturingssystemen kunt u met de volgende opdracht in een shell- of werkstationaanwijzing de machtigingen van een bestand controleren:<br>
+<pre>    ls -l &lt;bestand&gt;   			</pre>
+<p>
+Met de volgende opdracht kunt u de machtigingen van een bestand wijzigen:<br>
+<pre>    chmod &lt;machtiging&gt; &lt;bestand&gt;	</pre><br>
+Bijvoorbeeld:<br>
+Voor iedereen lees- en uitvoermachtiging toevoegen:
+<pre>
+    chmod a+rx &lt;bestand&gt;
+</pre>
+de eigenaar van het bestand de machtiging lezen/schrijven/uitvoeren verlenen en
+alle anderen de machtiging lezen/uitvoeren verlenen:
+<pre>
+    chmod 755 &lt;bestand&gt;
+</pre>
+<p>
+Voor meer informatie over de opdrachten ls en chmod kunt u terecht op internet.
+
+
+
+<h3><a id="6.2"></a>6.2 Bestandsmachtigingen (Windows)</h3>
+<p>
+Onder Windows klikt u, in de Windows Verkenner, met de rechtermuisknop op het
+bestand en selecteert u Eigenschappen.  Op de tab Beveiliging staan de
+bestandsmachtigingen.  Zorg dat u beschikt over de machtiging Lezen en Uitvoeren.
+<p>
+In nieuwere versies van Windows kunt u ook de opdracht icacls gebruiken om de
+machtigingen van een bestand te bekijken en te wijzigen.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Het product starten</h3>
+<p>
+U kunt IBM i Access Client Solutions op meerdere manieren starten.  Als u de installatiescripts hebt gebruikt om het product te installeren, kunt u de gemakkelijkste manier om het product te starten vinden in de <a href="./QuickStartGuide_en.html">QuickStartGuide</a>.
+<p>
+Als het product niet is geïnstalleerd met behulp van de installatiescripts, vindt u in de rest van deze sectie alternatieve manieren om het product te starten.
+Aangezien Java kan op tal van manieren kan zijn geïnstalleerd en zich op verscheidene plaatsen kan
+bevinden, vragen sommige startmethoden wat extra configuratiewerk.  Als een van de
+onderstaande manieren bij u niet werkt, kunt u het beste een andere proberen. In
+bepaalde gevallen worden er extra richtlijnen gegeven.  Hierbij kan de sectie <a href="#11.0">11.0 Veelgestelde vragen (FAQ)</a> ook nuttig zijn.
+<p>
+Bij gebruik van een binair bestand of script, zoals hieronder beschreven, moet dat
+binaire bestand of script in dezelfde directorystructuur staan als het ZIP-archief.  Voor het gemak kunt u de binaire bestanden of het script ook vanaf uw platform(s)
+verplaatsen/kopiëren naar dezelfde directory als het bestand acsbundle.jar.
+
+
+<h3><a id="7.1"></a>7.1 Het product starten</h3>
+<p>
+Om het product vanuit een bestandsviewer (bijv. Windows Verkenner,
+Mac OS X Finder, etc.) te starten met behulp van een platformspecifiek binair
+bestand, moet u in Start_Programs naar de subdirectory voor uw besturingssysteem
+en uw hardwarearchitectuur gaan.
+<p>
+Zoek het binaire bestand op dat door uw besturingssysteem wordt herkend. Dubbelklik
+op dat bestand om het product te starten.
+U kunt het product ook met behulp van dit binaire bestand starten vanaf een
+Opdrachtaanwijzing, Terminal of Shell.
+<p>
+Als de volgende fout optreedt:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Error loading Java module."<br>
+In dat geval heeft IBM i Access Client Solutions geen Java-installatie kunnen vinden
+op een locatie die werd herkend.  U kunt dan proberen te werken met de methoden in een van de volgende secties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Het product starten - Aanvullende opties</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Het product starten (met een script)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Het product starten (via de opdrachtregel)</a><br>
+<p>
+Technische opmerking voor Mac:<br>
+Als u wordt gevraagd om een "Java 6 SE runtime" te installeren, hoeft u niet Java 6 te installeren.  Installeer Java 8 en probeer opnieuw het product te starten.
+Als u acslaunch_mac gebruikt om het product te starten en u nog steeds wordt gevraagd om "Java 6 SE runtime" te installeren, gaat u naar Utilities en opent u een werkstationsessie. Voer de volgende opdrachten uit en probeer opnieuw het product te starten:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Het product starten - Aanvullende opties</h3>
+<p>
+U kunt ook een van de volgende methoden proberen wanneer u gebruik wilt maken van het binaire bestand voor uw platform.  Met deze methoden kunt u vaststellen welke Java Runtime Environment (JRE) er moet worden gebruikt om het product te starten.  Zie de sectie <a href="#7.1.2">7.1.2 Het Java-homepad opzoeken</a> voor informatie over het opzoeken van het Java-homepad op uw werkstation.  Deze extra methoden werken alleen onder Linux- en Windows-platforms:
+<ul>
+<li>Stel de omgevingsvariabele JAVA_HOME in op het Java-homepad (of)
+<li>Geef het Java-homepad op met de optie -vm van de binaire opdracht.  Geef -h in de binaire opdracht op voor aanvullende Help-informatie (of)
+<li>Kopieer de directorystructuur van de Java Runtime Environment (JRE) naar de
+      directory van het binaire bestand dat u probeert te gebruiken.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Het Java-homepad opzoeken</h3>
+<p>
+Als u het product kunt starten met een van de methoden in de sectie:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Het product starten (met een script)</a> (of)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Het product starten (via de opdrachtregel)</a><br>
+kunt u het Java-homepad op uw werkstation vaststellen in de hoofd-GUI van
+IBM i Access Client Solutions.  Ga naar de menubalk en kies<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Help-&gt;Info<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Het pad voor java.home wordt op dit scherm afgebeeld.<br>
+<p>
+De eigenschap java.home bevat de locatie van het Java-homepad voor uw werkstation.  Dit is het pad dat u moet opgeven wanneer u de omgevingsvariabele JAVA_HOME
+instelt of wanneer u de opdracht opgeeft met de optie -vm.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Het Java-homepad opzoeken (in Windows)</h3>
+<p>
+Op Windows-platforms zoekt u naar java.exe.  Het binaire bestand van Java bevindt zich
+gewoonlijk in een subdirectory bin of jre/bin onder het Java-homepad.  Het Java-homepad kan worden gebruikt wanneer u de
+omgevingsvariabele JAVA_HOME instelt of wanneer u de opdracht opgeeft met de optie
+-vm.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Het Java-homepad opzoeken (in Linux)</h3>
+<p>
+In Linux kunt u gebruikmaken van de opdracht "which":<br>
+<pre>
+    which java
+</pre>
+Hierdoor krijgt u een pad naar de Java-opdracht of een symbolische koppeling daarvoor.
+<p>
+Los eventuele symbolische links op totdat u uiteindelijk bij het binaire bestand
+voor de Java-opdracht bent.  U kunt symbolische koppelingen omzetten met behulp van de opdracht ls en de optie -l:<br>
+<pre>
+    ls -l &lt;bestand&gt;
+</pre>
+Het binaire bestand van Java bevindt zich
+gewoonlijk in een subdirectory bin of jre/bin onder het Java-homepad.  Het Java-homepad kan worden gebruikt wanneer u de
+omgevingsvariabele JAVA_HOME instelt of wanneer u de opdracht opgeeft met de optie
+-vm.
+
+
+
+<h3><a id="7.2"></a>7.2 Het product starten (met een script)</h3>
+<p>
+Vanaf v1r1m5 is de naam van de directory Start_Scripts gewijzigd in Sample_Scripts en bevindt deze zich in de directory Documentation.
+<p>
+De beste manier om het programma te starten is met behulp van een platform-specifieke binair bestand dat beschikbaar is in Start_Programs. De scripts in Sample_Scripts moeten alleen worden gebruikt als de platform-specifieke binaire bestanden niet werken.
+<p>
+Om het product met behulp van een van de geleverde scripts vanuit een browser van het bestandssysteem (bijvoorbeeld Windows Verkenner, Mac OS X Finder, etc) te starten, zoekt u het script in de subdirectory Sample_Scripts die past bij uw besturingssysteem.
+<p>
+Bij de meeste besturingssystemen, behalve Windows, is perl standaard beschikbaar.  In de directory Sample_Scripts/Linux_Mac_Other staat er een perl-script (met drie
+verschillende extensies) waarmee het product kan worden gestart op elk platform
+waarop perl beschikbaar is.  Selecteer het bestand met een extensie die door uw
+besturingssysteem wordt herkend als een perl-script.
+<p>
+Onder Windows is JScript standaard beschikbaar.  In de directory Sample_Script/Windows
+staat een JScript waarmee het product onder Windows kan worden gestart.
+<p>
+Zoek het script voor uw besturingssysteem op vanuit een platform-specifieke browser
+voor uw bestandssysteem (bijv. Windows Verkenner, Mac OS X Finder, etc.).  Dubbelklik
+er vervolgens op om het product te starten.
+U kunt het product ook met behulp van
+dit script starten vanaf een Opdrachtaanwijzing, Terminal of Shell.
+
+
+
+<h3><a id="7.3"></a>7.3 Het product starten (vanaf de opdrachtregel)</h3>
+<p>
+U kunt het product ook starten vanaf een opdrachtregel waarmee u een opdracht kunt opgeven (opdrachtaanwijzing, werkstation, shell, etc.)<br>
+<pre>
+    java -Xmx1024m -jar &lt;pad&gt;/acsbundle.jar
+</pre>
+waarbij &lt;path&gt; de locatie is van het uitvoerbare JAR-bestand van het product<br>
+<br>
+Bijvoorbeeld:<br>
+<pre>
+    java -Xmx1024m -jar V:/een_locatie/acsbundle.jar
+</pre>
+of
+<pre>
+    &lt;java_pad&gt;java -jar V:/een_locatie/acsbundle.jar
+</pre>
+waarbij &lt;java_pad&gt; de locatie is van de Java-opdracht voor JDK 6.0 of hoger.
+<p>
+In de sectie <a href="#7.1.2">7.1.2 Het Java-homepad opzoeken</a> wordt uitgelegd hoe u het volledige pad
+van de Java-opdracht kunt opzoeken.
+<p>
+U kunt de programma's en scripts ook vanaf de opdrachtregel
+aanroepen. Bijvoorbeeld:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Technische opmerking:<br>
+Op de meeste platforms wordt voor de heapruimte van de Java Virtual Machine standaard een
+maximumgrootte ingesteld die te klein is om binnen IBM i Access Client Solutions
+meerdere functies te kunnen gebruiken.  Een maximum heapgrootte van één gigabyte (-Xmx1024m)
+wordt aangeraden als minimum.  Geeft u een waarde op die kleiner is dan één gigabyte
+of gebruikt u de standaard heapgrootte, dan kan er een OutOfMemoryException optreden.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Configuratie</h3>
+<p>
+Voeg een systeemconfiguratie toe voor elk IBM i-systeem dat u wilt gebruiken of beheren.  Als u een systeemconfiguratie wilt toevoegen of wijzigen, kiest u
+Systeemconfiguraties uit de Beheertaken. Vervolgens selecteert u Nieuw.  Op het
+tabblad Algemeen geeft u de systeemnaam op.  Om aan de slag te gaan en om algemene
+taken uit te voeren, is de systeemnaam het enig dat nodig is.
+<p>
+Als u klaar bent, klikt u op OK om de opgegeven informatie voor dit systeem op te
+slaan, of selecteert u Opslaan/Nieuw als u nog meer systemen hebt die u aan de
+configuratie wilt toevoegen.
+<p>
+Met de tabbladen Algemeen, Verbinding en Console kunt u nieuwe systemen aan uw
+configuratie toevoegen of bestaande configuraties bijwerken.
+<p>
+Voor consoletaken is er extra configuratie vereist.  Consoleconfiguraties worden
+automatisch gekoppeld aan de systeemnaam die u hebt ingevoerd op het tabblad
+Algemeen.
+Om de consoleconfiguratie voor een systeem op te geven, kiest u
+Systeemconfiguraties uit de Beheertaken.  Selecteer Nieuw of Bewerken.  Ga vervolgens
+naar het tabblad Console.
+Voor de taak 5250-console is er een geconfigureerde LAN- of HMC-console vereist. Als u niet beschikt over een geconfigureerde LAN- of HMC-console, raadpleegt u sectie <a href="#9.9">9.9 Consoleverbinding met IBM i tot stand brengen</a>.
+<p>
+Voor de taak Hardware Management Interface is er een geconfigureerde hardware-
+managementinterface vereist.  U kunt maximaal twee configuraties voor hardware-
+managementinterfaces opgeven.
+<p>
+Als u klaar bent, kiest u Sluiten op het scherm Systeemconfiguraties.
+<p>
+In de vervolgkeuzelijst op het hoofdscherm van IBM i Access Client Solutions
+selecteert u een systeem.  Voor alle consoletaken wordt het geselecteerde systeem
+(dat op het tabblad Algemeen is ingevoerd) automatisch gekoppeld aan de
+consoleconfiguratie (die is ingevoerd op het tabblad Console).
+<p>
+U kunt nu een taak voor het geselecteerde systeem kiezen.  Kiest u een consoletaak
+waarvoor er op het tabblad Consoleconfiguratie geen overeenkomstige informatie is
+ingevoerd, verschijnt er een foutbericht.
+
+
+
+<h3><a id="8.1"></a>8.1 Configuratielocatie</h3>
+<p>
+Standaard heeft elke gebruiker een eigen, unieke locatie voor zijn of haar
+configuratie. De hoofddirectory (root) voor de configuratie is afhankelijk van het
+platform.  De configuratiedirectory's worden gemaakt wanneer het product voor het
+eerst wordt opgestart.  De configuratiedirectory opzoeken:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Start het product (zie de sectie <a href="#7.0">7.0 Het product starten)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Bewerken-&gt;Voorkeuren<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Selecteer het tabblad Lokale instellingen<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Hoofddirectory van configuratie<br>
+<p>
+Zo lang het product actief is, kan de locatie van de configuratie niet worden
+gewijzigd.  Het wijzigen van de locatie van de configuratie wordt beschreven in sectie <a href="#9.3">9.3 Configuratielocatie wijzigen</a>
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Geavanceerde onderwerpen</h3>
+<h3><a id="9.1"></a>9.1 Meer opdrachtregelopties</h3>
+<p>
+Veel van de functies die beschikbaar zijn in de hoofdinterface, zijn ook beschikbaar
+op de opdrachtregel.  Deze functies kunt u oproepen door de gewenste parameters op te geven voor de opdrachtregelopties die worden aangegeven in:<br>
+    Sectie <a href="#7.3">7.3 Het product starten (via de opdrachtregel)</a>
+<p>
+Bijvoorbeeld:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+In de volgende secties worden alleen de extra parameters besproken:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file=&lt;bestandsnaam&gt;]
+    &lt;bestandsnaam&gt; is de naam van het bestand dat moet worden gemaakt
+</pre>
+<p>
+Hiermee wordt de huidige configuratie opgeslagen in het opgegeven bestand.
+Het
+resulterende bestand kan worden gebruikt als invoer voor de opdrachtregeloptie
+Restore. Dat kan op hetzelfde werkstation of op een ander werkstation (ongeacht het
+besturingssysteem).
+<p>
+De locatie van de configuratie die moet worden opgeslagen, wordt bepaald door de
+eigenschap:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...die u kunt vinden in het bestand AcsConfig.properties.
+<p>
+Deze functie is gelijk aan Bestand -&gt; Configuratie exporteren in de hoofdinterface.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Terugzetten</h3>
+<pre>
+/PLUGIN=restore /file=&lt;bestandsnaam&gt;
+    &lt;bestandsnaam&gt; is de locatie van het bestand dat is gemaakt met Backup
+</pre>
+Hiermee wordt de configuratie die is opgeslagen in het opgegeven bestand, teruggezet. De actieve configuratie gaat daarbij verloren, tenzij die is opgeslagen.
+<p>
+De locatie van de configuratie die moet worden teruggezet, wordt bepaald door de
+eigenschap:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...die u kunt vinden in het bestand AcsConfig.properties.
+<p>
+Deze functie is gelijk aan Bestand -&gt; Configuratie importeren in de hoofdinterface.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;systeem&gt;
+</pre>
+Hiermee wordt de certificaatgever (certificate authority, CA) gedownload vanaf het
+opgegeven IBM i-systeem en wordt deze opgeslagen in de lokale truststore van de
+gebruiker. Dit is verplicht voor serververificatie met SSL.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST     - de geconfigureerde systemen opsommen met hun verbindingsopties
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;systeem&gt; [/ipaddr=&lt;frequentie&gt;] [/userid=&lt;gebruikers-ID&gt;]
+                                 [/ssl=&lt;switch&gt;]
+                                 [/5250path=&lt;pad&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - naam van het systeem
+    /ipaddr     - als er een verbinding wordt aangevraagd, bepaalt deze waarde of
+                  het IP-adres al dan niet moet worden opgezocht. Geldige frequenties
+                  zijn:
+                      ALWAYS - IP-adres opzoeken voor elke verbinding
+                      HOURLY, DAILY, WEEKLY - IP-adres opzoeken als de hoeveelheid
+                          tijd na de laatste zoekopdracht is verstreken
+                      IP-adres - als een IP-adres is opgegeven, wordt uitgegaan
+                          van een opzoekfrequentie van NEVER
+    /userid     - het gebruikers-ID voor een gebruiker
+                  kan ook worden ingesteld op de volgende waarden:
+                      *SHARE        - vraagt eenmalig om legitimatiegegevens die
+                                      gemeenschappelijk wordt gebruikt door systemen
+                                      die gebruikmaken van deze optie
+                      *PROMPTALWAYS - er verschijnt minimaal één aanwijzing voor elke verbinding
+                      *KERBEROS     - Aanmelden met naam Kerberos-eigenaar; geen aanmeldingsscherm
+    /ssl        - met switchwaarde 0 schakelt u de SSL-beveiliging uit, met de waarde 1 schakelt u deze in
+    /5250path   - pad naar 5250-emulatieprofielen
+                  De optie /5250path kan ingesteld worden met Bestand-&gt;Directory wijzigen... van
+                  5250-sessiebeheer
+     /del verwijdert de bestaande configuratie
+    /r   vervangt de bestaande configuratie
+</pre>
+Hiermee kunnen diverse configuratieopties worden ingesteld vanaf de opdrachtregel.
+Deze opties kunnen ook worden ingesteld vanuit de hoofdinterface, via
+Systeemconfiguraties.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dumps</h3>
+<pre>
+/PLUGIN=dump  [/&lt;opties&gt;]
+</pre>
+Hiermee wordt van alle actieve processen binnen het product gevraagd dat ze hun
+threads dumpen.  Deze informatie wordt door IBM Service gebruikt voor het bieden van
+ondersteuning bij problemen.
+<p>
+De logboeken die worden gegenereerd, kunnen in de hoofdinterface worden benaderd met:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Bewerken-&gt;Voorkeuren<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Tabblad Lokale instellingen<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Directory Dumps<br>
+<p>
+Als er geen opties opgegeven zijn, is deze functie gelijkwaardig met
+de volgende functie in de hoofd-GUI:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Tools-&gt;Servicelogboeken genereren
+<p>
+Geldige opties zijn:
+<pre>
+    /heapdump - voert het bovenstaande uit, samen met een dump van de JVM-heap
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Hiermee worden de bestaande logboeken en thread-dumps ingepakt in een ZIP-bestand
+dat bij het aanvragen van service naar IBM kan worden gestuurd.
+<p>
+Het resulterende ZIP-bestand vindt u in de hoofd-interface met:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Bewerken - Voorkeuren<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Tabblad Lokale instellingen<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Servicedirectory<br>
+
+Deze functie is gelijk aan Tools-&gt;Servicelogboeken Inpakken in de hoofdinterface.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Logboek</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;niveau&gt;
+                &lt;niveau&gt; staat voor een van de volgende ondersteunde logboekniveaus:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Met deze plugin kan de gebruiker het niveau van logboekregistratie instellen vanaf
+de opdrachtregel
+<p>
+Het logboekniveau kan ook in de hoofd-interface worden ingesteld met behulp van:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Bewerken-&gt;Voorkeuren<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Algemeen (tabblad)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Logboekniveau<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Aanmelden</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;system&gt; [/USERID=&lt;gebruikers-ID&gt;] [/PASSWORD=&lt;wachtwoord&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - naam van het systeem
+    /USERID   - gebruikers-ID
+    /PASSWORD - wachtwoord behorend bij het gebruikers-ID
+    /AUTH     - probeert verbinding met het systeem te maken met de opgegeven legitimatiegegevens
+                en plaatst ze alleen in caches bij een geslaagde poging
+    /C        - wist de cache
+    /GUI      - of een grafische gebruikersinterface al dan niet kan worden gebruikt
+</pre>
+Met deze opdracht worden het gebruikers-ID en het wachtwoord opgeslagen in de cache,
+zodat er niet meer om een wachtwoord wordt gevraagd.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Hiermee wordt hetzelfde GUI-scherm opgeroepen als met Bewerken-&gt;Voorkeuren in de
+hoofdinterface.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;opties&gt;]
+
+Geldige opties zijn:
+    /killdaemon     - daemonthreads beëindigen.
+                      Is gelijk aan Tools-&gt;Reset voor onderhoud in de hoofd-interface
+    /clearpwcaches  - alle in cache aanwezige wachtwoorden wissen
+    /clearjarcache  - de JAR-cache van het product leegmaken
+    /clearlogs      - de logboekdirectory wissen op het tabblad Bewerken-&gt;
+                      Voorkeuren - Lokale instellingen in de hoofdinterface
+    /cleardumps     - de dumpdirectory wissen op het tabblad Bewerken-&gt;
+                      Voorkeuren - Lokale instellingen in de hoofdinterface
+    /clearsvcdir    - de servicedirectory wissen op het tabblad Bewerken-&gt;
+                      Voorkeuren - Lokale instellingen in de hoofdinterface
+    /clearsettings  - alle instellingen voor de huidige gebruiker wissen
+</pre>
+Als er geen opties zijn opgegeven, wordt er geen actie uitgevoerd.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Pingen</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;systeem&gt; [&lt;/opties&gt;]
+    Mogelijke opties zijn:
+        /SSL=&lt;1|0&gt;        SSL in- of uitschakelen
+        /ACCEPTALLCERTS=&lt;1|0&gt; Geeft aan of alle SSL autoumatisch moet
+                          worden toegevoegd aan de betrouwbare set (bij gebruik van SSL).
+        /SERVERAUTH=&lt;1|0&gt; SSL-serververificatie aan- of uitzetten (standaardwaarde is
+                          uit). Deze optie wordt genegeerd, behalve voor het testen van SSL.
+        /GUI=&lt;1|0&gt;        GUI-venster in- of uitschakelen (standaard: uit indien gestart
+                          vanaf opdrachtregel)
+        /PORTS=&lt;poort1,poort2&gt; Een door komma's gescheiden lijst van te testen poorten. Dit kunnen
+                getallen of servicenamen zijn (bijv. /PORTS=as-signon,as-sts). Als dit niet
+                wordt opgegeven, wordt de standaardset poorten getest.
+                Als .CONSOLE wordt opgegeven, wordt
+                          er een lijst van console-specifieke poorten gecontroleerd.
+
+        /TIMEOUT=&lt;seconden&gt;   Geef een timeoutwaarde in seconden op.
+</pre>
+Deze plugin controleert de connectiviteit met IBM i door een verbinding met de
+juiste poort te openen.  Bij het controleren van een SSL-verbinding wordt er
+geprobeerd een SSL-handshake uit te voeren.
+Als deze plugin wordt gestart vanuit de
+hoofdinterface of met de parameter /GUI=1, wordt er een venster afgebeeld.  Wordt
+deze plugin vanaf de opdrachtregel gestart zonder de parameter /GUI=1, dan wordt de
+uitvoer naar de console gestuurd.
+<p>
+Standaard worden de volgende services gecontroleerd:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central, as-rmtcmd, as-database, as-dtaq, as-file, as-netprt, drda,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+Deze functie kunt u in de hoofdinterface starten met:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Systeemconfiguraties<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;selecteer een systeem en kies Bewerken<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Algemeen (tabblad)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Verbinding controleren<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Met deze plugin wordt de GUI van 5250-sessiebeheer gestart.
+<p>
+Deze functie is gelijk aan 5250-sessiebeheer in de hoofdinterface.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;systeem&gt; [/&lt;opties&gt;]
+
+Met deze plugin wordt er een 5250-emulator voor het opgegeven systeem gestart.
+Deze functie is gelijk aan 5250-emulator in de hoofdinterface.
+
+Geldige opties zijn:
+    /id=&lt;A-Z&gt;                    - verkort sessie-ID
+    /name=&lt;naam&gt;                 - naam van de sessie
+    /wsid=&lt;ID&gt;                   - werkstation-ID
+    /wide=&lt;1|0|true|false&gt;       - een breder scherm gebruiken (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - het volledige scherm gebruiken
+    /nosave=&lt;1|0|true|false&gt;     - de instellingen niet opslaan bij afsluiten
+    /prompt=&lt;1|0|true|false&gt;     - het configuratievenster geforceerd afbeelden
+    /port=&lt;poort&gt;                - poortnummer
+    /ssl=&lt;1|0|true|false&gt;        - verbinding maken via beveiligde sockets
+    /sso=&lt;1|0|true|false&gt;        - het aanmeldingsscherm onzeilen
+    /kerberos                          - werken met kerberos
+    /width=&lt;breedte&gt;             - beginbreedte van het emulatorvenster
+    /height=&lt;hoogte&gt;             - beginhoogte van het emulatorvenster
+    /xpos=&lt;xpos&gt;                 - aanvankelijke x-coördinaat van de linkerbovenhoek
+                                   van het emulatorvenster
+    /ypos=&lt;ypos&gt;                 - aanvankelijke y-coördinaat van de linkerbovenhoek
+                                   van het emulatorvenster
+    /watermark                   - de systeemnaam als een watermerk afbeelden op het scherm
+    /watermark=&lt;tekst&gt;           - ingevoerde tekst als een watermerk afbeelden op het scherm
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Met deze plugin wordt de hoofdinterface van Gegevensoverdracht gestart.
+
+Deze functie is gelijk aan Gegevensoverdracht in de hoofdinterface.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Downloaden</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;gebruikers-ID&gt;] &lt;bestandsnaam&gt; [&lt;bestandsnaam&gt; &lt;bestandsnaam&gt; ...]
+
+    /userid     - gebruikers-ID waarmee verbinding wordt gemaakt met het doelsysteem
+    &lt;filename&gt;- bestand met de extensie .dtfx dat is gemaakt met een eerdere
+                download in Gegevensoverdracht.
+</pre>
+Met deze plugin kan de gebruiker een eerder opgeslagen download van
+Gegevensoverdracht uitvoeren.
+<p>
+Gegevensoverdracht is ook beschikbaar in de hoofdinterface.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Uploaden</h3>
+<pre>
+/PLUGIN=upload [/userid=&lt;gebruikers-ID&gt;] &lt;bestandsnaam&gt; [&lt;bestandsnaam&gt; &lt;bestandsnaam&gt; ...]
+
+    /userid     - gebruikers-ID waarmee verbinding wordt gemaakt met het doelsysteem
+    &lt;filename&gt;- bestand met de extensie .dttx dat is gemaakt met een eerdere
+                upload in Gegevensoverdracht.
+</pre>
+Met deze plugin kan de gebruiker een eerder opgeslagen upload van Gegevensoverdracht
+uitvoeren.
+<p>
+Gegevensoverdracht is ook beschikbaar in de hoofdinterface.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;systeem&gt;
+                          [/userid=&lt;gebruikers-ID&gt;]
+                          {/hostfile=&lt;bibliotheek/bestandsnaam&gt; | /sql="instructie"}
+                          {/clientfile=&lt;pad&gt;&lt;bestandsnaam&gt;.&lt;extensie&gt; | /display}
+
+    /userid     - gebruikers-ID waarmee verbinding wordt gemaakt met het doelsysteem
+    /hostfile   - bronbibliotheek en bestand op het IBM i-systeem voor de download
+                  bijv. /hostfile=QIWS/QCUSTCDT
+    /sql        - geef een SQL-instructie op
+                  bijv. /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - Locatie van doelbestand voor de download.
+                  De indeling van dit bestand wordt bepaald door de opgegeven
+                  extensie (bijvoorbeeld .csv .ods .xlsx .xlsx)
+                  Als de bestandsextensie niet is opgegeven of van een niet-ondersteund
+                  type is, worden de gegevens ingedeeld als een .csv-bestand
+    /display    - uitvoer wegschrijven naar het werkstation
+</pre>
+Met deze plugin kan de gebruiker vanaf de opdrachtregel een eenvoudige download
+van een volledig bestand uitvoeren.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;systeem&gt;
+</pre>
+Met deze plugin wordt er een 5250-console voor het opgegeven systeem gestart.
+<p>
+Deze functie is gelijk aan de 5250-console in de hoofdinterface.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;systeem&gt;
+</pre>
+Met deze plugin wordt er een virtueel bedieningspaneel voor het opgegeven
+systeem gestart.
+<p>
+Deze functie is gelijk aan Virtueel bedieningspaneel in de hoofdinterface.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;systeem&gt;
+</pre>
+Met deze plugin wordt er een browser naar IBM Navigator for i gestart met
+behulp van het opgegeven systeem en poort 2001.
+<p>
+Deze functie is gelijk aan Navigator for i in de hoofdinterface.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;systeem&gt;
+</pre>
+Deze plugin beeldt de grafische gebruikersinterface voor printeruitvoer af voor
+het bekijken en downloaden van spoolbestanden van de IBM i.
+<p>
+Deze functie is gelijk aan Printeruitvoer in de hoofdinterface.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Deze plugin beeldt het hulpprogramma Sleutelbeheer af.
+<p>
+Deze functie is gelijk aan Tools-&gt;Sleutelbeheer in de hoofdinterface.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;systeem&gt;
+                  {/CMD="&lt;CL-opdracht&gt;" | file=&lt;bestandsnaam&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;CL-opdracht&gt;"  - een opdracht om uit te voeren. Gebruik aanhalingstekens
+                           om te voorkomen dat de opdracht vanwege spaties uit elkaar valt.
+    /file=&lt;bestandsnaam&gt;  - geef een invoerbestand met meerdere opdrachten op. Opdrachten
+                           moeten één per regel en zonder aanhalingstekens zijn gedefinieerd.
+    /noprompt=&lt;1|0&gt;      - bij het opgeven van een invoerbestand de resultaten en
+                           eventuele aanwijzingen negeren voordat wordt doorgegaan.
+</pre>
+Deze plugin verzendt een of meer CL-opdrachten naar het opgegeven systeem.
+<p>
+Deze functie kan alleen worden uitgevoerd vanaf de opdrachtregel.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;systeem,systeem,systeem,...&gt;
+</pre>
+Met deze plugin kan het wachtwoord op de opgegeven systemen worden gewijzigd.  De gebruiker wordt om diens gebruikers-ID en oude en nieuwe wachtwoord gevraagd.
+<p>
+Deze functie kan ook in de hoofdgebruikersinterface worden gebruikt, namelijk
+door eerst Bewerken-&gt;Voorkeuren te kiezen en vervolgens de tab Wachtwoorden.
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;optie&gt; /SYSTEM=&lt;systeem&gt;
+
+&lt;systeem&gt; kan worden ingesteld op de naam van één systeem, of op *ALL om alle systemen aan te geven.
+
+Geldige opties zijn:
+    /IMPORT - Eén (of alle) systeemconfiguratie(s) vanuit de verouderde Windows-
+              configuratie kopiëren naar IBM i Access Client Solutions.
+    /EXPORT - Eén (of alle) systeemconfiguratie(s) naar de verouderde Windows-
+              configuratie kopiëren vanuit IBM i Access Client Solutions.
+    /DELETE - Eén (of alle) systeemconfiguratie(s) wissen uit de verouderde
+              Windows-configuratie.
+</pre>
+Deze plugin biedt de mogelijkheid om systeemconfiguraties heen en weer te kopiëren
+tussen IBM i Access Client Solutions en de verouderde Windows-configuratie die wordt
+ondersteund door IBM i Access for Windows.
+<p>
+Deze functie kan ook in de
+hoofdgebruikersinterface worden gebruikt, namelijk door Bestand-&gt;Verbindingen
+kopiëren te kiezen.
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Opmerking: Deze plugin is alleen beschikbaar voor gebruikers met root- of beheerdersmachtiging.
+<pre>
+/PLUGIN=restrict /&lt;opties&gt;
+
+ Geldige opties zijn:
+     /restrict=&lt;func1,func2,func3&gt;   Hiermee worden de aangegeven functies beperkt
+                                     op het werkstation.
+     /unrestrict=&lt;func1,func2,func3&gt; Hiermee worden de aangegeven functies toegestaan
+                                     op het werkstation.
+     /list                           Geeft aan of functies zijn toegestaan of
+                                     beperkt op dit werkstation.
+     /export=&lt;bestand&gt;               Beperkingen exporteren naar het genoemde bestand,
+                                     met een bestandsextensie van .acsr.
+     /import=&lt;bestand&gt;.acsr          Beperkingen importeren uit een bestand
+                                     met een bestandsextensie van .acsr.
+     /exportreg=&lt;bestand&gt;            Een Windows-registerbestand (.reg) exporteren.
+
+</pre>
+<p>Deze plugin geeft iedereen met bevoegdheden van beheerder of root de mogelijkheid om bepaalde functies voor alle gebruikers op het huidige werkstation te beperken.  <pre>
+   Functie            Beschrijving
+    cfg             Systeemconfiguraties
+    sm              5250-sessiebeheer
+    5250            5250-emulator
+    vcp             Virtueel bedieningspaneel
+    console         5250-console
+    consoleprobe    Zoeken naar consoleconfiguraties in het lokale netwerk
+    hmcprobe        Een HMC doorzoeken op partities
+    hmi1            Hardwarebeheerinterface 1
+    hmi2            Hardwarebeheerinterface 2
+    keyman          Beheer van SSL/TLS-certificaten
+    dtgui           Grafische gebruikersinterface voor gegevensoverdracht
+    upload          Batch-uploads voor gegevensoverdracht
+    download        Batch-downloads voor gegevensoverdracht
+    cldownload      Batch-downloads voor gegevensoverdracht
+    l1c             IBM Navigator for i (Level 1-console)
+    rmtcmd          Opdracht op afstand (beschikbaar vanaf de opdrachtregel)
+    splf            Printeruitvoer (spoolbestanden)
+    ifs             Integrated File System
+    rss             SQL-scripts uitvoeren
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+    checkupdates    Controleren op beschikbare uppdates
+</pre>
+<p>Functies kunnen ook worden uitgesloten met behulp van groepstrefwoorden:
+<pre>
+   Groep              Functies
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+De mogelijkheid tot het beperken van functies is ook vanuit de hoofd-GUI beschikbaar voor een beheerder of een gebruiker met machtiging als rootgebruiker.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Bewerken-&gt;Voorkeuren<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Beperkingen (tabblad)<br>
+
+<p>
+Voor een eenvoudige manier om functies op meerdere werkstations te beperken, zie sectie <a href="#9.5">9.5 Aangepaste pakketten</a>.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Geeft aan welke functies momenteel beperkt worden op dit werkstation
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;bestandstype&gt; &lt;bestandstype&gt; ...] [/c]
+
+    &lt;bestandstype&gt;  - geldige bestandstypen zijn:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - de bestandskoppeling wissen voor de opgegeven bestandstypen
+</pre>
+Onder Windows worden hiermee de bestandskoppelingen ingesteld voor bestanden van het
+type .dttx, .dtfx, .hod, .bchx, .ws en .bch.  Op een niet-Windows platform wordt
+een foutbericht afgebeeld.
+<p>
+Deze functie is gelijk aan Tools-&gt;Bestandskoppelingen in de hoofdinterface.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;gebruikers-ID&gt;] &lt;bestandsnaam&gt; [&lt;bestandsnaam&gt; &lt;bestandsnaam&gt; ...]
+
+    /userid     - gebruikers-ID waarmee verbinding wordt gemaakt met het doelsysteem
+    &lt;bestandsnaam&gt;- bestand met de extensie .dtfx of .dttx, dat is gemaakt voor
+                een eerdere download of upload met behulp van Gegevensoverdracht.
+                Er kunnen meerdere bestanden worden opgegeven met of zonder dit sleutelwoord.
+</pre>
+Met deze plugin kan de gebruiker een eerder opgeslagen opdracht van
+Gegevensoverdracht uitvoeren.
+<p>
+Gegevensoverdracht is ook beschikbaar in de hoofdinterface.
+
+
+
+
+
+
+
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;bestand&gt; ...  /output=&lt;directory&gt;] [/verbose] [/gui]
+
+    /input    - Bestanden die moeten worden gemigreerd. De bestanden moeten 5250-bestanden zijn met
+                extensie .ws, .bch, .kmp, .pmp, of .bar.
+    /output   - locatie waar gemigreerde bestanden worden opgeslagen.
+    /verbose  - resultaten van gemigreerde bestanden afbeelden.
+    /gui      - de gebruikersinterface voor het migreren van 5250-bestanden starten.
+</pre>
+Met de plugin kan de gebruiker bestande migreren uit de emulator van IBM i Access for Windows Personal Communications naar de emulator van IBM i Access Client Solutions.
+Sommige geconverteerde bestanden krijgen een nieuwe bestandsextensie. Zie de sectie
+ <a href="#9.6.2">9.6.2 5250-emulatie migreren</a>.
+
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;systeem&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;bestand&gt;] [/SQL=&lt;bestand&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;bestandsnaam&gt; - Het opgegeven bestand openen
+    /SQL=&lt;bestandsnaam&gt;  - Het opgegeven bestand openen
+    /AUTORUN=&lt;1,0&gt;       - Het script automatisch uitvoeren
+</pre>
+Met deze plugin kan de gebruiker SQL-instructies en CL-opdrachten uitvoeren.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;systeem&gt; /DATABASE=&lt;database&gt; [Opties]
+
+Geldige opties zijn:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - De actie die moet worden uitgevoerd:
+                      De optie LIST kan worden gebruikt met de parameter LISTNAME. Hiermeer wordt het
+                      SQL Performance Center afgebeeld met de opgegeven lijst.
+                      Met de optie ANALYZE wordt de opgegeven prestatiegegevensset geanalyseerd.
+                      Met de optie STATEMENTS worden de instructies voor de SQL-plancache of voor
+                      de opgegeven prestatiegegevensset afgebeeld.
+                      De optie COMPARE vergelijkt de aangegeven set(s) prestatiegegevens.
+    /NAME=&lt;naam&gt;    - De naam van de prestatiegegevensset
+    /TABLE=&lt;naam&gt;   - De naam van de tabel die de prestatiegegevens bevat
+    /SCHEMA=&lt;naam&gt;  - De naam van het schema van de tabel met de prestatiegegevens
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - De lijst die aanvankelijk moet worden afgebeeld in het SQL Performance Center.
+</pre>
+De plugin SQL Performance Center bevat een set tools om u te helpen bij het optimaliseren van de SQL in uw databasetoepassingen:
+<ul>
+<li>Analyseren - Bekijk een overzicht van verzamelde prestatiegegevens dat fungeert als een beginpunt voor een diepere analyse met behulp van drill-down-navigatie.
+<li>Vergelijken - Bekijk een vergelijkingsoverzicht van twee of meer verzamelingen prestatiegegevens, waarna u er twee van kiest voor een diepgaande vergelijking van instructies.
+<li>Instructies afbeelden - Werken met SQL-instructies in de SQL-plancache of in een verzameling van prestatiegegevens.
+<li>Visual Explain - Genereer een grafische weergave van de uitvoering van het instructie-uitvoeringsplan om te zien hoe uw SQL-instructies werken.
+<li>SQL-plancache - Beheer de instellingen van de SQL-plancache van het systeem.
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;systeem&gt;
+</pre>
+IFS (Integrated File System) vormt een interface voor het zoeken en bladeren in het geïntegreerde bestandssysteem van uw IBM i en voor het werken met objecten in het geïntegreerde bestandssysteem. Dat kan op de volgend manieren:
+<ul>
+<li>Objecten kopiëren tussen uw clientsysteem en uw IBM i
+<li>Objecten kopiëren binnen het geïntegreerde bestandssysteem op een IBM i-systeem of naar het geïntegreerde bestandssysteem op een ander IBM i-systeem
+<li>Objecten naar een of meer andere IBM i-systemen versturen
+<li>Nieuwe mapen maken (directory's, bibliotheken en mappen)
+<li>Objecten wissen
+<li>Objecten hernoemen
+<li>De eigenschappen van objecten bekijken
+</ul>
+Zie sectie <a href="#9.12">9.12 Integrated File System (IFS)</a> voor de vereisten en beperkingen die gelden bij gebruik van deze plugin.
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;systeme&gt;
+</pre>
+De plugin vormt een interface voor het beheer van DB2 for i-databases op het IBM i-systeem.
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+De plugin vormt een interface om na te gaan of er updates beschikbaar zijn.
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Bestandskoppelingen</h3>
+<p>
+Bepaalde configuratiebestanden die door IBM i Access Client Solutions worden
+gegenereerd, kunnen vanaf de opdrachtregel worden gebruikt, mits ze worden opgegeven
+als eerste en enige parameter.
+Als deze bestanden met specifieke extensies worden
+opgegeven als eerste parameter, koppelt IBM i Access Client Solutions het bestand
+aan de functie die wordt aangeroepen. Het bestand fungeert dan als invoer voor die
+functie.
+<p>
+De volgende extensies worden ondersteund voor bestandskoppelingen:
+<pre>
+    .dttx   - Upload-opdracht voor Gegevensoverdracht
+    .dtfx   - Download-opdracht voor Gegevensoverdracht
+    .hod    - Sessieprofiel 5250-emulator
+    .bchx   - Emulatieprofiel voor een groep van sessies
+    .ws     - Sessieprofiel 5250-emulator (Personal Communications)
+    .bch    - emulatieprofiel voor groep van sessies (Personal Communications)
+</pre>
+Opdrachtregelvoorbeelden:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - de opgeslagen downloadbewerking uitvoeren
+    acslaunch_xxx dt_upload_file.dttx   - de opgeslagen uploadbewerking uitvoeren
+    acslaunch_xxx system_lp13ut20.hod   - 5250-sessie starten voor het systeem
+</pre>
+hierbij staat acslaunch_xxx voor de opdrachtregelsyntaxis voor het starten van het product. Zie sectie <a href="#7.3">7.3 .3 Het product starten (via de opdrachtregel)</a>.
+<p>
+Dankzij deze ondersteunde bestandskoppelingen op de opdrachtregel kan de gebruiker
+handmatig koppelingen instellen die specifiek zijn voor een bepaald
+besturingssysteem.  Aangezien bestandskoppelingen platform-afhankelijk zijn, hangt de
+te volgen procedure af van het besturingssysteem.
+</p>
+De reden dat het handig kan zijn om bestandskoppelingen voor uw besturingssysteem in
+te stellen, is dat u dan de mogelijkheid hebt om op een bestand (van een van de
+bovengenoemde typen) te dubbelklikken om de desbetreffende functie te starten.
+<p>
+In de volgende secties vindt u enkele voorbeelden van het instellen van
+bestandskoppelingen voor verschillende besturingssystemen.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Bestandskoppelingen (voor Windows)</h3>
+<ol>
+<li>Selecteer Tools-&gt;Bestandskoppelingen...
+<li>Selecteer de bestandstypen waarvoor u bestandskoppelingen wilt maken.
+<li>Selecteer OK
+</ol>
+<p>
+Als u nu dubbelklikt op bestanden van dit type, wordt de juiste IBM i Access Client
+Solution-functie gestart.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Wijzigingspictogram (voor Windows-snelkoppeling)</h3>
+<ol>
+<li>Zoek de snelkoppeling op die is gemaakt voor het binaire bestand dat geschikt is voor uw hardwarearchitectuur (acslaunch_win-32.exe OF acslaunch_win-64.exe)
+<li>Klik met de rechtermuisknop en kies Eigenschappen
+<li>Selecteer het tabblad Snelkoppeling
+<li>Klik op de knop Wijzigingspictogram...
+<li>Selecteer het pictogram om te gebruiken voor deze snelkoppeling
+<li>Selecteer OK
+<li>Selecteer OK
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Bureaubladpictogram instellen (voor Linux)</h3>
+<p>
+Volg de stappen in <a href="./QuickStartGuide_en.html">Snel aan de slag</a> voor Linux.  Hiermee wordt de toepassing geïnstalleerd in /opt/ibm/iAccessClientSolutions.  Daarnaast wordt
+/usr/share/applications/IBM i Access Client Solutions.desktop gemaakt
+<p>
+Om een pictogram voor het product te maken op uw bureaublad, kopieert u het bovenstaande .desktop-bestand naar uw bureaubladmap.  Mogelijk moet u de machtigingen voor het bestand op uw bureaublad aanpassen om het uitvoerbaar te maken.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Bestandskoppelingen (voor Linux)</h3>
+<p>
+De stappen die nodig zijn voor het instellen van bestandskoppelingen, zijn afhankelijk van de Linux-distributie en de bureaubladomgeving waarmee wordt gewerkt.  In het algemeen lijkt de procedure sterk op die
+welke hierboven voor Windows is beschreven.
+<ol>
+<li>Zoek een te koppelen bestand met een ondersteunde extensie op (bijv. .hod, .bchx, .dtfx of .dttx)
+<li>Klik met de rechtermuisknop op het bestand. Kijk of er opties of eigenschappen
+   zijn waarmee u een programma aan het bestand kunt koppelen.
+<li>Koppel het bestand en/of de extensie ervan aan het juiste binaire
+   bestand of startscript van IBM i Access Client Solutions.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Bestandskoppelingen (voor Mac)</h3>
+<p>
+Om te kunnen werken met bestandskoppelingen op een Mac, moet het bestandstype zijn gekoppeld aan een toepassing.  Volg de stappen in de <a href="./QuickStartGuide_en.html">QuickStartGuide</a> voor Mac, zodat IBM i Access Client Solutions een geïnstalleerde toepassing is.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Bestandskoppelingen maken (voor Mac)</h3>
+<ol>
+<li>Zoek in Finder een te koppelen bestand met een ondersteunde extensie op (bijv. .hod, .bchx, .dtfx of .dttx)
+<li>Selecteer het bestand en daarna File-&gt;Get Info
+<li>Onder de optie "Open with:" selecteert u Other
+<li>Blader naar de locatie van de toepassing IBM i Access Client Solutions.
+<li>Selecteer de toepassing.
+<li>Selecteer het vakje Always Open With.  Kies Add.
+<li>Ga terug naar "Open with" en selecteer Change All.  Selecteer Continue to any
+   dialog.
+</ol>
+<p>
+Als u nu dubbelklikt op bestanden van dit type, wordt de juiste IBM i Access Client
+Solution-functie gestart.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Pictogram wijzigen (voor Mac)</h3>
+<p>
+Gebruik de toepassing Preview om de map Icons in de productdirectory te vinden
+en vervang het pictogram in Get Info met behulp van Finder.
+<ol>
+<li>In Preview selecteert u File-&gt;Open
+<li>Ga naar de productdirectory Icons
+<li>Selecteer het bestand dat het pictogram bevat en kies Open
+<li>Selecteer Edit-&gt;Select All
+<li>Selecteer Edit-&gt;Copy
+<li>In Finder zoekt u het .hod-, .bchx-, .dtfx- of .dttx-bestand op waarvoor u het pictogram wilt wijzigen.<br>
+   Als het bestand al op het bureaublad staat, klikt u erop om het te selecteren.  Selecteer anders Go-&gt;Go To Folder, voer het pad naar het bestand in en kies Go.<br>
+   Klik op het bestand om het te selecteren.
+<li>File-&gt;Get Info
+<li>Klik op het pictogram bovenaan Get Info
+<li>Edit-&gt;Paste
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Configuratielocatie wijzigen</h3>
+<p>
+Standaard heeft elke gebruiker een eigen, unieke locatie voor zijn of haar
+configuratie. De configuratielocatie kunt u wijzigen door de volgende eigenschap aan te passen:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Deze eigenschap is aanwezig in het bestand AcsConfig.properties.
+<p>
+Bij levering van het product staat het bestand AcsConfig.properties op twee locaties. Het bevindt zich in het bestand acsbundle.jar.  Voor het gemak is het ook opgenomen
+in het ZIP-bestand van het product, en als dit ZIP-bestand wordt uitgepakt, komt het
+in dezelfde directory terecht als het bestand acsbundle.jar.
+<p>
+Bij het opstarten maakt het product alleen gebruik van het eerste bestand
+AcsConfig.properties dat wordt gevonden.  Eerst wordt de directory gecontroleerd waar het
+bestand acsbundle.jar zich bevindt.
+Als AcsConfig.properties niet wordt gevonden in dezelfde directory als acsbundle.jar,
+wordt het bestand AcsConfig.properties in het bestand acsbundle.jar gebruikt.
+<p>
+U kunt ervoor kiezen om een configuratiepad op maat op te slaan in AcsConfig.properties
+in het bestand acsbundle.jar.  In dat geval moet u ervoor zorgen dat het bestand
+AcsConfig.properties niet in de directory met acsbundle.jar staat, anders wordt dát
+bestand gebruikt.
+U hebt hierdoor de flexibiliteit om de configuratielocatie met het bestand
+acsbundle.jar te distribueren, en tegelijkertijd hebt u de keuze om deze te
+negeren.
+<p>
+Er zijn speciale sleutelwoorden beschikbaar die gebruikt kunnen worden bij het
+definiëren van het configuratiepad.  Als de sleutelwoorden in het opgegeven pad
+worden gebruikt, worden ze vervangen door de tekst of het pad dat ze
+definiëren.  Er kan slechts één sleutelwoord worden
+gebruikt in het configuratiepad.  De speciale sleutelwoorden en de bijbehorende betekenissen:<br>
+<pre>
+	{USER} - Het huidige gebruikers-ID. Dit sleutelwoord kan overal in het pad aanwezig zijn.
+</pre>
+<p>
+De volgende sleutelwoorden kunnen alleen aanwezig zijn aan het begin van het opgegeven pad:
+<pre>
+	{PRODUCTDIR} - het pad naar dezelfde directory als voor acsbundle.jar
+	{TEMPDIR}    - het pad naar een platformspecifieke tijdelijke directory
+	{ROOT}       - het pad naar de hoofddirectory van het bestandssysteem
+	{HOME}       - het pad naar de hoofddirectory van de gebruiker
+	{DEFAULT}    - het standaardpad dat het product standaard gebruikt
+</pre>
+<p>
+Technische opmerking:<br>
+Het is niet verstandig om een configuratie door verschillende gebruikers
+gemeenschappelijk te laten gebruiken.
+Voorbeeld: Stel dat X een gedeeld
+netwerkstation is. Dan zou de volgende instelling tot onvoorspelbare resultaten
+leiden:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/gedeeld_netwerkstation/configuratie_directory
+</pre>
+<p>
+De volgende problemen kunnen optreden wanneer meerdere gebruikers met dit configuratiepad werken:<br>
+<ol>
+<li>Onvoorziene resultaten kunnen optreden wanneer meerdere gebruikers gelijktijdig gebruikmaken van de configuratie.
+<li>In dit voorbeeld wordt aangenomen dat voor elke gebruiker schijf X is toegewezen aan dezelfde locatie.
+<li>Het gebruik van een netwerkstation in de configuratie werkt niet vanaf een Linux- of Mac-client.  Het gebruik van de beschikbare trefwoorden,
+   zoals in de onderstaande voorbeelden, werkt voor zowel Windows als Linux
+   en Mac.
+</ol>
+<p>
+Als een bepaald configuratiepad door meerdere gebruikers gemeenschappelijk
+wordt gebruikt, moet het trefwoord {USER} worden gebruikt om botsingen met
+andere gebruikers te voorkomen.  Dit trefwoord wordt vervangen door het
+gebruikers-ID van de huidige gebruiker.
+<p>
+Gebruik bij het instellen van het configuratiepad altijd een schuine streep
+('/') als scheidingsteken, en dus geen schuine streep naar achteren ('\').  Dit
+werkt op alle besturingssystemen, ook op Windows.
+<p>
+Enkele voorbeelden van aanbevolen configuraties:
+<p>
+Voorbeeld 1 - lokale configuratie voor huidige gebruiker (standaard):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+Als AcsBaseDirectory niet is ingesteld, wordt voor de configuratie standaard een
+platform-afhankelijk pad voor de gebruiker gekozen.
+Dit is de standaardinstelling voor IBM i Access Client Solutions.
+<p>
+Voorbeeld 2 - niet-lokale (of lokale) configuratie, uniek voor elke gebruiker:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+Of de configuratie lokaal of niet-lokaal is, wordt bepaald door de locatie van {ROOT}.
+<p>
+Voorbeeld 3 - niet-lokale (of lokale) configuratie, uniek voor elke gebruiker:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+Of de configuratie lokaal of niet-lokaal is, wordt bepaald door de locatie van {PRODUCTDIR}.
+<p>
+Voorbeeld 4 - lokale configuratie op verwisselbare media (zoals een USB-station):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Omdat het pad van het verwisselbare medium per systeem verschilt, wordt de
+configuratie bij deze instelling opgegeven ten opzichte van de locatie van
+de productbestanden.  In dit voorbeeld is het trefwoord {USER} met opzet niet
+opgegeven, zodat de configuratie op het USB-station altijd kan worden gebruikt
+door de eigenaar van dat station, ongeacht het gebruikers-ID.
+<p>
+Technische opmerking:<br>
+Het instellen van de eigenschap com.ibm.iaccess.DataCache=true verkleint de
+grootte van de werkset en zorgt voor een duidelijk verkorting van opstarttijden
+als het JAR-bestand van het product op afstand wordt gebruikt (bijv. met een netwerkshare).
+<pre>
+   com.ibm.iaccess.DataCache=true
+</pre>
+
+
+<h3><a id="9.4"></a>9.4 Overige implementatieopties</h3>
+<p>
+Hier zijn enkele andere implementatie-opties die u kunt overwegen:
+<ul>
+   <li>Implementeer het product op een enkele locatie, waar het toegankelijk is voor meerdere gebruikers.
+   <li>Als u een webserver hebt, kunt u overwegen om Web Start te gebruiken.
+	 Zie http://java.com/en/download/faq/java_webstart.xml
+   <li>Automatisch importeren van de configuratie-instellingen.
+     Zie sectie <a href="#9.4.1">9.4.1</a>
+<li>Implementeer in de native modus op de IBM i. Raadpleeg de sectie <a href="#9.4.2">9.4.2</a>
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Automatisch configuratie-instellingen importeren</h3>
+<p>
+De volgende eigenschappen kunnen in het bestand AcsConfig.properties worden gebruikt
+om automatisch een configuratie in te stellen voor nieuwe gebruikers of voor het
+bijwerken van een configuratie voor bestaande gebruikers:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Dit zijn de vereiste stappen:
+<ol>
+<li>Maak de configuratie die u wilt doorgeven aan een of meer gebruikers.
+<li>Exporteer de configuratie naar een bestand, met behulp van Bestand-&gt;Configuratie exporteren in de hoofdinterface of met behulp van de opdrachtregeloptie de in sectie <a href="#9.1.1">9.1.1 Backup</a>.
+<li>Verplaats het configuratiebestand naar de gewenste locatie.  Er is een aantal verschillende
+   opties die verderop worden beschreven.
+<li>Stel de eigenschap com.ibm.iaccess.autoimport in AcsConfig.properties in op het
+   pad in het configuratiebestand.
+<li>Stel com.ibm.iaccess.autoimport.version in op een geheel getal die de versie van
+   het configuratiebestand vertegenwoordigt.
+</ol>
+<p>
+Dit is hoe het werkt:<br>
+De opgeslagen configuratie waarnaar wordt verwezen door de eigenschap
+com.ibm.iaccess.autoimport wordt automatisch geïmporteerd als de getalwaarde van de eigenschap com.ibm.iaccess.autoimport.version niet overeenkomt met de laatste geïmporteerde waarde.  Zo is er een manier om een initiële configuratie in te
+stellen, updates op een bestaande configuratie aan te brengen en een configuratie
+weer op een ouder niveau te brengen.  De configuratie wordt telkens bijgewerkt
+als de waarde van het gehele getal niet overeenkomt met de laatste versie
+die geïmporteerd is.  Het kan zijn dat een geïmporteerde configuratie de
+configuratie voor een bestaand systeem in de configuratie van een gebruiker
+wijzigt, echter een systeem wordt nooit uit de configuratie van de gebruiker
+gewist.
+<p>
+Het pad voor de eigenschap com.ibm.iaccess.autoimport kan als absoluut pad
+worden opgegeven, als URL of met sleutelwoorden die worden aangegeven in sectie <a href="#9.3">9.3</a>.  Bijvoorbeeld:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://uw.bedrijf.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://uw.bedrijf.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+U beschikt over extra flexibiliteit doordat het configuratiebestand kan worden
+gedistribueerd binnen acsbundle.jar of in dezelfde directory als acsbundle.jar.
+In beide gevallen stelt u com.ibm.iaccess.autoimport in op de naam van het
+bestand, zonder een voorafgaand pad:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+De speciale waarde * is toegestaan voor com.ibm.iaccess.autoimport.version:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Hiermee wordt de configuratie altijd geïmporteerd, ongeacht de aanwezigheid van een eerdere versie.
+
+
+<h3><a id="9.4.2"></a>9.4.2 Implementaties van native IBM i</h3>
+<p>
+Sommige van de opdrachtregelplugins die geen grafische gebruikersinterface nodig hebben, kunnen in de native modus op de IBM i worden gebruikt.
+U kunt bijvoorbeeld met Gegevensoverdracht gegevens rechtstreeks op de IBM i ophalen uit de database naar een spreadsheet zonder dat u de gegevens naar de PC hoeft te downloaden.
+<p>
+Om dit te kunnen doen, kunt u het ziparchief van het product extraheren naar de door u gewenste locatie in het IBM i Integrated File System (IFS).
+Als u het zip-archief van het product bijvoorbeeld hebt geëxtraheerd naar:
+<pre> /home/AccessClientSolutions </pre>
+En u hebt een eerder opgeslagen downloadopdracht van Gegevensoverdracht die aanwezig is op:
+<pre> /some_path/qcustcdt.dtfx </pre>
+Kunt u de volgende opdracht uitvoeren op de IBM i:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Aangepaste pakketten</h3>
+<p>
+IBM i Access Client Solutions biedt systeembeheerders de mogelijkheid om het
+gebruik van bepaalde functies te beperken door de volgende eigenschap in het
+bestand AcsConfig.properties in te stellen:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;functie, functie,...&gt;
+</pre>
+De functies die u hier kunt opgeven:<br>
+<pre>
+
+   Functie            Beschrijving
+    cfg             Systeemconfiguraties
+    sm              5250-sessiebeheer
+    5250            5250-emulator
+    vcp             Virtueel bedieningspaneel
+    console         5250-console
+    consoleprobe    Zoeken naar consoleconfiguraties in het lokale netwerk
+    hmcprobe        Een HMC doorzoeken op partities
+    hmi1            Hardwarebeheerinterface 1
+    hmi2            Hardwarebeheerinterface 2
+    keyman          Beheer van SSL/TLS-certificaten
+    dtgui           Grafische gebruikersinterface voor gegevensoverdracht
+    upload          Batch-uploads voor gegevensoverdracht
+    download        Batch-downloads voor gegevensoverdracht
+    cldownload      Batch-downloads voor gegevensoverdracht
+    l1c             IBM Navigator for i (Level 1-console)
+    rmtcmd          Opdracht op afstand (beschikbaar vanaf de opdrachtregel)
+    splf            Printeruitvoer (spoolbestanden)
+    ifs             Integrated File System
+    db2             Schema's
+    rss             SQL-scripts uitvoeren
+    db2tools        SQL Performance Center
+    sysdbg          IBM i System Debugger
+</pre>
+<p>Functies kunnen ook worden uitgesloten met behulp van groepstrefwoorden:
+<pre>
+
+   Groep              Functies
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+De systeembeheerder kan ervoor kiezen de toegang tot bepaalde functies te
+beperken door wijzigingen aan te brengen in het bestand AcsConfig.properties.  Bij het beperken van de toegang wordt de functie verwijderd uit de hoofd-GUI
+en wordt het gebruik ervan vanaf de opdrachtregel uitgeschakeld.
+<p>
+Een voorbeeld van de manier waarop de toegang tot functies kan worden beperkt,
+is het toevoegen van de volgende regel aan het bestand AcsConfig.properties:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Als de systeembeheerder het bestand AcsConfig.properties binnen acsbundle.jar
+wil bijwerken alvorens het te implementeren voor de gebruikers, is dit een
+voorbeeld van de manier waarop dat kan:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+Zie de sectie <a href="#9.3">9.3 Configuratielocatie wijzigen</a> voor meer informatie
+over de manier waarop IBM i Access Client Solutions bepaalt welk bestand
+AcsConfig.properties er moet worden gebruikt.
+<h3><a id="9.6"></a>9.6 Migreren vanaf IBM i Access for Windows</h3>
+<p>
+IBM i Access Client Solutions-configuratiebestanden zijn niet compatibel met de overeenkomstige functies in IBM i Access for Windows.  IBM i Access Client
+Solutions kent wel een migratiepad voor bepaalde belangrijke items. Een en ander
+wordt in de onderstaande secties besproken.
+
+<h3><a id="9.6.1"></a>9.6.1 Systeemconfiguraties migreren</h3>
+<p>
+De functie Verbindingen kopiëren, die in de hoofdinterface beschikbaar is onder
+Bestand-&gt;Verbindingen kopiëren, biedt een interface voor het kopiëren van systeemconfiguraties tussen IBM i Access Client Solutions en de verouderde Windows-configuratie die wordt
+ondersteund door IBM i Access for Windows.  Meer informatie vindt u in de Help voor het hoofdscherm van
+Verbindingen kopiëren.
+
+De systeemconfiguraties kunnen ook worden gemigreerd vanaf de opdrachtregel.  Voor aanvullende informatie raadpleegt u sectie <a href="#9.1.25">9.1.25 MIGRATE</a>.
+
+<h3><a id="9.6.2"></a>9.6.2 5250-emulatie migreren</h3>
+<p>
+De 5250-emulatiebestanden die door de IBM i Access for Windows Personal
+Communications-emulator worden gebruikt, kunnen worden geconverteerd met behulp
+van 5250-sessiebeheer in IBM i Access Client Solutions. De volgende bestandstypen kunnen worden geconverteerd vanuit Personal Communications:<br>
+<pre>
+   .ws   - emulatorprofiel
+   .bch  - batchbestand emulator
+   .kmp  - bestand voor toetsenbordaanpassing
+   .pmp  - bestanden voor toetsblokken
+   .bar  - bestanden voor menubalk
+</pre>
+De bestanden worden geconverteerd naar:<br>
+<pre>
+   .hod  - emulatorprofiel
+   .bchx - batchbestand emulator
+   .kmp  - bestand voor toetsenbordaanpassing
+   .pmp  - bestanden voor toetsblokken
+   .bar  - bestanden voor menubalk
+</pre>
+De bestandstypen .kmp, .pmp en .bar worden gebruikt in beide producten. De indelingen zijn
+echter niet compatibel. De geconverteerde bestanden worden opgeslagen in een pad dat
+specifiek is voor IBM i Access Client Solutions.
+<p>
+De conversie van deze bestanden kan worden gestart vanuit het menu van Sessiebeheer van  IBM i Access Client door:
+<ul>
+<li> door Bestand-&gt;Importeren te selecteren en vervolgens de Personal Communications-bestanden op te zoeken.
+<li> door het bestand naar het venster van IBM i Access Client Solutions
+Sessiebeheer te slepen.
+</ul>
+... of vanaf de opdrachtregel met behulp van de PM5250-plugin. Zie de sectie <a href="#9.1.30">9.1.30 PM5250</a>.
+
+<p>
+Er is een hulpprogramma voor macroconversie beschikbaar.  Vanuit Sessiebeheer:<br>
+<pre>
+    Tools-&gt;Macro converteren...
+</pre>
+Technische opmerking:<br>
+Het hulpprogramma voor macroconversie kan een PC5250-macro mogelijk niet converteren als de macro een aangepaste macro is die meer bevat dan alleen vastgelegde toetsaanslagen.  
+
+<h3><a id="9.6.3"></a>9.6.3 Opgeslagen opdrachtbestanden van Gegevensoverdracht migreren</h3>
+<p>
+Gegevensoverdracht in IBM i Access Client Solutions biedt een wizard voor het converteren van opgeslagen opdrachtbestanden voor gegevensoverdracht, die zijn gegenereerd door IBM i Access for Windows.
+<p>
+De volgende bestandstypen van IBM i Access for Windows kunnen worden geconverteerd:<br>
+<pre>
+   .dtf - gegevensoverdracht vanaf IBM i
+   .dtt - gegevensoverdracht naar IBM i
+</pre>
+De bestanden worden geconverteerd naar:
+<pre>
+   .dtfx - gegevensoverdracht vanaf IBM i
+   .dttx - gegevensoverdracht naar IBM i
+</pre>
+Met de migratiewizard van Gegevensoverdracht worden geen .fdf-bestanden gemigreerd. Het nieuwe
+bestandstype dat voor IBM i Access Client Solutions vereist is, is .fdfx. Dit type
+kan op twee manieren worden gegenereerd: tijdens het downloaden of met behulp van de
+wizard Bestand maken.
+<p>
+De migratiewizard voor gegevensoverdracht is beschikbaar in het hoofdmenu van
+Gegevensoverdracht, door achtereenvolgens Acties-&gt;Migratie van gegevensoverdracht
+te selecteren.
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+Voor 5250-toepassingen die EHLLAPI gebruiken om toegang te krijgen
+tot de Personal Communications-emulator die bij IBM i Access for Windows is
+geleverd, raadpleegt u het volgende KB-artikel voor informatie over het
+gebruik van EHLLAPI in combinatie met IBM i Access Client Solutions:<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions bevat ondersteuning voor Kerberos.  Om met Kerberos verbinding te maken met een systeem:<br>
+<ol>
+<li>Open Systeemconfiguraties in de hoofdinterface
+<li>Selecteer Nieuw of bewerk een bestaande systeemconfiguratie
+<li>Op het tabblad Verbinding selecteert u<br>
+   "Kerberos-verificatie gebruiken; niet vragen"
+</ol>
+Het opzetten van een Kerberos-omgeving valt buiten het bereik van dit document.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Sleutelbeheer</h3>
+<p>
+Beheer van certificaten voor SSL-verbindingen (Secure Socket Layer) is mogelijk door in
+de hoofdinterface Tools-&gt;Sleutelbeheer te kiezen.  Voor bepaalde taken
+met de sleuteldatabase is het wachtwoord voor de sleutelruimte vereist.
+
+
+<h3><a id="9.8"></a>9.8 Gegevensoverdracht</h3>
+<h3><a id="9.8.1"></a>9.8.1 Ondersteuning van gegevensoverdracht voor Excel- en Calc-spreadsheets</h3>
+<p>
+Naast het ondersteunen van downloads naar een bestand, ondersteunt Gegevensoverdracht ook downloads naar een actief spreadsheet in Microsoft Excel of OpenOffice Calc.  Om te downloaden naar een actief
+spreadsheet, kunt u in het hoofdscherm van Gegevensoverdracht de optie kiezen
+om Uitvoeropties te kiezen.  Standaard is het uitvoerapparaat Bestand.  Als uw platform interactie met spreadsheets van Excel en/of Calc ondersteunt,
+zijn er extra opties voor een Active Excel Spreadsheet en een Active Calc
+Spreadsheet beschikbaar in het menu voor uitvoeropties.
+<p>
+Beperkingen:
+<ul>
+<li>Voor Windows is minimaal versie 3.4.1 van OpenOffice vereist.
+<li>Voor Linux en Mac is minimaal versie 4.2.1 van OpenOffice vereist - en deze moet geïnstalleerd zijn in de standaardlocatie.
+<li>IBM i Access Client Solutions onder Linux of Mac ondersteunt alleen interactie met OpenOffice.<br>
+Onder Windows ondersteunt IBM i Access Client Solutions interactie met ofwel Microsoft Excel, ofwel OpenOffice Calc.
+<li>De bitness van OpenOffice moet overeenkomen met de bitness van IBM i Access Client Solutions.<br>
+Verklaring: OpenOffice is beschikbaar in zowel 32- als 64-bits versies. Beide versies werken op een 64-bits PC.
+Bij interactie met een OpenOffice-spreadsheet, moet de bitness van OpenOffice gelijk zijn aan die van IBM i Access Client Solutions, anders is de functie voor gegevensoverdracht niet in staat om interactief te werken met het spreadsheet.
+De bitness van IBM i Access Client Solutions wordt vastgesteld door de JVM (Java Virtual Machine) op de locatie waar de toepassing actief is.  Als er een verschil in bitness is tussen OpenOfficeen de JVM waarin IBM i Access Client Solutions wordt uitgevoerd, en u
+een actief spreadsheet als uitvoeroptie kiest, wordt er een fout met de strekking "Actief spreadsheet is niet gevonden" afgebeeld.  Als u met een 64-bits PC werkt, kunt u IBM i Access
+Client Solutions starten met het 32-bits of 64-bits binaire startprogramma dat
+hoort bij uw platform.  Om ervoor te zorgen dat de ondersteuning voor actieve
+spreadsheets werkt, moet u IBM i Access Client Solutions starten met behulp van
+het platformspecifieke binaire bestand dat overeenkomt met de bitness van de
+gebruikte OpenOffice-toepassing.
+<br>Omdat Mac alleen een 64-bits JVM ondersteunt, moet u de 64-bits versie van OpenOffice installeren om gebruik te kunnen maken van de actieve spreadsheetondersteuning op een Mac-systeem.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Ondersteuning gegevensoverdracht voor tekenafkapping en numerieke overloop</h3>
+<p>
+Als tijdens een uploadopdracht van Gegevensoverdracht een tekenveld of numeriek veld de grootte overschrijdt die is gedefinieerd voor het veld, wordt de uploadopdracht afgebroken.
+<p>
+Om het afkappen aan het einde voor tekenvelden mogelijk te maken, stelt u de volgende eigenschap in het bestand AcsConfig.properties in:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Om ervoor te zorgen dat numerieke velden kunnen worden ingesteld op hun maximale positieve of negatieve waarde als het opgegeven numeriek veld de gedefinieerde begrenzing overschrijdt, stelt u de volgende eigenschap in het bestand AcsConfig.properties in:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Als deze eigenschappen zijn ingesteld op true, wordt de uploadopdracht voortgezet zonder een indicatie te geven over eventuele afkapping of overloop. Tekenvelden worden afgekapt aan het einde. Numerieke velden worden ingesteld op de maximumwaarde bij overloop en de minimumwaarde bij negatieve overloop.
+<p> 
+Als alternatief kunt u de bovengenoemde eigenschappen net als andere Java-eigenschappen instellen vanaf de opdrachtregel, als volgt:
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Bladnaam gegevensoverdracht</h3>
+<p>
+Tijdens downloads wordt er een bladnaam gegenereerd op basis van de naam van de IBM i-bronbibliotheek en wordt een bestand met
+">Sheet#" eraan toegevoegd, waarbij # door het toepasselijke bladnummer wordt vervangen. Bijvoorbeeld:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+Om het gedeelte met bibliotheek en bestandsnaam van de bladnaam te overschrijven, kunt u de volgende eigenschap opgeven:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=uw_tekenreeks<br>
+Hiermee wordt het volgende gegenereerd:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;uw_tekenreeks>Sheet1
+
+<h3><a id="9.9"></a>9.9 Consoleverbinding met IBM i tot stand brengen</h3>
+<p>
+Voor het uitvoeren van beheerfuncties op de IBM i is een 5250-console nodig.
+IBM i Access Client Solutions ondersteunt configuraties met LAN- en HMC-consoles.
+<p>
+Als u weet wat de hostnaam of het IP-adres is van de service in IBM i of van de HMC-console, kunt u met behulp van de volgende stappen de console-informatie configureren in IBM i Access Client Solutions:<br>
+<ol>
+<li>Start IBM i Access Client Solutions op de PC.
+<li>Klik in het hoofdscherm op Systeemconfiguraties.
+<li>Klik op de knop Nieuw om een nieuwe configuratie op te geven of op Bewerken
+   om een bestaande configuratie te bewerken
+<li>Selecteer het tabblad Console.
+<li>Geef de gewenste informatie op voor uw consoletype.
+</ol>
+<p>
+Voor een IBM i waar nog geen consoleconfiguratie voor aanwezig is (bijv. een
+nieuw systeem dat zojuist aan uw bedrijf geleverd is) wordt er tijdens de IPL
+automatisch een IP-adres voor een consoleverbinding toegewezen in het bereik
+169.254.62.0 - 169.254.62.63. In dit geval kan een consoleverbinding aan de hand van de volgende stappen met
+IBM i Access Client Solutions tot stand worden gebracht:<br>
+<ol>
+<li>Schakel draadloze connectiviteit uit op de PC.  Voor de volgende stappen
+   is een bedrade ethernetpoort benodigd.
+<li>Sluit een ethernetkabel aan tussen uw PC en de T1-poort van de IBM i.
+<li>Start IBM i Access Client Solutions op de PC.
+<li>Klik in het hoofdscherm op Systeemconfiguraties.
+<li>Klik in Systeemconfiguraties op de knop Console zoeken...
+<li>Klik op het scherm IBM i-locatiefunctie op Zoeken.
+<li>Als de IPL-procedure op de IBM i zo ver is gekomen dat er automatisch een
+   IP-adres is toegewezen, wordt het IP-adres in het zoekscherm afgebeeld.
+<li>Klik op het IP-adres om het te selecteren en klik daarna op de Console-knop
+   om verbinding te maken met een 5250-console.
+<li>Er wordt een scherm afgebeeld waarin naar legitimatiegegevens voor
+   Service Tools wordt gevraagd.
+<li>Na het invoeren van geldige legitimatiegegevens wordt er een 5250-console afgebeeld.
+<li>U kunt de console gebruiken voor de eerste installatie- en instellingstaken.
+</ol>
+<p>
+Als u klaar bent om het IBM i-systeem aan uw netwerkinfrastructuur toe te voegen,
+kunt u aanvullende informatie in het IBM InfoCenter raadplegen voor het configureren
+van de LAN-adapter voor Servicetools:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+Zie de sectie "Configuring the service tools server for DST"
+
+<p>
+Voor IBM i-systemen die al een configuratie voor LAN-console hebben en al in uw
+netwerkinfrastructuur zijn opgenomen, kunt u de volgende stappen gebruiken om bestaande consoleconfiguraties te vinden:<br>
+<ol>
+<li>Start IBM i Access Client Solutions op de PC.
+<li>Klik in het hoofdscherm op Systeemconfiguraties.
+<li>Klik in Systeemconfiguraties op de knop Console zoeken...
+<li>Geef in het scherm IBM i-locatiefunctie in het veld Nabij een IP-adres op in
+   het bereik dat u wilt doorzoeken.
+<li>Klik op de knop Zoeken om LAN-consoles in het opgegeven bereik te zoeken.
+<li>Klik op het IP-adres om het te selecteren en klik daarna op de Console-knop
+   om verbinding te maken met een 5250-console.
+<li>Er wordt een scherm afgebeeld waarin naar legitimatiegegevens voor
+   Service Tools wordt gevraagd.
+<li>Na het invoeren van geldige legitimatiegegevens wordt er een 5250-console afgebeeld.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Aanvullende lettertypen</h3>
+<p>
+Aanvullende lettertypen voor 5250-emulatie kunt u toevoegen aan de directory Fonts.
+<p>
+Om alternatieve en/of meerdere locaties in te stelen voor aanvullende lettertypen, stelt u de eigenschap
+com.ibm.iaccess.Fonts in het bestand AcsConfig.properties in.
+<p>
+De standaarddirectory Fonts kunt u wijzigen door de eigenschap com.ibm.iaccess.Fonts in te stellen op een:<br>
+<ol> 
+<li>&lt;pad&gt; van een directory waarin lettertypen aanwezig zijn
+<li>&lt;pad&gt;/&lt;bestandsnaam&gt; van een bepaald lettertypebestand (bijvoorbeeld .ttf)
+<li>URL van een lettertypebestand
+<li>door puntkomma's gescheiden lijst van een van de bovenstaande items
+</ol>
+<p>
+Opmerking:<br>
+Het &lt;pad&gt; kan een absoluut pad zijn of een relatief pad vanaf de locatie van acsbundle.jar. Alleen
+monospaced lettertypen worden herkend door 5250-emulatie.
+<p>
+Voorbeeld 1 (standaard):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+Voorbeeld 2:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 Legitimatiegegevens van een netrc-bestand gebruiken</h3>
+<p>
+Om ervoor te zorgen dat een netrc-bestand (Linux en Mac) of een _netrc bestand (Windows) gebruikt kan worden, gaat u naar de grafische gebruikersinterface van IBM i Access Client Solutions en selecteert u op de menubalk <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Bewerken-&gt;Voorkeuren<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Algemeen (tabblad)<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selecteer het vakje: <b>Netrc-bestand lezen voor aanmeldgegevens</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Klik op de knop Toepassen<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Start IBM i Access Client Solutions opnieuw<br>          
+<p>
+De standaardindeling van een netrc-bestand is:<br>
+<pre>
+     machine &lt;systeem&gt; login &lt;gebruikers-ID&gt; password &lt;wachtwoord&gt;
+</pre>
+<p>
+Het netrc-bestand moet worden opgeslagen in de hoofddirectory van de gebruiker en de systeemnaam en het gebruikers-ID moeten overeenkomen met <b>Systeemconfiguraties</b>. Vanuit IBM i Access Client
+Solutions doet u het volgende:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selecteer Systeemconfiguraties<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selecteer het systeem en kies Bewerken<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Tab Verbindingen<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selecteer <b>Standaardgebruikersnaam gebruiken om één keer te vragen voor elk systeem</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Geef het gebruikers-ID op voor: <b>Standaard gebruikersnaam</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Selecteer OK<br>          
+
+<p>
+Als de systeemnaam en de <b>Standaard gebruikersnaam</b> overeenkomen met de inhoud van het netrc-bestand, wordt er een verbinding met het systeem tot stand gebracht met het wachtwoord in het netrc-bestand zonder de gebruiker te waarschuwen.
+
+<h3><a id="9.12"></a>9.12 Integrated File System (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 en Beveiliging</h3>
+<p>
+Integrated File System Support gebruikt het QFileSvr.400-bestandssysteem om objecten van de ene IBM i-partitie naar de andere te kopiëren of te verzenden. Dit houdt in dat het gebruikersprofiel en wachtwoord op beide partities moet overeenkomen en dat de partities moeten beschikken over dezelfde systeemwaarde voor het wachtwoordniveau (QPWDLVL).
+Als u Kerberos-verificatie gebruikt, moeten op beide partities Network Authentication Service (NAS) en Enterprise Identity Mapping (EIM) geconfigureerd zijn. Raadpleeg voor meer informatie, het onderwerp "Beveiliging en objectmachtiging in het bestandssysteem QFileSvr.400" in het IBM i Knowledge Center.
+<p>
+De verbindingen met andere IBM i-partities die zijn gemaakt door het bestandssysteem QFileSvr.400 zijn niet beveiligd.
+Als er een beveiligde verbinding vereist is voor het kopiëren of verzenden van een IBM i-partitie naar een andere, moet de configuratie voor de partitie worden geconfigureerd voor gebruik van SSL, moet er in de systeemconfiguratie de optie voor gebruik van SSL voor de verbinding met de partitie gekozen worden en moet de volgende eigenschap worden ingesteld in het bestand AcsConfig.properties:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+Als alternatief kunt u de eigenschap net als andere Java-eigenschappen instellen vanaf de opdrachtregel, als volgt:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS-machtiging</h3>
+<p> 
+Ondersteuning van het IFS (Integrated File System) vereist machtigen voor het gebruik van de volgende CL-opdrachten:<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+SAV
+    SETASPGRP
+ </pre>
+<p>
+Als de gebruiker deze CL-opdrachten niet kan gebruiken, werken de opdrachten Kopiëren, Plakken, Verzenden, Wissen en Nieuwe map niet.
+
+<h3><a id="9.12.3"></a>9.12.3 IFS-beperkingen</h3>
+<p>
+Het IFS (Integrated File System) laat geen acties toe voor objecten waarvan het pad begint met /QFileSvr.400, /QNTC of /QOPT. Als het huidige directorypad of een geselecteerd objectpad begint met /QFileSvr.400, /QNTC of /QOPT, worden alle items in het menu Acties uitgeschakeld en wordt er geen voorgrondmenu afgebeeld.
+
+<h3><a id="9.12.4"></a>9.12.4 IFS-en onafhankelijke ASP's</h3>
+<p>
+Het IFS (Integrated File System) laat de acties Kopiëren, Plakken of Verzenden niet toe als het bronobject of het doelpad zich op een onafhankelijke ASP bevindt.
+
+
+<hr><h3><a id="10.0"></a>10.0 Servicediagnose</h3>
+<p>
+Als een probleem optreedt waarvoor u hulp van IBM nodig hebt, kan uw IBM-servicemedewerker u vragen om een of beide van de volgende stappen uit te voeren:
+<p>
+In de hoofdinterface van IBM i Access Client Solutions:<br>
+<ul>
+ <li>selecteer Tools-&gt;Servicelogboeken genereren<br>
+     Hiermee wordt dezelfde functie uitgevoerd als met de opdrachtregeloptie in sectie <a href="#9.1.5">9.1.5 Dumps</a>.  Deze functie moet gewoonlijk onmiddellijk na de storing worden
+     uitgevoerd.  Bij sommige problemen kan de servicemedewerker u vragen deze
+     procedure meermaals uit te voeren.
+ <li>selecteer Tools-&gt;Servicelogboeken inpakken<br>
+     Hiermee wordt dezelfde functie uitgevoerd als met de opdrachtregeloptie in sectie <a href="#9.1.6">9.1.6 Medic</a>.  Met deze functie worden er gegevens over de werkstationomgeving
+     verzameld. De desbetreffende servicelogboeken worden ingepakt in een ZIP-archief
+     dat naar IBM kan worden gestuurd.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Veelgestelde vragen (FAQ)</h3>
+<p>
+<pre>
+V1    Als ik probeer IBM i Access Client Solutions te starten, krijg ik de volgende
+fout:
+             class cannot be loaded: java.lang.UnsupportedClassVersionError
+A1-1  U moet werken met JDK 6.0 of hoger.  Zie sectie <a href="#3.0">3.0 Vereisten</a>
+
+V2    Als ik probeer het product te starten met een van de meegeleverde binaire bestanden of
+      scripts vanuit een shell- of werkstationsessie, krijg ik de volgende fout:
+         Toestemming geweigerd
+A2-1  Controleer in de machtigingen van het bestand of u uitvoeringsmachtiging hebt.
+      Zie de sectie <a href="#6.0">6.0 Bestandsmachtigingen</a>.
+
+V3    Als ik dubbelklik op een van de bijgeleverde bestanden om het product te
+      starten, gebeurt er niks.
+A3-1  Wellicht is Java niet geïnstalleerd. Zie de sectie <a href="#3.0">3.0 Vereisten</a>
+A3-2  Mogelijk hebt u geen uitvoeringsmachtiging voor het bestand waarmee u het product wilt starten
+      Zie de sectie <a href="#6.0">6.0 Bestandsmachtigingen</a>.
+A3-3  Er kunnen problemen aanwezig zijn in uw omgeving. Om te zien welke fouten
+      optreden, kunt u proberen het bestand uit te voeren vanaf de opdrachtregel.
+      Zie sectie <a href="#7.3">7.3 .3 Het product starten (via de opdrachtregel)</a>.
+
+V4    Ik wil het product starten met een van de binaire bestanden, maar het volgende
+      foutbericht wordt afgebeeld: "Error loading Java module."
+A4-1  Het binaire bestand heeft de homedirectory van de Java-installatie niet kunnen
+      vinden.
+      Controleer of Java is geïnstalleerd. Zie de sectie <a href="#3.0">3.0 Vereisten</a>.
+A4-2  Sectie <a href="#7.1.1">7.1.1 Het product starten - Aanvullende opties</a>
+      beschrijft andere methoden om het product te starten met behulp van een binair bestand.
+
+V5    Nadat ik de omgevingsvariabele JAVA_HOME heb ingesteld, werkt het binaire
+      bestand wel om het product te starten vanaf de opdrachtregel, maar niet als ik
+      dubbelklik op het bestand.
+A5-1  Mogelijk is de omgevingsvariabele JAVA_HOME niet zichtbaar vanuit het Bestandsbeheer (file manager)
+      dat u gebruikt wanneer u op het bestand dubbelklikt. Het instellen van omgevingsvariabelen
+      verschilt per besturingssysteem, net als de beschikbaarheid ervan.
+      Probeer de omgevingsvariabele JAVA_HOME in te stellen als systeemomgevingsvariabele
+      voor uw besturingssysteem.  In uw besturingssysteem kunnen systeemomgevingsvariabelen
+      mogelijk worden aangeduid als algemene omgevingsvariabelen.
+      Nadat u de omgevingsvariabele JAVA_HOME hebt ingesteld, sluit u Bestandsbeheer, opent u
+      het opnieuw en probeert u nogmaals of het werkt als u dubbelklikt op het
+      binaire bestand.
+
+V6    Als ik dubbelklik op een van de bijgeleverde bestanden om het product te
+      starten, wordt het bestand geopend in een teksteditor.
+A6-1  Controleer of u een script gebruikt met een extensie die door uw
+      besturingssysteem wordt herkend.
+A6-2  Probeer een van de andere scripts.
+A6-3  Verander het programma waarmee het bestand wordt geopend.
+A6-4  Controleer in de machtigingen van het bestand of u uitvoeringsmachtiging hebt.
+      Zie de sectie <a href="#6.0">6.0 Bestandsmachtigingen</a>.
+
+V7    Als ik dubbelklik op een van de bijgeleverde bestanden om het product te
+      starten, krijg ik de vraag welk programma ik wil gebruiken om het bestand te
+      openen.
+A7-1  Controleer of u een script gebruikt met een extensie die door uw
+      besturingssysteem wordt herkend.
+A7-2  Stel het programma waarmee het bestand wordt geopend in op een programma dat compatibel
+      is met het binaire bestand of script dat u gebruikt.  Bijvoorbeeld Terminal (on Mac).
+A7-3  Controleer in de machtigingen van het bestand of u uitvoeringsmachtiging hebt.
+      Zie de sectie <a href="#6.0">6.0 Bestandsmachtigingen</a>.
+
+V8    Als ik op een Mac IBM i Access Client Solutions start vanuit Finder,
+      verschijnt een werkstationsessie die niet kan worden afgebroken,
+      zelfs niet na het beëindigen van IBM i Access Client Solutions.
+A8-1  Om te zorgen dat de terminalsessie niet meer verschijnt, gebruikt u de installatiescripts
+      voor Mac in de QuickStartGuide.
+
+V9    Wat is de beste manier om het product te starten?
+A9-1  U kunt het product starten op elk van de drie manieren die worden beschreven in sectie
+      <a href="#7.0">7.0 Het product starten</a>: met behulp van binaire bestanden, scripts of de
+      opdrachtregel. Elke methode die in uw omgeving werkt, is goed.
+
+V10   Waarom zijn er zowel binaire bestanden (Start_Programs) als scripts
+      (Sample_Scripts) om het product te starten?
+A10-1 De scripts zijn niet specifiek voor een bepaald besturingssysteem en vormen
+      een meer algemene manier om het product te starten als het platformspecifieke binaire bestand niet werkt.
+A10-2 In sommige besturingssystemen zijn er binaire bestanden vereist voor het maken
+      van bestandskoppelingen.
+      In de meeste gevallen moeten de binaire bestanden worden gebruikt voor het starten van het product.
+A10-3 In bepaalde omgevingen is er sprake van een firewall waarmee de toegang tot
+      delen van IBM i Access Client Solutions wordt beperkt. Als u een van de binaire bestanden
+      gebruikt voor het starten van het product, is het eenvoudiger voor systeembeheerders om de
+      toegang te autoriseren.
+
+V11   Nadat ik JDK 6.0 (of hoger) heb geïnstalleerd, krijg ik nog steeds de
+      volgende fout:
+      class cannot be loaded: java.lang.UnsupportedClassVersionError
+A11-1 De standaardversie van Java die op uw werkstation wordt gebruikt, is van vóór
+      JDK 6.0.  U moet een optie gebruiken waarmee uitdrukkelijk wordt aangegeven wat
+      het Java Home-pad voor JDK 6 is. Zie sectie <a href="#7.1.2">7.1.2 Het Java
+      Home-pad opzoeken</a>.  Gebruik het Java Home-pad voor een van de methoden die worden
+      beschreven in de volgende secties:
+      <a href="#7.1.1">7.1.1 Het product starten - Aanvullende opties</a><br>
+      <a href="#7.3">7.3 Het product starten (via de opdrachtregel)</a><br>
+
+V12   Het lukt me niet om aangepaste toetsenbordindelingsbestanden (keyboard mapping
+      files, .kmp) te importeren vanuit mijn Windows 5250-emulatorsessies.
+A12-1 In de oorspronkelijke versie van IBM i Access Client Solutions die
+      beschikbaar kwam in Juli 2012, werd het importeren van .kmp-bestanden uit
+      sessieprofielen van de Windows 5250-emulator niet ondersteund. Met ingang van
+      de versie die beschikbaar kwam in oktober 2012, wordt het importeren van .kmp-bestanden
+      van 5250-sessieprofielen (.ws) ondersteund.
+
+V13   Het aanpassen van het toetsenbord voor de 5250-emulator werkt heel anders dan
+      onder Windows.
+      Hebt u enige suggesties?
+A13-1 De toetsenbordindeling is onderverdeeld in categorieën. In een emulatorsessie:
+      Kies Bewerken &gt; Voorkeuren &gt; Toetsenbord, of kies de
+      knop Toetsenbordindeling wijzigen op de werkbalk.
+      Kies de tab Toetstoewijzing.
+      Selecteer een categorie.  Standaard toetstoewijzingen vindt u in
+         de categorieën "Hostfuncties" en "Menuopdrachten".
+      Selecteer de functie die u wilt toewijzen.
+      Kies Toets toewijzen.
+      Druk op het toetsenbord op de toets die u aan de desbetreffende functie wilt
+         toewijzen.
+A13-2 Voor Help-informatie over aangepaste toetsenbordindelingen:
+      Klik op Bewerken &gt; Voorkeuren &gt; Toetsenbord, of klik op de knop Opnieuw
+      Definiëren op de werkbalk. Selecteer de knop Help.
+
+V14   Als ik probeer het product te starten op Mac OS X 10.8 Mountain Lion,
+      verschijnt er een bericht dat aangeeft dat de toepassing niet ondertekend
+      is.
+A14-1 Dit is een beveiligingsbeleid dat standaard wordt afgedwongen vanaf
+      Mac OS X
+      10.8 Mountain Lion. Zie de volgende webpagina voor een manier
+      om de toepassing uit te voeren:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+V15   Ik ben een gebruiker van IBM i Access for Windows, kan ik mijn
+      systeemconfiguraties migreren naar IBM i Access Client Solutions?
+A15-1 Zie de sectie <a href="#9.6.1">9.6.1 Systeemconfiguraties migreren</a>.
+
+V15   Ik ben een gebruiker van IBM i Access for Windows, kan ik mijn
+      systeemprofielen migreren naar IBM i Access Client Solutions?
+A16-1 Zie de sectie <a href="#9.6.2">9.6.2 5250-emulatie migreren</a>
+
+V15   Ik ben een gebruiker van IBM i Access for Windows, kan ik mijn
+      opgeslagen opdrachtbestanden van Gegevensoverdracht migreren naar IBM i Access Client Solutions?
+A17-1 Zie de sectie <a href="#9.6.3">9.6.3 Opgeslagen opdrachtbestanden van Gegevensoverdracht migreren</a>.
+
+V18   Werkt EHLLAPI in combinatie met IBM i Access Client Solutions?
+A18-1 Zie de sectie <a href="#9.6.4">9.6.4 EHLLAPI</a>
+
+V19   Werkt kerberos in combinatie met IBM i Access Client Solutions?
+A19-1 Zie de sectie <a href="#9.6.5">9.6.5 Kerberos</a>
+
+V20   Ik ben systeembeheerder en wil bepaalde functies liever verbergen
+      voor mijn gebruikers.
+A20-1 Zie de sectie <a href="#9.5">9.5 Aangepaste pakketten</a>
+
+V21   Als ik een Help-pictogram op een scherm kies, wordt er geen tekst afgebeeld.
+A21-1 De Help-tekst wordt gewoonlijk in de browser van de werkplek afgebeeld. In bepaalde gevallen
+      heeft een werkplek geen browser of is deze niet correct geconfigureerd.
+A21-2 Om de Help-tekst af te beelden zonder een werkplekbrowser te gebruiken, stelt u de
+      volgende eigenschap in het ebstand AcsConfig.properties in:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      U kunt deze eigenschap ook instellen vanaf de opdrachtregel, op dezelfde
+      manier als voor andere Java-eigenschappen:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+V22   Ik gebruik Gegevensoverdracht en selecteer de uitvoeroptie "Actief
+      Excel-spreadsheet" of "Actief Calc-spreadsheet". Ik krijg deze fout:
+      "Actief spreadsheet is niet gevonden"
+V22-1 Er is geen actief spreadsheet. Open een nieuw of bestaand spreadsheet
+      en geef de opdracht vervolgens opnieuw op.
+V22-2 Mogelijk is er een bitness-discrepantie tussen de spreadsheettoepassing waarmee
+      u werkt en de JVM waarmee IBM i Access Client Solutions wordt uitgevoerd.
+      Zie de sectie <a href="#9.8">9.8 Ondersteuning van gegevensoverdracht voor Excel- en Calc-spreadsheets</a>
+
+V23   Als ik Gegevensoverdracht gebruik op een Mac, zie ik geen opties voor uitvoer
+      voor interactie met een actief spreadsheet.
+V23-1 Gegevensoverdracht kan niet interactief werken met actieve spreadsheets op de Mac,
+      vanwege het bitness-verschil tussen de OpenOffice-toepassing en de JVM waarmee
+      IBM i Access Client Solutions wordt uitgevoerd. Voor aanvullende informatie, raadpleegt u sectie
+      <a href="#9.8">9.8 Ondersteuning van gegevensoverdracht voor Excel- en Calc-spreadsheets</a>.
+
+V24   Ik gebruik Gegevensoverdracht en selecteer de uitvoeroptie "Actief Calc-
+      spreadsheet" - maar het vak Naam blijft leeg.
+A24-1 Dit is normaal voor nieuwe Calc-spreadsheets die nog nooit opgeslagen zijn.
+      Gegevensoverdracht kan het spreadsheet nog steeds bijwerken met gedownloade
+      gegevens.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Historie bijwerken</h3>
+<p>
+Zie de volgende webpagina:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

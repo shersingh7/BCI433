@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Manual de Iniciação Rápida</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Manual de Iniciação Rápida</h2>
+<h2>O conteúdo deste documento foi actualizado pela última vez em: 21 de Setembro de 2017</h2>
+
+<h3>Conteúdo:</h3>
+<a href="#1.0">1.0 Introdução</a><br>
+<a href="#2.0">2.0 Instalação para Windows</a><br>
+<a href="#3.0">3.0 Instalação para Mac</a><br>
+<a href="#4.0">4.0 Instalação para Linux</a><br>
+<a href="#5.0">5.0 Instalar Actualizações</a><br>
+<a href="#6.0">6.0 Mais Informações</a><br>
+<a href="#7.0">7.0 Desinstalar</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Introdução</h3>
+<p>
+Este manual fornece instruções sobre como implementar este produto numa unidade de disco local para um único utilizador.
+<p>
+Existe uma variedade de outras formas nas quais também é possível implementar este produto, incluindo: <br>
+<ul>
+<li>Uma localização partilhada que pode ser acedida por múltiplos utilizadores.<br>
+Consulte <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Personalização e implementação facilitadas</a>
+<li>Descompacte o arquivo Zip para a localização que
+pretender, incluindo suportes portáteis (ex, CD, DVD e unidades
+USB) ou para qualquer caminho na unidade de disco local.
+Consulte a secção
+<a href="../Documentation/GettingStarted_en.html#5.0">Instalação</a>
+do documento
+<a href="../Documentation/GettingStarted_en.html">Introdução</a>
+localizado na pasta Documentação.
+<li>Consulte <a href="../Documentation/GettingStarted_en.html#9.4">Outras Opções
+de Implementação</a> na <a href="../Documentation/GettingStarted_en.html">Introdução</a>
+para obter opções sobre como <a href="../Documentation/GettingStarted_en.html#9.4.1">Importar
+automaticamente definições de configuração</a>, para passar a mesma
+configuração para múltiplos utilizadores, e <a href="../Documentation/GettingStarted_en.html#9.4.2">Implementações
+Nativas do IBM i</a> para utilizar suplementos directos de linha de comandos no IBM i.
+</ul> 
+
+<p>
+Para implementar este produto numa unidade de disco local para um único utilizador, consulte as restantes secções deste documento.
+
+<hr><h3><a id="2.0"></a>2.0 Instalação para Windows</h3>
+
+<p>
+Localize o arquivo ZIP ou o CD do produto.
+
+<p>
+Se está a utilizar o arquivo zip do produto, extraia o conteúdo do arquivo zip.
+<br>Sugestão: Pode fazê-lo através do Windows Explorer, seleccione o ficheiro e, em seguida, faça clique com o botão direito sobre o ficheiro e por fim seleccione "Extrair todos...".
+
+<p>
+Com o Windows Explorer, localize a pasta Windows_Application do produto.
+
+<p>
+Para instalar a versão de 32 bit para o utilizador actual, faça duplo clique sobre install_acs_32.
+<p>
+Para instalar a versão de 64 bit para o utilizador actual, faça duplo clique sobre install_acs_64.
+<p>
+Para instalar a versão de 32 bit para todos os utilizadores num PC de múltiplos utilizadores, faça duplo clique em install_acs_32_allusers.
+<p>
+Para instalar a versão de 64 bit para todos os utilizadores num PC de múltiplos utilizadores, faça duplo clique em install_acs_64_allusers.
+<p>
+Se esta é uma nova versão, existirão vários pedidos que o ajudarão a personalizar a instalação inicial.
+Se aparecer um acordo de licença, aceite-o.
+<p>
+Se esta for uma actualização, as definições anteriores têm de ser preservadas.
+<p>
+Quando a instalação estiver concluída, é apresentada uma mensagem de conclusão.
+<p>
+Uma instalação de utilizador único bem sucedida irá copiar a aplicação para:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Nota: A versão inicial destes scripts copiaram os ficheiros do produto para um caminho relativo a Os meus documentos (MyDocuments).
+A versão actual copia os ficheiros do produto para um caminho baseado nas variáveis de ambiente %HOMEDRIVE% e %HOMEPATH%.
+Quando utiliza estes scripts para actualizar o produto, as actualizações ocorrerão
+na primeira localização encontrada.
+<p>
+Uma instalação de múltiplos utilizadores bem sucedida irá copiar a aplicação para:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Iniciar o produto no Windows</h3>
+<p>
+Faça duplo clique no ícone de "Access Client Solutions" no ambiente de trabalho.
+
+
+<hr><h3><a id="3.0"></a>3.0 Instalação para Mac</h3>
+<p>
+Localize o arquivo ZIP ou o CD do produto utilizando o Localizador. <p>
+Se está a utilizar o arquivo zip do produto, extraia o conteúdo do arquivo zip.
+<br>Sugestão: Se tiver acabado de descarregar o produto, procure em Transferências. Se o conteúdo do arquivo ZIP não tiver sido extraído,
+então extraia o conteúdo do arquivo ZIP, para isso faça duplo clique sobre o arquivo.
+<p>
+Localize a pasta Mac_Application. Faça duplo clique em install_acs
+<p>
+Se esta é uma nova versão, existirão vários pedidos que o ajudarão a personalizar a instalação inicial.
+Se aparecer um acordo de licença, aceite-o.
+<p>
+Se esta for uma actualização, as definições anteriores têm de ser preservadas.
+<p>
+Quando a instalação estiver concluída, é apresentada uma mensagem de conclusão.
+<p>
+Uma instalação bem sucedida irá copiar a aplicação para a pasta Aplicações.
+<p>
+Se iniciou a instalação a partir do Localizador, foi aberta uma janela de terminal para efectuar a instalação.
+Quando a instalação estiver concluída, poderá fechar a janela do terminal.
+<p>
+Nota Técnica: <br>
+Dependendo das definições de segurança e a versão do OS X que está a utilizar, poderá surgir uma janela emergente que indica que install_acs não tem autorização para executar.
+Caso isso aconteça, será necessário autorizar install_acs a executar através da utilização de um dos seguintes métodos: <br>
+<ul>
+<li>Se for apresentada uma opção para "Abrir" install_acs, seleccione-a.
+<li>Faça clique com o botão direito do rato em install_acs e seleccione "Abrir". <br>
+   Quando surgir uma janela emergente, seleccione "Abrir".
+<li>Se nenhuma das opções acima funcionar, aceda a: <br>
+    Preferências do Sistema...<br>
+    Segurança &amp; Privacidade<br>
+    Se existir uma opção para Abrir o "IBM i Access Client Solutions", seleccione-a.
+    Caso contrário, será necessário ajustar as definições no separador Geral para permitir que outras aplicações sejam executadas. Após "IBM i Access Client Solutions" iniciar pela primeira vez, poderá voltar a alterar as definições de segurança.
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Iniciar o produto em Mac</h3>
+<p>
+Utilize o Localizador para aceder a Aplicações.
+<p>
+Localize "IBM i Access Client Solutions" e faça duplo clique para iniciar o produto.
+<p>
+Nota Técnica: <br>
+Dependendo das definições de segurança e a versão do OS X que está a utilizar, poderá surgir uma janela emergente que indica que a aplicação não tem autorização para executar.
+Caso isso aconteça, será necessário autorizar a aplicação a executar através da utilização de um dos seguintes métodos: <br>
+<ul>
+<li>Se for apresentada uma opção para "Abrir" a aplicação, seleccione-a.
+<li>Faça clique com o botão direito do rato no ícone "IBM i Access Client Solutions" e seleccione "Abrir". <br>
+   Quando surgir uma janela emergente, seleccione "Abrir".
+<li>Se nenhuma das opções acima funcionar, aceda a: <br>
+    Preferências do Sistema...<br>
+    Segurança &amp; Privacidade<br>
+    Se existir uma opção para Abrir o "IBM i Access Client Solutions", seleccione-a.
+    Caso contrário, será necessário ajustar as definições no separador Geral para permitir que outras aplicações sejam executadas. Após "IBM i Access Client Solutions" iniciar pela primeira vez, poderá voltar a alterar as definições de segurança.
+</ul>
+Nota Técnica: <br>
+Caso seja pedido para instalar "Java 6 SE runtime", não será necessário instalar o Java 6. Instale o Java 8 e, em seguida, tente iniciar o produto novamente.
+
+<hr><h3><a id="4.0"></a>4.0 Instalação para Linux </h3>
+<p>
+Localize o arquivo ZIP ou o CD do produto.
+<p>
+Se está a utilizar o arquivo zip do produto, extraia o conteúdo do arquivo zip.
+<br>Sugestão: A partir de uma janela do terminal, utilize o comando unzip.
+<p>
+Localize a pasta Linux_Application.
+<p>
+Uma vez que será necessário ter autoridade raiz para utilizar o script de instalação, utilize sudo para executar o script de instalação a partir de uma janela do terminal. Por exemplo:
+<p>
+Se estiver numa arquitectura de 32 bits, utilize o seguinte comando: <br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Se estiver numa arquitectura de 64 bits, utilize o seguinte comando: <br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Se esta é uma nova versão, existirão vários pedidos que o ajudarão a personalizar a instalação inicial.
+Se aparecer um acordo de licença, aceite-o.
+<p>
+Se esta for uma actualização, as definições anteriores têm de ser preservadas.
+<p>
+Quando a instalação estiver concluída, é apresentada uma mensagem de conclusão.
+<p>
+Uma instalação bem sucedida irá copiar a aplicação para:
+<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Iniciar o Produto em Linux</h3>
+<p>
+Procure por "IBM i Access Client Solutions" na pasta das aplicações ou através da utilização da Super key e, em seguida,
+escreva "IBM i Access Client Solutions".
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Instalar Actualizações</h3>
+<p>
+Quando é disponibilizada uma nova versão, é possível seguir as instruções de instalação neste documento para aplicar as actualizações. Se for pedido para sobrepor ficheiros existentes, responda com "Sim para todos".
+<p>
+Se estiver a utilizar os scripts install_acs para Windows, Mac ou Linux,
+o ficheiro AcsConfig.properties não será actualizado e, como tal,
+quaisquer alterações de configuração personalizadas que tiver efectuado ao mesmo não serão perdidas.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Mais Informações</h3>
+<p>
+Para obter informações adicionais sobre a personalização do produto ou caso detecte problemas durante a instalação ou início do produto, consulte o documento <a href="../Documentation/GettingStarted_en.html">Iniciação (GettingStarted)</a> localizado na pasta Documentação.
+<hr><h3><a id="7.0"></a>7.0 Desinstalar</h3>
+<p>
+Para remover os ficheiros de aplicação que foram copiados para as localizações acima pelo script de instalação, utilize o script de desinstalação
+específico da plataforma localizado na mesma pasta que o script de instalação:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

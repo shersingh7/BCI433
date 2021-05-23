@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Startvägledning</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Startvägledning</h2>
+<h2>Innehållet i det här dokumentet uppdaterades senast 21 september 2017</h2>
+
+<h3>Innehåll:</h3>
+<a href="#1.0">1.0 Introduktion</a><br>
+<a href="#2.0">2.0 Installation för Windows</a><br>
+<a href="#3.0">3.0 Installation för Mac</a><br>
+<a href="#4.0">4.0 Installation för Linux</a><br>
+<a href="#5.0">5.0 Installera uppdateringar</a><br>
+<a href="#6.0">6.0 Mer information</a><br>
+<a href="#7.0">7.0 Avinstallera</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Introduktion</h3>
+<p>
+I den här guiden finns anvisningar för hur du driftsätter produkten på en lokal
+disk för en enskild användare. <p>
+Det finns olika sätt att driftsätta produkten, t.ex. följande:<br>
+<ul>
+<li>En delad plats som kan nås av flera användare.<br>
+Det finns mer information i <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Enkel anpassning och driftsättning</a>
+<li>Packa upp zip-filen på valfri plats inklusive flyttbara medier (t.ex CD-, DVD- och USB-enhet)
+eller i en lokal sökväg. Det finns mer information i avsnittet <a href="../Documentation/GettingStarted_en.html#5.0">Installation</a> i dokumentet <a href="../Documentation/GettingStarted_en.html">GettingStarted</a>
+i mappen Documentation.
+<li>Se <a href="../Documentation/GettingStarted_en.html#9.4">Andra driftsättningsalternativ</a>
+i <a href="../Documentation/GettingStarted_en.html">GettingStarted</a>. Där finns information om alternativ som <a href="../Documentation/GettingStarted_en.html#9.4.1">Importera konfigurationsinställningar automatiskt</a> för spridning av samma konfiguration till flera användare samt <a href="../Documentation/GettingStarted_en.html#9.4.2">IBM i-driftsättningar</a> för direkt användning av kommandoradstilläggsprogram i IBM i.
+</ul> 
+
+<p>
+Driftsättning på lokal disk för en enskild användare beskrivs i resten av det här dokumentet. <hr><h3><a id="2.0"></a>2.0 Installation för Windows</h3>
+
+<p>
+Gå till produktens ZIP-fil eller CD. <p>
+Om du använder ZIP-filen extraherar du innehållet.
+<br>Förslag: Du kan göra det genom att markera filen i Windows Utforskaren, högerklicka på filen och sedan välja Extrahera alla.
+
+<p>
+Gå till produktens Windows_Application-mapp i Utforskaren. <p>
+Installera 32-bitarsversioner för aktuell användare genom att dubbelklicka på install_acs_32.
+<p>
+Installera 64-bitarsversioner för aktuell användare genom att dubbelklicka på install_acs_64.
+<p>
+Installera 32-bitarsversionen för alla användare på en dator genom att dubbelklicka på install_acs_32_allusers.
+<p>
+Installera 642-bitarsversionen för alla användare på en dator genom att dubbelklicka på install_acs_64_allusers. <p>
+Om det är en ny installation öppnas flera fönster till hjälp att anpassa den första installationen. Acceptera licensavtalet om det visas.
+<p>
+Om det är en uppgradering behålls tidigare inställningar.
+<p>
+När installationen är klar visas ett slutförandemeddelande. <p>
+Vid en installation för en enskild användare kopieras programmet till följande sökväg:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Anm. Den första versionen av dessa skript kopierade produktfilerna till en sökväg relativ till MyDocuments.
+Den aktuella versionen kopierar produktfilerna till en sökväg baserat på miljövariablerna
+%HOMEDRIVE% och %HOMEPATH%. När skripten används för produktuppdatering sker uppdateringen på den första plats som hittas.
+<p>
+Vid en installation för flera användare kopieras programmet till följande sökväg:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Starta produkten i Windows</h3>
+<p>
+Dubbelklicka på "Access Client Solutions"-ikonen på skrivbordet. 
+<hr><h3><a id="3.0"></a>3.0 Installation för Mac</h3>
+<p>
+Gå till produktens ZIP-fil eller CD med Finder.
+<p>
+Om du använder ZIP-filen extraherar du innehållet.
+<br>Förslag: Om du precis har hämtat produkten finns den i Downloads. Om innehållet i ZIP-filen inte har extraherats kan du göra det genom
+att klicka på filen. 
+<p>
+Gå till mappen Mac_Application.  Dubbelklicka på install_acs. <p>
+Om det är en ny installation öppnas flera fönster till hjälp att anpassa den första installationen. Acceptera licensavtalet om det visas.
+<p>
+Om det är en uppgradering behålls tidigare inställningar.
+<p>
+När installationen är klar visas ett slutförandemeddelande.
+<p>
+Programmet kopieras till mappen Applications. <p>
+Om du startade installationen från Finder öppnades ett terminalfönster. Du kan stänga terminalfönstret när installationen är klar.
+<p>
+Teknisk anmärkning:<br>
+Beroende på säkerhetsinställningarna och vilken OS X-version som används kan ett meddelande visas om att install_acs inte har behörighet att köras.
+Om det händer måste du ge install_acs behörighet att köra på något av följande sätt:<br>
+<ul>
+<li>Om du får ett alternativ att öppna install_acs väljer du det.
+<li>Högerklicka på install_acs och välj Open.<br>
+Välj Open när ett meddelande visas.
+<li>Om inget av ovanstående fungerar väljer du:<br>
+    System Preferences<br>
+    Security &amp; Privacy<br>
+    Om det finns ett alternativ för att öppna "IBM i Access Client Solutions" markerar du det.    I annat fall måste du ändra inställningarna på sidan Allmänt så att andra program får köras.     När "IBM i Access Client Solutions" har startats första gången kan du återställa inställningarna. 
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Starta produkten på Mac</h3>
+<p>
+Använd Finder för att gå till Applications.
+<p>
+Gå till "IBM i Access Client Solutions" och dubbelklicka så startar produkten.
+<p>
+Teknisk anmärkning:<br>
+Beroende på säkerhetsinställningarna och vilken OS X-version som används kan ett meddelande visas om att programmet inte har behörighet att köras.
+Om det händer måste du ge programmet behörighet att köra på något av följande sätt:<br>
+<ul>
+<li>Om du får ett alternativ att öppna det väljer du det.
+<li>Högerklicka på ikonen "IBM i Access Client Solutions" och välj Open.<br>
+Välj Open när ett meddelande visas.
+<li>Om inget av ovanstående fungerar väljer du:<br>
+    System Preferences<br>
+    Security &amp; Privacy<br>
+    Om det finns ett alternativ för att öppna "IBM i Access Client Solutions" markerar du det.    I annat fall måste du ändra inställningarna på sidan Allmänt så att andra program får köras.     När "IBM i Access Client Solutions" har startats första gången kan du återställa inställningarna. 
+</ul>
+Teknisk anmärkning:<br>
+Om du blir ombedd att installera "Java 6 SE runtime" behöver du inte installera Java 6. Installera Java 8 och försök starta produkten igen. 
+
+
+<hr><h3><a id="4.0"></a>4.0 Installation för Linux</h3>
+<p>
+Gå till produktens ZIP-fil eller CD.
+<p>
+Om du använder ZIP-filen extraherar du innehållet.
+<br>Förslag: Kör kommandot unzip från ett terminalfönster.
+<p>
+Gå till mappen Linux_Application.
+<p>
+Eftersom du måste ha rotbehörighet för att använda installationsskriptet använder du sudo för att köra skriptet från ett terminalfönster. Exempel:
+<p>
+Kör följande kommando i 32-bitarsmiljö:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Kör följande kommando i 64-bitarsmiljö:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Om det är en ny installation öppnas flera fönster till hjälp att anpassa den första installationen. Acceptera licensavtalet om det visas.
+<p>
+Om det är en uppgradering behålls tidigare inställningar.
+<p>
+När installationen är klar visas ett slutförandemeddelande. <p>
+Programmet kopieras till:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Starta produkten i Linux</h3>
+<p>
+Sök efter "IBM i Access Client Solutions" i programmappen eller med Super-tangenten och skriv sedan
+"IBM i Access Client Solutions". 
+
+<hr><h3><a id="5.0"></a>5.0 Installera uppdateringar</h3>
+<p>
+När en ny version blir tillgänglig kan du följa installationsanvisningarna i
+det här dokumentet för att tillämpa uppdateringarna. Om du får en fråga om du vill
+ersätta befintliga filer väljer du Ja för alla.
+<p>
+Om du använder install_acs-skript för Windows, Mac eller Linux uppdateras inte
+filen AcsConfig.properties vilket gör att alla konfigurationsändringar
+du har gjort sparas. 
+
+<hr><h3><a id="6.0"></a>6.0 Mer information</h3>
+<p>
+Mer information om hur du anpassar produkten eller om du vill ha information om hur du löser
+problem vid installation eller start av produkten finns i dokumentet <a href="../Documentation/GettingStarted_en.html">GettingStarted</a>
+i dokumentationsmappen. <hr><h3><a id="7.0"></a>7.0 Avinstallera</h3>
+<p>
+Om du vill ta bort tillämpningsfiler som kopierats till ovanstående platser genom att installera skript, använder du det plattformsspecifika avinstallationsskriptet som finns i samma mapp som installationsskriptet:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Szybki start</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions – Szybki start</h2>
+<h2>Data ostatniej aktualizacji treści tego dokumentu: 21 września 2017</h2>
+
+<h3>Zawartość:</h3>
+<a href="#1.0">1.0 Wprowadzenie</a><br>
+<a href="#2.0">2.0 Instalacja w systemie Windows</a><br>
+<a href="#3.0">3.0 Instalacja na komputerach Mac</a><br>
+<a href="#4.0">4.0 Instalacja w systemie Linux</a><br>
+<a href="#5.0">5.0 Instalowanie aktualizacji</a><br>
+<a href="#6.0">6.0 Więcej informacji</a><br>
+<a href="#7.0">7.0 Deinstalacja</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Wprowadzenie</h3>
+<p>
+Ta publikacja zawiera instrukcje dotyczące wdrażania tego produktu na dysku
+lokalnym dla jednego użytkownika. 
+<p>
+Istnieje kilka innych sposobów wdrożenia tego produktu. Na przykład można
+wdrożyć go w następujący sposób:<br>
+<ul>
+<li>Współużytkowane miejsce, do którego ma dostęp wielu użytkowników.<br>
+Patrz artykuł
+<a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a> (IBM
+i Access Client Solutions: ułatwione konfigurowanie i wdrażanie)
+<li>Rozpakowanie archiwum zip w dowolnie wybranym miejscu, w tym na nośnikach
+przenośnych (tj. CD, DVD, dysk flash USB flash) lub dowolnej ścieżce dysku
+lokalnego).  Patrz sekcja
+<a href="../Documentation/GettingStarted_en.html#5.0">Instalacja</a> dokumentu
+<a href="../Documentation/GettingStarted_en.html">Pierwsze kroki</a> znajdującego się w folderze dokumentacji.
+<li>Patrz sekcja <a href="../Documentation/GettingStarted_en.html#9.4">Inne
+opcje wdrażania</a> w dokumencie
+<a href="../Documentation/GettingStarted_en.html">Pierwsze kroki</a>, która
+zawiera opcje takie jak
+<a href="../Documentation/GettingStarted_en.html#9.4.1">Automatyczne
+importowanie ustawień konfiguracji</a> do propagowania tej samej konfiguracji
+do wielu użytkowników oraz
+<a href="../Documentation/GettingStarted_en.html#9.4.2">Rodzime wdrożenia
+systemu IBM i</a> do korzystania z wtyczek wiersza komend bezpośrednio w
+systemie IBM i.
+</ul> 
+
+<p>
+Aby wdrożyć ten produkt na dysku lokalnym dla jednego użytkownika, patrz
+pozostałe sekcje tego dokumentu.
+
+<hr><h3><a id="2.0"></a>2.0 Instalacja w systemie Windows</h3>
+
+<p>
+Znajdź archiwum ZIP lub dysk CD produktu.
+
+<p>
+Jeśli używane jest archiwum ZIP produktu, rozpakuj jego zawartość.
+<br>Podpowiedź: W tym celu można zaznaczyć archiwum ZIP w Eksploratorze Windows, a następnie kliknąć je prawym przyciskiem myszy i wybrać opcję Wypakuj wszystko....
+
+<p>
+Za pomocą Eksploratora Windows znajdź folder aplikacji systemu Windows produktu.
+
+<p>
+Aby zainstalować wersję 32-bitową dla bieżącego użytkownika, kliknij dwukrotnie
+plik install_acs_32.
+<p>
+Aby zainstalować wersję 64-bitową dla bieżącego użytkownika, kliknij dwukrotnie
+plik install_acs_64.
+<p>
+Aby zainstalować wersję 32-bitową dla wszystkich użytkowników na wielodostępnym
+komputerze PC, kliknij dwukrotnie plik install_acs_32_allusers.
+<p>
+Aby zainstalować wersję 64-bitową dla wszystkich użytkowników na wielodostępnym
+komputerze PC, kliknij dwukrotnie plik install_acs_64_allusers.
+
+<p>
+W przypadku nowej instalacji zostanie wyświetlone kilka zapytań, które pomogą
+dostosować instalację początkową.  Jeśli zostanie wyświetlona umowa licencyjna,
+należy ją zaakceptować.
+<p>
+W przypadku aktualizacji zostaną zachowane wcześniejsze ustawienia.
+<p>
+Po zakończeniu instalacji zostanie wyświetlony komunikat o zakończeniu.
+
+<p>
+Zakończona powodzeniem operacja instalacji dla jednego użytkownika skopiuje
+aplikację do katalogu:
+<pre>
+    /Users/ID_użytkownika/IBM/ClientSolutions/
+</pre>
+<p>
+Uwaga: początkowa wersja tych skryptów kopiowała pliki produktu do ścieżki względnej w stosunku do MyDocuments. Bieżąca wersja kopiuje pliki produktu do ścieżki w oparciu o zmienne środowiskowe %HOMEDRIVE% i %HOMEPATH%. W przypadku używania tych skryptów do zaktualizowania produktu aktualizacje zostaną wprowadzone w pierwszej znalezionej lokalizacji. <p>
+Zakończona powodzeniem operacja instalacji dla wielu użytkowników skopiuje aplikację do katalogu:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Uruchamianie produktu w systemie Windows</h3>
+<p>
+Kliknij dwukrotnie ikonę Access Client Solutions na pulpicie.
+
+
+<hr><h3><a id="3.0"></a>3.0 Instalacja na komputerach Mac</h3>
+<p>
+Przy użyciu programu Finder znajdź archiwum ZIP lub dysk CD produktu.
+<p>
+Jeśli używane jest archiwum ZIP produktu, rozpakuj jego zawartość.
+<br>Podpowiedź: Jeśli plik został właśnie pobrany, należy poszukać go w katalogu Pobrane.  Jeśli zawartość archiwum ZIP nie została
+jeszcze rozpakowana, można ją rozpakować, klikając dwukrotnie to archiwum.  
+<p>
+Należy znaleźć folder Mac_Application.   Następnie należy kliknąć dwukrotnie plik
+install_acs
+
+<p>
+W przypadku nowej instalacji zostanie wyświetlone kilka zapytań, które pomogą
+dostosować instalację początkową.  Jeśli zostanie wyświetlona umowa licencyjna,
+należy ją zaakceptować.
+<p>
+W przypadku aktualizacji zostaną zachowane wcześniejsze ustawienia.
+<p>
+Po zakończeniu instalacji zostanie wyświetlony komunikat o zakończeniu.
+<p>
+Zakończona powodzeniem operacja instalacji skopiuje aplikację do katalogu
+aplikacji.
+
+<p>
+Jeśli instalacja została uruchomiona z programu Finder, w celu wykonania
+instalacji zostało otwarte okno terminala. Po zakończeniu instalacji można zamknąć to okno.
+<p>
+Uwaga techniczna:<br>
+W zależności od ustawień zabezpieczeń i używanej wersji systemu OS X może zostać
+wyświetlone okno wywoływane wskazujące, że plik install_acs nie ma uprawnień
+do uruchamiania.
+W takim przypadku należy autoryzować uruchamianie pliku install_acs,
+korzystając z jednej z następujących metod:<br>
+<ul>
+<li>Jeśli zostanie wyświetlona opcja pozwalająca na otwarcie pliku install_acs, wybierz ją.
+<li>Kliknij prawym przyciskiem myszy plik install_acs i wybierz opcję Otwórz.<br>
+   Po wyświetleniu okna wywoływanego wybierz opcję Otwórz.
+<li>Jeśli żadna z powyższych metod nie działa, wybierz opcję:<br>
+    Preferencje systemowe...<br>
+    Ochrona i prywatność<br>
+    Jeśli istnieje opcja otworzenia produktu IBM i Access Client Solutions, należy
+ją wybrać.
+    W przeciwnym razie trzeba będzie dostosować ustawienia na karcie
+Ogólne, aby zezwolić na uruchamianie innych aplikacji.  Po pierwszym uruchomieniu produktu IBM i Access
+Client Solutions można powrócić do poprzednich ustawień zabezpieczeń.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Uruchamianie produktu na komputerze Mac</h3>
+<p>
+Za pomocą programu Finder przejdź do folderu Programy.
+<p>
+Znajdź opcję IBM i Access Client Solutions i kliknij ją dwukrotnie, aby uruchomić produkt.
+<p>
+Uwaga techniczna:<br>
+W zależności od ustawień zabezpieczeń i używanej wersji systemu OS X może
+zostać wyświetlone okno wywoływane wskazujące, że aplikacja nie ma uprawnień do
+uruchamiania.
+W takim przypadku należy autoryzować uruchamianie aplikacji, korzystając z
+jednej z następujących metod:<br>
+<ul>
+<li>Jeśli zostanie wyświetlona opcja pozwalająca na otwarcie aplikacji, wybierz
+ją.
+<li>Kliknij prawym przyciskiem myszy ikonę IBM i Access Client Solutions i wybierz opcję Otwórz.<br>
+   Po wyświetleniu okna wywoływanego wybierz opcję Otwórz.
+<li>Jeśli żadna z powyższych metod nie działa, wybierz opcję:<br>
+    Preferencje systemowe...<br>
+    Ochrona i prywatność<br>
+    Jeśli istnieje opcja otworzenia produktu IBM i Access Client Solutions, należy
+ją wybrać.
+    W przeciwnym razie trzeba będzie dostosować ustawienia na karcie
+Ogólne, aby zezwolić na uruchamianie innych aplikacji.  Po pierwszym uruchomieniu produktu IBM i Access
+Client Solutions można powrócić do poprzednich ustawień zabezpieczeń.  
+</ul>
+Uwaga techniczna:<br>
+W przypadku wyświetlenia prośby o zainstalowanie środowiska wykonawczego Java 6
+SE nie ma konieczności instalowania środowiska Java 6.  Należy zainstalować
+środowisko Java 8, a następnie spróbować ponownie uruchomić produkt.
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Instalacja w systemie Linux</h3>
+<p>
+Znajdź archiwum ZIP lub dysk CD produktu.
+<p>
+Jeśli używane jest archiwum ZIP produktu, rozpakuj jego zawartość.
+<br>Sugestia: należy użyć komendy unzip w oknie terminala.
+<p>
+Należy znaleźć folder Linux_Application.
+<p>
+Ponieważ w celu użycia skryptu instalacyjnego konieczne będą uprawnienia
+administratora, w oknie terminala należy uruchomić skrypt
+instalacyjny za pomocą komendy sudo.  Na przykład:
+<p>
+W przypadku architektury 32-bitowej należy użyć następującej komendy:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+W przypadku architektury 64-bitowej należy użyć następującej komendy:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+W przypadku nowej instalacji zostanie wyświetlone kilka zapytań, które pomogą
+dostosować instalację początkową.  Jeśli zostanie wyświetlona umowa licencyjna,
+należy ją zaakceptować.
+<p>
+W przypadku aktualizacji zostaną zachowane wcześniejsze ustawienia.
+<p>
+Po zakończeniu instalacji zostanie wyświetlony komunikat o zakończeniu.
+
+<p>
+Zakończona powodzeniem operacja instalacji skopiuje aplikację do katalogu:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Uruchamianie produktu w systemie Linux</h3>
+<p>
+Wyszukaj tekst "IBM i Access Client Solutions" w folderze aplikacji lub użyj klawisza Super, a następnie wpisz tekst "IBM i Access Client Solutions". <hr><h3><a id="5.0"></a>5.0 Instalowanie aktualizacji</h3>
+<p>
+Po udostępnieniu nowej wersji można zastosować aktualizacje, postępując według
+instrukcji instalacji umieszczonych w tym dokumencie.  W przypadku wyświetlenia
+pytania o nadpisanie istniejących plików należy wybrać odpowiedź Tak dla
+wszystkich.
+<p>
+Jeśli używane są skrypty install_acs dla systemu Windows, Mac lub Linux, plik AcsConfig.properties nie zostanie zaktualizowany, dzięki czemu wprowadzone zmiany konfiguracyjne nie zostaną utracone.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Więcej informacji</h3>
+<p>
+Dodatkowe informacje na temat dostosowywania produktu i problemów, które mogą
+wystąpić podczas instalowania lub uruchamiania produktu, można znaleźć w
+dokumencie <a href="../Documentation/GettingStarted_en.html">Pierwsze kroki</a> w folderze
+dokumentacji.
+
+<hr><h3><a id="7.0"></a>7.0 Deinstalacja</h3>
+<p>
+Aby usunąć pliki aplikacji, które zostały skopiowane w powyższe położenia przez skrypt instalacyjny, należy uruchomić specyficzny dla platformy skrypt deinstalacyjny znajdujący się w tym samym folderze, co skrypt instalacyjny:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

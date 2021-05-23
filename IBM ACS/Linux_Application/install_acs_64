@@ -1,0 +1,339 @@
+#!/bin/bash
+# Description:
+# This script will install IBM i Access Client Solutions in the /opt/ibm/iAccessClientSolutions folder 
+#
+# Usage: ./install_acs_64
+#
+
+
+args=$@
+args_length=$#
+arg1=$1
+prefix_arg1=${arg1:0:9}
+suffix_arg1=${arg1:9}
+printhelp="no"
+default_noparms="no"
+reset_start_over="no"
+quiet_mode="no"
+exclude_functions=""
+view_all_splf="no"
+exclude_length=0
+install_type_shared="no"
+install_type_preset="no"
+declare source
+declare target
+declare target_desktop
+declare source_AcsConfig
+declare target_AcsConfig
+
+
+# Print the help text
+function print_help {
+dialog --backtitle "IBM i Access Client Solutions" --msgbox '
+
+Name: install_acs_64
+
+Syntax:
+install_acs_64 [/Exclude=<function1,function2,...> | /Reset | /Q]
+
+Description:
+Installs or upgrades IBM i Access Client Solutions (ACS).
+
+If no parameters are specified:
+- an existing installation will be upgraded.
+- and this is a new installation, the user will be prompted and allowed to customize the installation.
+
+Note: If the source location of the product files was already customized using the /AdminConfig parameter, that configuration will be used for new installations and upgrades.
+
+Optional parameters may be specified:
+
+/Exclude=<function1,function2,...>
+- specified functions will be excluded.
+See /PLUGIN=RESTRICT in GettingStarted for a valid list of functions which can be excluded.
+Note: This parameter will be ignored if the administrator has used /AdminConfig.
+
+/Reset
+A new installation will overwrite the current installation and will be customized based on user input.
+Note: This parameter will be ignored if the administrator has used /AdminConfig.
+
+/Q
+Do not display installation completion message.
+' 15 70
+
+}
+
+
+function ask_user_questions {
+  echo "Asking about functions to be installed." >> $HOME/IBM/install_acs_log.txt
+
+
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you want to use 5250 emulation?' 7 50
+emulation1_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you want to view printer output?' 7 50
+print_ans=$?
+
+if [ 0 == $print_ans ]; then    // 0==yes  1==no
+  dialog --backtitle "IBM i Access Client Solutions" --defaultno --yesno 'Is it ok to view printer output for all users?' 7 50
+  all_output=$?
+  if [ 0 == $all_output ]; then  // 0==yes  1==no
+    view_all_splf="yes"
+  fi
+fi
+
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you want to use the Integrated File System?' 7 50
+ifs_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you want to transfer data to/from spreadsheets?' 7 50
+dt_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you want to use Navigator for i?' 7 50
+inav_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --yesno 'Do you need to manage SSL/TLS certificates?' 7 50
+key_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --defaultno --yesno 'Do you need to use Database tools?' 7 50
+db2tools_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --defaultno --yesno 'Do you need to use an HMC or LAN console?' 7 50
+console_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --defaultno --yesno 'Do you need to issue remote commands? ' 7 50
+rmtcmd_ans=$?
+dialog --backtitle "IBM i Access Client Solutions" --defaultno --yesno 'Do you need to use the System Debugger?' 7 50
+debug_ans=$?
+          
+  if [ 1 == $emulation1_ans ]; then // 0==yes  1==no
+    exclude_functions=$exclude_functions"emulator,"
+  fi
+  if [ 1 == $print_ans ]; then
+    exclude_functions=$exclude_functions"splf,"
+  fi
+  if [ 1 == $ifs_ans ]; then
+    exclude_functions=$exclude_functions"ifs,"
+  fi
+  if [ 1 == $dt_ans ]; then
+    exclude_functions=$exclude_functions"dataxfer,"
+  fi
+  if [ 1 == $inav_ans ]; then
+    exclude_functions=$exclude_functions"l1cplugin,"
+  fi
+  if [ 1 == $key_ans ]; then
+    exclude_functions=$exclude_functions"keyman,"
+  fi
+  if [ 1 == $db2tools_ans ]; then
+    exclude_functions=$exclude_functions"database,"
+  fi
+  if [ 1 == $console_ans ]; then
+    exclude_functions=$exclude_functions"opconsole,hwconsole,"
+  fi
+  if [ 1 == $rmtcmd_ans ]; then
+    exclude_functions=$exclude_functions"rmtcmd,"
+  fi
+  if [ 1 == $debug_ans ]; then
+    exclude_functions=$exclude_functions"debugger,"
+  fi
+}
+
+function copyProductFiles {
+  echo "Copying product files" >> $HOME/IBM/install_acs_log.txt
+  
+  cp -Rpf "$source/Linux_Application/acslaunch_64.desktop" "$target_desktop"
+  if [ ! -d $target ]; then
+    mkdir -p $target
+  fi
+
+  cp -Rpf "$source/Documentation" "$target"
+  cp -Rpf "$source/Fonts" "$target"
+  cp -Rpf "$source/Icons" "$target"
+  # Do not copy the install scripts
+  #cp -Rpf "$source/Mac_Application" "$target"
+  #cp -Rpf "$source/Linux_Application" "$target"
+  #cp -Rpf "$source/Windows_Application" "$target"
+  cp -Rpf "$source/Start_Programs" "$target"
+  cp -Rpf "$source/acsbundle.jar" "$target"
+
+  if [ -e "$source/acs_bak.zip" ]; then
+    cp -Rpf "$source/acs_bak.zip" "$target"
+  fi
+
+  if [ "yes" == $1 ]; then
+    # The p in the following command sometimes causes the following message:
+    # "cp: chflags: /Application/IBM i Access Client Solutions.app/AcsConfig.properties: Operation not permitted"
+    # The message only seems to occur when copying an unmodified AcsConfig.properties file from a remote source location.
+    # However, all testing indicates the file does get copied along with the timestamp from the source location.
+    # If we remove the p, then the timestamp is not taken from the source file and gets changed to be current time.
+    # The message can be safely ignored.
+    cp -Rpf "$source_AcsConfig" "$target"
+    echo "Copied AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  else
+    echo "Did not copy AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  fi
+  chmod 555 "$target/Start_Programs/Linux_i386-32/acslaunch_linux-32"
+  chmod 555 "$target/Start_Programs/Linux_x86-64/acslaunch_linux-64"
+}
+
+
+function customize_local_install {
+  echo "Customizing local installation" >> $HOME/IBM/install_acs_log.txt
+  copyProductFiles yes
+  ask_user_questions
+  exclude_length=${#exclude_functions}
+  if [ $exclude_length -eq 0 ]; then
+    echo "Wrote AcsConfig.properties with no functions excluded" >> $HOME/IBM/install_acs_log.txt
+  else
+    echo " " >> "$target_AcsConfig"
+    echo "# ——— $str_date ——— " >> "$target_AcsConfig"
+    echo "com.ibm.iaccess.ExcludeComps=$exclude_functions" >> "$target_AcsConfig"
+    echo "Wrote AcsConfig.properties and excluded: $exclude_functions" >> $HOME/IBM/install_acs_log.txt
+  fi
+  if [ "no" == $view_all_splf ]; then
+    echo " " >> "$target_AcsConfig"
+    echo "# ——— $str_date ——— " >> "$target_AcsConfig"
+    echo "com.ibm.iaccess.splf.FilterRestricted=true" >> "$target_AcsConfig"
+    echo "Wrote AcsConfig.properties com.ibm.iaccess.splf.FilterRestricted=true" >> $HOME/IBM/install_acs_log.txt
+  fi
+
+}
+
+
+# Begin Main
+#
+if [ $EUID -ne 0 ]; then
+  echo " "
+  echo "This command must run with root authority."
+  echo "Try using:"
+  echo "   sudo ./install_acs_64"
+  echo " "
+  exit
+fi
+
+which dialog > /dev/null
+result=$?
+if [ $result -gt 0 ]; then
+  echo " "
+  echo "The dialog package needs to be installed in order to use install_acs_32"
+  echo "Example 1: sudo apt-get install dialog"
+  echo "Example 2: sudo yum install dialog"
+  echo " "
+  exit
+fi
+
+
+# Verify parameters
+if [ $args_length -gt 1 ]; then
+  print_help
+  exit
+fi
+if [ $args_length -eq 1 ]; then
+  if [[ ($prefix_arg1 != /Exclude=) && ($prefix_arg1 != /exclude=) && ($arg1 != /Reset) && ($arg1 != /reset) && ($arg1 != /Q) && ($arg1 != /q) ]]; then
+    print_help
+    exit
+  fi 
+fi
+
+#Create the IBM directory for the install log
+if [ ! -d $HOME/IBM ]; then
+  mkdir $HOME/IBM
+  chown $SUDO_USER $HOME/IBM
+
+  touch $HOME/IBM/install_acs_log.txt
+  chown $SUDO_USER $HOME/IBM/install_acs_log.txt
+fi
+
+
+str_date=`date`
+echo "BEGIN =============== $str_date =============== BEGIN" >> $HOME/IBM/install_acs_log.txt
+
+if [ $args_length -eq 0 ]; then
+   default_noparms="yes"
+   echo "No args specified" >> $HOME/IBM/install_acs_log.txt
+else
+   echo "Command-line args: $args" >> $HOME/IBM/install_acs_log.txt
+   if [[ ($prefix_arg1 == /Exclude=) || ($prefix_arg1 == /exclude=) ]]; then
+     exclude_length=${#suffix_arg1}
+     if [ $exclude_length -gt 0 ]; then
+       exclude_functions=$suffix_arg1
+     else
+       default_noparms="yes"
+     fi
+   elif [[ ($arg1 == /Reset) || ($arg1 == /reset) ]]; then
+     reset_start_over="yes"
+   elif [[ ($arg1 == /Q) || ($arg1 == /q) ]]; then
+     quiet_mode="yes"
+     default_noparms="yes"
+   else
+     dummy=do_nothing
+   fi
+fi
+
+
+# cd to the directory where this script exists
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "script: ${0}" >> $HOME/IBM/install_acs_log.txt
+
+source=`pwd`/..
+target_desktop="/usr/share/applications/IBM i Access Client Solutions.desktop"
+target="/opt/ibm/iAccessClientSolutions"
+echo "source: $source" >> $HOME/IBM/install_acs_log.txt
+echo "InstallPath: $target" >> $HOME/IBM/install_acs_log.txt
+
+source_AcsConfig="$source/AcsConfig.properties"
+target_AcsConfig="$target/AcsConfig.properties"
+
+
+# check for install_type_shared or install_type_preset
+if [ -e "$source_AcsConfig" ]; then
+  count=`grep -c "com.ibm.iaccess.InstallType=shared" "$source_AcsConfig"`
+  if [ $count -gt 0 ]; then
+    echo "com.ibm.iaccess.InstallType=shared was found" >> $HOME/IBM/install_acs_log.txt
+    install_type_share="yes"
+    echo "install_type_share is treated like install_type_preset on Linux" >> $HOME/IBM/install_acs_log.txt
+    install_type_preset="yes"
+  fi
+  count=`grep -c "com.ibm.iaccess.InstallType=preset" "$source_AcsConfig"`
+  if [ $count -gt 0 ]; then
+    echo "com.ibm.iaccess.InstallType=preset was found" >> $HOME/IBM/install_acs_log.txt
+    install_type_preset="yes"
+  fi
+fi
+
+
+if [ "yes" == $install_type_preset ]; then
+  echo "Install: preset functions by AdminConfig" >> $HOME/IBM/install_acs_log.txt
+  if [ "no" == $default_noparms ]; then
+    echo "$args ignored because Admin preset product functions" >> $HOME/IBM/install_acs_log.txt
+  fi
+  copyProductFiles yes
+  echo "Install: Copied product files and configuration set by admin" >> $HOME/IBM/install_acs_log.txt
+elif [ "yes" == $default_noparms ]; then
+  if [ -e "$target_AcsConfig" ]; then
+    # This is assumed to be the upgrade path
+    echo "Upgrading existing installation" >> $HOME/IBM/install_acs_log.txt
+    copyProductFiles no
+    echo "Install: Did not write AcsConfig.properties" >> $HOME/IBM/install_acs_log.txt
+  else
+    # AcsConfig.properties does not exist at target.  We assume never been installed.
+    customize_local_install
+  fi
+elif [ $exclude_length -gt 0 ]; then
+  # Excluded functions were specified
+  if [ -e "$target_AcsConfig" ]; then
+    # Do not overlay AcsConfig.properties
+    copyProductFiles no
+  else
+    copyProductFiles yes
+  fi
+  echo " " >> "$target_AcsConfig"
+  echo "# ——— $str_date ———" >> "$target_AcsConfig"
+  echo "com.ibm.iaccess.ExcludeComps=$exclude_functions" >> "$target_AcsConfig"
+  echo "Excluded functions: $exclude_functions" >> $HOME/IBM/install_acs_log.txt 
+elif [ "yes" == $reset_start_over ]; then
+  echo "User requested a configuration reset" >> $HOME/IBM/install_acs_log.txt 
+  customize_local_install
+fi
+
+
+echo " "
+echo " Installation completed."
+echo " You may exit this terminal window."
+echo " "
+echo "END ================= `date` ================= END" >> $HOME/IBM/install_acs_log.txt
+if [ "no" == $quiet_mode ]; then
+   dialog --backtitle "IBM i Access Client Solutions" --msgbox 'IBM i Access Client Solutions installation has finished.' 7 50
+fi
+

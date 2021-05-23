@@ -1,0 +1,53 @@
+#!/bin/bash
+# Description:
+# This script will uninstall IBM i Access Client Solutions from the /Applications folder 
+#
+# Usage: ./uninstall_acs
+#
+
+args=$@
+args_length=$#
+arg1=$1
+declare source
+declare target
+declare target_desktop
+
+
+# Begin Main
+#
+
+# Verify parameters
+if [ $args_length -gt 0 ]; then
+  return_value=`osascript uninstall_help_text.scpt`
+  exit
+fi
+
+#Create the IBM directory for the install log
+if [ ! -d $HOME/IBM ]; then
+  mkdir $HOME/IBM
+fi
+
+str_date=`date`
+echo "BEGIN ===uninstall=== $str_date ===uninstall=== BEGIN" >> $HOME/IBM/install_acs_log.txt
+
+
+# cd to the directory where this script exists
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "script: ${0}" >> $HOME/IBM/install_acs_log.txt
+
+source=`pwd`/..
+target="/Applications/IBM i Access Client Solutions.app"
+echo "source: $source" >> $HOME/IBM/install_acs_log.txt
+echo "InstallPath: $target" >> $HOME/IBM/install_acs_log.txt
+
+if [ -d "$target" ]; then
+  rm -Rf "$target"
+  echo "Remove directory: $target" >> $HOME/IBM/install_acs_log.txt
+fi 
+
+echo " "
+echo " Uninstallation completed."
+echo " You may exit this terminal window."
+echo " "
+echo "END ===uninstall=== `date` ===uninstall=== END" >> $HOME/IBM/install_acs_log.txt
+return_value=`osascript uninstall_completion_text.scpt`

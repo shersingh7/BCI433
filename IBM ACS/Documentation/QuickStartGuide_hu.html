@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gyors üzembe helyezési útmutató</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Gyors üzembe helyezési útmutató</h2>
+<h2>A dokumentum tartalmának legutóbbi frissítése: 2017. szeptember 21. </h2>
+
+<h3>Tartalom:</h3>
+<a href="#1.0">1.0 Bevezetés</a><br>
+<a href="#2.0">2.0 Telepítés Windows rendszeren</a><br>
+<a href="#3.0">3.0 Telepítés Mac rendszeren</a><br>
+<a href="#4.0">4.0 Telepítés Linux rendszeren</a><br>
+<a href="#5.0">5.0 Frissítések telepítése</a><br>
+<a href="#6.0">6.0 További információk</a><br>
+<a href="#7.0">7.0 Eltávolítás</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Bevezetés</h3>
+<p>
+Ez a kézikönyv a helyi lemezmeghajtón egyetlen felhasználó számára végzett
+terméktelepítéshez tartalmaz útmutatást. 
+<p>
+A jelen termék számos különböző módon telepíthető a felhasználók számára. Ezek közé tartoznak az alábbiak:<br>
+<ul>
+<li>Osztott hely, amelyet több felhasználó képes elérni;<br>
+Tekintse meg az <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Testreszabás és
+telepítés egyszerűen</a> témakört.
+<li>Ki kell bontania a zip archívumot egy tetszőleges helyre, beleértve a hordozható
+adathordozókat (például CD, DVD, USB flash meghajtó) vagy a helyi lemezmeghajtó tetszőleges
+útvonalát.  Tekintse meg a Dokumentum mappában található <a href="../Documentation/GettingStarted_en.html">Kezdeti
+lépések</a> dokumentum <a href="../Documentation/GettingStarted_en.html#5.0">Telepítés</a> szakaszát.
+<li>A <a href="../Documentation/GettingStarted_en.html">Kezdeti lépések</a> dokumentum
+<a href="../Documentation/GettingStarted_en.html#9.4">További telepítési beállítások</a> részében olvashat további
+beállításokról, mint a <a href="../Documentation/GettingStarted_en.html#9.4.1">Konfigurációs
+beállítások automatikus importálása</a>, ami elősegíti ugyanazon konfiguráció használatát több
+felhasználó esetében, és a <a href="../Documentation/GettingStarted_en.html#9.4.2">Natív IBM i telepítések</a>, amellyel parancssori
+bedolgozókat használhat közvetlenül az IBM i rendszeren.
+</ul> 
+
+<p>
+A termék telepítéséhez a helyi lemezmeghajtón egyetlen felhasználó számára, olvassa el a dokumentum
+hátralévő részét.
+
+<hr><h3><a id="2.0"></a>2.0 Telepítés Windows rendszeren</h3>
+
+<p>
+Keresse meg a termékhez tartozó ZIP archívumot vagy telepítő CD-t.
+
+<p>
+Ha a termék zip archívumát használja, akkor bontsa ki a tartalmát.
+<br>Javaslat: A Windows Intézőben jelölje ki a zip archívumot, kattintson rá a jobb egérgombbal, majd válassza az előugró menü "Összes kibontása..." parancsát.
+
+<p>
+A Windows Intézőben keresse meg a termék Windows_Application mappáját.
+
+<p>
+A 32 bites verzió telepítéséhez az aktuális felhasználó számára, kattintson duplán az install_acs_32 fájlra.
+<p>
+A 64 bites verzió telepítéséhez az aktuális felhasználó számára, kattintson duplán az install_acs_64 fájlra.
+<p>
+A 32 bites verzió telepítéséhez az összes felhasználó számára egy többfelhasználós számítógépen, kattintson duplán az install_acs_32_allusers fájlra.
+<p>
+A 64 bites verzió telepítéséhez az összes felhasználó számára egy többfelhasználós számítógépen, kattintson duplán az install_acs_64_allusers fájlra.
+
+<p>
+Ha ez egy új telepítés, akkor  paraméterbeviteli képernyők segítik majd a kezdeti telepítés személyre szabását.  Ha megjelenik a licencszerződés, akkor fogadja el
+azt.
+<p>
+Ha ez egy frissítés, akkor megmaradnak a korábbi beállítások.
+<p>
+Amikor a telepítés befejeződik, egy befejezési üzenet kerül megjelenítésre.
+
+<p>
+A sikeres egyfelhasználós telepítés az alkalmazást az alábbi helyre másolja:
+<pre>
+    /Users/felhasználói_azonosító/IBM/ClientSolutions/
+</pre>
+<p>
+Megjegyzés: A parancsfájlok kiinduló változata a termékfájlokat a MyDocuments útvonalához viszonyított útvonalra másolta be.
+Az aktuális változat a %HOMEDRIVE% és %HOMEPATH% környezeti változókon alapuló útvonalra másolja a termékfájlokat.  
+A parancsfájloknak a termék frissítésére történő használatakor a frissítés az első megtalált helyen fog történni.
+<p>
+A sikeres többfelhasználós telepítés az  alkalmazást az alábbi helyre másolja:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 A termék elindítása Windows rendszeren</h3>
+<p>
+Kattintson duplán az "Access Client Solutions" ikonra az Asztalon.
+
+
+<hr><h3><a id="3.0"></a>3.0 Telepítés Mac rendszeren</h3>
+<p>
+A Finder alkalmazással keresse meg a termékhez tartozó ZIP archívumot vagy CD-t.
+<p>
+Ha a termék zip archívumát használja, akkor bontsa ki a tartalmát.
+<br>Javaslat: Ha éppen most töltötte le a terméket, akkor keresse a fájlt a Downloads mappában.  Ha a ZIP archívum tartalma még
+nem került kibontásra, akkor kattintson rá duplán a kibontáshoz.  
+<p>
+Keresse meg a Mac_Application mappát.   Kattintson duplán az install_acs fájlra.
+
+<p>
+Ha ez egy új telepítés, akkor  paraméterbeviteli képernyők segítik majd a kezdeti telepítés személyre szabását.  Ha megjelenik a licencszerződés, akkor fogadja el
+azt.
+<p>
+Ha ez egy frissítés, akkor megmaradnak a korábbi beállítások.
+<p>
+Amikor a telepítés befejeződik, egy befejezési üzenet kerül megjelenítésre.
+<p>
+A sikeres telepítés átmásolja az alkalmazást az Alkalmazások mappába.
+
+<p>
+Ha a telepítést a Keresőben indította, akkor megnyílt egy Terminál ablak a telepítés végrehajtásához. Amikor a telepítés befejeződött, bezárhatja a terminálablakot.
+<p>
+Technikai megjegyzés:<br>
+Biztonsági beállításaitól, valamint a használt OS X változattól függően
+megjelenhet egy előugró ablak, amely jelzi, hogy az install_acs fájl nem
+jogosult a futtatásra.
+Ha ez történik, akkor a következő módszerek egyikével fel kell hatalmaznia az
+install_acs fájlt a futásra:<br>
+<ul>
+<li>Ha megjelenik az install_acs fájllal kapcsolatban a "Megnyitás" lehetőség,
+akkor válassza ki azt.
+<li>Kattintson a jobb egérgombbal az install_acs fájlra, majd válassza az
+előugró menü "Megnyitás" menüpontját.<br>
+   Amikor megjelenik egy előugró ablak, akkor válassza a "Megnyitás" lehetőséget.
+<li>Ha a fenti lehetőségek egyike sem működik, akkor nyissa meg a következő
+elemeket:<br>
+    Rendszerbeállítások...<br>
+    Biztonság és adatvédelem<br>
+    Ha lehetőség van az "IBM i Access Client Solutions" megnyitására, akkor válassz ki ezt a beállítást.
+    Egyébként az Általános lapon kell finomítania a beállításokat, hogy más alkalmazások futtatása is lehetővé váljon.  Miután első alkalommal
+elindult az "IBM i Access Client Solutions" alkalmazás, visszaállíthatja az
+eredeti biztonsági beállításokat.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 A termék elindítása Mac rendszeren</h3>
+<p>
+A Finder alkalmazás segítségével keresse meg az Applications mappát.
+<p>
+Keresse meg az "IBM i Access Client Solutions" ikont, majd a termék
+elindításához kattintson duplán az ikonra.
+<p>
+Technikai megjegyzés:<br>
+Biztonsági beállításaitól, valamint a használt OS X változattól függően
+megjelenhet egy előugró ablak, amely jelzi, hogy az alkalmazás nem jogosult a
+futtatásra.
+Ha ez történik, akkor a következő módszerek egyikével fel kell hatalmaznia az
+alkalmazást a futásra:<br>
+<ul>
+<li>Ha megjelenik az alkalmazással kapcsolatban a "Megnyitás" lehetőség, akkor
+válassza ki azt.
+<li>Kattintson a jobb egérgombbal az "IBM i Access Client Solutions" ikonra,
+majd válassza az előugró menü "Megnyitás" menüpontját.<br>
+   Amikor megjelenik egy előugró ablak, akkor válassza a "Megnyitás" lehetőséget.
+<li>Ha a fenti lehetőségek egyike sem működik, akkor nyissa meg a következő
+elemeket:<br>
+    Rendszerbeállítások...<br>
+    Biztonság és adatvédelem<br>
+    Ha lehetőség van az "IBM i Access Client Solutions" megnyitására, akkor válassz ki ezt a beállítást.
+    Egyébként az Általános lapon kell finomítania a beállításokat, hogy más alkalmazások futtatása is lehetővé váljon.  Miután első alkalommal
+elindult az "IBM i Access Client Solutions" alkalmazás, visszaállíthatja az
+eredeti biztonsági beállításokat.  
+</ul>
+Technikai megjegyzés:<br>
+Ha a rendszer felszólítja a "Java 6 SE futási környezet" telepítésére, akkor
+nem szükséges elvégeznie a Java 6-os változatának telepítését.  Telepítse a Java 8-as változatát, majd  próbálja meg ismét elindítani a terméket.
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Telepítés Linux rendszeren</h3>
+<p>
+Keresse meg a termékhez tartozó ZIP archívumot vagy telepítő CD-t.
+<p>
+Ha a termék zip archívumát használja, akkor bontsa ki a tartalmát.
+<br>Javaslat: A terminálablakban használja az unzip parancsot.
+<p>
+Keresse meg a Linux_Application mappát.
+<p>
+Mivel a telepítési parancsfájl használatához root jogosultságra van szüksége, a
+sudo segédprogrammal futtassa a telepítési parancsfájlt a terminálablakban.  Például:
+<p>
+Ha 32 bites architektúrán dolgozik, akkor használja a következő parancsot:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Amennyiben 64 bites architektúrán dolgozik, úgy használja a következő parancsot:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Ha ez egy új telepítés, akkor  paraméterbeviteli képernyők segítik majd a kezdeti telepítés személyre szabását.  Ha megjelenik a licencszerződés, akkor fogadja el
+azt.
+<p>
+Ha ez egy frissítés, akkor megmaradnak a korábbi beállítások.
+<p>
+Amikor a telepítés befejeződik, egy befejezési üzenet kerül megjelenítésre.
+
+<p>
+A sikeres telepítés az alkalmazást az alábbi helyre másolja:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 A termék elindítása Linux rendszeren</h3>
+<p>
+Az "IBM i Access Client Solutions" megoldást keresse az Alkalmazások mappában, vagy a Super gomb megnyomása után írja be:
+"IBM i Access Client Solutions".
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Frissítések telepítése</h3>
+<p>
+Amikor új változat válik elérhetővé, a frissítések alkalmazásához használja a
+jelen dokumentumban szereplő telepítési utasításokat.  Ha a rendszer rákérdez a
+meglévő fájlok felülírására, akkor válaszoljon a következővel: "Igen, mindet".
+<p>
+Ha Windows, Mac vagy Linux rendszeren az install_acs parancsfájlokat használja, akkor az
+AcsConfig.properties fájl nem fog frissülni, így a fájlon végzett minden egyéni
+konfigurációmódosítás is megmarad.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 További információk</h3>
+<p>
+Ha a termék személyre szabásával kapcsolatban további információkra van
+szüksége, illetve a termék telepítése vagy elindítása során problémákat
+tapasztal, akkor tekintse meg a Documentation mappában található
+<a href="../Documentation/GettingStarted_en.html">Kezdeti lépések</a> című dokumentumot.
+
+<hr><h3><a id="7.0"></a>7.0 Eltávolítás</h3>
+<p>
+A telepítő parancsfájl által a fenti helyekre másolt alkalmazásfájlok
+eltávolítása a környezet-specifikus eltávolítás parancsfájllal
+lehetséges, amely ugyanabban a mappában van, ahol a telepítő parancsfájl:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

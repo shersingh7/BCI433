@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Başlarken</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions - Başlarken</h2>
+<h2>Bu belgenin içeriği en son 8 Ocak 2018 tarihinde güncellenmiştir.</h2>
+
+
+<h3><a id="0.5"></a>0.5 Hızlı Başlangıç Kılavuzu</h3>
+<p>
+<a href="./QuickStartGuide_en.html">Hızlı Başlangıç Kılavuzu</a>, ürünü devreye almayla ilgili olarak Windows, Mac ya da Linux işletim sistemini kullanan çoğu kullanıcının işine yarayacak yönergeler içerir.  Tek bir kullanıcı ya da çok kullanıcılı bir bilgisayar için kuruluş yapıyorsanız Documentation (Belgeler) klasöründe bulunan
+<a href="./QuickStartGuide_en.html">Hızlı Başlangıç Kılavuzu</a> başlıklı konuya bakın.
+<p>
+Ürün, diğer devreye alma seçenekleri ve ürünü uyarlama ile ilgili ek ayrıntılar bu
+belgenin geri kalan bölümünde yer almaktadır.  
+
+<h3>İçeriği:</h3>
+<a href="#0.5">0.5 Hızlı Başlangıç Kılavuzu</a><br>
+<a href="#1.0">1.0 Giriş</a><br>
+<a href="#2.0">2.0 Özellikler</a><br>
+<a href="#3.0">3.0 Önkoşullar</a><br>
+<a href="#4.0">4.0 Ürün İçeriği</a><br>
+<a href="#5.0">5.0 Kuruluş</a><br>
+&nbsp;&nbsp;<a href="#5.1">5.1 Var Olan Kuruluşun Güncellenmesi</a><br>
+<a href="#6.0">6.0 Dosya İzinleri</a><br>
+&nbsp;&nbsp;<a href="#6.1">6.1 Dosya İzinleri (Linux, Mac, AIX)</a><br>
+&nbsp;&nbsp;<a href="#6.2">6.2 Dosya İzinleri (Windows)</a><br>
+<a href="#7.0">7.0 Ürünün Başlatılması</a><br>
+&nbsp;&nbsp;<a href="#7.1">7.1 Ürünün Başlatılması</a><br>
+&nbsp;&nbsp;<a href="#7.2">7.2 Ürünün Başlatılması (komut dosyası kullanarak)</a><br>
+&nbsp;&nbsp;<a href="#7.3">7.3 Ürünün Başlatılması (komut satırı kullanarak)</a><br>
+<a href="#8.0">8.0 Konfigürasyon</a><br>
+&nbsp;&nbsp;<a href="#8.1">8.1 Konfigürasyon Konumu</a><br>
+<a href="#9.0">9.0 İleri Düzey Konular</a><br>
+&nbsp;&nbsp;<a href="#9.1">9.1 Diğer Komut Satırı Seçenekleri</a><br>
+&nbsp;&nbsp;<a href="#9.2">9.2 Dosya İlişkilendirmeleri</a><br>
+&nbsp;&nbsp;<a href="#9.2.1">9.2.1 Dosya İlişkilendirmeleri (Windows için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.1.1">9.2.1.1 Simge Değiştirilmesi (Windows Kısayolu için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2">9.2.2 Masaüstü Simgesi Ayarlanması (Linux için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.2.1">9.2.2.1 Dosya İlişkilendirmeleri (Linux için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3">9.2.3 Dosya İlişkilendirmeleri (Mac için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.2">9.2.3.1 Dosya İlişkilendirmeleri Yaratılması (Mac için)</a><br>
+&nbsp;&nbsp;<a href="#9.2.3.3">9.2.3.2 Simgenin Değiştirilmesi (Mac için)</a><br>
+&nbsp;&nbsp;<a href="#9.3">9.3 Konfigürasyon Konumunun Değiştirilmesi</a><br>
+&nbsp;&nbsp;<a href="#9.4">9.4 Diğer Devreye Alma Seçenekleri</a><br>
+&nbsp;&nbsp;<a href="#9.4.1">9.4.1 Konfigürasyon Ayarlarının Otomatik Olarak İçe Aktarılması</a><br>
+&nbsp;&nbsp;<a href="#9.4.2">9.4.2 Yerel IBM i Konuşlandırması</a><br>
+&nbsp;&nbsp;<a href="#9.5">9.5 Özelleştirilmiş Paketler</a><br>
+&nbsp;&nbsp;<a href="#9.6">9.6 IBM i Access for Windows'tan Geçiş</a><br>
+&nbsp;&nbsp;<a href="#9.6.1">9.6.1 Sistem Konfigürasyonlarını Geçirme</a><br>
+&nbsp;&nbsp;<a href="#9.6.2">9.6.2 5250 Öykünmesini Geçirme</a><br>
+&nbsp;&nbsp;<a href="#9.6.3">9.6.3 Saklanan Veri Aktarma İsteği Dosyalarını Geçirme</a><br>
+&nbsp;&nbsp;<a href="#9.6.4">9.6.4 EHLLAPI</a><br>
+&nbsp;&nbsp;<a href="#9.6.5">9.6.5 Kerberos</a><br>
+&nbsp;&nbsp;<a href="#9.7">9.7 Anahtar Yönetimi</a><br>
+&nbsp;&nbsp;<a href="#9.8">9.8 Veri Aktarımı</a><br>
+&nbsp;&nbsp;<a href="#9.8.1">9.8.1 Excel ve Calc Hesap Çizelgeleri için Veri Aktarma Desteği</a><br>
+&nbsp;&nbsp;<a href="#9.8.2">9.8.2 Karakter Kesme ve Sayısal Taşma için Veri Aktarma Desteği</a><br>
+&nbsp;&nbsp;<a href="#9.8.3">9.8.3 Veri Aktarma Sayfası Adı</a><br>
+&nbsp;&nbsp;<a href="#9.9">9.9 IBM i için Konsol Bağlantısı Kurma</a><br>
+&nbsp;&nbsp;<a href="#9.10">9.10 Ek Yazı Tipleri</a><br>
+&nbsp;&nbsp;<a href="#9.11">9.11 netrc Dosyasından Kimlik Bilgilerinin Kullanılması</a><br>
+&nbsp;&nbsp;<a href="#9.12">9.12 Tümleşik Dosya Sistemi (IFS)</a><br>
+&nbsp;&nbsp;<a href="#9.12.1">9.12.1 IFS, QFileSvr.400 ve Güvenlik</a><br>
+&nbsp;&nbsp;<a href="#9.12.2">9.12.2 IFS Yetkisi</a><br>
+&nbsp;&nbsp;<a href="#9.12.3">9.12.3 IFS Sınırlamaları</a><br>
+&nbsp;&nbsp;<a href="#9.12.4">9.12.4 IFS ve Bağımsız ASP'ler</a><br>
+&nbsp;&nbsp;<a href="#9.13">9.13 Secure Shell (SSH) Uçbirimi</a><br>
+&nbsp;&nbsp;<a href="#9.13.1">9.13.1 SSH Uçbirim Önkoşulları</a><br>
+
+
+
+<a href="#10.0">Hizmet Tanılamaları</a><br>
+<a href="#11.0">11.0 Sık Sorulan Sorular (SSS)</a><br>
+<a href="#12.0">12.0 Güncelleme Geçmişi</a><br>
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Giriş</h3>
+<p>
+IBM i Access Client Solutions, IBM i Access ürün ailesinin en yeni üyesidir.  Linux, Mac ve Windows da içinde olmak üzere, Java'yı destekleyen çoğu işletim
+sistemi üzerinde çalışan, Java tabanlı, platformdan bağımsız bir arabirim sağlar. IBM i Access Client Solutions, IBM i sisteminizi kullanmak ve yönetmek için
+en yaygın olarak kullanılan görevleri basitleştirilmiş tek bir konumda birleştirir.
+<p>
+IBM i Access Client Solutions, diğer IBM i Access Family ürünleriyle aynı IBM i anasistem
+sunucularını kullanır ve 5250 öykünmesini ve Veri Aktarımı özelliklerini kullanmak için
+aynı IBM i Access Family lisansını (XW1) gerektirir.
+<p>
+Ayrıca Windows ve Linux için istemci uygulamaları kullanma ve geliştirme amaçlı ara
+katman yazılımı içeren iki isteğe bağlı paket de vardır:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Windows Uygulama Paketi<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions - Linux Uygulama Paketi<br>
+<p>
+Geçerli yetkiye sahip olan IBM i 7.1 ya da sonraki sürümleri kullanan müşteriler aşağıdaki iki yöntemden biriyle IBM i Access Client Solutions olanağını edinebilir:
+<ul>
+<li> Temel <a href="https://www.ibm.com/services/forms/preLogin.do?source=swg-ia">IBM i Access Client Solutions</a> paketini aşağı yükleyin. 
+<li> 5761-SS1 or 5770-SS1 altında <a href="https://www.ibm.com/servers/eserver/ess">Yetkili Yazılım Desteği (ESS)</a> web sitesinden temel paketi ve isteğe bağlı Windows ve Linux uygulama paketlerini aşağı yükleyin.
+</ul>
+
+<p>
+İsteğe bağlı Windows ve Linux uygulama paketleri yalnızca Yetkili Yazılım Desteği (ESS) web sitesinde bulunmaktadır. 
+<p>
+Müşteriler, ortamı 5761-SS1 ya da 5770-SS1 yenileme aksamı 6288 siparişi vererek edinebilir.
+Fiziksel ortam, ürünü doğrudan CD'den çalıştırmanıza olanak tanıyan, ürünün çalıştırılabilir bir sürümünü içerir.
+Fiziksel ortam, ürünün istediğiniz bir konuma kopyalayıp veri alabileceğiniz sıkıştırılmış bir arşivini de içerir.
+IBM i Access Client Solutions fiziksel ortamı, isteğe bağlı
+Windows ve Linux Uygulama Paketleri'ni içermez. 
+<p>
+Ek bilgi için aşağıdaki adresi ziyaret edin:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/power/software/i/access/solutions.html
+<p>
+IBM i Access Family ürünlerine ilişkin en yeni bilgiler için aşağıdaki adresi ziyaret edin:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.ibm.com/systems/i/software/access/caann.html
+
+
+
+
+<hr><h3><a id="2.0"></a>2.0 Özellikler</h3>
+<p>
+IBM i Access Client Solutions özelliklerinden bazıları şunlardır:
+<ul>
+<li>IBM Rational Host-on-Demand tabanlı tam donanımlı 5250 görüntü öykünme programı. IBM i Access for Windows sistemini kullanırken bildiğiniz tüm 5250 görüntü özelliklerinin
+yanı sıra sunulan bazı ek özellikler şunlardır:
+<ul>
+<li>Birden çok oturumun tek bir görüntüleme alanını paylaşmasına olanak sağlayan sekme desteği
+<li>Sayfalar arasında kolay kaydırmaya olanak sağlayan fare tekerleği desteği
+<li>İş istasyonu yeniden başlatılmadan diller arasında geçişin yapılamaması
+<li>Farklı öykünücü oturumlarında ayrı dillere olanak sağlayan farklı anasistem kod sayfaları ile eşzamanlı görüntüleme oturumları
+</ul>
+<li>Yazıcı öykünmesi
+<li>Tüm 5250 öykünme programı oturumlarınızın yönetimi için kullanılabilecek,
+IBM Personal Communications Session Manager modelini örnek alan 5250 Session Manager
+
+<li>OpenDocument elektronik çizelge (*.ods), Excel Workbook (*.xlsx) ve diğer dosya biçimleri
+gibi IBM i veritabanınız ile çeşitli dosya tipleri arasında aktarım yeteneği sağlayan
+Veri Aktarımı özelliği
+
+<li>Yazıcı Çıktısı dosyaları IBM i çıkış kuyruğunda görüntülemenizi ve bu dosyaları istemci sisteminize yüklemenizi sağlayan bir arabirim sunar.
+
+<li>IBM i işletim panosu için grafik bir arabirim sağlayan Sanal Denetim Panosu
+
+<li>LAN, HMC ve FSM konsolları için 5250 öykünmesi
+
+<li>ASMI, IVM ve HMC de dahil olmak üzere donanım yönetimi arabirim konfigürasyonları birleştirmesi
+
+<li>Varsayılan tarayıcınızı kullanarak IBM Navigator for i uygulamasını başlatma yeteneği
+
+<li> SQL Komut Dosyalarını Çalıştırma ve SQL Performans Merkezi gibi veritabanı özellikleri.
+</ul>
+<p>
+İsteğe bağlı Windows Uygulama Paketi şunları içerir:
+<ul>
+<li>ODBC, .Net ve OLE DB kullanılarak Db2 for i bağlantısı
+<li>IBM i sistem nesnelerine erişim için Programlama Araç Takımı
+<li>TLS/SSL bağlantıları için destek
+<li>AFP yazıcı sürücüsü
+</ul>
+<p>
+İsteğe bağlı Linux Uygulama Paketi şunları içerir:
+<ul>
+<li>Db2 for i erişimi için bir ODBC sürücüsü ve tüm 64 bitlik ODBC veri tipi desteği.
+</ul>
+
+
+
+
+
+<hr><h3><a id="3.0"></a>3.0 Önkoşullar</h3>
+<h3><a id="3.1"></a>3.1 Önkoşullar (iş istasyonu)</h3>
+<p>
+IBM i Access Client Solutions, Linux, Mac ve Windows'un çeşitli sürümleri dahil Java 8.0 veya sonraki sürümlerini destekleyen çoğu işletim sistemlerinde çalışır.
+<p>
+Öneri:<br>
+En güncel Java sürümüne sahip olmanız en son düzeltme ve güvenlik tanımlama bilgilerine sahip olduğunuzdan emin olmanızı sağlar. 
+<p>
+Sisteminizde kurulu Java sürümünü, komut (Komut Bilgi İstemi, Kabuk, Uçbirim, vb.)
+girilebilecek bir komut istemini açıp komutu yazarak denetleyebilirsiniz:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java -version
+<p>
+Aşağıdaki çıktı, 8.0 sürümünün kurulu olduğunu gösterir:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;java version "1.8.0_65"<br>
+Bu örnekteki 65, güncelleme düzeyini gösterir.
+
+<p>
+Aşağıda, bazı Java sağlayıcılarının web siteleri verilmiştir.  Platformunuzda en güncel
+Java sürümünün çalıştırıldığından emin olun.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http://openjdk.java.net/install<br>
+
+<h3><a id="3.2"></a>3.2 Önkoşullar (IBM i bağlantısı)</h3>
+<p>
+IBM i Access Client Solutions, IBM i yayın düzeyi 5.4 ve üzeri sürümlerine bağlanır.
+Aşağıdaki özellikler IBM i yayın düzeyi 6.1 ya da üzeri sürümlerini gerektirir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Navigator for i<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;5250 Konsolu<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Sanal Denetim Panosu<br>
+<p>
+SSL bağlantıları kullanacaksanız, yayın düzeyinize ilişkin uygun IBM i PTF'leri yükleyin ve uygulayın:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - SI45610, SI55204, SI55389, SI57332, MF60335<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.2 - SI55392, SI57320, MF60333, MF60334 
+
+<p>
+Navigator for i kullanacaksanız, yayın düzeyinize ilişkin uygun IBM i PTF'leri yükleyin ve uygulayın:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.1 - PTF SF99368 grubu 37 ya da daha yüksek düzey<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;7.2 - PTF SF99713 grubu 12 ya da daha yüksek düzey<br>
+	
+<p>
+5250 Konsolu ya da Sanal Denetim Panosu özelliğini kullanacaksanız yayın düzeyinize ilişkin uygun PTF'leri yükleyin ve uygulayın:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1&nbsp;&nbsp;&nbsp; - MF55543, MF55549<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;6.1.1 - MF55540, MF55547<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;7.1&nbsp;&nbsp;&nbsp; - MF55485, MF55538<br>
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Ürün İçeriği</h3>
+<p>
+Ürünün sıkıştırılmış arşivinde aşağıdaki dosyalar ve dizinler
+bulunur:
+<pre>
+
+acsbundle.jar       - ürünün yürütülebilir jar dosyası
+AcsConfig.properties- konfigürasyon ayarlarını içeren dosya
+                      (acsbundle.jar içinde de bulunur)
+
+Mac_Application     - Mac için kuruluş komut dosyasını içeren dizin
+
+Linux_Application   - Linux için kuruluş komut dosyalarını içeren dizin
+
+Windows_Application - Windows için kuruluş komut dosyalarını içeren dizin
+
+Start_Programs      - Platforma özgü olan ve ürünü başlatmak için kullanılabilecek olan ikili
+dosyaları içeren dizin.
+    Linux_i386-32
+    Linux_x86-64
+    Mac_i386-32_x86-64
+    Windows_i386-32
+    Windows_x86-64
+
+Documentation       - belgeleri içeren dizin
+  QuickStartGuide - başlangıç bilgileri
+  GettingStarted  - ürünlere ilişkin ayrıntılı bilgi
+  License             - kullanım kayıt ve koşullarını içeren dizin
+  Notices             - bilgi ve bildirimleri içeren dizin
+  properties          - ürün sürüm bilgilerini içeren dizin
+  Sample_Scripts    - Start_Programs içindeki ikili dosyalar
+                      çalışmazsa ürünü başlatmak için kullanılabilecek örnek
+                      komut dosyalarını içeren dizin.
+    Linux_Mac_Other - perl bulunan bir platformda ürünün başlatılması için perk komut dosyaları
+dizini.
+    Windows         - Windows'ta başlatılacak bir JScript içeren dizin
+
+Icons               - simge olarak kullanılabilecek dosyaları içeren dizin
+
+Fonts               - 5250 öykünmesi için ek siyah beyaz yazı tiplerinin 
+                      eklendiği dizin
+
+</pre>
+
+
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Kuruluş</h3>
+<p>
+IBM i Access Client Solutions paketi, çok basit tekli kullanıcı kuruluşundan daha gelişmiş çoklu kullanıcı kuruluşlarına kadar birçok kuruluş seçeneği sağlar.
+<p>
+Çeşitli kuruluş seçenekleri için kullanılabilen ve Mac_Application, Linux_Application ve Windows_Application klasörlerinde sağlanan kuruluş komut dosyaları (<a href="#4.0">4.0 Ürün İçerikleri</a> bölümüne bakın).
+
+<p>
+Mac, Linux ve Windows sisteminde tekli kullanıcı kuruluşu ya da Windows bilgisayarda çoklu kullanıcı kuruluşu için <a href="./QuickStartGuide_en.html">QuickStartGuide</a> (Hızlı Başlangıç Kılavuzu) bölümüne bakın.
+Hızlı Başlangıç Kılavuzu'nda bu tip basit kuruluşların gerçekleştirilmesi için sağlanan kuruluş komut dosyalarının nasıl kullanılacağı açıklanır.
+<p>
+Bunu birçok kullanıcıya konuşlandırmayı planlayan bir yöneticiyseniz <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">IBM i Access Client Solutions: Customization and deployment made easy</a> (IBM i Access Client Solutions: Daha kolay uyarlama ve konuşlandırma) başlıklı makaleyi okumak isteyebilirsiniz.
+Bu makalede, sistem yöneticisinin kuruluş komut dosyaları tarafından desteklenen /AdminConfig seçeneğini kullanarak devreye almadan önce birden çok kullanıcı için kuruluşu nasıl önceden uyarlayabileceği açıklanmaktadır.
+<p>
+Sessiz kipte kuruluşu otomatikleştirmek isteyen sistem yöneticileri için kuruluşu önceden konfigüre etmek üzere /AdminConfig parametresini kullanın.  Gerçek kuruluş için/Q parametresini kullanın. Örneğin:<br>
+<pre>
+    Windows_Application\install_acs_64.js /AdminConfig
+    Windows_Application\install_acs_64.js /Q
+</pre>
+
+<p>
+Yukarıdaki seçeneklere ek olarak zip arşivini istediğiniz herhangi bir konuma çıkarma seçeneğiniz de vardır. Bu, iş istasyonunuzun dosyalara erişmek için okuma yetkisine sahip olduğu herhangi bir konum olabilir.  Buna, yerel sabit disk
+sürücüsü, uzak bir ağ sürücüsü (paylaşılan bir sürücü) ya da CD veya USB flaş sürücüsü gibi taşınabilir ortamlar dahildir.  Zip arşivi çıkarıldığında kuruluş tamamlanır.
+
+<p>
+Teknik Not:<br>
+Bazı arşiv yardımcı programları kayıtlı dosya özniteliklerinin tümünü
+korumaz.  Örneğin, Mac ve Linux platformlarında, unzip komutu genellikle jar komutundan daha iyi bir seçenektir.  Ek
+bilgi için <a href="#6.0">6.0 Dosya İzinleri</a> başlıklı bölüme bakın.
+
+<h3><a id="5.1"></a>5.1 Var Olan Kuruluşun Güncellenmesi</h3>
+<p>
+Geliştirmeler ve düzeltmeler düzenli aralıklarla kullanılabilir olacaktır.  Bu güncellemeler, tam bir ürün
+kuruluşu olarak sağlanır.  Bu güncellemeler kullanılabilir olduğunda, var olan kuruluşunuzu
+güncellemeniz gerekir.
+<p>
+Kuruluş komut dosyaları kullanılarak kurulmuş var olan bir kuruluşu güncellemek için ürünün yeni sürümünün içeriklerini alın.  Bu yeni sürümden kuruluş komut dosyasını, ilk kuruluşta olduğu gibi çağırın.  Böylece kullanıcıların var olan konfigürasyonu değiştirilmeden ürün dosyaları güncellenir.
+<p>
+Ürünün bir sürümünü birden çok kullanıcının eriştiği merkezi bir konumda tutan sistem yöneticileri için yeni sürümün içeriklerini var olan sürümün üzerine alabilirsiniz.
+AcsConfig.properties dosyası üzerinde özel değişiklikler yaptıysanız, ürünün yeni sürümünün içeriklerini var olan bir sürümün üzerine almadan önce AcsConfig.properties öğesini kaydetmek isteyebilirsiniz.  Ürünün yeni sürümünün içeriklerini alıp AcsConfig.properties öğesini geri yüklemenizin ardından kullanıcılarınız kuruluşlarını güncellemek için ilk kuruluşla aynı şekilde kuruluş komut dosyasını çalıştırabilir.
+<p>
+Zip arşivinin içeriklerini seçtiğiniz bir konuma alarak kuruluş komut dosyalarını kullanmadan ürünü kurmayı seçerseniz, ürünü güncellemek için ürünün yeni sürümünün içeriklerini var olan sürümün üzerine almanız gerekir.
+Üzerinde özel değişiklikler yaptıysanız AcsConfig.properties içeriklerini kaydetmeniz ve geri yüklemeniz gerekebileceğini unutmayın.
+
+<hr><h3><a id="6.0"></a>6.0 Dosya İzinleri</h3>
+<p>
+<a href="#7.0">Bölüm 7.0 Ürünün Başlatılması</a> başlıklı bölümde, IBM i
+Access Client Solutions programının başlatılmasına ilişkin birkaç farklı yöntem
+açıklanır.  Ürünü başlatmak için sağlanan ikili
+dosyalardan ya da komut dosyalarından birini kullanırsanız, Dosya İzinlerinde İzni Yürüt
+seçeneğinin etkinleştirilmiş olması gerektiğine dikkat edin.  Zip arşivi dosyası
+açılırken atanan dosya izinleri, işletim sistemi, zip arşivini açmak için kullanılan
+arşiv programı, kullanıcı yetkisi gibi unsurlara göre belirlenir.
+<p>
+Sağlanan ikili dosyalardan ya da komut dosyalarından birini kullanma konusunda sorun yaşıyorsanız
+Dosya İzinlerini denetleyin.  Aşağıdaki bölümlerde dosya izinlerinin denetlenmesine ilişkin
+bazı yöntemler açıklanır.
+
+
+<h3><a id="6.1"></a>6.1 Dosya İzinleri (Linux, Mac, AIX)</h3>
+<p>
+UNIX'e benzer işletim sistemlerinde, dosyanın izinlerini denetlemek için bir kabuk ya da
+uçbirim komut isteminden aşağıdaki komutu kullanabilirsiniz:<br>
+<pre>    ls -l &lt;dosya&gt;   			</pre>
+<p>
+Bir dosyanın izinlerini değiştirmek için aşağıdaki komutu kullanabilirsiniz:<br>
+<pre>    chmod &lt;izin&gt; &lt;dosya&gt;	</pre><br>
+Örneğin:<br>
+herkese okuma ve yürütme izni eklemek için:
+<pre>
+    chmod a+rx &lt;dosya&gt;
+</pre>
+dosya sahibine okuma/yazma/yürütme izni ve herkes için yalnızca okuma/yürütme
+izni vermek için:
+<pre>
+    chmod 755 &lt;dosya&gt;
+</pre>
+<p>
+ls ve chmod komutlarına ilişkin ek yardım bilgilerine internet üzerinden ulaşabilirsiniz.
+
+
+
+<h3><a id="6.2"></a>6.2 Dosya İzinleri (Windows)</h3>
+<p>
+Windows işletim sisteminde dosyayı Windows Gezgini ile görüntülerken dosyayı sağ tıklatın ve özellikler seçeneğini
+belirleyin.  Güvenlik sekmesinde dosya izinleri bulunmalıdır.  Okuma ve Yürütme izniniz
+olduğundan emin olun.
+<p>
+Windows işletim sisteminin son sürümlerinde bir dosyanın iznini görüntülemek ve değiştirmek
+için icacls komutunu da kullanabilirsiniz.
+
+
+
+
+<hr><h3><a id="7.0"></a>7.0 Ürünün Başlatılması</h3>
+<p>
+IBM i Access Client Solutions programının başlatılmasına ilişkin birkaç farklı yöntem
+vardır.
+Ürünü kurmak için kuruluş komut dosyalarını kullandıysanız, ürünü başlatmanın en kolay yolu <a href="./QuickStartGuide_en.html">Hızlı Başlangıç Kılavuzu</a> içinde bulunur.
+<p>
+Ürün, kuruluş komut dosyaları kullanılarak kurulmadıysa bu bölümün geri kalanında ürünü başlatmanın alternatif yolları açıklanacaktır.
+Java sürümünün kurulabileceği farklı yöntemler ve konumlar olabileceğinden bazı yöntemler
+için ek konfigürasyon gerekebilir.  Aşağıdaki yöntemlerden biri kullanılamıyorsa, başka
+bir yöntem deneyin. Bazı durumlarda ek yardım sağlanır.  <a href="#11.0">11.0
+Sık Sorulan Sorular (SSS)</a> başlıklı bölümden de yararlanabilirsiniz.
+<p>
+Herhangi bir ikili dosyayı ya da komut dosyasını aşağıda belirtilen şekilde kullanırken,
+söz konusu ikili dosyanın ya da komut dosyasının, sıkıştırılmış arşivinde yer alan dizin
+yapısında bulunması gerekir.  Ayrıca, kullanım kolaylığı açısından ikili dosyayı/dosyaları
+ve/veya komut dosyalarını kendi platformunuz/platformlarınız için acsbundle.jar dosyasının
+bulunduğu aynı dizine kopyalayabilir/taşıyabilirsiniz.
+
+
+<h3><a id="7.1"></a>7.1 Ürünün Başlatılması</h3>
+<p>
+Ürünü, platforma özgü
+bir ikili dosya kullanarak bir dosya görüntüleyiciden (örneğin,
+Windows Explorer, Mac OS X Finder vb.) başlatmak için Programları Başlat altından işletim sisteminizi ve
+donanım mimarinizi tanımlayan alt dizini bulun.
+<p>
+İşletim sisteminizin tanıdığı ikili dosyayı bulun. Daha sonra ürünü başlatmak için
+bu dosyayı çift tıklatın.
+Ürünü bir Komut İstemi, Uçbirim ya da Kabuk'tan bu ikili dosyayı
+kullanarak da başlatabilirsiniz.
+<p>
+Şu hatayı alıyorsanız:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Java modülü yükleme hatası."<br>
+IBM i Access Client Solutions, tanıdığı bir konumda bir java kuruluşu bulamamıştır.  Aşağıdaki
+yöntemlerden birini deneyebilirsiniz:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.1.1">7.1.1 Ürünün Başlatılması - Ek Seçenekler</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Ürünün Başlatılması (komut dosyası
+kullanarak)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Ürünün Başlatılması (komut satırı kullanarak)</a><br>
+<p>
+Mac için Teknik Not:<br>
+"Java 6 SE runtime" özelliğini kurmanız istenirse Java 6'yı kurmanız gerekmez.  Java 8'i kurun ve ürünü yeniden başlatmayı deneyin.
+Ürünü başlatmak için acslaunch_mac dosyasını kullanıyorsanız ve "Java 6 SE runtime"ı
+kurmanız isteniyorsa, Yardımcı Programlara gidin ve bir Uçbirim oturumu başlatın. Aşağıdaki
+komutu çalıştırın ve ürünü başlatmayı yeniden deneyin:
+<pre>
+    sudo mkdir -p /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+    sudo mkdir -p /System/Library/Java/Support/Deploy.bundle
+   
+</pre>
+
+
+<h3><a id="7.1.1"></a>7.1.1 Ürünün Başlatılması - Ek Seçenekler</h3>
+<p>
+Platformunuza ilişkin ikili dosyayı kullanmaya çalışırken aşağıdaki yöntemlerden
+birini de deneyebilirsiniz.  Bu yöntemler, ürünü başlatmak için hangi Java Runtime Environment (JRE)
+ortamının kullanılması gerektiğini belirlemenizi sağlar.  İş istasyonunuzda Java ana
+yolunun bulunmasına ilişkin bilgi için <a href="#7.1.2">7.1.2 Java Ana Yolunun
+Bulunması</a> başlıklı bölüme  bakın.  Bu ek yöntemler yalnızca Linux ve Windows platformlarında desteklenir:
+<ul>
+<li>Java ana yolu için JAVA_HOME ortamı değişkenini belirleyin (VEYA)
+<li>Java ana yolunu belirtmek için ikili komutta -vm seçeneğini kullanın.  Ek yardım için ikili komutta -h belirtin (VEYA)
+<li>Kullanmaya çalıştığınız ikili dosyayla aynı dizine Java Runtime Environment (JRE)
+      dizin yapısını kopyalayın.
+</ul>
+
+
+<h3><a id="7.1.2"></a>7.1.2 Java Ana Yolunun Bulunması</h3>
+<p>
+Ürünü aşağıdaki yöntemlerden birini kullanarak başlatabiliyorsanız:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.2">7.2 Ürünün Başlatılması (komut dosyası kullanarak)</a> (YA DA)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7.3">7.3 Ürünün Başlatılması (komut satırı kullanarak)</a><br>
+IBM i Access Client Solutions ana grafik kullanıcı arabiriminden iş istasyonunuzdaki
+java ana yolunu belirtebilirsiniz.  Menü çubuğunda şunu seçin:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Yardım-&gt;Hakkında<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Java ana yolu bu panoda görüntülenir.<br>
+<p>
+java.home özelliği, iş istasyonunuz için java ana yolunun konumunu içerir.  Bu, JAVA_HOME ortamı
+değişkenini ayarlarken ya da komutta -vm seçeneğini kullanırken belirtmeniz gereken yoldur.
+
+<h3><a id="7.1.2.1"></a>7.1.2.1 Java Ana Yolunun Bulunması (Windows işletim sisteminde)</h3>
+<p>
+Windows platformlarında java.exe'yi arayın.  Java, genellikle Java ana yolu
+altında bir bin ya da jre/bin alt dizininde bulunur.
+Java ana yolu, JAVA_HOME ortamı değişkenini ayarlarken ya da komutta -vm seçeneğini
+kullanırken kullanılabilir.
+
+<h3><a id="7.1.2.2"></a>7.1.2.2 Java Ana Yolunun Bulunması (Linux işletim sisteminde)</h3>
+<p>
+Linux'ta "which" komutunu kullanabilirsiniz:<br>
+<pre>
+    which java
+</pre>
+Bu size java komutunu ya da bunun sembolik bir bağlantısını sağlar.
+<p>
+Java komutu için gerçek ikili dosyaya erişinceye kadar tüm sembolik bağlantıları çözün.  -l seçeneğiyle ls komutunu kullanarak sembolik bağlantıları çözebilirsiniz:<br>
+<pre>
+    ls -l &lt;dosya&gt;
+</pre>
+Java, genellikle Java ana yolu
+altında bir bin ya da jre/bin alt dizininde bulunur.  Java ana yolu, JAVA_HOME ortamı değişkenini ayarlarken ya da komutta -vm seçeneğini
+kullanırken kullanılabilir.
+
+
+
+<h3><a id="7.2"></a>7.2 Ürünün Başlatılması (komut dosyası kullanarak)</h3>
+<p>
+v1r1m5 sürümünden itibaren Start_Scripts dizini, Sample_Scripts olarak yeniden adlandırılmış ve
+Documentation dizinine yerleştirilmiştir.
+<p>
+Ürünü başlatmanın tercih edilen yolu, Start_Programs öğesinde bulunan platforma özgü ikili dosyayı kullanmaktır.  Sample_Scripts öğesindeki komut dosyaları yalnızca platforma özgü ikili çalışmıyorsa kullanılmalıdır.
+<p>
+Sağlanan komut dosyalarını kullanarak ürünü bir dosya sistemi tarayıcısından (Windows Explorer, Mac OS X Finder vb.) başlatmak için komut dosyasını işletim sisteminizle uyumlu Sample_Scripts alt dizininde bulun.
+<p>
+Windows dışında işletim sistemlerinin çoğunda varsayılan olarak perl bulunur.  Sample_Scripts/Linux_Mac_Other dizini, perl bulunan bir platformda ürünü başlatabileceğiniz
+bir perl komut dosyası (üç farklı dosya uzantısıyla) içerir.  İşletim sisteminizin perl
+komut dosyası olarak tanıyacağı bir dosya uzantısına sahip dosyayı seçin.
+<p>
+Windows tabanlı işletim sistemlerinde varsayılan olarak JScript bulunur.  Sample_Script/Windows dizini, ürünü Windows işletim sistemlerinde başlatmak için
+kullanılabilen bir JScript içerir.
+<p>
+Dosya sisteminize (Windows Explorer, Mac OS X Finder, vb.) göz atmak için platforma
+özgü bir yöntem kullanarak işletim sisteminiz tarafından tanınan komut dosyasını bulun.  Ardından ürünü başlatmak için çift tıklatın.
+ürünü bir Komut İstemi, Uçbirim ya da Komuttan
+bu komut dosyasıyla da başlatabilirsiniz.
+
+
+
+<h3><a id="7.3"></a>7.3 Ürünün Başlatılması (komut satırı kullanarak)</h3>
+<p>
+Ürünü komut girebileceğiniz herhangi bir yerdeki komut satırından da (Komut İstemi,
+Uçbirim, Kabuk vb.) başlatabilirsiniz.<br>
+<pre>
+    java -Xmx1024m -jar &lt;yol&gt;/acsbundle.jar
+</pre>
+burada &lt;yol&gt; ürünün yürütülebilir jar dosyasının konumudur<br>
+<br>
+Örneğin:<br>
+<pre>
+    java -Xmx1024m -jar V:/bir yer/acsbundle.jar
+</pre>
+ya da
+<pre>
+    &lt;java_yolu&gt;java -jar V:/bir_yer/acsbundle.jar
+</pre>
+burada &lt;java_yolu&gt; JDK 6.0 ya da daha yeni bir sürümüne ilişkin java komutunun yeridir.
+<p>
+Java komutunun tam yolunu belirlemek için <a href="#7.1.2">7.1.2
+Java Ana Yolunun Bulunması</a> başlıklı bölüme bakın.
+<p>
+Ayrıca, komut satırından herhangi bir programı ya da komut dosyasını da kullanabilirsiniz. Örneğin:<br>
+<pre>
+    /Product/Location/Start_Programs/Linux_x86-64/acslaunch_linux-64
+    /Product/Location/Start_Programs/Mac_i386-32_x86-64/acslaunch_mac
+    C:\Product\Location\Start_Programs\Windows_x86-64\acslaunch_win-64.exe
+</pre>
+<p>
+Teknik Not:<br>
+Çoğu platformda, Java Virtual Machine yığın alanı boyutunun varsayılan üst
+sınır değeri, IBM i Access Client Solutions ürününde birden çok işlevin kullanılması için
+yeterli değildir.  Bir gigabaytlık yığın boyutu üst sınırı (-Xmx1024m) önerilen en düşük boyuttur.  Bir gigabaytın altındaki boyut değerleri ya da varsayılan yığın boyutunun kullanılması
+OutOfMemoryException oluşturabilirsiniz.
+
+
+
+
+<hr><h3><a id="8.0"></a>8.0 Konfigürasyon</h3>
+<p>
+Kullanmak ya da yönetmek istediğiniz her IBM i
+sistemi için bir sistem konfigürasyonu ekleyin.  Bir sistem konfigürasyonu eklemek için, Yönetim görevlerinden Sistem Konfigürasyonları
+seçeneğini belirleyin. Ardından Yeni öğesini seçin.  Genel sekmesinde Sistem adını girin.  Başlangıçta Genel görevlerinin gerçekleştirilmesi için Sistem adının belirtilmesi yeterlidir.
+<p>
+İşlemleri tamamladığınızda, bu sistem için girdiğiniz bilgileri saklamak için Tamam düğmesini
+seçin ya da konfigürasyona eklemek istediğiniz diğer sistemler varsa, Sakla/Yeni seçeneğini
+belirleyin.
+<p>
+Genel, Bağlantı ya da Konsol sekmelerini kullanarak istediğiniz zaman konfigürasyonunuza
+yeni sistemler ekleyebilir ya da var olan konfigürasyonları güncelleyebilirsiniz.
+<p>
+Konsol görevleri için, ek konfigürasyon gereklidir.  Konsol konfigürasyonları,
+Genel sekmesinde girdiğiniz Sistem adıyla otomatik olarak ilişkilidir.
+Bir sistem için
+konsol konfigürasyonu girmek üzere Yönetim görevlerinden Sistem Konfigürasyonları
+öğesini seçin.  Yeni ya da Düzenle seçeneğini belirleyin.  Ardından Konsol sekmesini seçin.
+5250 Konsol görevi için konfigürasyonu tanımlanmış bir LAN konsolu ya da HMC konsolu
+gereklidir. Bir LAN ya da HMC konsolu konfigürasyonu tanımlamadıysanız,
+<a href="#9.9">IBM i ile Konsol Bağlantısı Kurma</a> başlıklı bölüme bakın.
+<p>
+Donanım Yönetimi Arabirimi görevi için konfigürasyonu tanımlanmış bir donanım yönetimi
+arabirimi gereklidir.  En fazla iki donanım yönetimi arabirimi konfigürasyonu girebilirsiniz.
+<p>
+İşlemleri tamamladığınızda Sistem Konfigürasyonları panosunda Kapat seçeneğini belirleyin.
+<p>
+Ana IBM i Access Client Solutions panosundaki Sistem açılan kutusunu kullanarak bir Sistem seçin.  Tüm Konsol görevleri, seçili Sistemi (Genel sekmesinde girilen) otomatik olarak konsol
+konfigürasyonuyla (Konsol sekmesinde girilen) ilişkilendirir.
+<p>
+Seçili sistem için bir görev seçebilirsiniz.  Konsol konfigürasyonu sekmesinde
+ilgili bilgileri girilmemiş bir Konsol görevi seçerseniz, bir hata iletisi görüntülenir.
+
+
+
+<h3><a id="8.1"></a>8.1 Konfigürasyon Konumu</h3>
+<p>
+Varsayılan olarak, her kullanıcı,
+konfigürasyonu yalnızca kendi benzersiz konumuna sahip olur. Konfigürasyon kök dizini, platforma bağlı bir şekilde belirlenir.  Konfigürasyon
+dizinleri, ilk başlatma işlemi sırasında yaratılır.  Konfigürasyon dizininin nerede
+olduğunu görmek için:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Ürünü başlatın (<a href="#7.0">7.0
+Ürünün Başlatılması)</a> başlıklı konuya bakın.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Düzenle-&gt;Tercihler<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Yerel Ayarlar sekmesini seçin<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Konfigürasyon Kökü<br>
+<p>
+Ürün çalıştırılırken konfigürasyon konumu değiştirilemez.  Konfigürasyonun konumunu
+değiştirmek için <a href="#9.3">9.3 Konfigürasyon Konumunun Değiştirilmesi</a> başlıklı bölüme
+bakın.
+
+
+
+<hr><h3><a id="9.0"></a>9.0 Gelişmiş Konular</h3>
+<h3><a id="9.1"></a>9.1 Diğer komut satırı seçenekleri</h3>
+<p>
+Ana grafik kullanıcı
+arabiriminden kullanılabilen işlevlerin çoğu, komut satırından da kullanılabilir.  Bu
+işlevler, aşağıdaki bölümde gösterilen komut satırı seçenekleri için uygun parametreler
+sağlanarak başlatılabilir:<br>
+    Bölüm <a href="#7.3">7.3 Ürünün Başlatılması (komut satırı kullanılarak)</a>
+<p>
+Örneğin:
+<pre>
+    Start_Programs\Windows_x86-64\acslaunch_win-64.exe parm1 parm2 ...
+</pre>
+<p>
+Aşağıdaki bölümlerde yalnızca ek parametreler gösterilir:
+
+
+<h3><a id="9.1.1"></a>9.1.1 Backup</h3>
+<pre>
+/PLUGIN=backup  [/file&lt;dosyaadı&gt;]
+    &lt;dosyadı&gt; yaratılacak dosyanın adıdır
+</pre>
+<p>
+Bu komut, yürürlükteki konfigürasyonu belirtilen dosyaya kaydeder.
+Sonuçta yaratılan dosya, aynı ya da farklı iş istasyonunda (işletim sisteminden
+bağımsız olarak) Geri Yükle komut satırı seçeneğine giriş olarak kullanılabilir.
+<p>
+Saklanacak konfigürasyonun konumu, özellik tarafından belirlenir:<br>
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...AcsConfig.properties dosyasında bulunur.
+<p>
+Bu işlev, ana grafik kullanıcı arabiriminde Dosya-&gt;Konfigürasyonu Dışa Aktar seçeneklerinin
+belirlenmesiyle eşdeğerdir.
+
+
+<h3><a id="9.1.2"></a>9.1.2 Geri Yükleme</h3>
+<pre>
+/PLUGIN=restore /file=&lt;dosyaadı&gt;
+    &lt;dosyaadı&gt; Yedekleme tarafından yaratılan dosyanın konumudur
+</pre>
+Bu komut, saklanan bir konfigürasyonu belirtilen dosyadan geri yükler. Belirtilen dosyada
+bulunmayan mevcut konfigürasyonlar kaybedilir.
+<p>
+Geri yüklenecek konfigürasyonun konumu özellik tarafından belirlenir:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory
+</pre>
+...AcsConfig.properties dosyasında bulunur.
+<p>
+Bu işlev, ana grafik kullanıcı arabiriminde Dosya-&gt;Konfigürasyonu İçe Aktar seçeneklerinin
+belirlenmesiyle eşdeğerdir.
+
+
+<h3><a id="9.1.3"></a>9.1.3 Certdl</h3>
+<pre>
+/PLUGIN=certdl  /SYSTEM=&lt;sistem&gt;
+</pre>
+Belirtilen IBM i sisteminden bir sertifika yetkilisini (CA) karşıdan yükler ve
+kullanıcının yerel güvenli deposuna kaydeder. SSL ile sunucu yetkilendirmesi için
+bu işlem gereklidir.
+
+
+<h3><a id="9.1.4"></a>9.1.4 Cfg</h3>
+<pre>
+/PLUGIN=cfg     /LIST
+
+    /LIST       - konfigürasyonu tanımlanan sistemleri bağlantı seçenekleriyle birlikte listeler
+
+
+/PLUGIN=cfg     /SYSTEM=&lt;sistem&gt; [/ipaddr=&lt;sıklık&gt;] [/userid=&lt;kullanıcıkimliği&gt;]
+                                 [/ssl=&lt;anahtar&gt;]
+                                 [/5250path=&lt;yol&gt;]
+                                 [/del]  [/r]
+
+    /SYSTEM     - sistemin adı
+    /ipaddr     - bağlantı istendiğinde bu değer,
+                  IP adresi aramasının gerçekleşip gerçekleşmeyeceğini belirler.
+                  Geçerli sıklıklar şunlardır:
+                      ALWAYS - her bağlantıda IP adresi ara
+                      HOURLY, DAILY, WEEKLY - son aramadan bu yana
+                          gerekli süre geçtiyse IP adresi ara
+                      IP adresi - IP adresi belirtildiyse, arama sıkığının
+                          NEVER olduğu varsayılır
+    /userid     - kullanıcının kullanıcı kimliği
+                  şu değerlere de ayarlanabilir:
+                      *SHARE        - bu seçeneği kullanan sistemler tarafından
+                                      paylaşılacak oturum açma kimlik bilgilerini bir defa ister
+                      *PROMPTALWAYS - her bağlantıda en az bir kez bilgi isteminde bulunur
+                      *KERBEROS     - Kerberos asıl adını kullan, bilgi isteminde bulunma
+    /ssl        - SSL kipini kapatmak için anahtarı 0, açmak için 1 konumuna getirin
+    /5250path   - 5250 öykünme tanıtımlarının yolu
+                  /5250path, Oturum Yöneticisi'nden Dosya-&gt;Dizini Değiştir...
+                  5250 tarafından ayarlanabilir
+    /del parametresi, varolan konfigürasyonu siler
+    /r   var olan konfigürasyonun yerine geçer
+</pre>
+Bu, komut satırından çeşitli konfigürasyon seçeneklerinin ayarlanmasını sağlar.
+Bu seçenekler aynı zamanda Sistem Konfigürasyonları kullanılarak ana grafik kullanıcı
+arabiriminden de ayarlanabilir.
+
+
+<h3><a id="9.1.5"></a>9.1.5 Dump</h3>
+<pre>
+/PLUGIN=dump  [/&lt;seçenekler&gt;]
+</pre>
+Ürün içinde çalıştırılan tüm süreçlerin iş parçacıklarını dökmesi istenir.  Bu bilgiler,
+sorun desteği sağlamak için IBM hizmeti tarafından kullanılır.
+<p>
+Oluşturulan günlüklere grafik kullanıcı arabiriminden aşağıdaki yollarla erişilebilir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Düzenle-&gt;Tercihler<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Yerel Ayarlar sekmesi<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Döküm Dizini<br>
+<p>
+Herhangi bir seçenek belirlenmezse, bu işlev ana grafik kullanıcı arabiriminde bulunan
+aşağıdaki işleve eşdeğerdir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Araçlar-&gt;Hizmet Günlükleri Oluştur
+<p>
+Geçerli seçenekler şunlardır:
+<pre>
+    /heapdump - yukarıdakini ve bir JVM yığını dökümü gerçekleştirir
+</pre>
+
+
+<h3><a id="9.1.6"></a>9.1.6 Medic</h3>
+<pre>
+/PLUGIN=medic
+</pre>
+Var olan günlükleri ve iş parçacığı dökümlerini, hizmet için IBM'e gönderilecek bir zip
+dosyası içinde paketler.
+<p>
+Oluşturulan sıkıştırılmış dosyaya ana grafik kullanıcı arabiriminden aşağıdaki yollarla erişilebilir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Düzenle - Tercihler<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Yerel Ayarlar sekmesi<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Hizmet Dizini<br>
+
+Bu işlev, ana grafik kullanıcı arabiriminde Araçlar-&gt;Hizmet Günlüklerini Paketle işlevine eşdeğerdir.
+
+
+<h3><a id="9.1.7"></a>9.1.7 Log</h3>
+<pre>
+/PLUGIN=log  /LEVEL=&lt;Düzey&gt;
+                &lt;Düzey&gt; aşağıdaki desteklenen günlüğe kaydetme düzeylerinden biridir:
+                OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINEST
+</pre>
+Bu eklenti, kullanıcının komut satırından günlük düzeyini değiştirmesini sağlar.
+<p>
+Günlüğe kaydetme düzeyi ana grafik kullanıcı arabiriminde aşağıdaki yollarla da ayarlanabilir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Düzenle-&gt;Tercihler<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Genel sekmesi<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Günlüğe kaydetme düzeyi<br>
+
+
+<h3><a id="9.1.8"></a>9.1.8 Logon</h3>
+<pre>
+/PLUGIN=logon    /SYSTEM=&lt;sistem&gt; [/USERID=&lt;kullanıcıkimliği&gt;] [/PASSWORD=&lt;parola&gt;] [/AUTH] [/C] [/GUI=&lt;1|0&gt;]
+
+    /SYSTEM   - sistemin adı
+    /USERID   - kullanıcı kimliği
+    /PASSWORD - kullanıcı kimliğiyle ilişkili parola
+    /AUTH     - belirtilen oturum açma kimlik bilgileriyle sisteme bağlanma girişiminde bulunur
+                ve yalnızca başarılı olduğunda önbelleğe kaydeder
+    /C        - önbelleği temizler
+    /GUI      - grafik kullanıcı arabiriminin kullanılıp kullanılamayacağı
+</pre>
+Bu komut, parola istemini önlemek için kullanılabilecek kullanıcı kimliği ve parola
+önbelleği oluşturur.
+
+
+<h3><a id="9.1.9"></a>9.1.9 props</h3>
+<pre>
+/PLUGIN=props
+</pre>
+Ana grafik kullanıcı arabiriminde Düzenle-&gt;Tercihler seçeneklerinin tıklatılmasıyla
+aynı grafik kullanıcı arabirimi panosunu getirir.
+
+
+<h3><a id="9.1.10"></a>9.1.10 Maint</h3>
+<pre>
+/PLUGIN=maint [/&lt;seçenekler&gt;]
+
+Geçerli seçenekler şunlardır:
+    /killdaemon     - yardımcı program iş parçacıklarını sonlandırır.
+                      Ana GUI'den Araçlar-&gt;Bakım İçin Sıfırla ile aynıdır
+    /clearpwcaches  - önbelleğe alınan tüm parolaları temizler
+    /clearjarcache  - ürünün jar önbelleğini temizler
+    /clearlogs      - Ana GUI'deki Düzenle-&gt;Tercihler Yerel Ayarlar
+                      sekmesindeki Hizmet Dizinini temizler
+    /cleardumps     - Ana GUI'deki Düzenle-&gt;Tercihler Yerel Ayarlar
+                      sekmesindeki Hizmet Dizinini temizler
+    /clearsvcdir    - Ana GUI'deki Düzenle-&gt;Tercihler Yerel Ayarlar
+                      sekmesindeki Hizmet Dizinini temizler
+    /clearsettings  - yürürlükteki kullanıcıya ilişkin tüm ayarları temizler
+</pre>
+Bir seçenek belirtilmezse, herhangi bir işlem gerçekleştirilmez.
+
+
+<h3><a id="9.1.11"></a>9.1.11 Ping</h3>
+<pre>
+/PLUGIN=ping /SYSTEM=&lt;sistem&gt; [&lt;/options&gt;]
+    Seçenekler şunlardır:
+        /SSL=&lt;1|0&gt;        SSL'i açar ya da kapatır
+        /ACCEPTALLCERTS=&lt;1|0&gt; Tüm SSL'lerin otomatik olarak
+                          güvenilir sertifikalar kümesine eklenip eklenmeyeceğini belirtir (SSL kullanılırken).
+        /SERVERAUTH=&lt;1|0&gt; SSL Server kimlik doğrulamasını açar ya da kapatır (varsayılan
+                          kapalıdır). SSL sınanmıyorsa bu seçenek göz ardı edilir.
+        /GUI=&lt;1|0&gt;        GUI penceresini açar/kapatır (
+                          başlatıldıysa varsayılan seçenek kapalıdır)
+        /PORTS=&lt;kapı1,kapı2&gt; Sınanacak kapıların virgülle ayrılmış listesi. Sayı ya da
+                hizmet adları olabilir (örneğin, /PORTS=as-signon,as-sts). Belirtilmezse,
+                kapı kümesi test edilir.
+                .CONSOLE belirlendiğinde, konsola özgü kapıların bir listesi denetlenir.
+
+        /TIMEOUT=&lt;saniye&gt;   Saniye cinsinden bir zaman aşımı değeri belirtin.
+</pre>
+Bu eklenti, uygun bir kapı bağlantısı açarak IBM i bağlanılırlığını denetler.  SSL bağlantısı
+doğrulanıyorsa, SSL anlaşması denenir.
+Ana GUI'den başlatılır ya da /GUI=1 ile başlatılırsa
+bu eklenti bir iletişim kutusu görüntüler.  /GUI=1 olmadan komut satırından başlatılırsa
+çıktı konsola gönderilir.
+<p>
+Varsayılan olarak aşağıdaki hizmetler denetlenir:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-central, as-rmtcmd, as-database, as-dtaq, as-file, as-netprt, drda,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;as-signon<br>
+<p>
+Bu işlevi ana GUI'deki şu seçenekler yoluyla başlatabilirsiniz:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Sistem Konfigürasyonları<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;bir sistem seç ve Düzenle<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Genel sekmesi<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Bağlantıyı Doğrula<br>
+
+
+
+<h3><a id="9.1.12"></a>9.1.12 Sm</h3>
+<pre>
+/PLUGIN=sm
+</pre>
+Bu eklenti, 5250 Session Manager uygulamasını başlatır.
+<p>
+Bu, ana GUI'deki 5250 Session Manager uygulamasıyla eşdeğerdir.
+
+
+<h3><a id="9.1.13"></a>9.1.13 5250</h3>
+<pre>
+/PLUGIN=5250 /SYSTEM=&lt;system&gt; [/&lt;seçenekler&gt;]
+
+Bu eklenti, belirtilen sistem için 5250 öykünme programını başlatır.
+Bu işlev, ana GUI'deki 5250 Öykünme Programı ile eşdeğerdir.
+
+Geçerli seçenekler şunlardır:
+    /id=&lt;A-Z&gt;                    - kısa oturum tanıtıcısı
+    /name=&lt;ad&gt;                   - oturum adı
+    /wsid=&lt;identifier&gt;           - iş istasyonu tanıtıcısı
+    /wide=&lt;1|0|true|false&gt;       - geniş ekran boyutu kullan (27x132)
+    /fullscreen&lt;1|0|true|false&gt;  - tüm ekranı kullan
+    /nosave=&lt;1|0|true|false&gt;     - çıkarken ayarları saklama
+    /prompt=&lt;1|0|true|false&gt;     - konfigürasyon iletişim kutusunun görünmesini zorla
+    /port=&lt;port&gt;                 - kapı numarası
+    /ssl=&lt;1|0|true|false&gt;        - güvenli yuvaları kullanarak bağlan
+    /sso=&lt;1|0|true|false&gt;        - oturum açma ekranını atla
+    /kerberos                          - Kerberos kullan
+    /width=&lt;genişlik&gt;            - öykünücü penceresinin ilk genişliği
+    /height=&lt;yükseklik&gt;          - öykünücü penceresinin ilk yüksekliği
+    /xpos=&lt;xpos&gt;                 - öykünücü penceresinin sol üst
+                                   köşesinin ilk y koordinatı konumu
+    /ypos=&lt;ypos&gt;                 - öykünücü penceresinin sol üst
+                                   köşesinin ilk y koordinatı konumu
+    /watermark                   - sistem adını ekranda filigran olarak görüntüle
+    /watermark=&lt;text&gt;            - sağlanan metni ekranda filigran olarak görüntüle
+    
+</pre>
+
+<h3><a id="9.1.14"></a>9.1.14 DTGui</h3>
+<pre>
+/PLUGIN=dtgui
+
+Bu eklenti, Veri Aktarımı için ana GUI'yi başlatır.
+
+Bu işlev, ana GUI için Veri Aktarımı ile eşdeğerdir.
+</pre>
+
+<h3><a id="9.1.15"></a>9.1.15 Download</h3>
+<pre>
+/PLUGIN=download [/userid=&lt;kullanıcı kimliği&gt;] &lt;dosya adı&gt;
+[&lt;dosya adı&gt; &lt;dosya adı&gt; ...]
+
+    /userid     - hedef sisteme bağlanırken kullanılacak kullanıcı kimliği
+    &lt;dosya adı&gt;- önceki Veri Aktarımı yüklemesinde yaratılan
+                .dtfx uzantılı dosya.
+</pre>
+Bu eklenti, kullanıcının önceden saklanan Veri Aktarımı aşağıdan yüklemesini çalıştırmasını sağlar.
+<p>
+Veri Aktarımı, Veri Aktarımı seçilerek ana GUI'den de kullanılabilir.
+
+
+<h3><a id="9.1.16"></a>9.1.16 Upload</h3>
+<pre>
+/PLUGIN=upload   [/userid=&lt;kullanıcı kimliği&gt;] &lt;dosya adı&gt;
+[&lt;dosya adı&gt; &lt;dosya adı&gt; ...]
+
+    /userid     - hedef sisteme bağlanırken kullanılacak kullanıcı kimliği
+    &lt;dosya adı&gt;- önceki Veri Aktarımı yüklemesinde yaratılan
+                .dttx uzantılı dosya.
+</pre>
+Bu eklenti, önceden saklanan Veri Aktarımı karşıya yüklemesinin çalıştırılmasını sağlar.
+<p>
+Veri Aktarımı, Veri Aktarımı seçilerek ana GUI'den de kullanılabilir.
+
+
+<h3><a id="9.1.17"></a>9.1.17 CLDownload</h3>
+<pre>
+/PLUGIN=cldownload /system=&lt;sistem&gt;
+                          [/userid=&lt;kullanıcı kimliği&gt;]
+                          {/hostfile=&lt;kitaplık/dosya adı&gt; | /sql="deyim"}
+                          {/clientfile=&lt;yol&gt;&lt;dosya adı&gt;.&lt;uzantı&gt; |
+/display}
+
+    /userid     - hedef sisteme bağlanırken kullanılacak kullanıcı kimliği
+    /hostfile   - IBM i sistemi üzerinde aşağı yükleme için kullanılacak kaynak kitaplık ve dosya
+                  örneğin, /hostfile=QIWS/QCUSTCDT
+    /sql        - bir SQL deyimi belirtin
+                  örneğin. /sql="select CUSNUM,LSTNAM,INIT,ZIPCOD from QIWS/QCUSTCDT"
+    /clientfile - Aşağı yükleme için hedef dosya konumu.
+                  Bu dosyanın biçimi, belirtilen
+                  uzantıya göre (.csv .ods .xlsx .xlsx gibi) göre belirlenir
+                  Dosya uzantısı belirtilmemişse ya da desteklenmeyen
+                  bir tipse veriler, .csv dosyası olarak biçimlendirilir
+    /display    - çıktıyı uç birime yaz
+</pre>
+Eklenti, kullanıcının komut satırından tam bir dosyanın basit bir aşağı yükleme çalıştırmasını sağlar.
+
+
+<h3><a id="9.1.18"></a>9.1.18 Console</h3>
+<pre>
+/PLUGIN=console /SYSTEM=&lt;sistem&gt;
+</pre>
+Bu eklenti belirtilen sistem için 5250 Konsolunu başlatır.
+<p>
+Bu işlev, ana Grafik Kullanıcı Arabiriminden 5250 Konsolunun eşdeğeridir.
+
+
+<h3><a id="9.1.19"></a>9.1.19 VCP</h3>
+<pre>
+/PLUGIN=vcp /SYSTEM=&lt;sistem&gt;
+</pre>
+Bu eklenti belirtilen sistem için Sanal Denetim Panosunu başlatır.
+<p>
+Bu işlev, ana Grafik Kullanıcı Arabiriminden Sanal Denetim Panosunun eşdeğeridir.
+
+
+<h3><a id="9.1.20"></a>9.1.20 L1C</h3>
+<pre>
+/PLUGIN=l1c /SYSTEM=&lt;sistem&gt;
+</pre>
+Bu eklenti, belirtilen sistemi ve kapı 2001'i kullanarak IBM Navigator for i için bir tarayıcıyı başlatır.
+<p>
+Bu işlev, ana Grafik Kullanıcı Arabiriminden Navigator for i'nin eşdeğeridir.
+
+
+<h3><a id="9.1.21"></a>9.1.21 SPLF</h3>
+<pre>
+/PLUGIN=splf /SYSTEM=&lt;sistem&gt;
+</pre>
+Bu eklenti, IBM i sisteminden kuyruk dosyalarını görüntülemek ve aşağı yüklemek için
+Yazıcı Çıktısı Grafik Kullanıcı Arabirimini görüntüler.
+<p>
+Bu işlev, ana Grafik Kullanıcı Arabiriminden Yazıcı Çıktısının eşdeğeridir.
+
+
+<h3><a id="9.1.22"></a>9.1.22 KEYMAN</h3>
+<pre>
+/PLUGIN=keyman
+</pre>
+Bu eklenti, Anahtar Yönetimi aracını görüntüler.
+<p>
+Bu işlev, ana GUI'de Araçlar-&gt;Anahtar Yönetimi
+seçeneklerinin
+belirlenmesine eşdeğerdir.
+
+
+<h3><a id="9.1.23"></a>9.1.23 RMTCMD</h3>
+<pre>
+/PLUGIN=rmtcmd /SYSTEM=&lt;sistem&gt;
+                  {/CMD="&lt;Komut satırı komutu&gt;" | file=&lt;dosya adı&gt;}
+                  [/ignorefailure=&lt;1|0&gt;]
+
+    /cmd="&lt;Komut satırı komutu&gt;"  - Çalıştırılacak komut. Komutun kesilmesini önlemek
+                           için çift tırnak işaretleri kullanın.
+    /file=&lt;dosya adı&gt;    - birden çok komut içeren bir giriş dosyası belirtin.
+                           Komutlar her satırda bir tane olmalı ve çift tırnak içermemeli.
+    /noprompt=&lt;1|0&gt;      - bir giriş dosyası belirtirken sonuçları
+                           ve tüm komut istemlerini göz ardı edin.
+</pre>
+Bu eklenti belirtilen sisteme komut satırı komutu/komutları gönderir.
+<p>
+Bu işlev yalnızca komut satırından kullanılabilir.
+
+
+<h3><a id="9.1.24"></a>9.1.24 PWCHANGE</h3>
+<pre>
+/PLUGIN=pwchange /SYSTEMS=&lt;sistem,sistem,sistem,...&gt;
+</pre>
+Bu eklenti, belirtilen sistemlerde parolayı değiştirir.  Kullanıcıdan bir kullanıcı kimliği,
+eski ve yeni parolaları ister.
+<p>
+Bu işlev, Düzenle-&gt;Tercihler içinden Parolalar sekmesi seçilerek ana GUI'den de
+kullanılabilir.
+
+
+<h3><a id="9.1.25"></a>9.1.25 MIGRATE</h3>
+<pre>
+/PLUGIN=migrate /&lt;seçenek&gt; /SYSTEM=&lt;sistem&gt;
+
+&lt;system&gt;, tek bir sistem adına ayarlanabileceği gibi, tüm sistemleri belirtmek için *ALL
+olarak da ayarlanabilir.
+
+Geçerli seçenekler şunlardır:
+    /IMPORT - Bir (veya tüm) sistem konfigürasyonunu eski Windows konfigürasyonundan
+              IBM i Access Client Solutions uygulamasına kopyalayın.
+    /EXPORT - Bir (veya tüm) sistem konfigürasyonunu IBM i Access Client Solutions uygulamasından
+              eski Windows konfigürasyonuna kopyalayın.
+    /DELETE - Bir (veya tüm) sistem konfigürasyonunu eski Windows konfigürasyonundan
+              silin.
+</pre>
+Bu eklenti, sistem konfigürasyonlarını, IBM i Access for Windows tarafından desteklenen eski
+Windows konfigürasyonu ile IBM i Access Client Solutions arasında kopyalama yeteneği sağlar.
+<p>
+Bu işlev, ana GUI'de Dosya-&gt;Bağlantıları Kopyala seçenekleri belirlenerek de
+kullanılabilir.
+
+
+<h3><a id="9.1.26"></a>9.1.26 RESTRICT</h3>
+Not: Bu eklenti yalnızca kök ya da yönetici yetkisine sahip kullanıcılar tarafından kullanılabilir.
+<pre>
+/PLUGIN=restrict /&lt;seçenekler&gt;
+
+ Geçerli seçenekler şunlardır:
+     /restrict=&lt;işlev1,işlev2,işlev3&gt;   Bu iş istasyonunda, belirtilen işlevleri
+                                     izin verir.
+     /unrestrict=&lt;işlev1,işlev2,işlev3&gt; Bu iş istasyonunda, belirtilen işlevlere
+                                     izin verir.
+     /list                           İşlevlerin bu iş istasyonunda kısıtlı mı yoksa
+                                     izinli mi olduğunu belirtir.
+     /export=&lt;dosya&gt;                 Kısıtlamaları .acsr dosya uzantılı
+                                     içe aktar.
+     /import=&lt;dosya&gt;.acsr            Kısıtlamaları .acsr dosya uzantılı dosyadan
+                                     içe aktar.
+     /exportreg=&lt;dosya&gt;              Windows kayıt defteri dosyasını (.reg
+dosyası) dışa aktar.
+
+</pre>
+<p>Bu eklenti, yönetici ya da root yetkisine sahip herkese yürürlükteki istasyondaki tüm
+kullanıcılar için belirli işlevleri kısıtlama
+yetkisi verir.
+<pre>
+   İşlev               Tanım
+    cfg             Sistem Konfigürasyonları
+    sm              5250 Session Manager
+    5250            5250 Öykünme Programı
+    vcp             Sanal Denetim Panosu
+    console         5250 Konsolu
+    consoleprobe    Konsol kanfigürasyonları için yerel ağ üzerinde arama yap
+    hmcprobe        HMC üzerinde bölümler için arama yap
+    hmi1            Donanım Yönetim Arabirimi 1
+    hmi2            Donanım Yönetim Arabirimi 2
+    keyman          SSL/TLS sertifika yönetimi
+    dtgui           Veri Aktarımı grafik kullanıcı arabirimi
+    upload          Veri Aktarımı toplu yukarı yüklemeleri
+    download        Veri Aktarımı toplu aşağı yüklemeleri
+    cldownload      Veri Aktarımı toplu aşağı yüklemeleri
+    l1c             IBM Navigator for i (Düzey 1 Konsol)
+    rmtcmd          Uzak komut (komut satırından kullanılabilir)
+    splf            Yazıcı Çıktısı (kuyruk dosyaları)
+    ifs             Tümleşik Dosya Sistemi
+    db2             Şemalar
+    rss             SQL Komut Dosyalarının Çalıştırılması
+    db2tools        SQL Performans Merkezi
+    sysdbg          IBM i System Debugger
+    checkupdates    Güncellemeleri denetle
+    ssh             Secure Shell
+</pre>
+<p>Grup anahtar sözcükleri kullanılarak da işlevler hariç tutulabilir:
+<pre>
+   Grup              İşlevler
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+  checkupdates      checkupdates
+
+</pre>
+
+Ayrıca, yönetici ya da kök yetkisine sahip bir kullanıcının işlevleri ana
+GUI'den de kısıtlama yeteneği vardır.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Düzenle-&gt;Tercihler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Kısıtlamalar sekmesi<br>
+
+<p>
+Birden çok iş istasyonunda işlevleri kısıtlamanın kolay bir yolu için <a href="#9.5">9.5 Uyarlanmış Paketler</a> bölümüne bakın.
+
+<h3><a id="9.1.27"></a>9.1.27 RESTRICTVIEW</h3>
+<pre>
+/PLUGIN=restrictview
+</pre>
+Şu anda bu iş istasyonunda kısıtlı olan işlevleri listeler.
+
+
+<h3><a id="9.1.28"></a>9.1.28 FILEASSOC</h3>
+<pre>
+/PLUGIN=fileassoc [&lt;dosya tipi&gt; &lt;dosya tipi&gt; ...] [/c]
+
+    &lt;filetype&gt;   - geçerli dosya tipleri şunlardır:  dttx, dtfx, hod, bchx, ws, bch
+    /c           - belirlenen dosya tiplerinin dosya ilişkilendirmelerini temizler
+</pre>
+Windows platformunda bu, .dttx, .dtfx, .hod, .bchx, .ws, ve .bch dosya tipleri için dosya
+ilişkilendirmelerini ayarlar.  Windows dışı bir platformda bir hata iletisi görüntülenir.
+<p>
+Bu işlev, ana GUI'de Araçlar-&gt;Dosya İlişkilendirmeleri seçeneklerinin belirlenmesiyle eşdeğerdir.
+
+<h3><a id="9.1.29"></a>9.1.29 DTBATCH</h3>
+<pre>
+/PLUGIN=dtbatch [/userid=&lt;kullanıcı kimliği&gt;] &lt;dosya adı&gt;
+[&lt;dosya adı&gt; &lt;dosya adı&gt; ...]
+
+    /userid     - hedef sisteme bağlanırken kullanılacak kullanıcı kimliği
+    &lt;dosya adı&gt;- önceki Veri Aktarımı yüklemesinde yaratılan
+                .dtfx ya da .dttx uzantılı dosya.
+                Bu anahtar sözcükle ya da bu anahtar sözcük olmadan birden çok dosya
+belirtilebilir.
+</pre>
+Bu eklenti, kullanıcının önceden saklanan Veri Aktarımı isteğini çalıştırmasını sağlar.
+<p>
+Veri Aktarımı, Veri Aktarımı seçilerek ana GUI'den de kullanılabilir.
+
+<h3><a id="9.1.30"></a>9.1.30 PM5250</h3>
+<pre>
+/PLUGIN=pm5250 [/input=&lt;dosya&gt; ...  /output=&lt;dizin&gt;] [/verbose] [/gui]
+
+    /input    - Geçirilecek dosyalar.  Dosyalar, .ws, .bch, .kmp, .pmp ya da .bar uzantısına
+                sahip 5250 dosyaları olmalıdır.
+    /output   - geçirilen dosyaların saklanacağı konum
+    /verbose  - geçirilen dosyaların sonuçlarını görüntüle
+    /gui      - 5250 dosyalarını geçirmek için kullanıcı arabirimini başlat
+</pre>
+Eklenti, kullanıcının dosyaları IBM i Access for Windows Personal Communications öykünücüsünden IBM i Access Client Solutions öykünücüsüne geçirmesini sağlar.
+Dönüştürülen dosyaların bazılarının yeni bir dosya uzantısı vardır.  <a href="#9.6.2">9.6.2 5250 Öykünmesini Geçirme</a> bölümüne bakın. 
+
+<h3><a id="9.1.31"></a>9.1.31 RSS</h3>
+<pre>
+/PLUGIN=rss /SYSTEM=&lt;system&gt; /DATABASE=&lt;database&gt; [/FILE=&lt;file&gt;] [/SQL=&lt;file&gt;] [/AUTORUN=&lt;0,1&gt;]
+
+    /FILE=&lt;filename&gt; - Belirtilen dosyayı aç
+    /SQL=&lt;filename&gt;  - Belirtilen dosyayı aç
+    /AUTORUN=&lt;1,0&gt;   - Komut dosyasını otomatik olarak çalıştır
+</pre>
+Bu eklenti, kullanıcının SQL deyimleri ve CL komutlarını çalıştırmasını sağlar.
+
+<h3><a id="9.1.32"></a>9.1.32 DB2TOOLS</h3>
+<pre>
+/PLUGIN=DB2TOOLS /SYSTEM=&lt;sistem&gt; /DATABASE=&lt;veritabanı&gt; [Options]
+
+Geçerli seçenekler şunlardır:
+    /ACTION=&lt;LIST | ANALYZE | STATEMENTS | COMPARE&gt;
+                    - Gerçekleştirilecek işlem:
+                      LIST seçeneği, LISTNAME bağımsız değişkeniyle kullanılabilir ve
+                      belirtilen listeyle SQL Performance Center'ı görüntüler.
+                      ANALYZE seçeneği, belirtilen performans veri kümesini analiz eder.
+                      STATEMENTS seçeneği, SQL plan önbelleği ya da
+                      belirtilen performans verileri kümesi için deyimleri gösterir.
+                      COMPARE seçeneği, belirtilen performans veri kümelerini karşılaştırır.
+    /NAME=&lt;name&gt;    - Performans veri kümesinin adı
+    /TABLE=&lt;name&gt;   - Performans verilerini içeren çizelgenin adı
+    /SCHEMA=&lt;name&gt;  - Performans verilerini içeren çizelge şemasının adı
+    /LISTNAME=&lt;DBMONITORS | PCEVENTMONITORS | PCSNAPSHOTS | LIVE_PLAN_CACHE&gt;
+                    - SQL Performans Merkezinde görüntülenecek ilk liste.
+</pre>
+SQL Performans Merkezi eklentisi, veritabanı uygulamalarınızda SQL'i eniyileştirmenize yardımcı olması için bir dizi araç sağlar:
+<ul>
+<li>Çözümle - Detaya inme dolaşma özelliğini kullanarak daha ayrıntılı çözümlemeye yönelik bir başlangıç noktası görevi gören toplanmış performans verilerinin özetlenmiş bir görünümünü sağlar.
+<li>Karşılaştır - İki ya da daha fazla performans veri toplamasının özet karşılaştırmasını görüntüleyin ve sonra daha ayrıntılı deyim karşılaştırması için ikisini seçin.
+<li>Deyimleri Göster - SQL Plan Önbelleğinde ya da performans veri toplamasında SQL deyimleriyle çalışın.
+<li>Visual Explain - SQL deyimlerinizin tam olarak nasıl çalıştığını görmek için deyim yürütme planının grafiksel bir temsilini oluşturun.
+<li>SQL Plan Önbelleği - Sistem SQL Plan Önbelleğinin ayarlarını yönetin.
+</ul>
+
+
+<h3><a id="9.1.33"></a>9.1.33 IFS</h3>
+<pre>
+/PLUGIN=ifs /SYSTEM=&lt;system&gt;
+</pre>
+Tümleşik Dosya Sistemi, IBM i sisteminizin tümleşik dosya sistemine göz atmak ve aşağıdaki gibi nesnelerle birlikte çalışmaya ilişkin bir arabirim sağlar:
+<ul>
+<li>İstemci sisteminiz ve IBM i arasında nesneleri kopyalama
+<li>IBM i'de tümleşik dosya sistemi içindeki nesneleri ya da başka bir IBM i'de tümleşik dosya sistemine kopyalama
+<li>Nesneleri IBM i'ye (veya birkaçına) gönderme
+<li>Yeni klasörler (dizinler, kitaplıklar ve klasörler) yaratma
+<li>Nesneleri silme
+<li>Nesneleri yeniden adlandırma
+<li>Nesnelerin özelliklerini görüntüleme
+</ul>
+Bu eklentiyi kullanırken gereksinimler ve sınırlamalar için <a href="#9.12">9.12 Integrated File System (IFS)</a> bölümüne bakın.
+
+<h3><a id="9.1.34"></a>9.1.34 DB2</h3>
+<pre>
+/PLUGIN=DB2 /SYSTEM=&lt;system&gt;
+</pre>
+Eklenti, IBM i'de i veritabanları için Db2 yönetimine ilişkin bir arabirim sağlar.
+
+<h3><a id="9.1.35"></a>9.1.35 CHECKUPDATES</h3>
+<pre>
+/PLUGIN=checkupdates
+</pre>
+Eklenti, mevcut güncellemelerin denetlenmesi için bir arabirim sağlar.
+
+<h3><a id="9.1.36"></a>9.1.36 SSH</h3>
+<pre>
+/PLUGIN=SSH /SYSTEM=&lt;system&gt;
+</pre>
+SSH Uçbirimi, IBM i bütünleşik dosya sistemine bilgisayarınızdaki kurulu SSH istemcisini (uçbirim öykünücüsü) başlatır.
+<br>
+<br>
+<h3><a id="9.2"></a>9.2 Dosya İlişkilendirmeleri</h3>
+<p>
+IBM i Access Client Solutions ile oluşturulan bazı konfigürasyon dosyaları, ilk ve tek parametre olarak sağlandığında komut
+dosyasından desteklenir.
+Belirli dosya uzantılarına
+sahip bu dosyalar ilk parametre olarak sağlandığında, IBM i Access Client Solutions,
+dosyayı başlatılacak işlevle ilişkilendirir ve dosyayı o işlev girişi olarak sağlar.
+<p>
+Aşağıdaki uzantılar dosya ilişkilendirmesi desteğine sahiptir:
+<pre>
+    .dttx   - Veri Aktarımı yukarı yükleme isteği
+    .dtfx   - Veri Aktarımı aşağıya yükleme isteği
+    .hod    - 5250 öykünme oturumu tanıtımı
+    .bchx   - çoklu oturum öykünme tanıtımı
+    .ws     - 5250 öykünme oturumu tanıtımı (Personal Communications)
+    .bch    - çoklu oturum öykünme tanıtımı (Personal Communications)
+</pre>
+Komut satırı örnekleri:
+<pre>
+    acslaunch_xxx dt_download_file.dtfx - saklanan aşağı yükleme işlemini çalıştırır
+    acslaunch_xxx dt_upload_file.dttx   - saklanan yukarı yükleme işlemini çalıştırır
+    acslaunch_xxx system_lp13ut20.hod   - sistemde 5250 oturumunu başlatır
+</pre>
+...burada acslaunch_xxx, ürünü başlatmak için kullanılan komut satırı söz dizimidir. <a href="#7.3">7.3
+Ürünün Başlatılması (komut satırı kullanarak)</a> başlıklı bölüme bakın.
+<p>
+Desteklenen bu komut satırı dosya ilişkilendirmeleri, kullanıcının işletim sistemine (OS)
+özgü dosya ilişkilendirmelerini el ile kurmasını sağlar.  Dosya ilişkilendirmeleri
+platforma bağımlı olduğundan gerekli adımlar, işletim sistemine göre değişir.
+</p>
+Belirtilen işlevi başlatmak için bir dosyayı (yukarıda desteklenen dosya tiplerinden biri)
+çift tıklatma yeteneğine sahip olmak için işletim sisteminizde dosya ilişkilendirmelerini
+ayarlamayı düşünebilirsiniz.
+<p>
+Aşağıdaki bölümlerde bazı işletim sistemleri için dosya ilişkilendirmelerinin ayarlanmasına
+ilişkin örnekler sağlanır.
+
+
+<h3><a id="9.2.1"></a>9.2.1 Dosya İlişkilendirmeleri (Windows için)</h3>
+<ol>
+<li>Ana GUI menü çubuğunda Araçlar-&gt;Dosya İlişkilendirmeleri... seçeneklerini
+belirleyin.
+<li>Dosya ilişkilendirmesi yaratmak istediğiniz dosya tiplerini seçin.
+<li>Tamam'ı seçin.
+</ol>
+<p>
+Bu tipteki dosyaları çift tıklattığınızda uygun IBM i Access Client Solution
+işlevi çalıştırılır.
+
+
+<h3><a id="9.2.1.1"></a>9.2.1.1 Simge Değiştirilmesi (Windows Kısayolu için)</h3>
+<ol>
+<li>Donanım mimarinize uygun ikili dosya için önceden yaratılmış kısayolu bulun
+(acslaunch_win-32.exe YA DA acslaunch_win-64.exe)
+<li>Sağ tıklatın ve Tercihler'i seçin.
+<li>Kısayol sekmesini seçin.
+<li>Simge Değiştir... düğmesini tıklatın.
+<li>Bu kısayol için kullanılacak simgeyi seçin.
+<li>Tamam'ı seçin.
+<li>Tamam'ı seçin.
+</ol>
+
+<h3><a id="9.2.2"></a>9.2.2 Masaüstü Simgesi Ayarlanması (Linux için)</h3>
+<p>
+Linux için <a href="./QuickStartGuide_en.html">Hızlı Başlangıç Kılavuzu</a> içindeki adımları
+izleyin.  Bu işlem uygulamayı şuraya kurar: /opt/ibm/iAccessClientSolutions.  Bu işlem
+ayrıca şu dosyayı da yaratır: /usr/share/applications/IBM i Accesss Client
+Solutions.desktop
+<p>
+Masaüstünüzde bir ürün simgesi yaratmak için yukarıdaki .desktop dosyasını Masaüstü
+klasörünüze kopyalayın.  Masaüstünüzdeki dosyasının yürütülebilmesi için dosyanın
+izinlerini ayarlamanız gerekebilir.
+
+
+<h3><a id="9.2.2.1"></a>9.2.2.1 Dosya İlişkilendirmeleri (Linux için)</h3>
+<p>
+Dosya ilişkilendirmeleri ayarlamak için gerekli adımlar Linux dağıtımına ve
+kullanılmakta olan masaüstü ortamına bağlıdır.  Gerekli adımlar genellikle Windows işletim sisteminde
+kullanılan yukarıdaki adımlara benzer.
+<ol>
+<li>Desteklenen uzantıya sahip (örneğin; .hod, .bchx, .dtfx ya da .dttx),
+ilişkilendirmek istediğiniz dosyayı bulun.
+<li>Dosyayı sağ tıklatın. Dosyayla bir programı ilişkilendirmenizi sağlayan seçenekleri
+ya da özellikleri arayın.
+<li>Dosyayı ve/veya uzantısını uygun IBM i Access Client Solutions ikili dosyasıyla ya
+da başlatma komut dosyasıyla ilişkilendirin.
+</ol>
+
+
+<h3><a id="9.2.3"></a>9.2.3 Dosya İlişkilendirmeleri (Mac için)</h3>
+<p>
+Dosya İlişkilendirmelerini Mac işletim sisteminde kullanmak için dosya tipi, uygulama
+ile ilişkilendirilmelidir.  IBM i Access Client Solutions olanağının kurulu bir uygulama olması için Mac'e yönelik <a href="./QuickStartGuide_en.html">Hızlı Başlangıç Kılavuzu</a> belgesindeki adımları izleyin.
+
+<h3><a id="9.2.3.1"></a>9.2.3.1 Dosya İlişkilendirmeleri Yaratılması (Mac için)</h3>
+<ol>
+<li>Desteklenen uzantıya sahip (örneğin; .hod, .bchx, .dtfx ya da .dttx), ilişkilendirmek
+istediğiniz dosyayı bulmak için Finder olanağını kullanın.
+<li>Dosyayı seçin ve Dosya-&gt;Bilgi Al seçeneğini belirleyin.
+<li>"Birlikte Aç:" seçeneği altında Diğer'i seçin.
+<li>IBM i Access Client Solutions uygulamasının konumuna göz atın.
+<li>Uygulamayı seçin.
+<li>Her Zaman Birlikte Aç kutusunu işaretleyin.  Ekle seçeneğini belirleyin.
+<li>"Birlikte Aç:" penceresine geri dönün ve Tümünü Değiştir
+    seçeneğini belirleyin.  Herhangi bir
+   iletişim kutusuyla devam edin.
+</ol>
+<p>
+Bu tipteki dosyaları çift tıklattığınızda uygun IBM i Access Client Solution
+işlevi çalıştırılır.
+
+
+<h3><a id="9.2.3.2"></a>9.2.3.2 Simgenin Değiştirilmesi (Mac için)</h3>
+<p>
+Ürün dizinindeki Simgeler klasörünü bulmak için Önizleme uygulamasını ve Bilgi
+Al içindeki simgeyi değiştirmek üzere Finder olanağını kullanın.
+<ol>
+<li>Önizleme içinde Dosya-&gt;Aç seçeneklerini belirleyin.
+<li>Ürünün Simgeler dizinini bulun.
+<li>Simge içeren dosyayı seçin ve açın.
+<li>Düzenle-&gt;Tümünü Seç seçeneğini belirleyin.
+<li>Düzenle-&gt;Kopyala seçeneğini belirleyin.
+<li>Finder olanağından, simgesi değiştirilecek .hod, .bchx, .dtfx ya da .dttx dosyasını bulun.<br>
+   Dosya zaten masaüstündeyse seçmek için dosyayı tıklatın.  Tersi durumda, Git-&gt;Klasöre Git seçeneğini belirleyin, dosya yolunu girin ve ardından Git
+seçeneğini belirleyin.<br>
+   Dosyayı tıklatarak seçin.
+<li>Dosya-&gt;Bilgi Al
+<li>Bilgi Al alanında en üstteki simgeyi tıklatın.
+<li>Düzenle-&gt;Yapıştır
+</ol>
+
+
+<h3><a id="9.3"></a>9.3 Konfigürasyon Konumunun Değiştirilmesi</h3>
+<p>
+Varsayılan olarak, her kullanıcı,
+konfigürasyonu yalnızca kendi benzersiz konumuna sahip olur. Konfigürasyon konumu, aşağıdaki özellik ayarlanarak değiştirilebilir:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.AcsBaseDirectory<br>
+Bu özellik AcsConfig.properties dosyasının içinde bulunur.
+<p>
+AcsConfig.properties dosyası, ürün gönderildiğinde iki yerde bulunur. acsbundle.jar dosyasının içinde bulunur.  Kullanıcıya kolaylık olması açısından ürünün
+sıkıştırılmış arşiv dosyasında da sağlanır ve sıkıştırılmış arşiv açıldığında acsbundle.jar
+dosyasıyla aynı dizinde yer alır.
+<p>
+Başlatma sırasında, ürün yalnızca bulduğu ilk AcsConfig.properties dosyasını kullanır.  Önce, acsbundle.jar dosyasının bulunduğu dizini denetler.
+AcsConfig.properties dosyası,
+acsbundle.jar dosyasıyla aynı dizinde bulunamazsa, acsbundle.jar dosyasının içindeki AcsConfig.properties
+dosyasını kullanır.
+<p>
+acsbundle.jar içindeki AcsConfig.properties dosyasını özel bir konfigürasyon yoluyla güncellemeyi
+seçebilirsiniz.  Bunu yapacaksanız, acsbundle.jar dosyasının bulunduğu dizinin AcsConfig.properties
+dosyasını içermediğinden emin olun, yoksa AcsConfig.properties dosyası acsbundle.jar yerine kullanılır.
+Bu, konfigürasyon konumunun acsbundle.jar dosyasıyla dağıtılmasını sağlayan bir esneklik yaratırken
+acsbundle.jar üzerine yazılmasına ilişkin esnekliği de sağlar.
+<p>
+Konfigürasyon yolu tanımlanırken kullanılabilecek özel anahtar sözcükler sağlanır.  Bu özel anahtar
+sözcükler belirtilen yolda kullanıldıklarında, tanımladıkları metin ya da yolun yerine geçebilirler.  Konfigürasyon yolunda yalnızca tek bir anahtar sözcük kullanılabilir.  Özel
+anahtar sözcükler ve bunların anlamları şöyledir:<br>
+<pre>
+	{USER} - Yürürlükteki kullanıcı kimliği. Anahtar sözcük yolda herhangi bir yerde
+olabilir.
+</pre>
+<p>
+Aşağıdaki anahtar sözcükler yalnızca belirtilen yolun başlangıcında olabilir:
+<pre>
+	{PRODUCTDIR} - acsbundle.jar dosyasıyla aynı dizinin yolu
+	{TEMPDIR}    - platforma özel geçici dizin yolu
+	{ROOT}       - dosya sisteminin köküne giden yol
+	{HOME}       - kullanıcının ana dizin yolu
+	{DEFAULT}    - ürünün normalde kullandığı varsayılan yol
+</pre>
+<p>
+Teknik Not:<br>
+Bir konfigürasyonun birden çok kullanıcı arasında paylaşılmasını önermeyiz.
+Örneğin, X'in paylaşılan bir ağ sürücüsü olduğu aşağıdaki gibi bir ayar beklenmeyen sonuçlara yol açabilir:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=X:/Shared_Network_drive/config_directory
+</pre>
+<p>
+Bu konfigürasyon yolunu birden çok kişinin paylaşması birçok soruna yol açar:<br>
+<ol>
+<li>Aynı anda birden çok kullanıcı konfigürasyonu kullanırsa beklenmeyen sorunlar oluşur.
+<li>Bu örnekte, her kullanıcının aynı konuma eşlenmiş X sürücüsü olduğu varsayılır.
+<li>Konfigürasyonda bir ağ sürücüsü kullanılması, bir Linux ya da Mac istemcisinden
+   işe yaramayacaktır.  Windows, Linux ve Mac'te, aşağıdaki örneklerde olduğu gibi, sağlanan anahtar
+   sözcüklerin kullanılması işe yaracaktır.
+</ol>
+<p>
+Bir konfigürasyon yolu birden çok kullanıcı arasında paylaşılırken, diğer kullanıcılarla çakışmaları
+önlemek için {USER} anahtar sözcüğü kullanılmalıdır.  Bu, yürürlükteki kullanıcının kullanıcı
+kimliğiyle değiştirilir.
+<p>
+Konfigürasyon yolunu ayarlarken, dizin ayırıcı olarak ters eğik çizgi ('\') yerine
+eğik çizgi ('/') kullanın.  Bu, Windows dahil, tüm işletim sistemlerinde işe yarayacaktır.
+<p>
+Önerilen örnek konfigürasyonlardan bazıları şunlardır:
+<p>
+Örnek 1 - yürürlükteki kullanıcı için yerel konfigürasyon (varsayılan):
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory=
+</pre>
+AcsBaseDirectory ayarlanmadığında, konfigürasyon
+varsayılan olarak kullanıcının platforma bağımlı yoluna ayarlanır.
+IBM i Access Client Solutions için varsayılan ayar budur.
+<p>
+Örnek 2 - her kullanıcı için benzersiz uzak (veya yerel) konfigürasyon:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={ROOT}/config_directory/{USER}/
+</pre>
+Konfigürasyon, {ROOT} konumuna göre uzak veya yerel olur.
+<p>
+Örnek 3 - her kullanıcı için benzersiz uzak (veya yerel) konfigürasyon:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory/{USER}/
+</pre>
+Konfigürasyon, {PRODUCTDIR} konumuna göre uzak veya yerel olur.
+<p>
+Örnek 4 - Taşınabilir ortamdaki (USB sürücüsü gibi) yerel konfigürasyon:
+<pre>
+    com.ibm.iaccess.AcsBaseDirectory={PRODUCTDIR}/config_directory
+</pre>
+Taşınabilir ortamın
+yolu, kullanıldığı sisteme bağlı olarak değişiklik göstereceğinden bu ayar, ürün
+dosyalarına göre konfigürasyona olanak sağlar.  Bu örnekte {USER} anahtar sözcüğü
+özellikle belirtilmemiştir; böylece kullanıcı kimliğine bakılmaksızın USB sürücüsünün
+kullanıcısı tarafından USB sürücüsündeki konfigürasyon kullanılır.
+
+
+<h3><a id="9.4"></a>9.4 Diğer Devreye Alma Seçenekleri</h3>
+<p>
+Dikkate almak isteyebileceğiniz diğer devreye alma seçeneklerinden bazıları şunlardır:
+<ul>
+   <li>Ürünü birkaç kullanıcı tarafından erişilebilen tek bir konumda devreye alın.
+   <li>Bir Web sunucunuz varsa, Web Start olanağını kullanabilirsiniz.
+	 Bkz.
+http://java.com/en/download/faq/java_webstart.xml
+   <li>Konfigürasyon ayarlarını otomatik olarak içe aktarabilirsiniz.
+     Bkz. bölüm <a href="#9.4.1">9.4.1</a>
+   <li>IBM i olanağında yerel olarak devreye alın. <a href="#9.4.2">9.4.2</a> bölümüne bakın
+</ul>
+
+<h3><a id="9.4.1"></a>9.4.1 Konfigürasyon ayarlarının otomatik olarak içe aktarılması</h3>
+<p>
+Aşağıdaki özellikler, yeni kullanıcılar için konfigürasyonu otomatik olarak ayarlamak ya da var olan kullanıcıların
+konfigürasyonlarını güncellemek için AcsConfig.properties dosyasında kullanılabilir:<br>
+<pre>
+   com.ibm.iaccess.autoimport
+   com.ibm.iaccess.autoimport.version
+</pre>
+<p>
+Gerekli adımlar şunlardır:
+<ol>
+<li>Bir ya da birden çok kullanıcıya yaygınlaştırmak istediğiniz konfigürasyonu yaratın.
+<li>2. Dosya-&gt;Konfigürasyonu Dışa Aktar seçeneklerini kullanarak konfigürasyonu ana
+Grafik Kullanıcı Arabiriminden dışa aktarın ya da <a href="#9.1.1">9.1.1 Backup</a> başlıklı
+bölümde açıklanan komut satırı seçeneğini kullanın.
+<li>Konfigürasyon dosyasını istenen konuma taşıyın.  Bunun için sağlanan ve daha sonra
+   açıklanacak olan bazı seçenekler vardır.
+<li>AcsConfig.properties dosyası içindeki com.ibm.iaccess.autoimport özelliğini
+konfigürasyon dosyasının yoluna ayarlayın.
+<li>com.ibm.iaccess.autoimport.version özelliğini, konfigürasyon dosyasının sürümünü temsil
+   eden bir tamsayı değerine ayarlayın.
+</ol>
+<p>
+Bunun nasıl yapılacağı aşağıda açıklanmaktadır:<br>
+com.ibm.iaccess.autoimport.version
+özelliğinin tamsayı şeklindeki değeri, içe aktarılan son değer ile eşleşmediğinde,
+com.ibm.iaccess.autoimport özelliği tarafından başvurulan, kaydedilen konfigürasyon
+otomatik olarak içe aktarılır.  Ayrıca, ilk konfigürasyonu tanımlamak için bir yöntem ve varolan
+konfigürasyona güncellemeler sağlamaya ek olarak bu işlem, bir konfigürasyonu önceki bir düzeye almak
+için de bir yöntem sağlar.  Sürüm özelliğine ilişkin tamsayı değeri ile içe aktarılan en son sürüm
+arasında bir uyumsuzluk olduğu durumlarda konfigürasyon güncellenecektir.  Ancak, içe aktarılan bir
+konfigürasyon, kullanıcının konfigürasyonundaki var olan sistemin konfigürasyonunu değiştirebilse de,
+bir sistem, kullanıcı konfigürasyonundan hiçbir zaman silinmez.
+<p>
+com.ibm.iaccess.autoimport özelliğinin yolu, bir mutlak yol, bir URL adresi ya da Bölüm
+<a href="#9.3">9.3</a>'te tanımlanan bir anahtar sözcük olarak belirlenebilir.  Örneğin:
+<pre>
+    com.ibm.iaccess.autoimport=C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=file///C:/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=http://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport=ftp://your.company.com/path/file/acs_bak.zip<br>
+    com.ibm.iaccess.autoimport={PRODUCTDIR}/acs_bak.zip<br>
+</pre>
+<p>
+Konfigürasyon dosyasının acsbundle.jar içinde ya da acsbundle.jar ile aynı dizinde dağıtılmasına izin
+verilerek ek bir esneklik sağlanır.
+Her iki durumda da, com.ibm.iaccess.autoimport özelliğini dosya adıyla, önünde bir yol
+olmadan ayarlayın:<br>
+<pre>
+    com.ibm.iaccess.autoimport=acs_bak.zip
+</pre>
+<p>
+com.ibm.iaccess.autoimport.version için * özel değerine izin verilir:
+<pre>
+    com.ibm.iaccess.autoimport.version=*
+</pre>
+<p>
+Böylece, varsa önceki herhangi bir sürüm dikkate
+alınmaksızın konfigürasyon her zaman içe aktarılacaktır.
+
+<h3><a id="9.4.2"></a>9.4.2 Yerel IBM i Devreye Alımları</h3>
+<p>
+Grafik kullanıcı arabirimi gerektirmeyen komut satırı eklentilerinden bazıları, IBM i üzerinde yerel olarak kullanılabilir.
+Örneğin, verileri bilgisayara aşağı yüklemeden veritabanınızdaki verileri doğrudan IBM i olanağındaki bir hesap çizelgesi dosya tipine almak için Veri Aktarımını kullanabilirsiniz.
+<p>
+Bunu yapmak için ürün zip arşivini IBM i Tümleşik Dosya Sistemi (IFS) üzerindeki herhangi bir yere alabilirsiniz.
+Örneğin, ürün zip arşivini şu dizine aldıysanız:
+<pre> /home/AccessClientSolutions </pre>
+Ve şu dizinde bulunan önceden kaydedilmiş bir Veri Aktarımı aşağı yükleme isteğiniz varsa:
+<pre> /some_path/qcustcdt.dtfx </pre>
+IBM i üzerinde aşağıdaki komutu çalıştırabilirsiniz:
+<pre>
+QSH CMD('java -jar /home/AccessClientSolutions/acsbundle.jar /plugin=dtbatch /some_path/qcustcdt.dtfx')                                            
+</pre>
+
+<h3><a id="9.5"></a>9.5 Özelleştirilmiş Paketler</h3>
+<p>
+IBM i Access Client Solutions, sistem
+denetimcilerine, AcsConfig.properties dosyasında aşağıdaki özelliği ayarlayarak belirli
+işlevlerin kullanımını kısıtlama yeteneği sağlar:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=&lt;işlev, işlev,...&gt;
+</pre>
+İşlev anahtar sözcükleri burada belirtilmiştir:<br>
+<pre>
+
+   İşlev               Tanım
+    cfg             Sistem Konfigürasyonları
+    sm              5250 Session Manager
+    5250            5250 Öykünme Programı
+    vcp             Sanal Denetim Panosu
+    console         5250 Konsolu
+    consoleprobe    Konsol kanfigürasyonları için yerel ağ üzerinde arama yap
+    hmcprobe        HMC üzerinde bölümler için arama yap
+    hmi1            Donanım Yönetim Arabirimi 1
+    hmi2            Donanım Yönetim Arabirimi 2
+    keyman          SSL/TLS sertifika yönetimi
+    dtgui           Veri Aktarımı grafik kullanıcı arabirimi
+    upload          Veri Aktarımı toplu yukarı yüklemeleri
+    download        Veri Aktarımı toplu aşağı yüklemeleri
+    cldownload      Veri Aktarımı toplu aşağı yüklemeleri
+    l1c             IBM Navigator for i (Düzey 1 Konsol)
+    rmtcmd          Uzak komut (komut satırından kullanılabilir)
+    splf            Yazıcı Çıktısı (kuyruk dosyaları)
+    ifs             Tümleşik Dosya Sistemi
+    db2             Şemalar
+    rss             SQL Komut Dosyalarının Çalıştırılması
+    db2tools        SQL Performans Merkezi
+    sysdbg          IBM i System Debugger
+    checkupdates    Güncellemeleri denetle
+    ssh             Secure Shell
+</pre>
+<p>Grup anahtar sözcükleri kullanılarak da işlevler hariç tutulabilir:
+<pre>
+
+   Grup              İşlevler
+  dataxfer          dtgui,upload,download,cldownload
+  emulator          sm,5250
+  keyman            keyman
+  opconsole         console,vcp,consoleprobe,hmcprobe
+  rmtcmd            rmtcmd
+  splf              splf
+  ifs               ifs    
+  hwconsole         hmi1,hmi2
+  l1cplugin         l1c
+  database          db2,rss,db2tools
+  debugger          sysdbg
+    
+</pre>
+
+
+Sistem denetimcisi, AcsConfig.properties dosyasını güncelleyerek belirli işlevlere erişimi kısıtlamayı seçebilir.  Erişim kısıtlandığında, ana GUI'den işlev kaldırılır ve komut satırından kullanımı geçersiz kılınır.
+<p>
+İşlevlerin nasıl kısıtlanacağına ilişkin bir örnek, AcsConfig.properties dosyasına şu
+satırın eklenmesi olabilir:<br>
+<pre>
+    com.ibm.iaccess.ExcludeComps=OPCONSOLE,HWCONSOLE,L1CPLUGIN
+</pre>
+Sistem denetimcisi, AcsConfig.properties dosyasını kullanıcılar için devreye almadan önce
+acsbundle.jar içinde güncellemek isterse, bunun nasıl yapılacağına ilişkin bir örnek
+şudur:<br>
+<pre>
+    jar uvf acsbundle.jar AcsConfig.properties
+</pre>
+IBM i Access Client Solutions'ın hangi AcsConfig.properties dosyasının kullanılacağını
+nasıl belirlediğine ilişkin ek bilgi için <a href="#9.3">9.3 Konfigürasyon Konumunun
+Değiştirilmesi</a> başlıklı
+bölüme bakın.
+
+
+<h3><a id="9.6"></a>9.6 IBM i Access for Windows'tan Geçiş</h3>
+<p>
+IBM i Access Client Solutions konfigürasyon dosyaları IBM i Access for Windows'ta
+karşılık gelen işlevlerle uyumlu değildir.  IBM i Access Client Solutions, ilerleyen bölümlerde açıklandığı gibi, birçok temel öğe için geçiş yolu sağlar.
+
+<h3><a id="9.6.1"></a>9.6.1 Sistem Konfigürasyonlarını Geçirme</h3>
+<p>
+Bağlantıları Kopyala; IBM i Access for Windows tarafından desteklenen eski
+Windows konfigürasyonu ve IBM i Access Client Solutions arasında sistem
+konfigürasyonlarının kopyalanması için bir arabirim sağlar.  Ek bilgi için, Bağlantıları Kopyala ana panosuna ilişkin yardıma bakın.
+
+Sistem konfigürasyonları, komut satırı kullanılarak da geçirilebilir.  Ek bilgi için
+<a href="#9.1.25">9.1.25 GEÇİŞ</a> başlıklı bölüme bakın.
+
+<h3><a id="9.6.2"></a>9.6.2 5250 Öykünmesini Geçirme</h3>
+<p>
+IBM i Access for Windows
+Personal Communications öykünme programı tarafından kullanılan 5250 öykünme dosyaları,
+IBM i Access Client Solutions'ta 5250 Session Manager kullanılarak dönüştürülebilir. Aşağıdaki
+dosya tipleri Personal
+Communication içinden dönüştürülebilir:<br>
+<pre>
+   .ws   - öykünme programı tanıtımı
+   .bch  - öykünme programı toplu dosyası
+   .kmp  - klavye uyarlama dosyası
+   .pmp  - poppad dosyaları
+   .bar  - menü çubuğu dosyaları
+</pre>
+Dosyalar şu şekilde dönüştürülür:<br>
+<pre>
+   .hod  - öykünme programı tanıtımı
+   .bchx - öykünme programı toplu dosyası
+   .kmp  - klavye uyarlama dosyası
+   .pmp  - poppad dosyaları
+   .bar  - menü çubuğu dosyaları
+</pre>
+.kmp, .pmp ve .bar dosya tipleri her iki ürün tarafından da kullanılır.  Ancak biçimler uyumlu değildir. Dönüştürülen dosyalar, IBM i Access Client Solutions'a özgü bir yolda yaratılır.
+<p>
+Bu dosyaların dönüştürülmesi, aşağıdaki işlemler yapılarak IBM i Access Client Solutions Session Manager menüsünden başlatılabilir:
+<ul>
+<li> Dosya-&gt;İçe Aktar seçeneği belirlenip ardından Personal Communications (Kişisel İletişimler) dosyaları bulunarak.
+<li> Dosya, IBM i Access Client Solutions Session
+Manager penceresine sürüklenip bırakılarak.
+</ul>
+...veya PM5250 eklentisi kullanılarak komut satırından.  <a href="#9.1.30">9.1.30 PM5250</a> bölümüne bakın.
+
+<p>
+Bir makro dönüştürme yardımcı programı kullanılabilir.  Session Manager içinden şu
+seçenekleri belirleyin:<br>
+<pre>
+    Araçlar-&gt;Makroyu Dönüştür...
+</pre>
+Teknik Not:<br>
+Makro, kayıtlı tuş vuruşlarından daha fazla bir şeyler içeriyorsa, makro dönüştürme
+yardımcı programı PC5250 makrosunu dönüştüremeyebilir.  
+
+<h3><a id="9.6.3"></a>9.6.3 Saklanan Veri Aktarma İsteği Dosyalarının Geçirilmesi</h3>
+<p>
+IBM i Access Client Solutions programında Veri Aktarımı, IBM i Access for Windows
+tarafından oluşturulmuş saklanan Veri Aktarımı isteği dosyalarını dönüştürmek için bir
+sihirbaz sağlar.
+<p>
+IBM i Access for Windows'ta aşağıdaki dosya tipleri dönüştürülebilir:<br>
+<pre>
+   .dtf - IBM i'den veri aktarımı
+   .dtt - IBM i'ye veri aktarımı
+</pre>
+Dosyalar şu şekilde dönüştürülür:
+<pre>
+   .dtfx - IBM i'den veri aktarımı
+   .dttx - IBM i'ye veri aktarımı
+</pre>
+Veri Aktarımı geçiş sihirbazı .fdf dosyalarını geçirmez. Yeni IBM i Access Client Solutions'ın
+gerektirdiği dosya tipi .fdfx olup bu bir aşağı yükleme sırasında veya Dosya Yarat Sihirbazı kullanılarak
+oluşturulabilir.
+<p>
+Veri Aktarma geçişi sihirbazına, İşlemler-&gt;Veri Aktarma Geçişi seçilerek Veri Aktarma ana
+menüsünden erişilebilir.
+
+<h3><a id="9.6.4"></a>9.6.4 EHLLAPI</h3>
+<p>
+IBM i Access for Windows ile birlikte gönderilen Personal
+Communications öykünme programına erişmek için EHLLAPI'den yararlanan 5250
+uygulamaları için IBM i Access Client Solutions ile EHLLAPI
+kullanılmasına ilişkin bilgi için şu KB makalesine bakın:
+   http://www-912.ibm.com/s_dir/slkbase.NSF/DocNumber/653368666<br>
+<pre>
+    http://www-01.ibm.com/support/docview.wss?uid=nas8N1010639
+</pre>
+
+<h3><a id="9.6.5"></a>9.6.5 Kerberos</h3>
+<p>
+IBM i Access Client Solutions, kerberos desteğine sahiptir.  Bir sisteme bağlanırken
+kerberos kullanmak için:<br>
+<ol>
+<li>Ana GUI'den Sistem Konfigürasyonları'nı açın.
+<li>Yeni ya da Var olan bir sistem konfigürasyonunu düzenle seçeneğini belirleyin.
+<li>Bağlantı sekmesinde şunu seçin:<br>
+   "Kerberos doğrulaması kullan; bilgi isteminde bulunma"
+</ol>
+Bir kerberos ortamı ayarlanması bu belgenin kapsamı dışındadır.
+
+
+
+
+<h3><a id="9.7"></a>9.7 Anahtar Yönetimi</h3>
+<p>
+Güvenli Yuva Katmanı (SSL) bağlantılarına ilişkin
+sertifikaların yönetimi olanağı, Araçlar-&gt;Anahtar Yönetimi seçilerek ana GUI'den
+kullanılabilir.  Anahtar Veritabanı'ndaki bazı görevler anahtar deposu bütünlük parolasını gerektirir.
+
+<h3><a id="9.8"></a>9.8 Veri Aktarımı</h3>
+<h3><a id="9.8.1"></a>9.8.1 Excel ve Calc Hesap Çizelgeleri İçin Veri Aktarma</h3>
+<p>
+Dosyaya aşağıya yükleme desteğinin yanı sıra, Veri Aktarma olanağı, Microsoft Excel hesap
+çizelgesi ya da OpenOffice Calc hesap çizelgesi için etkin hesap çizelgesine aşağı
+yüklemeyi de destekler.  Etkin bir hesap çizelgesini indirme için ana Veri Aktarma GUI'si panosu bir Çıkış Aygıtı seçme seçeneği sağlar.  Varsayılan olarak, Çıkış Aygıtı Dosya'dır.  Platformunuz Excel ve/veya Calc hesap çizelgesiyle etkileşimi destekliyorsa, Çıkış Aygıtı açılır kutusundan Etkin Excel Hesap Çizelgesi ve Etkin Calc Hesap Çizelgesi için ek seçenekler belirlenebilir.
+<p>
+Sınırlamalar:
+<ul>
+<li>Windows'ta en az OpenOffice 3.4.1 sürümü gerekir.
+<li>Linux ve Mac'te en az OpenOffice 4.2.1 sürümü gerekir ve varsayılan konuma kurulmalıdır.
+<li>Yalnızca Linux ya da Mac sisteminde çalıştırılan IBM i Access Client Solutions, OpenOffice ile etkileşimi destekler.<br>
+Windows'ta çalıştırılan IBM i Access Client Solutions, Microsoft Excel ya da
+OpenOffice Calc ile etkileşimi destekler.
+<li>OpenOffice bit değeri, IBM i Access Client Solutions uygulamasının bit değeri ile eşleşmelidir.<br>
+Açıklama: OpenOffice, hem 32 bitlik hem 64 bitlik sürüm olarak kullanılabilir.  Her iki sürüm de 64 bitlik bilgisayarda çalışabilir.
+Bir OpenOffice hesap çizelgesiyle etkileşim kurarken OpenOffice ve IBM i Access Client Solutions bit değeri aynı olmalıdır ya da Veri Aktarma hesap çizelgesiyle etkileşim kuramaz.
+IBM i Access Client Solutions bit değeri, çalıştırıldığı Java Virtual Machine (JVM) ile belirlenir.  IBM i Access Client Solutions çalıştıran JVM ve OpenOffice arasında bit değeri uyuşmazlığı olduğunda ve Çıkış Aygıtı için etkin bir hesap çizelgesi seçtiğinizde "Etkin Hesap Çizelgesi bulunamadı" benzeri bir hata görüntülenir.  64 bitlik bir kişisel bilgisayar çalıştırıyorsanız, IBM i Access Client Solutions uygulamasını platformunuza özgü 32 bitlik ya da 64 bitlik ikili başlatıcıyı kullanarak başlatabilirsiniz.  Etkin hesap çizelgesi desteğinin çalışması için IBM i Access Client Solutions uygulamasını, kullanılmakta olan OpenOffice uygulamasının bit değeriyle eşleşen platforma özel ikili başlatıcısını kullanarak başlatın.
+<br>Mac yalnızca 64 bitlik JVM'yi desteklediğinden, Mac'te etkin hesap çizelgesi desteğini kullanmak için OpenOffice'in 64 bitlik sürümünü kurmanız gerekir.
+</ul>
+
+<h3><a id="9.8.2"></a>9.8.2 Karakter Kesme ve Sayısal Taşma için Veri Aktarma Desteği</h3>
+<p>
+Veri Aktarımı yukarı yükleme isteği sırasında bir karakter ya da sayısal alan tanımlanan alan boyutunu aşarsa yukarı yükleme isteği sonlandırılır.
+<p>
+Karakter alanlarının sondan kesilmesini sağlamak için AcsConfig.properties dosyasında aşağıdaki özelliği ayarlayın:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true
+<p>
+Sağlanan sayısal alan, tanımlanan sınırı aştığında sayısal alanların pozitif ya da negatif değer üst sınırına ayarlanmasını sağlamak için AcsConfig.properties dosyasında aşağıdaki özelliği ayarlayın:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+<p>
+Bu özellikler true olarak ayarlandığında, kesme ya da taşma oluştuğuna dair bir gösterge sağlanmadan yukarı yükleme isteği devam eder.  Karakter alanları sondan kesilir.  Sayısal alanlar, taşma değeri üst sınırına ve aşağı taşma değeri alt sınırına ayarlanır.
+<p> 
+Alternatif olarak, aşağıdaki gibi diğer java özellikleri gibi komut satırından yukarıdaki özellikler ayarlanabilir:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowCharacterTruncation=true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.dataxfer.jdbc.AllowNumericOverflow=true
+
+<h3><a id="9.8.3"></a>9.8.3 Veri Aktarma Sayfası Adı</h3>
+<p>
+Aşağı yüklemeler sırasında, sonuna ">Sheet#" (burada #, uygun sayfa numarasıyla değiştirilir) eklenmiş şekilde IBM i kaynak kitaplığı ve dosyasının adı temel alınarak bir sayfa adı oluşturulur.  Örneğin:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qiws.qcustcdt>Sheet1<br>
+<p>
+Sayfa adının kitaplık ve dosya kısmını geçersiz kılmak için aşağıdaki özelliği belirtebilirsiniz:<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.dataxfer.SheetId=your_string<br>
+Böylece şu oluşturulur:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dizginiz>Sheet1
+
+<h3><a id="9.9"></a>9.9 IBM i'ye Konsol Bağlantısı Kurma</h3>
+<p>
+IBM i'de yönetici işlevleri gerçekleştirmek için 5250 konsolu gerekir.
+IBM i Access Client Solutions hem LAN hem de HMC konsolu konfigürasyonlarını destekler.
+<p>
+IBM i ürününe ilişkin Hizmet anasistem adını ya da Hizmet IP adresini veya HMC
+konsolunuzun anasistem adını ya da IP adresini biliyorsanız, konsol bilgilerinin
+konfigürasyonunu IBM i Access Client Solutions uygulamasından aşağıdaki adımları
+kullanarak tanımlayabilirsiniz:<br>
+<ol>
+<li>Bilgisayarınızda IBM i Access Client Solutions uygulamasını başlatın.
+<li>Ana panoda, Sistem Konfigürasyonları'nı tıklatın.
+<li>Yeni bir konfigürasyon girmek için Yeni düğmesini ya da var olan bir
+konfigürasyonu güncellemek için Düzenle düğmesini tıklatın.
+<li>Konsol sekmesini seçin.
+<li>Konsol tipinize ilişkin uygun bilgileri girin.
+</ol>
+<p>
+Konsol konfigürasyonu henüz olmayan bir IBM i ürününde (işletmenize kısa bir süre önce teslim edilmiş yeni bir sistem gibi), konsol bağlantısı için IPL sırasında otomatik olarak 169.254.62.0 - 169.254.62.63 aralığında bir IP adresi atanır. Bu durumlarda, aşağıdaki adımlar IBM i Access Client Solutions kullanılarak bir konsol
+bağlantısı kurulmasına yardımcı olur:<br>
+<ol>
+<li>Bilgisayarınızın kablosuz bağlantısını devre
+dışı bırakın.  Aşağıdaki adımlarda kablolu Ethernet kapısı kullanılmalıdır.
+<li>Bilgisayarınız ile IBM i T1 kapısı arasında bir Ethernet kablosu bağlayın.
+<li>Bilgisayarınızda IBM i Access Client Solutions uygulamasını başlatın.
+<li>Ana panoda, Sistem Konfigürasyonları'nı tıklatın.
+<li>Sistem Konfigürasyonları penceresinden Konsolu Bul... düğmesini tıklatın.
+<li>IBM i Locator panosundan Ara düğmesini tıklatın.
+<li>IBM i ürününde IPL sırası otomatik IP adresinin atanacağı kadar ilerlediyse, IP
+adresi Arama panosunda görüntülenmelidir.
+<li>Görüntülenen IP adresini tıklatarak seçin, ardından bir 5250 konsoluna bağlanmak için
+Konsol düğmesini tıklatın.
+<li>Hizmet Araçları kimlik bilgilerinin sorulduğu bir pano görüntülenir.
+<li>Geçerli kimlik bilgilerinin girilmesinin ardından, bir 5250 konsolu görüntülenir.
+<li>Konsol, başlangıç kuruluşu ve ayar görevlerinin işlenmesi için kullanılabilir.
+</ol>
+<p>
+IBM i sistemini ağ altyapınızın geri kalanına eklemeye hazır olduğunuzda, Hizmet Araçları
+LAN Bağdaştırıcısı konfigürasyonunun nasıl tanımlanacağına ilişkin ek bilgiyi IBM
+InfoCenter olanağında bulabilirsiniz:
+<p>
+<pre>
+http://pic.dhe.ibm.com/infocenter/iseries/v7r1m0/topic/rzamh/rzamhsrvtoolsrvr4dstdst.htm
+</pre>
+"DST için hizmet araçları sunucusu konfigürasyonunun tanımlanması" başlıklı bölüme bakın.
+
+<p>
+Önceden bir LAN konsolu konfigürasyonu olan ve önceden ağ altyapınızda yer alan IBM i
+sistemleri için aşağıdaki adımlar kullanılarak var olan konsol konfigürasyonları
+bulunabilir:<br>
+<ol>
+<li>Bilgisayarınızda IBM i Access Client Solutions uygulamasını başlatın.
+<li>Ana panoda, Sistem Konfigürasyonları'nı tıklatın.
+<li>Sistem Konfigürasyonları penceresinden Konsolu Bul... düğmesini tıklatın.
+<li>IBM i Locator panosunda, Yakın alanı aramak istediğiniz aralıktaki bir IP adresine
+güncelleyin.
+<li>Belirtilen aralıktaki LAN konsollarını bulmak için Ara düğmesini tıklatın.
+<li>Görüntülenen IP adresini tıklatarak seçin, ardından bir 5250 konsoluna bağlanmak için
+Konsol düğmesini tıklatın.
+<li>Hizmet Araçları kimlik bilgilerinin sorulduğu bir pano görüntülenir.
+<li>Geçerli kimlik bilgilerinin girilmesinin ardından, bir 5250 konsolu görüntülenir.
+</ol>
+
+
+
+<h3><a id="9.10"></a>9.10 Ek Yazı Tipleri</h3>
+<p>
+5250 öykünmesi için Yazı Tipleri dizinine ek yazı tipleri eklenebilir.
+<p>
+Ek yazı tipleri için ek seçenek ve/ya da birden çok konum sağlamak için
+AcsConfig.properties dosyasında bulunan com.ibm.iaccess.Fonts özelliğini ayarlayın.
+<p>
+com.ibm.iaccess.Fonts özelliği şu şekilde ayarlanarak varsayılan Yazı Tipleri dizini
+geçersiz kılınabilir:<br>
+<ol> 
+<li>&lt;yol&gt;, yazı tiplerini içeren dizin
+<li>belirli bir yazı tipi dosyasına ilişkin &lt;yol&gt;/&lt;dosyaadı&gt; (örneğin, .ttf)
+<li>Yazı tipi dosyasının URL'si
+<li>yukarıdaki seçeneklerin noktalı virgülle ayrılmış bir listesi
+</ol>
+<p>
+Not:<br>
+&lt;yol&gt; bir mutlak yol olabilir ya da acsbundle.jar dosyasının konumundan başlayan
+göreli bir yol olabilir. 5250 öykünmesi yalnızca siyah beyaz yazi tiplerini tanır.
+<p>
+1. Örnek (varsayılan):
+<pre>
+     com.ibm.iaccess.Fonts=Fonts	
+</pre>
+2.Örnek:
+<pre>
+     com.ibm.iaccess.Fonts=/Users/All/Fonts;Fonts
+</pre>
+
+
+
+<h3><a id="9.11"></a>9.11 netrc Dosyasından Kimlik Bilgilerinin Kullanılması</h3>
+<p>
+.netrc dosyası (Linux ve Mac) ya da _netrc dosyası (Windows) kullanımını etkinleştirmek için IBM i Access Client Solutions ana grafik kullanıcı arabirimine gidin ve menü çubuğundan şunları seçin:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Düzenle-&gt;Tercihler<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Genel sekmesi<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Kutuyu işaretleyin: <b>Oturum açma bilgileri için netrc dosyasını okuyun</b><br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Uygula düğmesini tıklatın<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;IBM i Access Client Solutions olanağını yeniden başlatın<br>          
+<p>
+netrc dosyasının standart biçimi:<br>
+<pre>
+     machine &lt;sistem&gt; login &lt;kullanıcı-kimliği&gt; password &lt;parola&gt;
+</pre>
+<p>
+netrc dosyası, kullanıcının ana dizininde saklanmalı ve sistem adı ve kullanıcı-kimliği, <b>Sistem Konfigürasyonları</b> ile eşleşmelidir.  IBM i Access Client
+Solutions olanağından:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Sistem Konfigürasyonlarını seçin<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Sistem Bağlantıları sekmesini seçin<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;ve Düzenleyin<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;<b>Her sistem için bir kez bilgi isteminde bulunmak üzere varsayılan kullanıcı adını kullan</b> seçeneğini belirleyin<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;<b>Varsayılan kullanıcı adı</b> için kullanıcı kimliğini doldurun<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;Tamam'ı seçin<br>          
+
+<p>
+Sistem adı ve <b>Varsayılan kullanıcı adı</b>, netrc dosyasının içerikleriyle eşleştiğinde kullanıcıya bilgi isteminde bulunulmadan netrc dosyasındaki parola kullanılarak sistemle bağlantı kurulur.
+
+<h3><a id="9.12"></a>9.12 Tümleşik Dosya Sistemi (IFS)</h3>
+<h3><a id="9.12.1"></a>9.12.1 IFS, QFileSvr.400 ve Güvenlik</h3>
+<p>
+Tümleşik Dosya Sistemi Desteği, bir IBM i bölümünden diğerine nesneleri kopyalamak ya da göndermek için QFileSvr.400 dosya sistemini kullanır. Başka bir deyişle, her iki bölümdeki kullanıcı profili ve parolası eşleşmeli ve bölümler aynı parola düzeyinde sistem değerine (QPWDLVL) sahip olmalıdır.
+Kerberos kimlik doğrulaması kullanılıyorsa her iki bölüm için de Ağ Kimlik Doğrulama Hizmeti ve Kurumsal Kimlik Eşlemesi (EIM) konfigüre edilmiş olmalıdır. Daha fazla ayrıntı için, IBM i Knowledge Center olanağında "QFileSvr.400 dosya sisteminde güvenlik ve nesne yetkisi" konusuna bakın.
+<p>
+QFileSvr.400 dosya sistemi tarafından diğer IBM i bölümlerine yapılan bağlantılar güvenli değildir.
+Bir IBM i bölümünden diğerine nesneler kopyalanırken ya da gönderilirken güvenli bağlantı gerekirse bölüm konfigürasyonu, SSL kullanılacak şekilde ayarlanmalı, Sistem Konfigürasyonlarında ilgili bölüm için "Bağlantı için SSL kullan" seçeneği belirlenmiş olmalı ve
+AcsConfig.properties dosyasında aşağıdaki özellik ayarlanmalıdır:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.ifs.transferMechanism=ACS
+<br>
+Alternatif olarak, aşağıdaki gibi diğer java özellikleri gibi komut satırından özellik ayarlanabilir:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Dcom.ibm.iaccess.ifs.transferMechanism=ACS<br>
+
+<h3><a id="9.12.2"></a>9.12.2 IFS Yetkisi</h3>
+<p> 
+Tümleşik Dosya Sistemi desteği, aşağıdaki CL komutlarını kullanma yetkisi gerektirir:<br>
+<pre>
+    CPY
+    CPYFRMSTMF
+    CPYTOSTMF
+    CRTDIR
+    CRTLIB
+    CRTSAVF
+    RMVDIR
+    RST
+    SAV
+    SETASPGRP
+ </pre>
+<p>
+Kullanıcı bu CL komutlarını kullanamazsa Kopyala, Yapıştır, Gönder, Sil ve Yeni Klasör işlemleri başarısız olur.
+
+<h3><a id="9.12.3"></a>9.12.3 IFS Sınırlamaları</h3>
+<p>
+Tümleşik Dosya Sistemi desteği, yolları /QFileSvr.400, /QNTC ya da /QOPT ile başlayan nesneler için işlemlere izin vermez.  Geçerli dizin yolu ya da seçilen nesne yolu /QFileSvr.400, /QNTC veya /QOPT ile başlarsa, İşlemler menüsündeki tüm öğeler geçersiz kılınır ve bir bağlam menüsü görüntülenmez.
+
+<h3><a id="9.12.4"></a>9.12.4 IFS ve Bağımsız ASP'ler</h3>
+<p>
+Kaynak nesne ya da hedef yol bağımsız bir ASP'de bulunduğunda Tümleşik Dosya Sistemi desteği, Kopyala, Yapıştır veya Gönder işlemine izin vermez.
+
+<h3><a id="9.13"></a>9.13 Secure Shell (SSH) Uçbirimi</h3>
+<p>
+Varsayılan olarak Secure Shell bulunan ya da kurulu platformlar için SSH Uçbirim özelliği, IBM i Access Client Solutions ana GUI'sinde görünür. SSH Uçbirimi, IBM i bütünleşik dosya sisteminde bir uçbirim öykünme programı başlatır.
+<p>
+Çoğu Mac, Linux ve diğer UNIX'ten türetilen sistemlerde varsayılan olarak bir Secure Shell vardır. Bu platformlar için, OpenSSH istemcisinin olduğu ve /usr/bin/ssh dizininde bulunduğu varsayılır. Windows kullanıcılarının Windows için bir Secure Shell kurması gerekir.
+<p>
+IBM i Access Client Solutions destekli Secure Shell'ler:
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xterm, XterminalEmulator, MateTerminal, Terminator, GnomeTerminal, Konsole, Xfce4
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mac:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal, iTerm2
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows: cygwin, PuTTY, bash
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cygwin, openssh paketinin kurulmasını gerektirir
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bash, Windows için Linux alt sisteminin bir parçası olarak kullanılabilir
+<p>
+Birden çok SSH uygulaması kuruluysa, tercih edilen SSH istemcisini ayarlamak için com.ibm.iaccess.PreferredSSHClient özelliğini kullanabilirsiniz.
+<p>Linux örnekleri:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=XterminalEmulator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=MateTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Terminator
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=GnomeTerminal
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Konsole
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Xfce4
+<p>Mac örnekleri:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=iTerm2
+<p>Windows örnekleri:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Cygwin
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Putty
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=Bash
+
+<p>
+SSH istemcisinin standart konumda kurulu olmadığı durumlar için kurulu SSH istemcisine tam yolu sağlamak için com.ibm.iaccess.PreferredSSHClient özelliğini kullanabilirsiniz.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.PreferredSSHClient=C:\PuTTY\putty.exe
+
+<p>
+Tam yol sağlandığında tüm gerekli bağımsız değişkenleri sağlamak için com.ibm.iaccess.SSHClientOpt özelliğini ayarlamanız da gerekebilir. Örneğin X11 iletimini kullanmıyorsanız uyarıları devre dışı bırakmak için:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com.ibm.iaccess.SSHClientOpts=-x
+
+<h3><a id="9.13.1"></a>9.13.1 SSH Uçbirim Önkoşulları</h3>
+IBM i'de 5733-SC1 IBM Portable Utilities programını kurun.
+<br>Komutu kullanarak Secure Shell Yardımcı Programını başlatın:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRTCPSVR *SSHD
+
+<p>Başlatılan SSH istemcisi içinde bir bağlantı hatası alırsanız (örneğin, "bağlantı reddedildi") ya da bir pencere çıkar, ancak anında kaybolursa yukarıdaki komutla SSH yardımcı programını başlatmanız gerekebilir.
+<hr><h3><a id="10.0"></a>10.0 Hizmet Tanılamaları</h3>
+<p>
+IBM hizmet biriminin ilgilenmesi gereken bir sorunla karşılaşırsanız, IBM hizmet
+temsilcisi aşağıdakilerden birini ya da her ikisini de yapmanızı isteyebilir:
+<p>
+Ana IBM i Access Client Solutions GUI'sinde:<br>
+<ul>
+ <li>Şunları seçin: Araçlar-&gt;Hizmet Günlükleri Oluştur<br>
+     Bu seçenek, <a href="#9.1.5">9.1.5 Döküm</a> bölümündeki komut satırı seçeneğiyle
+aynı işlevi gerçekleştirir.  Bu işlev genellikle hatadan hemen sonra gerçekleştirilmelidir.  IBM hizmet temsilciniz soruna bağlı olarak, bunu birkaç kez yapmanızı isteyebilir.
+ <li>Şunları seçin: Araçlar-&gt;Hizmet Günlüklerini Paketle<br>
+     Bu seçenek, <a href="#9.1.6">9.1.6 Medic</a> bölümündeki komut satırı seçeneğiyle aynı işlevi gerçekleştirir.  Bu işlev, iş istasyonu ortamına ilişkin ayrıntıları toplar ve
+hizmet günlüklerini IBM'e gönderilebilecek bir zip arşivi içine paketler.
+</ul>
+
+
+
+<hr><h3><a id="11.0"></a>11.0 Sık Sorulan Sorular (SSS)</h3>
+<p>
+<pre>
+S1    IBM i Access Client Solutions programını başlatmayı denediğimde
+      aşağıdaki
+      karşılaşıyorum:
+             sınıf yüklenemiyor: java.lang.UnsupportedClassVersionError
+Y1-1  JDK 6.0 ya da sonraki bir sürümü kullanmalısınız. <a href="#3.0">3.0 Önkoşullar</a>
+      başlıklı bölüme bakın.
+
+S2    Ürünü, sağlanan ikili dosyalardan ya da komut dosyalarından birini kullanarak bir
+      kabuk ya da uçbirim oturumundan başlatmayı denediğimde, şu hata iletisiyle karşılaşıyorum:
+         İzin reddedildi
+Y2-1  Yürütme izniniz olduğundan emin olmak için dosyanın dosya izinlerini denetleyin.
+      <a href="#6.0">6.0 Dosya İzinleri</a> başlıklı bölüme bakın.
+
+S3    Ürünü başlatmak için sağlanan dosyalardan birini çift tıklattığımda hiçbir şey olmuyor.
+Y3-1  Java kurulu olmayabilir. <a href="#3.0">3.0 Önkoşullar</a> başlıklı bölüme bakın.
+Y3-2  Ürünü başlatmak için kullandığınız dosya, yürütme iznine sahip olmayabilir.
+      <a href="#6.0">6.0 Dosya İzinleri</a> başlıklı bölüme bakın.
+Y3-3  Ortamınızla ilgili sorunlar olabilir.
+      Hangi hataların ortaya çıkabileceğini
+      görmek için sağlanan dosyayı bir komut satırından çalıştırmayı deneyin.
+      <a href="#7.3">7.3 Ürünün Başlatılması (komut satırı kullanarak)</a> başlıklı bölüme bakın.
+
+S4    Ürünü başlatmak için ikili dosyalardan birini kullanmak istiyorum;
+      ancak şu hatayla karşılaşıyorum: "Java modülü yüklenirken hata oluştu."
+Y4-1  İkili dosya, java kuruluşunun ana dizinini bulamadı.
+      Lütfen java uygulamasının kurulu olduğunu doğrulayın. <a href="#3.0">3.0 Önkoşullar</a> başlıklı bölüme bakın.
+Y4-2  Bölüm <a href="#7.1.1">7.1.1 Ürününün Başlatılması - Ek Seçenekler</a>
+      içinde ürünü, ikili bir dosyayı kullanarak başlatmaya ilişkin ek yöntemler açıklanır.
+
+S5    JAVA_HOME ortamı değişkenini ayarladıktan sonra ürünü başlatmak için kullandığım
+      ikili dosya bir komut satırından çalışıyor; ancak dosyayı çift tıklattığımda çalışmıyor.
+Y5-1  JAVA_HOME ortamı değişkeni, dosyayı çift tıklattığınızda kullanmakta olduğunuz
+      dosya yöneticisinden görünmeyebilir.
+      Ortam değişkenlerinin ayarlanması ve görünürlüğü işletim sistemlerine göre değişir.
+      JAVA_HOME ortamı değişkenini, işletim sisteminiz için sistem ortamı
+      değişkeni olarak ayarlamayı deneyin. İşletim sisteminiz,
+      genel ortam değişkenleri olarak sistem ortamı değişkenlerine başvurabilir.
+      JAVA_HOME ortamı değişkenini ayarladıktan sonra dosya yöneticinizi kapatıp
+      yeniden açın ve ikili dosyayı yeniden çift tıklatmayı deneyin.
+
+S6    Ürünü başlatmak için sağlanan dosyalardan birini çift tıklattığımda bir metin
+      düzenleyicisi dosyayı görüntüler.
+Y6-1  İşletim sisteminiz tarafından tanınan dosya uzantısına sahip bir komut dosyası
+      kullandığınızdan emin olun.
+Y6-2  Diğer komut dosyalarından birini deneyin.
+Y6-3  Dosyayı açan programı değiştirin.
+Y6-4  Yürütme izniniz olduğundan emin olmak için dosyanın dosya izinlerini denetleyin.
+      <a href="#6.0">6.0 Dosya İzinleri</a> başlıklı bölüme bakın.
+
+S7    Ürünü başlatmak için sağlanan dosyalardan birini çift tıklattığımda, dosyayı açmak
+      için hangi programın kullanılacağı soruluyor.
+Y7-1  İşletim sisteminiz tarafından tanınan dosya uzantısına sahip bir komut dosyası
+      kullandığınızdan emin olun.
+A7-2  Dosyayı açan programı, kullandığınız ikili dosya ya da komut dosyası ile uyumlu bir
+      duruma getirin. Örneğin, Uçbirim (Mac işletim sisteminde).
+Y7-3  Yürütme izniniz olduğundan emin olmak için dosyanın dosya izinlerini denetleyin.
+      <a href="#6.0">6.0 Dosya İzinleri</a> başlıklı bölüme bakın.
+
+Q8    Finder'dan bir Mac'te IBM i Access Client Solutions uygulamasını başlattığımda
+      bir uçbirim oturumu çıkıyor ve IBM i Access Client Solution uygulamasını sonlandırdıktan
+      sonra da gitmiyor.
+A8-1  Uçbirim oturumunun açılmasını önlemek için Hızlı Başlangıç Kılavuzu'nda
+      Mac için belirtilen kuruluş komut dosyalarını kullanın.
+
+S9    Ürünü başlatmak için en iyi yöntem hangisidir?
+Y9-1  Ürünü, Bölüm <a href="#7.0">7.0 Ürünün Başlatılması</a> içinde açıklanan üç yöntemden birini kullanarak
+      yani, ikili dosyaları, komut dosyalarını ya da komut satırını kullanarak başlatabilirsiniz.
+      Ortamınızda geçerli olan herhangi bir yöntem kabul edilebilir.
+
+Q10   Ürünü başlatmak için neden hem ikili dosyalar (Start_Programs) ve hem de
+      komut dosyaları (Start_Scripts) sağlanır?
+A10-1 Komut dosyaları, işletim sistemine özgü olmayıp platforma özgü ikili dosya
+      çalışmadığında ürünü başlatmanın daha genel bir yolunu sağlar.
+Y10-2 Bazı işletim sistemleri için dosya ilişkilerini tanımlarken ikili dosya gerekir.
+      Çoğu durumda ürünü başlatmak için ikili dosyalar kullanılmalıdır.
+Y10-3 Bazı ortamlarda, IBM i Access Client Solutions bölümlerine erişimi kısıtlayan
+      IBM i Access Client Solutions.  Ürünü başlatmak için ikili dosyalardan birinin kullanılması
+      sistem yöneticilerinin erişim yetkilendirmesini kolaylaştırır.
+
+S11   JDK 6.0 (ya da üstü) sürümünü kurduktan sonra yine de aşağıdaki hatayla
+      karşılaşıyorum:
+      sınıf yüklenemiyor: java.lang.UnsupportedClassVersionError
+Y11-1 İş istasyonunuzda kullanılmakta olan varsayılan java sürümü JDK 6.0'dan eskidir.
+      JDK 6 için Java ana sayfası yolunu açıkça belirten bir seçenek kullanmalısınız.
+      <a href="#7.1.2">7.1.2 Java Ana Yolunun Bulunması</a> başlıklı bölüme bakın.
+      Aşağıdaki bölümlerde açıklanan yöntemlerden biri için Java ana yolunu
+      kullanın:
+      <a href="#7.1.1">7.1.1 Ürününün Başlatılması - Ek Seçenekler</a><br>
+      <a href="#7.3">7.3 Ürününün Başlatılması (komut satırı kullanarak)</a><br>
+
+S12   Özelleştirilmiş klavye eşleme dosyalarını (.kmp) Windows 5250 öykünme oturumlarından içe
+      aktaramıyorum.
+A12-1 IBM i Access Client Solutions uygulamasının Temmuz 2012'de sağlanan ilk sürümünde,
+      .kmp dosyalarının Windows 5250 öykünme programı oturum tanıtımlarından
+      (.ws) içe aktarılması desteklenmiyordu. Ekim 2012 tarihinde
+      sağlanan sürümle birlikte, .kmp dosyalarının 5250 oturumu tanıtımlarından
+      (.ws) içe aktarılması artık desteklenmektedir.
+
+S13   5250 öykünme programı için klavye uyarlaması, Windows işletim sisteminde
+      olduğundan çok farklı. Bununla ilgili öneriniz var mı?
+Y13-1 Klavye eşlemesi kategorilere ayrılmıştır. Öykünme programı oturumunda:
+      Düzenle &gt; Tercih &gt; Klavye seçeneklerini tıklatın ya da araç çubuğunda Yeniden Eşle
+      düğmesini tıklatın.
+         tıklatın.
+      Tuş Ataması etiketini seçin.
+      Bir kategori seçin. Varsayılan tuş eşlemeleri
+         "Anasistem İşlevleri" ve "Menü Komutları" kategorileri altında görünür.
+      Atamak istediğiniz işlevi seçin.
+      Tuş Ata öğesini tıklatın.
+      Klavyenizde bu işlev için atamak istediğiniz tuşa (ya da tuş birleşimine) basın.
+Y13-2 Özel tuş eşlemelerine ilişkin yardım için:
+      Düzenle &gt; Tercih &gt; Klavye seçeneklerini tıklatın ya da araç çubuğunda Yeniden Eşle
+      düğmesini tıklatın.
+      Yardım düğmesini seçin.
+
+S14   Mac OS X 10.8 Mountain Lion'da ürünü başlatmaya çalıştığımda, uygulamanın onaylı olmadığını
+      belirten bir ileti alıyorum.
+Y14-1 Bu, Mac OS X 10.8 Mountain Lion yayın düzeyinden başlayarak, varsayılan olarak uygulanan bir güvenlik ilkesidir.
+      Uygulamanın nasıl çalıştırılacağını öğrenmek için aşağıda adresi verilen web
+      sayfasına bakın:
+      http://macperformanceguide.com/MountainLion-application-signing.html
+
+Q15   IBM i Access for Windows kullanıcısıyım, sistem konfigürasyonlarımı
+      IBM i Access Client Solutions uygulamasına taşıyabilir miyim?
+Y15-1 <a href="#9.6.1">9.6.1 Sistem Konfigürasyonlarının Geçirilmesi</a> başlıklı bölüme bakın.
+
+Q16   Bir IBM i Access for Windows kullanıcısıyım, öykünme profillerimi
+      IBM i Access Client Solutions uygulamasına taşıyabilir miyim?
+Y16-1 <a href="#9.6.2">9.6.2 5250 Öykünmesinin Geçirilmesi</a> başlıklı bölüme bakın.
+
+Q17   IBM i Access for Windows kullanıcısıyım, Veri Aktarma
+      istek dosyalarımı IBM i Access Client Solutions'a geçirebilir miyim?
+Y17-1 <a href="#9.6.3">9.6.3 Saklanan Veri Aktarma İsteği Dosyalarının Geçirilmesi</a> başlıklı bölüme bakın.
+
+S18   EHLLAPI, IBM i Access Client Solutions ile birlikte çalışır mı?
+Y18-1 <a href="#9.6.4">9.6.4 EHLLAPI</a> başlıklı bölüme bakın.
+
+S19   Kerberos, IBM i Access Client Solutions ile birlikte çalışır mı?
+Y19-1 <a href="#9.6.5">9.6.5 Kerberos</a> başlıklı bölüme bakın.
+
+S20   Sistem denetimcisiyim ve belirli işlevleri kullanıcılarımdan gizlemek istiyorum.
+Y20-1 <a href="#9.5">9.5 Uyarlanmış Paketler</a> başlıklı bölüme bakın.
+
+S21   Bir panoda bir yardım simgesi seçtiğimde herhangi bir metin görüntülenmiyor.
+Y21-1 Masaüstü tarayıcısında olağan koşullarda yardım metni görüntülenir. Bazı durumlarda,
+      masaüstünde bir tarayıcı olmayabilir ya da tarayıcı konfigürasyonu doğru bir şekilde tanımlanmamış olabilir.
+Y21-2 Yardım metnini masaüstü tarayıcısını kullanmadan görüntülemek için AcsConfig.properties dosyasında aşağıdaki özelliği ayarlayın:
+         com.ibm.iaccess.javaAwtDesktopAllowed=false
+      Diğer bir yöntem olarak, özellik diğer java özellikleri gibi komut satırından şu şekilde ayarlanabilir:
+         -Dcom.ibm.iaccess.javaAwtDesktopAllowed=false
+
+S22   Veri Aktarma kullanırken, "Etkin Excel Hesap Çizelgesi" ya da "Etkin Calc Hesap
+      Çizelgesi"ni Çıkış aygıtı olarak seçiyorum ve şu hatayı alıyorum:
+         "Etkin Hesap Çizelgesi bulunamadı"
+Y22-1 Etkin hesap çizelgesi yok. Yeni ya da var olan bir hesap çizelgesi açın
+      ve isteği yeniden deneyin.
+S22-2 Kullanmakta olduğunuz hesap çizelgesi uygulaması ile IBM i Access Client Solutions uygulamasını çalıştıran Java Virtual Machine arasında bir bit uyuşmazlığı olabilir.
+      <a href="#9.8">9.8 Excel ve Calc Hesap Çizelgeleri için Veri Aktarma Desteği</a> başlıklı bölüme bakın.
+
+S23   Bir Mac makinesinde Veri Aktarma'yı kullanırken Çıkış aygıtında etkin hesap çizelgesiyle etkileşimde bulunmak için herhangi bir seçenek görmüyorum.
+Y23-1 Veri Aktarma, OpenOffice uygulaması ile IBM i Access Client Solutions uygulamasını
+      çalıştıran JVM arasındaki bit uyuşmazlığı nedeniyle Mac makinelerindeki etkin hesap
+      çizelgeleriyle etkileşimde bulunamaz. Ek ayrıntı için
+      <a href="#9.8">9.8 Excel ve Calc Hesap Çizelgeleri için Veri Aktarma Desteği</a>  başlıklı bölüme bakın.
+
+S24   Veri Aktarma'yı kullanırken "Etkin Calc Hesap Çizelgesi" Çıkış aygıtını seçtiğimde Ad kutusunda hiçbir şey görünmüyor.
+S24-1 Bu, hiç saklanmamış yeni Calc hesap çizelgeleri için olağan bir durumdur.
+      Veri Aktarma, aşağı yüklenen verilerin bulunduğu hesap çizelgesini yine de güncelleyebilir.
+</pre>
+
+
+<hr><h3><a id="12.0"></a>12.0 Güncelleme Geçmişi</h3>
+<p>
+Aşağıdaki web sayfasına bakın:<br>
+http://www-03.ibm.com/systems/power/software/i/access/solutions.html
+
+</div>
+</body>
+</html>
+
+<!--  
+
+
+
+-->

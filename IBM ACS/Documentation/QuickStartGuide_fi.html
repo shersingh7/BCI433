@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pika-aloitusopas</title>
+<link rel="stylesheet" type="text/css" href="./acs_v1r1m4.css">
+</head>
+<body>
+<div class="acs-content">
+
+<p>
+<h2>5733XJ1 IBM i Access Client Solutions -ohjelmisto - Pika-aloitusopas</h2>
+<h2>Tämän asiakirjan sisältö on päivitetty viimeksi 21. syyskuuta 2017.</h2>
+
+<h3>Sisältö:</h3>
+<a href="#1.0">1.0 Johdanto</a><br>
+<a href="#2.0">2.0 Asennus (Windows)</a><br>
+<a href="#3.0">3.0 Asennus (Mac)</a><br>
+<a href="#4.0">4.0 Asennus (Linux)</a><br>
+<a href="#5.0">5.0 Päivitysten asennus</a><br>
+<a href="#6.0">6.0 Lisätietoja</a><br>
+<a href="#7.0">7.0 Asennuksen poisto</a><br>
+
+<br>
+<br>
+<hr><h3><a id="1.0"></a>1.0 Johdanto</h3>
+<p>
+Tämän oppaan avulla voit ottaa tuotteen käyttöön yhdelle käyttäjälle paikallisessa levyasemassa. 
+<p>
+Tuote voidaan ottaa käyttöön monella eri tavalla:<br>
+<ul>
+<li>Yhteiskäyttöinen sijainti, jota useat käyttäjät voivat käyttää.<br>
+Katso lisätietoja kohdasta <a href="https://www.ibm.com/developerworks/ibmi/library/i-ibmi-access-client-solutions-customization-trs/">
+IBM i Access Client Solutions: Customization and deployment made easy</a>
+<li>Purkamalla zip-tiedoston haluamaasi sijaintiin, myös siirrettävään tallennusvälineeseen (kuten CD:lle, DVD:lle, USB-flash-asemaan)
+tai haluamaasi polkuun paikallisessa levyasemassa.  Lisätietoja on Documentation-kansiossa olevan <a href="../Documentation/GettingStarted_en.html">Aloitusopas</a>-julkaisun kohdassa <a href="../Documentation/GettingStarted_en.html#5.0">Asennus</a>
+<li>Katso <a href="../Documentation/GettingStarted_en.html">Aloitusoppaan</a> kohdasta <a href="../Documentation/GettingStarted_en.html#9.4"> Muita käyttöönottoasetuksia </a> lisätietoja esimerkiksi <a href="../Documentation/GettingStarted_en.html#9.4.1"> kokoonpanoasetusten automaattisesta tuonnista </a>, jonka avulla voit välittää saman kokoonpanon useille käyttäjille ja <a href="../Documentation/GettingStarted_en.html#9.4.2"> IBM i -järjestelmän omista käyttöönotoista</a>, joiden avulla voit käyttää komentorivin lisäosia suoraan IBM i -järjestelmässä.
+</ul> 
+
+<p>
+Jos haluat ottaa tuotteen käyttöön yhdelle käyttäjälle paikallisessa levyasemassa, katso lisätietoja tämän oppaan muista osista.
+
+<hr><h3><a id="2.0"></a>2.0 Asennus (Windows)</h3>
+
+<p>
+Paikanna tuotteen zip-tiedosto tai CD-levy.
+
+<p>
+Jos käytät tuotteen zip-tiedostoa, pura zip-tiedoston sisältö.
+<br>Ehdotus: Voit purkaa tiedostot Windowsin Resurssienhallinnan avulla valitsemalla ensin zip-tiedoston, napsauttamalla sitä
+hiiren kakkospainikkeella ja valitsemalla valikosta vaihtoehdon "Pura kaikki...".
+
+<p>
+Paikanna tuotteen Windows_Application-kansio Windowsin Resurssienhallinnan avulla.
+
+<p>
+Voit asentaa 32-bittisen version nykyiselle käyttäjälle kaksoisnapsauttamalla tiedostoa install_acs_32.
+<p>
+Voit asentaa 64-bittisen version nykyiselle käyttäjälle kaksoisnapsauttamalla tiedostoa install_acs_64.
+<p>
+Voit asentaa 32-bittisen version usean käyttäjän tietokoneen kaikille käyttäjälle kaksoisnapsauttamalla tiedostoa install_acs_32_allusers.
+<p>
+Voit asentaa 64-bittisen version usean käyttäjän tietokoneen kaikille käyttäjälle kaksoisnapsauttamalla tiedostoa install_acs_64_allusers.
+
+<p>
+Jos kyseessä on uusi asennus, saat useita kehotteita, jotka auttavat alkuperäisen asennuksen mukautuksessa.  Jos käyttöoikeussopimus tulee näkyviin, hyväksy se.
+<p>
+Jos kyseessä on päivitys, aiemmat asetukset säilyvät.
+<p>
+Kun asennus on valmis, näkyviin tulee sanoma valmistumisesta.
+
+<p>
+Yhden käyttäjän onnistunut asennus kopioi sovelluksen seuraavaan kansioon:
+<pre>
+    /Users/user_id/IBM/ClientSolutions/
+</pre>
+<p>
+Huomautus: Näiden komentosarjojen ensimmäinen versio kopioi tuotteen tiedostot polkuun, joka on suhteessa Omat tiedostot -kansioon.
+Nykyinen versio kopioi tuotteen tiedostot polkuun, joka perustuu ympäristömuuttujiin
+%HOMEDRIVE% ja %HOMEPATH%.  Kun näitä komentosarjoja käytetään tuotteen päivitykseen, päivitykset tapahtuvat ensimmäisessä löytyneessä sijainnissa.
+<p>
+Usean käyttäjän onnistunut asennus kopioi sovelluksen seuraavaan kansioon:
+<pre>
+    /Users/Public/IBM/ClientSolutions/
+</pre>
+<p>
+
+<hr><h3><a id="2.0"></a>2.1 Tuotteen käytön aloitus (Windows)</h3>
+<p>
+Kaksoisnapsauta työpöydällä olevaa "Access Client Solutions" -kuvaketta.
+
+
+<hr><h3><a id="3.0"></a>3.0 Asennus (Mac)</h3>
+<p>
+Paikanna tuotteen zip-tiedosto tai CD-levy Finderilla.
+<p>
+Jos käytät tuotteen zip-tiedostoa, pura zip-tiedoston sisältö.
+<br>Ehdotus: Jos latasit tuotteen, katso
+Downloads-kansiosta.  Jos zip-tiedoston sisältöä ei ole purettu,
+voit purkaa zip-tiedoston sisällön kaksoisnapsauttamalla tiedoston kuvaketta.  
+<p>
+Paikanna Mac_Application-kansio.   Kaksoisnapsauta install_acs-tiedostoa.
+
+<p>
+Jos kyseessä on uusi asennus, saat useita kehotteita, jotka auttavat alkuperäisen asennuksen mukautuksessa.  Jos käyttöoikeussopimus tulee näkyviin, hyväksy se.
+<p>
+Jos kyseessä on päivitys, aiemmat asetukset säilyvät.
+<p>
+Kun asennus on valmis, näkyviin tulee sanoma valmistumisesta.
+<p>
+Onnistunut asennus kopioi sovelluksen seuraavaan kansioon.
+
+<p>
+Jos aloitit asennuksen Finderista, Pääte-ikkuna on avautunut asennuksen toteutusta varten. Kun asennus
+on valmis, voit sulkea Pääte-ikkunan.
+<p>
+Tekninen huomautus:<br>
+Käytettävät järjestelmän suojausasetukset ja OS X -järjestelmän versio saattavat aiheuttaa
+sen, että kuvaruutuun tulee kohoikkuna, jossa järjestelmä ilmoittaa, etteivät käyttöoikeudet riitä install_acs-tiedoston ajoon.
+Jos nän käy, sinun tulee määrittää install_acs-tiedostolle ajo-oikeudet jollakin seuraavista
+tavoista:<br>
+<ul>
+<li>Jos näyttöön tulee mahdollisuus avata install_acs-tiedosto, avaa se.
+<li>Napsauta install_acs-tiedostoa hiiren kakkospainikkeella ja valitse vaihtoehto Avaa.<br>
+   Kun kohoikkuna tulee näkyviin, napsauta Avaa-painiketta.
+<li>Jos kumpikaan yllä olevista vaihtoehdoista ei toimi, valitse seuraavat vaihtoehdot:<br>
+    Järjestelmäasetukset...<br>
+    Suojaus ja yksityisyys<br>
+    Jos IBM i Access Client Solutions -ohjelmiston avausvaihtoehto on näkyvissä, valitse se.
+    Muussa tapauksessa sinun on määritettävä suojausasetukset Yleiset-välilehdessä siten, että muita sovelluksia saa ajaa.  Kun sovelluksen IBM i Access Client Solutions ajo alkaa ensimmäisen kerran,
+    voit muuttaa suojausasetukset vastaamaan aiempia asetuksia.  
+</ul>
+
+<hr><h3><a id="3.1"></a>3.1 Tuotteen käytön aloitus (Mac)</h3>
+<p>
+Siirry Finderin avulla Ohjelmat-kansioon.
+<p>
+Paikanna sovellus "IBM i Access Client Solutions" ja aloita se kaksoisnapsauttamalla sitä.
+<p>
+Tekninen huomautus:<br>
+Käytettävät järjestelmän suojausasetukset ja OS X -järjestelmän versio saattavat aiheuttaa
+sen, että kuvaruutuun tulee kohoikkuna, jossa järjestelmä ilmoittaa, etteivät käyttöoikeudet riitä sovelluksen ajoon.
+Jos nän käy, sinun tulee määrittää sovellukselle ajo-oikeudet jollakin seuraavista
+tavoista:<br>
+<ul>
+<li>Jos näyttöön tulee mahdollisuus avata sovellus, avaa se.
+<li>Napsauta IBM i Access Client Solutions -kuvaketta hiiren kakkospainikkeella ja valitse vaihtoehto Avaa.<br>
+   Kun kohoikkuna tulee näkyviin, napsauta Avaa-painiketta.
+<li>Jos kumpikaan yllä olevista vaihtoehdoista ei toimi, valitse seuraavat vaihtoehdot:<br>
+    Järjestelmäasetukset...<br>
+    Suojaus ja yksityisyys<br>
+    Jos IBM i Access Client Solutions -ohjelmiston avausvaihtoehto on näkyvissä, valitse se.
+    Muussa tapauksessa sinun on määritettävä suojausasetukset Yleiset-välilehdessä siten, että muita sovelluksia saa ajaa.  Kun sovelluksen IBM i Access Client Solutions ajo alkaa ensimmäisen kerran,
+    voit muuttaa suojausasetukset vastaamaan aiempia asetuksia.  
+</ul>
+Tekninen huomautus:<br>
+Jos järjestelmä kehottaa asentamaan "Java 6 SE runtime"-ympäristön, sinun ei tarvitse asentaa
+Java-versiota 6.  Asenna Java-versio 8 ja yritä sitten aloittaa ohjelma uudelleen.
+
+
+
+
+<hr><h3><a id="4.0"></a>4.0 Asennus (Linux)</h3>
+<p>
+Paikanna tuotteen zip-tiedosto tai CD-levy.
+<p>
+Jos käytät tuotteen zip-tiedostoa, pura zip-tiedoston sisältö.
+<br>Ehdotus: Anna unzip-komento Pääte-ikkunan komentoriville.
+<p>
+Paikanna Linux_Application-kansio.
+<p>
+Koska asennuskomentosarjan ajo edellyttää root-käyttöoikeuksia, aja asennuskomentosarja
+sudo-komennon avulla Pääte-ikkunan komentoriviltä.  Esimerkki:
+<p>
+Jos järjestelmä tukee 32-bittistä arkkitehtuuria, anna seuraava komento:<br>
+<pre>
+    sudo ./install_acs_32
+</pre>
+Jos järjestelmä tukee 64-bittistä arkkitehtuuria, anna seuraava komento:<br>
+<pre>
+    sudo ./install_acs_64
+</pre>
+
+<p>
+Jos kyseessä on uusi asennus, saat useita kehotteita, jotka auttavat alkuperäisen asennuksen mukautuksessa.  Jos käyttöoikeussopimus tulee näkyviin, hyväksy se.
+<p>
+Jos kyseessä on päivitys, aiemmat asetukset säilyvät.
+<p>
+Kun asennus on valmis, näkyviin tulee sanoma valmistumisesta.
+
+<p>
+Onnistunut asennus kopioi sovelluksen seuraavaan kansioon:<br>
+<pre>
+    /opt/ibm/iAccessClientSolutions/
+    /usr/share/applications/
+</pre>
+
+
+
+<hr><h3><a id="4.1"></a>4.1 Tuotteen käytön aloitus (Linux)</h3>
+<p>
+Etsi sovelluskansiosta IBM i Access Client Solutions -kohtaa tai paina Super-näppäintä ja kirjoita sitten IBM i Access Client Solutions.
+
+
+
+<hr><h3><a id="5.0"></a>5.0 Päivitysten asennus</h3>
+<p>
+Kun tuotteen uusi versio on käytettävissä, voit asentaa päivityksen tämän oppaan
+ohjeiden mukaisesti.  Jos järjestelmä kysyy, korvataanko järjestelmässä olevat tiedostot,
+valitse vaihtoehto Kyllä kaikkiin.
+<p>
+Jos käytät install_acs-komentosarjoja Windows-, Mac- tai Linux-järjestelmissä,
+AcsConfig.properties-tiedosto ei päivity, minkä vuoksi tiedostoon tekemäsi kokoonpanomuutokset
+eivät häviä.
+
+
+
+<hr><h3><a id="6.0"></a>6.0 Lisätietoja</h3>
+<p>
+Lisätietoja tuotteen mukautuksesta tai sen asennukseen tai aloitukseen liittyvistä
+ongelmista on tuotteen ohjehakemistossa (Documentation) olevassa <a href="../Documentation/GettingStarted_en.html">Aloitusoppaassa</a>.
+
+<hr><h3><a id="7.0"></a>7.0 Asennuksen poisto</h3>
+<p>
+Voit poistaa asennuskomentosarjan edellä oleviin sijainteihin kopioimat sovellustiedostot käyttämällä käyttöympäristökohtaista asennuksen poiston komentosarjaa, joka on asennuskomentosarjan kanssa samassa kansiossa:
+<pre>
+    Windows_Application/uninstall_acs.js
+    Mac_Application/uninstall_acs
+    Linux_Application/uninstall_acs
+</pre>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+<!--  
+
+
+
+-->

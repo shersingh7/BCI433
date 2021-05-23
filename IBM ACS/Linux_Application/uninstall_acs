@@ -1,0 +1,97 @@
+#!/bin/bash
+# Description:
+# This script will uninstall IBM i Access Client Solutions from the /opt/ibm/iAccessClientSolutions folder 
+#
+# Usage: ./uninstall_acs
+#
+
+args=$@
+args_length=$#
+arg1=$1
+declare source
+declare target
+declare target_desktop
+
+# Print the help text
+function print_help {
+dialog --backtitle "IBM i Access Client Solutions" --msgbox '
+
+Name: uninstall_acs
+
+Syntax:
+uninstall_acs
+
+Description:
+Uninstalls IBM i Access Client Solutions (ACS) from
+/opt/ibm/iAccessClientSolutions and removes
+/usr/share/applications/IBM i Access Client Solutions.desktop.
+' 15 70
+
+}
+
+
+# Begin Main
+#
+if [ $EUID -ne 0 ]; then
+  echo " "
+  echo "This command must run with root authority."
+  echo "Try using:"
+  echo "   sudo ./uninstall_acs"
+  echo " "
+  exit
+fi
+
+which dialog > /dev/null
+result=$?
+echo $result
+if [ $result -gt 0 ]; then
+  echo " "
+  echo "The dialog package needs to be installed in order to use uninstall_acs"
+  echo "Example 1: sudo apt-get install dialog"
+  echo "Example 2: sudo yum install dialog"
+  echo " "
+  exit
+fi
+
+
+# Verify parameters
+if [ $args_length -gt 0 ]; then
+  print_help
+  exit
+fi
+
+#Create the IBM directory for the install log
+if [ ! -d $HOME/IBM ]; then
+  mkdir $HOME/IBM
+fi
+
+str_date=`date`
+echo "BEGIN ====uninstall==== $str_date ====uninstall==== BEGIN" >> $HOME/IBM/install_acs_log.txt
+
+
+# cd to the directory where this script exists
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "script: ${0}" >> $HOME/IBM/install_acs_log.txt
+
+source=`pwd`/..
+target_desktop="/usr/share/applications/IBM i Access Client Solutions.desktop"
+target="/opt/ibm/iAccessClientSolutions"
+echo "source: $source" >> $HOME/IBM/install_acs_log.txt
+echo "InstallPath: $target" >> $HOME/IBM/install_acs_log.txt
+
+if [ -e "$target_desktop" ]; then
+  rm "$target_desktop"
+  echo "Remove: $target_desktop" >> $HOME/IBM/install_acs_log.txt
+fi
+if [ -d $target ]; then
+  rm -Rf $target
+  echo "Remove directory: $target" >> $HOME/IBM/install_acs_log.txt
+fi 
+
+echo " "
+echo " Uninstallation completed."
+echo " You may exit this terminal window."
+echo " "
+echo "END ====uninstall==== `date` ====uninstall==== END" >> $HOME/IBM/install_acs_log.txt
+dialog --backtitle "IBM i Access Client Solutions" --msgbox 'IBM i Access Client Solutions has been uninstalled.' 7 50
+

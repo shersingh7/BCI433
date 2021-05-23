@@ -1,0 +1,17 @@
+# per http://standards.freedesktop.org/desktop-entry-spec/latest/
+[Desktop Entry]
+Type=Application
+# per http://standards.freedesktop.org/menu-spec/latest/apas02.html
+Categories=Java;Network;Office;TerminalEmulator;FileTransfer;Viewer;
+Version=1.0
+Name=IBM\si\sAccess\sClient\sSolutions
+Comment=IBM\si\sAccess\sClient\sSolutions
+#
+# Replace <entire-path-to> with the location of the product root directory
+Icon=/<entire-path-to>/Icons/logo128.png
+#
+# Replace <entire-path-to> with the location of the product root directory
+# Any embedded blanks in the Exec path must be escaped with a preceding \ 
+Exec=/<entire-path-to>/Start_Programs/Linux_i386-32/acslaunch_linux-32
+#
+Terminal=false
