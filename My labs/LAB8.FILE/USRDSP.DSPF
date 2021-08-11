@@ -1,0 +1,51 @@
+000100210723     A          R HEAD
+000101210723     A                                  2  4USER
+000102210723     A                                  2 21'E M P L O Y E E  I N F O R M A T I-
+000103210723     A                                       O N'
+000104210723     A                                  2 68DATE
+000105210723     A                                      EDTCDE(Y)
+000106210725     A                                  3  4'DAVINDER VERMA'
+000107210723     A                                  4  4'Enter Employee Number:'
+000108210723     A            ERRORMSG      36   O  4 40
+000109210723     A            EMPNUMIN       9  0B  4 27EDTCDE(4)
+000110210723     A  31                                  DSPATR(PR)
+000111210723     A          R BODY                      OVERLAY
+000112210723     A                                      CF06(06)
+000113210723     A                                      CF03(03)
+000114210723     A                                  5 33'Employee Data'
+000115210723     A                                  6  4'First Name:'
+000116210723     A                                  7  4'Last Name:'
+000117210723     A                                  8  4'Phone Number:'
+000118210723     A                                  6 41'City:'
+000119210723     A                                  7 41'Address:'
+000120210723     A                                  9  4'Year to Date pay:'
+000121210723     A                                 11 30'Last Shift Worked'
+000122210723     A                                 13  4'Shift:'
+000123210723     A                                 14  4'Hours Worked:'
+000124210723     A                                 15  4'Pay Grade:'
+000125210723     A                                 13 38'Regular Pay:'
+000126210723     A                                 14 38'Overtime Pay:'
+000127210723     A                                 15 38'Shift Pay:'
+000128210723     A            REGULARPAY     7  2O 13 53EDTCDE(1)
+000129210723     A            OVERPAY        7  2  14 53EDTCDE(1)
+000130210723     A            SFTPAY         7  2  15 53EDTCDE(1)
+000131210723     A                                 17  5'F3 - Exit'
+000132210723     A                                 17 39'F6 - Update Employee Record'
+000133210723     A            SFTTIM        10X  O 13 18
+000134210723     A            PAYGRADEIN     1   B 15 18VALUES('1' '2' '3' '4')
+000135210723     A            FIRSTNAME R        O  6 22REFFLD(EMPLOYEE/FIRSTNAME +
+000136210723     A                                      LAB8B27/EMPLOYEEP)
+000137210723     A            LASTNAME  R        O  7 22REFFLD(EMPLOYEE/LASTNAME +
+000138210723     A                                      LAB8B27/EMPLOYEEP)
+000139210723     A            PHONE     R        O  8 22REFFLD(EMPLOYEE/PHONE LAB8B27/EMPLO-
+000140210723     A                                      YEEP)
+000141210723     A            CITY      R        B  6 50REFFLD(EMPLOYEE/CITY LAB8B27/EMPLOY-
+000142210723     A                                      EEP)
+000143210723     A                                      CHECK(LC)
+000144210723     A            ADDRESS   R        B  7 50REFFLD(EMPLOYEE/ADDRESS LAB8B27/EMP-
+000145210723     A                                      LOYEEP)
+000146210723     A            YTDPAY    R        O  9 22REFFLD(EMPLOYEE/YTDPAY LAB8B27/EMPL-
+000147210723     A                                      OYEEP)
+000148210723     A                                      EDTCDE(1)
+000149210723     A            HRSWORKED R        O 14 18REFFLD(WORKWEEK1/HRSWORKED +
+000150210723     A                                      LAB8B27/WORKWEEKP)

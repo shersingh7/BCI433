@@ -1,0 +1,164 @@
+000100190313         // **************************************************************************
+000200200326        //  CUSTOMER20 READ BY NATIVE LANGUAGE (ILE RPG)
+000300200709        //  CONTACTS20 ROW RETRIEVED WITH EMBEDDED SQL
+000400200709        //  DETAIL REPORT LINE INCLUDES INFORMATION FROM CUSTOMER20 AND CONTACTS20
+000500190313        //  SUMMARRY REPORT INFORMATION RETRIEVED WITH EMBEDDED SQL STATEMENTS
+000600190314
+000700190313           DCL-F PHNREPORT PRINTER OFLIND(*IN01) ;
+000800200326           DCL-F CUSTOMER20 DISK(*EXT) KEYED USAGE(*INPUT)
+000900200326                 RENAME(CUSTOMER20:CUSTR);
+001000210723                     // data structure for host variables from CONTACTS20
+001100210723                     DCL-DS CONTACTS20 EXT END-DS;
+001200190314                     // Standalone fields for indicator variables
+001300210723                     DCL-S INDLastCDate BINDEC(4:0);
+001301210723                     DCL-S INDNextCDate BINDEC(4:0);
+001400190314
+001500190314
+001600190314           DCL-S Dummy  Zoned(1);
+001700190314
+001800190314        //**************************************************************************
+001900190314        //*                        ***   M A I N   R O U T I N E   ***
+002000190314        //**************************************************************************
+002100190314
+002200070119                EXSR SummaryInfo;
+002300200709                WRITE NEWPAGE;
+002400200326                READ CUSTOMER20;
+002500070119                DOW NOT %EOF;
+002600070119                    EXSR SQLSelect;
+002700190313                    IF *IN01 = *ON;
+002800200709                       Write NEWPAGE;
+002900190313                       *IN01 = *OFF;
+003000070119                    ENDIF;
+003100200709                    Write RPTLINE;
+003200200326                   READ CUSTOMER20;
+003300070119                ENDDO;
+003400190313                Write SUMMARY;
+003500070119                *INLR = *ON;
+003600070119                RETURN;
+003700080923        //**********************************************************************
+003800080923        //   S Q L S E L E C T   S U B R O U T I N E
+003900080923   //   //********************************************************************
+004000080923   //                  BEGSR    SQLSelect ;
+004100080923   //    // A row from the contacts table that has the same customer number as t
+004200200326   //    // read from the CUSTOMER20 file is retrieved to find out the last date
+004300080923   //    // phone number, comments and the salesperson number.
+004400080923   //
+004500080923   //    //  The call back interval is added to the last date called to determin
+004600080923   //    //  next date to call.  Since null values may be stored in the last dat
+004700080923   //    // indicator variables are used.
+004800190314
+004900210723         EXEC SQL
+004901210723        SELECT PHNLDC + PHNCIT DAYS, PHNLDC,
+004902210723         CSTPHN, PHNCOM, CSTSLN
+004903210723        INTO   :NEXTCDATE  :INDNEXTCDATE,  :PHNLDC  :INDLASTCDATE,
+004904210723        :CSTPHN,   :PHNCOM,  :CSTSLN
+004905210723        FROM   BCI433LIB/CONTACTS20
+004906210723        WHERE  CSTNUM = :CSTNUM;
+004907210723
+004908210723        SELECT;
+004909210723        WHEN SQLSTATE = '00000';
+004910210723         DUMMY = 0;
+004911210723        WHEN SQLSTATE = '02000';
+004912210723         CSTPHN = 'NOT FOUND';
+004913210723         NEXTCDATE = D'9999-09-09';
+004914210723         PHNLDC    = D'9999-09-09';
+004915210723         PHNCOM    = *ALL'*';
+004916210723         CSTSLN = *ALL'*';
+004917210723        WHEN %SUBST(SQLSTATE :1 :2) = '01';
+004918210723         CSTPHN = 'WARNING';
+004919210723         NEXTCDATE = D'9999-09-09';
+004920210723         PHNLDC    = D'9999-09-09';
+004921210723         PHNCOM    = *ALL'*';
+004922210723         CSTSLN = *ALL'*';
+004923210723        OTHER;
+004924210723         CSTPHN = 'ERROR';
+004925210723         NEXTCDATE = D'9999-09-09';
+004926210723         PHNLDC    = D'9999-09-09';
+004927210723         PHNCOM    = *ALL'*';
+004928210723         CSTSLN = *ALL'*';
+004929210723        ENDSL;
+004930210723
+004931210723        IF INDLASTCDATE = -1;
+004932210723         CSTPHN = 'UNKNOWN DATE';
+004933210723         NEXTCDATE = D'9999-09-09';
+004934210723         PHNLDC    = D'9999-09-09';
+004935210723
+004936210723        ELSE;
+004937210723          IF INDLASTCDATE <> 0;
+004938210723            CSTPHN = 'DATE PROBLEM';
+004939210723            NEXTCDATE = D'9999-09-09';
+004940210723            PHNLDC    = D'9999-09-09';
+004941210723          ENDIF;
+004942210723        ENDIF;
+004943210723
+004944210723        IF PHNLDC = OLDESTDATE;
+004945210723          HIGHLIGHT = '<------';
+004946210723        ELSE;
+004947210723          HIGHLIGHT = '';
+004948210723        ENDIF;
+004949210723
+006900080923                         ENDSR ;
+007000080923        //**********************************************************************
+007100080923        // S U M M A R Y I N F O   S U B R O U T I N E
+007200080923        //**********************************************************************
+007300080923                         BEGSR  SummaryInfo;
+007400200709        //  D E T E R M I N E   T O T A L S   F O R   CONTACTS20 & CUSTOMER20
+007500210723            EXEC SQL
+007501210723            SELECT COUNT(*) INTO :CONTACTT
+007502210723                 FROM BCI433LIB/CONTACTS20;
+007503210723
+007504210723                      IF (SQLCODE <> 0) OR (SQLWN0 ='W');
+007505210723                        CONTACTT = -99999;
+007506210723                      ENDIF;
+007507210723
+007508210723                      EXEC SQL
+007509210723                      SELECT COUNT(*) INTO :CUSTOMERT
+007510210723                      FROM BCI433LIB/CUSTOMER20;
+007511210723
+007512210723                      IF (SQLCODE <> 0) OR (SQLWN0 ='W');
+007513210723                        CUSTOMERT = -99999;
+007514210723                      ENDIF;
+007600210723
+009000190314        // D E T E R M I N E   N U M B E R   O F   U N K N O W N   LAST   DATE CALLED
+009100190314
+009200210723           EXEC SQL
+009201210723             SELECT COUNT(*)  INTO :UNKNOWNT
+009202210723               FROM BCI433LIB/CONTACTS20
+009203210723               WHERE PHNLDC IS NULL;
+009204210723
+009205210723            IF (SQLCODE <>0) OR (SQLWN0='W');
+009206210723                  UNKNOWNT =-99999;
+009207210723            ENDIF;
+009300210723
+010000190314
+010100080923        //  D E T E R M I N E   O L D E S T   &  M O S T   R E C E N T  L A S T
+010200080923
+010300210723            EXEC SQL
+010301210723              SELECT MIN(PHNLDC)
+010302210723                 INTO:OLDESTDATE
+010303210723                 FROM BCI433LIB/CONTACTS20;
+010304210723
+010305210723            IF (SQLCODE <> 0) OR (SQLWN0 = 'W') AND (SQLWN2 <> 'W');
+010306210723                OLDESTDATE = D'9999-09-09';
+010307210723            ENDIF;
+010308210723
+010309210723            EXEC SQL
+010310210723             SELECT MAX(PHNLDC)
+010311210723              INTO:MOSTRECENT
+010312210723              FROM BCI433LIB/CONTACTS20;
+010313210723
+010314210723            SELECT;
+010315210723             WHEN SQLWN2 = 'W';
+010316210723             WHEN NOT(SQLCODE = 0) OR (SQLWN0 ='W');
+010317210723               MOSTRECENT  = D'9999-09-09';
+010318210723             ENDSL;
+010400210723
+012000190314
+012100080923       // D E T E R M I N E   T H E   U S E R   S E R V E R   &   T I M E S T A
+012200080923
+012300210723          EXEC SQL
+012301210723          SELECT USER, CURRENT TIMESTAMP, CURRENT SERVER
+012302210723          INTO     :USER,  :TIMESTAMP,      :SERVER
+012303210723          FROM    SYSIBM/SYSDUMMY1;
+012400210723
+012800080923                         ENDSR;

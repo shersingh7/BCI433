@@ -1,0 +1,59 @@
+000001210702     A          R TITLE
+000002210702     A                                  2  6DATE(*YY)
+000003210702     A                                      EDTCDE(Y)
+000004210702     A                                  2 19TIME
+000005210714     A            SHIFTTYPE     30      3 52
+000006210702     A                                  2 57'Weekly Payroll Report'
+000007210702     A                                  2103'Page:'
+000008210702     A                                  2109PAGNBR
+000009210702     A                                  3  6'Name: DAVINDER VERMA'
+000010210702     A          R COLHDG                    SPACEB(2)
+000011210702     A                                     6'Employee'
+000012210702     A                                    20'Work'
+000013210702     A                                    31'Pay'
+000014210702     A                                    42'Hourly'
+000015210702     A                                    56'Hours'
+000016210702     A                                    69'Regular'
+000017210702     A                                    85'Overtime'
+000018210702     A                                   102'Total'
+000019210702     A                                     6'Number'
+000020210702     A                                      SPACEB(1)
+000021210702     A                                    20'Shift'
+000022210702     A                                    31'Class'
+000023210702     A                                    42'Rate'
+000024210702     A                                    56'Worked'
+000025210702     A                                    69'Pay'
+000026210702     A                                    85'Pay'
+000027210702     A                                   102'Pay'
+000028210702     A          R EMPDETAIL                 SPACEB(2)
+000029210702     A            EMPNUM    R              6
+000030210702     A                                      REFFLD(SHIFTWEEK/EMPNUM SENECAPAY/S-
+000031210702     A                                      HIFTWEEK)
+000032210702     A                                      EDTWRD('0  -   -   -')
+000033210702     A            WORKSHIFT R             20
+000034210702     A                                      REFFLD(SHIFTWEEK/WORKSHIFT +
+000035210702     A                                      SENECAPAY/SHIFTWEEK)
+000036210702     A            PAYCLASS  R             31REFFLD(SHIFTWEEK/PAYCLASS +
+000037210702     A                                      SENECAPAY/SHIFTWEEK)
+000038210702     A            HOURLYRATE     5  2     42EDTCDE(1)
+000039210702     A            HRSWORKED R             56REFFLD(SHIFTWEEK/HRSWORKED +
+000040210702     A                                      SENECAPAY/SHIFTWEEK)
+000041210702     A            REGULARPAY     7  2     69EDTCDE(1)
+000042210702     A            OVERPAY        7  2     85EDTCDE(1)
+000043210702     A            WEEKLYPAY      7  2    102EDTCDE(1)
+000044210702     A          R TOTAL                     SPACEB(3)
+000045210702     A                                    51'Totals:'
+000046210702     A            TOTREGPAY      9  2     65EDTCDE(1 $)
+000047210702     A            TOTOVTPAY      9  2     81EDTCDE(1 $)
+000048210702     A            TOTWKPAY       9  2     98EDTCDE(1 $)
+000049210702
+000100      
+000101210702     A*%%RS+<record-sequences>
+000102210702     A*%%RS+ <sequence name="Report1">
+000103210702     A*%%RS+  <device type="printer" width="132" height="66" />
+000104210702     A*%%RS+  <record-write record-format="TITLE" />
+000105210702     A*%%RS+  <record-write record-format="COLHDG" />
+000106210702     A*%%RS+  <record-write record-format="EMPDETAIL" />
+000107210702     A*%%RS+  <record-write record-format="TOTAL" />
+000108210702     A*%%RS+ </sequence>
+000109210702     A*%%RS </record-sequences>

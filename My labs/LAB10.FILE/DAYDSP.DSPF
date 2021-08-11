@@ -1,0 +1,29 @@
+000100210811     A*%%TS  SD  20200726  182818  DM434A40    REL-V7R4M0  5770-WDS
+000200210811     A*%%EC
+000300210811     A                                      DSPSIZ(24 80 *DS3)
+000400210811     A                                      INDARA
+000500210811     A                                      CF03(03)
+000600210811     A          R INPUT
+000700210811     A*%%TS  SD  20200726  182818  DM434A40    REL-V7R4M0  5770-WDS
+000800210811     A                                  8 12'Enter Day Number: '
+000900210811     A            DAYIN          1Y 0B  8 31
+001000210811     A  99                                  DSPATR(PR)
+001100210811     A                                      EDTCDE(4)
+001200210811     A                                  1  2USER
+001300210811     A                                  3  2'Davinder Verma'
+001400210811     A                                  1 21'U S E R   D E F I N E D   F U N C -
+001500210811     A                                      T I O N'
+001600210811     A                                  1 69DATE
+001700210811     A                                      EDTCDE(Y)
+001800210811     A            SOLUTION      15   O  8 40
+001900210811     A          R OUTPUT
+002000210811     A*%%TS  SD  20200404  133611  DJ433A40    REL-V7R4M0  5770-WDS
+002100210811     A                                      OVERLAY
+002200210811     A                                 14 11'Day Name: '
+002300210811     A            DAYNAME        9A  O 14 24
+002400210811     A                                 22  7'F3 - Exit'
+002500210811     A*%%RS+<record-sequences>
+002600210811     A*%%RS+ <sequence name="Untitled">
+002700210811     A*%%RS+  <device type="display" width="80" height="24" />
+002800210811     A*%%RS+ </sequence>
+002900210811     A*%%RS </record-sequences>

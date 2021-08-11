@@ -1,0 +1,22 @@
+000100210702     A          R RECORD1
+000101210702     A                                  2  7USER
+000102210702     A                                  2 66DATE
+000103210702     A                                      EDTCDE(Y)
+000104210702     A                                  3 66TIME
+000105210702     A                                  2 22'S E N E C A   Payroll Program Comp-
+000106210702     A                                      leted'
+000107210702     A                                  3  7'Name: Davinder Verma'
+000108210702     A                                  5 12'Rates:'
+000109210702     A                                  6 22'Day Hours:'
+000110210702     A                                  7 22'Afternoon Hours:'
+000111210702     A                                  8 22'Night Hours:'
+000112210702     A                                 11 11'Totals:'
+000113210702     A                                 12 22'Regular Pay:'
+000114210702     A                                 13 22'Overtime Pay:'
+000115210702     A                                 14 22'Company Payout:'
+000116210702     A            TOTREGPAY      9  2O 12 40EDTCDE(1)
+000117210702     A            TOTWKPAY       9  2O 14 40EDTCDE(1 $)
+000118210702     A            TOTOVTPAY      9  2O 13 40EDTCDE(1)
+000119210702     A            DAYHRS         5Y 2O  6 45EDTCDE(1)
+000120210702     A            AFTHRS         5Y 2O  7 45EDTCDE(1)
+000121210702     A            NIGHTHRS       5Y 2O  8 45EDTCDE(1)
